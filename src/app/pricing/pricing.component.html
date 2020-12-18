@@ -1,0 +1,118 @@
+<app-common-subpages-header [data_index]="3"></app-common-subpages-header>
+
+<section class="default-width">
+    <mat-toolbar color="primary" class="mt-pricing">
+        <mat-toolbar-row class="common-sub-header">
+            <h2>WE GUARANTEE THE LOWEST PRICE</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-toolbar>
+        <mat-toolbar-row class="mtr-pricing-body margin-bottom70">
+            <form [formGroup]="pricingForm" class="price-calculator-wrap">
+                <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                <section class="sec-pricing margin-bottom57">
+                    <span class="spn-split-toggle">
+                        <p class="p-pricing-label">What type of service do you need?</p>
+                        <mat-button-toggle-group formControlName="service" class="mbtg-pricing-wrap" [value]="pricingForm.value.service">
+                            <mat-button-toggle
+                                class="fill-space tri-button-toggle"
+                                *ngFor="let list of serviceTypes"
+                                (click)="setPowerpoint(list.type_of_service_id)"
+                                [value]="list.type_of_service_id">{{list.type_of_service}}
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </span>
+                </section>
+                <section class="sec-pricing margin-bottom57">
+                    <span class="fill-space spn-split-toggle">
+                        <p class="p-pricing-label">What writer's level do you need?</p>
+                        <mat-button-toggle-group formControlName="academic" class="mbtg-pricing-wrap" [value]="pricingForm.value.academic">
+                            <mat-button-toggle
+                                *ngFor="let list of writerLevels" 
+                                class="fill-space tri-button-toggle"
+                                (click)="patchLevel(list.academic_level_id)"
+                                [value]="list.academic_level_id">{{list.academic_level_name}}
+                            </mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </span>
+                </section>
+                <section class="sec-pricing margin-bottom57">
+                    <span class="fill-space spn-toggle-wrap">
+                        <p class="p-pricing-label">When you needed it ready? "Deadline" <span class="fill-space"></span><span>{{deadlineLable}}</span></p>
+                        <mat-form-field appearance="fill" class="mff-pricing-deadline">
+                            <mat-select disableOptionCentering panelClass="ms-pricing-deadline" [value]="5">
+                                <mat-option *ngFor="let list of allDeadlines; let i = index" (click)="patchDeadline(list)" [value]="i">{{list.deadline}} {{list.duration}}</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+                </section>
+                <section class="sec-pricing margin-bottom57">
+                    <span class="fill-space">
+                        <p *ngIf="isPowerPointEnabled "class="p-pricing-label">How many slides do you need? <span class="fill-space"></span><span>{{word_count}} word(s)</span></p>
+                        <p *ngIf="!isPowerPointEnabled "class="p-pricing-label">How many pages do you need? <span class="fill-space"></span><span>{{word_count}} word(s)</span></p>
+                        <div class="page-options-wrap" style="display: flex;">
+                            <span class="spn-page-wrap hidden-to-mobile">
+                                <mat-button-toggle-group class="mbtg-pricing-wrap" formControlName="page" [value]="pricingForm.value.page">
+                                    <mat-button-toggle
+                                    *ngFor="let list of sevenPage"
+                                    (click)="patchPageVal(list)"
+                                    class="fill-space btn-sevenpage"
+                                    [value]="list">{{list}}</mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </span>
+                            <span class="fill-space hidden-to-mobile"></span>
+                            <span class="spn-word-wrap">
+                                <div class="inc-dec-page-wrap">
+                                    <button (click)="decPage()" class="fill-space" mat-flat-button>-</button>
+                                    <input class="fill-space" formControlName="page" [value]="pricingForm.value.page" type="number" mat-input>
+                                    <button (click)="incPage()" class="fill-space" mat-flat-button>+</button>
+                                </div>
+                            </span>
+                        </div>
+                    </span>
+                </section>
+                <section class="sec-pricing">
+                    <span class="fill-space spn-price-wrap">
+                        <button mat-flat-button type="button">
+                            <span class="fill-space">Total Price</span>
+                            <span class="fill-space">${{price}}</span>
+                        </button>
+                    </span>
+                    <span class="fill-space"></span>
+                    <span class="fill-space spn-submit-pricing">
+                        <button mat-flat-button type="button" routerLink="/order">Order Now</button>
+                    </span>
+                </section>
+            </form>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="common-sub-header">
+            <h2>THIS PRICE IS BASED ON THESE FACTORS</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-pricing-body add-block">
+            <section class="sec-factors">
+                <span class="spn-factors">TYPE OF SERVICE</span>
+                <span class="fill-space space-separator"></span>
+                <span class="spn-factors">WRITER'S LEVEL</span>
+                <span class="fill-space space-separator"></span>
+                <span class="spn-factors">DEADLINE</span>
+                <span class="fill-space space-separator"></span>
+                <span class="spn-factors">NUMBER OF PAGES</span>
+            </section>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<section class="default-width sec-pro-writing margin-bottom70">
+    <mat-toolbar>
+        <mat-toolbar-row class="common-sub-header">
+            <h2>OUR SERVICES</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>  
+</section>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

@@ -1,0 +1,350 @@
+.mtr-pricing-head {
+    text-align: center;
+    white-space: normal;
+    display: block;
+}
+.mtr-pricing-head h1 {
+    color: #111111;
+    font-family: "SF Pro Text Semibold";
+    font-size: 50px;
+    line-height: 46px;
+    margin: 0 auto;
+}
+.mtr-pricing-head p span {
+    color: #00B16B;
+}
+.mtr-pricing-head p {
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    line-height: 46px;
+    text-align: center;
+    margin: 20px auto 80px auto;
+}
+.price-calculator-wrap {
+    width: 100%;
+    border-radius: 5px 4.5px 4.5px 4.5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 #C5DBEF, 5px 6px 35px 0 #C5DBEF;
+    padding: 40px 60px;
+    position: relative;
+    overflow: hidden;
+}
+.inc-dec-page-wrap button,
+.inc-dec-page-wrap input,
+.mbtg-pricing-wrap > .mat-button-toggle {
+    background-color: #FFFFFF;
+    font-family: "SF Pro Text Semibold";
+    color: #12245A;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 29px;
+    height: 55px;
+}
+.mbtg-pricing-wrap .btn-sevenpage {
+    border: none !important;
+}
+.tri-button-toggle {
+    border: 2px solid #12245A !important;
+    border-radius: 5px;
+    margin: 0 6px;
+    width: 33.33%;
+}
+.mbtg-pricing-wrap > .mat-button-toggle-checked {
+    background-color: #12245A;
+    color: #ffffff;
+}
+.mbtg-pricing-wrap .mat-button-toggle-checked .p-du,
+.mbtg-pricing-wrap .mat-button-toggle-checked .p-dl {
+    color: #ffffff !important;
+}
+.mbtg-pricing-wrap .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    padding: 6px 0;
+}
+.mbtg-pricing-wrap,
+.spn-split-toggle .mbtg-pricing-wrap,
+.spn-toggle-wrap .mbtg-pricing-wrap,
+.spn-page-wrap .mbtg-pricing-wrap,
+.spn-word-wrap .mbtg-pricing-wrap,
+.sec-pricing {
+    display: flex;
+    border: none;
+}
+.spn-split-toggle .mbtg-pricing-wrap {
+    padding: 0 10px;
+}
+.spn-split-toggle {
+    width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.spn-toggle-wrap {
+    width: 100%;
+    min-height: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.spn-page-wrap {
+    width: 100%;
+    max-width: 590px;
+}
+.spn-word-wrap {
+    width: 100%;
+    max-width: 245px;
+}
+.spn-price-wrap {
+    width: 100%;
+    max-width: 455px;
+    min-height: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.spn-submit-pricing {
+    width: 100%;
+    max-width: 345px;
+    min-height: 20px;
+    overflow: hidden;
+    border-radius: 7px;
+}
+.spn-price-wrap button {
+    padding: 0 24px;
+    background-color: #000000;
+    pointer-events: none;
+    height: 60px;
+    width: 100%;
+    display: flex;
+}
+.spn-price-wrap button .mat-button-wrapper {
+    width: 100%;
+}
+.spn-price-wrap button span:first-child {
+    font-size: 20px;
+    line-height: 60px;
+    font-family: "SF Pro Text Medium";
+    color: #ffffff;
+}
+.spn-price-wrap button span:last-child {
+    font-size: 26px;
+    line-height: 60px;
+    font-family: "SF Pro Text Bold";
+    color: #ffffff;
+    display: inline-block;
+    width: 100%;
+}
+.spn-submit-pricing button {
+    height: 60px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #FFD500;
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 26px;
+    line-height: 15px;
+    padding: 0 36px;
+}
+.sec-factors {
+    display: flex;
+}
+.add-block {
+    display: block;
+    margin-bottom: 70px;
+}
+.mtr-pricing-body.add-block p {
+    text-align: center;
+    font-size: 22px;
+    line-height: 18px;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    margin-bottom: 42px;
+}
+.spn-factors {
+    width: 100%;
+    max-width: 208px;
+    border-radius: 5px 4.5px 4.5px 4.5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 #C5DBEF, 5px 6px 35px 0 #C5DBEF;
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    padding: 35px 10px;
+    white-space: normal;
+}
+.p-spacing-label {
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 35px;
+    margin: 0 0 12px 0;
+    white-space: normal;
+    text-align: right;
+}
+.p-pricing-label {
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 34px;
+    white-space: normal;
+    margin: 0 auto 16px;
+    padding: 0 12px;
+    display: flex;
+}
+.margin-bottom57 {
+    margin-bottom: 57px;
+}
+.p-pricing-label span {
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 35px;
+    float: right;
+}
+.mbtg-pricing-wrap .p-dl {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 33px;
+    margin: 0 auto;
+}
+.mbtg-pricing-wrap .p-du {
+    font-size: 12px;
+    line-height: 6px;
+    margin: 0 auto;
+    color: #13B675;
+}
+.inc-dec-page-wrap {
+    display: flex;
+    border-radius: 5px;
+    border: 2px solid #12245A !important;
+    overflow: hidden
+}
+.inc-dec-page-wrap input {
+    width: 100%;
+    text-align: center;
+    border: none !important
+}
+.mff-pricing-deadline {
+    height: 55px;
+    width: -webkit-fill-available;
+    border-radius: 5px;
+    border: 2px solid #12245A !important;
+    background-color: #FFFFFF;
+    padding: 0 13px 0 18px;
+    margin: 0 12px;
+}
+.mff-pricing-deadline .mat-form-field-infix {
+    border-top: 0 !important;
+    padding: 0.35em 0 0.75em 0;
+}
+.mff-pricing-deadline .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+.mff-pricing-deadline .mat-form-field-underline {
+    display: none !important;
+}
+.mff-pricing-deadline .mat-select-arrow-wrapper {
+    visibility: hidden !important;
+}
+.mff-pricing-deadline .mat-form-field-flex {
+    padding: 0.25em .75em 0 .75em !important;
+    background: transparent;
+}
+.mff-pricing-deadline .mat-select-value {
+    color: #12245A !important;
+    font-family: "SF Pro Text Semibold";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 35px;
+}
+.ms-pricing-deadline {
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 7px;
+    margin-top: 60px;
+    margin-left: -3px;
+    border: 2px solid #12245A;
+}
+.ms-pricing-deadline .mat-option {
+    color: #12245A !important;
+    /* background-color: #fff !important; */
+}
+.space-separator {
+    padding: 10px
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    .price-calculator-wrap {
+        padding: 30px 0 !important;
+    }
+    .inc-dec-page-wrap button,
+    .inc-dec-page-wrap input,
+    .mbtg-pricing-wrap > .mat-button-toggle {
+        font-size: 16px !important;
+        line-height: 18px !important;
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .hidden-to-mobile {
+        display: none;
+    }
+    .spn-word-wrap {
+        max-width: 100%;
+    }
+    .sec-factors {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .sec-factors span {
+        margin-bottom: 15px;
+        display: block;
+    }
+    .sec-factors span:last-child {
+        margin-bottom: 0; 
+    }
+    .price-calculator-wrap {
+        padding: 40px 30px;
+    }
+    .inc-dec-page-wrap button,
+    .inc-dec-page-wrap input,
+    .mbtg-pricing-wrap > .mat-button-toggle {
+        font-size: 18px;
+        line-height: 20px;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .sec-pricing {
+        display: block;
+    }
+    .spn-price-wrap span.fill-space {
+        display: inline !important;
+        margin: 0 5px
+    }
+    .spn-price-wrap button {
+        margin-bottom: 30px;
+    }
+    .inc-dec-page-wrap button,
+    .inc-dec-page-wrap input,
+    .mbtg-pricing-wrap > .mat-button-toggle {
+        font-size: 20px;
+        line-height: 22px;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

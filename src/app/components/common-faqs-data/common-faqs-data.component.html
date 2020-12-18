@@ -1,0 +1,19 @@
+<mat-accordion class="ma-faq-wrap">
+  <mat-expansion-panel hideToggle *ngFor="let list of faq_home_content; let i = index" [expanded]="faqIndexExpanded == i">
+    <mat-expansion-panel-header
+    (opened)="panelOpenState = true"
+    (closed)="panelOpenState = false"
+    (click)="togglePanels(i)">
+      <mat-panel-title>
+            <span class="material-icons mi-home-faq rem-pannel{{i}}">{{faqIndexExpanded === i ? 'remove' : 'add'}}</span>
+            {{list.header}}
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <p class="p-faq-content">{{list.content}}</p>
+    <mat-list role="list" class="ml-info-body" *ngIf="i == 0">
+        <mat-list-item role="listitem" *ngFor="let item of list.list; let i = index">
+            <span matPreFix class="spn-matprefix">{{i+1}}.</span>{{item}}
+        </mat-list-item>
+    </mat-list>
+  </mat-expansion-panel>
+</mat-accordion>

@@ -1,0 +1,105 @@
+.sec-level {
+    margin-top: 76px;
+    margin-bottom: 180px;
+    position: relative;
+}
+.sec-level h1 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: 43px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 26px auto;
+}
+.sec-level p.p-description {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 21px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 83px auto;
+}
+.sec-level p a {
+    text-decoration: underline;
+    color: #000000;
+}
+.p-badge-label {
+    display: block;
+    margin: 0 auto 10px auto;
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.83px;
+    line-height: 19px;
+    text-align: center;
+    visibility: hidden;
+}
+.level-badge-wrap {
+    display: block;
+    margin: 0 auto;
+    height: 120px;
+    width: 125px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.mtr-level-progress {
+    margin-top: 43px;
+}
+.p-level-gap {
+    display: block;
+    margin: 22px auto 67px auto;
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    letter-spacing: 1.2px;
+    line-height: 21px;
+    text-align: center;
+}
+.spn-progress-bar {width: 664px;
+    padding: 4px 15px;
+}
+.level-bar-wrap {
+    width: 100%;
+    max-width: 797px;
+    margin: 0 auto;
+    display: flex;
+}
+.spn-progress-bar .mat-progress-bar {
+    height: 10px;
+    border-radius: 5px;
+}
+.spn-progress-bar .mat-progress-bar-buffer {
+    background-color: #E5E6EA;
+}
+.spn-progress-bar .mat-progress-bar-fill::after {
+    background-color: #13B675;
+}
+.spn-progress-points {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+.a-see-howitworks {
+    display: block;
+    margin: 0 auto;
+    color: #1A62F5;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 21px;
+    text-align: center;
+} 
+.level-badge-wrap .blue-label {
+    height: 45px;
+    width: 42px;
+    display: block;
+    margin: 0 auto;
+}

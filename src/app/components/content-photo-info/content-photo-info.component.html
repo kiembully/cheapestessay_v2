@@ -1,0 +1,21 @@
+<mat-toolbar class="mt-web-contents common-transparent">
+    <mat-toolbar-row class="mtr-web-contents" *ngIf="has_header">
+        <div *ngFor="let list of getArrayValue(data_content)">
+            <h5 *ngFor="let header of list.headers">
+                <span class="spn-bullet-item fill-space"></span>
+                <span class="fill-space">{{header}}</span>
+            </h5>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngFor="let list of getArrayValue(data_content); let i = index" [ngClass]="((i - getInitialRow(left_first))%2===0)?'row-reverse':''">
+        <span class="spn-content-img"></span>
+        <span class="fill-space"></span>
+        <span class="spn-content-desc" [ngClass]="has_background_content && i > 0 ? 'has-background' : ''">
+            <div class="spn-content-block">
+                <h6>{{list.title}}</h6>
+                <p *ngFor="let content of list.contents">{{content}}</p>
+            </div>
+            <button *ngIf="has_order_button" type="button" class="btn-get-started" mat-flat-button>Get Started</button>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>

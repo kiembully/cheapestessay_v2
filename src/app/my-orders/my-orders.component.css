@@ -1,0 +1,177 @@
+.sec-order-nav,
+.sec-orders {
+    margin-top: 22px;
+}
+.sec-order-nav {
+    display: flex;
+}
+table.tbl-my-orders.mat-table {
+  width: 100%;
+  min-height: 507px !important;
+}
+.sec-orders {
+    margin-bottom: 180px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(64,85,196,0.14);
+    overflow: hidden;
+    position: relative;
+}
+.tbl-my-orders tr.mat-header-row {
+    height: 67px;
+}
+.tbl-my-orders tr.mat-row, .tbl-my-orders tr.mat-footer-row {
+    height: 44px;
+}
+.tbl-my-orders th.mat-header-cell, .tbl-my-orders td.mat-cell, .tbl-my-orders td.mat-footer-cell {
+    border-bottom-width: 0;
+    border-bottom-style: 0;
+    text-align: center;
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+}
+.tbl-my-orders th.mat-header-cell {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: -0.57px;
+    line-height: 19px;
+}
+.btn-delete-order-wrap {
+    height: 18px;
+    width: 18px;
+    display: block;
+    margin: 0 auto;
+    background-color: transparent !important;
+    box-shadow: none !important;
+    position: relative;
+}
+.btn-delete-order {
+    background-position: -8px -83px;
+    background-size: 1010px;
+    height: 18px;
+    width: 18px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.tbl-my-orders th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 12px !important;
+}
+.spn-order-id {
+    padding: 2px 13px;
+    border-radius: 5px;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Semibold";
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: -0.54px;
+    line-height: 18px;
+}
+.spn-price {
+    color: #D0021B;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+}
+.spn-pages {
+    color: #111111;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+}
+.spn-topic {
+    max-width: 100px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+    margin: 0 auto;
+    white-space: nowrap;
+}
+.spn-order-status {
+    padding: 4px 20px;
+    width: 100%;
+    max-width: 140px;
+    display: block;
+    background-color: #D0555A;
+    border-radius: 11px;
+    margin: 0 auto;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: -0.65px;
+    line-height: 14px;
+}
+.btn-action {
+    padding: 3px 8px;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+    background-color: #D0555A;
+}
+.spn-action {
+    color: #28B862;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+}
+.btn-open {
+    padding: 3px 5px;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+    background-color: #000000;
+}
+
+/* select styles  */
+.mfl-common-select{
+    width: 100%;
+    height: 45px;
+}
+.mfl-common-select .mat-form-field-flex {
+    padding: 0 !important;
+    background-color: transparent;
+}
+.mfl-common-select .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+.mfl-common-select .mat-select-value-text {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+.mfl-common-select .mat-select-arrow-wrapper {
+    visibility: hidden;
+}
+.mfl-common-select .mat-form-field-underline {
+    display: none;
+}
+.mfl-common-select .mat-form-field-infix {
+    padding: 10px 45px 10px 18px;
+    border: 0 !important;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.mt-common-select {
+    border: 1px solid #3B7CFF;
+    border-radius: 7px;
+    background-color: #F2F2F2;
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+}

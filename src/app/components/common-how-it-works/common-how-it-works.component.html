@@ -1,0 +1,131 @@
+
+<section class="width1100 sec-w-hiw margin-bottom100">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span class="spn-step-wrap">
+                <div class="step-wrap-inner">
+                    <span class="spn-steps-wrap">1</span>
+                </div>
+                <h5>PLACE AN ORDER</h5>
+                <h6>Fill out your order details</h6>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-step-wrap">
+                <div class="step-wrap-inner">
+                    <span class="spn-steps-wrap">2</span>
+                </div>
+                <h5>MAKE A PAYMENT</h5>
+                <h6>Sign in & pay with card or PayPal</h6>
+            </span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span class="spn-step-wrap">
+                <div class="step-wrap-inner">
+                    <span class="spn-steps-wrap">3</span>
+                </div>
+                <h5>ORDER IN PROGRESS</h5>
+                <h6>A writer begins with your order</h6>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-step-wrap">
+                <div class="step-wrap-inner">
+                    <span class="spn-steps-wrap">4</span>
+                </div>
+                <h5>RECEIVED YOUR PAPER</h5>
+                <h6>We'll send the completed paper to your email</h6>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<!-- <section class="width1000 sec-m-hiw">
+    <owl-carousel-o [options]="customOptions" (translated)="getPassedData($event)" #owlCar>
+        <ng-template carouselSlide id="slide1">
+            <div class="sprite-how-it-works sprite-placeorder-img"></div>
+        </ng-template>  
+        <ng-template carouselSlide id="slide2">
+            <div class="sprite-how-it-works sprite-makepayment-img"></div>
+        </ng-template>  
+        <ng-template carouselSlide id="slide3">
+            <div class="sprite-how-it-works sprite-orderprogress-img"></div>
+        </ng-template>  
+        <ng-template carouselSlide id="slide4">
+            <div class="sprite-how-it-works sprite-receive-orders"></div>
+        </ng-template>
+    </owl-carousel-o>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <div class="slider-description-wrap">
+                <span *ngIf="activeItem == 0">Fill out your order detail</span>
+                <span *ngIf="activeItem == 1">Sign in & pay with card or PayPal</span>
+                <span *ngIf="activeItem == 2">A writer begins with your order</span>
+                <span *ngIf="activeItem == 3">We'll send the completed paper to your email</span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="btn-carousel-wrap">
+                <button [ngClass]="{'active':activeItem == 0}" class="btn-carousel" mat-flat-button (click)="owlCar.to('slide1')">
+                    1
+                    <mat-progress-spinner 
+                        class="mps-carousel" 
+                        color="accent" 
+                        strokeWidth="2" 
+                        diameter="67" 
+                        mode="determinate" 
+                        [value]="spinnerVal" 
+                        *ngIf="activeItem == 0">
+                    </mat-progress-spinner>
+                </button>
+                <p [style.opacity]="activeItem == 0 ? '1' : '.25'">Place an Order</p>
+            </div>
+            <span class="fill-space"></span>
+            <div class="btn-carousel-wrap">
+                <button [ngClass]="{'active':activeItem == 1}" class="btn-carousel" mat-flat-button (click)="owlCar.to('slide2')">
+                    2
+                    <mat-progress-spinner 
+                        class="mps-carousel" 
+                        color="accent" 
+                        strokeWidth="2" 
+                        diameter="67" 
+                        mode="determinate" 
+                        [value]="spinnerVal" 
+                        *ngIf="activeItem == 1">
+                    </mat-progress-spinner>
+                </button>
+                <p [style.opacity]="activeItem == 1 ? '1' : '.25'">Make a payment</p>
+            </div>
+            <span class="fill-space"></span>
+            <div class="btn-carousel-wrap">
+                <button [ngClass]="{'active':activeItem == 2}" class="btn-carousel" mat-flat-button (click)="owlCar.to('slide3')">
+                    3
+                    <mat-progress-spinner 
+                        class="mps-carousel" 
+                        color="accent" 
+                        strokeWidth="2" 
+                        diameter="67" 
+                        mode="determinate" 
+                        [value]="spinnerVal" 
+                        *ngIf="activeItem == 2">
+                    </mat-progress-spinner>
+                </button>
+                <p [style.opacity]="activeItem == 2 ? '1' : '.25'">Order in progress</p>
+            </div>
+            <span class="fill-space"></span>
+            <div class="btn-carousel-wrap">
+                <button [ngClass]="{'active':activeItem == 3}" class="btn-carousel" mat-flat-button (click)="owlCar.to('slide4')">
+                    4
+                    <mat-progress-spinner 
+                        class="mps-carousel" 
+                        color="accent" 
+                        strokeWidth="2" 
+                        diameter="67" 
+                        mode="determinate" 
+                        [value]="spinnerVal" 
+                        *ngIf="activeItem == 3">
+                    </mat-progress-spinner>
+                </button>
+                <p [style.opacity]="activeItem == 3 ? '1' : '.25'">Receive your paper</p>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section> -->

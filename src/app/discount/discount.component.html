@@ -1,0 +1,32 @@
+<section class="width1000 sec-discount-wrap">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Give $10, Get $30</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p>Share your Coupon code OR Referral link & get $15 for every friend</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="clipboard-style-common">
+                <span class="fill-space spn-copy-input"><input type="text" [value]="couponCode"></span>
+                <span class="spn-copy"><button [disabled]="isCopyDisabled" type="button" mat-button [cdkCopyToClipboard]="couponCode" (click)="openSnackBar('Coupon has been copied.','Ok')">Copy</button></span>   
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row><span class="spn-or fill-space">or</span></mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="clipboard-style-common">
+                <span class="fill-space spn-copy-input"><input type="text" [value]="referralLink"></span>
+                <span class="spn-copy"><button [disabled]="isCopyDisabled" type="button" mat-button [cdkCopyToClipboard]="referralLink" (click)="openSnackBar('Referral Link has been copied.','Ok')">Copy</button></span>   
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a class="a-how-it-works" mat-button (click)="openDialog()">See How it Works</a>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span class="spn-discount-info">Give your special promo code or your referral link to your friends. Once they use this code or follow your link to place an order at CheapestEssay, they will receive $10 off the price and you will get $30 to your balance once they spend a total of at least $100 worth of orders.</span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a class="a-terms-of-use" mat-toolbar routerLink="Terms of use">Terms of Use</a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>

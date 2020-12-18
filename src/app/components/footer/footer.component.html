@@ -1,0 +1,58 @@
+<mat-toolbar class="mt-footer-wrap" color="primary">
+    <mat-toolbar-row class="mtr-trapezoid-box default-width">
+        <div class="trapezoid-box"></div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="default-width mtr-footer-header">
+        <h2><span>Cheapest</span> Essay</h2>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="default-width mtr-footer-wrap">
+        <table class="tbl-footer">
+            <tbody>
+                <tr>
+                    <th>GENERAL</th>
+                    <th>CLIENT AREA</th>
+                    <th>POLICY</th>
+                    <th class="w-foot-hidden">CONTACT</th>
+                </tr>
+                <tr *ngFor="let list of footer_links">
+                    <td><a mat-list-item [routerLink]="list.generals[1]">{{list.generals[0]}}</a></td>
+                    <td><a mat-list-item [routerLink]="list.clients[1]">{{list.clients[0]}}</a></td>
+                    <td><a mat-list-item [routerLink]="list.policies[1]">{{list.policies[0]}}</a></td>
+                    <td class="w-foot-hidden"><a mat-list-item target="_blank" [href]="list.contacts[1]">{{list.contacts[0]}}</a></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><a mat-list-item href="https:/blog.cheapestessay.com" target="_blank">Blog</a></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-social-media">
+        <div class="social-media-wrap">
+            <span class="spn-social-media"></span>
+            <span class="fill-space"></span>
+            <span class="spn-social-media"></span>
+            <span class="fill-space"></span>
+            <span class="spn-social-media"></span>
+            <span class="fill-space"></span>
+            <span class="spn-social-media"></span>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-footer-socials">
+        <div class="default-width footer-socials-inner">
+            <span>
+                <p>Copyright © 2020. www.CheapestEssay.com. All rights reserved.</p>
+            </span>
+            <span class="fill-space"></span>
+            <span>
+                <div class="social-links-wrap">
+                    <span><button type="button" mat-flat-button routerLink="/terms-of-use">Terms of use</button></span>
+                    <span class="fill-space social-links-separator"> | </span>
+                    <span><button type="button" mat-flat-button routerLink="/privacy-policy">Privacy Policy</button></span>
+                </div>
+            </span>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

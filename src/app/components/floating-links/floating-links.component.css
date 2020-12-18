@@ -1,0 +1,81 @@
+.floating-links-wrap {
+    padding: 0 16px 0 4px;
+    display: block;
+    white-space: nowrap;
+    position: fixed;
+    left: 0;
+    top: 287px;
+    background-color: #FBFBFB;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .18);
+    border-radius: 0 10px 10px 0;
+    width: 20px;
+    transition: all .3s ease;
+    z-index: 1;
+    overflow: hidden;
+}
+.sprite-tel {
+    width: 40px;
+    height: 40px;
+    background-position: 1px -621px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.sprite-mail {
+    width: 40px;
+    height: 40px;
+    background-position: 0px -509px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.sprite-chat {
+    width: 40px;
+    height: 40px;
+    background-position: 0px -32px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.sprite-fb-chat {
+    width: 40px;
+    height: 40px;
+    background-position: 0px -156px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.sprite-whatsaap-icon {
+    width: 40px;
+    height: 40px;
+    background-position: 0px -824px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.sprite-instagram-logo2 {
+    width: 40px;
+    height: 40px;
+    background-position: -1px -459px;
+    display: inline-block;
+    zoom: 0.5;
+}
+.floating-links-wrap a {
+    display: block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #6b717b;
+    font-family: "SF Pro Text Regular";
+    text-decoration: none;
+    padding-left: 35px;
+    position: relative;
+    margin: 12px 0;
+}
+.floating-links-wrap a span:first-child {
+    position: absolute;
+    left: 8px;
+}
+.blue-link {
+    color: #0b65ff !important;
+}
+.green-link {
+    color: #07B825 !important;
+}
+.violet-link {
+    color: #B13092 !important;
+}

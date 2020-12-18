@@ -1,0 +1,410 @@
+.mtb-new-order {
+    padding-top: 140px;
+    padding-bottom: 120px;
+    position: relative;
+}
+.new-order-wrap {
+    padding: 30px 51px 57px 51px;
+    height: 100%;
+    width: 100%;
+    max-width: 705px;
+    margin: 0 auto;
+    border-radius: 18px;
+    background-color: #F2F2F2;
+    box-shadow: 0 5px 12px 0 rgba(64,85,196,0.14);
+    position: relative;
+    overflow: hidden;
+}
+.sec-order-wrap.sec-edit-header {
+    margin-top: 0;
+    margin-bottom: 30px;
+}
+.sec-order-wrap.sec-edit-header h1 {
+    color: #111111;
+    font-family: "SF Pro Text Semibold";
+    font-size: 50px;
+    line-height: 46px;
+    text-align: left;
+}
+.sec-order-wrap.sec-service-type {
+    margin-top: 0;
+}
+.sec-order-wrap.sec-format-style {
+    margin-top: 50px;
+}
+.sec-order-wrap.sec-pages,
+.sec-order-wrap.sec-topic {
+    margin-top: 17px;
+}
+.sec-order-wrap {
+    display: flex;
+    margin-top: 30px;
+}
+.sec-other-order-wrap {
+    display: flex;
+    margin-top: 10px;
+}
+.spn-text-wrap,
+.spn-input-wrap {
+    width: 518px;
+}
+.sec-details .spn-text-wrap,
+.sec-other-order-wrap .spn-input-wrap,
+.sec-topic .spn-input-wrap {
+    display: flex;
+}
+.p-order-label {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 45px;
+    margin: 0;
+}
+.mbtg-common-style {
+    width: 100%;
+    height: 45px;
+    border-radius: 7px !important;
+    overflow: hidden !important;
+    border: none !important;
+    display: flex;
+}
+.mbtg-common-style.deadline-wrap {
+    height: 50px;
+}
+.mbtg-common-style mat-button-toggle {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 33px;
+    border: none !important;
+}
+.mbtg-common-style .p-dl {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 33px;
+    margin: 0 auto;
+}
+.mbtg-common-style .p-du {
+    font-size: 12px;
+    line-height: 6px;
+    margin: 0 auto;
+    color: #13B675;
+}
+.mbtg-common-style .mat-button-toggle-checked {
+    background-color: #12245A;
+    color: #ffffff;
+}
+.mbtg-common-style .mat-button-toggle-checked .p-du,
+.mbtg-common-style .mat-button-toggle-checked .p-dl {
+    color: #ffffff !important;
+}
+.mbtg-common-style .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    padding: 0;
+}
+.mbtg-format-style .mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    text-align: center;
+    padding: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 88px;
+}
+.tri-btn-toggle {
+    width: 33.33%;
+}
+.mfl-common-select{
+    width: 100%;
+    height: 45px;
+}
+.mfl-common-select .mat-form-field-flex {
+    padding: 0 !important;
+}
+.mfl-common-select .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+.mfl-common-select .mat-select-value-text {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+.mfl-common-select .mat-select-arrow-wrapper {
+    visibility: hidden;
+}
+.mfl-common-select .mat-form-field-underline {
+    display: none;
+}
+.mfl-common-select .mat-form-field-infix {
+    padding: 10px 45px 13px 18px;
+    border: 0 !important;
+    background-color: #ffffff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.mt-common-select {
+    border: 1px solid #3B7CFF;
+    border-radius: 7px;
+    background-color: #F2F2F2;
+    width: 100%;
+}
+.mt-common-select .mat-optgroup-label {
+    font-size: 14px !important;
+}
+.mt-common-select .mat-option {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+    font-size: 16px !important;
+    padding: 9px 16px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+    font-family: "SF Pro Text Regular";
+}
+.mt-common-select .mat-active {
+    background-color: #12245A !important;
+    color: #ffffff !important;
+}
+.mfl-common-select .dd-icon {
+    width: 10px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    zoom: 1.5;
+    right: 6px;
+    top: -4px;
+    transform: translate(-50%, 75%);
+    background-size: 1190px;
+    background-position: -5px -65px;
+}
+.mt-search-input::placeholder {
+    color: #959595;
+}
+.mt-search-input:focus {
+    outline: none;
+}
+.mt-search-input {
+    width: 90%;
+    border-radius: 8px !important;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    border: none;
+    padding: 10px 17px;
+}
+.lbl-common-style {
+    color: #959595;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: right;
+    display: block;
+    margin-top: 10px;
+}
+.pages-option-wrap {
+    display: flex;
+}
+.spn-page-counter {
+    width: 100%;
+    height: 45px;
+    max-width: 293.92px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.spn-select-total button .dec-icon,
+.spn-page-counter button .dec-icon {
+    width: 20px;
+    height: 12px;
+    display: block;
+    margin: auto;
+    background-position: -228px -12px;
+    background-size: 1300px;
+}
+.spn-select-total button .inc-icon,
+.spn-page-counter button .inc-icon {
+    width: 20px;
+    height: 15px;
+    display: block;
+    margin: auto;
+    background-position: -210px -11px;
+    background-size: 1300px;
+}
+.spn-page-counter > div {
+    display: flex;
+}
+.spn-page-counter input {
+    width: 40px;
+    border: none;
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    pointer-events: none;
+    height: 45px;
+    background-color: transparent;
+}
+.spn-space-counter {
+    width: 100%;
+    height: 45px;
+    max-width: 208px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    overflow: hidden;
+}
+.spn-input-wrap .mat-input-element:focus {
+    outline: none;
+}
+.spn-input-wrap .mat-input-element {
+    width: 100%;
+    height: 45px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+    padding: 0 18px;
+    border: none;
+}
+.spn-text-wrap .mat-input-element {
+    width: 100%;
+    height: 87px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding: 10px 18px;
+    border: none;
+    resize: none;
+}
+.btn-upload {
+    height: 45px;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+    text-align:left;
+}
+.ma-order-options {
+    margin-top: 20px;
+    margin-bottom: 57px;
+}
+.ma-order-options mat-expansion-panel {
+    box-shadow: none !important;
+    background: none;
+    margin-top: 50px !important;
+}
+.ma-order-options mat-panel-title {
+    text-align: center;
+    display: block;
+    margin: 0;
+    color: #FF7900;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: -0.62px;
+    line-height: 22px;
+
+}
+.ma-order-options .mat-expansion-panel-body {
+    padding: 0
+}
+.ma-order-options .mat-expansion-panel-header {
+    padding: 0;
+    display: inline;
+    flex-direction: row;
+}
+.sec-other-option {
+    margin-top: 40px;
+    display: flex;
+}
+.spn-other-option {
+    height: 135px;
+    max-width: 342px;
+    width: 100%;
+    background-color: #ffffff;
+    border-radius: 7px;
+    overflow: hidden;
+}
+.sec-other-option-inner.sec-toggle {
+    cursor: pointer;
+}
+.sec-other-option-inner {
+    display: flex;
+    height: 45px;
+}
+.spn-select-total {
+    width: 100%;
+    max-width: 160px;
+}
+.spn-select-total > div {
+    display: flex
+}
+.spn-toggle-option {
+    width: 55px;
+    padding-top: 13px;
+}
+.inp-inner:focus {
+    outline: none;
+}
+.inp-inner {
+    height: 45px;
+    width: 40px;
+    border: none;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: center;
+    pointer-events: none;
+}
+.spn-select-total button {
+    height: 45px;
+}
+.p-options-label {
+    padding-left: 48px;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0.7px;
+    line-height: 45px;
+    margin: 0;
+}
+span.spn-price-color {
+    color: #FF7900;
+    font-size: 12px;
+    letter-spacing: 0.7px;
+}
+.btn-toggle-option {
+    height: 20px;
+    width: 20px;
+    background-color: #EFF2F7 !important;
+    margin: 0 auto !important;
+    box-shadow: none !important;
+    display: block;
+}
+.btn-toggle-option.is-active {
+    background-color: #3B7CFF !important;
+    border: 5px solid #EFF2F7;
+}
+.disabled-style {
+    background-color: #D9D9D9;
+}

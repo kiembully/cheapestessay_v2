@@ -1,0 +1,25 @@
+<form class="pay-order-wrap" (ngSubmit)="myChild.payOrder()">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-tab-group class="mtb-pay-order" mat-align-tabs="center" animationDuration="100ms" #paymentTabs (selectedTabChange)="tabChanged($event)">
+        <mat-tab label="Visa">
+            <app-common-pay-order
+            *ngIf="!isProgressLoading"
+            [card_details]="card_details"
+            [order_id]="order_id"
+            [agreement]="agreement.value"
+            [tabIndex]="tabIndex"
+            [isCard]="true"></app-common-pay-order>
+        </mat-tab>
+        <mat-tab label="PayPal">
+            <app-common-pay-order
+            *ngIf="!isProgressLoading"
+            [card_details]="card_details"
+            [order_id]="order_id"
+            [agreement]="agreement.value"
+            [tabIndex]="tabIndex"
+            [isCard]="false"></app-common-pay-order>
+        </mat-tab>
+      </mat-tab-group>
+      <mat-checkbox [formControl]="agreement" class="mrb-agreement">I agree to the Cheapest Essay <a mat-dialog-close routerLink="/terms-of-use" mat-button>Terms of Use</a> and <a mat-dialog-close routerLink="/privacy-policy" mat-button>Privacy Policy.</a></mat-checkbox>
+      <button mat-flat-button type="submit" class="btn-pay-order">Pay with {{displayPaymentMode(tabIndex)}}</button>
+</form>

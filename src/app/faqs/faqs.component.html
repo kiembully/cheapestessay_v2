@@ -1,0 +1,37 @@
+<app-common-subpages-header [data_index]="8"></app-common-subpages-header>
+
+<section class="default-width sec-faqs">
+    <mat-toolbar color="primary" class="mt-faqs">
+        <mat-toolbar-row class="common-sub-header"><h2>HOW CAN WE HELP?</h2></mat-toolbar-row>
+        <mat-toolbar-row class="mtr-tabs-wrap">
+            <mat-tab-group animationDuration="0ms" dynamicHeight>
+                <mat-tab *ngFor="let list of faqsContent">
+                    <ng-template mat-tab-label>
+                        <span class="material-icons m-faqs-tab">{{list.icon}}</span>
+                        <span class="w-faqs-tab">{{list.label}}</span>
+                    </ng-template>
+                    <mat-toolbar>
+                        <mat-toolbar-row class="mtr-common-faqs-wrap">
+                            <app-common-faqs-data [faq_home_content]="list.content"></app-common-faqs-data>
+                        </mat-toolbar-row>
+                    </mat-toolbar>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<section class="default-width sec-pro-writing margin-bottom70">
+    <mat-toolbar>
+        <mat-toolbar-row class="common-sub-header">
+            <h3>OUR SERVICES</h3>
+        </mat-toolbar-row>
+    </mat-toolbar>  
+</section>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

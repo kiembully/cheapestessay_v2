@@ -1,0 +1,35 @@
+.mt-logout {
+    padding: 100px 20px 80px 20px;
+    width: 100%;
+    max-width: 500px;
+    display: block;
+    margin: 0 auto;
+}
+.mt-logout h1 {
+    color: #1F1F1F;
+    font-size: 26px;
+    font-family: "SF Pro Text Bold";
+    line-height: 40px;
+    margin: 0 auto 62px auto;
+    text-align: center;
+}
+.btn-logout-wrap {
+    width:100%;
+    max-width: 190px;
+}
+.mt-logout button {
+    width: 100%;
+    height: 48px;
+    border-radius: 7px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.05), 0 2px 2px 0 rgba(0, 0, 0, 0.1);
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    line-height: 22px;
+    border: none;
+    background-color: #D0555A;
+    display: block;
+}
+.mt-logout button.btn-logout {
+    background-color: #3B7CFF;
+}

@@ -1,0 +1,123 @@
+.sec-discount-wrap {
+    margin-bottom: 180px;
+    margin-top: 76px;
+}
+.sec-discount-wrap h1 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: 43px;
+    text-align: center;
+    margin: 0 auto 26px auto;
+    display: block;
+    position: relative;
+}
+.sec-discount-wrap p {
+    margin: 0 auto 90px auto;
+    display: block;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0.9px;
+    line-height: 24px;
+    text-align: center;
+}
+.clipboard-style-common {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    border-radius: 22.5px;
+    background-color: #FFD500;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.11);
+    display: flex;
+    position: relative;
+}
+.spn-copy { width: 60px; display: flex; }
+.clipboard-style-common button {
+    padding: 8px 14px;
+    border-radius: 60px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 12px;
+    letter-spacing: 0.65px;
+    line-height: 10px;
+}
+.spn-copy-input {
+    display: flex;
+}
+.spn-copy-input input:focus {
+    outline: none;
+}
+.spn-copy-input input {
+    width: 100%;
+    background: transparent;
+    text-align: center;
+    border: none;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 21px;
+    padding-left: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.spn-discount-info {
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 25px;
+    text-align: center;
+    max-width: 871px;
+    width: 100%;
+    display: block;
+    margin: 81px auto 0 auto;
+}
+.spn-or {
+    display: block;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 21px;
+    text-align: center;
+    margin: 12px auto;
+}
+.a-how-it-works {
+    display: block;
+    margin: 33px auto 0 auto;
+    color: #1A62F5;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0.9px;
+    line-height: 21px;
+    text-align: center;
+}
+.a-terms-of-use {
+    color: #4A90E2;
+    font-family: "SF Pro Text Regular";
+    font-size: 13px;
+    letter-spacing: 0.65px;
+    line-height: 15px;
+    text-align: center;
+    display: block;
+    margin: 11px auto 0 auto;
+    text-decoration: none;
+}
+/* .mat-simple-snackbar {
+    text-align: center;
+    display: block !important;
+    margin: 0 auto !important;
+    font-family: "SF Pro Text Regular";
+} */
+.mat-simple-snackbar-action button {
+    background-color: #ffffff;
+    font-family: "SF Pro Text Regular";
+    color: #000000;
+}

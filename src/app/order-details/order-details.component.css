@@ -1,0 +1,94 @@
+.sec-order-details,
+.sec-order-details-nav {
+    margin-top: 22px;
+    display: flex;
+}
+.sec-order-details {
+    margin-bottom: 180px;
+    border-radius: 5px;
+    overflow: hidden; 
+    position: relative;
+}
+.spn-order-details-status {
+    width: 250px;
+    position: relative;
+}
+.btn-back {
+  border-radius: 60px;
+  background-color: #FFFFFF;
+  padding: 5px 22px;
+  box-shadow: 0 2px 4px 0 rgba(64,85,196,0.14);
+  color: #111111;
+  font-family: "SF Pro Text Regular";
+  font-size: 16px;
+  letter-spacing: 0;
+  line-height: 19px;
+}
+.spn-order-details-wrap {
+  min-height: 718px;
+  width: 100%;
+  max-width: 735px;
+  border-radius: 5px;
+  background-color: #F2F2F2;
+  box-shadow: 0 2px 6px 0 rgba(64,85,196,0.14);
+  position: relative;
+}
+.sec-order-details-wrap {
+  padding: 0 24px;
+}
+.sec-order-details-wrap .mat-tab-label:last-child {
+  position: absolute;
+  right: 0;
+  padding: 0;
+  opacity: 1 !important;
+}
+.sec-order-details-wrap .mat-tab-label {
+  height: 57px;
+}
+.sec-order-details-wrap .mat-tab-nav-bar,
+.sec-order-details-wrap .mat-tab-header {
+  margin-bottom: 28px;
+}
+.sec-order-details-wrap .mat-tab-label,
+.sec-order-details-wrap .mat-tab-link {
+    opacity: 0.6;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+    min-width: 100px;
+}
+.sec-order-details .mat-tab-label-active {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+    opacity: 1;
+}
+.sec-order-details .mat-tab-group.mat-primary .mat-ink-bar,
+.sec-order-details .mat-tab-nav-bar.mat-primary .mat-ink-bar {
+    background-color: #000000;
+    width: 100px;
+}
+.btn-order-option {
+    border-radius: 16px;
+    border: none;
+    margin: 0 5px;
+    color: #000000;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    padding: 5px 25px;
+    background-color: #FFD500;
+    margin-right: 15px;
+}
+.btn-order-option:last-child {
+    margin: 0;
+    background-color: #D0555A;
+    color: #FFFFFF;
+}

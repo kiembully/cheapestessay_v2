@@ -1,0 +1,88 @@
+.subpages-banner {
+    margin-top: 150px;
+}
+.mt-hiw-banner {
+    margin-top: 150px;
+}
+.mtr-subpages {
+    display: block;
+    white-space: normal;
+}
+h1.common-subpage-header {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 44px;
+    letter-spacing: 0;
+    line-height: 53px;
+    border-bottom: 3px solid #60AAEE;
+    text-align: center;
+    display: table;
+    padding-bottom: 27px;
+    margin: 0 auto 38px auto
+}
+p.common-subpage-subheader {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 43px auto
+}
+.btn-order-now {
+    padding: 20px 35px;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin: 0 auto 57px auto
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    h1.common-subpage-header {
+        font-size: 28px;
+        line-height: 30px;
+    }
+    p.common-subpage-subheader {
+        font-family: "SF Pro Text Regular";
+        font-size: 16px !important;
+        margin: 0 auto 25px auto
+    }
+    .btn-order-now {
+        padding: 12px 15px
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    h1.common-subpage-header {
+        font-size: 38px;
+        line-height: 40px;
+    }
+    p.common-subpage-subheader {
+        font-family: "SF Pro Text Regular";
+        font-size: 20px;
+        margin: 0 auto 35px auto
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    h1.common-subpage-header {
+        font-size: 30px;
+        line-height: 32px;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

@@ -1,0 +1,54 @@
+.mt-discout-howitworks {
+    padding: 114px 20px;
+}
+.mt-discout-howitworks h1 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 35px;
+    letter-spacing: 1px;
+    line-height: 50px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 103px auto;
+}
+.h4-step {
+    margin: 0 auto 24px auto;
+    display: block;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 25px;
+    text-align: center;
+}
+.p-step-detail {
+    max-width: 224px;
+    width: 100%;
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 25px;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+.step-lbl-wrap {
+    height: 42.81px;
+    width: 54.81px;
+    box-shadow: 0 6px 12px 0 rgba(32,33,39,0.08);
+    display: block;
+    margin: 0 auto 34px auto;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 25px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: center;
+    background-color: #1E88E5;
+    border-radius: 7px;
+    padding-top: 12px;
+}
+.add-green { background-color: #13B675; }
+.add-red { background-color: #D0021B; }

@@ -1,0 +1,113 @@
+.reviews-wrap {
+    display: flex;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 4px 6px 6px 2px rgba(0,0,0,0.5);
+    padding: 30px 12.5px;
+}
+.reviews-wrap span {
+    text-align: center;
+}
+.sec-reviews-wrap p,
+.reviews-wrap p {
+    font-family: "SF Pro Text Regular";
+    color: #000000;
+    font-size: 18px;
+    line-height: 19px;
+    display: block;
+    letter-spacing: 0;
+}
+.sec-reviews-wrap p.p-rate,
+.reviews-wrap p.p-rate {
+    font-family: "SF Pro Text Bold";
+    font-size: 32px;
+    line-height: 10px;
+    position: relative;
+    letter-spacing: 0;
+}
+.client-rate-icon {
+    height: 17px;
+    width: 109px;
+    background-position: -148px -113px;
+    background-size: 3160px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.facebook-rate-icon,
+.google-rate-icon {
+    height: 17px;
+    width: 109px;
+    background-position: -273px -113px;
+    background-size: 3160px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.sitejabber-rate-icon {
+    height: 17px;
+    width: 109px;
+    background-position: -20px -113px;
+    background-size: 3160px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.spn-flex {
+    display: flex;
+}
+.review-img-wrap{
+    box-sizing: border-box;
+    height: 78px;
+    width: 78px;
+    border: 3px solid #12245A;
+    margin: auto;
+    border-radius: 50%;
+}
+
+/* carousel starts  */
+.sec-reviews-wrap {
+    display: none;
+    margin: 75px auto !important;
+}
+.sec-reviews-wrap .owl-carousel .owl-stage-outer {
+    height: 250px;
+}
+.sec-reviews-wrap .owl-theme .owl-dots .owl-dot {
+    margin: 0 0 !important;
+}
+.sec-reviews-wrap .owl-item {
+    padding: 15px;
+}
+.sec-reviews-wrap .review-item-wrap {
+    display: block;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 4px 6px 6px 2px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+  
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .sec-reviews-wrap {
+        display: block;
+    }
+    .mt-reviews-wrap {
+        display: none;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

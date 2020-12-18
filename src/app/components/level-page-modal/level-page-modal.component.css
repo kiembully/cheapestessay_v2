@@ -1,0 +1,82 @@
+.mt-level-howitworks {
+    padding: 114px 20px;
+}
+.mt-level-howitworks h1 {
+    display: block;
+    margin: 0 auto 55px auto;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 35px;
+    letter-spacing: 1px;
+    line-height: 50px;
+}
+.level-description-wrap {
+    width: 100%;
+    height: fit-content;
+    display: block;
+    max-width: 303px;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    border-radius: 7px;
+}
+.level-description-wrap h2 {
+    color: #8392A7;
+    font-family: "SF Pro Text Bold";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 29px;
+    text-align: center;
+    display: block;
+    margin: 0 auto 31px auto;
+}
+.level-description-wrap h2.gold { color: #FFD500 }
+.level-description-wrap h2.red { color: #D0021B }
+.level-description-wrap h3 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 27px;
+    margin: 0 auto 19px auto;
+}
+.level-description-wrap p {
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 27px;
+    margin: 0 auto 12px auto;
+}
+.level-description-wrap p:last-child {
+    margin: 0;
+}
+.mtr-level-description {
+    padding: 0;
+}
+.silver-wrap {
+    padding: 23px 22px 33px 22px;
+    margin-top: 86px;
+}
+.gold-wrap {
+    padding: 24px 21px 33px 21px;
+    margin-top: 43px;
+}
+.vip-wrap {
+    padding: 31px 16px 33px 16px;
+}
+.level-description-outer {
+    display: flex;
+    height: 314px;
+    position: relative;
+}
+.p-level-status {
+    display: block;
+    margin: 16px auto;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    text-align: center;
+    visibility: hidden;
+}

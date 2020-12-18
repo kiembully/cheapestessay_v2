@@ -1,0 +1,123 @@
+.mtr-mbg-body {
+    position: relative;
+    align-items: self-end;
+    margin-bottom: 130px;
+}
+.mtr-mbg-body:last-child {
+    margin-bottom: 105px;
+}
+.wrap-full-refund {
+    background: #FFFFFF;
+    padding: 67px 7px 75.91px 7px;
+    border-radius: 16px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+    max-width: 365px;
+}
+.wrap-half-refund {
+    background: #F5F5F5;
+    padding: 103.95px 0 314.13px;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+    border-left: none;
+    max-width: 355px;
+    margin-top: 20px;
+}
+.wrap-20-refund {
+    background: #EBEBEB;
+    padding: 137.55px 9px 224.2px 9px;
+    border-radius: 0 16px 16px 0;
+    box-shadow: 0 2px 4px 0 rgba(51, 32, 32, 0.17);
+    margin-top: 40px;
+}
+.mtr-mbg-body h2 {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 28px;
+    line-height: 34px;
+    text-align: center;
+    margin-bottom: 32px;
+    white-space: normal;
+}
+.ml-mbg-body.mat-list-base .mat-list-item {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 16px;
+    line-height: 27px;
+    text-align: justify;
+    white-space: normal;
+    height: 100%;
+    margin-bottom: 24px;
+}
+.ml-mbg-body.mat-list-base .mat-list-item:last-child {
+    margin-bottom: 0;
+}
+.spn-no-refund {
+    padding: 59px 40px 107px 40px;
+    border-radius: 16px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+}
+.spn-no-refund h2 {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 30px;
+    line-height: 36px;
+    margin-bottom: 63px;
+    white-space: normal;
+}
+.no-refund-wrap {
+    display: block;
+    white-space: normal;
+    text-align: justify;
+    margin-bottom: 32px;
+}
+.no-refund-wrap:last-child {
+    margin-bottom: 0;
+}
+.no-refund-wrap h3 {
+    text-align: left;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 20px;
+}
+.no-refund-wrap p {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 16px;
+    line-height: 27px;
+}
+
+.ma-money-back {
+    width: 100%;
+    white-space: normal
+}
+.ma-money-back mat-expansion-panel {
+    margin-bottom: 24px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 10px 0 rgba(0,0,0,0.5);
+}
+.ma-money-back mat-expansion-panel:last-child {
+    margin-bottom: 0;
+}
+.ma-money-back mat-panel-title {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.ma-money-back mat-expansion-panel-header {
+    height: 88px;
+    padding: 0 40px
+}
+.ma-money-back p {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: justify;
+}

@@ -1,0 +1,87 @@
+.ma-faq-wrap {
+    width: 100%;
+}
+.ma-faq-wrap mat-expansion-panel:last-child {
+    margin-bottom: 0;
+}
+.ma-faq-wrap mat-panel-title {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 31px;
+    white-space: normal
+}
+.ma-faq-wrap .spn-matprefix {
+    margin-right: 5px;
+    align-self: start;
+}
+.ma-faq-wrap .material-icons {
+    color: #12245A;
+    font-size: 34px;
+    align-self: center;
+    margin-right: 20px;
+}
+.ma-faq-wrap mat-expansion-panel {
+    margin-bottom: 25px;
+    border-radius: 8px;
+    background-color: #DCE9F5 !important;
+    box-shadow: 2px 1px 10px 0 rgba(0,0,0,0.5);
+}
+.ma-faq-wrap mat-expansion-panel-header {
+    height: 80px;
+}
+.ml-info-body,
+.ma-faq-wrap .p-faq-content {
+    margin: 0;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 18px;
+    white-space: normal;
+}
+.ml-info-body {
+    margin-top: 15px;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {
+    .ma-faq-wrap mat-panel-title {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .ml-info-body,
+    .ma-faq-wrap .p-faq-content {
+        font-size: 11px;
+        line-height: 13px;
+    }
+}
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+  .common-sub-header h2 {
+      line-height: 52px;
+      padding-bottom: 20px;
+      text-align: center;
+      text-align: -webkit-center;
+  }
+  .ma-faq-wrap mat-panel-title {
+      font-size: 22px;
+      line-height: 26px;
+  }
+  .ml-info-body,
+  .ma-faq-wrap .p-faq-content {
+      font-size: 12px;
+      line-height: 14px;
+  }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) {
+    
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {
+}

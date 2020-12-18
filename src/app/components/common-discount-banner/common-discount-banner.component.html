@@ -1,0 +1,27 @@
+<mat-toolbar class="mt-new-user-form">
+    <mat-toolbar-row *ngIf="!has_image">
+        <h3>FIRST TIME HERE?</h3>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <form action="" class="frm-new-user-discount" [ngClass]="(has_image)?'reverse-row':''">
+            <span>
+                <p *ngIf="!has_image">USE 15% DISCOUNT NOW</p>
+                <div *ngIf="has_image" class="discount-img-wrap"></div>
+            </span>
+            <span class="fill-space"></span>
+            <span [ngClass]="(has_image)?'add-flex':''">
+                <div class="new-user-inner-wrap">
+                    <span class="padding-right20"><input type="email" placeholder="Enter Email"></span>
+                    <span class="fill-space"></span>
+                    <span><button type="button" mat-flat-button>SEND</button></span>
+                </div>
+                <div class="new-user-inner-wrap" *ngIf="has_image">
+                    <p class="p-new-user-form padding-top20">You’ll get a high-quality service, that’s for sure. To welcome you, we give you a 15% discount on your first</p>
+                </div>
+            </span>
+        </form>
+    </mat-toolbar-row>
+    <mat-toolbar-row *ngIf="!has_image">
+        <p class="p-new-user-form">You’ll get a high-quality service, that’s for sure. To welcome you, we give you a 15% discount on your first</p>
+    </mat-toolbar-row>
+</mat-toolbar>

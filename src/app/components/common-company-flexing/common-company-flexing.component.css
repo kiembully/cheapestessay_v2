@@ -1,0 +1,74 @@
+.sec-company-flex mat-toolbar-row {
+    white-space: normal;
+    text-align: center;
+}
+.sec-company-flex mat-toolbar-row span {
+    display: flex;
+    align-self: normal;
+}
+.sec-company-flex-bottom {
+    margin-bottom: 120px;
+}
+.company-flex-inner {
+    min-height: 150px;
+    width: 425.95px;
+    border: 3px solid #12245A;
+    border-radius: 4.5px;
+    padding: 70px 30px;
+    display: block;
+}
+.company-flex-inner h5 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-bottom: 25px;
+}
+.company-flex-inner p {
+    font-family: "SF Pro Text Medium";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 30px;
+    max-width: 483px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    .company-flex-inner[_ngcontent-fpj-c106] {
+        max-width: 325.95px !important;
+        width: 100% !important;
+    }
+    .company-flex-inner {
+        padding: 50px 10px
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .sec-company-flex mat-toolbar-row:first-child {
+        display: flex;
+    }
+    .sec-company-flex mat-toolbar-row span,
+    .sec-company-flex mat-toolbar-row {
+        display: block;
+        text-align: -webkit-center
+    }
+    .sec-company-flex-bottom {
+        margin-bottom: 0;
+    }
+    .company-flex-inner {
+        width: 100% !important;
+        margin-bottom: 30px;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .company-flex-inner {
+        width: 325.95px !important;
+    }
+}

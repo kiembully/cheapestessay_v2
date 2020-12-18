@@ -1,0 +1,120 @@
+.mt-order-details-status {
+    padding: 0;
+    width: 100%;
+}
+.mt-order-details-status mat-toolbar-row {
+    display: block;
+    width: 100%;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(64,85,196,0.14);
+    padding: 0;
+}
+.margin-bottom12 {
+    margin-bottom: 12px;
+}
+.mtr-order-number-wrap {
+    height: 138px !important;
+}
+.mtr-order-status-wrap {
+    height: 376px !important;
+}
+p.p-order-details-common {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 24px;
+    display: block;
+    text-align: center;
+    margin: 13.5px auto;
+    border-bottom: 1px solid #F5F5F5;
+}
+.mtr-order-number-wrap h1 {
+    margin: 15px auto;
+    color: #D06468;
+    font-family: "SF Pro Text Bold";
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 58px;
+    text-align: center;
+}
+.add-common-flex {
+    display: flex;
+}
+.p-order-deadline {
+    color: #9B9B9B;
+    font-family: "SF Pro Text Regular";
+    font-size: 13px;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+    display: block;
+    text-align: center;
+    white-space: normal;
+    padding: 0 14px;
+    margin: 19px auto 33px auto;
+}
+.sec-deadline-timer {
+    margin-top: 36px;
+    padding: 0 14px;
+}
+.sec-deadline-timer > span {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 42px;
+    text-align: center;
+}
+.sec-deadline-timer > span > span {
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  display: block;
+}
+.sec-order-details-btn {
+    display: block;
+    padding: 0 14px;
+}
+.sec-order-details-btn button {
+    display: block;
+    height: 40px;
+    width: 100%;
+    border-radius: 22.5px;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Medium";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 19px;
+    text-align: center;
+    padding: 0 18px;
+    position: relative;
+}
+.btn-waiting {
+    background-color: #D0555A;
+}
+.btn-processing {
+    background-color: #3B7CFF;
+}
+.btn-paid,
+.btn-pay-order {
+    background-color: #71BE7C !important;
+}
+.btn-pay-order.paid {
+    pointer-events: none;
+}
+.btn-pay-order.unpaid {
+    pointer-events: default;
+}
+.margin-bottom18 {
+    margin-bottom: 18px;
+}
+.spn-tot-order {
+    position: absolute;
+    right: 18px;
+}

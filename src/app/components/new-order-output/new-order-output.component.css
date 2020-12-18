@@ -1,0 +1,105 @@
+.order-output-wrap {
+    display: block;
+    position: absolute;
+    top: 140px;
+    left: calc(50% + 432.5px);
+}
+.order-output-wrap.is-fixed {
+    position: fixed !important;
+    top: -210px !important;
+}
+.order-output-wrap.is-fixed1 {
+    position: fixed !important;
+    top: -260px !important;
+}
+.sec-output-wrap {
+    height: 100%;
+    min-height: 200px;
+    width: 240px;
+    border-radius: 18px;
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 12px 0 rgba(64,85,196,0.14);
+    overflow: hidden;
+}
+.sec-output-wrap:first-child {
+    margin-bottom: 30px;
+}
+.order-wrap-inner {
+    display: flex;
+    padding: 30px 18px;
+}
+.video-wrap {
+    display: block;
+}
+.video-wrap iframe {
+    height: 191.79px;
+    width: 100%;
+    display: block;
+}
+p.p-video-label {
+    color: #000000;
+    font-size: 16px;
+    letter-spacing: 0.29px;
+    line-height: 18px;
+    margin: 0 auto;
+    padding: 12px 0;
+    text-align: center;
+}
+.order-output-details {
+    display: block;
+    width: 100%;
+}
+.order-output-details .mat-list-base {
+    padding-top: 0;
+}
+.order-output-details .mat-list-base .mat-list-item {
+    height: 26px !important;
+}
+.order-output-details .mat-list-base .mat-list-item .mat-list-item-content {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding: 0;
+}
+.order-output-details .mat-divider.mat-divider-inset {
+    margin: 12px 0;
+}
+.coupon-link {
+    color: rgb(19, 182, 117);
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding: 0;
+}
+.spn-price-label {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+.spn-tot-price {
+    color: #13B675;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+.btn-submit-order {
+    height: 35px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #13B675;
+    margin-top: 30px;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+}
+.str-limit-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-right: 15px;
+}

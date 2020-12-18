@@ -1,0 +1,45 @@
+<mat-toolbar class="mt-level-howitworks">
+    <mat-toolbar-row>
+        <h1>How it works</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-level-description">
+        <span>
+            <div class="level-description-outer">
+                <div class="level-description-wrap silver-wrap">
+                    <h2>Silver</h2>
+                    <h3>Spend $100 with us and get:</h3>
+                    <p>1% from any order “Lifetime”.</p>
+                    <p>VIP Customer support</p>
+                </div>
+            </div>
+            <p class="p-level-status" [style.visibility]="getCurrentLevel(level) == 1 ? 'visible' : 'null'">I'm here</p>
+        </span>
+        <span class="fill-space"></span>
+        <span>
+            <div class="level-description-outer">
+                <div class="level-description-wrap gold-wrap">
+                    <h2 class="gold">Gold</h2>
+                    <h3>Spend $300 with us and get:</h3>
+                    <p>2% from any order “Lifetime”.</p>
+                    <p>Lifetime Free (Send it E-Mail).</p>
+                    <p>VIP Customer support</p>
+                </div>
+            </div>
+            <p class="p-level-status" [style.visibility]="getCurrentLevel(level) == 2 ? 'visible' : 'null'">I'm here</p>
+        </span>
+        <span class="fill-space"></span>
+        <span>
+            <div class="level-description-outer">
+                <div class="level-description-wrap vip-wrap">
+                    <h2 class="red">VIP</h2>
+                    <h3>Spend $1500 with us and get:</h3>
+                    <p>3% from any order “Lifetime”.</p>
+                    <p>Lifetime Free (Plagiarism Report).</p>
+                    <p>Lifetime Free (Send it E-Mail).</p>
+                    <p>VIP Customer support</p>
+                </div>
+            </div>
+            <p class="p-level-status" [style.visibility]="getCurrentLevel(level) == 3 ? 'visible' : 'null'">I'm here</p>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>

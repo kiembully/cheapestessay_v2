@@ -1,0 +1,76 @@
+.sec-balance-nav,
+.sec-balance {
+    margin-top: 22px;
+}
+.sec-balance-nav {
+    display: flex;
+}
+.sec-balance {
+    margin-bottom: 180px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(64,85,196,0.14);
+    overflow: hidden;
+    position: relative;
+}
+.spn-user-balance {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    padding: 6px 38px;
+    border-radius: 5px;
+    background-color: #FFD500;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.spn-user-balance > strong {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding-left: 15px;
+}
+table.tbl-balance.mat-table {
+  width: 100%;
+}
+.tbl-balance tr.mat-header-row {
+    height: 67px;
+}
+.tbl-balance tr.mat-row, .tbl-balance tr.mat-footer-row {
+    height: 44px;
+}
+.tbl-balance th.mat-header-cell, .tbl-balance td.mat-cell, .tbl-balance td.mat-footer-cell {
+    border-bottom-width: 0;
+    border-bottom-style: 0;
+    text-align: center;
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: -0.5px;
+    line-height: 16px;
+}
+.tbl-balance th.mat-header-cell {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: -0.57px;
+    line-height: 19px;
+}
+.spn-order-num {
+    color: #3B7CFF;
+    text-decoration: none;
+}
+.spn-balance-change {
+    background-color: #13B675;
+    padding: 4px 15px;
+    color: #ffff;
+    border-radius: 12.5px;
+}
+.spn-balance-remain {
+    padding: 4px 15px;
+    background-color: #3B7CFF;
+    color: #ffffff;
+    border-radius: 12.5px;
+}

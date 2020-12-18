@@ -1,0 +1,82 @@
+<section class="sec-profile-nav width1000">
+    <span class="fill-space"></span>
+    <span class="spn-user-id">User ID: {{userId}}</span>
+</section>
+<section class="sec-profile width1000">
+    <span class="spn-split-profile">
+        <mat-toolbar color="primary">
+            <mat-toolbar-row class="prof-style-wrap margin-bottom21" [formGroup]="memberStatusForm">
+                <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                <span class="fill-space">
+                    <p class="p-common-style margin-bottom10">Member Level</p>
+                    <p class="p-date-joined">{{memberStatusForm.value.dateStarted}}</p>
+                </span>
+                <span class="spn-badge-wrap">
+                    <button class="btn-badge" mat-fab [style.background-color]="getBadgeColor(memberStatusForm.value.levelForm.lifetime_discount_name)">{{memberStatusForm.value.levelForm.lifetime_discount_name}}</button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row class="prof-style-wrap margin-bottom21" [formGroup]="nameForm">
+                <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">Full Name</p>
+                    <p class="p-input-det">{{nameForm.value.first_name}} {{nameForm.value.last_name}}</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(0)">Update</button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row class="prof-style-wrap">
+                <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">Password</p>
+                    <p class="p-input-det">**********</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(1)">Update</button>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </span>
+    <span class="fill-space padding-left20"></span>
+    <span class="spn-split-profile prof-style-wrap">
+        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+        <mat-toolbar class="mt-profile-wrap">
+            <mat-toolbar-row [formGroup]="emailForm">
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">Email</p>
+                    <p class="p-input-det">{{emailForm.value.email}}</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(2)">Update</button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">Mobile</p>
+                    <p class="p-input-det">{{mobile}}</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(3)">Update</button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row>
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">WhatsApp <span>( Optional )</span></p>
+                    <p class="p-input-det">{{whatsapp}}</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(4)">Update</button>
+                </span>
+            </mat-toolbar-row>
+            <mat-toolbar-row [formGroup]="addressForm">
+                <span class="fill-space padding-v26">
+                    <p class="p-common-style">Billing Address <span>( Optional )</span></p>
+                    <p class="p-input-det">{{addressForm.value.street}}, {{addressForm.value.city}}, {{addressForm.value.state}} {{addressForm.value.zipcode}}</p>
+                </span>
+                <span class="spn-contain-update">
+                    <button mat-flat-button type="button" class="btn-update-profile" (click)="openUpdateProfile(5)">Update</button>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </span>
+</section>

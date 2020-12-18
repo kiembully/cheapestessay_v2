@@ -1,0 +1,273 @@
+.calculate-page-wrap {
+    height: 100%;
+    max-height: 711.14px;
+    width: 450px;
+    border-radius: 15px;
+    background-color: #F2F2F2;
+    box-shadow: 0 5px 13px 0 rgba(64,85,196,0.14);
+    /* padding: 20px 35px 25px 35px; */
+    position: relative;
+    background: linear-gradient(315.93deg, #294A93 0%, #12245A 100%);
+    overflow: hidden;
+}
+.calculate-page-wrap > p {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 27px;
+    margin-top: 23px;
+    margin-bottom: 24px;
+    position: relative;
+    text-align: center;
+}
+.calculate-page-wrap > p > .calulator-icon {
+    height: 25.6px;
+    width: 23.92px;
+    display: block;
+    position: absolute;
+    background-position: -36px -1px;
+    background-size: 1010px;
+    left: 0;
+}
+.sec-form {
+    display: flex;
+    padding: 0 15px;
+}
+.margin-bottom20 {
+    margin-bottom: 20px;
+}
+.margin-bottom23 {
+    margin-bottom: 23px;
+}
+.margin-bottom8 {
+    margin-bottom: 8px;
+}
+.margin-bottom12 {
+    margin-bottom: 12px;
+}
+.margin-bottom30 {
+    margin-bottom: 30px;
+}
+.margin-bottom40 {
+    margin-bottom: 40px;
+}
+.margin-top20 {
+    margin-top: 20px;
+}
+.mff-calculator {
+    height: 46.13px;
+    width: 100%;
+    max-width: 492px;
+    border-radius: 4.5px;
+    background-color: #FFFFFF;
+    color: #111111;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 25px;
+    padding: 0 13px 0 18px;
+    margin: 0 auto;
+    border: 1px solid #000000;
+}
+.mff-calculator .mat-form-field-infix {
+    border-top: 0 !important;
+}
+.mff-calculator .mat-form-field-wrapper {
+    padding-bottom: 0 !important;
+}
+.mff-calculator .mat-form-field-underline {
+    display: none !important;
+}
+.p-words-tot,
+.p-deadline {
+    color: #13B675;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 18px;
+    text-align: left;
+    margin: 5px 0;
+}
+.p-words-tot {
+    color: #1A62F5;
+}
+.p-standard-price {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Semibold";
+    font-size: 24px;
+    letter-spacing: 0;
+    margin: 0 auto;
+    text-align: center;
+    display: block;
+}
+.p-standard-price span {
+    font-size: 30px;
+    margin-left: 26px;
+}
+.btn-order-sbmt {
+    height: 85.8px;
+    width: 100%;
+    max-width: 492px;
+    margin: 0 auto 32px auto;
+    border-radius: 10px;
+    background-color: #6C89E0;
+    color: #F2F2F2;
+    font-family: "SF Pro Text Bold";
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+.btn-get-free-quote {
+    height: 85.8px;
+    width: 100%;
+    max-width: 492px;
+    margin: 0 auto 32px auto;
+    border-radius: 10px;
+    background-color: #3BC160 !important;
+    color: #F2F2F2;
+    font-family: "SF Pro Text Bold";
+    font-size: 27px;
+    font-weight: bold;
+    letter-spacing: 0;
+}
+.panel-drop-style {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 7px;
+    margin-top: 50px;
+    margin-left: -3px;
+}
+.panel-drop-style .mat-option {
+    color: #000000 !important;
+    background-color: #ffffff !important;
+}
+/* .panel-drop-style .mat-active {
+    background-color: #12245A !important;
+    color: #ffffff !important;
+} */
+.mff-calculator .mat-select-arrow-wrapper {
+    visibility: hidden !important;
+}
+.mff-calculator .dd-icon {
+    width: 10px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transform: translate(-50%, 75%);
+    background-size: 1190px;
+    background-position: -5px -65px;
+}
+.div-price-separator {
+    display: flex;
+}
+.spn-calc-textarea .mat-input-element::placeholder {
+    color: #525252;
+}
+.spn-calc-textarea .mat-input-element {
+    max-width: 486px;
+    width: 100%;
+    margin: 0 auto;
+    height: 120px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 25px;
+    padding: 10px 18px;
+    border: none;
+    resize: none;
+    border-radius: 5px;
+}
+/* Banner styles end */
+
+/* discount option starts  */
+.discount-option-wrap {
+    padding: 16px 0 30px 0;
+    background-color: #FBD501;
+}
+.discount-option-outer {
+    width: 100%;
+    max-width: 492px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 15px;
+}
+.discount-option-inner {
+    display: block;
+}
+.p-special-price {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin: 0;
+    margin-bottom: 6px;
+}
+.p-save-order {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin: 0;
+    margin-bottom: 9px;
+}
+.inp-email-discount::placeholder {
+    color: #525252
+}
+.inp-email-discount {
+  height: 43px;
+  width: 180px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: "SF Pro Text Regular";
+  font-size: 18px;
+  letter-spacing: 0;
+  line-height: 21px;
+  border: none;
+  padding: 0 16px;
+}
+.p-discounted-price {
+  color: #000000;
+  font-family: "SF Pro Text Bold";
+  font-size: 42px;
+  letter-spacing: 0;
+  line-height: 45px;
+  margin: 6px auto 7px auto;
+}
+.btn-unlock-promo {
+  height: 43px;
+  width: 149.1px;
+  border-radius: 4.5px;
+  background-color: #000000;
+  color: #FFFFFF;
+  font-family: "SF Pro Text Semibold";
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+/* discount option ends  */
+
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .calculate-page-wrap {
+        max-width: 400px !important;
+        width: 100% !important;
+    }
+    .sec-form {
+        padding: 0 15px;
+    }
+    .discount-option-outer {
+        zoom: 0.7;
+        padding: 10px;
+    }
+}

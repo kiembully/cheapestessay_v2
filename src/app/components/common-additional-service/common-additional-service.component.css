@@ -1,0 +1,141 @@
+.sec-additional-service {
+    position: relative;
+    padding: 70px 0;
+    display: block;
+    max-width: 2400px;
+    margin: 0 auto;
+}
+.split-diagonal-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: -webkit-linear-gradient(-157.24deg, #FFAE00 45%, #DCE9F5 45%);
+    z-index: -1;
+}
+.mt-additional-service {
+    background-color: transparent;
+}
+.spn-add-service-img {
+    max-width: 500px;
+    width: 100%;
+}
+.additional-service-wrap h2 {
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 48px;
+    letter-spacing: 0;
+    line-height: 58px;
+    margin: 0 auto;
+}
+.ml-addnl-services {
+    margin-bottom: 50px;
+}
+.ml-addnl-services mat-list-item {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 24px;
+    height: 34px !important;
+    display: flex !important;
+    white-space: normal;
+}
+.ml-addnl-services mat-list-item:last-child {
+    height: 24px !important;
+}
+.additional-service-wrap h3 {
+    white-space: normal;
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 36px;
+    letter-spacing: 0;
+    line-height: 43px;
+    margin: 0 auto 24px auto;
+}
+.add-service-option {
+    display: flex;
+    max-width: 430px;
+}
+.btn-order-now {
+    background-color: #FBD501
+}
+.btn-contact-us {
+    background-color: #ffffff
+}
+.add-service-option button {
+    border-radius: 5px;
+    padding: 15px 30px;
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 26px;
+    letter-spacing: 0;
+    line-height: 31px;
+}
+.add-service-img {
+    display: block;
+    width: 100%;
+    min-height: 300px;
+    background: red;
+}
+.spn-add-service-outer {
+    max-width: 500px;
+    width: 100%;
+}
+.ml-addnl-services mat-list-item:last-child .spn-bullets {
+    background-color: transparent;
+}
+.spn-bullets {
+    border-radius: 50%;
+    background-color: #FBD501;
+    margin-right: 15px;
+    padding: 0 7.5px;
+    height: 15px;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .w-hidden {
+        display: none;
+    }
+    .mt-additional-service {
+        display: block;
+    }
+    .spn-add-service-outer {
+        max-width: 100%;
+    }
+    .add-service-option {
+        margin: 0 auto
+    }
+    /* .add-service-option */
+    .add-service-option {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center
+    }
+    .add-service-option > span {
+        display: block;
+    }
+    .add-service-option > span:first-child {
+        margin-bottom: 15px;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

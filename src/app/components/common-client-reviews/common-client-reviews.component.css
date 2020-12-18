@@ -1,0 +1,95 @@
+.spn-client-reviews-wrap {
+    max-width: 450px;
+    width: 100%;
+}
+.client-reviews-wrap {
+    display: block;
+    padding: 0 40px 40px 40px;
+    position: relative;
+}
+.client-reviews-stars {
+    display: flex;
+    max-width: 250px;
+    margin: 0 auto 20px auto;
+}
+.client-reviews-stars > span {
+    font-size: 40px;
+    color: #FBD30D;
+    text-align: center;
+}
+.client-reviews-inner {
+    display: block;
+    min-height: 150px;
+    border: 10px solid #12245A;
+    margin-bottom: 40px;
+}
+.client-reviews-inner:last-child {
+    margin-bottom: 0;
+}
+.client-reviews-img-wrap {
+    max-width: 600px;
+    width: 100%;
+}
+.client-reviews-img-wrap p {
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 38px;
+    white-space: normal;
+    text-align: center;
+    margin-bottom: 120px;
+    margin-top: 0;
+}
+.client-reviews-img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+    background-color: red;
+    min-height: 300px
+}
+.upper-quote {
+    font-size: 120px;
+    color: #FBD30D;
+    position: absolute;
+    left: 0;
+    top: 25px;
+    background: #f2f2f2;
+    transform: rotate(180deg)
+}
+.lower-quote {
+    font-size: 120px;
+    color: #FBD30D;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #f2f2f2;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+  
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .web-hidden {
+        display: none;
+    }
+    .mtr-client-reviews {
+        display: block;
+        text-align: -webkit-center;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

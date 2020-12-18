@@ -1,0 +1,49 @@
+<mat-toolbar>
+    <mat-toolbar-row class="mtr-user-entry">
+        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+        <mat-tab-group mat-align-tabs="center" class="mtg-user-entry">
+            <mat-tab class="mt-user-option" label="Login">
+                
+                <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="frm-wrapper" ngNativeValidate>
+                    <div class="frm-wrap-inner" [style.border]="formHasError ? '1px solid #d93025' : null">
+                        <mat-form-field appearance="fill">
+                            <input formControlName="email" matInput type="email" placeholder="Email" required  class="panel-input-style">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <input formControlName="password" matInput type="password"  placeholder="Password" required class="panel-input-style">
+                        </mat-form-field>
+                    </div>
+                    <mat-error *ngIf="formHasError">{{errorMessage}}</mat-error>
+                    <button mat-button class="btn-submit" type="submit">Login</button>
+                </form>
+                
+            </mat-tab>
+            <mat-tab class="mt-user-option" label="Sign up">
+                
+                <form [formGroup]="registerForm" (ngSubmit)="registerUser()" class="frm-wrapper" ngNativeValidate>
+                    <div class="frm-wrap-inner" [style.border]="signupHasError ? '1px solid #d93025' : null">
+                        <mat-form-field appearance="fill">
+                            <input formControlName="email" type="email" matInput placeholder="Email" required  class="panel-input-style">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <input formControlName="password" type="password" matInput placeholder="Password" required class="panel-input-style">
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <input formControlName="mobile" type="tel" matInput placeholder="Telephone" required class="panel-input-style">
+                            <span matPrefix>
+                                <mat-select class="ms-select-code" formControlName="mobile_prefix" [value]="1">
+                                    <mat-option *ngFor="let list of country_code" [value]="list.callingCodes[0]">
+                                        <img src="{{list.flag}}" alt="country_flag" style="height: 20px; width: auto"> {{list.alpha3Code}} +{{list.callingCodes[0]}}
+                                    </mat-option>
+                                </mat-select>
+                            </span>
+                        </mat-form-field>
+                    </div>
+                    <mat-error *ngIf="signupHasError">{{suErrMessage}}</mat-error>
+                    <button mat-button id="btn-submit" class="btn-submit" type="submit">Sign Up</button>
+                </form>
+                
+            </mat-tab>
+        </mat-tab-group>
+    </mat-toolbar-row>
+</mat-toolbar>

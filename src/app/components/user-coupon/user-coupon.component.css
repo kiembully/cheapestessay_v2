@@ -1,0 +1,80 @@
+.frm-coupon-wrap {
+    padding: 65px 20px 0 20px;
+    position: relative;
+}
+.mt-user-coupon {
+    width: 100%;
+    max-width: 335px;
+    margin: 0 auto;
+}
+.mt-user-coupon h1 {
+    color: #1F1F1F;
+    font-size: 26px;
+    font-family: "SF Pro Text Bold";
+    line-height: 40px;
+    margin: 0 auto 40px auto;
+    text-align: center;
+}
+.coupon-entry-wrap {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 10px;
+    width: 100%;
+    border: 1px solid #D7DCE3;
+}
+.coupon-entry-wrap .mat-form-field {
+    width: 100%;
+}
+.coupon-entry-wrap .mat-form-field-flex {
+    background: transparent !important;
+    padding: 0 18px !important;
+}
+.coupon-entry-wrap .mat-form-field-wrapper {
+    height: 50px;
+    width: 100%;
+    padding-bottom: 0;
+}
+.coupon-entry-wrap .mat-form-field-underline {
+    display: none;
+}
+.coupon-entry-wrap .mat-form-field-infix {
+    border-top: 10px solid transparent;
+}
+.panel-input-style {
+    color: #2B3857;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+}
+.lbl-coupon {
+    color: #2B3857;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    line-height: 35px;
+    text-align: left;
+    margin: 0;
+}
+.p-coup-response {
+    color: #13B675;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 0;
+}
+.p-coup-response.isInvalid {
+    color: #D0021B;
+}
+.btn-coup-apply {
+    height: 40px;
+    width: 100%;
+    max-width: 300px;
+    border-radius: 30px;
+    background-color: #13B675;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 15px;
+    line-height: 19px;
+    margin: 40px auto 63px auto;
+}

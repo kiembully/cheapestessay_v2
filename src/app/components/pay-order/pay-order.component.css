@@ -1,0 +1,51 @@
+.pay-order-wrap {
+    display: block;
+    padding: 57px 80px;
+    position: relative;
+}
+.mtb-pay-order {
+    width: 100%;
+}
+.mtb-pay-order .mat-tab-label {
+    width: 100%;
+    height: 45px;
+}
+.mtb-pay-order .mat-tab-label.mat-tab-label-active {
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+}
+.mtb-pay-order .mat-tab-nav-bar, .mtb-pay-order .mat-tab-header {
+    border-bottom: 0;
+    margin-bottom: 30px;
+}
+.mtb-pay-order .mat-tab-header .mat-tab-labels {
+    padding: 10px;
+}
+.btn-pay-order {
+    height: 45px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #1A62F5;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: 0.8px;
+    line-height: 19px;
+    text-align: center;
+}
+.mrb-agreement {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 20px;
+    padding: 0;
+    text-align: center;
+    display: block;
+}
+.mrb-agreement a {
+    line-height: 20px;
+    padding: 0 2px;
+    color: #3B7CFF;
+}

@@ -1,0 +1,102 @@
+.common-profile-input {
+    width: 100%;
+}
+.frm-update-profile {
+    padding: 70px 66px 70px 66px;
+    position: relative;
+}
+.add-block {
+    display: block;
+}
+.frm-update-profile h1 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto 82px auto;
+    display: block;
+}
+.margin-top81 {
+    margin-top: 81px;
+}
+.margin-bottom15 {
+    margin-bottom: 15px;
+}
+.spn-profile-action {
+    width: 100%;
+}
+.btn-cancel-update {
+    height: 45px;
+    max-width: 203.8px;
+    width: 100%;
+    border: 1px solid #578EFD;
+    border-radius: 6px;
+    display: block;
+    color: #1A62F5;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 17px;
+    display: block;
+}
+.btn-profile-save {
+    height: 45px;
+    max-width: 203.8px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #1A62F5;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: -0.5px;
+    line-height: 17px;
+    display: block;
+}
+
+/* INPUT COMMON STYLE  */
+.common-profile-input .mat-form-field-flex {
+    padding: 9px 33px 14px 33px;
+    border-radius: 10px;
+    background-color: #FFFFFF;
+    height: 65px;
+}
+.padding-right10.common-profile-input .mat-form-field-flex {
+    padding-right: 10px !important
+}
+.common-profile-input .mat-form-field-underline {
+    display: none;
+}
+.common-profile-input .mat-form-field-infix {
+    padding: 0.4375em 0 0 0;
+}
+.common-profile-input.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label,
+.common-profile-input.mat-form-field-can-float .mat-input-server:focus + .mat-form-field-label-wrapper .mat-form-field-label { transform: translateY(-0.58125em) scale(0.75) perspective(100px) translateZ(0.001px); }
+.common-profile-input .mat-form-field-label {
+    top: 0.68125em;
+    color: #9B9B9B !important;
+}
+.common-profile-input .mat-input-element {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+.common-profile-input .mat-form-field-wrapper {
+    padding-bottom: 0;
+}
+.frm-update-profile .mat-error {
+    text-align: center;
+    font-size: 12px;
+    font-family: "SF Pro Text Regular";
+    white-space: normal;
+    line-height: 20px;
+}
+.spn-country-code {
+    position: absolute;
+    top: -34px;
+    width: 100px;
+    right: 0;
+}

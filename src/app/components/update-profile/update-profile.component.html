@@ -1,0 +1,217 @@
+<form [formGroup]="nameForm" (ngSubmit)="updateFullName()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 0">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your Name</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>First Name</mat-label>
+                <input matInput formControlName="first_name" [value]="nameForm.value.first_name" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input">
+                <mat-label>Last Name</mat-label>
+                <input matInput formControlName="last_name" [value]="nameForm.value.last_name" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="nameHasError">{{errorMessageName}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+
+<form [formGroup]="passwordForm" (ngSubmit)="updatePassword()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 1">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your Password</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>Current Password</mat-label>
+                <input formControlName="current_password" type="password" matInput value="" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>New Password</mat-label>
+                <input formControlName="new_password" matInput  type="password" value="" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input">
+                <mat-label>Confirm New Password</mat-label>
+                <input formControlName="retype_password" matInput  type="password" value="" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="pswdHasError">{{errorMessagePswd}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+
+<form [formGroup]="emailForm" ngNativeValidate (ngSubmit)="updateEmail()" class="frm-update-profile" *ngIf="form_id == 2">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your Email</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>Email</mat-label>
+                <input formControlName="email" matInput type="email" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input">
+                <mat-label>Verify Password</mat-label>
+                <input formControlName="password" type="password" matInput value="" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="emailHasError">{{errorMessageEmail}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+
+<form [formGroup]="mobileForm" (ngSubmit)="updateMobile()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 3">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your Number</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input padding-right10">
+                <mat-label>Phone Number</mat-label>
+                <input formControlName="telephone" matInput [value]="mobileForm.value.telephone" type="tel" required>
+                <span matSuffix class="spn-country-code">
+                    <mat-select formControlName="prefix" [value]="mobileForm.value.prefix">
+                        <mat-option *ngFor="let list of country_code" value="+{{list.callingCodes[0]}}" (click)="patchPrefix(list.callingCodes[0])">
+                            <img src="{{list.flag}}" alt="country_flag" style="height: 20px; width: auto"> +{{list.callingCodes[0]}} {{list.alpha3Code}}
+                        </mat-option>
+                    </mat-select>
+                </span>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="mobHasError">{{errorMessageMob}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+
+<form [formGroup]="whatsAppForm" (ngSubmit)="updateWhatsApp()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 4">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your WhatsApp Number</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input">
+                <mat-label>WhatsApp Number</mat-label>
+                <input formControlName="whatsapp_num" type="number" matInput [value]="whatsAppForm.value.whatsapp_num" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="waHasError">{{errorMessageWa}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
+
+<form [formGroup]="addressForm" (ngSubmit)="updateAddress()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 5">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Update Your Billing Address</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>Street</mat-label>
+                <input formControlName="street" [value]="addressForm.value.street" matInput value="226 Governor Panotes Avenue" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>City</mat-label>
+                <input formControlName="city" [value]="addressForm.value.city" matInput value="Los Angeles" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-bottom15">
+            <mat-form-field class="common-profile-input">
+                <mat-label>State</mat-label>
+                <input formControlName="state" [value]="addressForm.value.state" matInput value="California" required>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="common-profile-input">
+                <mat-label>Zip Code</mat-label>
+                <input matInput formControlName="zipcode" type="number" [value]="addressForm.value.zipcode" required>
+                <span matSuffix class="spn-country-code">
+                    <mat-select formControlName="countrycode" [value]="addressForm.value.countrycode">
+                        <mat-option value="+1">+1 USA</mat-option>
+                        <mat-option value="+63">+63 PHI</mat-option>
+                        <mat-option value="+374">+374 IND</mat-option>
+                    </mat-select>
+                </span>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="add-block">
+            <mat-error *ngIf="addressHasError">{{errorMessageAddress}}</mat-error>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="margin-top81">
+            <span class="spn-profile-action">
+                <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-profile-action">
+                <button type="submit" mat-flat-button class="btn-profile-save">Save</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

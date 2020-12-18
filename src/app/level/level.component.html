@@ -1,0 +1,46 @@
+<section class="width1000 sec-level">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+            <h1>Life-Time Discount</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p class="p-description">Get Cash Back, VIP support, Best writers, Free Plagiarism Report & more… <a href="#">Terms of use</a></p>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <span class="fill-space">
+                <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 0 ? 'visible' : 'null'">I'm Here</p>
+                <div class="level-badge-wrap">
+                    <div class="sprites-icons blue-label"></div>
+                    <p>Blue</p>
+                </div>
+            </span>
+            <span class="fill-space">
+                <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 1 ? 'visible' : 'null'">I'm Here</p>
+                <div class="level-badge-wrap">Silver</div>
+            </span>
+            <span class="fill-space">
+                <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 2 ? 'visible' : 'null'">I'm Here</p>
+                <div class="level-badge-wrap">Gold</div>
+            </span>
+            <span class="fill-space">
+                <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 3 ? 'visible' : 'null'">I'm Here</p>
+                <div class="level-badge-wrap">VIP</div>
+            </span>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-level-progress">
+            <div class="level-bar-wrap">
+                <span class="fill-space spn-progress-points">{{minimumVal}}</span>
+                <span class="spn-progress-bar">
+                    <mat-progress-bar mode="determinate" [value]="percentageVal"></mat-progress-bar>
+                </span>
+                <span class="fill-space spn-progress-points">{{maximumVal}}</span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p class="p-level-gap">${{remainingVal}} away from <span>{{getNextLevel(currentLevel)}}</span> member</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <a mat-button class="a-see-howitworks" (click)="openDialog()">See How it Works</a>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>

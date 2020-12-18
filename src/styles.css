@@ -1,0 +1,365 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* FONT STYLE */
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Arial Rounded MT Bold Regular";
+  font-weight: 800;
+  src: url("./assets/fonts/Arial-Rounded-MT-Bold.ttf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Heavy";
+  font-weight: 800;
+  src: url("./assets/fonts/SF-Pro-Text-Heavy.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Bold";
+  font-weight: 700;
+  src: url("./assets/fonts/SF-Pro-Text-Bold.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Semibold";
+  font-weight: 600;
+  src: url("./assets/fonts/SF-Pro-Text-Semibold.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Medium";
+  font-weight: 500;
+  src: url("./assets/fonts/SF-Pro-Text-Medium.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Regular";
+  font-weight: 400;
+  src: url("./assets/fonts/SF-Pro-Text-Regular.otf");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "SF Pro Text Light";
+  font-weight: 300;
+  src: url("./assets/fonts/SF-Pro-Text-Light.otf");
+  font-display: swap;
+}
+
+body {
+    margin: 0;
+    background-color: #f2f2f2;
+}
+mat-toolbar {
+    min-height: 100% !important;
+    height: 100% !important;
+    background-color: transparent !important
+}
+mat-toolbar-row {
+    height: 100% !important;
+}
+
+/* determining max-width of a section */
+.default-width {
+    max-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+}
+.width1120px {
+  margin: 0 auto;
+  max-width:1120px;
+  width: 100%;
+}
+.width1220px {
+  margin: 0 auto;
+  max-width:1220px;
+  width: 100%;
+}
+.width1000 {
+  margin: 0 auto;
+  max-width:1000px;
+  width: 100%;
+}
+.full-width {
+    width: 100%;
+    margin: 0 auto;
+}
+.width1100 {
+  margin: 0 auto;
+  max-width:1100px;
+  width: 100%;
+}
+
+/* spacer */
+.fill-space {
+    flex: 1 1 auto;
+}
+
+/* common sub pages header  */
+.common-sub-header h2 {
+  color: #12245A;
+  font-family: "SF Pro Text Bold";
+  font-size: 42px;
+  letter-spacing: 0;
+  line-height: 83px;
+  margin: 0 auto 47px auto;
+  border-bottom: 3px solid #FBD501;
+  white-space: normal;
+  text-align: center;
+  text-align: -webkit-center;
+}
+
+/* common backgrounds UNUSED*/
+.common-bluish {
+    background-color: #12245A;
+}
+.common-transparent {
+    background-color: transparent
+}
+
+/* common sub-pages headers  */
+/* h1.common-subpage-header {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 44px;
+    letter-spacing: 0;
+    line-height: 53px;
+    border-bottom: 3px solid #60AAEE;
+    text-align: center;
+    display: table;
+    padding-bottom: 27px;
+    margin: 0 auto 38px auto
+}
+p.common-subpage-subheader {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto 43px auto
+} */
+
+/* POP UP DIALOG STYLES */
+
+.common-dialog {
+  background: #000000 !important;
+}
+
+.common-dialog-transparent {
+  background-color: rgba(0,0,0,0.85);
+}
+
+.panel-dialog mat-dialog-container {
+  background: #f2f2f2;
+  border-radius: 25px 25px 16px 16px;
+  padding: 0;
+  overflow-y: auto;
+}
+
+/* snackbar */
+.mat-simple-snackbar-action button {
+  background-color: #ffffff !important;
+  font-family: "SF Pro Text Regular" !important;
+  color: #000000 !important;
+}
+/* snackbar */
+
+/* scroll bar custom style  */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #344357; 
+  border-radius: 9px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #CAD3DF; 
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* sprite global */
+.sprite-subpage-icon {
+      background-image: url('src/assets/img/subpagesicon.svg');
+      background-repeat: no-repeat;
+      display: inline-block;
+      zoom: .5;
+}
+
+/* sub pages styles starts */
+.mtr-info-head {
+  margin-top: 150px;
+}
+.mtr-info-head,
+.mtr-info-body {
+  display: block !important;
+  white-space: normal !important;
+  text-align: justify;
+}
+.mtr-info-head h1 {
+  color: #111111;
+  font-family: "SF Pro Text Semibold";
+  font-size: 50px;
+  line-height: 46px;
+  margin: 0 auto 80px auto;
+  text-align: center;
+}
+.mtr-info-body h3 {
+  color: #000000;
+  font-family: "SF Pro Text Medium";
+  font-size: 26px;
+  line-height: 31px;
+  margin-bottom: 30px;
+}
+.mtr-info-body p {
+  color: #000000;
+  font-family: "SF Pro Text Regular";
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-align: justify;
+  width: 100%;
+  margin: 0 auto;
+}
+.mtr-info-body .spn-matprefix {
+  margin-right: 5px;
+  align-self: flex-start;
+}
+.text-center {
+  text-align: center !important;
+  max-width: 1050px;
+}
+.ml-info-body.mat-list-base .mat-list-item {
+  text-align: justify;
+  color: #000000;
+  font-family: "SF Pro Text Medium";
+  font-size: 16px;
+  line-height: 27px;
+  margin: 0;
+  height: 100%
+}
+.sprites-icons {
+  background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/new_sprites_img.svg') no-repeat;
+}
+.sprites-social-icons {
+  background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/external-links-sprite.png') no-repeat;
+}
+
+/* diagonal backgrounds */
+.diagonal-box {
+  /* position: relative; */
+  background-color: #C5DBEF;
+  transform: skewY(-5deg);
+  -ms-transform: skewY(-5deg);
+  -webkit-transform: skewY(-5deg);
+  padding: 120px 0 86px 0;
+  margin: 0 auto;
+  max-width: 2400px;
+  z-index: -1
+}
+.revert-diagonal {
+  transform: skewY(5deg);
+  -ms-transform: skewY(5deg);
+  -webkit-transform: skewY(5deg)
+}
+.trapezoid-box {
+  clip-path: polygon(0 33%, 100% 0, 100% 100%, 0% 100%);
+  background: #C5DBEF;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-width: 2400px;
+  margin: 0 auto;
+  z-index: -1
+}
+.rounded-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #C5DBEF;
+  max-width: 2400px;
+  width: 100%;
+  min-height: 500px;
+  margin: 0 auto;
+  z-index: -1;
+  border-radius: 0 0 70px 70px;
+}
+
+.margin-bottom200 {
+  margin-bottom: 200px;
+}
+.margin-bottom100 {
+  margin-bottom: 100px;
+}
+.margin-bottom70 {
+  margin-bottom: 70px;
+}
+.margin-bottom50 {
+  margin-bottom: 70px;
+}
+.margin-bottom40 {
+  margin-bottom: 40px;
+}
+.margin-bottom30 {
+  margin-bottom: 30px;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+  .common-sub-header h2 {
+      line-height: 52px;
+      padding-bottom: 20px;
+      text-align: center;
+      text-align: -webkit-center;
+  }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

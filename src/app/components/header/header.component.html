@@ -1,0 +1,156 @@
+<!-- Only visible if user is not in profile pages  -->
+<section 
+class="full-width fixed-nav w-header" 
+*ngIf="isHeaderVisible(current_path, isUserOnline)" 
+[style.box-shadow]="isHeaderScrolled ? '0 5px 10px 0 rgba(99,111,175,.14)' : 'none'">
+    <mat-toolbar color="primary" class="default-width">
+        <mat-toolbar-row>
+            <span class="w-nav-hidden"><button class="btn-brand" routerLinkActive="active" routerLink="/" mat-button>Cheapest <span>Essay</span></button></span>
+            <span class="m-nav-hidden">
+                <button mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons" [innerHtml]="isMobileNavActive ? 'menu_open' : 'menu'"></span></button>
+            </span>
+            <span class="fill-space"></span>
+            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</button></span>
+            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</button></span>
+            <span class="spn-services-menu-wrap w-nav-hidden">
+                <button class="btn-client-page" mat-button (click)="togglePanel()" [ngClass]="{'active':isServicesActive}">Services</button>
+            </span>
+            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></span>
+            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</button></span>
+            <span class="spn-more-menu w-nav-hidden">
+                <button class="btn-client-page" mat-button [matMenuTriggerFor]="more">More...</button>
+                <mat-menu #more="matMenu">
+                    <button class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</button>
+                    <button class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button>
+                    <button class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button>
+                    <button class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button>
+                    <button class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button>
+                    <button class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button>
+                    <a class="btn-more-menu" href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a>
+                </mat-menu>
+            </span>
+            <span class="spn-btn-wrap">
+                <button class="btn-order-page" mat-flat-button routerLink="order" (click)="closePanel()">Order Now</button>
+            </span>
+            <span>
+                <button class="btn-account-page" mat-flat-button (click)="_session.openLoginDialog()" *ngIf="isUserOnline == 0">Login</button>
+                <button class="btn-account-page" mat-flat-button routerLink="active" routerLink="my-orders" *ngIf="isUserOnline == 1">My Account</button>
+            </span>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-contain-services" [style.border-top]="panelOpenState?'1px solid #cccccc':'none'">
+            <mat-accordion class="ma-services-menu default-width">
+                <mat-expansion-panel hideToggle [expanded]="panelOpenState">
+                    <mat-toolbar color="primary">
+                        <mat-toolbar-row *ngFor="let row of menuServices; let i = index;" yPosition="below">
+                            <span class="spn-services-inner" *ngFor="let list of row.row; let j = index">
+                                <button 
+                                *ngIf="!(i==5 && j==3)"
+                                mat-menu-item type="button"
+                                class="btn-more-menu"
+                                (click)="selectService(list.id)"
+                                [value]="list.id">{{list.name}}</button>
+                                <button 
+                                *ngIf="(i==5 && j==3)"
+                                mat-menu-item type="button"
+                                class="btn-more-menu"
+                                (click)="togglePanel()"
+                                style="text-decoration: underline;"
+                                [routerLink]="list.id">{{list.name}}</button>
+                            </span>
+                        </mat-toolbar-row>
+                    </mat-toolbar>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-contain-services">
+            <mat-accordion class="ma-services-menu default-width">
+                <mat-expansion-panel hideToggle [expanded]="isMobileNavActive">
+                    <mat-list role="list">
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button></mat-list-item>
+                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button></mat-list-item>
+                        <mat-list-item role="listitem"><a class="a-mob-nav" href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
+                      </mat-list>
+                </mat-expansion-panel>
+              </mat-accordion>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="profile-header-outer" *ngIf="isProfileHeaderVisible(current_path, isUserOnline)">
+    <section class="full-width common-bluish">
+        <div class="default-width">
+            <mat-toolbar color="accent">
+                <mat-toolbar-row class="mtr-profile-header">
+                    <span><button class="btn-brand-2" color="accent" type="button" mat-flat-button routerLink="/">Cheapest <span>Essay</span></button></span>
+                    <span class="fill-space"></span>
+                    <span>
+                        <div class="balance-wrap">
+                            <span>Balance</span>
+                            <span class="fill-space">${{headerForm.value.balance}}</span>
+                        </div>
+                    </span>
+                    <span>Name: {{headerForm.value.first_name}}</span>
+                    <span>Email: {{headerForm.value.email}}</span>
+                    <span><button mat-flat-button type="button" color="accent" class="btn-logout" (click)="openLogoutDialog()">Logout</button></span>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </div>
+    </section>
+    <section class="full-width common-bluish">
+        <mat-divider class="profile-header-div"></mat-divider>
+        <div class="default-width">
+            <mat-toolbar color="accent">
+                <mat-toolbar-row class="mtr-subheader">
+                    <span routerLink="order" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/newOrder.png" alt="New Order" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/newOrder.png">
+                        </button>
+                        <p class="p-btn-label">New Order</p>
+                    </span>
+                    <span class="fill-space"></span>
+                    <span routerLink="my-orders" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png" alt="Orders" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png">
+                        </button>
+                        <p class="p-btn-label">Orders</p>
+                    </span>
+                    <span routerLink="profile" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Profile.png" alt="Profile" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Profile.png">
+                        </button>
+                        <p class="p-btn-label">Profile</p>
+                    </span>
+                    <span routerLink="balance" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png" alt="Balance" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png">
+                        </button>
+                        <p class="p-btn-label">Balance</p>
+                    </span>
+                    <span routerLink="discount" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Discount.png" alt="Discount" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Discount.png">
+                        </button>
+                        <p class="p-btn-label">Discount</p>
+                    </span>
+                    <span routerLink="level" routerLinkActive="active">
+                        <button class="btn-subheader" type="button" mat-fab>
+                            <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/lvl-gold-active.png" alt="Level" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/lvl-gold-active.png">
+                        </button>
+                        <p class="p-btn-label">Level</p>
+                    </span>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </div>
+    </section>
+</div>
+
+<div id="overlay" [style.display]="(panelOpenState || isMobileNavActive)?'block':'none'" (click)="closePanel()"></div>

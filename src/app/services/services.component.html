@@ -1,0 +1,40 @@
+<section class="default-width">
+    <mat-toolbar color="primary" class="mt-services">
+        <mat-toolbar-row class="mtr-services">
+            <span class="spn-contain-services-banner">
+                <h1>Cheapest Essay offer the most Professional Writing Service at the best price</h1>
+            </span>
+            <span class="fill-space"></span>
+            <span class="spn-contain-services-form">
+                <form [formGroup]="servicesForm" class="frm-services-form">
+                    <mat-form-field class="mff-services">
+                        <mat-select formControlName="paper" [value]="servicesForm.value.paper" panelClass="panel-drop-style-service">
+                            <mat-optgroup label="Most Popular">
+                                <mat-option *ngFor="let list of pPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                            </mat-optgroup>
+                            <mat-optgroup label="Others">
+                                <mat-option *ngFor="let list of oPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                            </mat-optgroup>
+                        </mat-select>
+                        <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                    </mat-form-field>
+                    <mat-form-field appearance="fill" class="mff-email">
+                        <input formControlName="email" type="email" matInput placeholder="Enter an email to signup" required  class="panel-services-email">
+                    </mat-form-field>
+                    <button type="submit" mat-flat-button class="btn-submit-services">GET ESSAY HELP</button>
+                </form>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<section class="default-width">
+    <mat-toolbar color="primary" class="mt-services-contents">
+        <mat-toolbar-row class="mtr-services-contents">
+            <h2>Top Orders written by our professional writers</h2>
+            <p>Choose from our professional writers and find the right one for your project either it's essay, assignment, research paper etc. You will get the best essay help and writing help from our professional writing service using our live chat feature. You can message us 24/7 and get updates on your order. Our awesome support will gladly assist you anytime!</p>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<app-common-services-slide></app-common-services-slide>

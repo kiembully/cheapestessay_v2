@@ -1,0 +1,129 @@
+.mt-new-user-form {
+    background-color: transparent;
+}
+.mt-new-user-form mat-toolbar-row:first-child, 
+.mt-new-user-form mat-toolbar-row:last-child {
+    display: block;
+    text-align: -webkit-center;
+    white-space: normal;
+}
+.mt-new-user-form mat-toolbar-row h3 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 44px;
+    letter-spacing: 0;
+    margin: 0 auto 60px auto;
+    line-height: 52px;;
+}
+.mt-new-user-form mat-toolbar-row p.p-new-user-form {
+    margin: 0 auto;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 38px;
+    width: 100%;
+    max-width: 860px;
+}
+.frm-new-user-discount {
+    margin-bottom: 40px;
+    display: flex;
+    width: 100%;
+}
+.new-user-inner-wrap {
+    display: flex;
+}
+.frm-new-user-discount p {
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 62px;
+    margin: 0;
+    white-space: normal
+}
+.new-user-inner-wrap input::placeholder {
+    color: #ffffff;
+    opacity: 0.5
+}
+.new-user-inner-wrap input {
+    height: 60px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Medium";
+    font-size: 28px;
+    letter-spacing: 0;
+    padding: 0 30px;
+    width: 100%;
+}
+.new-user-inner-wrap button {
+    padding: 12.5px 25px;
+    max-width: 221.18px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #FBD501;
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 28px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.padding-right20 {
+    padding-right: 20px;
+    width: 100%;
+}
+.padding-top20 {
+    padding-top: 20px;
+}
+.reverse-row {
+    flex-direction: row-reverse;
+}
+.discount-img-wrap {
+    height: 350px;
+    max-width: 350px;
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 50%;
+    background: red;
+}
+.mod-new-user-inner {
+    display: flex;
+    align-self: center;
+}
+.add-flex {
+    max-width: 580px;
+    width: 100%;
+    align-self: center;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    
+}
+
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .discount-img-wrap {
+        margin-bottom: 40px;
+    }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    .frm-new-user-discount {
+        display: block;
+        width: 100%;
+        max-width: 600px;
+        text-align: -webkit-center;
+        margin: 0 auto 40px auto;
+    }
+}

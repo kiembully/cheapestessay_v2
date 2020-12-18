@@ -1,0 +1,29 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-makepayment-img {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 0;
+}
+
+.sprite-orderprogress-img {
+    width: 3700px;
+    height: 2100px;
+    background-position: 0 -1665px;
+}
+
+.sprite-placeorder-img {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 -3765px;
+}
+
+.sprite-receive-orders {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 -5430px;
+}

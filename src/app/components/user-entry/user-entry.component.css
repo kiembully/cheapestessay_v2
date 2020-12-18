@@ -1,0 +1,102 @@
+.mtr-user-entry {
+    padding: 82px 82px 45px 82px;
+    position: relative;
+}
+.mtg-user-entry {
+    width: 100%;
+}
+.mtr-user-entry .mat-tab-header {
+    height: 50px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ffffff;
+    padding: 4px;
+    margin-bottom: 60px;
+}
+.mtr-user-entry .mat-tab-label {
+    flex: 1 1 auto;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    line-height: 24px;
+    color: #959595;
+}
+.mtr-user-entry .mat-tab-label-active {
+    border-radius: 30px;
+    font-family: "SF Pro Text Bold";
+    color: #000000;
+    font-weight: bold;
+}
+.mtr-user-entry .mat-tab-group.mat-primary .mat-ink-bar {
+    background-color: #f2f2f2;
+    height: 100%;
+    z-index: -1;
+    opacity: 1 !important;
+    border-radius: 30px;
+}
+.mtr-user-entry .mat-tab-nav-bar, .mat-tab-header {
+    border-bottom: 0;
+}
+
+/* login styles */
+.frm-wrapper {
+    display: block;
+}
+.frm-wrap-inner {
+    overflow: hidden;
+    background-color: #ffffff;
+    border-radius: 10px;
+}
+.frm-wrapper mat-form-field {
+    display: block;
+}
+.mtr-user-entry .mat-form-field-flex {
+    background: transparent !important;
+    padding: 0 18px !important;
+}
+.mtr-user-entry .mat-form-field-wrapper {
+    height: 55px;
+    padding-bottom: 0;
+}
+.mtr-user-entry .mat-form-field-underline {
+    display: none;
+}
+.panel-input-style {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 18px;
+    line-height: 24px;
+    width: 100%;
+}
+.btn-submit {
+    width: 100%;
+    display: block;
+    height: 45px;
+    border-radius: 30px;
+    background-color: #3b7cff;
+    color: #ffffff;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 22px;
+    border: none;
+    margin-top: 120px;
+}
+.btn-submit#btn-submit {
+    margin-top: 65px
+}
+.btn-submit:focus {
+    outline: none;
+}
+.mtr-user-entry .mat-select-arrow-wrapper {
+    display: block !important;
+}
+.ms-select-code {
+    width: 100px;
+}
+.frm-wrapper .mat-error {
+    text-align: center;
+    font-size: 12px;
+    font-family: "SF Pro Text Regular";
+    white-space: normal;
+    line-height: 20px;
+}

@@ -1,0 +1,69 @@
+<app-common-subpages-header [data_index]="0"></app-common-subpages-header>
+
+<section class="width1120px margin-bottom70">
+    <mat-toolbar class="mt-money-back" color="primary">
+        <mat-toolbar-row class="common-sub-header"><h2>MONEY BACK GUARANTEE</h2></mat-toolbar-row>
+
+        <!-- <mat-toolbar-row class="mtr-mbg-body">
+            <span *ngFor="let list of mgbContents" class="fill-space {{list.class}}">
+                <h2>{{list.header}}</h2>
+                <mat-list role="list" class="ml-mbg-body">
+                    <mat-list-item role="listitem" *ngFor="let item of list.list; let i = index">
+                        {{i+1}}. {{item}}
+                    </mat-list-item>
+                </mat-list>
+            </span>
+        </mat-toolbar-row> -->
+        <!-- <mat-toolbar-row class="mtr-mbg-body">
+            <span class="fill-space spn-no-refund">
+                <h2>NO Refund</h2>
+                <div class="no-refund-wrap" *ngFor="let list of noRefundContent">
+                    <h3>{{list.header}}</h3>
+                    <p *ngFor="let item of list.list" [innerHtml]="item"></p>
+                </div>
+            </span>
+        </mat-toolbar-row> -->
+    </mat-toolbar>
+    <app-content-photo-info data_content="money_back_guarantee" [left_first]="false" [has_header]="true" [has_background_content]="true"></app-content-photo-info>
+</section>
+
+<section class="width1120px margin-bottom70">
+    <mat-toolbar>
+        <mat-toolbar-row class="common-sub-header"><h2>NO REFUND</h2></mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-accordion class="ma-money-back">
+                <mat-expansion-panel 
+                    *ngFor="let list of noRefundContent"
+                    (opened)="panelMoneyBackState = true"
+                    (closed)="panelMoneyBackState = false">
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{list.header}}
+                        </mat-panel-title>
+                        <!-- <mat-panel-description>
+                            Currently I am {{panelMoneyBackState ? 'open' : 'closed'}}
+                        </mat-panel-description> -->
+                        </mat-expansion-panel-header>
+                        <p *ngFor="let item of list.list" [innerHtml]="item"></p>
+                    </mat-expansion-panel>
+            </mat-accordion>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<section class="default-width sec-pro-writing margin-bottom70">
+    <mat-toolbar>
+        <mat-toolbar-row class="common-sub-header">
+            <h2>OUR SERVICES</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>  
+</section>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>
+
+<!-- <app-common-new-order-button></app-common-new-order-button> -->

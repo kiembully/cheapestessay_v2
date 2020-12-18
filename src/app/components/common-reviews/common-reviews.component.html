@@ -1,0 +1,71 @@
+<mat-toolbar class="mt-reviews-wrap">
+    <mat-toolbar-row>
+        <div class="reviews-wrap">
+            <span class="fill-space spn-flex">
+                <div class="review-img-wrap"></div>
+            </span>
+            <span class="fill-space">
+                <p><strong>Client</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons client-rate-icon"></span></p>
+                <p class="p-rate"><strong>4.9</strong></p>
+            </span>
+            <span class="fill-space spn-flex">
+                <div class="review-img-wrap"></div>
+            </span>
+            <span class="fill-space">
+                <p><strong>Facebook</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons facebook-rate-icon"></span></p>
+                <p class="p-rate"><strong>5.0</strong></p>
+            </span>
+            <span class="fill-space spn-flex">
+                <div class="review-img-wrap"></div>
+            </span>
+            <span class="fill-space">
+                <p><strong>Google</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons google-rate-icon"></span></p>
+                <p class="p-rate"><strong>5.0</strong></p>
+            </span>
+            <span class="fill-space spn-flex">
+                <div class="review-img-wrap"></div>
+            </span>
+            <span class="fill-space">
+                <p><strong>SiteJabber</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons sitejabber-rate-icon"></span></p>
+                <p class="p-rate"><strong>4.74</strong></p>
+            </span>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<section class="default-width sec-reviews-wrap">
+    <owl-carousel-o [options]="customOptions">
+        <ng-template carouselSlide>
+            <span class="review-item-wrap">
+                <p><strong>Client</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons client-rate-icon"></span></p>
+                <p class="p-rate"><strong>4.9</strong></p>
+            </span>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <span class="review-item-wrap">
+                <p><strong>Facebook</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons facebook-rate-icon"></span></p>
+                <p class="p-rate"><strong>5.0</strong></p>
+            </span>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <span class="review-item-wrap">
+                <p><strong>Google</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons google-rate-icon"></span></p>
+                <p class="p-rate"><strong>5.0</strong></p>
+            </span>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <span class="review-item-wrap">
+                <p><strong>SiteJabber</strong> Reviews</p>
+                <p class="p-rate"><span class="sprites-icons sitejabber-rate-icon"></span></p>
+                <p class="p-rate"><strong>4.74</strong></p>
+            </span>
+        </ng-template>  
+    </owl-carousel-o>
+</section>

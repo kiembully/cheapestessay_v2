@@ -1,0 +1,19 @@
+<mat-toolbar color="primary" class="mt-apply-fq">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar-row class="mtr-apply-fq">
+        <h1>Get 15% Discount</h1>
+        <p>We guarantee that your personal information will never be discloused to anyone.</p>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-apply-fq">
+        <form class="frm-apply-fq" [formGroup]="freeQuoteForm" (ngSubmit)="applyFreeQuote()">
+            <div class="email-fq-wrap" [style.border]="formHasError ? '1px solid #d93025' : null">
+                <mat-form-field appearance="fill">
+                    <input formControlName="email" matInput type="email" placeholder="Your Email" required  class="panel-input-style">
+                </mat-form-field>
+            </div>
+            <mat-error *ngIf="formHasError">{{errorMessage}}</mat-error>
+            <button mat-flat-button type="submit">View Quote</button>
+            <p>View free quote with 15% discount</p>
+        </form>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -1,0 +1,388 @@
+<form [formGroup]="newOrderForm" name="frm-new-order" ngNativeValidate>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row class="mtb-new-order" [style.padding-top]="isUserActive ? '80px' : '140px'">
+    
+            <div class="new-order-wrap">
+                <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                <section class="sec-order-wrap sec-edit-header" *ngIf="isEditing == true">
+                    <h1>Edit Order</h1>
+                </section>
+                <section class="sec-order-wrap sec-service-type">
+                    <span class="fill-space">
+                        <p class="p-order-label">Type of Service</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <mat-button-toggle-group formControlName="service" class="mbtg-common-style" [value]="newOrderForm.value.service">
+                            <mat-button-toggle 
+                            *ngFor="let list of serviceTypes" 
+                            class="tri-btn-toggle"
+                            (click)="patchPageSlide(list.type_of_service_id)"
+                            [value]="list.type_of_service_id">{{list.type_of_service}}</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-writer-level">
+                    <span class="fill-space">
+                        <p class="p-order-label">Writer Level</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <mat-button-toggle-group formControlname="academic" class="mbtg-common-style" [value]="newOrderForm.value.academic">
+                            <mat-button-toggle 
+                            *ngFor="let list of writerLevels" 
+                            class="tri-btn-toggle"
+                            (click)="patchLevel(list.academic_level_id)"
+                            [value]="list.academic_level_id">{{list.academic_level_name}}</mat-button-toggle>
+                        </mat-button-toggle-group>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-paper-type">
+                    <span class="fill-space">
+                        <p class="p-order-label">Type of Paper</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <mat-form-field appearance="fill" class="mfl-common-select">
+                            <mat-select formControlName="paper" panelClass="mt-common-select" [value]="newOrderForm.value.paper">
+                                <!-- <mat-option disabled><input class="mt-search-input" type="text" placeholder="Search"></mat-option> -->
+                                <mat-optgroup label="Most Popular">
+                                    <mat-option 
+                                    *ngFor="let list of pPaperTypes"
+                                    (click)="patchPaper(list)"
+                                    [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                                </mat-optgroup>
+                                <mat-optgroup label="Others">
+                                    <mat-option 
+                                    *ngFor="let list of oPaperTypes"
+                                    (click)="patchPaper(list)"
+                                    [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                                </mat-optgroup>
+                            </mat-select>
+                            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                        </mat-form-field>
+                    </span>
+                </section>
+                <!-- only appears when other options is selected -->
+                <section class="sec-other-order-wrap" *ngIf="isOtherPaper">
+                    <span class="fill-space">
+                        <p class="p-order-label">Other Type of Paper</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <input matInput class="inp-writers-choice" type="text" required placeholder="Specify the Type of Paper" required formControlName="other_paper" [value]="newOrderForm.value.other_paper">
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-subject">
+                    <span class="fill-space">
+                        <p class="p-order-label">Subject</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <mat-form-field appearance="fill" class="mfl-common-select">
+                            <mat-select formControlName="subject" panelClass="mt-common-select" [value]="newOrderForm.value.subject">
+                                <mat-option disabled><input class="mt-search-input" type="text" placeholder="Search"></mat-option>
+                                <mat-optgroup label="Most Popular">
+                                    <mat-option 
+                                    *ngFor="let list of pSubjects" 
+                                    (click)="patchSubject(list)"
+                                    [value]="list.id">{{list.subject_name}}</mat-option>
+                                </mat-optgroup>
+                                <mat-optgroup label="Others">
+                                    <mat-option 
+                                    *ngFor="let list of oSubjects" 
+                                    (click)="patchSubject(list)"
+                                    [value]="list.id">{{list.subject_name}}</mat-option>
+                                </mat-optgroup>
+                            </mat-select>
+                            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                        </mat-form-field>
+                    </span>
+                </section>
+                <!-- only appears when other options is selected -->
+                <section class="sec-other-order-wrap" *ngIf="isOtherSubject">
+                    <span class="fill-space">
+                        <p class="p-order-label">Other Subject</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <input matInput class="inp-writers-choice" type="text"  required placeholder="Type your Subject" formControlName="other_subject" [value]="newOrderForm.value.other_subject">
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-timezone">
+                    <span class="fill-space">
+                        <p class="p-order-label">Timezone</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <mat-form-field appearance="fill" class="mfl-common-select">
+                            <mat-select  formControlName="timezone" panelClass="mt-common-select" [value]="newOrderForm.value.timezone">
+                                <mat-option disabled><input class="mt-search-input" type="text" placeholder="Serach"></mat-option>
+                                <mat-option 
+                                    *ngFor="let list of timezones" 
+                                    [value]="list.timezone">{{list.name}}</mat-option>
+                            </mat-select>
+                            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                        </mat-form-field>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-deadline">
+                    <span class="fill-space">
+                        <p class="p-order-label">Deadline</p>
+                    </span>
+                    <span class="spn-input-wrap" >
+                        <mat-button-toggle-group class="mbtg-common-style deadline-wrap" required [value]="deadline_value">
+                            <mat-button-toggle 
+                            *ngFor="let list of allDeadlines; let i = index" 
+                            class="fill-space"
+                            (click)="patchDeadline(list)"
+                            [value]="i">
+                            <p class="p-dl">{{list.deadline}}</p>
+                            <p class="p-du" [style.color]="list.duration == 'Hours' ? '#D0555A' : null">{{list.duration}}</p>
+                        </mat-button-toggle>
+                        </mat-button-toggle-group>
+                        <label class="lbl-common-style" for="deadline">Order will be ready before {{deadlineFormat}}</label>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-pages">
+                    <span class="fill-space">
+                        <p class="p-order-label" *ngIf="isPageDisabled && _session.isTokenExisting('user_token')">Slides</p>
+                        <p class="p-order-label" *ngIf="!(isPageDisabled && _session.isTokenExisting('user_token'))">Pages</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <div class="pages-option-wrap">
+                            <span class="spn-page-counter">
+                                <div [ngClass]="{'disabled-style':isPageDisabled && !_session.isTokenExisting('user_token')}" *ngIf="!(isPageDisabled && _session.isTokenExisting('user_token'))">
+                                    <button [disabled]="isPageDisabled && !_session.isTokenExisting('user_token')" (click)="decPage()" class="fill-space" type="button" mat-button>
+                                        <div class="sprites-icons dec-icon"></div>
+                                    </button>
+                                    <input formControlName="page" class="fill-space" type="number" required [value]="newOrderForm.value.page">
+                                    <button [disabled]="isPageDisabled && !_session.isTokenExisting('user_token')" (click)="incPage()" class="fill-space" type="button" mat-button>
+                                        <div class="sprites-icons inc-icon"></div>
+                                    </button>
+                                </div>
+                                <div [ngClass]="{'disabled-style':isPageDisabled && !_session.isTokenExisting('user_token')}" *ngIf="isPageDisabled && _session.isTokenExisting('user_token')">
+                                    <button [disabled]="isPageDisabled && !_session.isTokenExisting('user_token')" (click)="decSlides()" class="fill-space" type="button" mat-button>-</button>
+                                    <input formControlName="slide" class="fill-space" type="number" required [value]="newOrderForm.value.page">
+                                    <button [disabled]="isPageDisabled && !_session.isTokenExisting('user_token')" (click)="incSlides()" class="fill-space" type="button" mat-button>+</button>
+                                </div>
+                            </span>
+                            <span class="fill-space"></span>
+                            <span class="spn-space-counter">
+                                <mat-form-field appearance="fill" class="mfl-common-select">
+                                    <mat-select panelClass="mt-common-select" formControlName="set_spacing" [value]="newOrderForm.value.set_spacing">
+                                        <mat-option (click)="patchSpacing(2)" [value]="2">Single Spaced</mat-option>
+                                        <mat-option (click)="patchSpacing(1)" [value]="1">Double Spaced</mat-option>
+                                    </mat-select>
+                                    <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                                </mat-form-field>
+                            </span>
+                        </div>
+                        <label class="lbl-common-style" for="pages">{{word_tot}} Word(s)</label>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-topic">
+                    <span class="fill-space">
+                        <p class="p-order-label">Topic</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <input matInput class="inp-writers-choice" type="text" formControlName="topic" required [value]="newOrderForm.value.topic" required>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-details">
+                    <span class="fill-space">
+                        <p class="p-order-label">Details</p>
+                    </span>
+                    <span class="spn-text-wrap">
+                        <textarea matInput formControlName="add_detail" required value="newOrderForm.value.add_detail" placeholder="You can include paper structure and/or outline, types and number of references to be used, grading scale or any other requirements…"></textarea>
+                    </span>
+                </section>
+                <section class="sec-order-wrap sec-upload">
+                    <span class="fill-space">
+                        <p class="p-order-label">Upload</p>
+                    </span>
+                    <span class="spn-input-wrap">
+                        <button class="btn-upload" mat-flat-button type="button" (click)="_dialog_trigger.openUploadDialog()">Upload files/ photo</button>
+                    </span>
+                </section>
+    
+                <!-- lower portion is hidden when user is not logged in -->
+                <mat-accordion class="ma-order-options" *ngIf="isUserActive">
+                    <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                Hide more options ( optional )
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+    
+                        <section class="sec-order-wrap sec-format-style">
+                            <span class="fill-space">
+                                <p class="p-order-label">Format / Style</p>
+                            </span>
+                            <span class="spn-input-wrap">
+                                <mat-button-toggle-group formControlName="formated_style" class="mbtg-common-style mbtg-format-style" [value]="newOrderForm.value.formated_style">
+                                    <mat-button-toggle 
+                                    *ngFor="let list of formatStyles"
+                                    class="tri-btn-toggle" 
+                                    (click)="patchFormat(list.style_id)"
+                                    [value]="list.style_id">{{list.style_name}}</mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </span>
+                        </section>
+                        <!-- only appears when other options is selected -->
+                        <section class="sec-other-order-wrap" *ngIf="isOtherFormatVisible">
+                            <span class="fill-space">
+                                <p class="p-order-label">Other Format / Style</p>
+                            </span>
+                            <span class="spn-input-wrap">
+                                <input matInput class="inp-writers-choice" type="text" required placeholder="Type your Format / Style" required formControlName="other_format" [value]="newOrderForm.value.other_format">
+                            </span>
+                        </section>
+                        <section class="sec-order-wrap sec-discipline">
+                            <span class="fill-space">
+                                <p class="p-order-label">Discipline</p>
+                            </span>
+                            <span class="spn-input-wrap">
+                                <mat-button-toggle-group formControlName="discipline" class="mbtg-common-style" [value]="newOrderForm.value.discipline">
+                                    <mat-button-toggle 
+                                    *ngFor="let list of allDiscipline"
+                                    class="tri-btn-toggle" 
+                                    [value]="list.discipline_id">{{list.discipline}}</mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </span>
+                        </section>
+                        <section class="sec-order-wrap sec-pref-writer">
+                            <span class="fill-space">
+                                <p class="p-order-label">Preferred Writer</p>
+                            </span>
+                            <span class="spn-input-wrap">
+                                <mat-button-toggle-group class="mbtg-common-style" formControlName="preferred_writer" [value]="newOrderForm.value.preferred_writer">
+                                    <mat-button-toggle class="tri-btn-toggle" (click)="patchWriter(1)" value="any_writer">Any Writer <span class="spn-price-color">(Free)</span></mat-button-toggle>
+                                    <mat-button-toggle class="tri-btn-toggle" (click)="patchWriter(2)" value="top_10_writer">Top 10 Writers <span class="spn-price-color">(+25%)</span></mat-button-toggle>
+                                    <mat-button-toggle class="tri-btn-toggle" (click)="patchWriter(3)" value="my_previous_writer">Preferred Writer</mat-button-toggle>
+                                </mat-button-toggle-group>
+                            </span>
+                        </section>
+                        <!-- only appears when other options is selected -->
+                        <section class="sec-other-order-wrap" *ngIf="isPreferredWriterVisible">
+                            <span class="fill-space">
+                                <p class="p-order-label">Preferred Writer</p>
+                            </span>
+                            <span class="spn-input-wrap">
+                                <mat-form-field appearance="fill" class="mfl-common-select">
+                                    <mat-select panelClass="mt-common-select" formControlName="writer_id" [value]="newOrderForm.value.writer_id">
+                                        <mat-option disabled><input class="mt-search-input" type="text" placeholder="Serach"></mat-option>
+                                        <mat-optgroup label="Old Writers" *ngIf="isUserActive">
+                                            <mat-option (click)="patchPreferredWriter(list.writer)" *ngFor="let list of oldWriters">{{list.writer}}</mat-option>
+                                        </mat-optgroup>
+                                        <mat-optgroup label="Top 10 Writers">
+                                            <mat-option
+                                            *ngFor="let list of topWriters"
+                                            (click)="patchPreferredWriter(list.writer)"
+                                            [value]="list.writer">{{list.writer}}</mat-option>
+                                        </mat-optgroup>
+                                        <mat-optgroup label="Other Writers">
+                                            <mat-option
+                                            *ngFor="let list of otherWriters"
+                                            (click)="patchPreferredWriter(list.writer)"
+                                            [value]="list.writer">{{list.writer}}</mat-option>
+                                        </mat-optgroup>
+                                    </mat-select>
+                                    <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                                </mat-form-field>
+                            </span>
+                        </section>
+                        <section class="sec-other-option">
+                            <span class="spn-other-option">
+                                <section class="sec-other-option-inner">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">Sources <span>(Free)</span></p>
+                                    </span>
+                                    <span class="spn-select-total">
+                                        <div>
+                                            <button (click)="decSource()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons dec-icon"></div>
+                                            </button>
+                                            <input type="number" formControlName="source" [value]="newOrderForm.value.source" class="inp-inner">
+                                            <button (click)="incSource()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons inc-icon"></div>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </section>
+                                <section class="sec-other-option-inner">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">Charts</p>
+                                    </span>
+                                    <span class="spn-select-total">
+                                        <div>
+                                            <button (click)="decCharts()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons dec-icon"></div>
+                                            </button>
+                                            <input type="number" formControlName="chart" [value]="newOrderForm.value.chart" class="inp-inner">
+                                            <button (click)="incCharts()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons inc-icon"></div>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </section>
+                                <section class="sec-other-option-inner">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">PowerPoint Slides</p>
+                                    </span>
+                                    <span class="spn-select-total">
+                                        <div>
+                                            <button (click)="decSlides()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons dec-icon"></div>
+                                            </button>
+                                            <input type="number" formControlName="slide" [value]="newOrderForm.value.slide" class="inp-inner" [required]="isPageDisabled">
+                                            <button (click)="incSlides()" class="fill-space" type="button" mat-button>
+                                                <div class="sprites-icons inc-icon"></div>
+                                            </button>
+                                        </div>
+                                    </span>
+                                </section>
+                            </span>
+                            <span class="fill-space"></span>
+                            <span class="spn-other-option" formControlGroup="additionalextra">
+                                <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(5)">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">Turnitin Plagiarism Report <span class="spn-price-color">($7.99)</span></p>
+                                    </span>
+                                    <span class="spn-toggle-option">
+                                        <button type="button" [ngClass]="{'is-active':isPlagiarismActive}" mat-mini-fab class="btn-toggle-option"></button>
+                                    </span>
+                                </section>
+                                <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(6)">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">Abstract Page <span class="spn-price-color">($2.99)</span></p>
+                                    </span>
+                                    <span class="spn-toggle-option">
+                                        <button type="button" [ngClass]="{'is-active':isAbstractActive}" mat-mini-fab class="btn-toggle-option"></button>
+                                    </span>
+                                </section>
+                                <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(7)">
+                                    <span class="fill-space">
+                                        <p class="p-options-label">Send it to my E-Mail <span class="spn-price-color">1.99</span></p>
+                                    </span>
+                                    <span class="spn-toggle-option">
+                                        <button type="button" [ngClass]="{'is-active':isEmailActive}" mat-mini-fab class="btn-toggle-option"></button>
+                                    </span>
+                                </section>
+                            </span>
+                        </section>
+                        
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </div>
+            <app-new-order-output
+                (openCouponDialog)="openCouponDialog()"
+                [isUserOnline]="isUserActive"
+                [total_price]="total_price"
+                [price_saved]="price_saved"
+                [order_data]="newOrderForm.value"
+                [order_output]="orderOutput.value"
+                [plagiarism]="isPlagiarismActive"
+                [abstract]="isAbstractActive"
+                [email]="isEmailActive"
+                [page_cost]="page_cost"
+                [slide_cost]="slide_cost"
+                [chart_cost]="chart_cost"
+                >
+            </app-new-order-output>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

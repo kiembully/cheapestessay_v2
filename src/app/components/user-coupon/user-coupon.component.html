@@ -1,0 +1,25 @@
+<form [formGroup]="couponForm" (ngSubmit)="submitCoupon()"  class="frm-coupon-wrap" ngNativeValidate>
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar class="mt-user-coupon" color="primary">
+        <mat-toolbar-row>
+            <h1>Have a coupon code?</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <label class="lbl-coupon" for="userCoupon">Coupon code</label>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="coupon-entry-wrap" [style.border]="errorState?'1pX solid #D0021B':'1px solid #D7DCE3'">
+                <mat-form-field appearance="fill">
+                    <input matInput formControlName="coupon_code" placeholder="Enter Coupon" required class="panel-input-style" [value]="couponForm.value.coupon_code">
+                </mat-form-field>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p *ngIf="errorState" [style.color]="errorState?'#D0021B':'#13B675'" class="p-coup-response">{{errorMessage}}</p>
+            <p *ngIf="submitState" class="p-coup-response">{{errorMessage}}</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <button type="submit" mat-flat-button class="btn-coup-apply">Apply</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

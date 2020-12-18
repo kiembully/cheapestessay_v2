@@ -1,0 +1,34 @@
+.mt-home-faq {
+    background: transparent;
+}
+.mtr-home-faq > span:first-child {
+    max-width: 430px;
+    width: 100%;
+}
+.mtr-home-faq > span:nth-child(2) {
+    padding: 10px;
+}
+.mtr-home-faq > span:last-child {
+    max-width: 600px;
+    width: 100%;
+}
+.home-faq-img {
+    min-height: 400px;
+    width: 100%;
+    background: red;
+}
+
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .mtr-home-faq > span:first-child {
+        display: none;
+    }
+    .mtr-home-faq > span:nth-child(2) {
+        display: none;
+    }
+    .mtr-home-faq > span:last-child {
+        display: block;
+        margin: 0 auto;
+    }
+}

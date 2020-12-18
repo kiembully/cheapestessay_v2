@@ -1,0 +1,40 @@
+<!-- Opens user entry modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 0">
+    <app-user-entry></app-user-entry>
+</section>
+<!-- Opens add coupon modal  -->
+<section class="sec-wrap-dialog"  *ngIf="data.content_id == 1">
+    <app-user-coupon [coupon_state]="data.coupon_id"></app-user-coupon>
+</section>
+<!-- Opens pay order form modal  -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 2">
+    <app-pay-order [order_id]="data.order_id"></app-pay-order>
+</section>
+<!-- Opens logout modal  -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 3">
+    <app-logout></app-logout>
+</section>
+<!-- Opens update profile modals -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 4">
+    <app-update-profile [form_id]="data.profile_detail_id" [profile_data]="data.profile"></app-update-profile>
+</section>
+<!-- Opens discount how it works modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 5">
+    <app-discount-page-modal></app-discount-page-modal>
+</section>
+<!-- Opens level how it works modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 6">
+    <app-level-page-modal [level]="data.user_level"></app-level-page-modal>
+</section>
+<!-- Opens free quote modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 7">
+    <app-apply-free-quote></app-apply-free-quote>
+</section>
+<!-- Opens common message modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 8">
+    <app-common-dialog-message [order_id]="data.order_id"></app-common-dialog-message>
+</section>
+<!-- Opens upload modal -->
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 9">
+    <app-common-upload></app-common-upload>
+</section>

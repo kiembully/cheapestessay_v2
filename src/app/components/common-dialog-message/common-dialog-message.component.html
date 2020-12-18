@@ -1,0 +1,11 @@
+<mat-toolbar color="primary" class="mt-delete-wrap">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar-row>
+        <h1>Are you sure you want to <br><strong>Delete this order?</strong></h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span><button mat-flat-button class="btn-delete-no" mat-dialog-close type="button">No</button></span>
+        <span class="fill-space"></span>
+        <span><button mat-flat-button class="btn-delete-yes" type="button" (click)="deleteOrder()">Yes</button></span>
+    </mat-toolbar-row>
+</mat-toolbar>

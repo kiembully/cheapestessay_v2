@@ -1,0 +1,28 @@
+<section class="full-width sec-additional-service">
+    <div class="split-diagonal-bg"></div>
+    <mat-toolbar class="default-width mt-additional-service">
+        <mat-toolbar-row>
+            <span class="spn-add-service-outer">
+                <div class="additional-service-wrap">
+                    <h2>SAVE UPTO $40</h2>
+                    <h3>WORTH OF ADDITIONAL SERVICE</h3>
+                    <mat-list role="list" class="ml-addnl-services">
+                        <mat-list-item role="listitem" *ngFor="let list of addnl_service_list">
+                            <span class="spn-bullets fill-space"></span>
+                            <span class="fill-space">{{list}}</span>
+                        </mat-list-item>
+                    </mat-list>
+                    <div class="add-service-option">
+                        <span><button mat-flat-button type="button" class="btn-order-now" routerLink="/order">Order Now</button></span>
+                        <span class="fill-space"></span>
+                        <span><button mat-flat-button type="button" class="btn-contact-us" routerLink="/contact-us">Contact Us</button></span>
+                    </div>
+                </div>
+            </span>
+            <span class="fill-space w-hidden"></span>
+            <span class="spn-add-service-img w-hidden">
+                <div class="add-service-img"></div>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>

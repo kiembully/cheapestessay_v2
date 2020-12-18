@@ -1,0 +1,176 @@
+
+.spn-step-wrap {
+    position: relative;
+    align-self: flex-start;
+}
+.step-wrap-inner {
+    position: relative;
+    height: 395px;
+    width: 445px;
+    display: block;
+    text-align: center;
+    background: #DCE9F5;
+    box-shadow: 4px 6px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 67% 33% 69% 31% / 71% 57% 43% 29% 
+}
+.sec-w-hiw { display: block; }
+.sec-m-hiw { display: none; }
+
+.spn-steps-wrap {
+    position: absolute;
+    top: 23px;
+    left: 0;
+    height: 74.04px;
+    width: 73.2px;
+    background-color: #FBD501;
+    border-radius: 50%;
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 38px;
+    letter-spacing: 0;
+    line-height: 74.04px;
+}
+.spn-step-wrap h5 {
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 35px;
+    font-weight: bold;
+    letter-spacing: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    white-space: normal;
+}
+.spn-step-wrap h6 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0;
+    max-width: 445px;
+    white-space: normal;
+}
+.sec-w-hiw mat-toolbar-row:first-child {
+    margin-bottom: 45px;
+}
+
+/* .owl-theme .owl-dots .owl-dot {
+    margin: 0 50px !important;
+}
+.btn-carousel-wrap p {
+    font-family: "SF Pro Text Bold";
+    color: #000000;
+    font-size: 16px;
+    line-height: 19px;
+    background-size: 100%;
+    position: relative;
+    white-space: nowrap;
+    opacity: .25;
+}
+.btn-carousel {
+    width: 67px;
+    height: 67px;
+    border-radius: 50%;
+    background-color: #FFD500;
+    opacity: .25;
+    color: #000000;
+    font-size: 16px;
+    line-height: 19px;
+    transition: all 0.1s ease;
+    position: relative;
+    margin: 0 auto;
+    display: block;
+}
+.btn-carousel.active {
+    opacity: 1 !important;
+}
+.mps-carousel {
+    position: absolute;
+    position: absolute !important;
+    top: 0;
+    left: 0;
+}
+.slider-description-wrap {
+    padding: 9px 0;
+    max-width: 555px;
+    margin: 50px auto;
+    width: 100%;
+    background-color: #12245A;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 0.98px;
+    line-height: 19px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border-radius: 17.5px;
+}
+.sprite-how-it-works {
+    background-image: url('src\assets\img\how-it-works.svg');
+    background-repeat: no-repeat;
+    display: block;
+    box-shadow: 0 5px 13px 0 rgba(64, 85, 196, 0.14);
+    border-radius: 40px;
+    zoom: 0.3;
+    margin: 0 auto;
+}
+.sprite-makepayment-img {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 0;
+}
+.sprite-orderprogress-img {
+    width: 3700px;
+    height: 2100px;
+    background-position: 0 -1665px;
+    zoom: 0.23;
+}
+.sprite-placeorder-img {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 -3765px;
+}
+.sprite-receive-orders {
+    width: 3000px;
+    height: 1665px;
+    background-position: 0 -5430px;
+} */
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    .step-wrap-inner {
+        max-height: 295px;
+        max-width: 345px;
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+  
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    /* .sec-w-hiw { display: none; }
+    .sec-m-hiw { display: block; } */
+    .sec-w-hiw mat-toolbar-row {
+        display: block;
+        text-align: -webkit-center;
+    }
+    .spn-step-wrap h5 {
+        margin-top: 20px
+    }
+    .spn-step-wrap {
+        display: block;
+    }
+    .spn-step-wrap:first-child {
+        margin-bottom: 45px;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

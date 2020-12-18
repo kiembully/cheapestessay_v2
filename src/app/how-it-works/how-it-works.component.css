@@ -1,0 +1,15 @@
+.hiw-video-wrap {
+    height: 501px;
+    width: 100%;
+    border-radius: 23px;
+    background-color: rgba(0, 0, 0, 0.85);
+    overflow: hidden;
+    margin-bottom: 105px;
+}
+.hiw-video-wrap iframe {
+    height: 100%;
+    width: 100%;
+}
+.padding120 {
+    padding: 120px 0 86px 0;
+}

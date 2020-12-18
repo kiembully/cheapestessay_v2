@@ -1,0 +1,160 @@
+.services-item-wrap {
+    border-radius: 20px;
+    background: linear-gradient(0deg, #294A93 0%, #12245A 100%);
+    padding: 13px 10px;
+}
+.mt-contact-me {
+    border-radius: 20px;
+    background: linear-gradient(0deg, #294A93 0%, #12245A 100%);
+    padding: 13px 10px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 70px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.services-item-wrap .material-icons {
+    color: #FBD501;
+    height: 36px;
+    font-size: 36px;
+    margin-right: 15px;
+}
+.services-item-wrap .mat-list-item {
+    color: #ffffff;
+    font-family: "SF Pro Text Medium";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 31px;
+}
+.services-item-wrap > div {
+    content: '';
+    width: 105px;
+    height: 105px;
+    background-color: transparent;
+    border: 2px dashed #292929;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+}
+.sec-services-slide-outer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+    overflow: hidden;
+}
+.sec-services-slide {
+    display: block;
+}
+.btn-hg-nav {
+    height: 60px;
+    width: 55px;
+    overflow: hidden;
+    border-radius: 50%;
+    background-color: #12245A;
+    padding: 0;
+}
+.btn-hg-nav .material-icons {
+    color: #FFD500;
+    font-size: 50px;
+}
+.mtr-contact-me {
+    white-space: normal;
+}
+.frm-contact-me {
+    display: flex;
+    z-index: 1;
+}
+.frm-contact-me h5 {
+    color: #FBD501;
+    font-family: "SF Pro Text Bold";
+    font-size: 34px;
+    letter-spacing: 0;
+    margin-bottom: 15px;
+    margin-top:10px;
+}
+.frm-contact-me p {
+    color: #F2F2F2;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.frm-contact-me span:last-child {
+    align-self: center;
+    max-width: 400px;
+}
+.frm-contact-me span:nth-child(2) {
+    padding: 10px;
+}
+.contact-input-wrap {
+    display: flex;
+    border-radius: 35px;
+    background-color: #FFFFFF;
+    padding: 8px;
+    height: 54px;
+    width: 100%;
+}
+.contact-input-wrap input {
+    background: transparent;
+    border:none;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 18px;
+    letter-spacing: 0;
+    outline: none;
+    padding-left: 15px;
+    text-overflow: ellipsis
+}
+.contact-input-wrap button {
+    padding: 10px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    font-weight: 500;
+    letter-spacing: 0;
+    border-radius: 35px;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    .contact-input-wrap button {
+        line-height: 14px;
+        font-size: 12px;
+        width: 120px;
+    }
+    .contact-input-wrap input {
+        font-size: 16px
+    }
+    .contact-input-wrap input {
+        width: 100%
+    }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+  .frm-contact-me {
+      display: block;
+      text-align: center;
+      max-width: 400px;
+      margin: 0 auto;
+  }
+  .mt-contact-me {
+      border-radius: 0;
+  }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    .spn-slider-nav {
+        display: none;
+    }
+}

@@ -1,0 +1,115 @@
+.mt-web-contents {
+    margin-bottom: 100px
+}
+.mt-web-contents:last-child {
+    margin-bottom: 0
+}
+.mt-web-contents mat-toolbar-row {
+    margin-bottom: 45px;
+}
+.mt-web-contents mat-toolbar-row:last-child {
+    margin-bottom: 0;
+}
+.spn-content-img {
+    max-width: 400px;
+    width: 100%;
+}
+.spn-content-desc {
+    white-space: normal;
+    width: 100%;
+    max-width: 600px;
+}
+.spn-content-block {
+    display: block;
+}
+.row-reverse {
+    flex-direction: row-reverse;
+}
+.spn-content-desc h6 {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 36px;
+    margin: 0 auto 20px auto;
+}
+.spn-content-desc p {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: justify;
+    margin: 0 auto 16px auto;
+}
+.mtr-web-contents {
+    margin-bottom: 0 !important
+}
+.mtr-web-contents h5:last-child {
+    margin-bottom: 0;
+}
+.spn-bullet-item {
+    border-radius: 50%;
+    background-color: #FBD501;
+    margin-right: 15px;
+    padding: 0 7.5px;
+    height: 15px;
+    margin-top: 7px;
+}
+.mtr-web-contents h5 {
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin: 0 auto 24px;
+    display: flex;
+    text-align: justify;
+    width: 100%;
+    max-width: 1100px;
+}
+.btn-get-started {
+    padding: 20px 35px;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin: 16px auto 0 auto
+}
+.has-background {
+    border-radius: 4.5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 #C5DBEF, 5px 6px 35px 0 #C5DBEF;
+    padding: 30px 20px;
+    text-align: center;
+    display: block
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .mt-web-contents mat-toolbar-row {
+        display: block !important;
+        text-align: -webkit-center;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

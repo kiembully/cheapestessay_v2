@@ -1,0 +1,93 @@
+<!-- <div class="order-output-wrap" [style.top]="isUserOnline ? '255px' : '145px'" [ngClass]="{'is-fixed':isFixed && !isUserOnline, 'is-fixed1':isFixed && isUserOnline}"> -->
+<div class="order-output-wrap" [style.top]="isUserOnline ? '80px' : '140px'" [ngClass]="{'is-fixed':isFixed && !isUserOnline, 'is-fixed1':isFixed && isUserOnline}">
+<!-- <div class="order-output-wrap" [ngClass]="{'is-fixed':isFixed && !isUserOnline, 'is-fixed1':isFixed && isUserOnline}"> -->
+    <section class="sec-output-wrap">
+        <div class="video-wrap">
+            <iframe src="https://www.youtube.com/embed/DerCRVja8O4?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen=""></iframe>
+        </div>
+        <p class="p-video-label">How to place an order?</p>
+    </section>
+    <section class="sec-output-wrap">
+        <form class="order-wrap-inner">
+            <div class="order-output-details">
+                <mat-list>
+                    <mat-list-item><strong class="str-limit-text">{{order_data.topic}}</strong></mat-list-item>
+                    <mat-list-item>{{getService(order_data.service)}}</mat-list-item>
+                    <mat-list-item>{{getAcademicLevel(order_data.academic)}}</mat-list-item>
+                    <mat-list-item *ngIf="order_data.paper != 33">{{order_output.paper}}</mat-list-item>
+                    <mat-list-item *ngIf="(order_output.paper.length > 0) && (order_data.paper == 33)">{{order_data.other_paper}}</mat-list-item>
+                    <mat-list-item *ngIf="order_data.subject != 49">{{order_output.subject}}</mat-list-item>
+                    <mat-list-item *ngIf="(order_output.subject.length > 0) && (order_data.subject == 49)">{{order_data.other_subject}}</mat-list-item>
+                </mat-list>
+                <mat-divider [inset]="true"></mat-divider>
+                <mat-list>
+                    <mat-list-item *ngIf="(order_data.service != 2 || (order_data.service == 2 && !isUserOnline))">
+                        <span *ngIf="order_data.service != 2">{{order_data.page}} Page(s) x ${{page_cost}}</span>
+                        <span *ngIf="order_data.service == 2">{{order_data.slide}} Slide(s) x ${{page_cost}}</span>
+                        <span class="fill-space"></span>
+                        <span *ngIf="order_data.service != 2"><strong>${{getTotalValue(order_data.page,page_cost)}}</strong></span>
+                        <span *ngIf="order_data.service == 2"><strong>${{getTotalValue(order_data.slide,page_cost)}}</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(order_data.source)">
+                        <span>{{order_data.source}} Source(s)</span>
+                        <span class="fill-space"></span>
+                        <span><strong>Free</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(order_data.chart)">
+                        <span>{{order_data.chart}} Chart(s) x ${{chart_cost}}</span>
+                        <span class="fill-space"></span>
+                        <span><strong>${{getTotalValue(order_data.chart,chart_cost)}}</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(order_data.slide)">
+                        <span *ngIf="order_data.service != 2">{{order_data.slide}} Slide(s) x ${{slide_cost}}</span>
+                        <span *ngIf="order_data.service == 2">{{order_data.slide}} Slide(s) x ${{page_cost}}</span>
+                        <span class="fill-space"></span>
+                        <span *ngIf="order_data.service != 2"><strong>${{getTotalValue(order_data.slide, slide_cost)}}</strong></span>
+                        <span *ngIf="order_data.service == 2"><strong>${{getTotalValue(order_data.slide, page_cost)}}</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(abstract)">
+                        <span>Abstract Page</span>
+                        <span class="fill-space"></span>
+                        <span><strong>$2.99</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(plagiarism)">
+                        <span>Turnitin Plagiarism Report</span>
+                        <span class="fill-space"></span>
+                        <span><strong>$7.99</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline && getListVisibility(email)">
+                        <span>Send it to my E-mail</span>
+                        <span class="fill-space"></span>
+                        <span><strong>$1.99</strong></span>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="isUserOnline">
+                        <span>Lifetime Discount</span>
+                        <span class="fill-space"></span>
+                        <span><strong>${{decoded_user_token.user_level.lifetime_discount_id}}</strong></span>
+                    </mat-list-item>
+                </mat-list>
+                <mat-divider [inset]="true"></mat-divider>
+                <mat-list>
+                    <mat-list-item>
+                        <a class="coupon-link" (click)="openCouponDialog.emit()" mat-flat-button>{{getCouponState()}}</a>
+                    </mat-list-item>
+                    <mat-list-item *ngIf="getCouponState() == 'Coupon Applied!'">
+                        You save: ${{price_saved}}
+                    </mat-list-item>
+                </mat-list>
+                <mat-divider [inset]="true"></mat-divider>
+                <mat-list>
+                    <mat-list-item>
+                        <span class="spn-price-label">Total Price</span>
+                        <span class="fill-space"></span>
+                        <span class="spn-tot-price">${{total_price}}</span>
+                    </mat-list-item>
+                    <mat-list-item>
+                        <button *ngIf="!_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="saveOrder()">Save & Order</button>
+                        <button *ngIf="_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="_session.openLoginDialog()">Save & Order</button>
+                    </mat-list-item>
+                </mat-list>
+            </div>
+        </form>
+    </section>
+</div>

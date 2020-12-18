@@ -1,0 +1,106 @@
+.sec-order-details-upper,
+.sec-order-details-lower {
+    display: flex;
+    white-space: normal;
+    padding: 0;
+}
+.add-block-display {
+    display: block;
+    width: 100%;
+}
+.margin-bottom10 {
+    margin-bottom:10px;
+}
+.padding-bottom10 {
+    padding-bottom: 10px;
+}
+.padding-v5 {
+    padding: 0 5px;
+}
+.spn-split-half {
+    max-width: 339px;
+    width: 100%;
+}
+.common-white-bg {
+    display: block;
+    height: 100%;
+    max-width: 688px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    padding: 0 20px;
+}
+.padding-h10 {
+    padding: 10px 20px;
+}
+.order-info-wrap {
+    display: flex;
+}
+.sec-infos {
+    display: flex;
+}
+.spn-info-label {
+    color: #9B9B9B;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 40px;
+}
+.spn-info-data {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 40px;
+    text-align: right;
+}
+.spn-writers-choice {
+    text-align: left;
+    line-height: 20px;
+    margin-bottom: 20px;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.spn-other-details {
+    text-align: left;
+    line-height: 20px;
+    margin-bottom: 20px;
+}
+.spn-deadline-style {
+    display: block;
+    text-align: right;
+    color: #D0021B;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: -0.84px;
+    line-height: 14px;
+    text-align: right;
+    margin-bottom: 25px;
+}
+.spn-hold-price-style {
+    color: #FF7900;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0.75px;
+    line-height: 14px;
+}
+.spn-price-value-style {
+    padding: 3px;
+    display: inline-block;
+    width: 40px;
+    border-radius: 6px;
+    background-color: #D0555A;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 13px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+}
+.spn-price-value-style.yes {
+    background-color: #3B7CFF;
+}
+.add-color-black {
+    color: #000000;
+}

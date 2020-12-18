@@ -1,0 +1,152 @@
+.sec-faqs {
+    margin-bottom: 105px;
+}
+.ma-panel {
+    white-space: normal;
+    width: 100%;
+}
+.ma-panel .mat-expansion-panel-header {
+    height: 69px;
+    padding: 10px 20px;
+}
+.ma-panel .mat-expansion-panel-header-title {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 30px;
+    position: relative;
+    padding-left: 40px;
+}
+.ma-panel p {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 25px;
+    text-align: justify;
+    display: block;
+    padding: 0 40px;
+}
+.mtr-tabs-wrap .mat-tab-group {
+    flex-direction: row;
+    width: 100%;
+}
+.mtr-tabs-wrap .mat-tab-label-container {
+    padding: 20px 0;
+}
+.mtr-tabs-wrap .mat-tab-header {
+    width: 100%;
+    max-width:450px;
+    border-bottom: 0;
+}
+.mtr-tabs-wrap .mat-tab-labels {
+    flex-direction: column;
+    border: 1px solid #12245A
+}
+.mtr-tabs-wrap .mat-tab-label:last-child {
+    border-bottom: 0;
+}
+.mtr-tabs-wrap .mat-tab-label {
+    border-bottom: 1px solid #12245A;
+    opacity: 1;
+    height: 108px;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 38px;
+}
+.mtr-tabs-wrap .mat-tab-label-active {
+    color: #ffffff;
+    background-color: #12245A
+}
+.mtr-tabs-wrap .mat-ink-bar {
+    display: none
+}
+.mtr-tabs-wrap .mat-tab-body {
+    animation: fade-out 0.3s;
+    opacity: 0;
+}
+.mtr-tabs-wrap .mat-tab-body.mat-tab-body-active {
+    animation: fade-in 0.3s;
+    opacity: 1;
+}
+.mtr-common-faqs-wrap {
+    display: block;
+    padding: 20px;
+}
+
+.m-faqs-tab {
+    display: none;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fade-out {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) { 
+    .mtr-tabs-wrap .mat-tab-group {
+        flex-direction: column;
+        width: 100%;
+    }
+    .mtr-tabs-wrap .mat-tab-labels {
+        flex-direction: row;
+        border: 1px solid #12245A
+    }
+    .mtr-tabs-wrap .mat-tab-header {
+        max-width:100% !important;
+    }
+    .m-faqs-tab {
+        display: block;
+    }
+    .w-faqs-tab {
+        display: none;
+    }
+    .mtr-tabs-wrap .mat-tab-label {
+        height: 50px;
+        min-width: 0;
+        flex: 1 1 auto;
+    }
+    .mtr-tabs-wrap .mat-tab-label:last-child {
+        border-bottom: 1px solid #12245A;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    .mtr-tabs-wrap .mat-tab-header {
+        max-width:280px;
+    }
+}

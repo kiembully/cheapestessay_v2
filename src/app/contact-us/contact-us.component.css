@@ -1,0 +1,187 @@
+.mt-contact-banner {
+    margin-top: 150px;
+}
+.mtr-contact-header {
+    white-space: normal;
+}
+.mtr-contact-header h1 {
+    color: #111111;
+    font-family: "SF Pro Text Semibold";
+    font-size: 50px;
+    line-height: 46px;
+    margin: 0 auto;
+}
+.mtr-contact-header h2 {
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    line-height: 46px;
+    text-align: center;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+.mtr-send-contact {
+    margin-bottom: 120px;
+}
+.frm-send-contact {
+    width: 100%;
+    padding: 114px 99px 74px 99px;
+    box-shadow: 0 4px 12px 0 rgba(64, 85, 196, 0.14);
+    border-radius: 15px;
+    background-color: #FFFFFF;
+    margin-top: 65px;
+    text-align: left;
+    display: flex;
+    position: relative;
+}
+.p-contact-sub {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin: 0 0 80px 0;
+}
+.margin-bottom35 {
+    margin-bottom: 35px;
+}
+.mff-contact-us {
+    width: 430px;
+}
+.mff-contact-us .mat-input-element{
+  color: #000000;
+  font-family: "SF Pro Text Regular";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.mff-textarea .mat-input-element {
+    height: 140px;
+    resize: none;
+}
+.mff-contact-us .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 2px;
+}
+.mff-contact-us .mat-form-field-infix {
+    padding: 5px 0 20px 0 !important
+}
+.contact-info-wrap {
+    display: block;
+    width: 100%;
+}
+.contact-info-wrap button {
+    color: #111111;
+    font-family: "SF Pro Text Semibold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 30px;
+    display: block;
+    position: relative;
+    padding: 0 0 0 45px;
+    width: 100%;
+    text-align: left
+}
+.margin-bottom30 {
+    margin-bottom: 30px;
+}
+
+/* sprite */
+.sprite-iconchat {
+    width: 40px;
+    height: 40px;
+    background-position: 0 0;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.sprite-iconfbchat {
+    width: 44px;
+    height: 44px;
+    background-position: 0 -50px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.sprite-iconinsta {
+    width: 64px;
+    height: 64px;
+    background-position: 0 -104px;
+    position: absolute;
+    left: -8px;
+    top: 4px;
+    zoom: 0.46;
+}
+
+.sprite-iconmail {
+    width: 40px;
+    height: 40px;
+    background-position: 0 -178px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.sprite-icontel {
+    width: 40px;
+    height: 40px;
+    background-position: 0 -228px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.sprite-iconwa {
+    width: 40px;
+    height: 40px;
+    background-position: 0 -278px;
+    position: absolute;
+    left: 0;
+    top: 12px;
+}
+
+.msngr-color {
+    color: #007FFF !important;
+}
+.whtspp-color {
+    color: #07B825 !important;
+}
+.nstgrm-color {
+    color: #B13092 !important;
+}
+
+.chat-btn-wrap {
+    display: block;
+    width: 100%;
+}
+.btn-chat-now {
+    display: block;
+    margin: 50px auto 0 auto;
+    padding: 8px 15px;
+    border-radius: 19px;
+    background-color: #1A62F5;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+}
+.btn-send-contact {
+    padding: 13px 37px;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 22px;
+    text-align: center;
+    margin-top: 40px;
+}
+.mat-simple-snackbar-action button {
+    background-color: #ffffff;
+    font-family: "SF Pro Text Regular";
+    color: #000000;
+}

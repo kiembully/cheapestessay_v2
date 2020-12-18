@@ -1,0 +1,16 @@
+.mtr-common-new-order {
+    display: block;
+}
+.btn-common-new-order {
+    padding: 14.5px 37px;
+    border-radius: 60px;
+    background-color: #ffd500;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.23);
+    color: #111111;
+    font-family: "SF Pro Text Medium";
+    font-size: 18px;
+    line-height: 21px;
+    text-decoration: none;
+    margin: 0 auto 150px auto;
+    display: block;
+}

@@ -1,0 +1,106 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="sec-order-details-upper margin-bottom10">
+        <span class="spn-split-half">
+            <div class="common-white-bg margin-bottom10">
+                <section class="sec-infos">
+                    <span class="spn-info-label">Type of Service</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.service}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Writer Level</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.academic}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Type of Paper</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.paper}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Pages</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.pages}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Subject</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.subject}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Deadline</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.deadline}}<br><span class="spn-deadline-style">{{order_details.deadlinedate}}</span></span>
+                </section>
+            </div>
+            <div class="common-white-bg">
+                <section class="add-block-display padding-bottom10">
+                    <div class="spn-info-label">Topic</div>
+                    <div class="spn-info-data spn-writers-choice">{{order_details.order_details.topic}}</div>
+                </section>
+            </div>
+        </span>
+        <span class="fill-space padding-v5"></span>
+        <span class="spn-split-half">
+            <div class="common-white-bg margin-bottom10">
+                <section class="sec-infos">
+                    <span class="spn-info-label">Preferred Writer</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.preferred_writer}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Format/ Style</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.formated_style}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Discipline</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.discipline}}</span>
+                </section>
+            </div>
+            <div class="common-white-bg margin-bottom10">
+                <section class="sec-infos">
+                    <span class="spn-info-label">Sources</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.sources}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">Charts</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.charts}}</span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label">PowerPoint slides</span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data">{{order_details.order_details.slides}}</span>
+                </section>
+            </div>
+            <div class="common-white-bg">
+                <section class="sec-infos">
+                    <span class="spn-info-label add-color-black">Abstract Page <span class="spn-hold-price-style">( $2.99 )</span></span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style">No</span></span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label add-color-black">Plagiarism Report <span class="spn-hold-price-style">( $7.99 )</span></span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style">No</span></span>
+                </section>
+                <section class="sec-infos">
+                    <span class="spn-info-label add-color-black">Send it to my E-Mail <span class="spn-hold-price-style">( $2.99 )</span></span>
+                    <span class="fill-space"></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style yes">Yes</span></span>
+                </section>
+            </div>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="sec-order-details-lower">
+        <div class="add-block-display">
+            <span class="common-white-bg padding-h10">
+                <div class="spn-info-label">Details</div>
+                <div class="spn-info-data spn-other-details">{{order_details.order_details.add_detail}}</div>
+            </span>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>

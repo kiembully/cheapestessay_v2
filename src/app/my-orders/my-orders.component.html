@@ -1,0 +1,75 @@
+<section class="width1000 sec-order-nav">
+    <span class="fill-space"></span>
+    <span>
+        <mat-form-field appearance="fill" class="mfl-common-select">
+            <mat-select [formControl]="selected" [value]="selected.value" panelClass="mt-common-select">
+                <mat-option *ngFor="let list of filter" [value]="list.value">{{list.viewValue}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </span>
+</section>
+<section class="width1000 sec-orders">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders">
+        
+        <ng-container matColumnDef="button">
+            <th mat-header-cell *matHeaderCellDef></th>
+            <td mat-cell *matCellDef="let element">
+                <button type="button" (click)="_dialogTrigger.openDeleteDialog(element.order_id)" *ngIf="element.payment_status == 0" mat-mini-fab class="btn-delete-order-wrap">
+                    <div class="sprites-icons btn-delete-order"></div>
+                </button>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="order_id">
+            <th mat-header-cell *matHeaderCellDef>Order Id</th>
+            <td mat-cell *matCellDef="let element"> <span class="spn-order-id">{{element.order_no_custom}}</span> </td>
+        </ng-container>
+        <ng-container matColumnDef="date_added">
+            <th mat-header-cell *matHeaderCellDef>Date</th>
+            <td mat-cell *matCellDef="let element"> {{element.date_added}} </td>
+        </ng-container>
+        <ng-container matColumnDef="total">
+            <th mat-header-cell *matHeaderCellDef>Price</th>
+            <td mat-cell *matCellDef="let element"><span class="spn-price">${{element.total}}</span> </td>
+        </ng-container>
+        <ng-container matColumnDef="pages">
+            <th mat-header-cell *matHeaderCellDef>Page</th>
+            <td mat-cell *matCellDef="let element"> <span class="spn-pages">{{element.pages}} <span *ngIf="element.service_id == 2">Slide(s)</span></span> </td>
+        </ng-container>
+        <ng-container matColumnDef="topic">
+            <th mat-header-cell *matHeaderCellDef>Topic</th>
+            <td mat-cell *matCellDef="let element"> <span class="spn-topic">{{element.topic}}</span> </td>
+        </ng-container>
+        <ng-container matColumnDef="order_status">
+            <th mat-header-cell *matHeaderCellDef>Order Status</th>
+            <td mat-cell *matCellDef="let element">
+                <span class="spn-order-status" 
+                [style.background-color]="getOrderStatusDisplay(element.order_status_description_id,element.payment_status)">
+                    <span *ngIf="!timer_status">{{element.status_name}}</span>
+                    <span *ngIf="timer_status">{{setTimer(element.order_date, element.days, element.hours, element.minutes, element.seconds)}}</span>
+                    <!-- <span *ngIf="timer_status">pending</span> -->
+                    <!-- <span *ngIf="timer_status">{{element.formatted_date}}</span> -->
+                </span>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="deadline">
+            <th mat-header-cell *matHeaderCellDef>Deadline</th>
+            <td mat-cell *matCellDef="let element"> {{element.deadline}} {{element.duration}} </td>
+        </ng-container>
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Action</th>
+            <td mat-cell *matCellDef="let element">
+                <button class="btn-action" mat-flat-button *ngIf="element.payment_status == 0" type="button" (click)="_dialogTrigger.openPayDialog(element.order_id)">Pay</button>
+                <span class="spn-action" *ngIf="element.payment_status != 0">Paid</span>
+            </td>
+        </ng-container>
+        <ng-container matColumnDef="open">
+            <th mat-header-cell *matHeaderCellDef>Open</th>
+            <td mat-cell *matCellDef="let element"> <button type="button" [value]="element.order_id" (click)="selectOrderId(element.order_id)" mat-button class="btn-open">View</button> </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
+</section>

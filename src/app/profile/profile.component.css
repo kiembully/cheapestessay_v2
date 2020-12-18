@@ -1,0 +1,107 @@
+.sec-profile-nav,
+.sec-profile {
+    margin-top: 22px;
+    display: flex;
+    padding: 0 15px;
+}
+.sec-profile {
+    margin-bottom: 180px;
+}
+.spn-split-profile mat-toolbar-row {
+    padding: 0 25px;
+}
+.spn-user-id {
+    padding: 10px 34px;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(64,85,196,0.14);
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+.spn-split-profile {
+    width: 100%;
+    max-width: 490px;
+    min-height: 50px;
+}
+.prof-style-wrap {
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 6px 0 rgba(64,85,196,0.14);
+    position: relative;
+}
+.mt-profile-wrap {
+    background-color: transparent
+}
+.margin-bottom21 {
+    margin-bottom: 21px;
+}
+.margin-bottom10 {
+    margin: 0 0 10px 0 !important;
+}
+.p-common-style {
+    color: #282828;
+    font-family: "SF Pro Text Bold";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin: 0 0 14px 0;
+}
+.p-common-style span {
+    color: #9B9B9B;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+.p-date-joined {
+    color: #9B9B9B;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: 0;
+}
+.btn-badge {
+    height: 86.6px;
+    width: 86.6px;
+    display: block;
+    margin: 0 auto;
+    background-color: #FFD500;
+    box-shadow: none;
+}
+.spn-badge-wrap {
+    padding: 16px 0 16px 25px;
+}
+.spn-badge-wrap button {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+}
+.p-input-det {
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: 0;
+}
+.btn-update-profile {
+    color: #979797;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    padding: 10px;
+}
+.padding-v26 {
+    padding: 26px 0;
+}
+.padding-left20 {
+    padding-left: 20px;
+}

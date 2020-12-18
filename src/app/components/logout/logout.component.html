@@ -1,0 +1,10 @@
+<mat-toolbar color="primary" class="mt-logout">
+    <mat-toolbar-row>
+        <h1>Are you sure you want to Logout</h1>
+    </mat-toolbar-row>
+    <mat-toolbar-row>
+        <span class="btn-logout-wrap"><button class="btn-prevent-logout" mat-dialog-close mat-flat-button type="button">No</button></span>
+        <span class="fill-space"></span>
+        <span class="btn-logout-wrap"><button class="btn-logout" type="button" mat-flat-button (click)="logoutUser()">Yes</button></span>
+    </mat-toolbar-row>
+</mat-toolbar>

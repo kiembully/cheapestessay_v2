@@ -1,0 +1,78 @@
+<form [formGroup]="setOrderForm" (ngSubmit)="submitOrder()" class="calculate-page-wrap" action="" ngNativeValidate>
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <p *ngIf="isHome">CALCULATE YOUR ORDER</p>
+    <section class="sec-form margin-bottom23" [style.margin-top]="!isHome ? '23px' : '0'">
+        <mat-form-field class="mff-calculator">
+            <mat-select disableOptionCentering formControlName="service" [value]="setOrderForm.value.service" panelClass="panel-drop-style">
+                <mat-option
+                *ngFor="let list of services"
+                [value]="list.type_of_service_id">{{list.type_of_service}}</mat-option>
+            </mat-select>
+            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+        </mat-form-field>
+    </section>
+    <section class="sec-form margin-bottom23">
+        <mat-form-field class="mff-calculator">
+            <mat-select disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
+                <!-- <mat-optgroup label="Most Popular"> -->
+                    <mat-option *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                <!-- </mat-optgroup> -->
+                <!-- <mat-optgroup label="Others"> -->
+                    <mat-option *ngFor="let list of o_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                <!-- </mat-optgroup> -->
+            </mat-select>
+            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+        </mat-form-field>
+    </section>
+    <section class="sec-form margin-bottom23">
+        <mat-form-field class="mff-calculator">
+            <mat-select disableOptionCentering [value]="deadline_value" panelClass="panel-drop-style">
+                <mat-option
+                *ngFor="let list of deadline; let i = index"
+                (click)="patchDeadline(list)"
+                [value]="i">{{list.deadline}} {{list.duration}} / {{list.deadline_label}}</mat-option>
+            </mat-select>
+            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+        </mat-form-field>
+        <!-- <p *ngIf="isHome" class="p-deadline">{{deadline_format}}</p> -->
+    </section>
+    <section class="sec-form margin-bottom23">
+        <mat-form-field class="mff-calculator">
+            <mat-select disableOptionCentering formControlName="page" [value]="setOrderForm.value.page" panelClass="panel-drop-style">
+                <mat-option *ngFor="let list of pages" [value]="list.id" >{{list.Pages}}</mat-option>
+            </mat-select>
+            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+        </mat-form-field>
+    </section>
+    <section class="sec-form margin-bottom20" *ngIf="isHome">
+        <p class="p-standard-price">Standard Price: <span>${{total_price}}</span></p>
+    </section>
+    <section class="sec-form margin-bottom30 discount-option-wrap" *ngIf="isHome">
+        <div class="discount-option-outer">
+            <span>
+                <div class="discount-option-inner">
+                    <p class="p-special-price">Special Price (LOCKED)</p>
+                    <p class="p-save-order">Save On Your First Order</p>
+                    <input type="email" class="inp-email-discount" placeholder="Enter email to unlock">
+                </div>
+            </span>
+            <span class="fill-space"></span>
+            <span>
+                <div class="discount-option-inner">
+                    <p class="p-discounted-price">${{discounted_price}}</p>
+                    <button mat-flat-button type="button" class="btn-unlock-promo">Unlock</button>
+                </div>
+            </span>
+        </div>
+    </section>
+
+    <!-- only visible in free-quote page -->
+    <section class="sec-form margin-bottom40 spn-calc-textarea" *ngIf="!isHome">
+        <textarea matInput formControlName="add_detail" value="newOrderForm.value.add_detail" placeholder="Tell us more about your essay or assignment"></textarea>
+    </section>
+    <section class="sec-form">
+        <button *ngIf="isHome" [disabled]="isSubmitDisabled" type="submit" mat-button class="btn-order-sbmt">ORDER NOW</button>
+        <!-- only visible in free-quote page -->
+        <button *ngIf="!isHome" [disabled]="isSubmitDisabled" (click)="openFreeQuote()" type="button" mat-button class="btn-order-sbmt">GET FREE QUOTE</button>
+    </section>
+</form>

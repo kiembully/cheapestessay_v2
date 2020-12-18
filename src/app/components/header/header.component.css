@@ -1,0 +1,257 @@
+
+
+/* profile header */
+.mtr-profile-header {
+    padding: 10px 0;
+}
+.mtr-profile-header span:first-child {
+    padding: 0;
+}
+.mtr-profile-header span:last-child {
+    padding-right: 0;
+}
+.mtr-profile-header span {
+    padding: 0 18px;
+    opacity: 0.7;
+    color: #FAFAFA;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+}
+.btn-brand {
+  color: #000000;
+  font-family: "Arial Rounded MT Bold Regular";
+  font-size: 22px;
+  letter-spacing: 0;
+  line-height: 26px;
+  padding: 9px 2px;
+}
+.btn-brand span {
+    color: #FFD500;
+    display: contents;
+}
+.btn-brand-2 {
+    color: #EEEEEE;
+    font-family: "Arial Rounded MT Bold Regular";
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    text-align: center;
+    padding: 16px 0;
+}
+.btn-brand-2 span {
+    color: #FFD500;
+    display: contents;
+}
+.btn-client-page {
+    border-top: 2px solid transparent;
+    padding: 5px 11px 7px 11px;
+    border-radius: 0;
+}
+.btn-client-page.active {
+    border-top: 2px solid #000000;
+}
+.btn-order-page {
+    padding: 8px 16px;
+    border-radius: 60px;
+    background-color: #FFD500;
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 14px;
+    text-align: center;
+}
+.btn-account-page {
+    padding: 8px 16px;
+    border-radius: 60px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Semibold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 14px;
+    text-align: center;
+    min-width: 105px;
+}
+.spn-btn-wrap {
+    padding-right: 11px
+}
+.balance-wrap {
+    height: 26px;
+    min-width: 119px;
+    border: 0.5px solid #FAFAFA;
+    border-radius: 100px;
+    display: flex;
+}
+.balance-wrap span:first-child {
+    padding: 0 16px;
+    color: #EEEEEE;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.balance-wrap span:last-child {
+    color: #FFD500;
+    font-family: "SF Pro Text Regular";
+    font-size: 13px;
+    letter-spacing: 0.65px;
+    line-height: 26px;
+    padding: 0 8px;
+    border-left: 1px solid #ffffff;
+}
+.btn-logout {
+    height: 30px;
+    width: 115px;
+    border-radius: 60px;
+    background-color: #12245A;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+    color: #EEEEEE;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+.profile-header-div {
+    background: #08153B;
+}
+.mtr-subheader > span {
+    padding: 15px 20px;
+    min-width: 75px;
+    opacity: 0.2;
+    cursor: pointer;
+    outline: none;
+}
+.btn-subheader {
+    height: 42px;
+    width: 42px;
+    background-color: #FFD500;
+    margin: 0 auto;
+    display: block;
+}
+.btn-subheader img {
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    left: 11px;
+    top: 10px;
+}
+.mtr-subheader > span.active {
+    opacity: 1;
+}
+.mtr-subheader > span.active p.p-btn-label {
+    font-family: "SF Pro Text Semibold";
+}
+p.p-btn-label {
+    color: #FAFAFA;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    text-align: center;
+    margin: 8px auto;
+}
+.fixed-nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 99;
+    background-color: #f2f2f2
+}
+.btn-more-menu {
+    width: 331px;
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    line-height: 19px;
+}
+a.btn-more-menu {
+    padding: 0 15px;
+    line-height: 50px;
+    width: 250px;
+}
+.btn-more-menu.active {
+    font-family: "SF Pro Text Semibold";
+}
+.spn-services-menu-wrap .mat-menu-panel {
+    max-width: 800px !important
+}
+
+/* services menu */
+.ma-services-menu {
+    width: 100%;
+}
+.ma-services-menu ::ng-deep .mat-expansion-panel {
+    border: 0;
+    box-shadow: none;
+}
+.ma-services-menu ::ng-deep .mat-expansion-panel-body {
+    background: #f2f2f2;
+    padding: 0 24px 16px;
+    border-radius: 0;
+}
+.ma-services-menu .spn-services-inner {
+    width: 25%;
+}
+.ma-services-menu .btn-more-menu {
+    width: 100%;
+    height: 40px;
+}
+.mtr-contain-services {
+    border-top: 1px solid #cccccc
+}
+
+.m-nav-hidden { display: none; }
+.btn-m-nav {
+    margin: 15px 0;
+    background: transparent;
+}
+.btn-m-nav .material-icons {
+    font-size: 30px
+}
+.a-mob-nav,
+.btn-mob-nav {
+    width: 100%;
+    text-align: center;
+}
+
+/* OVERLAY */
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 49; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+/* RESPONSIVE STARTS HERE  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+    .w-nav-hidden { display: none }
+    .m-nav-hidden { display: block }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+ 
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

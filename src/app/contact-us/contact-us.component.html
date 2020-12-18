@@ -1,0 +1,63 @@
+<section class="default-width">
+    <mat-toolbar color="primary" class="mt-contact-banner">
+        <mat-toolbar-row class="mtr-contact-header">
+            <h1>Contact Us</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-contact-header">
+            <h2>Do you need someone to help you with your paper, or just want to say hi? Go right ahead!</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-toolbar-row class="mtr-send-contact">
+        <form (ngSubmit)="submitContact()" class="frm-send-contact" [formGroup]="frmContact">
+            <span>
+                <p class="p-contact-sub">Send us a message</p>
+                <mat-form-field class="mff-contact-us margin-bottom35" appearance="legacy" color="accent">
+                    <mat-label>Name</mat-label>
+                    <input matInput required formControlName="name">
+                    <mat-error>{{getErrorMessageName()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="mff-contact-us margin-bottom35" appearance="legacy" color="accent">
+                    <mat-label>Email</mat-label>
+                    <input matInput required formControlName="email">
+                    <mat-error>{{getErrorMessage()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <mat-form-field class="mff-contact-us mff-textarea" #text appearance="legacy" color="accent">
+                    <mat-label>Message</mat-label>
+                    <textarea matInput required formControlName="message"></textarea>
+                    <mat-error>{{getErrorMessageOption()}}</mat-error>
+                </mat-form-field>
+                <br>
+                <button type="submit" mat-button class="btn-send-contact">Send</button>
+            </span>
+            <span class="fill-space"></span>
+            <span>
+                <p class="p-contact-sub">Contact info</p>
+                <div class="contact-info-wrap">
+                    <button mat-flat-button class="margin-bottom30" onclick="location.href='tel:+19094411414';event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-icontel"></div>+ (909) 441-1414
+                    </button>
+                    <button mat-flat-button class="margin-bottom30" onclick="location.href='mailto:support@cheapestessay.com';event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-iconmail"></div>Support@CheapestEssay.com
+                    </button>
+                    <button mat-flat-button class="margin-bottom30" onclick="location.href='tel:+19094411414';event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-iconchat"></div>+ (909) 441-1414
+                    </button>
+                    <button mat-flat-button class="margin-bottom30 msngr-color" onclick="window.open('https:/www.messenger.com/t/CheapestEssay', '_blank');event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-iconfbchat"></div>Message us via FB Messenger
+                    </button>
+                    <button mat-flat-button class="margin-bottom30 whtspp-color" onclick="location.href='https:/api.whatsapp.com/send?phone=19094411414';event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-iconwa"></div>Message us via WhatsApp
+                    </button>
+                    <button mat-flat-button class="nstgrm-color" onclick="window.open('https:/www.instagram.com/cheapestessay', '_blank');event.preventDefault()">
+                        <div class="sprite-subpage-icon sprite-iconinsta"></div>Message us via Instagram
+                    </button>
+                </div>
+                <div class="chat-btn-wrap">
+                    <button mat-flat-button class="btn-chat-now">Chat Now Online</button>
+                </div>
+            </span>
+        </form>
+    </mat-toolbar-row>
+</section>

@@ -1,0 +1,59 @@
+<mat-toolbar class="mt-det-outer">
+    <mat-toolbar-row class="mtr-det-wrap">
+        <span>
+            <p class="p-bal-label">Your balance</p>
+            <p class="p-balance">${{displayBalance}}</p>
+        </span>
+        <span class="fill-space"></span>
+        <span>
+            <form class="redeem-wrap" [formGroup]="frmRedeem">
+                <input formControlName="redeem" type="number" class="fill-space" vlue="$6.00">
+                <button type="button" (click)="redeemAmount()" mat-flat-button>Redeem</button>
+            </form>
+        </span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-det-wrap padding-ver5px" *ngIf="isCard">
+        <span><p class="p-card-info">**** **** ***** {{getCardNumber()}}</p></span>
+        <span [formGroup]="frmCard"><input type="number" formControlName="cvv" [value]="frmCard.value.cvv" class="inp-cvv-info" placeholder="CVV"></span>
+        <span class="fill-space"></span>
+        <span><button type="button" mat-flat-button class="btn-edit-card">Edit</button></span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-det-wrap">
+        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+        <section class="sec-order-num">
+            <span>Order Number</span>
+            <span class="fill-space"></span>
+            <span>{{order_id}}</span>
+        </section>
+        <section class="sec-order-dl">
+            <span>Order Deadline</span>
+            <span class="fill-space"></span>
+            <span>{{order_deadline}}</span>
+        </section>
+        <section class="sec-subtotal">
+            <span>Subtotal</span>
+            <span class="fill-space"></span>
+            <span>{{subtotal}}</span>
+        </section>
+        <section class="sec-subtotal" *ngIf="isDiscounted">
+            <span>Discount</span>
+            <span class="fill-space"></span>
+            <span>${{discount}}</span>
+        </section>
+        <section class="sec-redeem" *ngIf="isRedeemed">
+            <span>Redeem</span>
+            <span class="fill-space"></span>
+            <span><button class="sec-redeem-button" mat-flat-button type="button" (click)="returnRedeem()">Return</button>${{this.frmRedeem.value.redeem}}</span>
+        </section>
+        <section class="sec-discount">
+            <span>Lifetime Discount (icon)</span>
+            <span class="fill-space"></span>
+            <span>{{ltDiscount}}</span>
+        </section>
+        <section class="sec-total">
+            <span>Total</span>
+            <span class="fill-space"></span>
+            <span>${{total}}</span>
+        </section>
+    </mat-toolbar-row>
+</mat-toolbar>
