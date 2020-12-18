@@ -1,6 +1,5 @@
 .mt-free-quote {
-    margin-top: 200px;
-    margin-bottom: 150px;
+    margin-bottom: 200px;
     position: relative;
 }
 .mtr-free-quote > span:first-child {
@@ -66,4 +65,12 @@
 }
 .sec-fq-guarantees .mat-list-base .mat-list-item .mat-list-item-content {
     display: inline-table;
+}
+
+/* RESPONSIVE SECTION  */
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .mt-free-quote {
+        margin-bottom: 0;
+    }
 }

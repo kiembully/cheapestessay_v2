@@ -3,11 +3,29 @@
     position: relative;
     align-self: flex-start;
 }
+.hiw-steps-img {
+    height: 279px;
+    width: 279px;
+    margin: auto;
+    zoom: 0.8;
+}
+.hiw-steps-img1 {
+    background-position: -504px -832px;
+}
+.hiw-steps-img2 {
+    background-position: -1283px -843px;
+}
+.hiw-steps-img3 {
+    background-position: -105px -832px;
+}
+.hiw-steps-img4 {
+    background-position: -883px -832px;
+}
 .step-wrap-inner {
     position: relative;
     height: 395px;
     width: 445px;
-    display: block;
+    display: flex;
     text-align: center;
     background: #DCE9F5;
     box-shadow: 4px 6px 2px 0 rgba(0,0,0,0.5);

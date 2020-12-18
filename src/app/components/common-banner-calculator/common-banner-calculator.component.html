@@ -1,7 +1,7 @@
 <form [formGroup]="setOrderForm" (ngSubmit)="submitOrder()" class="calculate-page-wrap" action="" ngNativeValidate>
     <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
     <p *ngIf="isHome">CALCULATE YOUR ORDER</p>
-    <section class="sec-form margin-bottom23" [style.margin-top]="!isHome ? '23px' : '0'">
+    <section class="sec-form margin-bottom15" [style.margin-top]="!isHome ? '23px' : '0'">
         <mat-form-field class="mff-calculator">
             <mat-select disableOptionCentering formControlName="service" [value]="setOrderForm.value.service" panelClass="panel-drop-style">
                 <mat-option
@@ -11,7 +11,7 @@
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
     </section>
-    <section class="sec-form margin-bottom23">
+    <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
                 <!-- <mat-optgroup label="Most Popular"> -->
@@ -24,7 +24,7 @@
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
     </section>
-    <section class="sec-form margin-bottom23">
+    <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select disableOptionCentering [value]="deadline_value" panelClass="panel-drop-style">
                 <mat-option
@@ -36,7 +36,7 @@
         </mat-form-field>
         <!-- <p *ngIf="isHome" class="p-deadline">{{deadline_format}}</p> -->
     </section>
-    <section class="sec-form margin-bottom23">
+    <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select disableOptionCentering formControlName="page" [value]="setOrderForm.value.page" panelClass="panel-drop-style">
                 <mat-option *ngFor="let list of pages" [value]="list.id" >{{list.Pages}}</mat-option>

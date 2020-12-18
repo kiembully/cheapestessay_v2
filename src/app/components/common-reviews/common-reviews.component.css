@@ -61,6 +61,13 @@
     border: 3px solid #12245A;
     margin: auto;
     border-radius: 50%;
+    display: flex;
+}
+.review-img {
+    height: 45px;
+    width: 31px;
+    background-position: -208px -1316px;
+    margin: auto;
 }
 
 /* carousel starts  */

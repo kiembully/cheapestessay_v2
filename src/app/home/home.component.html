@@ -1,32 +1,35 @@
-<section class="default-width">
-    <mat-toolbar class="mt-home-banner">
-        <mat-toolbar-row>
-            <span class="fill-space spn-welcome-banner">
-                <div class="welcome-banner-wrap">
-                    <section>
-                        <h1>The #1 Cheapest Essay Writing Service in 2020</h1>
-                        <h2>We Write your Essay Today!<br>
-                            300+ Professional Writers, and over 7000 clients worldwide.
-                            Hire Essay writer for any job online now!</h2>
-                    </section>
-                    <section>
-                        <div class="banner-options-wrap">
-                            <span><button mat-raised-button class="btn-wwd" onclick="window.location.href='#sec-writing-services'">What we do?</button></span>
-                            <span class="fill-space"></span>
-                            <span *ngIf="isTokenExisting('user_token')"><button mat-raised-button class="btn-fq" routerLink="free-quote">Free Quote</button></span>
-                        </div>
-                    </section>
-                </div>
-            </span>
-            <span>
-                <app-common-banner-calculator [isHome]="true"></app-common-banner-calculator>
-            </span>
-        </mat-toolbar-row>
-    </mat-toolbar>
-</section>
-<!-- WEBSITE RATING -->
-<section class="full-width sec-home-reviews">
-    <app-common-reviews></app-common-reviews>
+<section class="full-width">
+    <div class="main-banner-background">
+        <mat-toolbar class="mt-home-banner default-width">
+            <mat-toolbar-row>
+                <span class="fill-space spn-welcome-banner">
+                    <div class="welcome-banner-wrap">
+                        <section>
+                            <h1>The #1 Cheapest Essay Writing Service in 2020</h1>
+                            <h2>We Write your Essay Today!<br>
+                                300+ Professional Writers, and over 7000 clients worldwide.
+                                Hire Essay writer for any job online now!</h2>
+                        </section>
+                        <section>
+                            <div class="banner-options-wrap">
+                                <span><button mat-raised-button class="btn-wwd" onclick="window.location.href='#sec-writing-services'">What we do?</button></span>
+                                <span class="fill-space"></span>
+                                <span *ngIf="isTokenExisting('user_token')"><button mat-raised-button class="btn-fq" routerLink="free-quote">Free Quote</button></span>
+                            </div>
+                        </section>
+                    </div>
+                </span>
+                <span>
+                    <app-common-banner-calculator [isHome]="true"></app-common-banner-calculator>
+                </span>
+            </mat-toolbar-row>
+            <div class="sprite-cheapest home-banner-img"></div>
+        </mat-toolbar>
+        <!-- WEBSITE RATING -->
+        <section class="default-width sec-web-rating">
+            <app-common-reviews></app-common-reviews>
+        </section>
+    </div>
 </section>
 <!-- HOW IT WORKS SECTION -->
 <section class="default-width sec-home-hiw">
@@ -46,38 +49,38 @@
             <h2>WHAT CAN WE WRITE FOR YOU</h2>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-ws-inner-upper">
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>Essay</p>
                 </div>
             </span>
             <span class="fill-space"></span>
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>Research</p>
                 </div>
             </span>
             <span class="fill-space"></span>
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>Article</p>
                 </div>
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-ws-inner-lower">
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>Case study</p>
                 </div>
             </span>
             <span class="fill-space"></span>
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>Resume</p>
                 </div>
             </span>
             <span class="fill-space"></span>
-            <span>
+            <span class="spn-service-home-contain">
                 <div class="service-home-style">
                     <p><span class="material-icons">check_circle_outline</span>PowerPoint</p>
                 </div>

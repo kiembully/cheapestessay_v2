@@ -125,32 +125,6 @@ mat-toolbar-row {
     background-color: transparent
 }
 
-/* common sub-pages headers  */
-/* h1.common-subpage-header {
-    color: #000000;
-    font-family: "SF Pro Text Bold";
-    font-size: 44px;
-    letter-spacing: 0;
-    line-height: 53px;
-    border-bottom: 3px solid #60AAEE;
-    text-align: center;
-    display: table;
-    padding-bottom: 27px;
-    margin: 0 auto 38px auto
-}
-p.common-subpage-subheader {
-    color: #000000;
-    font-family: "SF Pro Text Semibold";
-    font-size: 18px;
-    font-weight: 500;
-    letter-spacing: 0;
-    line-height: 28px;
-    text-align: center;
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto 43px auto
-} */
-
 /* POP UP DIALOG STYLES */
 
 .common-dialog {
@@ -275,6 +249,29 @@ input[type=number] {
 .sprites-social-icons {
   background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/external-links-sprite.png') no-repeat;
 }
+/* Backgrounds and icons  */
+.sprite-cheapest {
+  background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/essay_v2_sprites.svg');
+  background-repeat: no-repeat;
+}
+.main-banner-background {
+  background-color: #C5DBEF;
+  padding-top: 90px;
+  padding-bottom: 170px;
+  max-width: 2400px;
+  margin: 0 auto;
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+  position: relative;
+}
+.home-banner-img {
+  height: 508px;
+  width: 512px;
+  background-position: 0px -74px;
+  position: absolute;
+  bottom: -190px;
+  left: 0;
+  zoom: 0.7;
+}
 
 /* diagonal backgrounds */
 .diagonal-box {
@@ -318,7 +315,6 @@ input[type=number] {
   z-index: -1;
   border-radius: 0 0 70px 70px;
 }
-
 .margin-bottom200 {
   margin-bottom: 200px;
 }
@@ -356,7 +352,12 @@ input[type=number] {
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
- 
+  .main-banner-background {
+    margin-bottom: 70px
+  }
+  .home-banner-img {
+    display: none
+  }
 }
  
 /* Extra large devices (large desktops, 1200px and up) */

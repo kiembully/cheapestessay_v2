@@ -40,6 +40,9 @@
 .margin-bottom23 {
     margin-bottom: 23px;
 }
+.margin-bottom15 {
+    margin-bottom: 15px;
+}
 .margin-bottom8 {
     margin-bottom: 8px;
 }
@@ -106,7 +109,7 @@
     margin-left: 26px;
 }
 .btn-order-sbmt {
-    height: 85.8px;
+    height: 65.8px;
     width: 100%;
     max-width: 492px;
     margin: 0 auto 32px auto;
