@@ -1,7 +1,10 @@
 <app-common-subpages-header [data_index]="8"></app-common-subpages-header>
 
 <section class="default-width sec-faqs">
-    <mat-toolbar color="primary" class="mt-faqs">
+    <div class="margin-bottom30">
+        <app-content-photo-info data_content="faqs_content_data" [is_faqs_content]="true" [left_first]="true"></app-content-photo-info>
+    </div>
+    <mat-toolbar class="mt-faqs margin-bottom70">
         <mat-toolbar-row class="common-sub-header"><h2>HOW CAN WE HELP?</h2></mat-toolbar-row>
         <mat-toolbar-row class="mtr-tabs-wrap">
             <mat-tab-group animationDuration="0ms" dynamicHeight>
@@ -19,16 +22,19 @@
             </mat-tab-group>
         </mat-toolbar-row>
     </mat-toolbar>
+    <div class="margin-bottom30">
+        <app-content-photo-info data_content="ask_question_content"  [has_contact_button]="true"></app-content-photo-info>
+    </div>
 </section>
 
 <div class="margin-bottom70">
     <app-common-additional-service></app-common-additional-service>
 </div>
 
-<section class="default-width sec-pro-writing margin-bottom70">
+<section class="default-width sec-pro-writing margin-bottom30">
     <mat-toolbar>
         <mat-toolbar-row class="common-sub-header">
-            <h3>OUR SERVICES</h3>
+            <h2>OUR SERVICES</h2>
         </mat-toolbar-row>
     </mat-toolbar>  
 </section>

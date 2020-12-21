@@ -12,8 +12,10 @@ export class ContentPhotoInfoComponent implements OnInit {
   @Input() public data_content: any;
   @Input() public has_header: boolean = false;
   @Input() public has_order_button: boolean = false;
+  @Input() public has_contact_button: boolean = false;
   @Input() public has_diagonal_background: boolean = false;
-  @Input() public has_background_content: boolean = false
+  @Input() public has_background_content: boolean = false;
+  @Input() public is_faqs_content: boolean = false;
   
   constructor() { }
 
@@ -42,6 +44,10 @@ export class ContentPhotoInfoComponent implements OnInit {
       value = this.about_us_contents
     } else if (content == 'revision_policy') {
       value = this.revision_policy
+    } else if (content == 'faqs_content_data') {
+      value = this.faqs_content_data
+    } else if (content == 'ask_question_content') {
+      value = this.ask_question_content
     } return value;
   }
 
@@ -63,7 +69,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "We operate 24/7 to ensure we fully attend to our clients' needs whenever they are and at any time. Customer satisfaction is our priority. We take time to research and understand what your work needs to give you top-notch quality. Our writers work diligently to meet our customer deadlines without compromising work quality.",
         "We serve students who seek assignments, essays, research, and other student-related services. We are also the number one content creators for business owners who seek to update their websites with fresh and unique content. Reach us today to get a high standard on any of the following services."
       ],
-      img: 'insert url here',
+      class: 'about-service-sprite1',
     },
     {
       title: 'Can you write Essay?',
@@ -71,7 +77,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "We deliver on any essay, whether narrative, descriptive, expository essays, and persuasive essays. Our essay writers provide online writing services that will help you improve and support your theme or proposition.",
         "Our professional essay writers are holders of degree and master's degrees in science, literature, and many others. So, they have the relevant knowledge to handle the requirements of your assignment."
       ],
-      img: 'insert url here'
+      class: 'about-service-sprite2'
     },
     {
       title:'Research Paper, Coursework, Research Summary, Thesis/Dissertation Proposal and Assignments',
@@ -81,7 +87,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "Thesis/dissertation proposal. Whichever level you are needed to develop a thesis/dissertation proposal, we got you covered. ",
         "Assignment. Cheapest Essay writing service has experienced professionals in varied academic fields in any assignment writing. They will bring out the concept area and show the point of emphasis to give you an assignment that shows your course understanding to your professor.",
       ],
-      img:''
+      class:'about-service-sprite3'
     },
     {
       title:'Any Report: Simulation Report, Lab Report and Book or Movie Report and Review',
@@ -91,7 +97,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "Any report. Our paper helper in the report writing sector has all that it takes to give you the best report. They are knowledgeable, investigative, and able to document both the statistical/experimental data. So, they can assist any student in a Master's degree level, undergraduate or graduate.",
         "If you experience difficulties in writing your report, we are here to help. Our writers are skilled in formatting and structuring any essay. Be it a business report, lab report, or financial ration analysis to help it attain the professionalism it requires. ",
       ],
-      img:''
+      class:'about-service-sprite4'
     },
     {
       title: 'Article and Article Critique',
@@ -99,7 +105,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "We have retained the best article writers from different corners of the world with varied writing skills. You have the opportunity to decide on any topic you want us to write and how complex or simple you want it to appear. We will deliver. Are you a website or blog owner? Our write my paper service is ready.",
         "Article critique. Our writers can go through the essay critically and analytically. The aim is to come up with the writer's argument while limiting their own opinions. We have the needed skills and knowledge to present a good article critique worth of good grades. We assign appropriate writing steps to your specific assignment."
       ],
-      img:''
+      class:'about-service-sprite5'
     }
   ]
 
@@ -116,7 +122,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "Essays are priced differently according to different factors—the time you give us to get your work done. Expect to pay more if your deadline is short than when it is long.",
         "Also, the number of pages is a factor too. The number of pages is equally proportional to the number of words. So, the more the pages, the higher the price."
       ],
-      img:''
+      class:'pay-first-img1'
     },
     {
       title: "Type of Service and the Writer's leve you need",
@@ -124,7 +130,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "The type of service you order us to deliver will determine the amount you will pay. There are three different types of services that we offer, and all are priced differently. They include; PowerPoint, writing, and editing.  ",
         "Also, the lever of the writer your work demands will affect how you will pay. College, bachelor, and master writers have different qualifications; hence, all have different prices."
       ],
-      img:''
+      class:'pay-first-img2'
     },
   ]
 
@@ -141,7 +147,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "Meeting the stipulated deadline is a highly valued guarantee needed by every client. So, we allow for a 100% refund request for those we miss to beat their deadline. You can extend the time and give you a compensation of 20%. ",
         "One can apply for a 100% refund for errors in payment, such as double payment. You need to report the issue immediately before the assigned writer begins writing the task. "
       ],
-      img:''
+      class:'money-back-img1'
     },
     {
       title: "50% Refund",
@@ -149,7 +155,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "One can request a 50% refund for confirmed orders but later canceled by the client. Remember, all refund requests must go through a confirmation check to check its viability. Refunds do not apply when the error was from the client's side, such as delayed uploading of needed documents and delayed payment.",
         "For refunds requested due to plagiarism, a Turnitin report should be available. Reports from other plagiarism checkers are not acceptable. Without the Turnitin report, no refund will apply."
       ],
-      img:''
+      class:'money-back-img2'
     },
   ]
 
@@ -162,7 +168,7 @@ export class ContentPhotoInfoComponent implements OnInit {
         "Order in progress. At this stage, an essay writer begins working on your order after confirmation of details. The most qualified paper helper gets assigned to your work.",
         "Order Submission. Once the essay writers finish with the orders, a team of specialists performs a quality assurance test. Here, they check the uniqueness of the work using plagiarism software. We send the assignment to your registered email address."
       ],
-      img:''
+      class:'how-to-do-img'
     },
   ]
 
@@ -172,7 +178,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
       ],
-      img: ''
+      class: 'place-order-img'
     },
   ]
   make_a_payment:any = [
@@ -181,7 +187,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
       ],
-      img:''
+      class:'make-payment-img'
     },
   ]
   order_in_progress: any = [
@@ -190,7 +196,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
       ],
-      img:''
+      class:'order-progress-img'
     },
   ]
   receive_your_paper:any = [
@@ -199,7 +205,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
       ],
-      img:''
+      class:'receive-paper-img'
     }
   ]
   about_us_contents:any = [
@@ -211,7 +217,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         'Our company CheapestEssay is a global business that helps clients with any type of writing. The company was started in 2014 as Cheapestessay.com. So far we have 342 writers of which 163 are active. We value our clients and our services are customer centered. Our business is registered with Liability Company that serves the entire world. We have more than 7,000 clients worldwide. Our pillar that propels our services is integrity, ethics and professionalism.',
       ],
-      img: ''
+      class: 'about-us-img'
     }
   ]
   revision_policy: any = [
@@ -223,7 +229,26 @@ export class ContentPhotoInfoComponent implements OnInit {
       contents: [
         "We provide revisions free of cost, however, in case the revision contains new instruction or information, any required changes will be chargeable. This means that if the customer wants to set revisions on the completed orders with additional instructions, they would be liable to pay some extra charges. In all the cases, where the revision work will require additional payment, the writing team will not start working on it, unless the payment has been cleared by the customer.",
         "You are able to request as many revisions as possible before your order is approved. However, please mind that you have only 20 days to request revisions for the paper either before or after your order is approved. There is unlimited number of revisions possible within the 20 days after the paper was delivered to you."
-      ]
+      ],
+      class:'revision-policy-img'
+    }
+  ]
+  faqs_content_data: any = [
+    {
+      title: 'FAQ',
+      contents: [
+        'Cheapest Essay Frequently Asked Questions by Our Customers About Our Service'
+      ],
+      class:'faqs-content-img'
+    }
+  ]
+  ask_question_content: any = [
+    {
+      title: 'Do You have Questions?',
+      contents: [
+        'A customer support will assist you with everything including every questions regarding our service.'
+      ],
+      class:'ask-question-img'
     }
   ]
 }

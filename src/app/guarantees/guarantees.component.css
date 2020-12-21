@@ -47,40 +47,49 @@
     color: #1EB578 !important;
 }
 .refund-icon-g {
-    background-size: 2410px !important;
-    background-position: -1083px -563.5px;
+    background-position: 9.927% 97.803%;
+	width: 112px;
+	height: 100px;
 }
 .editing-icon-g {
-    background-size: 1080px;
-    background-position: -539px -224.5px;
+    background-position: 10.891% 97.803%;
+	width: 101px;
+	height: 100px;
 }
 .plagiarism-icon-g {
-    background-size: 1080px;
-    background-position: -870px -218.5px;
+    background-position: 11.891% 98.242%;
+	width: 113px;
+	height: 112px;
 }
 .privacy-icon-g {
-    background-size: 2410px !important;
-    background-position: -964px -559.5px;
+    background-position: 13.007% 97.422%;
+	width: 85px;
+	height: 101px;
 }
 .moneyback-icon-g {
-    background-size: 1080px;
-    background-position:  -649px -218.5px
+    background-position: 14.182% 97.208%;
+	width: 99px;
+	height: 95px;
 }
 .cheapest-icon-g {
-    background-size: 1080px;
-    background-position: -216px -224.5px;
+    background-position: 15.233% 97.214%;
+	width: 93px;
+	height: 92px;
 }
 .suport-icon-g {
-    background-size: 1080px;
-    background-position: -324px -224.5px;
+    background-position: 24.872% 97.748%;
+	width: 80px;
+	height: 88px;
 }
 .revision-icon-g {
-    background-size: 1080px;
-    background-position: -759px -218.5px;
+    background-position: 25.804% 97.738%;
+	width: 94px;
+	height: 94px;
 }
 .quality-icon-g {
-    background-size: 1080px;
-    background-position: -980px -218.5px;
+    background-position: 26.696% 97.313%;
+	width: 73px;
+	height: 80px;
 }
 
 /* RESPONSIVE SECTION  */

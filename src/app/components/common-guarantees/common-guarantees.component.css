@@ -20,6 +20,11 @@
     position: relative;
     border-radius: 50%;
     border: 2px solid #68A8DE;
+    background-color: #ffffff;
+    display: flex;
+}
+.guarantee-item-img {
+    margin: auto;
 }
 .guarantee-item-wrap h5 {
     color: #000000;
@@ -41,6 +46,36 @@
     white-space: normal;
     padding: 0;
     display: block;
+}
+.refund-icon {
+    background-position: 21.189% 97.803%;
+	width: 100px;
+	height: 100px;
+}
+.plagiarism-icon {
+    background-position: 22.133% 97.803%;
+	width: 71px;
+	height: 100px;
+}
+.cheapest-icon {
+    background-position: 22.981% 97.803%;
+	width: 97px;
+	height: 100px;
+}
+.suport-icon {
+    background-position: 23.935% 97.953%;
+	width: 94px;
+	height: 101px;
+}
+.revision-icon {
+    background-position: 26.696% 97.313%;
+	width: 73px;
+	height: 80px;
+}
+.availability-icon {
+    background-position: 24.872% 97.748%;
+	width: 80px;
+	height: 88px;
 }
 .sec-home-guarantee {
     display: block;

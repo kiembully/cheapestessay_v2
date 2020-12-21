@@ -16,12 +16,14 @@
     font-size: 40px;
     color: #FBD30D;
     text-align: center;
+    z-index: 1
 }
 .client-reviews-inner {
     display: block;
     min-height: 150px;
     border: 10px solid #12245A;
     margin-bottom: 40px;
+    padding-left: 68px;
 }
 .client-reviews-inner:last-child {
     margin-bottom: 0;
@@ -42,12 +44,12 @@
     margin-top: 0;
 }
 .client-reviews-img {
-    width: 100%;
-    height: auto;
+    background-position: 4.022% 7.191%;
+	background-size: 8765px 710px;
+	width: 360px;
+    height: 265px;
     margin: 0 auto;
-    display: block;
-    background-color: red;
-    min-height: 300px
+    zoom: 1.5
 }
 .upper-quote {
     font-size: 120px;
@@ -66,6 +68,14 @@
     bottom: 0;
     background: #f2f2f2;
 }
+.p-service-reviews {
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 30px;
+}
 
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
@@ -80,6 +90,9 @@
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
+    .client-reviews-inner {
+        padding: 0;
+    }
     .web-hidden {
         display: none;
     }

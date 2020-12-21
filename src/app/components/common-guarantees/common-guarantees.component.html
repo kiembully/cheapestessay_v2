@@ -1,10 +1,12 @@
 
 <section class="width1000 sec-home-guarantee">
-  <owl-carousel-o class="owl-guarantees">
+  <owl-carousel-o class="owl-guarantees" [options]="guaranteesOption">
     <ng-template carouselSlide *ngFor="let list of guaranteeContent; let i = index" id="slide{{i}}">
       <div class="guarantee-item-wrap">
         <div class="guarantee-item-inner">
-          <div class="guarantee-item-inner-img"></div>
+          <div class="guarantee-item-inner-img">
+            <div class="sprite-cheapest guarantee-item-img {{list.class}}"></div>
+          </div>
         </div>
         <h5>{{list.title}}</h5>
         <a mat-button [style.visibility]="i>=5 ? 'hidden' : 'visible'" type="button" [routerLink]="list.link[1]">{{list.link[0]}}</a>

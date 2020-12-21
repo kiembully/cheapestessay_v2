@@ -14,17 +14,22 @@ export class CommonReviewsComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  customOptions: OwlOptions = {
+  clientReviews: OwlOptions = {
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
-    dots: true,
-    margin: 10,
-    center: true,
-    navSpeed: 700,
-    items: 2,
-    nav: false
+    dots: false,
+    margin: 13,
+    nav: false,
+    center:true,
+    responsive:{
+      0:{
+          items:2,
+          dots: true, 
+      },
+      768:{
+          items:3,
+          dots: true,
+      }
+    }
   }
 
 }

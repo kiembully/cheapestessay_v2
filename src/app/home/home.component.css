@@ -162,7 +162,20 @@
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {
-
+    .banner-options-wrap > span,
+    .banner-options-wrap {
+        display: block;
+    }
+    .banner-options-wrap span:first-child button {
+        margin-bottom: 15px;
+    }
+    .mt-home-banner h1 {
+        font-size: 30px;
+        line-height: 35px;
+    }
+    .mt-home-banner h2 {
+        font-size: 15px
+    }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */

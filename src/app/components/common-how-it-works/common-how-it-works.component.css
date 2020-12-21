@@ -161,6 +161,7 @@
     .step-wrap-inner {
         max-height: 295px;
         max-width: 345px;
+        width: auto
     }
 }
  

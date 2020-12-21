@@ -8,7 +8,7 @@
     text-align: center;
 }
 .mtr-footer-header h2 {
-    color: #000000;
+    color: #FFD500;
     font-family: "SF Pro Text Bold";
     font-size: 42px;
     letter-spacing: 0;
@@ -17,7 +17,7 @@
     white-space: normal;
 }
 .mtr-footer-header h2 span {
-    color: #0D13D7
+    color: #111111
 }
 .tbl-footer {
     /* width: 659px; */
@@ -67,7 +67,8 @@
     height: 38px;
     width: 38px;
     border-radius: 50%;
-    border: 1px solid #255AF3
+    border: 1px solid #255AF3;
+    display: flex;
 }
 .mtr-social-media {
     display: block;
@@ -97,6 +98,30 @@
     font-size: 18px;
     letter-spacing: 0;
     background-color: transparent
+}
+.social-icon1 {
+    background-position: 6.999% 94.921%;
+	width: 12px;
+    height: 22px;
+    margin: auto
+}
+.social-icon2 {
+    background-position: 7.3% 94.793%;
+	width: 22px;
+    height: 18px;
+    margin: auto
+}
+.social-icon3 {
+    background-position: 7.64% 94.793%;
+	width: 18px;
+    height: 18px;
+    margin: auto
+}
+.social-icon4 {
+    background-position: 7.976% 94.793%;
+	width: 16px;
+    height: 18px;
+    margin: auto
 }
 
 /* RESPONSIVE SECTION  */

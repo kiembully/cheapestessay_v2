@@ -13,9 +13,11 @@
     width: 100%;
 }
 .home-faq-img {
-    min-height: 400px;
-    width: 100%;
-    background: red;
+    background-position: 12.298% 0;
+	background-size: 8765px 710px;
+	width: 345px;
+	height: 298px;
+    margin: 0 auto
 }
 
  

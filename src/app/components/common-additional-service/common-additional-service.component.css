@@ -76,10 +76,11 @@
     line-height: 31px;
 }
 .add-service-img {
-    display: block;
-    width: 100%;
-    min-height: 300px;
-    background: red;
+    background-position: 16.844% 12.214%;
+	background-size: 8765px 710px;
+	width: 382px;
+    height: 207px;
+    margin: 0 auto;
 }
 .spn-add-service-outer {
     max-width: 500px;

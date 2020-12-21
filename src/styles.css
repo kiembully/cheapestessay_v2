@@ -56,7 +56,7 @@ html {
 
 body {
     margin: 0;
-    background-color: #f2f2f2;
+    background-color: #F0FAFD;
 }
 mat-toolbar {
     min-height: 100% !important;
@@ -263,6 +263,15 @@ input[type=number] {
   clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
   position: relative;
 }
+.rounded-box {
+  background: #C5DBEF;
+  padding-top: 90px;
+  max-width: 2400px;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 0 0 70px 70px;
+}
 .home-banner-img {
   height: 508px;
   width: 512px;
@@ -302,19 +311,6 @@ input[type=number] {
   margin: 0 auto;
   z-index: -1
 }
-.rounded-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: #C5DBEF;
-  max-width: 2400px;
-  width: 100%;
-  min-height: 500px;
-  margin: 0 auto;
-  z-index: -1;
-  border-radius: 0 0 70px 70px;
-}
 .margin-bottom200 {
   margin-bottom: 200px;
 }
@@ -337,7 +333,10 @@ input[type=number] {
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {  
- 
+  .common-sub-header h2 {
+      line-height: 35px;
+      font-size: 30px;
+  }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */

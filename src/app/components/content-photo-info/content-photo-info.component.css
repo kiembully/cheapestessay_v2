@@ -25,20 +25,36 @@
 .row-reverse {
     flex-direction: row-reverse;
 }
-.spn-content-desc h6 {
+h6.photo-info-default {
     color: #000000;
     font-family: "SF Pro Text Medium";
-    font-size: 30px;
+    font-size: 28px;
     letter-spacing: 0;
-    line-height: 36px;
+    line-height: 34px;
     margin: 0 auto 20px auto;
+}
+h6.is-header-faq {
+    color: #12245A !important;
+    font-family: "SF Pro Text Bold" !important;
+    font-size: 130px !important;
+    letter-spacing: 0 !important;
+    line-height: 155px !important;
+}
+p.is-label-faq {
+    color: #12245A !important;
+    font-family: "SF Pro Text Bold" !important;
+    font-size: 23px !important;
+    letter-spacing: 0 !important;
+    line-height: 30px !important;
+    max-width: 400px;
+    margin: 0 !important;
 }
 .spn-content-desc p {
     color: #000000;
     font-family: "SF Pro Text Regular";
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: 0;
-    line-height: 30px;
+    line-height: 25px;
     text-align: justify;
     margin: 0 auto 16px auto;
 }
@@ -89,6 +105,129 @@
     text-align: center;
     display: block
 }
+.photo-content-img {
+    margin: 0 auto 30px auto;
+}
+
+/* sprites location */
+.about-service-sprite1 {
+    background-position: 21.767% 7.486%;
+    background-size: 8765px 710px;
+    width: 309px;
+    height: 263px;
+}
+.about-service-sprite2 {
+    background-position: 25.963% 10.57%;
+	background-size: 8765px 710px;
+	width: 305px;
+	height: 228px;
+}
+.about-service-sprite3 {
+    background-position: 29.985% 6.084%;
+	background-size: 8765px 710px;
+	width: 234px;
+	height: 258px;
+}
+.about-service-sprite4 {
+    background-position: 33.498% 9.011%;
+	background-size: 8765px 710px;
+	width: 261px;
+	height: 255px;
+}
+.about-service-sprite5 {
+    background-position: 37.083% 11.771%;
+	background-size: 8765px 710px;
+	width: 253px;
+	height: 222px;
+}
+.pay-first-img1 {
+    background-position: 41.031% 14.91%;
+	background-size: 8765px 710px;
+	width: 275px;
+	height: 184px;
+}
+.pay-first-img2 {
+    background-position: 45.154% 8.962%;
+	background-size: 8765px 710px;
+	width: 294px;
+	height: 253px;
+}
+.money-back-img1 {
+    background-position: 49.754% 17.733%;
+	background-size: 8765px 710px;
+	width: 322px;
+	height: 163px;
+}
+.money-back-img2 {
+    background-position: 53.807% 13.699%;
+	background-size: 8765px 710px;
+	width: 254px;
+	height: 199px;
+}
+.how-to-do-img {
+    background-position: 57.841% 12.016%;
+	background-size: 8765px 710px;
+	width: 299px;
+	height: 219px;
+}
+.place-order-img {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/placeorder-img.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 56%;
+    box-shadow: 4px 3px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+.make-payment-img {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/makepayment-img.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 56%;
+    box-shadow: 4px 3px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+.order-progress-img {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/orderprogress-img.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 56%;
+    box-shadow: 4px 3px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+.receive-paper-img {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/receive-orders.png') no-repeat;
+    background-size: 100%;
+    width: 100%;
+    padding-bottom: 56%;
+    box-shadow: 4px 3px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 20px;
+}
+.about-us-img {
+    background-position: 65.221% 15.578%;
+	background-size: 8765px 710px;
+	width: 280px;
+	height: 174px;
+}
+.revision-policy-img {
+    background-position: 68.608% 13.538%;
+	background-size: 8765px 710px;
+	width: 274px;
+	height: 204px;
+    zoom: 1.4;
+}
+.faqs-content-img {
+    background-position: 12.298% 0;
+	background-size: 8765px 710px;
+	width: 345px;
+	height: 298px;
+}
+.ask-question-img {
+    background-position: 71.608% 13.538%;
+    background-size: 8765px 710px;
+    width: 244px;
+    height: 243px;
+    zoom: 1.5;
+}
 
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
@@ -101,6 +240,13 @@
     .mt-web-contents mat-toolbar-row {
         display: block !important;
         text-align: -webkit-center;
+    }
+    h6.is-header-faq {
+        display: none;
+    }
+    p.is-label-faq {
+        text-align: center !important;
+        margin-bottom: 70px !important;
     }
 }
  

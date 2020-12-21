@@ -117,6 +117,18 @@
     letter-spacing: 0;
     border-radius: 35px;
 }
+.services-item-wrap .owl-dots {
+    margin-top: 20px !important;
+}
+.services-item-wrap .owl-theme .owl-dots .owl-dot {
+    margin: 0 !important;
+}
+.services-item-wrap .owl-theme .owl-dots .owl-dot span {
+    margin: 0 2.5px !important;
+}
+.services-item-wrap .owl-theme .owl-dots .owl-dot.active span {
+    background: #1A62F5;
+}
 
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */

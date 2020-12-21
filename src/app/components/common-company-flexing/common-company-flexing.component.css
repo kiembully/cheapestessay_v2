@@ -92,7 +92,7 @@
         margin-bottom: 0;
     }
     .company-flex-inner {
-        width: 100%;
+        width: auto;
         margin-bottom: 30px;
     }
 }

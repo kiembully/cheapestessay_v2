@@ -15,20 +15,24 @@ export class CommonServicesSlideComponent implements OnInit {
 
   servicesOption: OwlOptions = {
     loop: true,
-    mouseDrag: true,
-    touchDrag: true,
-    pullDrag: true,
     dots: false,
-    margin: 50,
+    margin: 13,
     nav: false,
+    center:false,
     responsive:{
       0:{
-          items:1,
-          center:true
+          items:2,
+          dots: true,
+          center:true,
       },
       768:{
-        items:2,
-        center:false,
+          items:2,
+          dots: true,
+          center:true,
+      },
+      992:{
+          center:false,
+          items:2,
       }
     }
   }
@@ -72,6 +76,24 @@ export class CommonServicesSlideComponent implements OnInit {
         {service:'Research Paper Writing Service',link:''},
         {service:'Coursework Writing Service',link:''},
         {service:'Dissertation Writing Services',link:''},
+      ]
+    },
+    {
+      set:[
+        {service:'Write my lab report',link:''},
+        {service:'Speech Writing Services',link:''},
+        {service:'Writing a Critique',link:''},
+        {service:'Writing a Reaction Paper',link:''},
+        {service:'Capstone Project Ideas',link:''},
+      ]
+    },
+    {
+      set:[
+        {service:'Write my lab report',link:''},
+        {service:'Speech Writing Services',link:''},
+        {service:'Writing a Critique',link:''},
+        {service:'Writing a Reaction Paper',link:''},
+        {service:'Capstone Project Ideas',link:''},
       ]
     },
     {

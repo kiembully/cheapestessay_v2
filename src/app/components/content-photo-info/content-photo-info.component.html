@@ -8,14 +8,17 @@
         </div>
     </mat-toolbar-row>
     <mat-toolbar-row *ngFor="let list of getArrayValue(data_content); let i = index" [ngClass]="((i - getInitialRow(left_first))%2===0)?'row-reverse':''">
-        <span class="spn-content-img"></span>
+        <span class="spn-content-img">
+            <div class="sprite-cheapest photo-content-img {{list.class}}"></div>
+        </span>
         <span class="fill-space"></span>
         <span class="spn-content-desc" [ngClass]="has_background_content && i > 0 ? 'has-background' : ''">
             <div class="spn-content-block">
-                <h6>{{list.title}}</h6>
-                <p *ngFor="let content of list.contents">{{content}}</p>
+                <h6 class="photo-info-default" [ngClass]="{'is-header-faq':is_faqs_content}">{{list.title}}</h6>
+                <p *ngFor="let content of list.contents" [ngClass]="{'is-label-faq':is_faqs_content}">{{content}}</p>
             </div>
-            <button *ngIf="has_order_button" type="button" class="btn-get-started" mat-flat-button>Get Started</button>
+            <button *ngIf="has_order_button" routerLink="/order" type="button" class="btn-get-started" mat-flat-button>Get Started</button>
+            <button *ngIf="has_contact_button" routerLink="/contact-us" type="button" class="btn-get-started" mat-flat-button>Contact Us</button>
         </span>
     </mat-toolbar-row>
 </mat-toolbar>
