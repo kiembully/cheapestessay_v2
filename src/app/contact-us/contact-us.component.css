@@ -161,6 +161,11 @@
     line-height: 16px;
     text-align: center;
 }
+.btn-send-wrap {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
 .btn-send-contact {
     padding: 13px 37px;
     border-radius: 5px;
@@ -171,7 +176,7 @@
     letter-spacing: 0;
     line-height: 22px;
     text-align: center;
-    margin-top: 40px;
+    margin: 40px auto 0 auto;
 }
 .mat-simple-snackbar-action button {
     background-color: #ffffff;
