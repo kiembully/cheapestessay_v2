@@ -1,46 +1,42 @@
-.mt-contact-banner {
-    margin-top: 150px;
-}
-.mtr-contact-header {
-    white-space: normal;
-}
-.mtr-contact-header h1 {
-    color: #111111;
-    font-family: "SF Pro Text Semibold";
-    font-size: 50px;
-    line-height: 46px;
-    margin: 0 auto;
-}
-.mtr-contact-header h2 {
-    color: #111111;
-    font-family: "SF Pro Text Regular";
-    font-size: 22px;
-    line-height: 46px;
-    text-align: center;
-    margin-top: 20px;
-    margin: 0 auto;
-}
 .mtr-send-contact {
     margin-bottom: 120px;
 }
 .frm-send-contact {
     width: 100%;
-    padding: 114px 99px 74px 99px;
+    /* padding: 114px 99px 74px 99px;
     box-shadow: 0 4px 12px 0 rgba(64, 85, 196, 0.14);
     border-radius: 15px;
     background-color: #FFFFFF;
     margin-top: 65px;
-    text-align: left;
+    text-align: left; */
     display: flex;
     position: relative;
+    padding-left: 200px
+}
+.spn-contact-form {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 #C5DBEF;
+    padding: 70px 100px 70px 350px;
+}
+.spn-contact-links {
+    position: absolute;
+    left: 0;
+    top: 70px;
+    width: 100%;
+    max-width: 350px;
+    background-color: #C5DBEF;
+    box-shadow: 0 2px 4px 0 #C5DBEF;
+    padding: 80px 75px 100px 75px;
 }
 .p-contact-sub {
-    color: #000000;
-    font-family: "SF Pro Text Semibold";
-    font-size: 18px;
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    font-weight: bold;
     letter-spacing: 0;
-    line-height: 21px;
-    margin: 0 0 80px 0;
+    line-height: 36px;
+    margin: 0 auto 55px auto;
+    text-align: center
 }
 .margin-bottom35 {
     margin-bottom: 35px;
@@ -59,6 +55,10 @@
     height: 140px;
     resize: none;
 }
+.mff-contact-us .mat-form-field-flex {
+    border: 2px solid #12245A;
+    padding-left: 15px;
+}
 .mff-contact-us .mat-form-field-appearance-legacy .mat-form-field-underline {
     height: 2px;
 }
@@ -70,22 +70,36 @@
     width: 100%;
 }
 .contact-info-wrap button {
-    color: #111111;
-    font-family: "SF Pro Text Semibold";
-    font-size: 14px;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 18px;
+    font-weight: 500;
     letter-spacing: 0;
-    line-height: 30px;
+    line-height: 21px;
+    padding-left: 60px;
+    background-color: transparent;
     display: block;
-    position: relative;
-    padding: 0 0 0 45px;
     width: 100%;
-    text-align: left
+    text-align: left;
+    height: 44px;
+    white-space: normal;
 }
-.margin-bottom30 {
-    margin-bottom: 30px;
+.margin-bottom24 {
+    margin-bottom: 24px;
 }
 
 /* sprite */
+.sprite-bg-wrap {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    background-color: #FBD501;  
+    box-shadow: 2px 4px 0px 0px #12245A;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: flex;
+}
 .sprite-iconchat {
     width: 40px;
     height: 40px;
@@ -96,59 +110,38 @@
 }
 
 .sprite-iconfbchat {
-    width: 44px;
-    height: 44px;
-    background-position: 0 -50px;
-    position: absolute;
-    left: 0;
-    top: 12px;
+    background-position: -4962px -1341px;
+	width: 26px;
+    height: 23px;
+    margin: auto
 }
 
 .sprite-iconinsta {
-    width: 64px;
-    height: 64px;
-    background-position: 0 -104px;
-    position: absolute;
-    left: -8px;
-    top: 4px;
-    zoom: 0.46;
+    background-position: -4871px -1338px;
+	width: 26px;
+    height: 25px;
+    margin: auto
 }
 
 .sprite-iconmail {
-    width: 40px;
-    height: 40px;
-    background-position: 0 -178px;
-    position: absolute;
-    left: 0;
-    top: 12px;
+    background-position: -5040px -1340px;
+	width: 34px;
+    height: 21px;
+    margin: auto
 }
 
 .sprite-icontel {
-    width: 40px;
-    height: 40px;
-    background-position: 0 -228px;
-    position: absolute;
-    left: 0;
-    top: 12px;
+    background-position: -4915px -1337px;
+	width: 28px;
+    height: 27px;
+    margin: auto
 }
 
 .sprite-iconwa {
-    width: 40px;
-    height: 40px;
-    background-position: 0 -278px;
-    position: absolute;
-    left: 0;
-    top: 12px;
-}
-
-.msngr-color {
-    color: #007FFF !important;
-}
-.whtspp-color {
-    color: #07B825 !important;
-}
-.nstgrm-color {
-    color: #B13092 !important;
+    background-position: -5009px -1340px;
+	width: 25px;
+    height: 24px;
+    margin: auto
 }
 
 .chat-btn-wrap {
@@ -184,4 +177,57 @@
     background-color: #ffffff;
     font-family: "SF Pro Text Regular";
     color: #000000;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) { 
+
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    .frm-send-contact {
+        flex-direction: column-reverse;
+    }
+    .spn-contact-links {
+        top: 30px !important
+    }
+    .spn-contact-links,
+    .spn-contact-form {
+        display: block;
+        margin: 0 auto;
+        width: -webkit-fill-available !important;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) {
+    .spn-contact-links,
+    .spn-contact-form {
+        width: 50%;
+        padding: 70px 15px !important;
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    .spn-contact-links {
+        position: inherit;
+        flex: 1 1 auto;
+        top: 0;
+    }
+    .spn-contact-form {
+        padding: 70px 50px;
+        flex: 1 1 auto
+    }
+    .frm-send-contact {
+        padding-left: 0
+    }
+    .frm-send-contact .fill-space {
+        display: none;
+    }
+    .mff-contact-us {
+        width: 100%;
+    }
 }

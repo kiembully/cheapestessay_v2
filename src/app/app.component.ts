@@ -20,7 +20,8 @@ export class AppComponent {
     'faqs',
     'money-back-guarantee',
     'guarantees',
-    'pricing'
+    'pricing',
+    'contact-us'
   ]
 
   getFooterStatus() {

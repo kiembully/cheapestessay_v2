@@ -51,6 +51,10 @@ export class CommonSubpagesHeaderComponent implements OnInit {
       header: 'Cheapest Essay FAQs',
       subheader: 'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
     },
+    {
+      header: 'Contact To Cheapest Essay',
+      subheader: 'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
+    },
   ]
 
 }

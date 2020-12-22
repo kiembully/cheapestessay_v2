@@ -1,15 +1,51 @@
+<app-common-subpages-header [data_index]="9"></app-common-subpages-header>
+
 <section class="default-width">
     <mat-toolbar color="primary" class="mt-contact-banner">
-        <mat-toolbar-row class="mtr-contact-header">
-            <h1>Contact Us</h1>
-        </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-contact-header">
-            <h2>Do you need someone to help you with your paper, or just want to say hi? Go right ahead!</h2>
-        </mat-toolbar-row>
+        <mat-toolbar-row class="common-sub-header"><h2>CONTACT US</h2></mat-toolbar-row>
     </mat-toolbar>
+    <div class="margin-bottom24">
+        <app-content-photo-info data_content="contact_us_content" [is_faqs_content]="true" [left_first]="true"></app-content-photo-info>
+    </div>
     <mat-toolbar-row class="mtr-send-contact">
         <form (ngSubmit)="submitContact()" class="frm-send-contact" [formGroup]="frmContact">
-            <span>
+            <span class="fill-space"></span>
+            <span class="spn-contact-links">
+                <p class="p-contact-sub">Contact info</p>
+                <div class="contact-info-wrap">
+                    <button mat-flat-button class="margin-bottom24" onclick="location.href='mailto:support@cheapestessay.com';event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-iconmail"></div>
+                        </div>Support@CheapestEssay.com
+                    </button>
+                    <button mat-flat-button class="margin-bottom24" onclick="location.href='tel:+19094411414';event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-icontel"></div>
+                        </div>+ (909) 441-1414
+                    </button>
+                    <!-- <button mat-flat-button class="margin-bottom24" onclick="location.href='tel:+19094411414';event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-iconchat"></div>
+                        </div>+ (909) 441-1414
+                    </button> -->
+                    <button mat-flat-button class="margin-bottom24" onclick="window.open('https:/www.messenger.com/t/CheapestEssay', '_blank');event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-iconfbchat"></div>
+                        </div>Message us via FB Messenger
+                    </button>
+                    <button mat-flat-button class="margin-bottom24" onclick="location.href='https:/api.whatsapp.com/send?phone=19094411414';event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-iconwa"></div>
+                        </div>Message us via WhatsApp
+                    </button>
+                    <button mat-flat-button class="" onclick="window.open('https:/www.instagram.com/cheapestessay', '_blank');event.preventDefault()">
+                        <div class="sprite-bg-wrap">
+                            <div class="sprite-cheapest sprite-iconinsta"></div>
+                        </div>Message us via Instagram
+                    </button>
+                </div>
+            </span>
+            <span class="spn-contact-form">
                 <p class="p-contact-sub">Send us a message</p>
                 <mat-form-field class="mff-contact-us margin-bottom35" appearance="legacy" color="accent">
                     <mat-label>Name</mat-label>
@@ -29,35 +65,25 @@
                     <mat-error>{{getErrorMessageOption()}}</mat-error>
                 </mat-form-field>
                 <br>
-                <button type="submit" mat-button class="btn-send-contact">Send</button>
-            </span>
-            <span class="fill-space"></span>
-            <span>
-                <p class="p-contact-sub">Contact info</p>
-                <div class="contact-info-wrap">
-                    <button mat-flat-button class="margin-bottom30" onclick="location.href='tel:+19094411414';event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-icontel"></div>+ (909) 441-1414
-                    </button>
-                    <button mat-flat-button class="margin-bottom30" onclick="location.href='mailto:support@cheapestessay.com';event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-iconmail"></div>Support@CheapestEssay.com
-                    </button>
-                    <button mat-flat-button class="margin-bottom30" onclick="location.href='tel:+19094411414';event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-iconchat"></div>+ (909) 441-1414
-                    </button>
-                    <button mat-flat-button class="margin-bottom30 msngr-color" onclick="window.open('https:/www.messenger.com/t/CheapestEssay', '_blank');event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-iconfbchat"></div>Message us via FB Messenger
-                    </button>
-                    <button mat-flat-button class="margin-bottom30 whtspp-color" onclick="location.href='https:/api.whatsapp.com/send?phone=19094411414';event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-iconwa"></div>Message us via WhatsApp
-                    </button>
-                    <button mat-flat-button class="nstgrm-color" onclick="window.open('https:/www.instagram.com/cheapestessay', '_blank');event.preventDefault()">
-                        <div class="sprite-subpage-icon sprite-iconinsta"></div>Message us via Instagram
-                    </button>
-                </div>
-                <div class="chat-btn-wrap">
-                    <button mat-flat-button class="btn-chat-now">Chat Now Online</button>
+                <div style="display: block; width: 100%;s">
+                    <button type="submit" mat-button class="btn-send-contact">Send</button>
                 </div>
             </span>
         </form>
     </mat-toolbar-row>
 </section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<section class="default-width sec-pro-writing margin-bottom24">
+    <mat-toolbar>
+        <mat-toolbar-row class="common-sub-header">
+            <h2>OUR SERVICES</h2>
+        </mat-toolbar-row>
+    </mat-toolbar>  
+</section>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

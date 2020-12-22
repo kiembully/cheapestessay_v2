@@ -48,6 +48,8 @@ export class ContentPhotoInfoComponent implements OnInit {
       value = this.faqs_content_data
     } else if (content == 'ask_question_content') {
       value = this.ask_question_content
+    } else if (content == 'contact_us_content') {
+      value = this.contact_us_content
     } return value;
   }
 
@@ -249,6 +251,15 @@ export class ContentPhotoInfoComponent implements OnInit {
         'A customer support will assist you with everything including every questions regarding our service.'
       ],
       class:'ask-question-img'
+    }
+  ]
+  contact_us_content: any = [
+    {
+      title: '',
+      contents: [
+        'Do you need someone to help you with your paper, or just want to say hi? Go right ahead!'
+      ],
+      class:'contact-us-img'
     }
   ]
 }
