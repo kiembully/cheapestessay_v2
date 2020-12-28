@@ -116,6 +116,15 @@ mat-toolbar-row {
   text-align: center;
   text-align: -webkit-center;
 }
+.common-sub-header p {
+  white-space: normal;
+  color: #000000;
+  font-family: "SF Pro Text Medium";
+  font-size: 24px;
+  letter-spacing: 0;
+  line-height: 30px;
+  text-align: center;
+}
 
 /* common backgrounds UNUSED*/
 .common-bluish {
@@ -337,6 +346,10 @@ input[type=number] {
       line-height: 35px;
       font-size: 30px;
   }
+  .common-sub-header p {
+    line-height: 24px;
+    font-size: 18px;
+  }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
@@ -351,9 +364,6 @@ input[type=number] {
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
-  .main-banner-background {
-    margin-bottom: 70px
-  }
   .home-banner-img {
     display: none
   }

@@ -1,6 +1,8 @@
 .mt-free-quote {
-    margin-bottom: 200px;
     position: relative;
+}
+.sec-web-rating {
+    padding-top: 200px
 }
 .mtr-free-quote > span:first-child {
     top: 0;
@@ -8,69 +10,28 @@
 }
 .spn-contain-fq-banner h1 {
     color: #000000;
-    font-size: 40px;
-    line-height: 48px;
+    font-size: 58px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 69px;
     margin: 51px auto 34px auto;
     font-family: "SF Pro Text Bold";
     white-space: normal;
 }
 .spn-contain-fq-banner p {
-    font-family: "SF Pro Text Regular";
+    font-family: "SF Pro Text Medium";
     color: #000000;
-    max-width: 475px;
-    margin: 0;
-    font-size: 20px;
-    letter-spacing: -0.2px;
-    line-height: 48px;
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 30px;
     white-space: normal;
 }
 .spn-contain-fq-banner {
-    width: 475px;
-}
-.sec-fq-guarantees,
-.sec-fq-reviews {
-    margin-bottom: 150px;
-}
-.sec-fq-guarantees h2 {
-    margin: 0 auto 89px auto;
-    color: #000000;
-    font-size: 40px;
-    line-height: 48px;
-    font-family: "SF Pro Text Bold";
-}
-.sec-fq-guarantees .mat-list-item {
-    white-space: normal;
-    height: 100% !important;
-    margin-bottom: 70px;
-}
-.sec-fq-guarantees .mat-list-item h5,
-.sec-fq-guarantees .mat-list-item p {
-    display: block;
-}
-.sec-fq-guarantees .mat-list-item h5 {
-    color: #000000;
-    font-size: 20px;
-    line-height: 22px;
-    margin: 0 auto 16px auto;
-    font-family: "SF Pro Text Semibold";
-}
-.sec-fq-guarantees .mat-list-item p {
-    opacity: 0.7;
-    color: #000000;
-    font-size: 14px;
-    line-height: 22px;
-    margin: 0;
-    max-width: 330px;
-    font-family: "SF Pro Text Regular";
-}
-.sec-fq-guarantees .mat-list-base .mat-list-item .mat-list-item-content {
-    display: inline-table;
+    width: 585px;
 }
 
 /* RESPONSIVE SECTION  */
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
-    .mt-free-quote {
-        margin-bottom: 0;
-    }
+    
 }

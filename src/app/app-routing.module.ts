@@ -24,6 +24,7 @@ import { FreeQuoteComponent } from './free-quote/free-quote.component';
 import { ServicesComponent } from './services/services.component';
 import { ServicesDetailComponent } from './services-detail/services-detail.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
+import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -40,6 +41,7 @@ const routes: Routes = [
   {path:'pricing',component:PricingComponent},
   {path:'guarantees',component:GuaranteesComponent},
   {path:'free-quote',component:FreeQuoteComponent},
+  {path:'what-we-do',component:WhatWeDoComponent},
   {path:'services',component:ServicesComponent},
   {path:'services/:id',component:ServicesDetailComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},

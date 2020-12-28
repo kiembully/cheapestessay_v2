@@ -1,0 +1,127 @@
+.mt-guarantees {
+    margin-bottom: 105px;
+}
+.mtr-guarantees {
+    padding: 20px 40px;
+}
+.guarantee-sprite-wrap > div {
+    width: 100px;
+    height: 100px;
+    margin: 60px auto 0 auto;
+    display: block;
+}
+.guarantee-sprite-wrap h5 {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 1.5em;
+    text-align: center;
+    margin: 29px auto 15px auto;
+    white-space: normal;
+    width: 100%;
+    max-width: 250px;
+}
+.guarantee-sprite-wrap a {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    line-height: 1.75em;
+    white-space: normal;
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+.guarantee-sprite-wrap a span {
+    color: #1EB578 !important;
+}
+.refund-icon-g {
+    background-position: 9.927% 97.803%;
+	width: 112px;
+	height: 100px;
+}
+.editing-icon-g {
+    background-position: 10.891% 97.803%;
+	width: 101px;
+	height: 100px;
+}
+.plagiarism-icon-g {
+    background-position: 11.891% 98.242%;
+	width: 113px;
+	height: 112px;
+}
+.privacy-icon-g {
+    background-position: 13.007% 97.422%;
+	width: 85px;
+	height: 101px;
+}
+.moneyback-icon-g {
+    background-position: 14.182% 97.208%;
+	width: 99px;
+	height: 95px;
+}
+.cheapest-icon-g {
+    background-position: 15.233% 97.214%;
+	width: 93px;
+	height: 92px;
+}
+.suport-icon-g {
+    background-position: 24.872% 97.748%;
+	width: 80px;
+	height: 88px;
+}
+.revision-icon-g {
+    background-position: 25.804% 97.738%;
+	width: 94px;
+	height: 94px;
+}
+.quality-icon-g {
+    background-position: 26.696% 97.313%;
+	width: 73px;
+	height: 80px;
+}
+.spn-contain-guarantee {
+    position: relative;
+    height: 321px;
+    width: 100%;
+    max-width: 362px;
+    display: block;
+    text-align: center;
+    background: #DCE9F5;
+    box-shadow: 4px 6px 2px 0 rgba(0,0,0,0.5);
+    border-radius: 67% 33% 69% 31% / 71% 57% 43% 29%;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+ 
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {  
+  
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .mtr-guarantees {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center  
+    }
+    .guarantee-sprite-wrap > div {
+        display: inline-flex;
+    }
+    .spn-contain-guarantee {
+        margin-bottom: 40px;
+    }
+    .spn-contain-guarantee:last-child {
+        margin-bottom: 0
+    }
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {  
+    
+}

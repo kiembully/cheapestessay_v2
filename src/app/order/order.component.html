@@ -1,3 +1,25 @@
+<mat-toolbar class="mt-order-layout default-width">
+    <mat-toolbar-row class="mtr-order-layout">
+        <span class="spn-order-form">
+            <mat-tab-group class="mtb-order-steps">
+                <mat-tab label="1. Paper Details">
+                    <app-paper-details></app-paper-details>
+                </mat-tab>
+                <mat-tab label="2. Service Level">
+                    <app-service-level></app-service-level>
+                </mat-tab>
+                <mat-tab label="3. Contact Information">
+                    <app-contact-information></app-contact-information>
+                </mat-tab>
+            </mat-tab-group>
+        </span>
+        <span class="fill-space spn-order-layout"></span>
+        <span class="spn-summary-form">
+            <app-order-summary></app-order-summary>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>
+
 <section class="default-width sec-order-form">
     <app-new-order [isEditing]="false"></app-new-order>
 </section>

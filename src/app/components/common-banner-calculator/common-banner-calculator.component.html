@@ -73,6 +73,6 @@
     <section class="sec-form">
         <button *ngIf="isHome" [disabled]="isSubmitDisabled" type="submit" mat-button class="btn-order-sbmt">ORDER NOW</button>
         <!-- only visible in free-quote page -->
-        <button *ngIf="!isHome" [disabled]="isSubmitDisabled" (click)="openFreeQuote()" type="button" mat-button class="btn-order-sbmt">GET FREE QUOTE</button>
+        <button *ngIf="!isHome" [disabled]="isSubmitDisabled" (click)="openFreeQuote()" type="button" mat-button class="btn-get-free-quote">GET FREE QUOTE</button>
     </section>
 </form>

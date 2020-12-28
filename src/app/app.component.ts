@@ -21,7 +21,9 @@ export class AppComponent {
     'money-back-guarantee',
     'guarantees',
     'pricing',
-    'contact-us'
+    'contact-us',
+    'services',
+    'what-we-do'
   ]
 
   getFooterStatus() {

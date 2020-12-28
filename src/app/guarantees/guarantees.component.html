@@ -1,19 +1,6 @@
 <app-common-subpages-header [data_index]="1"></app-common-subpages-header>
 
-<section class="width1220px sec-guarantees">
-    <mat-toolbar color="primary" class="mt-guarantees">
-        <mat-toolbar-row class="common-sub-header"><h2>GUARANTEES</h2></mat-toolbar-row>
-        <mat-toolbar-row class="mtr-guarantees" *ngFor="let row of guarantees; let i = index">
-            <span *ngFor="let list of row.data; let j = index" [class]="list.class">
-                <div *ngIf="list.isContentVisible" class="guarantee-sprite-wrap">
-                    <div class="sprite-cheapest {{list.subClass}}"></div>
-                    <h5 [style.padding]="list.title=='Plagiarism Free'?'0 10px':'0'">{{list.title}}</h5>
-                    <a *ngIf="false" mat-list-item [routerLink]="list.link[1]" [innerHTML]="list.link[0]"></a>
-                </div>
-            </span>
-        </mat-toolbar-row>
-    </mat-toolbar>
-</section>
+<app-common-guarantees-content></app-common-guarantees-content>
 
 <div class="margin-bottom70">
     <app-common-additional-service></app-common-additional-service>

@@ -1,0 +1,90 @@
+<section class="full-width">
+    <div class="main-banner-background">
+        <mat-toolbar class="mt-services default-width">
+            <mat-toolbar-row class="mtr-services">
+                <span class="spn-contain-services-banner">
+                    <h1>Cheapest Essay offer the most Professional Writing Service at the best price</h1>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-contain-services-form">
+                    <form [formGroup]="servicesForm" class="frm-services-form">
+                        <mat-form-field class="mff-services">
+                            <mat-select formControlName="paper" [value]="servicesForm.value.paper" panelClass="panel-drop-style-service">
+                                <mat-optgroup label="Most Popular">
+                                    <mat-option *ngFor="let list of pPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                                </mat-optgroup>
+                                <mat-optgroup label="Others">
+                                    <mat-option *ngFor="let list of oPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                                </mat-optgroup>
+                            </mat-select>
+                            <span matSufix><div class="sprites-icons dd-icon"></div></span>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="mff-email">
+                            <input formControlName="email" type="email" matInput placeholder="Enter an email to signup" required  class="panel-services-email">
+                        </mat-form-field>
+                        <button type="submit" mat-flat-button class="btn-submit-services">GET ESSAY HELP</button>
+                    </form>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </div>
+</section>
+
+<section class="default-width">
+    <mat-toolbar class="">
+        <mat-toolbar-row class="common-sub-header mtr-what-we-do">
+            <h2>Top orders written by our professional writers</h2>
+            <p>Choose from our professional writers and find the right one for your project either it's essay, assignment, research paper etc. You will get the best essay help and writing help from our professional writing service using our live chat feature. You can message us 24/7 and get updates on your order. Our awesome support will gladly assist you anytime!</p>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<section class="default-width margin-bottom70 sec-order-written">
+    <owl-carousel-o [options]="orderWritten">
+        <ng-template carouselSlide>
+            <div class="order-written-item"></div>
+            <div class="order-written-content">
+                <div class="written-item-img-wrap">
+                    <div class="sprite-cheapest written-item-img"></div>
+                </div>
+                <p class="p-service-category">Essay Any Type</p>
+                <p class="p-complete-order">Total Complete Order</p>
+                <p class="p-total-order">1650</p>
+                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
+            </div>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <div class="order-written-item"></div>
+            <div class="order-written-content">
+                <div class="written-item-img-wrap">
+                    <div class="sprite-cheapest written-item-img"></div>
+                </div>
+                <p class="p-service-category">Report</p>
+                <p class="p-complete-order">Total Complete Order</p>
+                <p class="p-total-order">1500</p>
+                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
+            </div>
+        </ng-template>  
+        <ng-template carouselSlide>
+            <div class="order-written-item"></div>
+            <div class="order-written-content">
+                <div class="written-item-img-wrap">
+                    <div class="sprite-cheapest written-item-img"></div>
+                </div>
+                <p class="p-service-category">Case Study</p>
+                <p class="p-complete-order">Total Complete Order</p>
+                <p class="p-total-order">1500</p>
+                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
+            </div>
+        </ng-template>  
+    </owl-carousel-o>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-company-flexing></app-common-company-flexing>
+</div>
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

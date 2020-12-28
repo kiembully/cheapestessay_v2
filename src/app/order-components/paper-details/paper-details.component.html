@@ -1,0 +1,93 @@
+<form [formGroup]="frmPapers">
+    <mat-toolbar class="mt-paper-details full-width">
+        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label" [ngClass]="(frmPapers.controls.topic.invalid)?'asterix-after':''">Topic <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input">
+                        <input matInput placeholder="Your topic description" formControlName="topic">
+                        <mat-error *ngIf="frmPapers.controls.topic.invalid">{{topicErrorMsg()}}</mat-error>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Type of Paper</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-form-field appearance="outline" class="mff-order-input">
+                        <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="paper" >
+                          <mat-option value="Essay">Essay</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Subject</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-form-field appearance="outline" class="mff-order-input">
+                        <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="subject" >
+                          <mat-option value="English">English</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                          <mat-option value="option">Option</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Deadline</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <div class="slider-input-wrap">
+                        <mat-slider class="ms-slider-input" [max]="12" [min]="1" tickInterval="1" [value]="frmPapers.value.deadline"></mat-slider>
+                    </div>
+                    <div class="slider-label-wrap">
+                        <span>3h</span>
+                        <span class="fill-space"></span>
+                        <span>6h</span>
+                        <span class="fill-space"></span>
+                        <span>12h</span>
+                        <span class="fill-space"></span>
+                        <span>24h</span>
+                        <span class="fill-space"></span>
+                        <span>48h</span>
+                        <span class="fill-space"></span>
+                        <span>3d</span>
+                        <span class="fill-space"></span>
+                        <span>4d</span>
+                        <span class="fill-space"></span>
+                        <span>5d</span>
+                        <span class="fill-space"></span>
+                        <span>7d</span>
+                        <span class="fill-space"></span>
+                        <span>10d</span>
+                        <span class="fill-space"></span>
+                        <span>14d</span>
+                        <span class="fill-space"></span>
+                        <span>19d</span>
+                    </div>
+                    <p class="p-slider-label">We estimate that your final submission deadline is Nov 16, 2020, 10:21:44 AM</p>
+                </span>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

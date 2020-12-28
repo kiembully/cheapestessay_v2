@@ -73,6 +73,12 @@ import { CommonClientReviewsComponent } from './components/common-client-reviews
 import { CommonFaqsComponent } from './components/common-faqs/common-faqs.component';
 import { CommonSubpagesHeaderComponent } from './components/common-subpages-header/common-subpages-header.component';
 import { CommonFaqsDataComponent } from './components/common-faqs-data/common-faqs-data.component';
+import { CommonGuaranteesContentComponent } from './components/common-guarantees-content/common-guarantees-content.component';
+import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
+import { OrderSummaryComponent } from './order-components/order-summary/order-summary.component';
+import { PaperDetailsComponent } from './order-components/paper-details/paper-details.component';
+import { ServiceLevelComponent } from './order-components/service-level/service-level.component';
+import { ContactInformationComponent } from './order-components/contact-information/contact-information.component';
 
 @NgModule({
   declarations: [
@@ -139,6 +145,12 @@ import { CommonFaqsDataComponent } from './components/common-faqs-data/common-fa
     CommonFaqsComponent,
     CommonSubpagesHeaderComponent,
     CommonFaqsDataComponent,
+    CommonGuaranteesContentComponent,
+    WhatWeDoComponent,
+    OrderSummaryComponent,
+    PaperDetailsComponent,
+    ServiceLevelComponent,
+    ContactInformationComponent,
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,7 @@ import {ClipboardModule} from '@angular/cdk/clipboard';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
     imports: [
@@ -45,7 +46,8 @@ import {MatMenuModule} from '@angular/material/menu';
         ClipboardModule,
         MatProgressSpinnerModule,
         ScrollingModule,
-        MatMenuModule
+        MatMenuModule,
+        MatSliderModule
     ],
     exports: [
         MatButtonModule,
@@ -69,7 +71,8 @@ import {MatMenuModule} from '@angular/material/menu';
         ClipboardModule,
         MatProgressSpinnerModule,
         ScrollingModule,
-        MatMenuModule
+        MatMenuModule,
+        MatSliderModule
     ]
 })
 
