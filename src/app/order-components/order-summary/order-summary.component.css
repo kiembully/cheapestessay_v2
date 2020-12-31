@@ -1,0 +1,76 @@
+.h3-order-summary {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    margin: 0 auto 10px auto
+}
+.mt-order-summary {
+    border-radius: 5px;
+    overflow: hidden;
+    width: 300px;
+}
+.mtr-order-summary {
+    display: block;
+    white-space: normal;
+    padding: 12px 14px;
+}
+.mtr-shaded {
+    background-color: #C5DBEF;
+}
+.mtr-no-shade {
+    background-color: #E1F1FF
+}
+.h6-order-summary {
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 21px;
+    margin: 0 auto 4px auto
+}
+.p-order-summary {
+    color: #12245A;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: 0;
+}
+.p-os-label {
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: 0 auto 6px auto;
+}
+.mtr-total {
+    display: flex;
+    background-color: #12245A
+}
+.mtr-total span:first-child {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+.mtr-total span:last-child {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 36px;
+}
+
+/* common styles  */
+.padding-bottom0 {
+    padding-bottom: 0
+}
+.fix-summary {
+    position: fixed;
+    top: 60px;
+}

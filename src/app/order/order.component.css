@@ -1,15 +1,19 @@
 .mt-order-layout {
     padding-top: 140px;
-    padding-bottom: 120px;
+    padding-bottom: 55px;
     position: relative
 }
 .spn-order-form {
     width: 100%;
-    max-width: 680px;
+    max-width: 720px;
+    min-height: 500px;
+    position: relative;
 }
 .spn-summary-form {
     width: 100%;
     max-width: 300px;
+    align-self: start;
+    position: relative;
 }
 .mtb-order-steps {
     width: 100%;
@@ -25,7 +29,7 @@
     border-bottom: 2px solid #12245A;
 }
 .mtb-order-steps .mat-tab-label-content {
-    color: #12245A;
+    color: #000000;
     font-family: "SF Pro Text Semibold";
     font-size: 18px;
     font-weight: 600;
@@ -37,7 +41,7 @@
     margin-bottom: 25px;
 }
 .p-form-label {
-    color: #12245A;
+    color: #000000;
     font-family: "SF Pro Text Medium";
     font-size: 16px;
     font-weight: 500;
@@ -52,9 +56,35 @@
 .spn-input-container {
     width: 100%;
     max-width: 510px;
+    display: flex;
+}
+.spn-separator {
+    width: 100%
+}
+.spn-separator-col1 {
+    width: 73px;
+}
+.spn-separator-col1 .mat-select {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 35px;
+}
+.spn-separator-col11 {
+    width: 100%;
+}
+.spn-separator-col1 .mff-order-input .mat-form-field-outline {
+    border-radius: 5px 0 0 5px;
+}
+.spn-separator-col11 .mff-order-input .mat-form-field-outline {
+    border-radius: 0 5px 5px 0;
 }
 .spn-input-container .mat-slider-horizontal {
-    height: 45px
+    height: 8px
+}
+.spn-input-container .mat-slider-wrapper {
+    top: 0 !important;
+    left: 8px !important;
+    right: 0 !important;
 }
 .mff-order-input {
     width: 100%;
@@ -63,6 +93,20 @@
     font-size: 14px;
     letter-spacing: 0;
     line-height: 16px;
+}
+.mff-order-input.mff-textarea .mat-form-field-flex {
+    height: 114px
+}
+.mff-order-input.mff-textarea textarea {
+    height: 85px;
+    resize: none;
+}
+.mff-order-input .mat-form-field-prefix {
+    top: 0 !important;
+    margin-right: 10px
+}
+.mff-order-input .mat-form-field-flex {
+    height: 45px;
 }
 .mff-order-input .mat-form-field-label-wrapper {
     color: #000000;
@@ -79,8 +123,13 @@
     border-radius: 5px;
     opacity: 1 !important;
 }
+.mff-order-input.input-coupon .mat-form-field-outline {
+    border: 1px solid #12245A;
+    border-radius: 2px;
+}
 .mff-order-input .mat-form-field-infix {
     border-top: 0.34375em solid transparent;
+    padding: 0.8em 0
 }
 .mff-order-input .mat-form-field-subscript-wrapper {
     margin-top: 4px;
@@ -89,9 +138,9 @@
     transform: translateY(0%) !important    
 }
 .mff-order-input .mat-select-arrow {
-    border-left: 7px solid transparent;
-    border-right: 7px solid transparent;
-    border-top: 7px solid;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid;
 }
 .ms-select-option {
     border: 1px solid #000000;
@@ -118,6 +167,12 @@
 .slider-input-wrap .mat-slider-horizontal .mat-slider-ticks-container {
     height: 4px;
 }
+.slider-input-wrap.no-ticks {
+    margin-top: 14px;
+}
+.slider-input-wrap.no-ticks .mat-slider-horizontal .mat-slider-ticks {
+    height: 0;  
+}   
 .slider-input-wrap .mat-slider-horizontal .mat-slider-ticks {
     opacity: 1;
     background-image: repeating-linear-gradient(to right, #FBD501, #FBD501 8px, transparent 0, transparent);
@@ -133,12 +188,20 @@
     bottom: -11px;
     background-color: #12245a !important;
 }
+.slider-input-wrap .mat-slider-thumb-label-text {
+    color: #ffffff
+}
 .slider-input-wrap .mat-slider.mat-slider-horizontal .mat-slider-track-background,
 .slider-input-wrap .mat-slider.mat-slider-horizontal .mat-slider-track-fill {
     height: 100%;
 }
 .slider-label-wrap {
     display: flex;
+}
+.slider-label-wrap span.active-dl {
+    font-family: "SF Pro Text Bold";
+    opacity: 1;
+    font-weight: bold ;
 }
 .slider-label-wrap span {
     color: #000000;
@@ -148,6 +211,7 @@
     line-height: 16px;
     opacity: 0.6
 }
+.p-input-label,
 .p-slider-label {
     white-space: normal;
     color: #000000;
@@ -155,5 +219,81 @@
     font-size: 12px;
     letter-spacing: 0;
     line-height: 14px;
-    margin: 5px auto 0 auto
+    margin: 5px auto 0 auto;
+}
+.mrg-select-input {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    display: block;
+    margin-top: 16px;
+}
+.mrg-select-input .mat-radio-label {
+    margin-right: 14px
+}
+.total-page-wrap {
+    overflow: hidden;
+    display: flex;
+    border: 1.5px solid #12245A;
+    border-radius: 5px;
+    width: 100%;
+    height: 35px;
+}
+.spn-words-total {
+    max-width: 100px;
+    width: 100%;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+    text-align: center;
+    margin: auto;
+}
+.spn-page-total input {
+    height: 35px;
+    width: -webkit-fill-available;
+    border: none;
+    outline: none;
+    padding: 0 15px;
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+    background: transparent;
+    border-right: 1.5px solid #12245A;
+}
+.h3-additional-label {
+    color: #000000;
+    font-family: "SF Pro Text Semibold" !important;
+    font-size: 22px !important;
+    letter-spacing: 0 !important;
+    line-height: 26px !important;
+    margin-top: 29px !important;
+    margin-bottom: 25px !important
+}
+.upload-material-wrap {
+    display: flex;
+    height: 114px;
+    width: 100%;
+    border: 1.5px dashed #12245A;
+    border-radius: 5px;
+}
+.btn-next-step {
+    border-radius: 5px;
+    background-color: #FBD501;
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: 11px 44px;
+    margin-top: 50px
+}
+.paper-details-outer {
+    display: flex;
+    width: 100%;
 }

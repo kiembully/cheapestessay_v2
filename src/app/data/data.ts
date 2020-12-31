@@ -1,4 +1,4 @@
-import {FormControl, FormGroup} from '@angular/forms'
+import {FormControl, FormGroup, Validators} from '@angular/forms'
 
 export class new_order_form_default {
     setOrders = new FormGroup({
@@ -11,11 +11,11 @@ export class new_order_form_default {
         subject: new FormControl(18),
         other_subject: new FormControl(''),
         formated_style: new FormControl(1),
-        other_format: new FormControl(''),
+        other_format: new FormControl('', [Validators.required]),
         source: new FormControl(0),
         discipline: new FormControl(2),
-        topic: new FormControl("Writer's Choice"),
-        add_detail: new FormControl(''),
+        topic: new FormControl("Writer's Choice", [Validators.required]),
+        add_detail: new FormControl('', [Validators.required]),
         timezone: new FormControl('America/Chicago'),
         deadline: new FormControl(3),
         duration: new FormControl('Days'),

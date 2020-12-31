@@ -1,0 +1,81 @@
+.tbl-service-level {
+    width: 100%;
+    border-collapse: collapse;
+}
+.tbl-service-level tr th:nth-child(2),
+.tbl-service-level tr th:nth-child(3),
+.tbl-service-level tr th:last-child {
+    border: 1px solid #F0FAFD;
+    padding: 11px;
+    background-color: #C5DBEF;
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px; 
+    border-bottom: 1px solid #12245A;
+}
+.tbl-service-level tfoot td p,
+.tbl-service-level tr td {
+    color: #12245A;
+    font-family: "SF Pro Text Regular";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+.tbl-service-level tfoot td p {
+    margin: 0 auto 27px auto
+}
+.tbl-service-level tr td .material-icons {
+    color: #3BC160;
+    font-size: 21px
+}
+.tbl-service-level td {
+    text-align: center;
+}
+.tbl-service-level tbody td {
+    border: 1px solid #12245A;
+    padding: 13px;
+}
+.tbl-service-level tbody td:first-child {
+    text-align: left;
+    max-width: 100px;
+    white-space: normal;
+}
+.tbl-service-level tfoot td:nth-child(2),
+.tbl-service-level tfoot td:nth-child(3),
+.tbl-service-level tfoot td:last-child {
+    border: 1px solid #12245A;
+    padding: 12px 9px
+}
+.tbl-service-level tfoot td button {
+    padding: 7px; 
+    border-radius: 4px;
+    background-color: #12245A;
+    width: 100%;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Medium";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+.h3-additional-label {
+    color: #000000;
+    font-family: "SF Pro Text Semibold" !important;
+    font-size: 22px !important;
+    letter-spacing: 0 !important;
+    line-height: 26px !important;
+    margin-top: 29px !important;
+    margin-bottom: 25px !important;
+}
+.tbl-service-level .mat-checkbox-layout,
+.tbl-service-level .mcb-add-service,
+.tbl-service-level .mat-checkbox-label {
+    width: 100% !important;
+}
+.tbl-service-level .mat-checkbox-inner-container {
+    margin-left: 0
+}
+.tbl-service-level .mat-checkbox-label span {
+    float: right
+}

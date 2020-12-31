@@ -1,1 +1,95 @@
-<p>contact-information works!</p>
+<form [formGroup]="frmContactInfo">
+    <mat-toolbar>
+        <mat-toolbar-row *ngIf="_session.isTokenExisting('user_token')">
+            <div class="paper-details-outer">
+                <span></span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <button class="btn-toggle-account" type="button" mat-flat-button>I already have an account</button>
+                    <mat-divider class="md-account-divider"></mat-divider>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10" [ngClass]="((frmContactInfo.controls.first_name.invalid)||(frmContactInfo.controls.last_name.invalid))?'asterix-after':''">Name <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <span class="spn-separator">
+                        <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input">
+                            <input matInput placeholder="First name" formControlName="first_name">
+                            <mat-error *ngIf="frmContactInfo.controls.first_name.invalid">{{firstNameErrorMsg()}}</mat-error>
+                        </mat-form-field>
+                    </span>
+                    <span class="fill-space padd11"></span>
+                    <span class="spn-separator">
+                        <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input">
+                            <input matInput placeholder="Last name" formControlName="last_name">
+                            <mat-error *ngIf="frmContactInfo.controls.last_name.invalid">{{lastNameErrorMsg()}}</mat-error>
+                        </mat-form-field>
+                    </span>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10" [ngClass]="(frmContactInfo.controls.user_email.invalid)?'asterix-after':''">Email <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input">
+                        <input type="email" matInput placeholder="you@mail.com" formControlName="user_email">
+                        <mat-error *ngIf="frmContactInfo.controls.user_email.invalid">{{emailErrorMsg()}}</mat-error>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10">Country <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-form-field appearance="outline" class="mff-order-input">
+                        <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="country" [value]="frmContactInfo.value.country">
+                            <mat-option 
+                            *ngFor="let list of country_code"
+                            [value]="list.name">{{list.name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10" [ngClass]="(frmContactInfo.controls.customer_telephone.invalid)?'asterix-after':''">Phone Number <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <span class="spn-separator-col1">
+                        <mat-form-field appearance="outline" class="mff-order-input">
+                            <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="telephone_prefix" [value]="frmContactInfo.value.telephone_prefix" [style.background-image]="selectedFlag">
+                                <mat-option 
+                                *ngFor="let list of country_code"
+                                (click)="selectActiveFlag(list.alpha3Code)"
+                                [value]="list.callingCodes[0]"><img class="img-country-flags" src="{{list.flag}}" alt="Country flags" srcset="" style="height:30px;margin-top:15px"></mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </span>
+                    <span class="spn-separator-col11">
+                        <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input">
+                            <span matPrefix>+{{frmContactInfo.value.telephone_prefix}} </span>
+                            <input type="tel" placeholder="Telephone/Mobile number" matInput formControlName="customer_telephone" [value]="frmContactInfo.value.customer_telephone">
+                            <mat-error *ngIf="frmContactInfo.controls.customer_telephone.invalid">{{telErrorMsg()}}</mat-error>
+                        </mat-form-field>
+                    </span>
+                </span>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

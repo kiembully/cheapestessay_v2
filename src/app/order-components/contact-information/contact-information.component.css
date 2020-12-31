@@ -1,0 +1,26 @@
+.btn-toggle-account {
+    height: 32px;
+    width: 100%;
+    border-radius: 4px;
+    background-color: #C5DBEF;
+    display: block;
+    color: #12245A;
+    font-family: "SF Pro Text Semibold";
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+.md-account-divider {
+    display: block;
+    margin: 15px 0 30px 0 !important;
+    border-top-color: #FBD501;
+}
+
+/* common styles */
+.add-block {
+    display: blocks
+}
+.padd11 {
+    padding: 5.5px;
+}

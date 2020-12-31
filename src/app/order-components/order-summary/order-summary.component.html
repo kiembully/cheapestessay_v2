@@ -1,1 +1,25 @@
-<p>order-summary works!</p>
+<div class="order-summary-wrap" [ngClass]="{'fix-summary':isFixed}">
+    <h3 class="h3-order-summary">Order Summary</h3>
+    <mat-toolbar class="mt-order-summary">
+        <mat-toolbar-row class="mtr-order-summary mtr-shaded">
+            <h6 class="h6-order-summary">Essay</h6>
+            <p class="p-order-summary">College</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-order-summary mtr-no-shade">
+            <p class="p-order-summary">87 page/double-spaced</p>
+            <p class="p-order-summary">7 days / Thu, Nov 12</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-order-summary mtr-shaded padding-bottom0">
+            <p class="p-os-label">Promo Code</p>
+            <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input input-coupon">
+                <input matInput placeholder="Enter coupon code">
+                <mat-error>error</mat-error>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-order-summary mtr-total">
+            <span>TOTAL COST</span>
+            <span class="fill-space"></span>
+            <span>$15.25</span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>

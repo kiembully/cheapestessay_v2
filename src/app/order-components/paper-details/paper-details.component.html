@@ -1,9 +1,9 @@
 <form [formGroup]="frmPapers">
     <mat-toolbar class="mt-paper-details full-width">
-        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+        <mat-toolbar-row class="mtr-paper-details">
             <div class="paper-details-outer">
                 <span>
-                    <p class="p-form-label" [ngClass]="(frmPapers.controls.topic.invalid)?'asterix-after':''">Topic <span class="spn-error-notif"></span></p>
+                    <p class="p-form-label margin-top10" [ngClass]="(frmPapers.controls.topic.invalid)?'asterix-after':''">Topic <span class="spn-error-notif"></span></p>
                 </span>
                 <span class="fill-space"></span>
                 <span class="spn-input-container">
@@ -14,78 +14,263 @@
                 </span>
             </div>
         </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+        <mat-toolbar-row class="mtr-paper-details">
             <div class="paper-details-outer">
                 <span>
-                    <p class="p-form-label">Type of Paper</p>
+                    <p class="p-form-label margin-top10" [ngClass]="(frmPapers.controls.other_paper.invalid)?'asterix-after':''">Type of Paper <span class="spn-error-notif"></span></p>
                 </span>
                 <span class="fill-space"></span>
-                <span class="spn-input-container">
+                <span class="spn-input-container add-block">
                     <mat-form-field appearance="outline" class="mff-order-input">
                         <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="paper" >
-                          <mat-option value="Essay">Essay</mat-option>
-                          <mat-option value="option">Option</mat-option>
-                          <mat-option value="option">Option</mat-option>
-                          <mat-option value="option">Option</mat-option>
+                          <mat-optgroup label="Most Popular">
+                            <mat-option 
+                            *ngFor="let list of paper_list"
+                            [value]="list.paper_id"
+                            value="Essay">{{list.paper_name}}</mat-option>
+                          </mat-optgroup>
+                          <mat-optgroup label="Others">
+                            <mat-option 
+                            *ngFor="let list of other_paper_list"
+                            [value]="list.paper_id"
+                            value="Essay">{{list.paper_name}}</mat-option>
+                          </mat-optgroup>
                         </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input" *ngIf="frmPapers.value.paper === 33">
+                        <input matInput placeholder="Type your Format/Style" formControlName="other_paper">
+                        <mat-error *ngIf="frmPapers.controls.other_paper.invalid">{{otherPaperErrorMsg()}}</mat-error>
                     </mat-form-field>
                 </span>
             </div>
         </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+        <mat-toolbar-row class="mtr-paper-details">
             <div class="paper-details-outer">
                 <span>
-                    <p class="p-form-label">Subject</p>
+                    <p class="p-form-label margin-top10">Subject</p>
                 </span>
                 <span class="fill-space"></span>
                 <span class="spn-input-container">
                     <mat-form-field appearance="outline" class="mff-order-input">
                         <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="subject" >
-                          <mat-option value="English">English</mat-option>
-                          <mat-option value="option">Option</mat-option>
-                          <mat-option value="option">Option</mat-option>
-                          <mat-option value="option">Option</mat-option>
+                          <mat-optgroup label="Most Popular">
+                            <mat-option 
+                            *ngFor="let list of subject_list"
+                            [value]="list.id">{{list.subject_name}}</mat-option>
+                          </mat-optgroup>
+                          <mat-optgroup label="Others">
+                            <mat-option 
+                            *ngFor="let list of other_subject_list"
+                            [value]="list.id">{{list.subject_name}}</mat-option>
+                          </mat-optgroup>
                         </mat-select>
                     </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Deadline</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <div class="slider-input-wrap">
+                        <mat-slider class="ms-slider-input" [max]="11" [min]="0" tickInterval="1" (change)="patchDeadline($event.value)" [value]="frmPapers.value.deadline"></mat-slider>
+                    </div>
+                    <div class="slider-label-wrap">
+                        <span [ngClass]="(frmPapers.value.deadline==0)?'active-dl':''">3h</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==1)?'active-dl':''">6h</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==2)?'active-dl':''">12h</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==3)?'active-dl':''">24h</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==4)?'active-dl':''">48h</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==5)?'active-dl':''">3d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==6)?'active-dl':''">4d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==7)?'active-dl':''">5d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==8)?'active-dl':''">7d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==9)?'active-dl':''">10d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==10)?'active-dl':''">14d</span>
+                        <span class="fill-space"></span>
+                        <span [ngClass]="(frmPapers.value.deadline==11)?'active-dl':''">19d</span>
+                    </div>
+                    <p class="p-slider-label">We estimate that your final submission deadline is Nov 16, 2020, 10:21:44 AM</p>
                 </span>
             </div>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-paper-details margin-bottom12">
             <div class="paper-details-outer">
                 <span>
-                    <p class="p-form-label">Deadline</p>
+                    <p class="p-form-label">Spacing</p>
                 </span>
                 <span class="fill-space"></span>
                 <span class="spn-input-container">
-                    <div class="slider-input-wrap">
-                        <mat-slider class="ms-slider-input" [max]="12" [min]="1" tickInterval="1" [value]="frmPapers.value.deadline"></mat-slider>
+                    <mat-radio-group aria-label="Select Spacing" class="mrg-select-input" formControlName="set_spacing">
+                        <mat-radio-button value="1" [checked]="frmPapers.value.set_spacing === 1">Double</mat-radio-button>
+                        <mat-radio-button value="2" [checked]="frmPapers.value.set_spacing === 2">Single</mat-radio-button>
+                    </mat-radio-group>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10">Number of Pages</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <div class="total-page-wrap">
+                        <span class="spn-page-total fill-space">
+                            <input type="number" formControlName="page" value="frmPapers.value.page">
+                        </span>
+                        <span class="spn-words-total">12341 Words</span>
                     </div>
-                    <div class="slider-label-wrap">
-                        <span>3h</span>
-                        <span class="fill-space"></span>
-                        <span>6h</span>
-                        <span class="fill-space"></span>
-                        <span>12h</span>
-                        <span class="fill-space"></span>
-                        <span>24h</span>
-                        <span class="fill-space"></span>
-                        <span>48h</span>
-                        <span class="fill-space"></span>
-                        <span>3d</span>
-                        <span class="fill-space"></span>
-                        <span>4d</span>
-                        <span class="fill-space"></span>
-                        <span>5d</span>
-                        <span class="fill-space"></span>
-                        <span>7d</span>
-                        <span class="fill-space"></span>
-                        <span>10d</span>
-                        <span class="fill-space"></span>
-                        <span>14d</span>
-                        <span class="fill-space"></span>
-                        <span>19d</span>
+                    <div class="slider-input-wrap no-ticks">
+                        <mat-slider thumbLabel class="ms-slider-input" [max]="999" [min]="1" (change)="patchPageTotal($event.value)" [value]="frmPapers.value.page"></mat-slider>
                     </div>
-                    <p class="p-slider-label">We estimate that your final submission deadline is Nov 16, 2020, 10:21:44 AM</p>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Preferred Writer's ID</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <mat-radio-group aria-label="Select Writer" class="mrg-select-input" formControlName="preferred_writer">
+                        <mat-radio-button value="any_writer" [checked]="frmPapers.value.preferred_writer === 'any_writer'">Any Writer</mat-radio-button>
+                        <mat-radio-button value="top_10_writer" [checked]="frmPapers.value.preferred_writer === 'top_10_writer'">Top 10 Writer</mat-radio-button>
+                        <mat-radio-button value="my_previous_writer" [checked]="frmPapers.value.preferred_writer === 'my_previous_writer'">Preferred Writer</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-form-field appearance="outline" class="mff-order-input margin-top10" *ngIf="frmPapers.value.preferred_writer === 'my_previous_writer'">
+                        <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="writer_id" [value]="frmPapers.value.writer_id">
+                          <mat-optgroup label="Recent Writers" *ngIf="!_session.isTokenExisting('user_token')">
+                            <mat-option 
+                            *ngFor="let list of recent_writer_list"
+                            [value]="list.writer">{{list.writer}}</mat-option>
+                          </mat-optgroup>
+                          <mat-optgroup label="Top 10 Writers">
+                            <mat-option 
+                            *ngFor="let list of top_writer_list"
+                            [value]="list.writer">{{list.writer}}</mat-option>
+                          </mat-optgroup>
+                          <mat-optgroup label="Other Writers">
+                            <mat-option 
+                            *ngFor="let list of other_writer_list"
+                            [value]="list.writer">{{list.writer}}</mat-option>
+                          </mat-optgroup>
+                        </mat-select>
+                    </mat-form-field>
+                    <p class="p-input-label">If your order is accepted by a writer you have chosen you will be charged additional +20%. This additional payment will go directly to the writer. This way your order will get the highest priority among others.mate that your final submission deadline is Nov 16, 2020, 10:21:44 AM</p>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <h3 class="h3-additional-label">Custom requirements</h3>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details margin-bottom12">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Academic Level</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container">
+                    <mat-radio-group aria-label="Select Academic" class="mrg-select-input" formControlName="academic">
+                        <mat-radio-button value="3" [checked]="frmPapers.value.academic === 3">College</mat-radio-button>
+                        <mat-radio-button value="1" [checked]="frmPapers.value.academic === 1">Bachelor</mat-radio-button>
+                        <mat-radio-button value="2" [checked]="frmPapers.value.academic === 2">Master</mat-radio-button>
+                    </mat-radio-group>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10">Sources</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <div class="total-page-wrap">
+                        <span class="spn-page-total fill-space">
+                            <input type="number" formControlName="source" value="frmPapers.value.source">
+                        </span>
+                    </div>
+                    <div class="slider-input-wrap no-ticks">
+                        <mat-slider thumbLabel class="ms-slider-input" [max]="999" [min]="0" (change)="patchSourceTotal($event.value)" [value]="frmPapers.value.source"></mat-slider>
+                    </div>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label margin-top10" [ngClass]="((frmPapers.controls.other_format.invalid)&&(frmPapers.value.formated_style == 5))?'asterix-after':''">Style <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <mat-form-field appearance="outline" class="mff-order-input">
+                        <mat-select disableOptionCentering panelClass="ms-select-option" formControlName="formated_style">
+                            <mat-option 
+                            *ngFor="let list of format_style_list"
+                            [value]="list.style_id">{{list.style_name}}</mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input add-block" *ngIf="frmPapers.value.formated_style == 5">
+                        <input matInput placeholder="Type your Format/Style" formControlName="other_format">
+                        <mat-error *ngIf="frmPapers.controls.other_format.invalid">{{otherFormatErrorMsg()}}</mat-error>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Discipline</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <mat-radio-group aria-label="Select Writer" class="mrg-select-input" formControlName="discipline" [value]="frmPapers.value.discipline">
+                        <mat-radio-button value="2" [checked]="frmPapers.value.discipline === 2">English (U.S)</mat-radio-button>
+                        <mat-radio-button value="3" [checked]="frmPapers.value.discipline === 3">English (U.K)</mat-radio-button>
+                        <mat-radio-button value="4" [checked]="frmPapers.value.discipline === 4">Not A Native Speaker</mat-radio-button>
+                    </mat-radio-group>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label" [ngClass]="(frmPapers.controls.add_detail.invalid)?'asterix-after':''">Order Description <span class="spn-error-notif"></span></p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <mat-form-field appearance="outline" floatLabel="false" class="mff-order-input mff-textarea">
+                        <textarea matInput placeholder="You can include paper structure and/or outline, types and number of references to be used, grading scale or any other requirements…" formControlName="add_detail"></textarea>
+                        <mat-error *ngIf="frmPapers.controls.add_detail.invalid">{{detailsErrorMsg()}}</mat-error>
+                    </mat-form-field>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-paper-details">
+            <div class="paper-details-outer">
+                <span>
+                    <p class="p-form-label">Additional materials</p>
+                </span>
+                <span class="fill-space"></span>
+                <span class="spn-input-container add-block">
+                    <div class="upload-material-wrap">
+                        <P class="p-drop-upload">Drag your files here or  choose files  to upload.</P>
+                    </div>
                 </span>
             </div>
         </mat-toolbar-row>

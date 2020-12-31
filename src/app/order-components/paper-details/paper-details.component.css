@@ -5,6 +5,21 @@
     display: flex;
     width: 100%;
 }
-.margin-bottom6 {
-    margin-bottom: 6px
+.margin-bottom12 {
+    margin-bottom: 12px
+}
+.margin-top10 {
+    margin-top:10px
+}
+.add-block {
+    display: block !important;
+}
+.p-drop-upload {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin: auto
 }
