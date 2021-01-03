@@ -140,7 +140,13 @@ export class ApiServices {
 
     _oldWritersUrl = this._baseUrl + 'displayoldwriters'
     getOldWriters(token) {
-        return this.http.post<any>(this._oldWritersUrl, token)
+        return this.http.post<any>(this._oldWritersUrl, token).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
     }
 
     _fullNameUrl = this._baseUrl + 'updatefullname';

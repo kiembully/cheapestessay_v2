@@ -1,4 +1,4 @@
-<mat-toolbar class="mt-order-layout default-width">
+<!-- <mat-toolbar class="mt-order-layout default-width">
     <mat-toolbar-row class="mtr-order-layout">
         <span class="spn-order-form">
             <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
@@ -24,18 +24,16 @@
         </span>
         <span class="fill-space spn-order-layout"></span>
         <span class="spn-summary-form" [style.align-self]="isFlexEnd ? 'flex-end' : 'start'">
-            <app-order-summary></app-order-summary>
+            <app-order-summary [total_price]=""></app-order-summary>
         </span>
     </mat-toolbar-row>
-</mat-toolbar>
+</mat-toolbar> -->
 
-<!-- HOME CONTACT US SECTION -->
-<div class="margin-bottom70">
+<!-- <div class="margin-bottom70">
     <app-common-additional-service></app-common-additional-service>
 </div>
-<!-- HOME COMMON SERVICE/CONTACT US -->
-<app-common-services-slide></app-common-services-slide>
+<app-common-services-slide></app-common-services-slide> -->
 
-<!-- <section class="default-width sec-order-form">
+<section class="default-width sec-order-form">
     <app-new-order [isEditing]="false"></app-new-order>
-</section> -->
+</section>

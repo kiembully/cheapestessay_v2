@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { loggedin_session } from '../../data/ui-services';
 
 @Component({
@@ -9,6 +9,8 @@ import { loggedin_session } from '../../data/ui-services';
 })
 export class OrderSummaryComponent implements OnInit {
 
+  @Input() public total_price: any;
+  
   constructor(
     public _session: loggedin_session
   ) { }
