@@ -4,13 +4,14 @@ import {CommonDialogComponent} from '../dialogs/common-dialog/common-dialog.comp
 import {FormControl, FormGroup} from '@angular/forms';
 import { profile_form_default } from 'src/app/data/data';
 import { Router } from '@angular/router';
+import { ApiServices } from 'src/app/api.service';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
-  providers: [profile_form_default],
+  providers: [profile_form_default, ApiServices],
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
@@ -20,7 +21,8 @@ export class ProfileComponent implements OnInit {
   constructor(
     public dialog: MatDialog,
     private _data: profile_form_default,
-    private router: Router
+    private router: Router,
+    private _auth: ApiServices
   ) { }
 
   memberStatusForm = new FormGroup({
@@ -48,6 +50,19 @@ export class ProfileComponent implements OnInit {
     this.retrievedData = this.decoded_user_token;
   }
 
+ 
+  frmUserLevel: any = this._data.levelForm; 
+  getLevel() {
+    this._auth.getLevel(localStorage.getItem('user_token')).subscribe(
+      res => {
+        console.log(res)
+        this.frmUserLevel.patchValue({
+          lifetime_discount_name: res.user_level.lifetime_discount_name,
+        })
+      }
+    )
+  }
+
   filterUnfilledForm(text) {
     if (text != null) {
       let state = (text.length > 1) ? text : 'N/A';
@@ -57,6 +72,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayProfile();
+    this.getLevel();
   }
 
   openUpdateProfile(section_id:number) {
@@ -84,7 +100,7 @@ export class ProfileComponent implements OnInit {
       dateStarted: data.user_details.user_joined_date,
     })
     this.memberStatusForm.value.levelForm = this._data.levelForm.patchValue({
-      lifetime_discount_name: data.user_level.lifetime_discount_name,
+      // lifetime_discount_name: data.user_level.lifetime_discount_name,
     })
   }
   patchName(data) {

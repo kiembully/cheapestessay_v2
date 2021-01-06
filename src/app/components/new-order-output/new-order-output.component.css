@@ -1,8 +1,8 @@
 .order-output-wrap {
-    display: block;
+    /* display: block;
     position: absolute;
     top: 140px;
-    left: calc(50% + 432.5px);
+    left: calc(50% + 432.5px); */
 }
 .order-output-wrap.is-fixed {
     position: fixed !important;
