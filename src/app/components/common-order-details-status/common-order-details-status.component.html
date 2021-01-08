@@ -11,8 +11,8 @@
             <span class="fill-space">{{_timer.minutes}}<span>Mins</span></span>
             <span class="fill-space">{{_timer.seconds}}<span>Sec</span></span>
         </section>
-        <section class="add-common-flex">
-            <p class="p-order-deadline">Deadline: {{order_details.deadlinedate}} If You Pay Right Now</p>
+        <section class="add-common-flex" [style.margin-top]="!(isPaid()) ? '0' : '30px'">
+            <p class="p-order-deadline" *ngIf="!(isPaid())">Deadline: {{order_details.deadlinedate}} If You Pay Right Now</p>
         </section>
         <section class="add-common-flex sec-order-details-btn">
             <button type="button" mat-flat-button class="margin-bottom18" [ngClass]="getPaymentStatusDisplay(order_details.status.order_status_flag)">{{order_details.status.order_status}}</button>

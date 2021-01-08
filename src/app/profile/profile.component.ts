@@ -50,14 +50,15 @@ export class ProfileComponent implements OnInit {
     this.retrievedData = this.decoded_user_token;
   }
 
- 
+  user_token = new FormGroup({
+    user_token: new FormControl(this._auth.getToken()),
+  })
   frmUserLevel: any = this._data.levelForm; 
   getLevel() {
-    this._auth.getLevel(localStorage.getItem('user_token')).subscribe(
+    this._auth.getLevel(this.user_token.value).subscribe(
       res => {
-        console.log(res)
         this.frmUserLevel.patchValue({
-          lifetime_discount_name: res.user_level.lifetime_discount_name,
+          lifetime_discount_name: res.data.user_level,
         })
       }
     )
@@ -125,10 +126,10 @@ export class ProfileComponent implements OnInit {
   }
   getBadgeColor(val) {
     switch(val) {
-      case 'Silver': { return '#8392A7' }
-      case 'Gold': { return '#8392A7' }
-      case 'VIP': { return '#D0021B' }
-      default: { return '#578EFD' }
+      case 'Silver': { return '#8392A7 !important' }
+      case 'Gold': { return '#8392A7 !important' }
+      case 'VIP': { return '#D0021B !important' }
+      default: { return '#578EFD !important' }
     }
   }
 }

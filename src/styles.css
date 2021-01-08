@@ -56,7 +56,8 @@ html {
 
 body {
     margin: 0;
-    background-color: #F0FAFD;
+    /* background-color: #F0FAFD; */
+    background-color: #fbfbfb;
 }
 mat-toolbar {
     min-height: 100% !important;
