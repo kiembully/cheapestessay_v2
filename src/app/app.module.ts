@@ -6,6 +6,7 @@ import { AuthGuard, PendingChangesGuard } from 'src/app/auth.guard';
 import { ApiServices } from 'src/app/api.service';
 import { TokenInterceptorService } from 'src/app/token-interceptor.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FileUploadModule } from 'ng2-file-upload';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -160,7 +161,8 @@ import { ContactInformationComponent } from './order-components/contact-informat
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    CarouselModule
+    CarouselModule,
+    FileUploadModule
   ],
   providers: [AuthGuard, ApiServices, PendingChangesGuard, {
     provide: HTTP_INTERCEPTORS,

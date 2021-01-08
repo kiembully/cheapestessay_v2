@@ -1,6 +1,28 @@
-/* .my-drop-zone { border: dotted 3px lightgray; }
+.my-drop-zone {
+    border: dotted 3px lightgray;
+    height: 200px;
+    position: relative;
+    overflow-y: auto;
+}
 .nv-file-over { border: dotted 3px red; } 
-.another-file-over-class { border: dotted 3px green; } */
+.another-file-over-class { border: dotted 3px green; }
+.spn-drop-label {
+    /* content: 'Drop files here'; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.25;
+    font-family: "SF Pro Text Bold";
+    font-size: 24px;
+}
+.tbl-upload-queue {
+    width: 100%;
+}
 .mtr-upload-header {
     display: block;
     white-space: normal;
@@ -21,4 +43,23 @@
     text-align: left;
     margin: 0 auto 0;
     text-align: center;
+}
+.frm-upload-mat {
+    width: 100%;
+}
+.btn-upload-wrap {
+    display: flex;
+    width: 100%;
+    margin: 20px auto 25px auto;
+    max-width: 300px;
+    max-width: 250px;
+}
+.btn-upload-wrap button {
+    border-radius: 7px;
+    background-color: #13B675;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 15px;
+    line-height: 19px;
+    padding: 7px
 }

@@ -5,7 +5,7 @@ import { new_order_form_default } from '../../data/data';
 import { loggedin_session } from '../../data/ui-services';
 import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../../dialogs/common-dialog/common-dialog.component';
-import { DialogTriggers } from 'src/app/data/ui-services'
+import { DialogTriggers } from 'src/app/data/ui-services';
  // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
