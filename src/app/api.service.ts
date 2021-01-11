@@ -213,6 +213,10 @@ export class ApiServices {
     displayOrder(form) {
         return this.http.post<any>(this._displayOrder, form)
     }
+    _uploadFiles = this._baseUrl + 'uploadmaterial'
+    uploadFiles(form) {
+        return this.http.post<any>(this._uploadFiles, form)
+    }
     
     
     // ORDER PAYMENT APIS
