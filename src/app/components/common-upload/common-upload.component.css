@@ -3,6 +3,7 @@
     height: 200px;
     position: relative;
     overflow-y: auto;
+    overflow: hidden;
 }
 .nv-file-over { border: dotted 3px red; } 
 .another-file-over-class { border: dotted 3px green; }
@@ -62,4 +63,11 @@
     font-size: 15px;
     line-height: 19px;
     padding: 7px
+}
+.mtr-response-output h6 {
+    text-align: center;
+    width: 100%;
+    color: #13B675;
+    font-family: "SF Pro Text Regular";
+    margin-bottom: 10px;
 }

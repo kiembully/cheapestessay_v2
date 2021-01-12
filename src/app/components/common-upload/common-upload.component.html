@@ -3,17 +3,21 @@
         <h1>Upload Files</h1>
         <p>Note: Closing this dialog will remove all of your pending uploads. Maximum size for each file is 20MB</p>
     </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-response-output" *ngIf="isSuccess">
+        <h6>All file(s) has been uploaded.</h6>
+    </mat-toolbar-row>
     <mat-toolbar-row>
-        <form class="frm-upload-mat" [formGroup] = "frmUploadMaterial" (ngSubmit)="uploadFiles()">
+        <form class="frm-upload-mat" (ngSubmit)="uploadFiles()">
 
             <div ng2FileDrop
                  [ngClass]="{'nv-file-over': hasBaseDropZoneOver}"
                  (fileOver)="fileOverBase($event)"
                  [uploader]="uploader"
-                 (onFileDrop)="dropped($event)"
+                 (onFileDrop)="fileChangeEvent($event)"
                  class="well my-drop-zone">
 
                  <span *ngIf="uploader.queue.length ==  0" class="spn-drop-label">Drop files here</span>
+                 <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
                  
                  <table class="tbl-upload-queue" *ngIf="uploader.queue.length > 0">
                     <thead>
@@ -60,12 +64,12 @@
             </div>
             
             <div class="btn-upload-wrap">
-                <input ng2FileSelect [uploader]="uploader" type="file" #file multiple style="display: none;" name="material" (onFileSelected)="onFileSelect($event)" />
+                <input ng2FileSelect [uploader]="uploader" type="file" #file multiple style="display: none;" name="material" (onFileSelected)="fileChangeEvent($event)" />
                 <span><button type="button" mat-flat-button (click)="file.value='';file.click();">Select Files</button></span>
                 <span class="fill-space"></span>
                 <span><button type="submit" [disabled]="uploader.queue.length == 0" [style.background-color]="(uploader.queue.length==0)?'#cccccc':'#406df2'" mat-flat-button >Upload</button></span>
                 <span class="fill-space"></span>
-                <span><button type="button" mat-flat-button>Done</button></span>
+                <span><button type="button" (click)="closeDialog()" mat-flat-button>Done</button></span>
             </div>
         </form>
     </mat-toolbar-row>

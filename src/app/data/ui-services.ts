@@ -55,7 +55,7 @@ export class loggedin_session {
 @Injectable()
 export class DialogTriggers {
   
-  constructor(public dialog: MatDialog,) {}
+  constructor(public dialog: MatDialog,private router: Router) {}
 
   openDeleteDialog(id) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
@@ -93,6 +93,9 @@ export class DialogTriggers {
     });
 
     dialogRef.afterClosed().subscribe(() => {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['/order']);
+      });
     });
   }
 

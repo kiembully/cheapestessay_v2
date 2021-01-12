@@ -10,7 +10,7 @@ export class ApiServices {
         private http: HttpClient,
     ) { }
 
-    _baseUrl = 'https://e6djdtoi97.execute-api.us-east-2.amazonaws.com/dev/';
+    _baseUrl = 'https://web.cheapestessay.com/';
 
     _loginUrl = this._baseUrl + 'checkLogin';
     _registerUrl = this._baseUrl + 'createAccount';
@@ -216,6 +216,10 @@ export class ApiServices {
     _uploadFiles = this._baseUrl + 'uploadmaterial'
     uploadFiles(form) {
         return this.http.post<any>(this._uploadFiles, form)
+    }
+    _deleteFiles = this._baseUrl + 'deleteMaterial'
+    deleteFiles(form) {
+        return this.http.post<any>(this._deleteFiles, form)
     }
     
     

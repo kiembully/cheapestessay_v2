@@ -1,75 +1,108 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FileUploader } from 'ng2-file-upload';
-import {FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
-
-const URL = "https://e6djdtoi97.execute-api.us-east-2.amazonaws.com/dev/uploadmaterial";
+import { loggedin_session } from 'src/app/data/ui-services';
+import { Router } from '@angular/router';
+import { MatDialogRef } from '@angular/material/dialog';
+import {CommonDialogComponent} from '../../dialogs/common-dialog/common-dialog.component';
+// @ts-ignore  
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-common-upload',
   templateUrl: './common-upload.component.html',
+  providers: [ApiServices,loggedin_session],
   styleUrls: ['./common-upload.component.css']
 })
 
 export class CommonUploadComponent implements OnInit {
-  _URL = "https://e6djdtoi97.execute-api.us-east-2.amazonaws.com/dev/uploadmaterial";
-  frmUploadMaterial:FormGroup;
+  _URL = this._auth._baseUrl + "uploadmaterial";
+  isProgressLoading: boolean = false;
 
-  uploader:FileUploader  = new FileUploader({url: URL});
-  hasBaseDropZoneOver:boolean;
-  hasAnotherDropZoneOver:boolean;
-  
-  constructor(private _auth: ApiServices, private formBuilder: FormBuilder) {
-    this.uploader = new FileUploader({url: URL})
+  frmUploadMaterial: any = [];
+  fmrExistingFiles: any = [];
+
+  uploader: FileUploader = new FileUploader({ url: this._URL });
+  hasBaseDropZoneOver: boolean;
+  hasAnotherDropZoneOver: boolean;
+
+  constructor(
+    private _auth: ApiServices,
+    public _session: loggedin_session,
+    private router: Router,
+    public dialogRef:MatDialogRef<CommonDialogComponent>,) {
+    this.uploader = new FileUploader({ url: this._URL })
   }
 
   ngOnInit(): void {
-    this.frmUploadMaterial = this.formBuilder.group({
-      material: ['']
-    });
+    this.getExistingFiles();
   }
 
-  public fileOverBase(e:any):void {
+  public fileOverBase(e: any): void {
     this.hasBaseDropZoneOver = e;
   }
 
-  public fileOverAnother(e:any):void {
+  public fileOverAnother(e: any): void {
     this.hasAnotherDropZoneOver = e;
   }
-  
+
+
+  isSuccess: boolean = false;
   // submit files 
   uploadFiles() {
-    var formData = new FormData();
-    formData.append("uploaded_token", "");
-    formData.append("user_token", "");
-    formData.append("order_token", "");
-    formData.append('material', this.frmUploadMaterial.value);
+    this.isProgressLoading = true;
 
-    console.log(formData)
+    var formData = new FormData();
+    formData.append("uploaded_token", (!this._session.isTokenExisting('uploaded_token')) ? localStorage.getItem('uploaded_token') : '');
+    formData.append("user_token", (!this._session.isTokenExisting('user_token')) ? localStorage.getItem('user_token') : '');
+    formData.append("order_token", '');
+
+    this.frmUploadMaterial.forEach(element => {
+      formData.append('material', element);
+    });
+
     this._auth.uploadFiles(formData).subscribe(
-      (res) => console.log(res),
+      (res) => {
+        console.log(res);
+        this.isProgressLoading = false;
+        localStorage.removeItem('uploaded_token');
+        localStorage.setItem('uploaded_token', res.data.uploaded_token);
+        this.isSuccess = (res.status) ? true : false;
+      },
       (err) => console.log(err)
     )
   }
 
-  //when you drop files in the queue
-  dropped(e) {
-    if (e.length > 0) {
-      var file = e;
-      this.frmUploadMaterial.patchValue({
-        material: file
-      });
+  fileChangeEvent(event) {
+    var item = event;
+    if (item && item.length > 0) {
+      for (let i = 0; i < item.length; i++) {
+        var element = item[i];
+        this.frmUploadMaterial.push(element)
+      }
     }
   }
 
-  // when you add files in queue via input type input 
-  onFileSelect(event) {
-    console.log(event)
-    if (event.length > 0) {
-      var file = event;
-      this.frmUploadMaterial.patchValue({
-        material: file
-      });
+  closeDialog() {
+    this.dialogRef.close()
+  }
+
+  getExistingFiles() {
+    let decoded_token:any;
+    decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
+    for (let i = 0; i < decoded_token.length; i++) {
+      let element = decoded_token[i].file_name1;
+      this.fmrExistingFiles.push(element);
+    }
+  }
+
+  validateExistingMaterials(event) {
+    var item = event;
+    if (item && item.length > 0) {
+      for (let i = 0; i < item.length; i++) {
+        var element = item[i];
+        this.frmUploadMaterial.push(element)
+      }
     }
   }
   
