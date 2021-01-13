@@ -418,3 +418,18 @@ span.spn-price-color {
 .disabled-style {
     background-color: #D9D9D9;
 }
+.sec-file-pending {
+    margin-top: 10px !important
+}
+.sec-file-pending table {
+    width: 100%;
+    text-align: center;
+}
+.sec-file-pending table thead th:first-child,
+.sec-file-pending table tbody td:first-child {
+    text-align: left;
+}
+.sec-file-pending .btn-remove-file {
+    background-color: rgb(208, 85, 90);
+    color: #ffffff;
+}

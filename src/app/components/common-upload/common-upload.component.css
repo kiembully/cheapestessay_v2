@@ -3,7 +3,6 @@
     height: 200px;
     position: relative;
     overflow-y: auto;
-    overflow: hidden;
 }
 .nv-file-over { border: dotted 3px red; } 
 .another-file-over-class { border: dotted 3px green; }

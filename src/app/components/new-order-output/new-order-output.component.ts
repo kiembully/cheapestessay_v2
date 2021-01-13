@@ -120,7 +120,7 @@ export class NewOrderOutputComponent implements OnInit {
     this.save_order.patchValue({
       user_token: localStorage.getItem('user_token'),
       order_id: !this._session.isTokenExisting('order_token') ? jwt_decode(localStorage.getItem('order_token')).order_id : null,
-      uploaded_token: !this._session.isTokenExisting('upload_token') ? localStorage.getItem('upload_token') : '',
+      uploaded_token: !this._session.isTokenExisting('uploaded_token') ? localStorage.getItem('uploaded_token') : '',
       order_token: localStorage.getItem('set_order_token'),
     })
     return this.save_order.value;

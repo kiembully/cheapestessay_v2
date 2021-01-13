@@ -44,6 +44,11 @@ export class NewOrderComponent implements OnInit {
     coupon_code: new FormControl(''),
     order_token: new FormControl(''),
   })
+  frmDeleteMaterial = new FormGroup({
+    file_name: new FormControl(''),
+    uploaded_token: new FormControl(''),
+    user_token: new FormControl('')
+  })
 
   constructor(
     private _auth: ApiServices,
@@ -397,5 +402,31 @@ export class NewOrderComponent implements OnInit {
         return 'Apply First time Coupon?'
       }
     }
+  }
+
+  displayFileUploads() {
+    if (!(this._session.isTokenExisting('uploaded_token'))) {
+      let decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
+      return decoded_token;
+    }
+  }
+  deleteFile(name) {
+    this.isProgressLoading = true;
+    this.frmDeleteMaterial.patchValue({
+      file_name: name,
+      uploaded_token: localStorage.getItem('uploaded_token'),
+      user_token: !this._session.isTokenExisting('user_token')?localStorage.getItem('user_token'):''
+    })
+    
+    this._auth.deleteFiles(this.frmDeleteMaterial.value).subscribe(
+      res => {
+        this.isProgressLoading = false;
+        console.log(res);
+        if (res.status) {
+          localStorage.removeItem('uploaded_item');
+          localStorage.setItem('uploaded_item', res.data.uploaded_token)
+        }
+      }
+    )
   }
 }

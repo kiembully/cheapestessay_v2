@@ -199,6 +199,27 @@
                             <button class="btn-upload" mat-flat-button type="button" (click)="_dialog_trigger.openUploadDialog()">Upload files/ photo</button>
                         </span>
                     </section>
+                    <section class="sec-order-wrap sec-file-pending" *ngIf="!(_session.isTokenExisting('uploaded_token'))">
+                        <span class="fill-space"></span>
+                        <span class="spn-input-wrap">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>File</th>
+                                        <th>Size</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of displayFileUploads()">
+                                        <td>{{item?.file_name1}}</td>
+                                        <td>{{item?.file_size/1024/1024 | number:'.2' }} MB</td>
+                                        <td><button class="btn-remove-file" type="button" mat-flat-button (click)="deleteFile(item?.file_name)">Remove</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </span>
+                    </section>
         
                     <!-- lower portion is hidden when user is not logged in -->
                     <mat-accordion class="ma-order-options" *ngIf="isUserActive">
