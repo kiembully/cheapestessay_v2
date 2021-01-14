@@ -77,7 +77,7 @@ export class DialogTriggers {
     });
   }
 
-  openUploadDialog() {
+  openUploadDialog(id) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
         minHeight: '216px',
         maxHeight:'413px',
@@ -88,6 +88,7 @@ export class DialogTriggers {
         data: {
           // displays upload-dialog component
           content_id: 9,
+          order_id: id,
         }
         
     });

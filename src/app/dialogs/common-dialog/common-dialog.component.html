@@ -36,5 +36,5 @@
 </section>
 <!-- Opens upload modal -->
 <section class="sec-wrap-dialog" *ngIf="data.content_id == 9">
-    <app-common-upload></app-common-upload>
+    <app-common-upload [order_id]="data.order_id"></app-common-upload>
 </section>

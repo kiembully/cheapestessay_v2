@@ -201,6 +201,8 @@ export class NewOrderComponent implements OnInit {
         this.setOrder(value);
       }
     )
+
+    this.displayFileUploads()
   }
   
   setOrder(order_form) {
@@ -404,11 +406,18 @@ export class NewOrderComponent implements OnInit {
     }
   }
 
+  fileQueue:any;
   displayFileUploads() {
-    if (!(this._session.isTokenExisting('uploaded_token'))) {
-      let decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
-      return decoded_token;
+    if (this.isEditing) {
+      let arr = JSON.parse(localStorage.getItem('pre_upload'))
+      this.fileQueue = arr.files.customer_files;
+    } else {
+      if (!(this._session.isTokenExisting('uploaded_token'))) {
+        let decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
+        this.fileQueue = decoded_token;
+      }
     }
+    
   }
   deleteFile(name) {
     this.isProgressLoading = true;
@@ -421,12 +430,19 @@ export class NewOrderComponent implements OnInit {
     this._auth.deleteFiles(this.frmDeleteMaterial.value).subscribe(
       res => {
         this.isProgressLoading = false;
-        console.log(res);
         if (res.status) {
-          localStorage.removeItem('uploaded_item');
-          localStorage.setItem('uploaded_item', res.data.uploaded_token)
+          localStorage.removeItem('uploaded_token');
+          if (res.data !== undefined) {
+            localStorage.setItem('uploaded_token', res.data.uploaded_token);
+            this.fileQueue = jwt_decode(res.data.uploaded_token)
+          }
         }
       }
     )
+  }
+
+  getOrderId() {
+    let order_id = (this.isEditing) ? jwt_decode(localStorage.getItem('order_token')).order_id : 0;
+    return order_id;
   }
 }

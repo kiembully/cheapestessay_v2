@@ -1,1 +1,45 @@
-<p>common-order-details-files works!</p>
+<mat-toolbar>
+    <mat-toolbar-row class="mtr-file-container">
+        <span>
+            <h4>My Files<span class="fill-space"></span><span class="spn-upload-wrap"><button type="button" (click)="_dialog_trigger.openUploadDialog(order_details.order_id)" mat-flat-button>Upload</button></span></h4>
+            <div class="file-container-wrap">
+                <table class="tbl-file-container" *ngIf="order_details.files.customer_files.length <= 0">
+                    <tr>
+                        <td>
+                            <h5 class="h5-no-files">No file(s) uploaded.</h5>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tbl-file-container" *ngIf="order_details.files.customer_files.length > 0">
+                    <tr *ngFor="let file of order_details.files.customer_files">
+                        <td><div class="file-img-wrap"></div></td>
+                        <td><h6>{{file.file_name1}}</h6><p>{{file.date_time}}</p></td>
+                        <td><span class="spn-uploader">{{file.uploaded_by}}</span></td>
+                        <td><button type="button" class="btn-view-file"></button></td>
+                    </tr>
+                </table>
+            </div>
+        </span>
+        <span class="fill-space"></span>
+        <span>
+            <h4>Writer Files</h4>
+            <div class="file-container-wrap">
+                <table class="tbl-file-container" *ngIf="order_details.files.writer_files.length <= 0">
+                    <tr>
+                        <td>
+                            <h5 class="h5-no-files">No file(s) uploaded.</h5>
+                        </td>
+                    </tr>
+                </table>
+                <table class="tbl-file-container" *ngIf="order_details.files.writer_files.length > 0">
+                    <tr *ngFor="let file of order_details.files.writer_files">
+                        <td><div class="file-img-wrap"></div></td>
+                        <td><h6>{{file.file_name1}}</h6><p>{{file.date_time}}</p></td>
+                        <td><span class="spn-uploader">{{file.uploaded_by}}</span></td>
+                        <td><button type="button" class="btn-view-file" (click)="_dialog_trigger.openUploadDialog(order_details.order_id)"></button></td>
+                    </tr>
+                </table>
+            </div>
+        </span>
+    </mat-toolbar-row>
+</mat-toolbar>

@@ -76,6 +76,7 @@ export class OrderDetailsComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.displayOrder(this.frmOrder.value).subscribe(
       res => {
+        console.log(res);
         this.isProgressLoading = false;
         this.order_details = res.data;
         this.order_id = res.data.order_id;
@@ -121,6 +122,7 @@ export class OrderDetailsComponent implements OnInit {
     }
     localStorage.removeItem('set_order_token');
     localStorage.setItem('set_order_token', this.couponForm.value.order_token);
+    localStorage.setItem('pre_upload',  JSON.stringify(this.order_details));
     this.router.navigate(['/edit-order', decoded_order_token.order_id])
   }
 
@@ -186,4 +188,5 @@ export class OrderDetailsComponent implements OnInit {
       additionalextra: value.slice(0,-1),
     })
   }
+
 }

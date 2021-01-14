@@ -1,0 +1,93 @@
+.mtr-file-container {
+    align-items: flex-start;
+}
+.mtr-file-container h4 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 24px;
+    letter-spacing: 1px;
+    line-height: 31px;
+    width: 100%;
+    display: flex;
+    margin: 20px 0;
+}
+.mtr-file-container h4 .spn-upload-wrap {
+    text-align: right;
+}
+.mtr-file-container .fill-space {
+    padding: 8px;
+}
+.mtr-file-container span:first-child,
+.mtr-file-container span:last-child {
+    width: 100%;
+}
+.file-container-wrap {
+    display: block;
+    width: 100%;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 9px 0 rgba(0,0,0,0.03);
+    overflow: hidden;
+}
+.tbl-file-container {
+    width: 100%;
+}
+.tbl-file-container tr {
+    height: 60px;
+}
+.tbl-file-container tr td:nth-child(2) {
+    width: 162px;
+}
+.tbl-file-container tr td:nth-child(3) {
+    text-align: center;
+}
+.tbl-file-container .file-img-wrap {
+    height: 22px;
+    width: 24px;
+    background: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png') no-repeat center center;
+    background-size: 100%;
+    margin: auto
+}
+.tbl-file-container h6 {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin: 0;
+    margin-bottom: 2px;
+    max-width: 162px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tbl-file-container p {
+    color: #959595;
+    font-family: "SF Pro Text Light";
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 9px;
+    margin: 0;
+    padding: 0 5px;
+}
+.tbl-file-container .spn-uploader {
+    color: #3B7CFF;
+    font-family: "SF Pro Text Light";
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 16px;
+}
+.tbl-file-container .btn-view-file {
+    height: 20px;
+    width: 20px;
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/w-view-icon.png') no-repeat center center;
+    background-size: 100%;
+    margin: auto;
+    display: block;
+    border: none;
+}
+.h5-no-files {
+    width: 100%;
+    text-align: center;
+}
