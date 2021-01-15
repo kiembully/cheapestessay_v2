@@ -408,16 +408,10 @@ export class NewOrderComponent implements OnInit {
 
   fileQueue:any;
   displayFileUploads() {
-    if (this.isEditing) {
-      let arr = JSON.parse(localStorage.getItem('pre_upload'))
-      this.fileQueue = arr.files.customer_files;
-    } else {
-      if (!(this._session.isTokenExisting('uploaded_token'))) {
-        let decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
-        this.fileQueue = decoded_token;
-      }
+    if (!(this._session.isTokenExisting('uploaded_token'))) {
+      let decoded_token = jwt_decode(localStorage.getItem('uploaded_token'));
+      this.fileQueue = decoded_token;
     }
-    
   }
   deleteFile(name) {
     this.isProgressLoading = true;

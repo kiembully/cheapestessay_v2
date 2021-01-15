@@ -25,7 +25,7 @@
   line-height: 19px;
 }
 .spn-order-details-wrap {
-  min-height: 718px;
+  min-height: 200px;
   width: 100%;
   max-width: 735px;
   border-radius: 5px;
@@ -34,7 +34,7 @@
   position: relative;
 }
 .sec-order-details-wrap {
-  padding: 0 24px;
+  padding: 24px;
 }
 .sec-order-details-wrap .mat-tab-label:last-child {
   position: absolute;

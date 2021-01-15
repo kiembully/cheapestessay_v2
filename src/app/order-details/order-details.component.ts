@@ -76,11 +76,11 @@ export class OrderDetailsComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.displayOrder(this.frmOrder.value).subscribe(
       res => {
-        console.log(res);
         this.isProgressLoading = false;
         this.order_details = res.data;
         this.order_id = res.data.order_id;
         this.order_status = res.data.status.order_status_flag;
+        
         
         this.couponForm.patchValue({
           coupon_code: res.data.payment.coupon_code,
@@ -93,6 +93,7 @@ export class OrderDetailsComponent implements OnInit {
     )
   }
 
+  uploaded_token: any;
   preEditOrder() {
     this.isProgressLoading = true;
     this._auth.editMyOrder(this.frmOrder.value).subscribe(
@@ -100,6 +101,7 @@ export class OrderDetailsComponent implements OnInit {
         let decoded_order_token = jwt_decode(res.data.order_token);
         this.setValueOrders(decoded_order_token);
         this.iniAdditionalExtras(decoded_order_token.additionalextra);
+        this.uploaded_token = res.data.uploaded_token
 
         this.couponForm.patchValue({
           order_token: res.data.order_token
@@ -111,8 +113,11 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   editOrder() {
+    console.log(this.uploaded_token)
     localStorage.removeItem('order_token');
     localStorage.setItem('order_token', this.couponForm.value.order_token);
+    localStorage.removeItem('uploaded_token');
+    localStorage.setItem('uploaded_token', this.uploaded_token);
     let decoded_order_token = jwt_decode(this.couponForm.value.order_token);
     this.setValueOrders(decoded_order_token);
     this.iniAdditionalExtras(decoded_order_token.additionalextra);
@@ -122,7 +127,6 @@ export class OrderDetailsComponent implements OnInit {
     }
     localStorage.removeItem('set_order_token');
     localStorage.setItem('set_order_token', this.couponForm.value.order_token);
-    localStorage.setItem('pre_upload',  JSON.stringify(this.order_details));
     this.router.navigate(['/edit-order', decoded_order_token.order_id])
   }
 

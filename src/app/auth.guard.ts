@@ -32,7 +32,6 @@ export class PendingChangesGuard implements CanDeactivate<ComponentCanDeactivate
       localStorage.removeItem('order_token');
       localStorage.removeItem('discount_token');
       localStorage.removeItem('uploaded_token');
-      localStorage.removeItem('pre_upload');
       return true;
     } else {
       return false;

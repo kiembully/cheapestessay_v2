@@ -1,0 +1,66 @@
+.mtr-order-number {
+    padding: 20px;
+}
+.mtr-order-number span:first-child {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+.mtr-order-number span:last-child {
+    color: #13B675;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 36px;
+    text-align: right;
+}
+.mtr-common-details > span:first-child {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 18px;
+    letter-spacing: 0;
+    line-height: 21px;
+}
+.mtr-common-details > span:last-child {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 17px;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: right;
+}
+.spn-order-detail-label {
+    color: #959595;
+    font-family: "SF Pro Text Regular";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 18px;
+}
+.padding15 {
+    padding: 15px 20px
+}
+.padding3 {
+    padding: 3px 20px;
+}
+.mtr-total-details {
+    padding: 53px 20px;
+}
+.mtr-total-details span:first-child {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 38px;
+    
+}
+.mtr-total-details span:last-child {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 38px;
+    text-align: right;
+  
+}

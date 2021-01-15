@@ -199,7 +199,7 @@
                             <button class="btn-upload" mat-flat-button type="button" (click)="_dialog_trigger.openUploadDialog(getOrderId())">Upload files/ photo</button>
                         </span>
                     </section>
-                    <section class="sec-order-wrap sec-file-pending" *ngIf="!(_session.isTokenExisting('uploaded_token')) || isEditing">
+                    <section class="sec-order-wrap sec-file-pending" *ngIf="!_session.isTokenExisting('uploaded_token')">
                         <span class="fill-space"></span>
                         <span class="spn-input-wrap">
                             <table>
