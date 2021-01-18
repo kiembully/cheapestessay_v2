@@ -11,20 +11,29 @@
                 <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 0 ? 'visible' : 'null'">I'm Here</p>
                 <div class="level-badge-wrap">
                     <div class="sprites-icons blue-label"></div>
-                    <p>Blue</p>
+                    <p class="p-level-description blue">Blue</p>
                 </div>
             </span>
             <span class="fill-space">
                 <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 1 ? 'visible' : 'null'">I'm Here</p>
-                <div class="level-badge-wrap">Silver</div>
+                <div class="level-badge-wrap">
+                    <div class="sprites-icons silver-label"></div>
+                    <p class="p-level-description silver">Silver</p>
+                </div>
             </span>
             <span class="fill-space">
                 <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 2 ? 'visible' : 'null'">I'm Here</p>
-                <div class="level-badge-wrap">Gold</div>
+                <div class="level-badge-wrap">
+                    <div class="sprites-icons gold-label"></div>
+                    <p class="p-level-description gold">Gold</p>
+                </div>
             </span>
             <span class="fill-space">
                 <p class="p-badge-label" [style.visibility]="getCurrentLevel(currentLevel) == 3 ? 'visible' : 'null'">I'm Here</p>
-                <div class="level-badge-wrap">VIP</div>
+                <div class="level-badge-wrap">
+                    <div class="sprites-icons vip-label"></div>
+                    <p class="p-level-description vip">VIP</p>
+                </div>
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-level-progress">
@@ -37,7 +46,8 @@
             </div>
         </mat-toolbar-row>
         <mat-toolbar-row>
-            <p class="p-level-gap">${{remainingVal}} away from <span>{{getNextLevel(currentLevel)}}</span> member</p>
+            <p *ngIf="(maximumVal > currentVal)" class="p-level-gap">${{remainingVal}} away from <span>{{getNextLevel(currentLevel)}}</span> member</p>
+            <p *ngIf="(currentVal > maximumVal)" class="p-level-gap">You have reached the maximum level of membership. </p>
         </mat-toolbar-row>
         <mat-toolbar-row>
             <a mat-button class="a-see-howitworks" (click)="openDialog()">See How it Works</a>

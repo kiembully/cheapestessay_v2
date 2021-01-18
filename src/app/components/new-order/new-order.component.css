@@ -42,6 +42,10 @@
 .sec-order-wrap.sec-format-style {
     margin-top: 50px;
 }
+.sec-order-wrap.sec-writer-level .tri-btn-toggle.disabled-btn {
+    color: #ffffff;
+    background-color:rgb(225, 225, 225)
+}
 .sec-order-wrap.sec-pages,
 .sec-order-wrap.sec-topic {
     margin-top: 17px;

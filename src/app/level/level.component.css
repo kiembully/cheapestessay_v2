@@ -42,11 +42,12 @@
 .level-badge-wrap {
     display: block;
     margin: 0 auto;
-    height: 120px;
     width: 125px;
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,0.2);
+    padding-top: 20px;
+    padding-bottom: 20px
 }
 .mtr-level-progress {
     margin-top: 43px;
@@ -96,10 +97,49 @@
     letter-spacing: 0.9px;
     line-height: 21px;
     text-align: center;
-} 
-.level-badge-wrap .blue-label {
+}
+.p-level-description {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 1.2px;
+    line-height: 21px;
+    font-family: "SF Pro Text Semibold";
+    text-align: center;
+    margin-bottom: 0;
+}
+.p-level-description.blue { color: #578EFD }
+.p-level-description.silver { color: #8392A7 }
+.p-level-description.gold { color: #FFD500 }
+.p-level-description.vip { color: #D0021B }
+.sprites-icons.blue-label {
     height: 45px;
     width: 42px;
     display: block;
     margin: 0 auto;
+    background-size: 963px 592px;
+    background-position: -20px -117px;
+}
+.sprites-icons.silver-label {
+    height: 45px;
+    width: 42px;
+    display: block;
+    margin: 0 auto;
+    background-size: 963px 592px;
+    background-position: -110px -117px;
+}
+.sprites-icons.gold-label {
+    height: 45px;
+    width: 42px;
+    display: block;
+    margin: 0 auto;
+    background-size: 963px 592px;
+    background-position: -200px -117px;
+}
+.sprites-icons.vip-label {
+    height: 45px;
+    width: 42px;
+    display: block;
+    margin: 0 auto;
+    background-size: 963px 592px;
+    background-position: -293px -117px;
 }

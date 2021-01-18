@@ -29,8 +29,10 @@
                         <span class="spn-input-wrap">
                             <mat-button-toggle-group formControlname="academic" class="mbtg-common-style" [value]="newOrderForm.value.academic">
                                 <mat-button-toggle 
-                                *ngFor="let list of writerLevels" 
+                                *ngFor="let list of writerLevels; let i = index" 
+                                [disabled]="setAcademicToMaster(newOrderForm.value.paper) && i < 2"
                                 class="tri-btn-toggle"
+                                [ngClass]="{'disabled-btn':setAcademicToMaster(newOrderForm.value.paper) && i < 2}"
                                 (click)="patchLevel(list.academic_level_id)"
                                 [value]="list.academic_level_id">{{list.academic_level_name}}</mat-button-toggle>
                             </mat-button-toggle-group>

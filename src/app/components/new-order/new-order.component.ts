@@ -47,7 +47,8 @@ export class NewOrderComponent implements OnInit {
   frmDeleteMaterial = new FormGroup({
     file_name: new FormControl(''),
     uploaded_token: new FormControl(''),
-    user_token: new FormControl('')
+    user_token: new FormControl(''),
+    order_id: new FormControl(''),
   })
 
   constructor(
@@ -72,13 +73,23 @@ export class NewOrderComponent implements OnInit {
     })
   }
   patchLevel(val) {
-    this.newOrderForm.patchValue({academic:val})
+    if (!this.setAcademicToMaster(this.newOrderForm.value.paper)) {
+      this.newOrderForm.patchValue({academic:val})
+    }
   }
+  isMasterSelected:boolean = false;
   isOtherPaper:boolean = false;
   patchPaper(list) {
     this.isOtherPaper = (list.paper_id!=33) ? false : true;
     this.newOrderForm.patchValue({other_paper: (list.paper_id!=33)?'':null});
     this.orderOutput.patchValue({paper: list.paper_name,})
+    if (this.setAcademicToMaster(list.paper_id)) {
+      this.newOrderForm.patchValue({academic:2})
+    }
+  }
+  setAcademicToMaster(id) {
+    let status = (id === 27 || id === 41 || id === 42 || id === 37) ? true : false;
+    return status;
   }
   isOtherSubject:boolean = false;
   patchSubject(list) {
@@ -155,7 +166,6 @@ export class NewOrderComponent implements OnInit {
   public timezones:any;
   public addExtras:any;
   displayOrderDetails() {
-    this.isProgressLoading = true;
     this._auth.getOrderDetails().subscribe(val => {
       this.serviceTypes = val[0].data;
       this.pPaperTypes = val[1].data;
@@ -418,7 +428,8 @@ export class NewOrderComponent implements OnInit {
     this.frmDeleteMaterial.patchValue({
       file_name: name,
       uploaded_token: localStorage.getItem('uploaded_token'),
-      user_token: !this._session.isTokenExisting('user_token')?localStorage.getItem('user_token'):''
+      user_token: !this._session.isTokenExisting('user_token')?localStorage.getItem('user_token'):'',
+      order_id: (this.isEditing) ? jwt_decode(localStorage.getItem('order_token')).order_id : ''
     })
     
     this._auth.deleteFiles(this.frmDeleteMaterial.value).subscribe(
