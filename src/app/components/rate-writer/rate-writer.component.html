@@ -1,0 +1,27 @@
+<form [formGroup]="frmRating" (ngSubmit)="submitRate()" style="position: relative">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar class="mt-rate-writer">
+        <mat-toolbar-row>
+            <h1 class="h1-rate-writer">We'd love to hear your experience with us!</h1>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="star-buttons-wrap">
+                <button class="fill-space btn-stars" mat-flat-button *ngFor="let rate of rating; let i = index" (click)="patchRating(rate)">
+                    <span class="material-icons">{{setActiveStars(frmRating.value.rate, i)}}</span>
+                </button>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-form-field class="mff-rate-writer" #text appearance="legacy" color="accent">
+                <mat-label>Please enter your comments and suggestions here...</mat-label>
+                <textarea matInput required formControlName="remark"></textarea>
+                <mat-error>{{getErrorRemarkOption()}}</mat-error>
+            </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <button mat-flat-button type="button" class="btn-close-rate" (click)="closeDialog()">Close</button>
+            <span class="fill-space btn-split-layout"></span>
+            <button mat-flat-button type="submit" class="btn-submit-rate">Send Feedback</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>

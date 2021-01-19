@@ -13,10 +13,11 @@ export class CommonOrderDetailsStatusComponent implements OnInit {
 
   @Input() public order_details: any;
   timer: any;
+  rate: any = [1,2,3,4,5]
   
   constructor(public _timer: countdownTimer, public _trigger: DialogTriggers, public route: ActivatedRoute) { }
 
-  ngOnInit(): void {;
+  ngOnInit(): void {
     this.timer = setInterval( () => {
       this._timer.readDeadline(this._timer.getDeadline(
         this.order_details.order_date,
@@ -52,6 +53,21 @@ export class CommonOrderDetailsStatusComponent implements OnInit {
       newclass = 'btn-processing'
     }
     return newclass
+  }
+
+  preventTimerDisplay(time: number) {
+    let arr = ['Completed', 'Temporary Order'];
+    let new_time:any;
+    for (let i = 0; i < arr.length - 1; i++) {
+      new_time = (arr[i] == this.order_details.status.order_status) ? 0 : time
+    }
+    return new_time
+  }
+
+  setActiveStars(rate, index) {
+    let star = '';
+    star = (rate > index) ? 'star' : 'star_outline';
+    return star;
   }
 
   ngOnDestroy() {

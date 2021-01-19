@@ -29,4 +29,5 @@ export interface DialogData {
     profile:any;
     coupon_id:number;
     order_id: number;
+    rate: number;
 }

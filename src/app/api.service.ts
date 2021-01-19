@@ -221,6 +221,10 @@ export class ApiServices {
     deleteFiles(form) {
         return this.http.post<any>(this._deleteFiles, form)
     }
+    _ratewriter = this._baseUrl + 'ratewriter'
+    rateWriter(form) {
+        return this.http.post<any>(this._ratewriter, form)
+    }
     
     
     // ORDER PAYMENT APIS

@@ -38,3 +38,6 @@
 <section class="sec-wrap-dialog" *ngIf="data.content_id == 9">
     <app-common-upload [order_id]="data.order_id"></app-common-upload>
 </section>
+<section class="sec-wrap-dialog" *ngIf="data.content_id == 10">
+    <app-rate-writer [order_id]="data.order_id" [rate]="data.rate"></app-rate-writer>
+</section>

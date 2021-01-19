@@ -80,6 +80,7 @@ import { OrderSummaryComponent } from './order-components/order-summary/order-su
 import { PaperDetailsComponent } from './order-components/paper-details/paper-details.component';
 import { ServiceLevelComponent } from './order-components/service-level/service-level.component';
 import { ContactInformationComponent } from './order-components/contact-information/contact-information.component';
+import { RateWriterComponent } from './components/rate-writer/rate-writer.component';
 
 @NgModule({
   declarations: [
@@ -152,6 +153,7 @@ import { ContactInformationComponent } from './order-components/contact-informat
     PaperDetailsComponent,
     ServiceLevelComponent,
     ContactInformationComponent,
+    RateWriterComponent,
   ],
   imports: [
     BrowserModule,

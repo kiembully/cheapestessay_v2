@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../dialogs/common-dialog/common-dialog.component';
 import {FormControl, FormGroup} from '@angular/forms';
@@ -12,7 +12,8 @@ import jwt_decode from 'jwt-decode';
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   providers: [profile_form_default, ApiServices],
-  styleUrls: ['./profile.component.css']
+  styleUrls: ['./profile.component.css'],
+  encapsulation: ViewEncapsulation.None,
 })
 export class ProfileComponent implements OnInit {
 
@@ -124,12 +125,20 @@ export class ProfileComponent implements OnInit {
       country: data.user_details.country,
     })
   }
+  getClassLevel(val) {
+    switch(val) {
+      case 'Silver': { return 'silver-label' }
+      case 'Gold': { return 'gold-label' }
+      case 'VIP': { return 'vip-label' }
+      default: { return 'blue-label' }
+    }
+  }
   getBadgeColor(val) {
     switch(val) {
-      case 'Silver': { return '#8392A7 !important' }
-      case 'Gold': { return '#8392A7 !important' }
-      case 'VIP': { return '#D0021B !important' }
-      default: { return '#578EFD !important' }
+      case 'Silver': { return '#8392A7' }
+      case 'Gold': { return '#8392A7' }
+      case 'VIP': { return '#D0021B' }
+      default: { return '#578EFD' }
     }
   }
 }

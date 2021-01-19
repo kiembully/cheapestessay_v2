@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" class="mt-order-details-status">
+<mat-toolbar class="mt-order-details-status">
     <mat-toolbar-row class="mtr-order-number-wrap margin-bottom12">
         <p class="p-order-details-common">Order Number</p>
         <h1>{{order_details.order_no_custom}}</h1>
@@ -6,10 +6,10 @@
     <mat-toolbar-row class="mtr-order-status-wrap margin-bottom12">
         <p class="p-order-details-common">Time Left</p>
         <section class="add-common-flex sec-deadline-timer">
-            <span class="fill-space">{{_timer.days}}<span>Day</span></span>
-            <span class="fill-space">{{_timer.hours}}<span>Hours</span></span>
-            <span class="fill-space">{{_timer.minutes}}<span>Mins</span></span>
-            <span class="fill-space">{{_timer.seconds}}<span>Sec</span></span>
+            <span class="fill-space">{{preventTimerDisplay(_timer.days)}}<span>Day</span></span>
+            <span class="fill-space">{{preventTimerDisplay(_timer.hours)}}<span>Hours</span></span>
+            <span class="fill-space">{{preventTimerDisplay(_timer.minutes)}}<span>Mins</span></span>
+            <span class="fill-space">{{preventTimerDisplay(_timer.seconds)}}<span>Sec</span></span>
         </section>
         <section class="add-common-flex" [style.margin-top]="!(isPaid()) ? '0' : '30px'">
             <p class="p-order-deadline" *ngIf="!(isPaid())">Deadline: {{order_details.deadlinedate}} If You Pay Right Now</p>
@@ -21,5 +21,15 @@
             </button>
         </section>
     </mat-toolbar-row>
-    <mat-toolbar-row class="mtr-rate-order-wrap" *ngIf="false">asdasd</mat-toolbar-row>
+    <mat-toolbar-row class="mtr-rate-order-wrap margin-bottom12" *ngIf="order_details.status.order_status == 'Completed'">
+        <p>Rate Writer ID: <span></span></p>
+        <div class="rate-writer-wrap">
+            <button
+            *ngFor="let list of rate"
+            (click)="_trigger.openRateWriterDialog(order_details.order_id, list)"
+            mat-flat-button
+            class="fill-space btn-stars">
+            <span class="material-icons">star_outline</span></button>
+        </div>
+    </mat-toolbar-row>
 </mat-toolbar>

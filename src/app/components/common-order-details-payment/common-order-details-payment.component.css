@@ -62,5 +62,7 @@
     letter-spacing: 0;
     line-height: 38px;
     text-align: right;
-  
+}
+.spn-order-deadlines {
+    color: #E70E3B !important
 }

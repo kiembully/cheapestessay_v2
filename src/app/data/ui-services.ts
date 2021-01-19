@@ -113,6 +113,22 @@ export class DialogTriggers {
         }
     });
   }
+
+  openRateWriterDialog(order_id, rate) {
+    const dialogRef = this.dialog.open(CommonDialogComponent, {
+        maxHeight:'800px',
+        width: '600px',
+        backdropClass: 'common-dialog',
+        panelClass: 'panel-dialog',
+        data: {
+          // displays rate writer component
+          content_id: 10,
+          order_id: order_id,
+          rate: rate
+        }
+    });
+    
+  }
 }
 
 export class countdownTimer {

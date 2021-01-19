@@ -1,0 +1,83 @@
+.mt-rate-writer {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+.mt-rate-writer h1 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 28px;
+    letter-spacing: 0;
+    line-height: 24px;
+    text-align: center;
+    margin: 0 auto 30px auto;
+    white-space: normal
+}
+.mff-rate-writer {
+    margin: 0 auto 15px auto;
+    width: 100%;
+    max-width: 430px;
+}
+.mff-rate-writer .mat-input-element{
+  color: #000000;
+  font-family: "SF Pro Text Regular";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+  height: 140px;
+  resize: none;
+}
+.mff-rate-writer .mat-form-field-flex {
+    border: 2px solid #12245A;
+    padding-left: 15px;
+}
+.mff-rate-writer .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 2px;
+}
+.mff-rate-writer .mat-form-field-infix {
+    padding: 5px 0 20px 0 !important
+}
+.mff-rate-writer .mat-form-field-label-wrapper {
+    font-size: 16px;
+}
+.star-buttons-wrap {
+    margin: 0 auto 25px auto;
+    max-width: 200px;
+    width: 100%;
+}
+.star-buttons-wrap button {
+    color: #FFD500;
+    background-color: transparent;
+    width: 20%;
+    padding: 0;
+    min-width: 0;
+}
+.btn-split-layout {
+    padding: 10px;
+}
+.btn-close-rate {
+    color: #1A62F5;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 17px;
+    padding: 14px 10px;
+    border: 1px solid #578EFD;
+    border-radius: 6px;
+    width: 100%;
+}
+.btn-submit-rate {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -0.5px;
+    line-height: 17px;
+    text-align: center;
+    padding: 15px 10px;
+    width: 100%;
+    border-radius: 6px;
+    background-color: #1A62F5;
+}

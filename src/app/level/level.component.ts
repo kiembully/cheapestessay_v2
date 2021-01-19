@@ -29,7 +29,6 @@ export class LevelComponent implements OnInit {
   displayLevel() {
     this._auth.getLevel(this.tokenForm.value).subscribe(
       res => {
-        console.log(res);
         this.currentLevel = res.data.user_level;
         this.currentVal = res.data.valuenow;
         this.minimumVal = res.data.valuemin
@@ -62,23 +61,6 @@ export class LevelComponent implements OnInit {
     // });
   }
 
-  getCurrentLevel(level) {
-    let state:any;
-    switch(level.toLowerCase()) {
-      case 'vip':
-        state = 3;
-        break;
-      case 'gold':
-        state = 2;
-        break;
-      case 'silver':
-        state = 1;
-        break;
-      default:
-        state = 0;
-    }
-    return state;
-  }
   getNextLevel(level) {
     let nextLevel:any;
     switch(level.toLowerCase()) {

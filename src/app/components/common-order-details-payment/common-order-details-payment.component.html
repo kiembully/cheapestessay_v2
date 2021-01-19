@@ -2,41 +2,46 @@
     <mat-toolbar-row class="mtr-order-number">
         <span>Order Number</span>
         <span class="fill-space"></span>
-        <span>78444</span>
+        <span>{{order_details.order_no_custom}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding15">
         <span>Order Date</span>
         <span class="fill-space"></span>
-        <span>order date</span>
+        <span>{{order_details.order_date}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding15">
         <span>Order Deadline</span>
         <span class="fill-space"></span>
-        <span>order deadline</span>
+        <span class="spn-order-deadlines">{{order_details.deadlinedate}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding15">
-        <span>Sales ID: <span class="spn-order-detail-label">PayPal</span></span>
+        <span>Sales ID: <span class="spn-order-detail-label">{{order_details.payment.payment_method}}</span></span>
         <span class="fill-space"></span>
-        <span class="spn-order-detail-label">55656566556654</span>
+        <span class="spn-order-detail-label">{{order_details.payment.transaction_id}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding3">
         <span>Subtotal</span>
         <span class="fill-space"></span>
-        <span>$ 1911</span>
+        <span>{{order_details.payment.sub_total}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding3">
-        <span>Discount <span class="spn-order-detail-label">PayPal</span></span>
+        <span>Lifetime Discount: <span class="spn-order-detail-label"></span></span>
         <span class="fill-space"></span>
-        <span>$ 1911</span>
+        <span>{{order_details.payment.ltDisc}}</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-common-details padding3" *ngIf="order_details.payment.coupon_code !== ''">
+        <span>Coupon: <span class="spn-order-detail-label">{{order_details.payment.coupon_code}}</span></span>
+        <span class="fill-space"></span>
+        <span>${{order_details.payment.coupon_discount}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-common-details padding3">
         <span>Redeem</span>
         <span class="fill-space"></span>
-        <span>$ 1911</span>
+        <span>{{order_details.payment.redeem}}</span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-total-details">
         <span>Total</span>
         <span class="fill-space"></span>
-        <span>$ 105.00</span>
+        <span>{{order_details.payment.total}}</span>
     </mat-toolbar-row>
 </mat-toolbar>

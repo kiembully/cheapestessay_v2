@@ -12,7 +12,10 @@
                     <p class="p-date-joined">{{memberStatusForm.value.dateStarted}}</p>
                 </span>
                 <span class="spn-badge-wrap">
-                    <button class="btn-badge" mat-fab [style.background-color]="getBadgeColor(frmUserLevel.value.lifetime_discount_name)">{{frmUserLevel.value.lifetime_discount_name}}</button>
+                    <button class="btn-badge" mat-flat-button [style.border-color]="getBadgeColor(frmUserLevel.value.lifetime_discount_name)" [style.color]="getBadgeColor(frmUserLevel.value.lifetime_discount_name)">
+                        <span class="sprites-icons {{getClassLevel(frmUserLevel.value.lifetime_discount_name)}}"></span>
+                        {{frmUserLevel.value.lifetime_discount_name}}
+                    </button>
                     <!-- <button class="btn-badge" mat-fab>Level</button> -->
                 </span>
             </mat-toolbar-row>

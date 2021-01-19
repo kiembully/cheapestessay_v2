@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {FormControl, FormGroup} from '@angular/forms'
+import {FormControl, FormGroup} from '@angular/forms';
 import {ApiServices} from 'src/app/api.service';
 import { new_order_form_default } from 'src/app/data/data';
 import { Router } from '@angular/router';
@@ -113,7 +113,6 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   editOrder() {
-    console.log(this.uploaded_token)
     localStorage.removeItem('order_token');
     localStorage.setItem('order_token', this.couponForm.value.order_token);
     localStorage.removeItem('uploaded_token');

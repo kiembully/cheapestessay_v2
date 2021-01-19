@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-common-order-details-payment',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./common-order-details-payment.component.css']
 })
 export class CommonOrderDetailsPaymentComponent implements OnInit {
+
+  @Input() public order_details:any;
 
   constructor() { }
 
