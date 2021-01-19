@@ -3,7 +3,7 @@
     <p *ngIf="isHome">CALCULATE YOUR ORDER</p>
     <section class="sec-form margin-bottom15" [style.margin-top]="!isHome ? '23px' : '0'">
         <mat-form-field class="mff-calculator">
-            <mat-select disableOptionCentering formControlName="service" [value]="setOrderForm.value.service" panelClass="panel-drop-style">
+            <mat-select aria-label="choose service" disableOptionCentering formControlName="service" [value]="setOrderForm.value.service" panelClass="panel-drop-style">
                 <mat-option
                 *ngFor="let list of services"
                 [value]="list.type_of_service_id">{{list.type_of_service}}</mat-option>
@@ -13,7 +13,7 @@
     </section>
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
-            <mat-select disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
+            <mat-select aria-label="choose paper" disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
                 <!-- <mat-optgroup label="Most Popular"> -->
                     <mat-option *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
                 <!-- </mat-optgroup> -->
@@ -26,7 +26,7 @@
     </section>
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
-            <mat-select disableOptionCentering [value]="deadline_value" panelClass="panel-drop-style">
+            <mat-select aria-label="choose deadline" disableOptionCentering [value]="deadline_value" panelClass="panel-drop-style">
                 <mat-option
                 *ngFor="let list of deadline; let i = index"
                 (click)="patchDeadline(list)"
@@ -38,7 +38,7 @@
     </section>
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
-            <mat-select disableOptionCentering formControlName="page" [value]="setOrderForm.value.page" panelClass="panel-drop-style">
+            <mat-select aria-label="choose pages" disableOptionCentering formControlName="page" [value]="setOrderForm.value.page" panelClass="panel-drop-style">
                 <mat-option *ngFor="let list of pages" [value]="list.id" >{{list.Pages}}</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
@@ -53,7 +53,7 @@
                 <div class="discount-option-inner">
                     <p class="p-special-price">Special Price (LOCKED)</p>
                     <p class="p-save-order">Save On Your First Order</p>
-                    <input type="email" class="inp-email-discount" placeholder="Enter email to unlock">
+                    <input name="discount" type="email" class="inp-email-discount" placeholder="Enter email to unlock">
                 </div>
             </span>
             <span class="fill-space"></span>
