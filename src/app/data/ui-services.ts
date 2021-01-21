@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../dialogs/common-dialog/common-dialog.component';
+import {user_functions} from './user-data'
 
 @Injectable()
 export class loggedin_session {
@@ -55,7 +56,7 @@ export class loggedin_session {
 @Injectable()
 export class DialogTriggers {
   
-  constructor(public dialog: MatDialog,private router: Router) {}
+  constructor(public dialog: MatDialog,private router: Router, private _common: user_functions) {}
 
   openDeleteDialog(id) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
@@ -94,8 +95,9 @@ export class DialogTriggers {
     });
 
     dialogRef.afterClosed().subscribe(() => {
+      let path = this._common.getCurrentPath();
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/order']);
+        this.router.navigate(['/' + path]);
       });
     });
   }

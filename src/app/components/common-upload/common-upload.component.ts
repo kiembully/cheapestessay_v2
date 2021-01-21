@@ -66,7 +66,10 @@ export class CommonUploadComponent implements OnInit {
         this.isProgressLoading = false;
         localStorage.removeItem('uploaded_token');
         localStorage.setItem('uploaded_token', res.data.uploaded_token);
-        this.isSuccess = (res.status) ? true : false;
+        this.isSuccess = res.status;
+        if (res.status) {
+          
+        }
       },
       (err) => console.log(err)
     )

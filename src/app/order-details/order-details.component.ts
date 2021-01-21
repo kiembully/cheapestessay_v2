@@ -61,6 +61,8 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.removeItem('is_editing');
+    localStorage.removeItem('uploaded_token');
     this.initializeOrderDetails();
   }
 
@@ -126,6 +128,7 @@ export class OrderDetailsComponent implements OnInit {
     }
     localStorage.removeItem('set_order_token');
     localStorage.setItem('set_order_token', this.couponForm.value.order_token);
+    localStorage.setItem('is_editing','true');
     this.router.navigate(['/edit-order', decoded_order_token.order_id])
   }
 

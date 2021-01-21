@@ -13,9 +13,12 @@ export class EditOrderComponent implements OnInit {
 
   @HostListener('window:beforeunload')
   canDeactivate(): Observable<boolean> | boolean {
-    return false;
+    let state: boolean;
+    state = (localStorage.getItem('is_submitting') === 'true') ? true : false;
+    localStorage.removeItem('is_submitting');
+    return state;
   }
-
+  
   ngOnInit(): void {
   }
 

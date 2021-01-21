@@ -107,6 +107,9 @@ export class NewOrderOutputComponent implements OnInit {
   }
 
   saveOrder() {
+    let isEditing = ((localStorage.getItem('is_editing')==='true') ? true : false)
+    localStorage.setItem('is_submitting', (isEditing?'true':'false'))
+
     this._auth.saveOrder(this.patchSaveOrderForm()).subscribe(
       res => {
         if (res.status) {
