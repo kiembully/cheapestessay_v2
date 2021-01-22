@@ -1,6 +1,4 @@
 .mt-services {
-    margin-top: 200px;
-    margin-bottom: 150px;
     position: relative;
 }
 .spn-contain-services-banner h1 {
@@ -11,7 +9,13 @@
     font-weight: bold;
     line-height: 48px;
     margin: 0 0 16px 0;
-    max-width: 400px;
+    /* max-width: 400px; */
+}
+.mt-services-content {
+    margin-bottom: 150px;
+}
+.padding10 {
+    padding: 10px;
 }
 .spn-contain-services-banner p {
     white-space: normal;
@@ -30,9 +34,7 @@
 }
 .spn-contain-services-banner.add-height {
     height: 470px;
-}
-.mtr-services {
-    margin-bottom: 150px;
+    align-self: flex-start;
 }
 .mtr-services-contents {
     padding: 130px 20px 0 20px;

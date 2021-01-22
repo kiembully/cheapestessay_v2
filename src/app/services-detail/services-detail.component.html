@@ -1,15 +1,23 @@
+<div class="main-banner-background">
+    <section class="default-width">
+        <mat-toolbar color="primary" class="mt-services">
+            <div class="sprite-cheapest home-banner-img" style="bottom: 0"></div>
+            <mat-toolbar-row class="mtr-services">
+                <span class="spn-contain-services-banner add-height">
+                    <p><a mat-button routerLink="/">Services</a> <span>/</span> <a mat-button >{{service_name}}</a></p>
+                    <h1>{{initial_content}}</h1>
+                </span>
+                <span class="fill-space padding10"></span>
+                <span class="spn-contain-services-form">
+                    <app-common-banner-calculator [isHome]="true"></app-common-banner-calculator>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+    </section>
+</div>
+
 <section class="default-width">
-    <mat-toolbar color="primary" class="mt-services">
-        <mat-toolbar-row class="mtr-services">
-            <span class="spn-contain-services-banner add-height">
-                <p><a mat-button routerLink="/">Services</a> <span>/</span> <a mat-button >{{service_name}}</a></p>
-                <h1>{{initial_content}}</h1>
-            </span>
-            <span class="fill-space"></span>
-            <span class="spn-contain-services-form">
-                <app-common-banner-calculator [isHome]="true"></app-common-banner-calculator>
-            </span>
-        </mat-toolbar-row>
+    <mat-toolbar class="mt-services-content">
         <mat-toolbar-row class="mtr-services-contents">
             <h2>{{initial_pitch_header}}</h2>
             <span [innerHTML]="initial_pitch_content"></span>
