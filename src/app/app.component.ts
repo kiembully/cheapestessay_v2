@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { user_functions } from '../app/data/user-data';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +9,21 @@ import { user_functions } from '../app/data/user-data';
   providers: [user_functions]
 })
 export class AppComponent {
-  title = 'Cheapest Essay';
+
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
+  
+  ngOnInit() {
+    this.titleService.setTitle("Cheapest Essay Writing Service by Qualified Essay Writers $8/page");
+    this.metaTagService.addTags([
+      { name: 'keywords', content: 'Cheapest essay writing service, write my paper, paper writing service, professional paper writing service, academic writing services, professional writing services, cheapest writing services, professional writers, cheap writing services, cheap essay writing services, essay writing service cheapest, writing paper service, professional essay writers, essay writers, online writing services,  affordable writing service' },
+      { name: 'description', content: "Looking for the cheapest essay writing service Hire qualified essay writers, who will do your 'write my paper' requests. Save up to 15% on your first order." },
+      { name: 'robots', content: 'index, follow' },
+    ]);
+  }
+  
   new_user_functions = new user_functions;
   routerWithFooter:any = [
     '',

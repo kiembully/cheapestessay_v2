@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
@@ -166,7 +166,7 @@ import { RateWriterComponent } from './components/rate-writer/rate-writer.compon
     CarouselModule,
     FileUploadModule
   ],
-  providers: [AuthGuard, ApiServices, PendingChangesGuard, {
+  providers: [AuthGuard, ApiServices, Title, Meta, PendingChangesGuard, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,
     multi: true

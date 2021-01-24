@@ -2,7 +2,8 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ApiServices } from 'src/app/api.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
-import { new_order_form_default } from 'src/app/data/data'
+import { new_order_form_default } from 'src/app/data/data';
+import { Title, Meta } from '@angular/platform-browser';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
@@ -14,8 +15,14 @@ import jwt_decode from 'jwt-decode';
   encapsulation: ViewEncapsulation.None,
 })
 export class PricingComponent implements OnInit {
-
-  constructor(private _auth: ApiServices, private http: HttpClient, private _data: new_order_form_default) { }
+  
+  constructor(
+    private _auth: ApiServices,
+    private http: HttpClient,
+    private _data: new_order_form_default,
+    private titleService: Title,
+    private metaTagService: Meta
+    ) { }
 
   order_token = new FormGroup({
     token: new FormControl(this._auth.getOrderToken())
@@ -92,6 +99,14 @@ export class PricingComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Prices - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "Find out relevant prices for writing and editing on Cheapest Essay. Our pay scale depends on service’s type, writer’s level, deadline and pages you need." },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "research paper writing service, dissertation writing, resume writing services, professional resume writers, professional proofreading, academic proofreading services, best article writing service, article rewriting service" },
+    );
+
     this.displayOrderDetails();
     this.setOrders(this.pricingForm.value);
     this.pricingForm.valueChanges.subscribe(
