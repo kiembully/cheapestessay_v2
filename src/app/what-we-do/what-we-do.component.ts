@@ -4,6 +4,7 @@ import { ApiServices } from 'src/app/api.service';
 import {new_order_form_default} from 'src/app/data/data';
 import { Router } from '@angular/router';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-what-we-do',
@@ -19,7 +20,13 @@ export class WhatWeDoComponent implements OnInit {
     email: new FormControl('')
   })
   
-  constructor(private _auth: ApiServices, private _data: new_order_form_default, private router: Router) { }
+  constructor(
+    private _auth: ApiServices,
+    private _data: new_order_form_default,
+    private router: Router,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   pPapers: any;
   oPapers: any;
@@ -31,6 +38,14 @@ export class WhatWeDoComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("What we do - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "N/A" },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "what we do" },
+    );
+
     this.setPapers();
   }
 

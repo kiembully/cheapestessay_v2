@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-faqs',
@@ -12,9 +13,19 @@ export class FaqsComponent implements OnInit {
   selectedPanelClass = '';
   panelToggleState:number;
 
-  constructor() { }
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("FAQs about our Writing Service - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "Do you have questions about our writing service? Want to know how it works then read the answers at FAQs on our site and learn more about our service." },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "faqs" },
+    );
   }
 
   selectPanel(index) {

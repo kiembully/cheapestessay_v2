@@ -31,9 +31,9 @@
                         <mat-form-field appearance="fill">
                             <input formControlName="mobile" type="tel" matInput placeholder="Telephone" required class="panel-input-style">
                             <span matPrefix>
-                                <mat-select class="ms-select-code" formControlName="mobile_prefix" [value]="1">
-                                    <mat-option *ngFor="let list of country_code" [value]="list.callingCodes[0]">
-                                        <img src="{{list.flag}}" alt="country_flag" style="height: 20px; width: auto"> {{list.alpha3Code}} +{{list.callingCodes[0]}}
+                                <mat-select aria-label="choose country code" class="ms-select-code" formControlName="mobile_prefix" [value]="1" [style.background-image]="selectedFlag">
+                                    <mat-option *ngFor="let list of country_code" [value]="list.callingCodes[0]" (click)="selectActiveFlag(list.alpha3Code)">
+                                        <img src="{{list.flag}}" alt="country_flag" style="height: 20px; width: auto"> {{list.name}} {{list.callingCodes[0]}}
                                     </mat-option>
                                 </mat-select>
                             </span>

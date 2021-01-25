@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
 import { Router, Event, NavigationEnd } from '@angular/router';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services-detail',
@@ -12,7 +13,13 @@ import { Router, Event, NavigationEnd } from '@angular/router';
 })
 export class ServicesDetailComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private _auth: ApiServices, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private _auth: ApiServices,
+    private router: Router,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) {
     // detects changes thru dynamic router
     this.router.events.subscribe((event: Event) => {
       if (event instanceof NavigationEnd) {
@@ -45,6 +52,14 @@ export class ServicesDetailComponent implements OnInit {
       this.initial_pitch_header = res.data.initial_pitch_header;
       this.initial_pitch_content = res.data.initial_pitch_content;
       this.main_header = res.data.main_header;
+
+      this.titleService.setTitle(res.data.title);
+      this.metaTagService.updateTag(
+        { name: 'description', content: res.data.servicesdescription },
+      );
+      this.metaTagService.updateTag(
+        { name: 'keywords', content: res.data.keywords },
+      );
     })
   }
 

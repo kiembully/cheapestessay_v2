@@ -10,7 +10,13 @@
 </section>
 <section class="width1000 sec-orders">
     <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders">
+
+    <div class="no-orders-wrap" *ngIf="isEmpty">
+        <h3>No available orders</h3>
+        <button type="button" routerLink="/order">Order Now</button>
+    </div>
+
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders" *ngIf="!isEmpty">
         
         <ng-container matColumnDef="button">
             <th mat-header-cell *matHeaderCellDef></th>

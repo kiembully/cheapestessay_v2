@@ -2,6 +2,7 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-contact-us',
@@ -12,7 +13,12 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 })
 export class ContactUsComponent implements OnInit {
 
-  constructor(private _auth: ApiServices, private _snackBar: MatSnackBar) { }
+  constructor(
+    private _auth: ApiServices,
+    private _snackBar: MatSnackBar,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   submitContact() {
     this._auth.getContactDetails(this.frmContact.value).subscribe(res=>{
@@ -33,6 +39,13 @@ export class ContactUsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("24/7 Writing Services Available | Contact Us | Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "Our writing services are available 24/7. You can contact us by social media, mobile and email. Visit us now! We will be happy to help you." },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "Contact us, Contact CheapestEssay" },
+    );
   }
 
   frmContact = new FormGroup({

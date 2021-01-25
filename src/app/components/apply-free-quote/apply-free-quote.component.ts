@@ -48,7 +48,6 @@ export class ApplyFreeQuoteComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.registerLogin(this.freeQuoteForm.value).subscribe(
       res => {
-        console.log(res);
         this.isProgressLoading = false;
         this.errorMessage = res.message;
         this.formHasError = (res.status == false) ? true : false;

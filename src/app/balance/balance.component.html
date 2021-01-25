@@ -4,7 +4,13 @@
 </section>
 <section class="sec-balance width1000">
     <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-balance">
+
+    <div class="no-orders-wrap" *ngIf="isEmpty">
+        <h3>No available balance</h3>
+        <button type="button" routerLink="/order">Order Now</button>
+    </div>
+    
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-balance" *ngIf="!isEmpty">
 
         <ng-container matColumnDef="date">
             <th mat-header-cell *matHeaderCellDef>Date</th>

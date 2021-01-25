@@ -175,3 +175,25 @@ table.tbl-my-orders.mat-table {
     padding-left: 15px;
     padding-right: 15px;
 }
+.no-orders-wrap {
+    text-align: center;
+    padding: 40px 20px;
+}
+.no-orders-wrap h3 {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 18px;
+    font-weight: 500;
+    letter-spacing: 0;
+    line-height: 28px;
+}
+.no-orders-wrap button {
+    padding: 20px 35px;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Semibold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+}

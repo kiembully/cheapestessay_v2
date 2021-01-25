@@ -3,6 +3,7 @@ import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../dialogs/common-dialog/common-dialog.component';
 import {ApiServices} from 'src/app/api.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-level',
@@ -13,7 +14,12 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class LevelComponent implements OnInit {
 
-  constructor(public dialog: MatDialog,private _auth: ApiServices) { }
+  constructor(
+    public dialog: MatDialog,
+    private _auth: ApiServices,
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   tokenForm = new FormGroup({
     user_token: new FormControl(this._auth.getToken())
@@ -40,6 +46,14 @@ export class LevelComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Get Lifetime Discount, Cash Back based on your Level");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "n/a" },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "n/a" },
+    );
+    
     this.displayLevel()
   }
 

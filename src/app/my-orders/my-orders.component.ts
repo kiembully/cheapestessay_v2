@@ -5,7 +5,8 @@ import {MatTableDataSource} from '@angular/material/table';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ApiServices} from 'src/app/api.service';
 import { Router } from '@angular/router';
-import { DialogTriggers, countdownTimer } from 'src/app/data/ui-services'
+import { DialogTriggers, countdownTimer } from 'src/app/data/ui-services';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-my-orders',
@@ -21,6 +22,7 @@ export class MyOrdersComponent implements OnInit {
   })
   dataSource:any;
   isProgressLoading:boolean = false;
+  isEmpty:boolean = false;
   displayMyOrders() {
     this.isProgressLoading = true;
     this._auth.getMyOrders(this.tokenForm.value).subscribe(
@@ -28,11 +30,19 @@ export class MyOrdersComponent implements OnInit {
         this.dataSource = new MatTableDataSource<all_orders>(res.data);
         this.dataSource.paginator = this.paginator;
         this.isProgressLoading = false;
+        this.isEmpty = (res.data == undefined) ? true : false;
       }
     )
   }
 
-  constructor(private _auth: ApiServices, private router: Router, public _dialogTrigger: DialogTriggers, public _timer: countdownTimer) { }
+  constructor(
+    private _auth: ApiServices,
+    private router: Router,
+    public _dialogTrigger: DialogTriggers,
+    public _timer: countdownTimer,
+    private titleService: Title,
+    private metaTagService: Meta
+    ) { }
 
   setTimer(order_date: string, days: number, hours: number, minutes: number, seconds: number) {
       let timestamp = this._timer.getDeadline(
@@ -46,6 +56,14 @@ export class MyOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Buy Essay Online | Hire Writers - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "Buy essays online and get professional assistance with any writing tasks from our experienced and skilled writers. Place order and get quality paper." },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "Buy essay online, hire writers" },
+    );
+    
     this.displayMyOrders();
   }
 

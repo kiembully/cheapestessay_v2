@@ -5,6 +5,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { profile_form_default } from 'src/app/data/data';
 import { Router } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
+import { Title, Meta } from '@angular/platform-browser';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
@@ -23,7 +24,9 @@ export class ProfileComponent implements OnInit {
     public dialog: MatDialog,
     private _data: profile_form_default,
     private router: Router,
-    private _auth: ApiServices
+    private _auth: ApiServices,
+    private titleService: Title,
+    private metaTagService: Meta
   ) { }
 
   memberStatusForm = new FormGroup({
@@ -73,6 +76,14 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle("User Profile to Order Essay Online - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "n/a" },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "Order Essay Online" },
+    );
+    
     this.displayProfile();
     this.getLevel();
   }
@@ -92,7 +103,7 @@ export class ProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(() => {
       this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['order']);
+        this.router.navigate(['profile']);
       });
     });
   }
@@ -136,7 +147,7 @@ export class ProfileComponent implements OnInit {
   getBadgeColor(val) {
     switch(val) {
       case 'Silver': { return '#8392A7' }
-      case 'Gold': { return '#8392A7' }
+      case 'Gold': { return '#FFD500' }
       case 'VIP': { return '#D0021B' }
       default: { return '#578EFD' }
     }

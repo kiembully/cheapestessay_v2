@@ -90,8 +90,14 @@
 .mtr-user-entry .mat-select-arrow-wrapper {
     display: block !important;
 }
+.mtr-user-entry .mat-select-panel .mat-option {
+    color: #000000 !important
+}
 .ms-select-code {
-    width: 100px;
+    width: 70px;
+    background-size: 50px 20px;
+    background-repeat: no-repeat;
+    color: transparent;
 }
 .frm-wrapper .mat-error {
     text-align: center;

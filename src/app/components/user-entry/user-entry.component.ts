@@ -26,6 +26,7 @@ export class UserEntryComponent implements OnInit {
     mobile: new FormControl(''),
     mobile_prefix: new FormControl("1")
   })
+  selectedFlag: string = 'url(https://restcountries.eu/data/usa.svg)'
   
   constructor(
     private _auth: ApiServices,
@@ -101,5 +102,9 @@ export class UserEntryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountryCode(); 
+  }
+
+  selectActiveFlag(code) {
+    this.selectedFlag = 'url(https://restcountries.eu/data/' + code.toLowerCase() + '.svg)'
   }
 }

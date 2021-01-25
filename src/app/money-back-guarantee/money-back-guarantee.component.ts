@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-money-back-guarantee',
@@ -8,13 +9,22 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 })
 export class MoneyBackGuaranteeComponent implements OnInit {
 
-  constructor() { }
-
-  panelMoneyBackState: boolean = false;
+  constructor(
+    private titleService: Title,
+    private metaTagService: Meta
+  ) { }
 
   ngOnInit(): void {
+    this.titleService.setTitle("Money Back Guarantee - Cheapest Essay");
+    this.metaTagService.updateTag(
+      { name: 'description', content: "We ensure that you stay happy after ordering an essay, so all orders are covered under the Cheapest Essay Money Back Guarantee but check our full policy guidelines." },
+    );
+    this.metaTagService.updateTag(
+      { name: 'keywords', content: "money back guarantee" },
+    );
   }
-
+  
+  panelMoneyBackState: boolean = false;
   mgbContents:any = [
     {
       class: 'wrap-full-refund',

@@ -40,7 +40,7 @@ export class UpdateProfileComponent implements OnInit {
     this._auth.getFullName(this.nameForm.value).subscribe(
       res => {
         this.errorMessageName = res.message;
-        this.nameHasError = (res.status == false) ? true : false;
+        this.nameHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.rewriteToken(res.data.user_token);
           this.closeDialog();
@@ -56,7 +56,7 @@ export class UpdateProfileComponent implements OnInit {
     this._auth.getPassword(this.passwordForm.value).subscribe(
       res => {
         this.errorMessagePswd = res.message;
-        this.pswdHasError = (res.status == false) ? true : false;
+        this.pswdHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.closeDialog();
         }
@@ -71,7 +71,7 @@ export class UpdateProfileComponent implements OnInit {
     this._auth.getEmail(this.emailForm.value).subscribe(
       res => {
         this.errorMessageEmail = res.message;
-        this.emailHasError = (res.status == false) ? true : false;
+        this.emailHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.rewriteToken(res.data.user_token);
           this.closeDialog();
@@ -87,7 +87,7 @@ export class UpdateProfileComponent implements OnInit {
     this._auth.getMobile(this.mobileForm.value).subscribe(
       res => {
         this.errorMessageMob = res.message;
-        this.mobHasError = (res.status == false) ? true : false;
+        this.mobHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.rewriteToken(res.data.user_token);
           this.closeDialog();
@@ -105,7 +105,7 @@ export class UpdateProfileComponent implements OnInit {
       res => {
         console.log(res);
         this.errorMessageWa = res.message;
-        this.waHasError = (res.status == false) ? true : false;
+        this.waHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.rewriteToken(res.data.user_token);
           this.closeDialog();
@@ -123,7 +123,7 @@ export class UpdateProfileComponent implements OnInit {
     this._auth.getAddress(this.addressForm.value).subscribe(
       res => {
         this.errorMessageAddress = res.message;
-        this.addressHasError = (res.status == false) ? true : false;
+        this.addressHasError = (!res.status) ? true : false;
         if(res.status == true) {
           this.rewriteToken(res.data.user_token);
           this.closeDialog();
@@ -148,6 +148,7 @@ export class UpdateProfileComponent implements OnInit {
     this.patchMobile();
     this.patchWhatsApp();
     this.patchAddress();
+    this.patchPasswordForm();
     this.displayCountryCode();
   }
   
@@ -202,6 +203,11 @@ export class UpdateProfileComponent implements OnInit {
         this.isProgressLoading = false;
       }
     );
+  }
+  patchPasswordForm() {
+    this.passwordForm.patchValue({
+      user_token: localStorage.getItem('user_token')
+    })
   }
 
   resetUserToken(new_token) {

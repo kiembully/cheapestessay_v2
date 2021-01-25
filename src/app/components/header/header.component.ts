@@ -59,7 +59,8 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    setInterval(()=>{this.setProfileInfo()}, 1500)
+    this.setProfileInfo();
+    // setInterval(()=>{this.setProfileInfo()}, 1500)
   }
 
   setProfileInfo() {
