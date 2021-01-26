@@ -3,7 +3,6 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import {new_order_form_default} from 'src/app/data/data';
 import { Router } from '@angular/router';
-import { OwlOptions } from 'ngx-owl-carousel-o';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -47,27 +46,6 @@ export class WhatWeDoComponent implements OnInit {
     );
 
     this.setPapers();
-  }
-
-  orderWritten: OwlOptions = {
-    loop: false,
-    dots: true,
-    margin: 0,
-    dotsEach: true,
-    startPosition: 1,
-    nav: false,
-    center:true,
-    responsive: {
-      0: {
-        items: 1
-      },
-      576: {
-        items: 2
-      },
-      768: {
-        items: 3
-      }
-    },
   }
 
 }

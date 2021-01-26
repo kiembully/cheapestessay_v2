@@ -196,6 +196,7 @@ export class NewOrderComponent implements OnInit {
 
   order_data:any;
   ngOnInit(): void {
+    this.isProgressLoading = true;
     this.isUserActive = (this._session.isTokenExisting('user_token')) ? false : true;
     this.displayOldWriters();
     this.displayOrderDetails();
@@ -226,6 +227,7 @@ export class NewOrderComponent implements OnInit {
         this.order_token.patchValue({token:val.data.order_token})
         this.patchCoupon(val.data.order_token);
         this.assignValues(this.decoded_order_token);
+        this.isProgressLoading = false;
       }
     )
   }

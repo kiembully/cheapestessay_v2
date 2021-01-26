@@ -11,9 +11,6 @@
     margin: 0 0 16px 0;
     /* max-width: 400px; */
 }
-.mt-services-content {
-    margin-bottom: 150px;
-}
 .padding10 {
     padding: 10px;
 }
@@ -37,9 +34,7 @@
     align-self: flex-start;
 }
 .mtr-services-contents {
-    padding: 130px 20px 0 20px;
     display: block;
-    text-align: center;
 }
 .mtr-services-contents span {
     line-height: 31px;
@@ -54,14 +49,4 @@
 }
 .mtr-services-contents span > p {
     display: none;
-}
-.mtr-services-contents h2 {
-    white-space: normal;
-    font-size: 36px;
-    font-family: "SF Pro Text Medium";
-    font-weight: 600;
-    color: #111;
-    line-height: 45px;
-    margin: 0 auto 25px;
-    display: block;
 }

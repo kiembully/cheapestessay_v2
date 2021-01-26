@@ -81,6 +81,7 @@ import { PaperDetailsComponent } from './order-components/paper-details/paper-de
 import { ServiceLevelComponent } from './order-components/service-level/service-level.component';
 import { ContactInformationComponent } from './order-components/contact-information/contact-information.component';
 import { RateWriterComponent } from './components/rate-writer/rate-writer.component';
+import { CommonOverlappingCarouselComponent } from './components/common-overlapping-carousel/common-overlapping-carousel.component';
 
 @NgModule({
   declarations: [
@@ -154,6 +155,7 @@ import { RateWriterComponent } from './components/rate-writer/rate-writer.compon
     ServiceLevelComponent,
     ContactInformationComponent,
     RateWriterComponent,
+    CommonOverlappingCarouselComponent,
   ],
   imports: [
     BrowserModule,

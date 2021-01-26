@@ -39,46 +39,7 @@
     </mat-toolbar>
 </section>
 
-<section class="default-width margin-bottom70 sec-order-written">
-    <owl-carousel-o [options]="orderWritten">
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
-                </div>
-                <p class="p-service-category">Essay Any Type</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1650</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
-                </div>
-                <p class="p-service-category">Report</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1500</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
-                </div>
-                <p class="p-service-category">Case Study</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1500</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
-            </div>
-        </ng-template>  
-    </owl-carousel-o>
-</section>
+<app-common-overlapping-carousel></app-common-overlapping-carousel>
 
 <div class="margin-bottom70">
     <app-common-company-flexing></app-common-company-flexing>
