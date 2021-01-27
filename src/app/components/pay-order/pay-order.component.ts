@@ -53,7 +53,11 @@ export class PayOrderComponent implements OnInit {
       res => {
         console.log(res);
         this.isProgressLoading = false;
-        this.card_details = jwt_decode(res.data.card_token);
+        if (res.status) {
+          this.card_details = jwt_decode(res.data.card_token);
+        } else {
+          this.card_details = 'No Card Details Found!'
+        }
       }
     )
   }

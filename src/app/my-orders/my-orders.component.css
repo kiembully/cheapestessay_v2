@@ -9,6 +9,9 @@ table.tbl-my-orders.mat-table {
   width: 100%;
   min-height: 507px !important;
 }
+.tbl-my-orders tr.mat-row {
+    vertical-align: top;
+}
 .sec-orders {
     margin-bottom: 180px;
     border-radius: 5px;

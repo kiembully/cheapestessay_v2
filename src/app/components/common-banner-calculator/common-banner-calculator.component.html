@@ -3,10 +3,10 @@
     <p *ngIf="isHome">CALCULATE YOUR ORDER</p>
     <section class="sec-form margin-bottom15" [style.margin-top]="!isHome ? '23px' : '0'">
         <mat-form-field class="mff-calculator">
-            <mat-select aria-label="choose service" disableOptionCentering formControlName="service" [value]="setOrderForm.value.service" panelClass="panel-drop-style">
-                <mat-option
-                *ngFor="let list of services"
-                [value]="list.type_of_service_id">{{list.type_of_service}}</mat-option>
+            <mat-select aria-label="choose service" disableOptionCentering formControlName="service" [value]="3" panelClass="panel-drop-style">
+                <mat-option *ngIf="!isProgressLoading" [value]="3">Writing</mat-option>
+                <mat-option *ngIf="!isProgressLoading" [value]="1">Editing</mat-option>
+                <mat-option *ngIf="!isProgressLoading" [value]="2">PowerPoint</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
@@ -48,22 +48,23 @@
         <p class="p-standard-price">Standard Price: <span>${{total_price}}</span></p>
     </section>
     <section class="sec-form margin-bottom30 discount-option-wrap" *ngIf="isHome">
-        <div class="discount-option-outer">
+        <form class="discount-option-outer">
+            <app-common-progress-bar *ngIf="isUnlocking"></app-common-progress-bar>
             <span>
                 <div class="discount-option-inner">
                     <p class="p-special-price">Special Price (LOCKED)</p>
                     <p class="p-save-order">Save On Your First Order</p>
-                    <input name="discount" type="email" class="inp-email-discount" placeholder="Enter email to unlock">
+                    <input type="email" #unlockEmail class="inp-email-discount" placeholder="Enter email to unlock" value="{{logged_email}}" [disabled]="!_session.isTokenExisting('user_token')">
                 </div>
             </span>
             <span class="fill-space"></span>
             <span>
                 <div class="discount-option-inner">
                     <p class="p-discounted-price">${{discounted_price}}</p>
-                    <button mat-flat-button type="button" class="btn-unlock-promo">Unlock</button>
+                    <button mat-flat-button type="submit" class="btn-unlock-promo" (click)="unlockSignupCode(unlockEmail.value)">Unlock</button>
                 </div>
             </span>
-        </div>
+        </form>
     </section>
 
     <!-- only visible in free-quote page -->

@@ -25,10 +25,14 @@ export class CommonBannerCalculatorComponent implements OnInit {
   // removes element if this component is not in home
   @Input() public isHome:boolean;
 
-  constructor(private _auth: ApiServices, private _data: new_order_form_default, private router: Router, private _session: loggedin_session, public dialog: MatDialog) { }
+  constructor(private _auth: ApiServices, private _data: new_order_form_default, private router: Router, public _session: loggedin_session, public dialog: MatDialog) { }
 
   isSubmitDisabled:boolean = false;
+  decoded_user_token: any;
+  logged_email: any;
   ngOnInit(): void {
+    this.decoded_user_token = ((!this._session.isTokenExisting('user_token'))) ? jwt_decode(localStorage.getItem('user_token')) : '';
+    this.logged_email = ((!this._session.isTokenExisting('user_token'))) ? this.decoded_user_token.user_details.user_email : '';
     localStorage.removeItem('discount_token');
     this.getServices();
     this.setOrder(this.setOrderForm.value);
@@ -48,7 +52,6 @@ export class CommonBannerCalculatorComponent implements OnInit {
   })
 
   isProgressLoading: boolean = false;
-  services:any;
   p_paper:any;
   o_paper:any;
   deadline:any;
@@ -59,11 +62,10 @@ export class CommonBannerCalculatorComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.getHomeCalculator(token).subscribe(
       val => {
-        this.services = val[0].data;
-        this.p_paper = val[1].data;
-        this.o_paper = val[2].data;
-        this.deadline = val[3].data;
-        this.pages = val[4].data;
+        this.p_paper = val[0].data;
+        this.o_paper = val[1].data;
+        this.deadline = val[2].data;
+        this.pages = val[3].data;
 
         this.isProgressLoading = false;
       }
@@ -90,14 +92,9 @@ export class CommonBannerCalculatorComponent implements OnInit {
     coupon_code: new FormControl(''),
     user_token: new FormControl('')
   })
-  getCouponCode() {
-    this.frmCouponCode.patchValue({
-      order_token: localStorage.getItem('set_order_token'),
-      coupon_code: 'NWSLTTR15%',
-      user_token: (!this._session.isTokenExisting('user_token') ? localStorage.getItem('user_token') : ''),
-    })
-    this._auth.getCouponCode(this.frmCouponCode.value).subscribe(res=>{
-      if (res.status == true) {
+  getCouponCode(form) {
+    this._auth.getCouponCode(form).subscribe(res=>{
+      if (res.status) {
         localStorage.setItem('discount_token', res.data.discount_token);
         this.router.navigate(['order'])
       } else {
@@ -163,8 +160,39 @@ export class CommonBannerCalculatorComponent implements OnInit {
     });
   }
 
+  frmSignUp = new FormGroup({
+    email: new FormControl(''),
+    fx: new FormControl('freeQuote'),
+  })
+  isUnlocking: boolean = false;
+  unlockSignupCode(e) {
+    this.isUnlocking = true;
+    this.frmSignUp.patchValue({email:e})
+    this.frmCouponCode.patchValue({
+      order_token: localStorage.getItem('set_order_token'),
+      coupon_code: 'SIGNUP15',
+      user_token: ''
+    })
+    this._auth.registerLogin(this.frmSignUp.value).subscribe(
+      res => {
+        this.isUnlocking = false;
+        if (res.status) {
+          localStorage.setItem('user_token', res.data);
+          this.getCouponCode(this.frmCouponCode.value)
+        } else {
+          this._session.messageSnackbar(res.message, 'OK')
+        }
+      }
+    )
+  }
+
   // submit form
   submitOrder() {
-    this.getCouponCode()
+    this.frmCouponCode.patchValue({
+      order_token: localStorage.getItem('set_order_token'),
+      coupon_code: 'NWSLTTR15%',
+      user_token: (!this._session.isTokenExisting('user_token') ? localStorage.getItem('user_token') : ''),
+    })
+    this.getCouponCode(this.frmCouponCode.value);
   }
 }

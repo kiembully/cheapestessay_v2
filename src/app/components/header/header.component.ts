@@ -69,7 +69,7 @@ export class HeaderComponent implements OnInit {
       this.headerForm.patchValue({
         first_name: this.decoded_user_token.user_details.first_name,
         email: this.decoded_user_token.user_details.user_email,
-        balance: this.decoded_user_token.account.total_balance,
+        balance: !(this.decoded_user_token.account.total_balance) ? 0 : this.decoded_user_token.account.total_balance,
       })
     }
   }

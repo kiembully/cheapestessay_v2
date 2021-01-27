@@ -77,7 +77,7 @@ export class UserCouponComponent implements OnInit {
   submitCoupon() {
     this.isProgressLoading = true;
     this._auth.getCouponCode(this.couponForm.value).subscribe(res=> {
-      if (res.status == true) {
+      if (res.status) {
         localStorage.removeItem('discount_token');
         localStorage.setItem('discount_token', res.data.discount_token);
         this.submitState = true;

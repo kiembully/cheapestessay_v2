@@ -227,7 +227,6 @@ export class NewOrderComponent implements OnInit {
         this.order_token.patchValue({token:val.data.order_token})
         this.patchCoupon(val.data.order_token);
         this.assignValues(this.decoded_order_token);
-        this.isProgressLoading = false;
       }
     )
   }

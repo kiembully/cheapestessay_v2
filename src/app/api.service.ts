@@ -78,13 +78,11 @@ export class ApiServices {
     }
 
     getHomeCalculator(token) {
-        let _service = this.http.get<any>(this._orderDisplayUrl + 'displayservicetype');
         let _paper = this.http.get<any>(this._orderDisplayUrl + 'displaypopularpapers');
         let _paper1 = this.http.get<any>(this._orderDisplayUrl + 'displayotherpapers');
         let _deadline = this.http.get<any>(this._orderDisplayUrl + 'displaydealineformat');
         let _pages = this.http.post<any>(this._orderDisplayUrl + 'displaypages', token);
         return forkJoin([
-            _service,
             _paper,
             _paper1,
             _deadline,
@@ -120,7 +118,13 @@ export class ApiServices {
 
     _userBalanceUrl = this._baseUrl + 'displaybalance'
     getBalance(token) {
-        return this.http.post<any>(this._userBalanceUrl,token);
+        return this.http.post<any>(this._userBalanceUrl,token).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        );
     }
 
     _userDiscountUrl = this._baseUrl + 'displaydiscount'

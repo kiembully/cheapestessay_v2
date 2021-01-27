@@ -16,7 +16,10 @@
         <span><p class="p-card-info">**** **** ***** {{getCardNumber()}}</p></span>
         <span [formGroup]="frmCard"><input type="number" formControlName="cvv" [value]="frmCard.value.cvv" class="inp-cvv-info" placeholder="CVV"></span>
         <span class="fill-space"></span>
-        <span><button type="button" mat-flat-button class="btn-edit-card">Edit</button></span>
+        <span>
+            <button type="button" *ngIf="getCardNumber() !== 'N/A'" mat-flat-button class="btn-edit-card">Edit</button>
+            <button type="button" *ngIf="getCardNumber() === 'N/A'" mat-flat-button class="btn-edit-card">Add Card</button>
+        </span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-det-wrap">
         <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>

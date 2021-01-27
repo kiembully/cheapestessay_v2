@@ -8,7 +8,7 @@ import {user_functions} from './user-data'
 @Injectable()
 export class loggedin_session {
 
-    constructor(private router: Router, private _snackBar: MatSnackBar,public dialog: MatDialog,) {}
+    constructor(private router: Router, private _snackBar: MatSnackBar,public dialog: MatDialog) {}
     
     horizontalPosition: MatSnackBarHorizontalPosition = 'center';
     verticalPosition: MatSnackBarVerticalPosition = 'top';
@@ -23,6 +23,15 @@ export class loggedin_session {
               this.router.navigate(['/']);
             });
         });
+    }
+
+    messagePositionH: MatSnackBarHorizontalPosition = 'center';
+    messagePositionV: MatSnackBarVerticalPosition = 'bottom';
+    public messageSnackbar(message: string, action: string) {
+      this._snackBar.open(message, action, {
+      horizontalPosition: this.messagePositionH,
+      verticalPosition: this.messagePositionV,
+      })
     }
 
     tokenExpired(token: string) {

@@ -192,6 +192,7 @@
 .discount-option-wrap {
     padding: 16px 0 30px 0;
     background-color: #FBD501;
+    position: relative;
 }
 .discount-option-outer {
     width: 100%;

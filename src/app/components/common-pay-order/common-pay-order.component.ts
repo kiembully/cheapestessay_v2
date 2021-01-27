@@ -71,13 +71,17 @@ export class CommonPayOrderComponent implements OnInit {
 
   getCardNumber() {
     let value = ''
-    value = this.decoded_card_info[0].cNo.substr(this.decoded_card_info[0].cNo.length - 4);
+    if (this.card_details == 'No Card Details Found!') {
+      value = "N/A"
+    } else {
+      value = this.decoded_card_info[0].cNo.substr(this.decoded_card_info[0].cNo.length - 4);
+    }
     return value;
   }
 
   getBalance() {
     let decoded_user_token = jwt_decode(localStorage.getItem('user_token'))
-    let balance = decoded_user_token.account.total_balance;
+    let balance = !(decoded_user_token.account.total_balance) ? 0 : decoded_user_token.account.total_balance;
     return balance;
   }
 

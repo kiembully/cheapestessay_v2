@@ -1,5 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import {FormControl, FormGroup} from '@angular/forms';
+import { ApiServices } from 'src/app/api.service';
+import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-common-services-slide',
@@ -9,7 +12,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 })
 export class CommonServicesSlideComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _auth: ApiServices,private _snackBar: MatSnackBar) { }
 
   @Input() public isWriters: any;
 
@@ -121,7 +124,28 @@ export class CommonServicesSlideComponent implements OnInit {
     return data_id;
   }
 
+  isProgressLoading: boolean = false;
+  frmContact = new FormGroup({
+    name: new FormControl('User'),
+    email: new FormControl(''),
+    message: new FormControl('This message was submitted thru Contact Us section.')
+  })
   ngOnInit(): void {
+  }
+
+  
+  messagePositionH: MatSnackBarHorizontalPosition = 'center';
+  messagePositionV: MatSnackBarVerticalPosition = 'bottom';
+  submitEmail() {
+    this._auth.getContactDetails(this.frmContact.value).subscribe(
+      res => {
+        this._snackBar.open(res.message, 'OK', {
+          duration: 3000,
+          horizontalPosition: this.messagePositionH,
+          verticalPosition: this.messagePositionV,
+        })
+      }
+    )
   }
 
 }

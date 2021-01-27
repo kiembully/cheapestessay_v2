@@ -24,6 +24,12 @@ export class ApplyFreeQuoteComponent implements OnInit {
     total: new FormControl(0),
   })
 
+  couponForm = new FormGroup({
+    user_token: new FormControl(''),
+    order_token: new FormControl(localStorage.getItem('set_order_token')),
+    coupon_code: new FormControl('frqunu15')
+  })
+
   constructor(
     private _auth: ApiServices,
     public router: Router,
@@ -50,14 +56,21 @@ export class ApplyFreeQuoteComponent implements OnInit {
       res => {
         this.isProgressLoading = false;
         this.errorMessage = res.message;
-        this.formHasError = (res.status == false) ? true : false;
+        this.formHasError = (!res.status) ? true : false;
         if (res.status == true) {
-          localStorage.setItem('user_token', res.data.user_token);
-          this.dialogRef.close();
-          this.router.navigate(['order']).then(() => {
-            window.location.reload();
-          });
+          localStorage.setItem('user_token', res.data);
+          this.applyCoupon();
+          setTimeout(() => this.dialogRef.close(), 1500);
+          this.router.navigate(['order'])
         }
+      }
+    )
+  }
+
+  applyCoupon() {
+    this._auth.getCouponCode(this.couponForm.value).subscribe(
+      res => {
+        localStorage.setItem('discount_token', res.data.discount_token);
       }
     )
   }

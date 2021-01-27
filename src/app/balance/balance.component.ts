@@ -34,7 +34,7 @@ export class BalanceComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.getBalance(this.tokenForm.value).subscribe(
       res => {
-        this.myBalance = res.total_balance;
+        this.myBalance = (!res.total_balance) ? 0 : res.total_balance;
         this.dataSource = new MatTableDataSource<balances>(res.data);
         this.dataSource.paginator = this.paginator;
         this.isProgressLoading = false;

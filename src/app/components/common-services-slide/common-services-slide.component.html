@@ -28,17 +28,18 @@
 </section>
 <section class="default-width sec-contact-me-wrap">
     <mat-toolbar class="mt-contact-me">
+        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
         <mat-toolbar-row class="mtr-contact-me">
-            <form action="" class="frm-contact-me">
+            <form (ngSubmit)="submitEmail()" [formGroup]="frmContact" class="frm-contact-me">
                 <span>
                     <h5>Contact Us!</h5>
-                    <p>Tell us your phone number or Email and we will reply you within 1 hour</p>
+                    <p>Tell us your Email address and we will reply you within 1 hour</p>
                 </span>
                 <span class="fill-space"></span>
                 <span>
                     <div class="contact-input-wrap">
-                        <input name="contact-info" type="text" class="fill-space" placeholder="Email or Contact number">
-                        <button type="button" class="fill-space" mat-flat-button>Contact Me</button>
+                        <input name="contact-info" type="text" class="fill-space" placeholder="you@example.com" formControlName="email">
+                        <button type="submit" class="fill-space" mat-flat-button>Contact Me</button>
                     </div>
                 </span>
             </form>
