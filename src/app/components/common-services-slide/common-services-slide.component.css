@@ -13,6 +13,7 @@
     margin: 0 auto;
     padding: 20px;
     position: relative;
+    overflow: hidden;
 }
 .services-item-wrap .material-icons {
     color: #FBD501;

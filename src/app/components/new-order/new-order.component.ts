@@ -221,6 +221,7 @@ export class NewOrderComponent implements OnInit {
     this.discounted_price = '...';
     this._auth.getOrderOptions(order_form).subscribe(
       val => {
+        console.log(val);
         this.decoded_order_token = jwt_decode(val.data.order_token);
         localStorage.removeItem('set_order_token');
         localStorage.setItem('set_order_token', val.data.order_token);

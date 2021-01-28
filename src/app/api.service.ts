@@ -11,6 +11,12 @@ export class ApiServices {
     ) { }
 
     _baseUrl = 'https://web.cheapestessay.com/';
+    _metaUrl = 'https://s3.us-east-2.amazonaws.com/static.cheapestessay.com/json_files/seo.json';
+    _servicesDataUrl = 'https://s3.us-east-2.amazonaws.com/static.cheapestessay.com/json_files/services_page_contents.json';
+
+    getMetaData() {
+        return this.http.get<any>(this._metaUrl, {headers:{skip:"true"}})
+    }
 
     _loginUrl = this._baseUrl + 'checkLogin';
     _registerUrl = this._baseUrl + 'createAccount';

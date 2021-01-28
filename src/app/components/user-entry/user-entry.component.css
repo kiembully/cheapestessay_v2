@@ -1,6 +1,10 @@
-.mtr-user-entry {
-    padding: 82px 82px 45px 82px;
+.mt-user-entry {
     position: relative;
+}
+.mtr-user-entry {
+    padding: 82px 15px 45px 15px;
+    max-width: 400px;
+    margin: 0 auto;
 }
 .mtg-user-entry {
     width: 100%;

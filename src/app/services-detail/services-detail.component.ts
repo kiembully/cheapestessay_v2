@@ -37,6 +37,15 @@ export class ServicesDetailComponent implements OnInit {
     let id = this.route.snapshot.paramMap.get('id');
     this.service_id = id;
     this.setSelectedService(this.service_id);
+    // this.displayServiceContent(id);
+  }
+
+  displayServiceContent(id) {
+    this._auth.getMetaData().subscribe(
+      res => {
+        // console.log(JSON.parse(res));
+      }
+    )
   }
 
   initial_content:any;
@@ -46,7 +55,7 @@ export class ServicesDetailComponent implements OnInit {
   main_header:any;
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       this.service_name = res.data.name;
       this.initial_content = res.data.initial_content;
       this.initial_pitch_header = res.data.initial_pitch_header;

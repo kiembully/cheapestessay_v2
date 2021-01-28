@@ -45,7 +45,7 @@ export class AppComponent {
     let path = this.new_user_functions.getCurrentPath();
     let routes = this.routerWithFooter;
     let state = false;
-    state = (routes.indexOf(path) > -1) ? true : false;
+    state = (routes.indexOf(path) > -1 || path.toString().includes('services')) ? true : false;
     return state;
   }
 }

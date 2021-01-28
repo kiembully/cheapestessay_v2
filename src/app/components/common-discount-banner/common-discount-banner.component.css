@@ -29,6 +29,7 @@
     margin-bottom: 40px;
     display: flex;
     width: 100%;
+    position: relative;
 }
 .new-user-inner-wrap {
     display: flex;

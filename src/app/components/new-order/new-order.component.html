@@ -8,7 +8,7 @@
                     <section class="sec-order-wrap sec-edit-header" *ngIf="isEditing == true">
                         <h1>Edit Order</h1>
                     </section>
-                    <section class="sec-order-wrap sec-service-type">
+                    <section class="sec-order-wrap sec-service-type" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Type of Service</p>
                         </span>
@@ -22,7 +22,7 @@
                             </mat-button-toggle-group>
                         </span>
                     </section>
-                    <section class="sec-order-wrap sec-writer-level">
+                    <section class="sec-order-wrap sec-writer-level" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Writer Level</p>
                         </span>
@@ -72,7 +72,7 @@
                             <input matInput class="inp-writers-choice" type="text" required placeholder="Specify the Type of Paper" required formControlName="other_paper" [value]="newOrderForm.value.other_paper">
                         </span>
                     </section>
-                    <section class="sec-order-wrap sec-subject">
+                    <section class="sec-order-wrap sec-subject" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Subject</p>
                         </span>
@@ -98,7 +98,7 @@
                         </span>
                     </section>
                     <!-- only appears when other options is selected -->
-                    <section class="sec-other-order-wrap" *ngIf="isOtherSubject">
+                    <section class="sec-other-order-wrap" *ngIf="isOtherSubject || newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Other Subject</p>
                         </span>
@@ -140,7 +140,7 @@
                             <label class="lbl-common-style" for="deadline">Order will be ready before {{deadlineFormat}}</label>
                         </span>
                     </section>
-                    <section class="sec-order-wrap sec-pages">
+                    <section class="sec-order-wrap sec-pages" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label" *ngIf="isPageDisabled && _session.isTokenExisting('user_token')">Slides</p>
                             <p class="p-order-label" *ngIf="!(isPageDisabled && _session.isTokenExisting('user_token'))">Pages</p>
@@ -185,7 +185,7 @@
                             <input matInput class="inp-writers-choice" type="text" formControlName="topic" required [value]="newOrderForm.value.topic" required>
                         </span>
                     </section>
-                    <section class="sec-order-wrap sec-details">
+                    <section class="sec-order-wrap sec-details" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Details</p>
                         </span>
@@ -224,7 +224,7 @@
                     </section>
         
                     <!-- lower portion is hidden when user is not logged in -->
-                    <mat-accordion class="ma-order-options" *ngIf="isUserActive">
+                    <mat-accordion class="ma-order-options" *ngIf="isUserActive || newOrderForm.value.paper != 127">
                         <mat-expansion-panel hideToggle>
                             <mat-expansion-panel-header>
                                 <mat-panel-title>

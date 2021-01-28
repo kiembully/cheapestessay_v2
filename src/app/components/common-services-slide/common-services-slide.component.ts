@@ -137,8 +137,10 @@ export class CommonServicesSlideComponent implements OnInit {
   messagePositionH: MatSnackBarHorizontalPosition = 'center';
   messagePositionV: MatSnackBarVerticalPosition = 'bottom';
   submitEmail() {
+    this.isProgressLoading = true;
     this._auth.getContactDetails(this.frmContact.value).subscribe(
       res => {
+        this.isProgressLoading = false;
         this._snackBar.open(res.message, 'OK', {
           duration: 3000,
           horizontalPosition: this.messagePositionH,

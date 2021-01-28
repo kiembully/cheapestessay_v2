@@ -190,7 +190,7 @@ export class CommonBannerCalculatorComponent implements OnInit {
   submitOrder() {
     this.frmCouponCode.patchValue({
       order_token: localStorage.getItem('set_order_token'),
-      coupon_code: 'NWSLTTR15%',
+      coupon_code: 'SIGNUP15',
       user_token: (!this._session.isTokenExisting('user_token') ? localStorage.getItem('user_token') : ''),
     })
     this.getCouponCode(this.frmCouponCode.value);

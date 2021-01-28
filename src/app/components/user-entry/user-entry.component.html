@@ -1,6 +1,6 @@
-<mat-toolbar>
+<mat-toolbar class="mt-user-entry">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
     <mat-toolbar-row class="mtr-user-entry">
-        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
         <mat-tab-group mat-align-tabs="center" class="mtg-user-entry">
             <mat-tab class="mt-user-option" label="Login">
                 
