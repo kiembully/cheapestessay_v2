@@ -1,10 +1,14 @@
 <section class="width1000 sec-order-nav">
     <span class="fill-space"></span>
     <span>
-        <mat-form-field appearance="fill" class="mfl-common-select">
-            <mat-select [formControl]="selected" [value]="selected.value" panelClass="mt-common-select">
+        <!-- <mat-form-field appearance="fill" class="mfl-common-select">
+            <mat-select [formControl]="selected" [value]="selected.value" panelClass="mt-common-select" (selectionChange)="applyFilter(selected.value)">
                 <mat-option *ngFor="let list of filter" [value]="list.value">{{list.viewValue}}</mat-option>
             </mat-select>
+        </mat-form-field> -->
+        <mat-form-field class="mff-order-filter">
+            <mat-label>Filter</mat-label>
+            <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Completed" #input>
         </mat-form-field>
     </span>
 </section>
@@ -16,7 +20,7 @@
         <button type="button" mat-flat-button routerLink="/order">Order Now</button>
     </div>
 
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders" *ngIf="!isEmpty">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders w-tbl-orders" *ngIf="!isEmpty">
         
         <ng-container matColumnDef="button">
             <th mat-header-cell *matHeaderCellDef></th>
@@ -76,6 +80,35 @@
 
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- mobile design -->
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-my-orders m-tbl-orders" *ngIf="!isEmpty">
+        
+        <ng-container matColumnDef="order_id">
+            <th mat-header-cell *matHeaderCellDef>Order Id</th>
+            <td mat-cell *matCellDef="let element">
+                <div class="m-cell-wrap">
+                    <span>
+                        <span class="m-spn-order-id">{{element.order_no_custom}}</span>
+                        <p class="m-p-date-added">{{element.date_added}}</p>
+                        <div class="m-timer-bg" [style.background-color]="getOrderStatusDisplay(element.order_status_description_id,element.payment_status)">
+                            {{setTimer(element.order_date, element.days, element.hours, element.minutes, element.seconds)}}
+                        </div>
+                    </span>
+                    <span class="fill-space"></span>
+                    <span class="spn-m-total">${{element.total}}</span>
+                    <span class="spn-m-view-order">
+                        <button type="button" [value]="element.order_id" (click)="selectOrderId(element.order_id)" mat-button class="btn-open">
+                            <span class="material-icons">keyboard_arrow_right</span>
+                        </button>
+                    </span>
+                </div>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsM"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumnsM;"></tr>
     </table>
     <mat-paginator [pageSizeOptions]="[10, 20]" showFirstLastButtons></mat-paginator>
 </section>

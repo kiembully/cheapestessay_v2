@@ -66,6 +66,7 @@
     border: 1px solid #000000;
     background-color: #ffffff;
     border-radius: 7px;
+    margin-top: 50px;
 }
 .panel-drop-style-service .mat-option {
     color: #000000 !important;
@@ -87,12 +88,11 @@
     letter-spacing: 0;
     line-height: 25px;
     padding: 0 13px 0 18px;
-    margin: 0 auto 23px auto;
+    margin: 0 auto;
     border: 1px solid #000000;
 }
 .mff-services .mat-form-field-infix {
     border-top: 0 !important;
-    padding: 0.6375em 0 !important;
 }
 .mff-services .mat-form-field-wrapper {
     padding-bottom: 0 !important;
@@ -143,6 +143,9 @@
 .mtr-what-we-do {
     display: block !important;
     margin-top: 60px;
+}
+.margin-bottom15 {
+    margin-bottom: 15px;
 }
 
 /* RESPONSIVE SECTION  */

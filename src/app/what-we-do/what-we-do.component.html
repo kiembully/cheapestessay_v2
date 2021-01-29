@@ -7,20 +7,21 @@
                 </span>
                 <span class="fill-space"></span>
                 <span class="spn-contain-services-form">
-                    <form [formGroup]="servicesForm" class="frm-services-form">
-                        <mat-form-field class="mff-services">
-                            <mat-select formControlName="paper" [value]="servicesForm.value.paper" panelClass="panel-drop-style-service">
-                                <mat-optgroup label="Most Popular">
+                    <form [formGroup]="newOrderForm" class="frm-services-form" (ngSubmit)="submitNewUser()">
+                        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+                        <mat-form-field class="mff-services margin-bottom15">
+                            <mat-select aria-label="choose paper" formControlName="paper" disableOptionCentering [value]="newOrderForm.value.paper" panelClass="panel-drop-style-service">
+                                <!-- <mat-optgroup label="Most Popular"> -->
                                     <mat-option *ngFor="let list of pPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
-                                </mat-optgroup>
-                                <mat-optgroup label="Others">
+                                <!-- </mat-optgroup> -->
+                                <!-- <mat-optgroup label="Others"> -->
                                     <mat-option *ngFor="let list of oPapers" [value]="list.paper_id">{{list.paper_name}}</mat-option>
-                                </mat-optgroup>
+                                <!-- </mat-optgroup> -->
                             </mat-select>
                             <span matSufix><div class="sprites-icons dd-icon"></div></span>
                         </mat-form-field>
                         <mat-form-field appearance="fill" class="mff-email">
-                            <input formControlName="email" type="email" matInput placeholder="Enter an email to signup" required  class="panel-services-email">
+                            <input type="email" matInput placeholder="Enter an email to signup" required class="panel-services-email" (input)="emailInput">
                         </mat-form-field>
                         <button type="submit" mat-flat-button class="btn-submit-services">GET ESSAY HELP</button>
                     </form>

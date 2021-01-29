@@ -6,7 +6,6 @@
 }
 .spn-new-order-wrap {
     width: 100%;
-    max-width: 700px;
 }
 .spn-new-order-output {
     align-self: start;
@@ -15,10 +14,9 @@
     width: 100%;
 }
 .new-order-wrap {
-    padding: 30px 51px 57px 51px;
+    padding: 30px 15px 57px 15px;
     height: 100%;
-    width: 100%;
-    max-width: 705px;
+    max-width: 760px;
     margin: 0 auto;
     border-radius: 18px;
     background-color: #F2F2F2;
@@ -52,8 +50,11 @@
     margin-top: 17px;
 }
 .sec-order-wrap {
+    width: 100%;
+    max-width: 700px;
     display: flex;
     margin-top: 30px;
+    margin: 30px auto 0 auto;
 }
 .sec-other-order-wrap {
     display: flex;
@@ -61,7 +62,8 @@
 }
 .spn-text-wrap,
 .spn-input-wrap {
-    width: 518px;
+    width:100%;
+    max-width: 518px;
 }
 .sec-details .spn-text-wrap,
 .sec-other-order-wrap .spn-input-wrap,
@@ -437,4 +439,15 @@ span.spn-price-color {
 .sec-file-pending .btn-remove-file {
     background-color: rgb(208, 85, 90);
     color: #ffffff;
+}
+
+/* RESPONSIVE STARTS */
+@media screen and (max-width:992px) {
+    .mtb-new-order,
+    .sec-order-wrap {
+        display: block;
+    }
+    .spn-text-wrap, .spn-input-wrap {
+        max-width: 100%;
+    }
 }

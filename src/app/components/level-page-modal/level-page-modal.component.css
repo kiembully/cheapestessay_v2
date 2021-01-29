@@ -80,3 +80,25 @@
     text-align: center;
     visibility: hidden;
 }
+
+@media screen and (max-width:768px) {
+    .mt-level-howitworks mat-toolbar-row {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .silver-wrap,
+    .gold-wrap,
+    .vip-wrap {
+        margin: 0 auto 0 auto;
+    }
+    .mt-level-howitworks {
+        padding: 40px 20px;
+    }
+    .level-description-outer {
+        height: auto;
+    }
+    .p-level-status {
+        margin: 10px auto 30px auto;
+    }
+}

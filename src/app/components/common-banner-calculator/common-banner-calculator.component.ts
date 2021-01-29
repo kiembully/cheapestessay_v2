@@ -146,7 +146,6 @@ export class CommonBannerCalculatorComponent implements OnInit {
 
   openFreeQuote() {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
-      height: '435px',
       width: '450px',
       backdropClass: 'common-dialog',
       panelClass: 'panel-dialog',

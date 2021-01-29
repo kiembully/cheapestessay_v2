@@ -92,3 +92,10 @@
     background-color: #D0555A;
     color: #FFFFFF;
 }
+
+@media screen and (max-width:768px) {
+  .sec-order-details,
+  .sec-order-details-nav {
+    display: block;
+  }
+}

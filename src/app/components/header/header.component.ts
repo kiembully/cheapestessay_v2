@@ -81,7 +81,7 @@ export class HeaderComponent implements OnInit {
   isHeaderVisible(path:string, user_status:number) {
     let state:boolean;
     if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details')) {
-      state = (user_status == 0) ? state = true : state = false;
+      state = (user_status == 0) ? true : false;
     } else {
       state = true;
     }
@@ -92,17 +92,28 @@ export class HeaderComponent implements OnInit {
   isProfileHeaderVisible(path:string, user_status:number) {
     let state:boolean;
     if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details')) {
-      state = (user_status == 0) ? state = false : state = true;
+      state = (user_status == 0) ? false : true;
     } else {
       state = false;
     }
     return state;
   }
 
+  @HostListener('window:resize', ['$event'])
+  isBtnTotalVisible(event?) {
+    let width = window.innerWidth;
+    let state = (this.current_path == 'order' && width <= 768) ? true : false;
+    return state;
+  }
+
+  getOrderTotal() {
+    let total = jwt_decode(localStorage.getItem('set_order_token')).totalPrice;
+    return total;
+  }
+
   openLogoutDialog() {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
       minHeight: '200px',
-      maxHeight:'349px',
       width: '550px',
       backdropClass: 'common-dialog',
       panelClass: 'panel-dialog',

@@ -29,7 +29,8 @@
     box-shadow: 2px 1px 10px 0 rgba(0,0,0,0.5);
 }
 .ma-faq-wrap mat-expansion-panel-header {
-    height: 60px;
+    min-height: 60px;
+    padding: 5px 0;
 }
 .ml-info-body,
 .ma-faq-wrap .p-faq-content {

@@ -103,3 +103,47 @@ p.p-video-label {
     text-overflow: ellipsis;
     padding-right: 15px;
 }
+
+/* mobile design  */
+.m-order-output {
+    display: none;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+}
+.m-order-output .btn-submit-order {
+    display: flex;
+    margin-top: 0;
+    padding: 20px;
+    height: auto;
+    text-align: left;
+}
+.m-order-output .coupon-link {
+    margin-bottom: 15px;
+}
+.m-spn-total {
+    display: none;
+    font-family: "SF Pro Text Bold";
+    font-size: 24px;
+    float: right;
+}
+.m-order-output .mat-button-wrapper {
+    width: 100%;
+}
+
+/* RESPONSIVE STARTS */
+@media screen and (max-width:992px) {
+    .m-order-output {
+        display: block;
+    }
+    .order-output-wrap {
+        display: none;
+    }
+    .m-spn-total {
+        display: inline;
+    }
+}
+@media screen and (max-width:768px) {
+    
+}

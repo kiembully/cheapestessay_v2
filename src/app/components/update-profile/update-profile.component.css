@@ -15,11 +15,12 @@
     letter-spacing: 0;
     line-height: 24px;
     text-align: center;
-    margin: 0 auto 82px auto;
+    margin: 0 auto 30px auto;
     display: block;
+    white-space: normal;
 }
-.margin-top81 {
-    margin-top: 81px;
+.margin-top40 {
+    margin-top: 40px;
 }
 .margin-bottom15 {
     margin-bottom: 15px;

@@ -69,6 +69,15 @@
     line-height: 14px;
     text-align: center;
 }
+.btn-total-price {
+    font-family: "SF Pro Text Semibold";
+    border-radius: 30px;
+    background-color: #13B675;
+    color: #FFFFFF;
+    font-size: 16px;
+    line-height: 19px;
+    padding: 13px 23px;
+}
 .btn-account-page {
     padding: 12px 22px;
     border: 1px solid #000000;
@@ -249,11 +258,23 @@ a.btn-more-menu {
 @media screen and (max-width:768px) {  
     .w-nav-hidden { display: none }
     .m-nav-hidden { display: block }
+    .spn-m-hidden { display: none }
 }
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
- 
+    .balance-wrap,
+    .spn-menu-separator {
+        display: none;
+    }
+    .mtr-subheader>span {
+        min-width: 0;
+        padding: 15px 5px;
+        flex: 1 1 auto;
+    }
+    .btn-brand-2 {
+        padding: 16px;
+    }
 }
  
 /* Extra large devices (large desktops, 1200px and up) */

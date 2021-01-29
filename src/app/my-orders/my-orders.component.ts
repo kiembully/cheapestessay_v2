@@ -44,6 +44,7 @@ export class MyOrdersComponent implements OnInit {
     private metaTagService: Meta
     ) { }
 
+    
   setTimer(order_date: string, days: number, hours: number, minutes: number, seconds: number) {
       let timestamp = this._timer.getDeadline(
         order_date,
@@ -84,6 +85,7 @@ export class MyOrdersComponent implements OnInit {
   selected = new FormControl(7);
 
   displayedColumns:string[] = ['button','order_id','date_added','total','pages','topic','order_status','deadline','action','open'];
+  displayedColumnsM:string[] = ['order_id'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
   ngAfterViewInit() {
@@ -112,6 +114,11 @@ export class MyOrdersComponent implements OnInit {
 
   selectOrderId(id) {
     this.router.navigate(['/my-orders/order-details', id])
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }

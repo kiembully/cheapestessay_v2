@@ -22,6 +22,7 @@
     text-align: center;
     display: block;
     margin: 0 auto 83px auto;
+    white-space: normal;
 }
 .sec-level p a {
     text-decoration: underline;
@@ -142,4 +143,19 @@
     margin: 0 auto;
     background-size: 963px 592px;
     background-position: -293px -117px;
+}
+
+@media screen and (max-width:768px) {
+    .sec-level mat-toolbar-row {
+        display: block;
+    }
+    .sec-level p.p-description {
+        margin: 0 auto 33px auto
+    }
+    .level-badge-wrap {
+        margin: 0 auto 15px auto
+    }
+    .p-badge-label {
+        margin: 0 auto;
+    }
 }

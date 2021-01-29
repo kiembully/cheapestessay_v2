@@ -104,3 +104,12 @@
 .add-color-black {
     color: #000000;
 }
+
+@media screen and (max-width:576px) {
+    .sec-order-details-upper, .sec-order-details-lower {
+        display: grid;
+    }
+    .spn-split-half {
+        max-width: 100%;
+    }
+}

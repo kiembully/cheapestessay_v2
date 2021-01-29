@@ -151,3 +151,9 @@ p.p-order-details-common {
 .rate-writer-wrap button .material-icons {
     color: #FFD500
 }
+
+@media screen and (max-width:768px) {
+    .mt-order-details-status {
+        padding: 0 15px;
+    }
+}

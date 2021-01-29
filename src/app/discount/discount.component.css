@@ -2,6 +2,9 @@
     margin-bottom: 180px;
     margin-top: 76px;
 }
+.sec-discount-wrap mat-toolbar-row {
+    white-space: normal;
+}
 .sec-discount-wrap h1 {
     color: #000000;
     font-family: "SF Pro Text Bold";

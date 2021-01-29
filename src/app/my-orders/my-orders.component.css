@@ -1,5 +1,4 @@
-.sec-order-nav,
-.sec-orders {
+.sec-order-nav {
     margin-top: 22px;
 }
 .sec-order-nav {
@@ -10,7 +9,7 @@ table.tbl-my-orders.mat-table {
   min-height: 507px !important;
 }
 .tbl-my-orders tr.mat-row {
-    vertical-align: top;
+    vertical-align: middle;
 }
 .sec-orders {
     margin-bottom: 180px;
@@ -22,9 +21,6 @@ table.tbl-my-orders.mat-table {
 }
 .tbl-my-orders tr.mat-header-row {
     height: 67px;
-}
-.tbl-my-orders tr.mat-row, .tbl-my-orders tr.mat-footer-row {
-    height: 44px;
 }
 .tbl-my-orders th.mat-header-cell, .tbl-my-orders td.mat-cell, .tbl-my-orders td.mat-footer-cell {
     border-bottom-width: 0;
@@ -101,7 +97,6 @@ table.tbl-my-orders.mat-table {
 }
 .spn-order-status {
     padding: 4px 20px;
-    width: 100%;
     max-width: 140px;
     display: block;
     background-color: #D0555A;
@@ -199,4 +194,102 @@ table.tbl-my-orders.mat-table {
     font-size: 20px;
     letter-spacing: 0;
     line-height: 24px;
+}
+.m-cell-wrap {
+    display: flex;
+    border-radius: 7px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,0.1);
+    padding: 13px 5px 13px 21px
+}
+.m-cell-wrap > span:first-child {
+    text-align: left;
+}
+.spn-m-total {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+    align-self: center;
+}
+.spn-m-view-order {
+    align-self: center;
+}
+.m-spn-order-id {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+}
+.m-p-date-added {
+    opacity: 0.7;
+    color: #959595;
+    font-family: "SF Pro Text Regular";
+    font-size: 12px;
+    letter-spacing: 0;
+    line-height: 14px;
+}
+.m-timer-bg {
+    color: #FFFFFF;
+    font-family: "SF Pro Text Regular";
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 13px;
+    padding: 3px 13px;
+    border-radius: 10px;
+}
+.m-tbl-orders {
+    display: none;
+}
+.spn-m-view-order .btn-open {
+    background-color: transparent !important;
+    color: #959595 !important;
+}
+.mff-order-filter {
+    width: 100%;
+}
+.mff-order-filter .mat-input-element{
+  color: #000000;
+  font-family: "SF Pro Text Regular";
+  font-size: 14px;
+  letter-spacing: 0;
+  line-height: 16px;
+}
+.mff-order-filter .mat-form-field-flex {
+    border: 2px solid #12245A;
+    padding-left: 15px;
+}
+.mff-order-filter .mat-form-field-appearance-legacy .mat-form-field-underline {
+    height: 2px;
+}
+.mff-order-filter .mat-form-field-infix {
+    padding: 5px 0 20px 0 !important
+}
+
+@media screen and (max-width:992px) {
+    .sec-order-nav,
+    .sec-orders {
+        display: block;
+    }
+    .mfl-common-select {
+        width: auto;
+    }
+    .sec-order-nav {
+        padding: 20px;
+        width: auto;
+    }
+    .tbl-my-orders tr.mat-row {
+        height: 120px;
+    }
+    .m-tbl-orders {
+        display: table;
+    }
+    .w-tbl-orders {
+        display: none;
+    }
+    .tbl-my-orders tr.mat-header-row {
+        display: none;
+    }
 }

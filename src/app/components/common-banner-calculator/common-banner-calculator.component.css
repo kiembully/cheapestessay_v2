@@ -102,11 +102,14 @@
     letter-spacing: 0;
     margin: 0 auto;
     text-align: center;
-    display: block;
+    white-space: normal;
+    width: 100%;
+    max-width: 315px;
+    display: flex;
 }
 .p-standard-price span {
     font-size: 30px;
-    margin-left: 26px;
+    flex: 1 1 auto;
 }
 .btn-order-sbmt {
     height: 65.8px;

@@ -47,7 +47,6 @@ export class loggedin_session {
 
     openLoginDialog() {
       const dialogRef = this.dialog.open(CommonDialogComponent, {
-        height: '550px',
         width: '600px',
         backdropClass: 'common-dialog',
         panelClass: 'panel-dialog',
@@ -89,9 +88,6 @@ export class DialogTriggers {
 
   openUploadDialog(id) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
-        minHeight: '216px',
-        maxHeight:'413px',
-        height:'100%',
         width: '600px',
         backdropClass: 'common-dialog',
         panelClass: 'panel-dialog',
@@ -113,7 +109,7 @@ export class DialogTriggers {
 
   openPayDialog(order_id) {
     const dialogRef = this.dialog.open(CommonDialogComponent, {
-        maxHeight:'800px',
+        maxHeight:'95vh',
         width: '600px',
         backdropClass: 'common-dialog',
         panelClass: 'panel-dialog',

@@ -29,12 +29,15 @@ class="sec-default-header fixed-nav w-header"
                     <a class="btn-more-menu" href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a>
                 </mat-menu>
             </span>
-            <span class="spn-btn-wrap">
+            <span class="spn-btn-wrap" *ngIf="!isBtnTotalVisible()">
                 <button class="btn-order-page" mat-flat-button routerLink="order" (click)="closePanel()">Order Now</button>
             </span>
-            <span>
+            <span *ngIf="!isBtnTotalVisible()">
                 <button class="btn-account-page" mat-flat-button (click)="_session.openLoginDialog()" *ngIf="isUserOnline == 0">Login</button>
                 <button class="btn-account-page" mat-flat-button routerLink="active" routerLink="my-orders" *ngIf="isUserOnline == 1">My Account</button>
+            </span>
+            <span *ngIf="isBtnTotalVisible()">
+                <button class="btn-total-price" mat-flat-button>Total price: ${{getOrderTotal()}}</button>
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-contain-services" [style.border-top]="panelOpenState?'1px solid #cccccc':'none'">
@@ -98,14 +101,14 @@ class="sec-default-header fixed-nav w-header"
                             <span class="fill-space">${{headerForm.value.balance}}</span>
                         </div>
                     </span>
-                    <span>Name: {{headerForm.value.first_name}}</span>
-                    <span>Email: {{headerForm.value.email}}</span>
+                    <span class="spn-m-hidden">Name: {{headerForm.value.first_name}}</span>
+                    <span class="spn-m-hidden">Email: {{headerForm.value.email}}</span>
                     <span><button mat-flat-button type="button" color="accent" class="btn-logout" (click)="openLogoutDialog()">Logout</button></span>
                 </mat-toolbar-row>
             </mat-toolbar>
         </div>
     </section>
-    <section class="full-width common-bluish">
+    <section class="full-width common-bluish w-profile-header">
         <mat-divider class="profile-header-div"></mat-divider>
         <div class="default-width">
             <mat-toolbar color="accent">
@@ -116,7 +119,7 @@ class="sec-default-header fixed-nav w-header"
                         </button>
                         <p class="p-btn-label">New Order</p>
                     </span>
-                    <span class="fill-space"></span>
+                    <span class="fill-space spn-menu-separator"></span>
                     <span routerLink="my-orders" routerLinkActive="active">
                         <button class="btn-subheader" type="button" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png" alt="Orders" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png">

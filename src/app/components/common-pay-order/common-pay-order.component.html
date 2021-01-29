@@ -1,5 +1,5 @@
 <mat-toolbar class="mt-det-outer">
-    <mat-toolbar-row class="mtr-det-wrap">
+    <mat-toolbar-row class="mtr-det-wrap mtr-m-block">
         <span>
             <p class="p-bal-label">Your balance</p>
             <p class="p-balance">${{displayBalance}}</p>
@@ -12,7 +12,7 @@
             </form>
         </span>
     </mat-toolbar-row>
-    <mat-toolbar-row class="mtr-det-wrap padding-ver5px" *ngIf="isCard">
+    <mat-toolbar-row class="mtr-det-wrap mtr-m-block padding-ver5px" *ngIf="isCard">
         <span><p class="p-card-info">**** **** ***** {{getCardNumber()}}</p></span>
         <span [formGroup]="frmCard"><input type="number" formControlName="cvv" [value]="frmCard.value.cvv" class="inp-cvv-info" placeholder="CVV"></span>
         <span class="fill-space"></span>

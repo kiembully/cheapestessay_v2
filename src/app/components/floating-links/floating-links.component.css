@@ -79,3 +79,9 @@
 .violet-link {
     color: #B13092 !important;
 }
+
+@media screen and (max-width:768px) {
+    .floating-links-wrap {
+        display: none;
+    }
+}

@@ -5,8 +5,7 @@
     padding-top: 200px
 }
 .mtr-free-quote > span:first-child {
-    top: 0;
-    position: absolute;
+    align-self: flex-start;
 }
 .spn-contain-fq-banner h1 {
     color: #000000;
@@ -33,5 +32,12 @@
 /* RESPONSIVE SECTION  */
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
-    
+    .mtr-free-quote {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center
+    }
+    .sec-web-rating {
+        padding-top: 0;
+    }
 }

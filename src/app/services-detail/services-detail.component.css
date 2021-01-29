@@ -50,3 +50,12 @@
 .mtr-services-contents span > p {
     display: none;
 }
+
+@media screen and (max-width:992px) {
+    .mtr-services {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center
+    }
+
+}

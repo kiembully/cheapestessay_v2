@@ -1,7 +1,9 @@
 .pay-order-wrap {
     display: block;
-    padding: 57px 80px;
+    padding: 30px 15px;
     position: relative;
+    max-width: 450px;
+    margin: 0 auto;
 }
 .mtb-pay-order {
     width: 100%;
@@ -44,8 +46,17 @@
     text-align: center;
     display: block;
 }
+.mrb-agreement label {
+    white-space: normal;
+}
 .mrb-agreement a {
     line-height: 20px;
     padding: 0 2px;
     color: #3B7CFF;
+}
+
+@media screen and (max-width:768px) {
+    .mtr-file-container {
+        display: block;
+    }
 }

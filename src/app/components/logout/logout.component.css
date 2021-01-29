@@ -12,6 +12,7 @@
     line-height: 40px;
     margin: 0 auto 62px auto;
     text-align: center;
+    white-space: normal;
 }
 .btn-logout-wrap {
     width:100%;

@@ -98,7 +98,7 @@
                         </span>
                     </section>
                     <!-- only appears when other options is selected -->
-                    <section class="sec-other-order-wrap" *ngIf="isOtherSubject || newOrderForm.value.paper != 127">
+                    <section class="sec-other-order-wrap" *ngIf="isOtherSubject && newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Other Subject</p>
                         </span>
@@ -224,7 +224,7 @@
                     </section>
         
                     <!-- lower portion is hidden when user is not logged in -->
-                    <mat-accordion class="ma-order-options" *ngIf="isUserActive || newOrderForm.value.paper != 127">
+                    <mat-accordion class="ma-order-options" *ngIf="isUserActive && newOrderForm.value.paper != 127">
                         <mat-expansion-panel hideToggle>
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
@@ -393,7 +393,7 @@
                     </mat-accordion>
                 </div>
             </span>
-            <span class="fill-space"></span>
+            <span class="fill-space" style="padding:5px"></span>
             <span class="spn-new-order-output">
                 <app-new-order-output
                     (openCouponDialog)="openCouponDialog()"
