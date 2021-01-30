@@ -1,13 +1,15 @@
 .sec-order-details,
 .sec-order-details-nav {
-    margin-top: 22px;
     display: flex;
+    max-width: 1000px;
+    margin: 22px auto 0 auto;
 }
 .sec-order-details {
     margin-bottom: 180px;
     border-radius: 5px;
     overflow: hidden; 
     position: relative;
+    min-height: 100vh;
 }
 .spn-order-details-status {
     width: 250px;
@@ -92,10 +94,23 @@
     background-color: #D0555A;
     color: #FFFFFF;
 }
+.sec-order-actions {
+  display: none;
+  text-align: center;
+}
 
 @media screen and (max-width:768px) {
   .sec-order-details,
   .sec-order-details-nav {
+    display: block;
+  }
+  .sec-order-details-nav {
+    padding: 0 15px;
+  }
+  .sec-order-details-wrap .mat-tab-label:last-child {
+    display: none;
+  }
+  .sec-order-actions {
     display: block;
   }
 }

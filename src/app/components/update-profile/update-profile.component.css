@@ -2,8 +2,10 @@
     width: 100%;
 }
 .frm-update-profile {
-    padding: 70px 66px 70px 66px;
+    padding: 70px 15px 70px 15px;
     position: relative;
+    max-width: 470px;
+    margin: 0 auto;
 }
 .add-block {
     display: block;

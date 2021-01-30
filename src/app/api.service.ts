@@ -240,7 +240,13 @@ export class ApiServices {
     // ORDER PAYMENT APIS
     _getCardDetailsUrl = this._baseUrl + 'getCardDetails'
     getCardDetails(form) {
-        return this.http.post<any>(this._getCardDetailsUrl, form)
+        return this.http.post<any>(this._getCardDetailsUrl, form).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
     }
     _reedemAmountUrl = this._baseUrl + 'reedemAmount'
     redeemAmout(form) {

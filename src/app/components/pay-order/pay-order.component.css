@@ -1,3 +1,19 @@
+.sec-payment-nav {
+    display: flex;
+    max-width: 450px;
+    margin: 22px auto;
+}
+.btn-back {
+    border-radius: 60px;
+    background-color: #FFFFFF;
+    padding: 5px 22px;
+    box-shadow: 0 2px 4px 0 rgb(64 85 196 / 14%);
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+}
 .pay-order-wrap {
     display: block;
     padding: 30px 15px;
@@ -7,6 +23,16 @@
 }
 .mtb-pay-order {
     width: 100%;
+}
+.mtb-pay-order .mat-tab-label:first-child {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/co-master-card.png') no-repeat center center;
+    background-size: 70px;
+    opacity: 1;
+}
+.mtb-pay-order .mat-tab-label:last-child {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/co-paypal.png') no-repeat center center;
+    background-size: 70px;
+    opacity: 1;
 }
 .mtb-pay-order .mat-tab-label {
     width: 100%;
@@ -48,6 +74,7 @@
 }
 .mrb-agreement label {
     white-space: normal;
+    display: block;
 }
 .mrb-agreement a {
     line-height: 20px;
@@ -58,5 +85,11 @@
 @media screen and (max-width:768px) {
     .mtr-file-container {
         display: block;
+    }
+    .sec-payment-nav {
+      display: block;
+    }
+    .sec-payment-nav {
+      padding: 0 15px;
     }
 }

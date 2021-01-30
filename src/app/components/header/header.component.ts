@@ -80,7 +80,7 @@ export class HeaderComponent implements OnInit {
 
   isHeaderVisible(path:string, user_status:number) {
     let state:boolean;
-    if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details')) {
+    if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details') || (this.new_user_functions.getCurrentPath().includes('checkout') == true)) {
       state = (user_status == 0) ? true : false;
     } else {
       state = true;
@@ -91,7 +91,7 @@ export class HeaderComponent implements OnInit {
   // check which header is visible
   isProfileHeaderVisible(path:string, user_status:number) {
     let state:boolean;
-    if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details')) {
+    if ((path == 'order') || (this.new_user_functions.getCurrentPath().includes('my-orders') == true) || (this.new_user_functions.getCurrentPath().includes('edit-order') == true) || (path == 'profile') || (path == 'balance') || (path == 'discount') || path == 'level' || (path == 'order-details') || (this.new_user_functions.getCurrentPath().includes('checkout') == true)) {
       state = (user_status == 0) ? false : true;
     } else {
       state = false;

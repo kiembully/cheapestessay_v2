@@ -53,7 +53,7 @@ export class MyOrdersComponent implements OnInit {
         minutes,
         seconds
       )
-      return this._timer.displayDeadline(timestamp);
+      return this._timer.displayDeadline(timestamp)
   }
 
   ngOnInit(): void {
@@ -66,6 +66,7 @@ export class MyOrdersComponent implements OnInit {
     );
     
     this.displayMyOrders();
+    setInterval( ()=>{},1000);
   }
 
   ngOnDestroy() {

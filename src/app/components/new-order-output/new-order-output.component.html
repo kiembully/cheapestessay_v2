@@ -96,7 +96,7 @@
     <a class="coupon-link" (click)="openCouponDialog.emit()" mat-flat-button>{{getCouponState()}}</a>
     <button *ngIf="!_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="saveOrder()">
         Save & Order
-        <span class="m-spn-total">${{total_price}</span>
+        <span class="m-spn-total">${{total_price}}</span>
     </button>
     <button *ngIf="_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="_session.openLoginDialog()">
         Save & Order

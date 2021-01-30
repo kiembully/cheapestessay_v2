@@ -239,6 +239,7 @@ table.tbl-my-orders.mat-table {
     line-height: 13px;
     padding: 3px 13px;
     border-radius: 10px;
+    text-align: center;
 }
 .m-tbl-orders {
     display: none;

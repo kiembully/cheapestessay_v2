@@ -2,7 +2,7 @@ import { Component, OnInit, ViewEncapsulation, Input, ViewChild, Output, EventEm
 import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import { CommonPayOrderComponent } from '../common-pay-order/common-pay-order.component'
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { MatTabChangeEvent } from '@angular/material/tabs';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
@@ -31,7 +31,7 @@ export class PayOrderComponent implements OnInit {
   @ViewChild('paymentTabs') paymentTabs;
   @Output() selectedTabChange: EventEmitter<MatTabChangeEvent>
 
-  constructor(private _auth: ApiServices, private router: Router, private _cdr: ChangeDetectorRef) { }
+  constructor(private _auth: ApiServices, private router: Router, private _cdr: ChangeDetectorRef, public route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getCardDetails();
@@ -70,6 +70,10 @@ export class PayOrderComponent implements OnInit {
     let payment_mode = '';
     payment_mode = (id == 0) ? 'Card' : 'PayPal';
     return payment_mode;
+  }
+
+  backToDetails(id) {
+    this.router.navigate(['/my-orders/order-details', id]);
   }
 
 }

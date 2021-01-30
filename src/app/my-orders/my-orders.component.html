@@ -7,7 +7,7 @@
             </mat-select>
         </mat-form-field> -->
         <mat-form-field class="mff-order-filter">
-            <mat-label>Filter</mat-label>
+            <mat-label>Search...</mat-label>
             <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Completed" #input>
         </mat-form-field>
     </span>
@@ -93,7 +93,8 @@
                         <span class="m-spn-order-id">{{element.order_no_custom}}</span>
                         <p class="m-p-date-added">{{element.date_added}}</p>
                         <div class="m-timer-bg" [style.background-color]="getOrderStatusDisplay(element.order_status_description_id,element.payment_status)">
-                            {{setTimer(element.order_date, element.days, element.hours, element.minutes, element.seconds)}}
+                            <span *ngIf="!timer_status">{{element.status_name}}</span>
+                            <span *ngIf="timer_status">{{setTimer(element.order_date, element.days, element.hours, element.minutes, element.seconds)}}</span>
                         </div>
                     </span>
                     <span class="fill-space"></span>

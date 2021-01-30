@@ -1,15 +1,14 @@
-<section class="sec-order-details-nav width1000">
+<section class="sec-order-details-nav">
     <span class="fill-space"></span>
     <span><button class="btn-back" routerLink="/my-orders" mat-button>Back</button></span>
 </section>
-<section class="sec-order-details width1000">
+<section class="sec-order-details">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
     <span class="spn-order-details-status">
-        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
         <app-common-order-details-status *ngIf="!isProgressLoading" [order_details]="order_details"></app-common-order-details-status>
     </span>
     <span class="fill-space "></span>
     <span class="spn-order-details-wrap">
-        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
         <section class="sec-order-details-wrap" *ngIf="!isProgressLoading">
             <mat-tab-group class="mtb-order-details" animationDuration="100ms">
                 <mat-tab *ngIf="!(order_status == 1)" label="Paper"><app-common-order-details-paper></app-common-order-details-paper></mat-tab>
@@ -24,6 +23,10 @@
                     </ng-template>
                 </mat-tab>
             </mat-tab-group>
+        </section>
+        <section class="sec-order-actions" *ngIf="!isProgressLoading">
+            <button mat-flat-button class="btn-order-option" type="button" (click)="editOrder()">Edit</button>
+            <button mat-flat-button class="btn-order-option" type="button" (click)="_dialogTrigger.openDeleteDialog(order_id)">Delete</button>
         </section>
     </span>
 </section>

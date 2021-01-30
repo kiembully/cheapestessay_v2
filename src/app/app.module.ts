@@ -82,6 +82,7 @@ import { ServiceLevelComponent } from './order-components/service-level/service-
 import { ContactInformationComponent } from './order-components/contact-information/contact-information.component';
 import { RateWriterComponent } from './components/rate-writer/rate-writer.component';
 import { CommonOverlappingCarouselComponent } from './components/common-overlapping-carousel/common-overlapping-carousel.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -156,6 +157,7 @@ import { CommonOverlappingCarouselComponent } from './components/common-overlapp
     ContactInformationComponent,
     RateWriterComponent,
     CommonOverlappingCarouselComponent,
+    CheckoutComponent,
   ],
   imports: [
     BrowserModule,

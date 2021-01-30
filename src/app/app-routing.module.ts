@@ -25,6 +25,7 @@ import { ServicesComponent } from './services/services.component';
 import { ServicesDetailComponent } from './services-detail/services-detail.component';
 import { EditOrderComponent } from './edit-order/edit-order.component';
 import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
+import { CheckoutComponent } from './checkout/checkout.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -51,6 +52,7 @@ const routes: Routes = [
   {path:'discount',component:DiscountComponent,canActivate:[AuthGuard]},
   {path:'level',component:LevelComponent,canActivate:[AuthGuard]},
   {path:'edit-order/:id',component:EditOrderComponent,canDeactivate:[PendingChangesGuard],canActivate:[AuthGuard]},
+  {path:'stripe-checkout/:id',component:CheckoutComponent,canActivate:[AuthGuard]},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
 ];
 

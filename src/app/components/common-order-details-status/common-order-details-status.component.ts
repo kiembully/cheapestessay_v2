@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { countdownTimer, DialogTriggers } from 'src/app/data/ui-services';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-common-order-details-status',
@@ -15,7 +15,7 @@ export class CommonOrderDetailsStatusComponent implements OnInit {
   timer: any;
   rate: any = [1,2,3,4,5]
   
-  constructor(public _timer: countdownTimer, public _trigger: DialogTriggers, public route: ActivatedRoute) { }
+  constructor(public _timer: countdownTimer, public _trigger: DialogTriggers, public route: ActivatedRoute,private router: Router,) { }
 
   ngOnInit(): void {
     this.timer = setInterval( () => {
@@ -68,6 +68,10 @@ export class CommonOrderDetailsStatusComponent implements OnInit {
     let star = '';
     star = (rate > index) ? 'star' : 'star_outline';
     return star;
+  }
+
+  payOrder(id) {
+    this.router.navigate(['/stripe-checkout', id]);
   }
 
   ngOnDestroy() {

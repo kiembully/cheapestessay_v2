@@ -44,8 +44,8 @@
                         </span>
                         <span class="spn-input-wrap">
                             <mat-form-field appearance="fill" class="mfl-common-select">
-                                <mat-select formControlName="paper" panelClass="mt-common-select" [value]="newOrderForm.value.paper">
-                                    <!-- <mat-option disabled><input class="mt-search-input" type="text" placeholder="Search"></mat-option> -->
+                                <mat-select aria-label="select paper" disableOptionCentering formControlName="paper" panelClass="mt-common-select" [value]="newOrderForm.value.paper">
+                                    <!-- <mat-option disabled><input class="mt-search-input" type="text" placeholder="Search" (keyup)="filterDropdown(pPaperTypes,$event)"></mat-option> -->
                                     <mat-optgroup label="Most Popular">
                                         <mat-option 
                                         *ngFor="let list of pPaperTypes"

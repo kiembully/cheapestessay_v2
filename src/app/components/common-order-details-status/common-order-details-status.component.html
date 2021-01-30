@@ -16,7 +16,10 @@
         </section>
         <section class="add-common-flex sec-order-details-btn">
             <button type="button" mat-flat-button class="margin-bottom18" [ngClass]="getPaymentStatusDisplay(order_details.status.order_status_flag)">{{order_details.status.order_status}}</button>
-            <button type="button" mat-flat-button class="btn-pay-order" (click)="_trigger.openPayDialog(route.snapshot.paramMap.get('id'))" [ngClass]="{'paid':isPaid()}">{{getBtnPaymentDisplay()}} 
+            <!-- <button type="button" mat-flat-button class="btn-pay-order" (click)="_trigger.openPayDialog(route.snapshot.paramMap.get('id'))" [ngClass]="{'paid':isPaid()}">{{getBtnPaymentDisplay()}} 
+                <span *ngIf="!(isPaid())" class="spn-tot-order">{{order_details.payment.total}}</span>
+            </button> -->
+            <button type="button" mat-flat-button class="btn-pay-order" (click)="payOrder(route.snapshot.paramMap.get('id'))" [ngClass]="{'paid':isPaid()}">{{getBtnPaymentDisplay()}} 
                 <span *ngIf="!(isPaid())" class="spn-tot-order">{{order_details.payment.total}}</span>
             </button>
         </section>

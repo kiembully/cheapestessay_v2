@@ -1,13 +1,14 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
+import { loggedin_session } from 'src/app/data/ui-services'
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-common-pay-order',
   templateUrl: './common-pay-order.component.html',
-  providers: [ApiServices],
+  providers: [ApiServices, loggedin_session],
   styleUrls: ['./common-pay-order.component.css']
 })
 export class CommonPayOrderComponent implements OnInit {
@@ -60,7 +61,9 @@ export class CommonPayOrderComponent implements OnInit {
   })
   
   constructor(
-    private _auth: ApiServices) { }
+    private _auth: ApiServices,
+    private _session: loggedin_session
+  ) { }
 
   decoded_card_info: any;
   ngOnInit(): void {
@@ -192,12 +195,13 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingStripeCard() {
     this._auth.payWithStripeCard(this.patchFrmCard()).subscribe(
       res => {
-        console.log(res);
+        if (!res.status) {
+          this._session.messageSnackbar(res.message, 'OK')
+        }
       }
     )
   }
   payUsingPaypal() {
-    
     this._auth.getPaypalReturn().subscribe(
       res => {
         console.log(res);

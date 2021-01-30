@@ -160,6 +160,7 @@ span:last-child {
     font-size: 14px;
     color: #000000;
     font-size: 16px;
+    outline: none;
 }
 .btn-edit-card {
     font-family: "SF Pro Text Regular";

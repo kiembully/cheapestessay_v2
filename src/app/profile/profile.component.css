@@ -1,8 +1,9 @@
 .sec-profile-nav,
 .sec-profile {
-    margin-top: 22px;
     display: flex;
     padding: 0 15px;
+    max-width: 1000px;
+    margin: 22px auto 0 auto;
 }
 .sec-profile {
     margin-bottom: 180px;
@@ -151,5 +152,6 @@
     .sec-profile-nav,
     .sec-profile {
         display: block;
+        width: auto;
     }
 }

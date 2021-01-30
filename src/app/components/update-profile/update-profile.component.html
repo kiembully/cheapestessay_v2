@@ -1,5 +1,6 @@
+<app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
 <form [formGroup]="nameForm" (ngSubmit)="updateFullName()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 0">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your Name</h1>
@@ -19,7 +20,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="nameHasError">{{errorMessageName}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
@@ -32,7 +33,7 @@
 </form>
 
 <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 1">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your Password</h1>
@@ -58,7 +59,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="pswdHasError">{{errorMessagePswd}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
@@ -71,7 +72,7 @@
 </form>
 
 <form [formGroup]="emailForm" ngNativeValidate (ngSubmit)="updateEmail()" class="frm-update-profile" *ngIf="form_id == 2">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your Email</h1>
@@ -91,7 +92,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="emailHasError">{{errorMessageEmail}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
@@ -104,7 +105,7 @@
 </form>
 
 <form [formGroup]="mobileForm" (ngSubmit)="updateMobile()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 3">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your Number</h1>
@@ -125,7 +126,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="mobHasError">{{errorMessageMob}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
@@ -138,7 +139,7 @@
 </form>
 
 <form [formGroup]="whatsAppForm" (ngSubmit)="updateWhatsApp()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 4">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your WhatsApp Number</h1>
@@ -152,7 +153,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="waHasError">{{errorMessageWa}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
@@ -165,7 +166,7 @@
 </form>
 
 <form [formGroup]="addressForm" (ngSubmit)="updateAddress()" ngNativeValidate class="frm-update-profile" *ngIf="form_id == 5">
-    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    
     <mat-toolbar color="primary">
         <mat-toolbar-row>
             <h1>Update Your Billing Address</h1>
@@ -204,7 +205,7 @@
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="addressHasError">{{errorMessageAddress}}</mat-error>
         </mat-toolbar-row>
-        <mat-toolbar-row class=".margin-top40">
+        <mat-toolbar-row class="margin-top40">
             <span class="spn-profile-action">
                 <button type="button" mat-flat-button mat-dialog-close class="btn-cancel-update">Cancel</button>
             </span>
