@@ -28,24 +28,13 @@ export class ServicesDetailComponent implements OnInit {
     });
   }
 
-  public service_id:any;
   ngOnInit(): void {
-    this.initializeService();
+    // this.initializeService();
   }
 
   initializeService() {
-    let id = this.route.snapshot.paramMap.get('id');
-    this.service_id = id;
-    this.setSelectedService(this.service_id);
-    // this.displayServiceContent(id);
-  }
-
-  displayServiceContent(id) {
-    this._auth.getMetaData().subscribe(
-      res => {
-        // console.log(JSON.parse(res));
-      }
-    )
+    this.setSelectedService(this.route.snapshot.paramMap.get('id'));
+    this.setSeo(this.route.snapshot.paramMap.get('id'))
   }
 
   initial_content:any;
@@ -53,18 +42,39 @@ export class ServicesDetailComponent implements OnInit {
   initial_pitch_header:any;
   initial_pitch_content:any;
   main_header:any;
+  sub_header:any;
+  sub_content:any;
+  sub_content_list:any;
+  row_total: any;
+  left_column:any = [];
+  right_column:any = [];
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
-      // console.log(res);
-      this.service_name = res.data.name;
-      this.initial_content = res.data.initial_content;
-      this.initial_pitch_header = res.data.initial_pitch_header;
-      this.initial_pitch_content = res.data.initial_pitch_content;
-      this.main_header = res.data.main_header;
+      console.log(res);
+      this.service_name = res.data.page_contents.name;
+      this.initial_content = res.data.page_contents.initial_content;
+      this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
+      this.initial_pitch_content = res.data.page_contents.initial_pitch_content;
+      this.main_header = res.data.page_contents.main_header;
+      this.sub_header = res.data.sub_contents[0].header;
+      this.sub_content = res.data.sub_contents[0].content;
+      this.sub_content_list = res.data.sub_contents;
 
+      this.row_total = res.data.sub_contents.length;
+      for (let i = 1; i < res.data.sub_contents.length; i++) {
+        if (i%2 != 0) {
+          this.left_column.push(res.data.sub_contents[i])
+        } else {
+          this.right_column.push(res.data.sub_contents[i])
+        }
+      }
+    })
+  }
+  setSeo(id){
+    this._auth.getSeo(id).subscribe(res=>{
       this.titleService.setTitle(res.data.title);
       this.metaTagService.updateTag(
-        { name: 'description', content: res.data.servicesdescription },
+        { name: 'description', content: res.data.description },
       );
       this.metaTagService.updateTag(
         { name: 'keywords', content: res.data.keywords },

@@ -116,6 +116,7 @@ mat-toolbar-row {
   white-space: normal;
   text-align: center;
   text-align: -webkit-center;
+  display: table;
 }
 .common-sub-header p {
   white-space: normal;

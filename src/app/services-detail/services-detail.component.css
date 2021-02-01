@@ -17,6 +17,9 @@
 .spn-contain-services-banner p {
     white-space: normal;
 }
+.spn-contain-services-banner p a.a-service-path {
+    font-family: "SF Pro Text Bold";
+}
 .spn-contain-services-banner p a {
     line-height: 31px;
     font-size: 17px;
@@ -35,6 +38,7 @@
 }
 .mtr-services-contents {
     display: block;
+    text-align: center
 }
 .mtr-services-contents span {
     line-height: 31px;
@@ -49,6 +53,44 @@
 }
 .mtr-services-contents span > p {
     display: none;
+}
+.mtr-sub-header h3 {   
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 33px;
+    letter-spacing: 0
+}
+.mtr-sub-header p {
+    color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 22px !important;
+    letter-spacing: 0;
+    line-height: 30px;
+}
+.mtr-sub-header {
+    display: block;
+    white-space: normal;
+    text-align: center;
+}
+.mtr-sub-contents {
+    align-items: start;
+}
+.sub-content-wrap {
+    display: block;
+    white-space: normal;
+}
+.spn-sub-content {
+    width: 50%;
+}
+.spn-separate-content {
+    padding: 5px;
+}
+.sub-content-wrap {
+    /* color: #000000;
+    font-family: "SF Pro Text Medium";
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0; */
 }
 
 @media screen and (max-width:992px) {

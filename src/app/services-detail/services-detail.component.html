@@ -4,7 +4,7 @@
             <div class="sprite-cheapest home-banner-img" style="bottom: 0"></div>
             <mat-toolbar-row class="mtr-services">
                 <span class="spn-contain-services-banner add-height">
-                    <p><a mat-button routerLink="/">Services</a> <span>/</span> <a mat-button >{{service_name}}</a></p>
+                    <p><a mat-button routerLink="/">Cheapest Essay</a> <span>/</span> <a class="a-service-path" mat-button >{{service_name}}</a></p>
                     <h1>{{initial_content}}</h1>
                 </span>
                 <span class="fill-space padding10"></span>
@@ -31,6 +31,25 @@
     <mat-toolbar color="primary">
         <mat-toolbar-row class="mtr-services-contents common-sub-header">
             <h2>{{main_header}}</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-sub-header">
+            <div [innerHtml]="sub_header"></div>
+            <div [innerHtml]="sub_content"></div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-sub-contents">
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap" *ngFor="let list of left_column">
+                    <span [innerHtml]="list.header"></span>
+                    <span [innerHtml]="list.content"></span>
+                </div>
+            </span>
+            <span class="fill-space spn-separate-content"></span>
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap" *ngFor="let list of right_column">
+                    <span [innerHtml]="list.header"></span>
+                    <span [innerHtml]="list.content"></span>
+                </div>
+            </span>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
