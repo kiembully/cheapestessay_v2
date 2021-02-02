@@ -27,7 +27,7 @@
 
 <app-common-overlapping-carousel></app-common-overlapping-carousel>
 
-<section class="default-width">
+<section class="width1120px">
     <mat-toolbar color="primary">
         <mat-toolbar-row class="mtr-services-contents common-sub-header">
             <h2>{{main_header}}</h2>
@@ -36,8 +36,8 @@
             <div [innerHtml]="sub_header"></div>
             <div [innerHtml]="sub_content"></div>
         </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-sub-contents">
-            <span class="spn-sub-content">
+        <mat-toolbar-row class="mtr-sub-contents" *ngFor="let number of row_filler; let i = index;">
+            <!-- <span class="spn-sub-content">
                 <div class="sub-content-wrap" *ngFor="let list of left_column">
                     <span [innerHtml]="list.header"></span>
                     <span [innerHtml]="list.content"></span>
@@ -48,6 +48,19 @@
                 <div class="sub-content-wrap" *ngFor="let list of right_column">
                     <span [innerHtml]="list.header"></span>
                     <span [innerHtml]="list.content"></span>
+                </div>
+            </span> -->
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sub_content_list[number+1+i].header"></span>
+                    <span [innerHtml]="sub_content_list[number+1+i].content"></span>
+                </div>
+            </span>
+            <span class="fill-space spn-separate-content"></span>
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sub_content_list[number+2+i].header"></span>
+                    <span [innerHtml]="sub_content_list[number+2+i].content"></span>
                 </div>
             </span>
         </mat-toolbar-row>

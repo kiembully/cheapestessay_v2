@@ -45,9 +45,10 @@ export class ServicesDetailComponent implements OnInit {
   sub_header:any;
   sub_content:any;
   sub_content_list:any;
-  row_total: any;
   left_column:any = [];
   right_column:any = [];
+  row_total: any;
+  row_filler:any = [];
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
       console.log(res);
@@ -60,7 +61,6 @@ export class ServicesDetailComponent implements OnInit {
       this.sub_content = res.data.sub_contents[0].content;
       this.sub_content_list = res.data.sub_contents;
 
-      this.row_total = res.data.sub_contents.length;
       for (let i = 1; i < res.data.sub_contents.length; i++) {
         if (i%2 != 0) {
           this.left_column.push(res.data.sub_contents[i])
@@ -68,6 +68,8 @@ export class ServicesDetailComponent implements OnInit {
           this.right_column.push(res.data.sub_contents[i])
         }
       }
+      this.row_total = Math.floor((res.data.sub_contents.length - 1) / 2);
+      this.row_filler = Array(this.row_total).fill(1).map((x,i)=>i)
     })
   }
   setSeo(id){
