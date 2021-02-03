@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { user_functions } from '../app/data/user-data';
 import { Title, Meta } from '@angular/platform-browser';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,8 @@ export class AppComponent {
 
   constructor(
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private router: Router
   ) { }
   
   ngOnInit() {
@@ -22,6 +24,13 @@ export class AppComponent {
       { name: 'description', content: "Looking for the cheapest essay writing service Hire qualified essay writers, who will do your 'write my paper' requests. Save up to 15% on your first order." },
       { name: 'robots', content: 'index, follow' },
     ]);
+
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+  });
   }
   
   new_user_functions = new user_functions;
@@ -48,4 +57,5 @@ export class AppComponent {
     state = (routes.indexOf(path) > -1 || path.toString().includes('services')) ? true : false;
     return state;
   }
+  
 }

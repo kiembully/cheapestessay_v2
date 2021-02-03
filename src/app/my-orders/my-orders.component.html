@@ -69,7 +69,7 @@
         <ng-container matColumnDef="action">
             <th mat-header-cell *matHeaderCellDef>Action</th>
             <td mat-cell *matCellDef="let element">
-                <button class="btn-action" mat-flat-button *ngIf="element.payment_status == 0" type="button" (click)="_dialogTrigger.openPayDialog(element.order_id)">Pay</button>
+                <button class="btn-action" mat-flat-button *ngIf="element.payment_status == 0" type="button" (click)="payOrder(element.order_id)">Pay</button>
                 <span class="spn-action" *ngIf="element.payment_status != 0">Paid</span>
             </td>
         </ng-container>

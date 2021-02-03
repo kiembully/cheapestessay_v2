@@ -1,0 +1,122 @@
+.mt-invoice {
+    margin: 100px auto;
+    padding: 0 15px;
+    max-width: 600px;
+}
+.mtr-header-invoice {
+    background-color: #cfd1d3;
+    padding: 20px;
+    text-align: center;
+}
+.header-invoice-wrap {
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/paypal_logo1.png') no-repeat;
+    background-position: center center;
+    background-size: 100%;
+    margin: 0 auto;
+    height: 54px;
+    width: 364px;
+    display: block;
+}
+.status-invoice-wrap{
+    margin-top: 20px;
+    background-color: #02a9e0;
+    padding: 10px;
+    text-align: center;
+    white-space: normal;
+    display: block;
+    border-right: solid 1px #02a9e0;
+    border-left: 1px solid #02a9e0;
+}
+.mi-icon-wrap {
+    margin: 0 auto;
+}
+.status-invoice-wrap .material-icons {
+    color: #ffffff;
+    font-size: 48px;
+}
+.status-headers {
+    font-size: 20px;
+    font-family: "SF Pro Text Bold";
+    color: #ffffff;
+}
+.mtr-summary-header{
+    display: block;
+    padding-top: 0;
+    border-right: solid 1px #02a9e0;
+    border-left: 1px solid #02a9e0;
+}
+.p-summary-header {
+    text-align: center;
+    margin: 20px auto;
+    font-size: 20px;
+    font-family: "SF Pro Text Bold";
+    color: #000000;
+}
+.inverted-triangle {
+    height: 28px;
+    width: 50px;
+    margin: -5px auto 0 auto;
+    background-color: #02a9e0;
+    clip-path: polygon(0 0, 50% 100%, 100% 0);
+}
+.mtr-order-summary {
+    display: block;
+    border-right: solid 1px #02a9e0;
+    border-left: 1px solid #02a9e0;
+}
+.sec-order-details {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+}
+.p-order-label,
+.p-order-value {
+    font-family: "SF Pro Text Medium";
+    line-height: 1.42857;
+    float: left;
+    padding: 8px;
+    margin: 0;
+    white-space: normal;
+}
+.sec-order-details:nth-last-of-type(-n+2) span p {
+    color: #004d91;
+    font-family: "SF Pro Text Bold";
+}
+.mtr-footer-invoice {
+    padding: 17px 0;
+    color: #fff;
+    background: #02a9e0;
+    border-right: solid 1px #02a9e0;
+    border-left: 1px solid #02a9e0;
+    display: block;
+    text-align: center;
+}
+.mtr-footer-invoice p {
+    white-space: normal;
+    font-size: 14px;
+    line-height: 1.6;
+    font-family: "SF Pro Text Regular";
+    text-align: center;
+}
+.mtr-footer-invoice a {
+    color: #2e5481;
+    text-decoration: none;
+}
+.mtr-footer-invoice button {
+    font-family: "SF Pro Text Semibold";
+    padding: 5px 40px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #ff8831;
+    border-radius: 2px;
+    background-color: #fff;
+}
+
+@media screen and (max-width:576px) {  
+    .sec-order-details {
+        display: block;
+    }
+    .sec-order-details span {
+        display: grid;
+        text-align: center;
+    }
+}

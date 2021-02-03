@@ -17,7 +17,7 @@ export class new_order_form_default {
         topic: new FormControl("Writer's Choice", [Validators.required]),
         add_detail: new FormControl('', [Validators.required]),
         timezone: new FormControl('America/Chicago'),
-        deadline: new FormControl(3),
+        deadline: new FormControl(19),
         duration: new FormControl('Days'),
         slide: new FormControl(0),
         chart: new FormControl(0),

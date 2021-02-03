@@ -83,6 +83,8 @@ import { ContactInformationComponent } from './order-components/contact-informat
 import { RateWriterComponent } from './components/rate-writer/rate-writer.component';
 import { CommonOverlappingCarouselComponent } from './components/common-overlapping-carousel/common-overlapping-carousel.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { InvoiceComponent } from './invoice/invoice.component';
+import { CardComponent } from './card/card.component';
 
 @NgModule({
   declarations: [
@@ -158,6 +160,8 @@ import { CheckoutComponent } from './checkout/checkout.component';
     RateWriterComponent,
     CommonOverlappingCarouselComponent,
     CheckoutComponent,
+    InvoiceComponent,
+    CardComponent,
   ],
   imports: [
     BrowserModule,

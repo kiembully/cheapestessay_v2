@@ -79,7 +79,7 @@
     display: flex;
 }
 .mtr-footer-socials p {
-    color: #255AF3;
+    color: #000000;
     font-family: "SF Pro Text Medium";
     font-size: 18px;
     font-weight: 500;
@@ -93,7 +93,7 @@
 }
 .social-links-separator,
 .social-links-wrap button {
-    color: #255AF3;
+    color: #000000;
     font-family: "SF Pro Text Medium";
     font-size: 18px;
     letter-spacing: 0;

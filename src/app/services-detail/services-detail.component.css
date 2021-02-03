@@ -94,6 +94,8 @@
     letter-spacing: 0;
 }
 .sub-content-wrap ul li,
+.sub-content-wrap ol li,
+.sub-content-wrap p,
 .sub-content-wrap {
     color: #000000 !important;
     font-family: "SF Pro Text Medium" !important;
@@ -101,6 +103,9 @@
     font-weight: 500 !important;
     letter-spacing: 0 !important;
     line-height: 30px !important;
+}
+.margin-top100 {
+    margin-top: 100px;
 }
 
 @media screen and (max-width:992px) {

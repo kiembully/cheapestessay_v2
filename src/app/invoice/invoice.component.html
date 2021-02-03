@@ -1,0 +1,26 @@
+<mat-toolbar class="mt-invoice">
+    <mat-toolbar-row class="mtr-header-invoice">
+        <div class="header-invoice-wrap"></div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="status-invoice-wrap">
+        <div class="mi-icon-wrap"><span class="material-icons">check_circle</span></div>
+        <h1 class="status-headers">Success</h1>
+        <h2 class="status-headers">Thank You For Your Order!</h2>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-summary-header">
+        <div class="inverted-triangle"></div>
+        <p class="p-summary-header">Order Summary</p>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-order-summary">
+        <section class="sec-order-details" *ngFor="let section of order_summary_sections">
+            <span><p class="p-order-label">{{section}}</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">asdasda</p></span>
+        </section>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-footer-invoice">
+        <p>We're looking forward in seeing you again.</p>
+        <p>For other inquiries, please check Cheapest Essay <a routerLink="/faqs">FAQS</a></p>
+        <button type="button" mat-flat-button routerLink="/">Home</button>
+    </mat-toolbar-row>
+</mat-toolbar>

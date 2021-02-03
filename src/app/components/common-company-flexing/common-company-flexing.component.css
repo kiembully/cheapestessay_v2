@@ -86,7 +86,9 @@
     .sec-company-flex mat-toolbar-row span,
     .sec-company-flex mat-toolbar-row {
         display: block;
-        text-align: -webkit-center
+        text-align: -webkit-center;
+        text-align: center;
+        margin: 0 auto 15px auto;
     }
     .sec-company-flex-bottom {
         margin-bottom: 0;

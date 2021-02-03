@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import { loggedin_session } from 'src/app/data/ui-services'
+import { Router, ActivatedRoute } from '@angular/router';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
@@ -62,7 +63,9 @@ export class CommonPayOrderComponent implements OnInit {
   
   constructor(
     private _auth: ApiServices,
-    private _session: loggedin_session
+    private _session: loggedin_session,
+    private router: Router,
+    public route: ActivatedRoute
   ) { }
 
   decoded_card_info: any;
@@ -86,6 +89,10 @@ export class CommonPayOrderComponent implements OnInit {
     let decoded_user_token = jwt_decode(localStorage.getItem('user_token'))
     let balance = !(decoded_user_token.account.total_balance) ? 0 : decoded_user_token.account.total_balance;
     return balance;
+  }
+
+  updateCard() {
+    this.router.navigate(['/update-card', this.order_id])
   }
 
   redeemAmount() {
@@ -189,12 +196,19 @@ export class CommonPayOrderComponent implements OnInit {
     this._auth.payUsingBalance(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
         console.log(res);
+        if (!res.status) {
+          this._session.messageSnackbar(res.message, 'OK')
+        } else {
+          localStorage.setItem('invoice', JSON.stringify(res.data))
+          this.router.navigate(['/invoice']);
+        }
       }
     )
   }
   payUsingStripeCard() {
     this._auth.payWithStripeCard(this.patchFrmCard()).subscribe(
       res => {
+        console.log(res);
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         }
@@ -205,6 +219,9 @@ export class CommonPayOrderComponent implements OnInit {
     this._auth.getPaypalReturn().subscribe(
       res => {
         console.log(res);
+        if (!res.status) {
+          this._session.messageSnackbar(res.message, 'OK')
+        }
       }
     )
   }

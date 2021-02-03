@@ -122,4 +122,8 @@ export class MyOrdersComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+  payOrder(id) {
+    this.router.navigate(['/stripe-checkout', id])
+  }
+
 }

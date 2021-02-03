@@ -270,6 +270,10 @@ export class ApiServices {
     payWithStripeCard(form) {
         return this.http.post<any>(this._payWithStripeCardUrl, form)
     }
+    _payWithPaypalUrl = this._baseUrl + 'payWithPayPal'
+    payWithPaypal(form) {
+        return this.http.post<any>(this._payWithBalanceUrl, form)
+    }
     _paypalreturnUrl = this._baseUrl + 'paypalreturn'
     getPaypalReturn() {
         return this.http.get<any>(this._paypalreturnUrl).pipe(

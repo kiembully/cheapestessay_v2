@@ -123,7 +123,7 @@ export class NewOrderComponent implements OnInit {
   }
   word_tot:any = 560;
   patchSpacing(val) {
-    this.word_tot = (val > 1) ? 280 : 560;
+    this.word_tot = (val > 1) ? 560 : 280;
   }
   isOtherFormatVisible: boolean = false;
   patchFormat(id) {

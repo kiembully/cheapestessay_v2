@@ -1,10 +1,11 @@
 .hiw-video-wrap {
-    height: 501px;
+    height: 401px;
     width: 100%;
+    max-width: 600px;
     border-radius: 23px;
     background-color: rgba(0, 0, 0, 0.85);
     overflow: hidden;
-    margin-bottom: 105px;
+    margin: 0 auto 105px auto;
 }
 .hiw-video-wrap iframe {
     height: 100%;

@@ -1,8 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation, Pipe, PipeTransform } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
-import { Router, Event, NavigationEnd } from '@angular/router';
-import { Title, Meta } from '@angular/platform-browser';
+import { Title, Meta, DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-services-detail',
@@ -11,25 +10,21 @@ import { Title, Meta } from '@angular/platform-browser';
   styleUrls: ['./services-detail.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
+
 export class ServicesDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
     private _auth: ApiServices,
-    private router: Router,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    public sanitized: DomSanitizer
   ) {
-    // detects changes thru dynamic router
-    this.router.events.subscribe((event: Event) => {
-      if (event instanceof NavigationEnd) {
-        this.initializeService();
-      }
-    });
   }
 
+  isInitializing: boolean = false;
   ngOnInit(): void {
-    // this.initializeService();
+    this.initializeService();
   }
 
   initializeService() {
@@ -51,7 +46,6 @@ export class ServicesDetailComponent implements OnInit {
   row_filler:any = [];
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
-      console.log(res);
       this.service_name = res.data.page_contents.name;
       this.initial_content = res.data.page_contents.initial_content;
       this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
@@ -70,6 +64,7 @@ export class ServicesDetailComponent implements OnInit {
       }
       this.row_total = Math.floor((res.data.sub_contents.length - 1) / 2);
       this.row_filler = Array(this.row_total).fill(1).map((x,i)=>i)
+      this.isInitializing = true;
     })
   }
   setSeo(id){
