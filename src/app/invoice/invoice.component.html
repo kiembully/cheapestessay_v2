@@ -12,10 +12,55 @@
         <p class="p-summary-header">Order Summary</p>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-order-summary">
-        <section class="sec-order-details" *ngFor="let section of order_summary_sections">
-            <span><p class="p-order-label">{{section}}</p></span>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Order ID</p></span>
             <span class="fill-space"></span>
-            <span><p class="p-order-value">asdasda</p></span>
+            <span><p class="p-order-value">{{invoice.order_data.order_id}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Type Of Service</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.service_id}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Academic Level</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.academic_id}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Page(S)</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.pages}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Slide(S)</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.slides}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Turnitin Plagiarism</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{translateValue(invoice.order_data.is_plagiarism_report)}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Deadline</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.deadline}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Fully Paid On</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">{{invoice.order_data.date_paid}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Subtotal</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">${{invoice.order_data.sub_total}}</p></span>
+        </section>
+        <section class="sec-order-details">
+            <span><p class="p-order-label">Total</p></span>
+            <span class="fill-space"></span>
+            <span><p class="p-order-value">${{invoice.order_data.total}}</p></span>
         </section>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-footer-invoice">

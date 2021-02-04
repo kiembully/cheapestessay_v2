@@ -1,4 +1,5 @@
 <mat-toolbar class="mt-det-outer">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
     <mat-toolbar-row class="mtr-det-wrap mtr-m-block">
         <span>
             <p class="p-bal-label">Your balance</p>
@@ -17,16 +18,20 @@
         <span [formGroup]="frmCard"><input type="number" formControlName="cvv" [value]="frmCard.value.cvv" class="inp-cvv-info" placeholder="CVV"></span>
         <span class="fill-space"></span>
         <span>
-            <button type="button" *ngIf="getCardNumber() !== 'N/A'" mat-flat-button class="btn-edit-card" routerLink="/update-card">Edit</button>
-            <button type="button" *ngIf="getCardNumber() === 'N/A'" mat-flat-button class="btn-edit-card" routerLink="/update-card">Add Card</button>
+            <button type="button" *ngIf="getCardNumber() !== 'N/A'" mat-flat-button class="btn-edit-card" (click)="updateCard()">Edit</button>
+            <button type="button" *ngIf="getCardNumber() === 'N/A'" mat-flat-button class="btn-edit-card" (click)="updateCard()">Add Card</button>
         </span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-det-wrap">
-        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
         <section class="sec-order-num">
             <span>Order Number</span>
             <span class="fill-space"></span>
             <span>{{order_id}}</span>
+        </section>
+        <section class="sec-order-date">
+            <span>Order Date</span>
+            <span class="fill-space"></span>
+            <span>{{order_date}}</span>
         </section>
         <section class="sec-order-dl">
             <span>Order Deadline</span>

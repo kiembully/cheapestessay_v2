@@ -51,7 +51,6 @@ export class PayOrderComponent implements OnInit {
     })
     this._auth.getCardDetails(this.formUser.value).subscribe(
       res => {
-        console.log(res);
         this.isProgressLoading = false;
         if (res.status) {
           this.card_details = jwt_decode(res.data.card_token);

@@ -272,7 +272,13 @@ export class ApiServices {
     }
     _payWithPaypalUrl = this._baseUrl + 'payWithPayPal'
     payWithPaypal(form) {
-        return this.http.post<any>(this._payWithBalanceUrl, form)
+        return this.http.post<any>(this._payWithPaypalUrl, form).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
     }
     _paypalreturnUrl = this._baseUrl + 'paypalreturn'
     getPaypalReturn() {

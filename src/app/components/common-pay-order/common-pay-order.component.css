@@ -1,5 +1,7 @@
 .mt-det-outer {
     width: 100%;
+    padding: 10px 15px;
+    position: relative;
 }
 .mtr-det-wrap:last-child {
     margin-bottom: 30px;
@@ -97,6 +99,7 @@
 .sec-subtotal span:first-child,
 .sec-redeem span:first-child,
 .sec-discount span:first-child,
+.sec-order-date span:first-child,
 .sec-order-dl span:first-child {
     color: #000000;
     font-family: "SF Pro Text Regular";
@@ -104,12 +107,16 @@
     letter-spacing: 0;
     line-height: 19px;
 }
+.sec-order-date span:last-child {
+    color: #3B7CFF !important;
+}
 .sec-order-dl span:last-child {
-    color: #3B7CFF;
+    color: #f44336 !important;
 }
 .sec-subtotal span:last-child,
 .sec-redeem span:last-child,
 .sec-discount span:last-child,
+.sec-order-date span:last-child,
 .sec-order-dl span:last-child {
     color: #000000;
     font-family: "SF Pro Text Regular";
@@ -135,8 +142,8 @@ span:last-child {
     line-height: 29px;
 }
 .sec-order-num { margin-bottom: 35px; }
-.sec-order-dl { margin-bottom:32px; }
-.sec-subtotal, .sec-subtotal, .sec-redeem { margin-bottom: 8px; }
+.sec-order-date { margin-bottom:32px; }
+.sec-subtotal, .sec-subtotal, .sec-redeem, .sec-order-dl { margin-bottom: 8px; }
 .sec-discount { margin-bottom: 35px;}
 
 .sec-redeem-button {

@@ -1,7 +1,20 @@
 <mat-toolbar class="default-width mt-card">
+    <mat-toolbar-row class="mtr-back-wrap">
+        <span class="fill-space"></span>
+        <span><button class="btn-back" type="button" mat-flat-button (click)="backToPayout(route.snapshot.paramMap.get('id'))">Back</button></span>
+    </mat-toolbar-row>
     <mat-toolbar-row class="mtr-card-header">
         <span><h1>Add Card</h1></span>
         <span class="fill-space"></span>
-        <span><mat-slide-toggle [(ngModel)]="isSaveCardChecked">Slide Toggle Checked: {{isSaveCardChecked}}</mat-slide-toggle></span>
+        <span><mat-slide-toggle [(ngModel)]="isSaveCardChecked"><span class="spn-mst-label">Save this card</span></mat-slide-toggle></span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-card-form">
+        <form >
+            <section class="sec-card-form">
+                <span></span>
+                <span class="fill-space"></span>
+                <span></span>
+            </section>
+        </form>
     </mat-toolbar-row>
 </mat-toolbar>

@@ -30,6 +30,7 @@ export class CommonPayOrderComponent implements OnInit {
   discount: any;
   total: any;
   coupon_code: any;
+  order_date:any;
 
   isRedeemed: boolean = false;
   isDiscounted: boolean = false;
@@ -52,13 +53,11 @@ export class CommonPayOrderComponent implements OnInit {
     order_id: new FormControl(),
     redeem_amt: new FormControl(),
     user_token: new FormControl(),
-    coupon_code: new FormControl()
   })
   frmPaypalAndBalance = new FormGroup({
     order_id: new FormControl(),
     redeem_amt: new FormControl(),
     user_token: new FormControl(),
-    coupon_code: new FormControl()
   })
   
   constructor(
@@ -99,13 +98,15 @@ export class CommonPayOrderComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.redeemAmout(this.patchFrmRedeem()).subscribe(
       res => {
-        console.log(res);
         this.isProgressLoading = false;
         if (res.status) {
           let decoded_redeem_token = jwt_decode(res.data.redeem_token)
           this.isRedeemed = (this.frmRedeem.value.redeem > 0) ? true : false;
           this.displayBalance = decoded_redeem_token.balance;
           this.total = (decoded_redeem_token.total)
+        } else {
+          this._session.messageSnackbar(res.message, 'OK');
+          this.frmRedeem.patchValue({redeem:0})
         }
       }
     )
@@ -128,13 +129,13 @@ export class CommonPayOrderComponent implements OnInit {
   displayPaymentDetails() {
     this._auth.displayOrder(this.patchFrmPayment()).subscribe(
       res => {
-        console.log(res);
         this.order_deadline = res.data.deadlinedate;
         this.subtotal = res.data.payment.sub_total;
         this.ltDiscount = res.data.payment.ltDisc;
         this.discount = res.data.payment.coupon_discount;
         this.coupon_code = res.data.payment.coupon_code;
         this.total = (res.data.payment.total).replace('$', '');
+        this.order_date = res.data.order_date;
 
         this.isDiscounted = (this.discount > 0) ? true : false;
       }
@@ -174,7 +175,6 @@ export class CommonPayOrderComponent implements OnInit {
       order_id: this.order_id,
       redeem_amt: this.frmRedeem.value.redeem,
       user_token: localStorage.getItem('user_token'),
-      coupon_code: ''
     })
     return this.frmPaypalAndBalance.value
   }
@@ -186,7 +186,6 @@ export class CommonPayOrderComponent implements OnInit {
       order_id: this.order_id,
       redeem_amt: this.frmRedeem.value.redeem,
       user_token: localStorage.getItem('user_token'),
-      coupon_code: this.coupon_code,
     })
     return this.frmCard.value;
   }
@@ -195,10 +194,10 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingBalance() {
     this._auth.payUsingBalance(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
-        console.log(res);
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
+          localStorage.removeItem('invoice');
           localStorage.setItem('invoice', JSON.stringify(res.data))
           this.router.navigate(['/invoice']);
         }
@@ -211,16 +210,22 @@ export class CommonPayOrderComponent implements OnInit {
         console.log(res);
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
+        } else {
+          localStorage.removeItem('invoice');
+          localStorage.setItem('invoice', JSON.stringify(res.data))
+          this.router.navigate(['/invoice']);
         }
       }
     )
   }
   payUsingPaypal() {
-    this._auth.getPaypalReturn().subscribe(
+    this._auth.payWithPaypal(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
         console.log(res);
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
+        } else {
+          window.location.href = res.data.url
         }
       }
     )

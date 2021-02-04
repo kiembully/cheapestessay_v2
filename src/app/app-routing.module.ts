@@ -28,6 +28,7 @@ import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { CardComponent } from './card/card.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -47,6 +48,7 @@ const routes: Routes = [
   {path:'what-we-do',component:WhatWeDoComponent},
   {path:'services',component:ServicesComponent},
   {path:'services/:id',component:ServicesDetailComponent},
+  {path:'404',component:PageNotFoundComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
   {path:'my-orders/order-details/:id',component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
@@ -55,8 +57,9 @@ const routes: Routes = [
   {path:'level',component:LevelComponent,canActivate:[AuthGuard]},
   {path:'edit-order/:id',component:EditOrderComponent,canDeactivate:[PendingChangesGuard],canActivate:[AuthGuard]},
   {path:'stripe-checkout/:id',component:CheckoutComponent,canActivate:[AuthGuard]},
-  {path:'update-card',component:CardComponent,canActivate:[AuthGuard]},
+  {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
   {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
+  {path: '**', redirectTo: '404'},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
 ];
 

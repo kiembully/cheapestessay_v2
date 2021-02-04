@@ -18,7 +18,7 @@
     display: block;
     padding: 30px 15px;
     position: relative;
-    max-width: 450px;
+    max-width: 480px;
     margin: 0 auto;
 }
 .mtb-pay-order {
@@ -45,10 +45,13 @@
 }
 .mtb-pay-order .mat-tab-nav-bar, .mtb-pay-order .mat-tab-header {
     border-bottom: 0;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .mtb-pay-order .mat-tab-header .mat-tab-labels {
     padding: 10px;
+}
+.mtb-pay-order .mat-ink-bar {
+    display: none;
 }
 .btn-pay-order {
     height: 45px;

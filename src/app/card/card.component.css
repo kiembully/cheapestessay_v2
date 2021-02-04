@@ -1,3 +1,46 @@
 .mt-card {
-    margin-top: 50px;
+    max-width: 600px;
+    width: 100%;
+}
+.mtr-back-wrap {
+    margin: 22px auto;
+}
+.btn-back {
+    border-radius: 60px;
+    background-color: #FFFFFF;
+    padding: 5px 22px;
+    box-shadow: 0 2px 4px 0 rgb(64 85 196 / 14%) !important;
+    color: #111111;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 19px;
+}
+.mtr-card-header h1 {
+    font-family: "SF Pro Text Bold";
+    color: #000000;
+    font-size: 36px;
+    line-height: 43px;
+}
+.mtr-card-header span:last-child {
+    color: #959595;
+    font-size: 14px;
+    font-family: "SF Pro Text Regular";
+    direction: rtl;
+}
+.spn-mst-label {
+    padding-right: 10px;
+}
+.mtr-card-header .mat-slide-toggle-bar {
+    position: relative;
+    width: 45px;
+    height: 26px;
+    flex-shrink: 0;
+    border-radius: 34px;
+}
+.mtr-card-header .mat-slide-toggle.mat-checked .mat-slide-toggle-thumb-container {
+    transform: translate3d(23px, 0, 0);
+}
+.mtr-card-header .mat-slide-toggle-thumb-container {
+    top: 2px
 }
