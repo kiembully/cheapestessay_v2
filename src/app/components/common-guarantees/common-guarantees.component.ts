@@ -22,9 +22,14 @@ export class CommonGuaranteesComponent implements OnInit {
     center:false,
     responsive:{
       0:{
-          items:2,
-          dots: true,
-          center:true,  
+        items:1,
+        dots: true,
+        center:true,  
+      },
+      576:{
+        items:2,
+        dots: true,
+        center:true,  
       },
       768:{
           items:3,

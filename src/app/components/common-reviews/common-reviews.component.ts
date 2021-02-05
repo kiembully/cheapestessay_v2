@@ -17,7 +17,7 @@ export class CommonReviewsComponent implements OnInit {
   clientReviews: OwlOptions = {
     loop: true,
     dots: false,
-    margin: 13,
+    margin: 20,
     nav: false,
     center:true,
     responsive:{

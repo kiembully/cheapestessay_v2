@@ -1,3 +1,9 @@
+.oco-services-link {
+    max-width: 1000px;
+}
+.services-item-outer {
+    padding: 10px;
+}
 .services-item-wrap {
     border-radius: 20px;
     background: linear-gradient(0deg, #294A93 0%, #12245A 100%);
@@ -21,13 +27,15 @@
     font-size: 36px;
     margin-right: 15px;
 }
-.services-item-wrap .mat-list-item {
+.services-item-wrap .mat-list-item a {
     color: #ffffff;
     font-family: "SF Pro Text Medium";
     font-size: 22px;
     font-weight: 500;
     letter-spacing: 0;
     line-height: 31px;
+    background: transparent;
+    padding: 0;
 }
 .services-item-wrap > div {
     content: '';
@@ -40,9 +48,6 @@
     margin: 0 auto;
 }
 .sec-services-slide-outer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 70px;
     overflow: hidden;
 }
@@ -119,16 +124,16 @@
     letter-spacing: 0;
     border-radius: 35px;
 }
-.services-item-wrap .owl-dots {
+.oco-services-link .owl-dots {
     margin-top: 20px !important;
 }
-.services-item-wrap .owl-theme .owl-dots .owl-dot {
+.oco-services-link .owl-theme .owl-dots .owl-dot {
     margin: 0 !important;
 }
-.services-item-wrap .owl-theme .owl-dots .owl-dot span {
+.oco-services-link .owl-theme .owl-dots .owl-dot span {
     margin: 0 2.5px !important;
 }
-.services-item-wrap .owl-theme .owl-dots .owl-dot.active span {
+.oco-services-link .owl-theme .owl-dots .owl-dot.active span {
     background: #1A62F5;
 }
 
@@ -146,6 +151,13 @@
     .contact-input-wrap input {
         width: 100%
     }
+    .services-item-wrap .mat-list-item a {
+        font-size: 16px;
+        font-family: "SF Pro Text Regular";
+    }
+    .services-item-wrap .material-icons {
+        display: none;   
+    }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
@@ -158,6 +170,9 @@
   }
   .mt-contact-me {
       border-radius: 0;
+  }
+  .services-item-wrap .mat-list-item a {
+      font-size: 18px;
   }
 }
  

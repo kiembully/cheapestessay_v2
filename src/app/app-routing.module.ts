@@ -47,7 +47,6 @@ const routes: Routes = [
   {path:'free-quote',component:FreeQuoteComponent},
   {path:'what-we-do',component:WhatWeDoComponent},
   {path:'services',component:ServicesComponent},
-  {path:'services/:id',component:ServicesDetailComponent},
   {path:'404',component:PageNotFoundComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
   {path:'my-orders/order-details/:id',component:OrderDetailsComponent,canActivate:[AuthGuard]},
@@ -59,6 +58,7 @@ const routes: Routes = [
   {path:'stripe-checkout/:id',component:CheckoutComponent,canActivate:[AuthGuard]},
   {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
   {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
+  {path:':id',component:ServicesDetailComponent},
   {path: '**', redirectTo: '404'},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
 ];

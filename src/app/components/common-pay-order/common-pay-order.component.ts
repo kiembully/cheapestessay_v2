@@ -151,6 +151,7 @@ export class CommonPayOrderComponent implements OnInit {
   }
 
   payOrder() {
+    this.isProgressLoading = true;
     // filter if agreement is checked 
     if (this.agreement) {
 
@@ -160,13 +161,14 @@ export class CommonPayOrderComponent implements OnInit {
       } else {
         // filter which payment is going to use (paypal or stripe/card)
         if (this.tabIndex == 0) {
-          this.payUsingStripeCard()
+          this.payUsingStripeCard();
         } else {
           this.payUsingPaypal();
         }
       }
     } else {
-      console.log(this.agreement)
+      this._session.messageSnackbar('Check agreement', 'OK');
+      this.isProgressLoading = false
     }
   }
 
@@ -194,6 +196,7 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingBalance() {
     this._auth.payUsingBalance(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
+        this.isProgressLoading = false
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
@@ -209,7 +212,7 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingStripeCard() {
     this._auth.payWithStripeCard(this.patchFrmCard()).subscribe(
       res => {
-        console.log(res);
+        this.isProgressLoading = false
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
@@ -225,7 +228,7 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingPaypal() {
     this._auth.payWithPaypal(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
-        console.log(res);
+        this.isProgressLoading = false;
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {

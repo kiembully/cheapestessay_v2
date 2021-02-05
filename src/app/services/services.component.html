@@ -1,12 +1,72 @@
 
-<!-- <section class="default-width">
-    <mat-toolbar color="primary" class="mt-services-contents">
-        <mat-toolbar-row class="mtr-services-contents">
-            <h2>Top Orders written by our professional writers</h2>
-            <p>Choose from our professional writers and find the right one for your project either it's essay, assignment, research paper etc. You will get the best essay help and writing help from our professional writing service using our live chat feature. You can message us 24/7 and get updates on your order. Our awesome support will gladly assist you anytime!</p>
+<div class="main-banner-background">
+    <section class="default-width">
+        <mat-toolbar color="primary" class="mt-services-contents">
+            <div class="sprite-cheapest home-banner-img" style="bottom: 0"></div>
+            <mat-toolbar-row class="mtr-services">
+                <span class="spn-contain-services-banner add-height">
+                    <h1 class="margin-top60">Affordable Essay Writing Service <br>For College Students</h1>
+                </span>
+                <span class="fill-space padding10"></span>
+                <span class="spn-contain-services-form">
+                    <app-common-banner-calculator [isHome]="true"></app-common-banner-calculator>
+                </span>
+            </mat-toolbar-row>
+        </mat-toolbar>
+        <!-- WEBSITE RATING -->
+        <section class="default-width">
+            <app-common-reviews></app-common-reviews>
+        </section>
+    </section>
+</div>
+
+<section class="default-width">
+    <mat-toolbar class="mt-services-content">
+        <mat-toolbar-row class="mtr-services-contents common-sub-header">
+            <h2>DO YOU NEED THE ONLINE ESSAY WRITING SERVICE?</h2>
+            <span>Using an essay writing help online is the simplest way to beat deadlines and score better. No matter the kind of essay or academic paper that you require for your unit, using this type of service ensures that you get to save time, meet your course obligations, and get a guaranteed pass. All without applying too much effort.</span>
         </mat-toolbar-row>
     </mat-toolbar>
-</section> -->
+</section>
+
+<app-common-overlapping-carousel></app-common-overlapping-carousel>
+<app-common-company-flexing></app-common-company-flexing>
+<!-- HOW IT WORKS SECTION -->
+<section class="default-width sec-home-hiw margin-top100">
+    <mat-toolbar class="mt-home-hiw">
+        <mat-toolbar-row class="common-sub-header"><h2>How it works</h2></mat-toolbar-row>
+    </mat-toolbar>
+</section>
+<app-common-how-it-works></app-common-how-it-works>
+<app-common-writer-flexing></app-common-writer-flexing>
+<app-common-client-reviews></app-common-client-reviews>
+
+<section class="width1120px" *ngIf="isInitializing">
+    <mat-toolbar color="primary">
+        <mat-toolbar-row class="mtr-services-contents common-sub-header">
+            <h2>{{main_header}}</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-sub-header">
+            <div [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_header)"></div>
+            <div [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content)"></div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-sub-contents mtr-fservices" *ngFor="let number of row_filler; let i = index;">
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+1+i].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+1+i].content)"></span>
+                </div>
+            </span>
+            <span class="fill-space spn-separate-content"></span>
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+2+i].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+2+i].content)"></span>
+                </div>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
 
 <app-common-faqs></app-common-faqs>
 <app-common-services-slide></app-common-services-slide>

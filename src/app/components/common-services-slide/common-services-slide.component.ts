@@ -3,6 +3,7 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
 import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-common-services-slide',
@@ -12,30 +13,40 @@ import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition}
 })
 export class CommonServicesSlideComponent implements OnInit {
 
-  constructor(private _auth: ApiServices,private _snackBar: MatSnackBar) { }
+  constructor(
+    private _auth: ApiServices,
+    private _snackBar: MatSnackBar,
+    private router: Router,
+    public route: ActivatedRoute,) { }
 
   @Input() public isWriters: any;
 
   servicesOption: OwlOptions = {
-    loop: true,
-    dots: false,
-    margin: 13,
+    loop: false,
+    dots: true,
+    margin: 10,
     nav: false,
     center:false,
     responsive:{
       0:{
-          items:2,
+          items:1,
           dots: true,
-          center:true,
+          center: true,
+          loop: true
+      },
+      576:{
+          items:1,
+          dots: true,
+          center: true,
+          loop: true
       },
       768:{
           items:2,
           dots: true,
-          center:true,
+          loop: true
       },
-      992:{
-          center:false,
-          items:2,
+      992: {
+        items:2,
       }
     }
   }
@@ -74,47 +85,47 @@ export class CommonServicesSlideComponent implements OnInit {
   services:any = [
     {
       set:[
-        {service:'Essay Writing Services',link:''},
-        {service:'Article Writing Services',link:''},
-        {service:'Research Paper Writing Service',link:''},
-        {service:'Coursework Writing Service',link:''},
-        {service:'Dissertation Writing Services',link:''},
+        {service:'Essay Writing Services',link:'essay-writing-services'},
+        {service:'Article Writing Services',link:'article-writing-services'},
+        {service:'Research Paper Writing Service',link:'research-paper-writing-services'},
+        {service:'Report Writing Services',link:'report-writing-service'},
+        {service:'Coursework Writing Service',link:'coursework-writing-services'},
       ]
     },
     {
       set:[
-        {service:'Write my lab report',link:''},
-        {service:'Speech Writing Services',link:''},
-        {service:'Writing a Critique',link:''},
-        {service:'Writing a Reaction Paper',link:''},
-        {service:'Capstone Project Ideas',link:''},
+        {service:'Write my lab report',link:'lab-report'},
+        {service:'Speech Writing Services',link:'speech-writing-services'},
+        {service:'Writing a Critique',link:'article-critique-writing-services'},
+        {service:'Writing A Reaction Paper',link:'writing-a-reaction-paper'},
+        {service:'Professional Dissertation Writers',link:'professional-dissertation-proposal'},
       ]
     },
     {
       set:[
-        {service:'Write my lab report',link:''},
-        {service:'Speech Writing Services',link:''},
-        {service:'Writing a Critique',link:''},
-        {service:'Writing a Reaction Paper',link:''},
-        {service:'Capstone Project Ideas',link:''},
+        {service:'Mind Map Service',link:'mind-map-service'},
+        {service:'Business Simulation Report online',link:'business-simulation-report-online'},
+        {service:'Write My Personal Statement',link:'write-my-personal-statement'},
+        {service:'Document Formatting Services',link:'document-formatting-services'},
+        {service:'Programming Assignment',link:'programming-assignment-help'},
       ]
     },
     {
       set:[
-        {service:'Write my lab report',link:''},
-        {service:'Speech Writing Services',link:''},
-        {service:'Writing a Critique',link:''},
-        {service:'Writing a Reaction Paper',link:''},
-        {service:'Capstone Project Ideas',link:''},
+        {service:'Professional Resume Writers',link:'professional-resume-editing'},
+        {service:'Resume Editing Services',link:'resume-writing-services'},
+        {service:'Online Article Rewriter',link:'rewriting-services'},
+        {service:'Best Paraphrasing Website',link:'best-paraphrasing-website'},
+        {service:'Professional Poster Maker',link:'professional-poster-maker'},
       ]
     },
     {
       set:[
-        {service:'Write my lab report',link:''},
-        {service:'Speech Writing Services',link:''},
-        {service:'Writing a Critique',link:''},
-        {service:'Writing a Reaction Paper',link:''},
-        {service:'Capstone Project Ideas',link:''},
+        {service:'Writing a Marketing Plan',link:'writing-a-marketing-plan'},
+        {service:'Financial Statement Analysis',link:'financial-statement-analysis'},
+        {service:'SWOT Analysis of a Business',link:'swot-analysis-of-business'},
+        {service:'Professional Short Story Writers',link:'short-story-writers'},
+        {service:'Assignment Writing Service',link:'assignment-writing-service'},
       ]
     },
   ]
@@ -148,6 +159,10 @@ export class CommonServicesSlideComponent implements OnInit {
         })
       }
     )
+  }
+
+  toServices(id) {
+    this.router.navigate(['',id])
   }
 
 }

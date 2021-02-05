@@ -193,7 +193,7 @@ export class HeaderComponent implements OnInit {
 
   selectService(service) {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-      this.router.navigate(['/services', service]);
+      this.router.navigate(['', service]);
     });
     this.togglePanel();
   }

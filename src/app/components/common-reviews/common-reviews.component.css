@@ -9,7 +9,7 @@
 .reviews-wrap span {
     text-align: center;
 }
-.sec-reviews-wrap p,
+.oco-review-item p,
 .reviews-wrap p {
     font-family: "SF Pro Text Regular";
     color: #000000;
@@ -18,7 +18,7 @@
     display: block;
     letter-spacing: 0;
 }
-.sec-reviews-wrap p.p-rate,
+.oco-review-item p.p-rate,
 .reviews-wrap p.p-rate {
     font-family: "SF Pro Text Bold";
     font-size: 32px;
@@ -71,38 +71,26 @@
 }
 
 /* carousel starts  */
-.sec-reviews-wrap {
+.oco-review-item {
     display: none;
-    margin: 75px auto !important;
+    margin: 75px auto 0 auto !important;
 }
-.sec-reviews-wrap .owl-carousel .owl-stage-outer {
-    height: 250px;
+.oco-review-item .owl-carousel .owl-stage {
+    padding: 20px;
 }
-.sec-reviews-wrap .owl-theme .owl-dots .owl-dot {
-    margin: 0 0 !important;
-}
-.sec-reviews-wrap .owl-item {
-    padding: 15px;
-}
-.sec-reviews-wrap .review-item-wrap {
+.oco-review-item .review-item-wrap {
     display: block;
     padding: 15px;
     border-radius: 10px;
     background-color: #FFFFFF;
     box-shadow: 4px 6px 6px 2px rgba(0,0,0,0.5);
     text-align: center;
-    width: 250px;
+    margin: 0 auto;
 }
-.sec-reviews-wrap .owl-dots {
-    margin-top: 20px !important;
-}
-.sec-reviews-wrap .owl-theme .owl-dots .owl-dot {
-    margin: 0 !important;
-}
-.sec-reviews-wrap .owl-theme .owl-dots .owl-dot span {
+.oco-review-item .owl-theme .owl-dots .owl-dot span {
     margin: 0 2.5px !important;
 }
-.sec-reviews-wrap .owl-theme .owl-dots .owl-dot.active span {
+.oco-review-item .owl-theme .owl-dots .owl-dot.active span {
     background: #1A62F5;
 }
 
@@ -119,7 +107,7 @@
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
-    .sec-reviews-wrap {
+    .oco-review-item {
         display: block;
     }
     .mt-reviews-wrap {

@@ -77,18 +77,18 @@
 	width: 80px;
 	height: 88px;
 }
-.sec-home-guarantee {
-    display: block;
+.owl-guarantees {
+    max-width: 1000px;
 }
-.sec-home-guarantee .owl-dots {
+.owl-guarantees .owl-dots {
     margin-top: 50px !important;
 }
-.sec-home-guarantee .owl-theme .owl-dots .owl-dot {
+.owl-guarantees .owl-theme .owl-dots .owl-dot {
     margin: 0 !important;
 }
-.sec-home-guarantee .owl-theme .owl-dots .owl-dot span {
+.owl-guarantees .owl-theme .owl-dots .owl-dot span {
     margin: 0 2.5px !important;
 }
-.sec-home-guarantee .owl-theme .owl-dots .owl-dot.active span {
+.owl-guarantees .owl-theme .owl-dots .owl-dot.active span {
     background: #1A62F5;
 }

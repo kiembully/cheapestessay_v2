@@ -97,3 +97,16 @@
     padding: 20px;
     margin: 70px auto;
 }
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    .frm-card {
+        padding: 0;
+    }
+    .sec-card-form {
+        display: block;
+    }
+    .mff-card-inputs, .spn-mff-wrap {
+        max-width: 100%;
+    }
+}
