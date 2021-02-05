@@ -95,7 +95,7 @@ export class CardComponent implements OnInit {
       res=> {
         this.isProgressLoading = false;
         if (res.status) {
-          this.getCardDetails();
+          this.router.navigate(['/stripe-checkout', this.route.snapshot.paramMap.get('id')]);
         } else {
           this._session.messageSnackbar(res.message, 'OK')
         }
@@ -109,7 +109,10 @@ export class CardComponent implements OnInit {
       res=>{
         this.isProgressLoading = false;
         if (res.status) {
-          this.router.navigate(['/stripe-checkout', this.route.snapshot.paramMap.get('id')]);
+          this.frmCard.reset();
+          this.frmCard.patchValue({
+            user_token: localStorage.getItem('user_token')
+          })
         } else {
           this._session.messageSnackbar(res.message, 'OK')
         }
@@ -119,9 +122,9 @@ export class CardComponent implements OnInit {
 
   toggleCardUpdate() {
     if (this.isSaveCardChecked) {
-      this.saveCardDetails();
+      // this.saveCardDetails();
     } else {
-      console.log('delete card')
+      this.deleteCardDetails();
     }
   }
 

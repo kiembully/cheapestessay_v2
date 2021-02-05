@@ -85,3 +85,15 @@
 .spn-inner-card {
     max-width: 50% !important;
 }
+.btn-update-card {
+    font-family: "SF Pro Text Bold";
+    width: 100%;
+    border-radius: 30px;
+    background-color: #1a62f5;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: .8px;
+    line-height: 19px;
+    padding: 20px;
+    margin: 70px auto;
+}

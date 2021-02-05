@@ -9,7 +9,7 @@
         <span><mat-slide-toggle [(ngModel)]="isSaveCardChecked" (change)="toggleCardUpdate()"><span class="spn-mst-label">Save this card</span></mat-slide-toggle></span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-card-form">
-        <form class="frm-card" [formGroup]="frmCard">
+        <form class="frm-card" [formGroup]="frmCard" (ngSubmit)="saveCardDetails()">
             <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
             <section class="sec-card-form">
                 <span class="spn-mff-wrap">
@@ -30,7 +30,7 @@
                 <span class="spn-mff-wrap">
                     <label for="cardnumber">Card Number</label>
                     <mat-form-field appearance="fill" class="mff-card-inputs">
-                    <input matInput placeholder="Card Number" required formControlName="cardnumber">
+                    <input matInput placeholder="0000 0000 0000 0000" required formControlName="cardnumber">
                     </mat-form-field>
                 </span>
                 <span class="fill-space padding10"></span>
@@ -39,7 +39,7 @@
                         <span class="spn-inner-card">
                             <label for="expiry">Expiry</label>
                             <mat-form-field appearance="fill" class="mff-card-inputs">
-                            <input matInput placeholder="Expiry" required formControlName="expiry">
+                            <input matInput placeholder="MM/YYYY" required formControlName="expiry">
                             </mat-form-field>
                         </span>
                         <span class="fill-space padding10"></span>
@@ -98,6 +98,9 @@
                         <input matInput placeholder="City" required formControlName="city">
                         </mat-form-field>
                     </span>
+                </section>
+                <section class="sec-add-card-wrap">
+                    <button type="submit" mat-flat-button class="btn-update-card">Update Card</button>
                 </section>
             </div>
         </form>
