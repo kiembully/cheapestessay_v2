@@ -198,7 +198,9 @@ export class CommonPayOrderComponent implements OnInit {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
           localStorage.removeItem('invoice');
-          localStorage.setItem('invoice', JSON.stringify(res.data))
+          localStorage.setItem('invoice', JSON.stringify(res.data));
+          localStorage.removeItem('set_order_token');
+          localStorage.removeItem('order_token');
           this.router.navigate(['/invoice']);
         }
       }
@@ -212,7 +214,9 @@ export class CommonPayOrderComponent implements OnInit {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
           localStorage.removeItem('invoice');
-          localStorage.setItem('invoice', JSON.stringify(res.data))
+          localStorage.setItem('invoice', JSON.stringify(res.data));
+          localStorage.removeItem('set_order_token');
+          localStorage.removeItem('order_token');
           this.router.navigate(['/invoice']);
         }
       }

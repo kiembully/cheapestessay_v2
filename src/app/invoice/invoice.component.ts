@@ -21,7 +21,7 @@ export class InvoiceComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    localStorage.removeItem('invoice')
+    localStorage.removeItem('invoice');
   }
   
   avoidInvoice(): boolean {

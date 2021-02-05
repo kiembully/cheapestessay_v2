@@ -6,15 +6,100 @@
     <mat-toolbar-row class="mtr-card-header">
         <span><h1>Add Card</h1></span>
         <span class="fill-space"></span>
-        <span><mat-slide-toggle [(ngModel)]="isSaveCardChecked"><span class="spn-mst-label">Save this card</span></mat-slide-toggle></span>
+        <span><mat-slide-toggle [(ngModel)]="isSaveCardChecked" (change)="toggleCardUpdate()"><span class="spn-mst-label">Save this card</span></mat-slide-toggle></span>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-card-form">
-        <form >
+        <form class="frm-card" [formGroup]="frmCard">
+            <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
             <section class="sec-card-form">
-                <span></span>
-                <span class="fill-space"></span>
-                <span></span>
+                <span class="spn-mff-wrap">
+                    <label for="card_firstname">First Name</label>
+                    <mat-form-field appearance="fill" class="mff-card-inputs">
+                    <input matInput placeholder="First Name" required formControlName="card_firstname">
+                    </mat-form-field>
+                </span>
+                <span class="fill-space padding10"></span>
+                <span class="spn-mff-wrap">
+                    <label for="card_lastname">Last Name</label>
+                    <mat-form-field appearance="fill" class="mff-card-inputs">
+                    <input matInput placeholder="Last Name" required formControlName="card_lastname">
+                    </mat-form-field>
+                </span>
             </section>
+            <section class="sec-card-form">
+                <span class="spn-mff-wrap">
+                    <label for="cardnumber">Card Number</label>
+                    <mat-form-field appearance="fill" class="mff-card-inputs">
+                    <input matInput placeholder="Card Number" required formControlName="cardnumber">
+                    </mat-form-field>
+                </span>
+                <span class="fill-space padding10"></span>
+                <span class="spn-mff-wrap">
+                    <div class="inner-card-form">
+                        <span class="spn-inner-card">
+                            <label for="expiry">Expiry</label>
+                            <mat-form-field appearance="fill" class="mff-card-inputs">
+                            <input matInput placeholder="Expiry" required formControlName="expiry">
+                            </mat-form-field>
+                        </span>
+                        <span class="fill-space padding10"></span>
+                        <span class="spn-inner-card">
+                            <label for="cvv">CVV</label>
+                            <mat-form-field appearance="fill" class="mff-card-inputs">
+                            <input matInput type="password" placeholder="CVV" required formControlName="cvv" (keyup)="monitorCvv()">
+                            </mat-form-field>
+                        </span>
+                    </div>
+                </span>
+            </section>
+            <div class="card-form-lower" *ngIf="isBillingAddressVisible">
+                <h2>Billing Address</h2>
+                <section class="sec-card-form">
+                    <span class="spn-mff-wrap">
+                        <label for="country">Country</label>
+                        <mat-form-field appearance="fill" class="mff-card-inputs">
+                        <mat-select disableOptionCentering formControlName="country">
+                            <mat-option 
+                            *ngFor="let list of country_codes"
+                            [value]="list.alpha2Code">{{list.name}}</mat-option>
+                        </mat-select>
+                        </mat-form-field>
+                    </span>
+                    <span class="fill-space"></span>
+                    <span class="spn-mff-wrap">
+                        <div class="inner-card-form">
+                            <span class="spn-inner-card">
+                                <label for="state">State</label>
+                                <mat-form-field appearance="fill" class="mff-card-inputs">
+                                <input matInput placeholder="State" required formControlName="state">
+                                </mat-form-field>
+                            </span>
+                            <span class="fill-space padding10"></span>
+                            <span class="spn-inner-card">
+                                <label for="zipcode">Zip Code</label>
+                                <mat-form-field appearance="fill" class="mff-card-inputs">
+                                <input matInput type="password" placeholder="Zip Code" required formControlName="zipcode">
+                                </mat-form-field>
+                            </span>
+                        </div>
+                    </span>
+                </section>
+                <section class="sec-card-form">
+                    <span class="spn-mff-wrap">
+                        <label for="streetaddress">Street</label>
+                        <mat-form-field appearance="fill" class="mff-card-inputs">
+                        <input matInput placeholder="Street" required formControlName="streetaddress">
+                        </mat-form-field>
+                    </span>
+                    <span class="fill-space padding10"></span>
+                    <span class="spn-mff-wrap">
+                        <label for="city">City</label>
+                        <mat-form-field appearance="fill" class="mff-card-inputs">
+                        <input matInput placeholder="City" required formControlName="city">
+                        </mat-form-field>
+                    </span>
+                </section>
+            </div>
         </form>
     </mat-toolbar-row>
 </mat-toolbar>

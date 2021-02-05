@@ -258,6 +258,26 @@ export class ApiServices {
             shareReplay()
         )
     }
+    _saveCardDetailsUrl = this._baseUrl + 'saveCardDetails'
+    saveCardDetails(form) {
+        return this.http.post<any>(this._saveCardDetailsUrl, form).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
+    }
+    _deleteCardDetailUrl = this._baseUrl + 'deleteCardDetails'
+    deleteCardDetails(form) {
+        return this.http.post<any>(this._deleteCardDetailUrl, form).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
+    }
     _reedemAmountUrl = this._baseUrl + 'reedemAmount'
     redeemAmout(form) {
         return this.http.post<any>(this._reedemAmountUrl, form)

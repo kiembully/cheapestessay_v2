@@ -56,6 +56,9 @@ export class NewOrderOutputComponent implements OnInit {
   ngOnInit(): void {
     this.decoded_user_token = (this.isUserOnline) ? jwt_decode(localStorage.getItem('user_token')) : '';
   }
+  ngOnDestroy() {
+    localStorage.removeItem('is_submitting');
+  }
 
   getService(val) {
     let value:any;
@@ -113,6 +116,7 @@ export class NewOrderOutputComponent implements OnInit {
     this._auth.saveOrder(this.patchSaveOrderForm()).subscribe(
       res => {
         if (res.status) {
+          localStorage.removeItem('set_order_token');
           this.router.navigate(['/my-orders/order-details', res.data.order_id])
         }
       }

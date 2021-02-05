@@ -1,5 +1,5 @@
 .mt-card {
-    max-width: 600px;
+    max-width: 700px;
     width: 100%;
 }
 .mtr-back-wrap {
@@ -16,11 +16,21 @@
     letter-spacing: 0;
     line-height: 19px;
 }
+.mtr-card-header {
+    margin-bottom: 50px;
+}
 .mtr-card-header h1 {
     font-family: "SF Pro Text Bold";
     color: #000000;
     font-size: 36px;
     line-height: 43px;
+}
+.mtr-card-form h2 {
+    color: #000000;
+    font-size: 20px;
+    font-family: "SF Pro Text Bold";
+    line-height: 24px;
+    margin: 30px auto;
 }
 .mtr-card-header span:last-child {
     color: #959595;
@@ -43,4 +53,35 @@
 }
 .mtr-card-header .mat-slide-toggle-thumb-container {
     top: 2px
+}
+.frm-card {
+    width: 100%;
+    position: relative;
+    padding: 20px;
+}
+.sec-card-form {
+    display: flex;
+}
+.padding10 {
+    padding: 5px;
+}
+.mff-card-inputs,
+.spn-mff-wrap {
+    max-width: 300px;
+    width: 100%;
+}
+.spn-mff-wrap label {
+    display: block;
+    color: #959595;
+    font-size: 12px;
+    line-height: 14px;
+    margin-left: 5px;
+    font-family: "SF Pro Text Bold";
+}
+.inner-card-form {
+    display: flex;
+    width: 100%;
+}
+.spn-inner-card {
+    max-width: 50% !important;
 }
