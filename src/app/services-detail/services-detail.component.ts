@@ -6,8 +6,8 @@ import { Title, Meta, DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-services-detail',
   templateUrl: './services-detail.component.html',
-  providers: [ApiServices],
   styleUrls: ['./services-detail.component.css'],
+  providers: [ApiServices],
   encapsulation: ViewEncapsulation.None,
 })
 

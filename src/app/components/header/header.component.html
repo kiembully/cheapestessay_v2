@@ -7,7 +7,7 @@ class="sec-default-header fixed-nav w-header"
         <mat-toolbar-row>
             <span class="w-nav-hidden"><button class="btn-brand" routerLinkActive="active" routerLink="/" mat-button>Cheapest <span>Essay</span></button></span>
             <span class="m-nav-hidden">
-                <button mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons" [innerHtml]="isMobileNavActive ? 'menu_open' : 'menu'"></span></button>
+                <button mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons">menu</span></button>
             </span>
             <span class="fill-space"></span>
             <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</button></span>
@@ -62,26 +62,6 @@ class="sec-default-header fixed-nav w-header"
                             </span>
                         </mat-toolbar-row>
                     </mat-toolbar>
-                </mat-expansion-panel>
-              </mat-accordion>
-        </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-contain-services">
-            <mat-accordion class="ma-services-menu default-width">
-                <mat-expansion-panel hideToggle [expanded]="isMobileNavActive">
-                    <mat-list role="list">
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button></mat-list-item>
-                        <mat-list-item role="listitem"><button (click)="closePanel()" class="btn-mob-nav" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button></mat-list-item>
-                        <mat-list-item role="listitem"><a class="a-mob-nav" href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
-                      </mat-list>
                 </mat-expansion-panel>
               </mat-accordion>
         </mat-toolbar-row>
@@ -156,4 +136,69 @@ class="sec-default-header fixed-nav w-header"
     </section>
 </div>
 
-<div id="overlay" [style.display]="(panelOpenState || isMobileNavActive)?'block':'none'" (click)="closePanel()"></div>
+<div class="mob-nav-wrap" [ngClass]="{'active':mobileNavState}">
+    <section>
+        <div class="sprites-icons cheapestessay-icon"></div>
+        <h1 class="h1-cheapestessay">Cheapest <span>Essay</span></h1>
+    </section>
+    <section class="sec-routers">
+        <mat-list role="list">
+            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
+            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/order" mat-button>Orden Now</button></mat-list-item>
+            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/how-it-works" mat-button>How it works</button></mat-list-item>
+            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/pricing" mat-button>Pricing</button></mat-list-item>
+        </mat-list>
+    </section>
+    <section class="sec-routers">
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <button type="button" mat-flat-button>Services <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
+            </mat-expansion-panel-header>
+            <mat-list role="list">
+                <mat-list-item role="listitem" *ngFor="let service of menuServicesM">
+                    <button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" mat-button [routerLink]="service.id">{{service.name}}</button>
+                </mat-list-item>
+            </mat-list>
+        </mat-expansion-panel>
+    </section>
+    <section class="sec-routers">
+        <mat-list role="list">
+            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/contact-us" mat-menu-item>Contact Us</button></mat-list-item>
+        </mat-list>
+    </section>
+    <section class="sec-routers">
+        <mat-expansion-panel hideToggle>
+            <mat-expansion-panel-header>
+                <button type="button" mat-flat-button>More... <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
+            </mat-expansion-panel-header>
+            <mat-list role="list">
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="money-back-guarantee" routerLinkActive="active" mat-button>100% Refund</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></mat-list-item>
+                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button></mat-list-item>
+                <mat-list-item role="listitem"><a href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
+            </mat-list>
+        </mat-expansion-panel>
+    </section>
+    <span class="fill-space"></span>
+    <section class="sec-app-btn-wrap">
+        <div class="app-download-wrap">
+            <span><button (click)="toAppStore()" class="btn-app-link" type="button" mat-flat-button>
+                <div class="app-logo-sprite btn-app-store"></div>
+                <p class="p-dl-on">Get it on</p>
+                <p class="p-app-name">App Store</p>
+            </button></span>
+            <span class="fill-space spn-separate-app"></span>
+            <span><button (click)="toGooglePlay()" class="btn-app-link" type="button" mat-flat-button>
+                <div class="app-logo-sprite btn-play-store"></div>
+                <p class="p-dl-on">Get it on</p>
+                <p class="p-app-name">Google Play</p>
+            </button></span>
+        </div>
+    </section>
+</div>
+<div id="overlay-w" [style.display]="panelOpenState?'block':'none'" (click)="closePanel()"></div>
+<div id="overlay-m" [style.display]="mobileNavState?'block':'none'" (click)="closePanel()"></div>

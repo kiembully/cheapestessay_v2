@@ -13,7 +13,7 @@ import jwt_decode from 'jwt-decode';
   selector: 'app-header',
   templateUrl: './header.component.html',
   providers: [loggedin_session],
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
 
@@ -131,13 +131,12 @@ export class HeaderComponent implements OnInit {
   togglePanel() {
     this.panelOpenState = !this.panelOpenState;
   }
-  isMobileNavActive = false;
+  mobileNavState = false;
   toggleMobileMenu() {
-    this.isMobileNavActive = !this.isMobileNavActive;
-    console.log('asdasdasd')
+    this.mobileNavState = !this.mobileNavState;
   }
   closePanel() {
-    this.isMobileNavActive = false
+    this.mobileNavState = false;
     this.panelOpenState = false;
   }
   menuServices:any = [
@@ -190,7 +189,33 @@ export class HeaderComponent implements OnInit {
       ]
     },
   ]
-
+  menuServicesM:any = [
+    {id: 'essay-writing-services', name: 'Essay (Any Type)'},
+    {id: 'assignment-writing-service', name: 'Assignment'},
+    {id: 'admission-essay', name: 'Admission Essay'},
+    {id: 'thesis-writing-services', name: 'Thesis'},
+    {id: 'research-paper-writing-services', name: 'Research Paper'},
+    {id: 'math-homework-help', name: 'Math Problems'},
+    {id: 'professional-cover-letter-writing-services', name: 'Cover Letter'},
+    {id: 'dissertation-help', name: 'Dissertation'},
+    {id: 'coursework-writing-services', name: 'Course Work'},
+    {id: 'book-movie-review-services', name: 'Book Report/Review'},
+    {id: 'cv-writing-services', name: 'CV Writing'},
+    {id: 'thesis-writing-services', name: 'Thesis Proposal'},
+    {id: 'case-study-writing', name: 'Case Study'},
+    {id: 'book-movie-review-services', name: 'Movie Review'},
+    {id: 'cv-editing-services', name: 'CV Editing'},
+    {id: 'writing-an-essay-outline', name: 'Outline'},
+    {id: 'write-my-essay', name: 'Write My Essay'},
+    {id: 'lab-report-abstract', name: 'Lab Report'},
+    {id: 'article-writing-services', name: 'Article Review'},
+    {id: 'blog-writers-for-hire', name: 'Blog Writing'},
+    {id: 'research-article-summary', name: 'Research Summary'},
+    {id: 'powerpoint-presentation-service', name: 'PowerPoint'},
+    {id: 'report-writing-service', name: 'Report'},
+    {id: 'services', name: 'Full Service List'},
+  ]
+  
   selectService(service) {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(['', service]);
@@ -204,5 +229,12 @@ export class HeaderComponent implements OnInit {
   onWindowScroll() {
     let condi = (document.body.scrollTop >= 1 || document.documentElement.scrollTop >= 1);
     this.isHeaderScrolled = (condi) ? true : false;
+  }
+
+  toAppStore() {
+    window.location.href = "https://apps.apple.com/us/app/cheapest-custom-writing-papers/id1447217562"
+  }
+  toGooglePlay() {
+    window.location.href = "https://play.google.com/store/apps/details?id=com.cheapestessay.service"
   }
 }

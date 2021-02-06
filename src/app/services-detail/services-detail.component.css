@@ -122,3 +122,8 @@
         text-align: left;
     }
 }
+@media screen and (max-width:576px) {
+    .spn-contain-services-banner p {
+        display: none;
+    }
+}
