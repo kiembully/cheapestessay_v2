@@ -57,7 +57,7 @@
     position: absolute;
     left: 0;
     top: 25px;
-    background: #f2f2f2;
+    background: #fbfbfb;
     transform: rotate(180deg)
 }
 .lower-quote {
@@ -99,6 +99,10 @@
     .mtr-client-reviews {
         display: block;
         text-align: -webkit-center;
+    }
+    .upper-quote,
+    .lower-quote {
+        font-size: 60px;
     }
 }
  
