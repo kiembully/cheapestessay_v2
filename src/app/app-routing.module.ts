@@ -59,7 +59,7 @@ const routes: Routes = [
   {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
   {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:':id',component:ServicesDetailComponent},
-  {path: '**', redirectTo: '404'},
+  // {path: '**', redirectTo: '404'},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
 ];
 

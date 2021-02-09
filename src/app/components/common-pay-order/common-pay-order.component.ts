@@ -263,7 +263,7 @@ export class CommonPayOrderComponent implements OnInit {
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
-          window.open(res.data.url,"Ratting","width=550,height=170,0,status=0,scrollbars=1");
+          window.open(res.data.url,"Ratting","width=550,height=700,0,status=0,scrollbars=1");
           // window.open(res.data.url,"Ratting","width=550,height=170,0,status=0,scrollbars=1");
           // window.location.href = res.data.url
         }
