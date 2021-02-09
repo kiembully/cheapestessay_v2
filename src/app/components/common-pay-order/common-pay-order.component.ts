@@ -3,7 +3,6 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import { loggedin_session } from 'src/app/data/ui-services'
 import { Router, ActivatedRoute } from '@angular/router';
-declare var paypal;
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
@@ -73,35 +72,6 @@ export class CommonPayOrderComponent implements OnInit {
     this.displayBalance = this.getBalance();
     this.decoded_card_info = this.card_details;
     this.displayPaymentDetails();
-    paypal.Buttons({
-
-        // Set up the transaction
-        createOrder: function(data, actions) {
-            // this.payOrder();
-            // location.assign();
-            return actions.order.create({
-                purchase_units: [{
-                    amount: {
-                        value: '88.44'
-                    }
-                }]
-            });
-        },
-        
-
-        // Finalize the transaction
-        onApprove: function(data, actions) {
-            return actions.order.capture().then(function(details) {
-                // Show a success message to the buyer
-                alert('Transaction completed by ' + details.payer.name.given_name + '!');
-                console.log(details);
-                console.log(data);
-            });
-        }
-
-        
-
-    }).render('#paypal-button-container');
   }
 
   getCardNumber() {
@@ -234,7 +204,7 @@ export class CommonPayOrderComponent implements OnInit {
           localStorage.setItem('invoice', JSON.stringify(res.data));
           localStorage.removeItem('set_order_token');
           localStorage.removeItem('order_token');
-          this.router.navigate(['/invoice']);
+          this.router.navigate(['/invoice'], { queryParams: { token: 'token-value', 'PayerID': 'payer-id-value' } });
         }
       }
     )
@@ -263,9 +233,7 @@ export class CommonPayOrderComponent implements OnInit {
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')
         } else {
-          window.open(res.data.url,"Ratting","width=550,height=700,0,status=0,scrollbars=1");
-          // window.open(res.data.url,"Ratting","width=550,height=170,0,status=0,scrollbars=1");
-          // window.location.href = res.data.url
+          window.location.href = res.data.url
         }
       }
     )

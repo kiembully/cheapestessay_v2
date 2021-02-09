@@ -118,6 +118,8 @@ export class NewOrderOutputComponent implements OnInit {
         if (res.status) {
           localStorage.removeItem('set_order_token');
           this.router.navigate(['/my-orders/order-details', res.data.order_id])
+        } else {
+          this._session.messageSnackbar(res.message, 'OK')
         }
       }
     )

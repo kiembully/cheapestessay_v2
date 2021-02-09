@@ -1,7 +1,13 @@
-.mt-invoice {
-    margin: 100px auto;
-    padding: 0 15px;
+.invoice-form-wrap {
+    min-height: 500px;
+    position: relative;
     max-width: 600px;
+    width: 100%;
+    margin: 100px auto;
+}
+.mt-invoice {
+    /* margin: 100px auto; */
+    padding: 0 15px;
 }
 .mtr-header-invoice {
     background-color: #cfd1d3;
@@ -84,7 +90,7 @@
 .mtr-footer-invoice {
     padding: 17px 0;
     color: #fff;
-    background: #02a9e0;
+    background-color: #02a9e0;
     border-right: solid 1px #02a9e0;
     border-left: 1px solid #02a9e0;
     display: block;

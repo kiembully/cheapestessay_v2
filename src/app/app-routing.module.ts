@@ -58,8 +58,8 @@ const routes: Routes = [
   {path:'stripe-checkout/:id',component:CheckoutComponent,canActivate:[AuthGuard]},
   {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
   {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
-  {path:':id',component:ServicesDetailComponent},
-  // {path: '**', redirectTo: '404'},
+  {path:':id' ,component:ServicesDetailComponent},
+  {path: '**', redirectTo: '404'},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
 ];
 

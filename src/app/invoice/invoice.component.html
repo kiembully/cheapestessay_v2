@@ -1,81 +1,84 @@
-<mat-toolbar class="mt-invoice">
-    <mat-toolbar-row class="mtr-header-invoice">
-        <div class="header-invoice-wrap"></div>
-    </mat-toolbar-row>
-    <mat-toolbar-row class="status-invoice-wrap">
-        <div class="mi-icon-wrap"><span class="material-icons">check_circle</span></div>
-        <h1 class="status-headers">Success</h1>
-        <h2 class="status-headers">Thank You For Your Order!</h2>
-    </mat-toolbar-row>
-    <mat-toolbar-row class="mtr-summary-header">
-        <div class="inverted-triangle"></div>
-        <p class="p-summary-header">Order Summary</p>
-    </mat-toolbar-row>
-    <mat-toolbar-row class="mtr-order-summary">
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Order ID</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.order_id}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Type Of Service</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.service_id}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Academic Level</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.academic_id}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Page(S)</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.pages}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Slide(S)</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.slides}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Turnitin Plagiarism</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{translateValue(invoice.order_data.is_plagiarism_report)}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Deadline</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.deadline}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Fully Paid On</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.order_data.date_paid}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Payment Mode</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.payment_data.payment_mode}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Transaction ID</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">{{invoice.payment_data.transaction_id}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Subtotal</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">${{invoice.order_data.sub_total}}</p></span>
-        </section>
-        <section class="sec-order-invoice">
-            <span><p class="p-order-label">Total</p></span>
-            <span class="fill-space"></span>
-            <span><p class="p-order-value">${{invoice.order_data.total}}</p></span>
-        </section>
-    </mat-toolbar-row>
-    <mat-toolbar-row class="mtr-footer-invoice">
-        <p>We're looking forward in seeing you again.</p>
-        <p>For other inquiries, please check Cheapest Essay <a routerLink="/faqs">FAQS</a></p>
-        <button type="button" mat-flat-button routerLink="/">Home</button>
-    </mat-toolbar-row>
-</mat-toolbar>
+<div class="invoice-form-wrap">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar class="mt-invoice" *ngIf="!isProgressLoading">
+        <mat-toolbar-row class="mtr-header-invoice">
+            <div class="header-invoice-wrap"></div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="status-invoice-wrap" [style.background-color]="isPaymentSuccess ? '#02a9e0' : '#f44336'">
+            <div class="mi-icon-wrap"><span class="material-icons" [innerHtml]="isPaymentSuccess ? 'check_circle' : 'error'"></span></div>
+            <h1 class="status-headers" [innerHtml]="isPaymentSuccess ? 'Success' : 'Something went wrong'"></h1>
+            <h2 class="status-headers" [innerHtml]="isPaymentSuccess ? 'Thank You For Your Order!' : 'Ask support for assistance'"></h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-summary-header" *ngIf="isPaymentSuccess">
+            <div class="inverted-triangle" [style.background-color]="isPaymentSuccess ? '#02a9e0' : '#f44336'"></div>
+            <p class="p-summary-header">Order Summary</p>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-order-summary" *ngIf="isPaymentSuccess">
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Order ID</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.order_id}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Type Of Service</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.service_id}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Academic Level</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.academic_id}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Page(S)</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.pages}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Slide(S)</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.slides}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Turnitin Plagiarism</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{translateValue(invoice.order_data.is_plagiarism_report)}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Deadline</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.deadline}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Fully Paid On</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.order_data.date_paid}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Payment Mode</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.payment_data.payment_mode}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Transaction ID</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">{{invoice.payment_data.transaction_id}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Subtotal</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">${{invoice.order_data.sub_total}}</p></span>
+            </section>
+            <section class="sec-order-invoice">
+                <span><p class="p-order-label">Total</p></span>
+                <span class="fill-space"></span>
+                <span><p class="p-order-value">${{invoice.order_data.total}}</p></span>
+            </section>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-footer-invoice" [style.background-color]="isPaymentSuccess ? '#02a9e0' : '#f44336'">
+            <p>We're looking forward in seeing you again.</p>
+            <p>For other inquiries, please check Cheapest Essay <a routerLink="/faqs">FAQS</a></p>
+            <button type="button" mat-flat-button routerLink="/">Home</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</div>
