@@ -238,6 +238,6 @@ export class HeaderComponent implements OnInit {
     window.location.href = "https://play.google.com/store/apps/details?id=com.cheapestessay.service"
   }
   openBlog() {
-    window.open("https:/blog.cheapestessay.com","_blank")
+    window.location.href = "https://blog.cheapestessay.com"
   }
 }

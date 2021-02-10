@@ -21,7 +21,7 @@ export class FooterComponent implements OnInit {
   ]
 
   openBlog() {
-    window.open("https:/blog.cheapestessay.com","_blank")
+    window.location.href = "https://blog.cheapestessay.com"
   }
   toAppStore() {
     window.location.href = "https://apps.apple.com/us/app/cheapest-custom-writing-papers/id1447217562"

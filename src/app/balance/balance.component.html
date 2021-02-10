@@ -1,6 +1,6 @@
 <section class="sec-balance-nav width1000">
     <span class="fill-space"></span>
-    <span class="spn-user-balance">My balance: <strong>{{myBalance}}</strong></span>
+    <span class="spn-user-balance">My balance: <strong>${{myBalance}}</strong></span>
 </section>
 <section class="sec-balance width1000">
     <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
@@ -28,13 +28,13 @@
         <ng-container matColumnDef="transaction_amount">
             <th mat-header-cell *matHeaderCellDef>Amount</th>
             <td mat-cell *matCellDef="let element">
-                <span class="spn-balance-change" [style.background-color]="gained(element.transaction_amount) ? '#D0555A' : null">
+                <span class="spn-balance-change" [style.background-color]="gained(element.transaction_amount) ? '#13B675' : null">
                     {{element.transaction_amount}}
                 </span>
             </td>
         </ng-container>
         <ng-container matColumnDef="current_wallet_balance">
-            <th mat-header-cell *matHeaderCellDef>Order Status</th>
+            <th mat-header-cell *matHeaderCellDef>Balance</th>
             <td mat-cell *matCellDef="let element"> <span class="spn-balance-remain">{{element.current_wallet_balance}}</span> </td>
         </ng-container>
 

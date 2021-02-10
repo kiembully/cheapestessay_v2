@@ -70,5 +70,8 @@ export class ContactUsComponent implements OnInit {
       return 'You must enter a value';
     }
   }
+  openLink(url) {
+    window.location.href = url;
+  }
 
 }

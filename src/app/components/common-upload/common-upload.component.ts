@@ -32,7 +32,11 @@ export class CommonUploadComponent implements OnInit {
     public _session: loggedin_session,
     private router: Router,
     public dialogRef:MatDialogRef<CommonDialogComponent>,) {
-    this.uploader = new FileUploader({ url: this._URL })
+    this.uploader = new FileUploader({
+      url: this._URL,
+      maxFileSize: 20 * 1024 * 1024,
+      allowedMimeType: ['image/png', 'image/x-citrix-png', 'image/x-png', 'image/jpeg', 'image/x-citrix-jpeg', 'image/gif', 'image/bmp', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'application/pdf', 'text/plain']
+    })
   }
 
   ngOnInit(): void {

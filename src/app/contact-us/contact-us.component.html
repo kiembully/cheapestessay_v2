@@ -28,17 +28,17 @@
                             <div class="sprite-cheapest sprite-iconchat"></div>
                         </div>+ (909) 441-1414
                     </button> -->
-                    <button mat-flat-button class="margin-bottom24" onclick="window.open('https:/www.messenger.com/t/CheapestEssay', '_blank');event.preventDefault()">
+                    <button mat-flat-button class="margin-bottom24" (click)="openLink('https:/www.messenger.com/t/CheapestEssay')">
                         <div class="sprite-bg-wrap">
                             <div class="sprite-cheapest sprite-iconfbchat"></div>
                         </div>Message us via FB Messenger
                     </button>
-                    <button mat-flat-button class="margin-bottom24" onclick="location.href='https:/api.whatsapp.com/send?phone=19094411414';event.preventDefault()">
+                    <button mat-flat-button class="margin-bottom24" (click)="openLink('https:/api.whatsapp.com/send?phone=19094411414')">
                         <div class="sprite-bg-wrap">
                             <div class="sprite-cheapest sprite-iconwa"></div>
                         </div>Message us via WhatsApp
                     </button>
-                    <button mat-flat-button class="" onclick="window.open('https:/www.instagram.com/cheapestessay', '_blank');event.preventDefault()">
+                    <button mat-flat-button class="" (click)="openLink('https:/www.instagram.com/cheapestessay')">
                         <div class="sprite-bg-wrap">
                             <div class="sprite-cheapest sprite-iconinsta"></div>
                         </div>Message us via Instagram
