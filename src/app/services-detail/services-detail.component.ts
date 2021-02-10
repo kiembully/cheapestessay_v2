@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation, Pipe, PipeTransform } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, NavigationEnd, Router, Event } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
 import { Title, Meta, DomSanitizer } from '@angular/platform-browser';
 
@@ -15,11 +15,19 @@ export class ServicesDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private _auth: ApiServices,
     private titleService: Title,
     private metaTagService: Meta,
     public sanitized: DomSanitizer
   ) {
+
+    this.router.events.subscribe((event: Event) => {
+      if (event instanceof NavigationEnd) {
+        this.initializeService()
+      }
+    })
+    
   }
 
   isInitializing: boolean = false;
@@ -46,25 +54,29 @@ export class ServicesDetailComponent implements OnInit {
   row_filler:any = [];
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
-      this.service_name = res.data.page_contents.name;
-      this.initial_content = res.data.page_contents.initial_content;
-      this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
-      this.initial_pitch_content = res.data.page_contents.initial_pitch_content;
-      this.main_header = res.data.page_contents.main_header;
-      this.sub_header = res.data.sub_contents[0].header;
-      this.sub_content = res.data.sub_contents[0].content;
-      this.sub_content_list = res.data.sub_contents;
+      if (res.status) {
+        this.service_name = res.data.page_contents.name;
+        this.initial_content = res.data.page_contents.initial_content;
+        this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
+        this.initial_pitch_content = res.data.page_contents.initial_pitch_content;
+        this.main_header = res.data.page_contents.main_header;
+        this.sub_header = res.data.sub_contents[0].header;
+        this.sub_content = res.data.sub_contents[0].content;
+        this.sub_content_list = res.data.sub_contents;
 
-      for (let i = 1; i < res.data.sub_contents.length; i++) {
-        if (i%2 != 0) {
-          this.left_column.push(res.data.sub_contents[i])
-        } else {
-          this.right_column.push(res.data.sub_contents[i])
+        for (let i = 1; i < res.data.sub_contents.length; i++) {
+          if (i%2 != 0) {
+            this.left_column.push(res.data.sub_contents[i])
+          } else {
+            this.right_column.push(res.data.sub_contents[i])
+          }
         }
+        this.row_total = Math.floor((res.data.sub_contents.length - 1) / 2);
+        this.row_filler = Array(this.row_total).fill(1).map((x,i)=>i)
+        this.isInitializing = true;
+      } else {
+        this.router.navigate(['404'])
       }
-      this.row_total = Math.floor((res.data.sub_contents.length - 1) / 2);
-      this.row_filler = Array(this.row_total).fill(1).map((x,i)=>i)
-      this.isInitializing = true;
     })
   }
   setSeo(id){

@@ -1,0 +1,29 @@
+.mt-disclaimer-terms {
+    border-radius: 4.5px;
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px 0 #C5DBEF, 5px 6px 35px 0 #C5DBEF;
+    min-height: 100px;
+    padding: 45px 12px;
+}
+.mtr-disclaimer-terms {
+    white-space: normal;
+    display: block;
+}
+.mtr-disclaimer-terms h3 {
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 30px;
+    letter-spacing: 0;
+    line-height: 36px;
+    white-space: normal;
+}
+.mtr-disclaimer-terms p {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 30px;
+    white-space: normal;
+    padding-left: 43px;
+    margin: 42px 0;
+}

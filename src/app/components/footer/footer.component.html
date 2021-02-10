@@ -22,7 +22,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><a mat-list-item href="https:/blog.cheapestessay.com" target="_blank">Blog</a></td>
+                    <td><a mat-list-item (click)="openBlog()">Blog</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -31,13 +31,32 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-social-media">
         <div class="social-media-wrap">
-            <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon1"></div></a>
+            <a href="https://www.facebook.com/CheapestEssay/" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon1"></div></a>
             <span class="fill-space"></span>
-            <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon2"></div></a>
+            <a href="https://twitter.com/CheapestEssay" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon2"></div></a>
             <span class="fill-space"></span>
-            <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon3"></div></a>
-            <span class="fill-space"></span>
-            <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon4"></div></a>
+            <!-- <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon3"></div></a>
+            <span class="fill-space"></span> -->
+            <a href="https://www.pinterest.ph/cheapestessaywriting/" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon4"></div></a>
+        </div>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="mtr-app-wrap">
+        <div class="app-button-wrap">
+            <span>
+                <button type="button" mat-flat-button (click)="toAppStore()">
+                    <div class="app-logo-sprite btn-app-store"></div>
+                    <p class="p-dl-on">Get it on</p>
+                    <p class="p-app-name">App Store</p>
+                </button>
+            </span>
+            <span class="fill-space separate-app"></span>
+            <span>
+                <button type="button" mat-flat-button (click)="toGooglePlay()">
+                    <div class="app-logo-sprite btn-play-store"></div>
+                    <p class="p-dl-on">Get it on</p>
+                    <p class="p-app-name">Google Play</p>
+                </button>
+            </span>
         </div>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-footer-socials">

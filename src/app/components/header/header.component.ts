@@ -220,7 +220,7 @@ export class HeaderComponent implements OnInit {
     this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
       this.router.navigate(['', service]);
     });
-    this.togglePanel();
+    this.closePanel();
   }
 
   // add box shadows to header when scrolled by adding 'active' class
@@ -236,5 +236,8 @@ export class HeaderComponent implements OnInit {
   }
   toGooglePlay() {
     window.location.href = "https://play.google.com/store/apps/details?id=com.cheapestessay.service"
+  }
+  openBlog() {
+    window.open("https:/blog.cheapestessay.com","_blank")
   }
 }

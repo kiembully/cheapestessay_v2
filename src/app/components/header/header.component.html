@@ -26,7 +26,7 @@ class="sec-default-header fixed-nav w-header"
                     <button class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button>
                     <button class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button>
                     <button class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button>
-                    <a class="btn-more-menu" href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a>
+                    <a class="btn-more-menu" (click)="openBlog()" target="_blank" mat-menu-item>Blog</a>
                 </mat-menu>
             </span>
             <span class="spn-btn-wrap" *ngIf="!isBtnTotalVisible()">
@@ -156,7 +156,7 @@ class="sec-default-header fixed-nav w-header"
             </mat-expansion-panel-header>
             <mat-list role="list">
                 <mat-list-item role="listitem" *ngFor="let service of menuServicesM">
-                    <button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" mat-button [routerLink]="service.id">{{service.name}}</button>
+                    <button (click)="selectService(service.id)" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['', service.id]" routerLinkActive="active" mat-button>{{service.name}}</button>
                 </mat-list-item>
             </mat-list>
         </mat-expansion-panel>
@@ -179,7 +179,7 @@ class="sec-default-header fixed-nav w-header"
                 <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button></mat-list-item>
                 <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></mat-list-item>
                 <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button></mat-list-item>
-                <mat-list-item role="listitem"><a href="https:/blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
+                <mat-list-item role="listitem"><a (click)="openBlog()" target="_blank" mat-menu-item>Blog</a></mat-list-item>
             </mat-list>
         </mat-expansion-panel>
     </section>

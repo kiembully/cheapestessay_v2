@@ -85,6 +85,8 @@ import { CommonOverlappingCarouselComponent } from './components/common-overlapp
 import { CheckoutComponent } from './checkout/checkout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { CardComponent } from './card/card.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+import { ArabicComponent } from './arabic/arabic.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
@@ -164,6 +166,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     InvoiceComponent,
     CardComponent,
     PageNotFoundComponent,
+    DisclaimerComponent,
+    ArabicComponent,
   ],
   imports: [
     BrowserModule,

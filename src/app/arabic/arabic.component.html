@@ -1,0 +1,33 @@
+<app-common-subpages-header [data_index]="11"></app-common-subpages-header>
+
+<section class="default-width margin-bottom50">
+    <mat-toolbar class="mt-arabic">
+        <mat-toolbar-row class="mtr-arabic" *ngFor="let term of arabic_terms">
+            <h3 [innerHtml]="term.category"></h3>
+            <span [innerHtml]="term.label"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+<section class="default-width margin-bottom50">
+    <mat-toolbar class="mt-arabic">
+        <mat-toolbar-row class="mtr-arabic" *ngFor="let term of arabic_terms1">
+            <h3 [innerHtml]="term.category"></h3>
+            <span [innerHtml]="term.label"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+<section class="default-width margin-bottom50">
+    <mat-toolbar class="mt-arabic">
+        <mat-toolbar-row class="mtr-arabic" *ngFor="let term of arabic_terms2">
+            <h3 [innerHtml]="term.category"></h3>
+            <span [innerHtml]="term.label"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

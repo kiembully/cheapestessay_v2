@@ -28,7 +28,9 @@ import { WhatWeDoComponent } from './what-we-do/what-we-do.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { CardComponent } from './card/card.component';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ArabicComponent } from './arabic/arabic.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -47,6 +49,8 @@ const routes: Routes = [
   {path:'free-quote',component:FreeQuoteComponent},
   {path:'what-we-do',component:WhatWeDoComponent},
   {path:'services',component:ServicesComponent},
+  {path:'disclaimer',component:DisclaimerComponent},
+  {path:'arabic',component:ArabicComponent},
   {path:'404',component:PageNotFoundComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
   {path:'my-orders/order-details/:id',component:OrderDetailsComponent,canActivate:[AuthGuard]},
@@ -54,10 +58,10 @@ const routes: Routes = [
   {path:'balance',component:BalanceComponent,canActivate:[AuthGuard]},
   {path:'discount',component:DiscountComponent,canActivate:[AuthGuard]},
   {path:'level',component:LevelComponent,canActivate:[AuthGuard]},
+  {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:'edit-order/:id',component:EditOrderComponent,canDeactivate:[PendingChangesGuard],canActivate:[AuthGuard]},
   {path:'stripe-checkout/:id',component:CheckoutComponent,canActivate:[AuthGuard]},
   {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
-  {path:'invoice',component:InvoiceComponent,canActivate:[AuthGuard]},
   {path:':id' ,component:ServicesDetailComponent},
   {path: '**', redirectTo: '404'},
   // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},

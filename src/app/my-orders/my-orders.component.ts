@@ -113,10 +113,6 @@ export class MyOrdersComponent implements OnInit {
     return state;
   }
 
-  selectOrderId(id) {
-    this.router.navigate(['/my-orders/order-details', id])
-  }
-
   applyFilter(event: Event) {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase();

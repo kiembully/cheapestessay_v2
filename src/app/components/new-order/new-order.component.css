@@ -89,6 +89,9 @@
 .mbtg-common-style.deadline-wrap {
     height: 50px;
 }
+.mbtg-common-style.deadline-wrap.deadline-mobile {
+    display: none
+}
 .mbtg-common-style mat-button-toggle {
     color: #000000;
     font-family: "SF Pro Text Regular";
@@ -443,6 +446,46 @@ span.spn-price-color {
 }
 
 /* RESPONSIVE STARTS */
+@media screen and (max-width:768px) {
+    .pages-option-wrap,
+    .sec-other-option {
+        display: block;
+    }
+    .spn-other-option {
+        max-width: 100%;
+        display: block;
+        margin: 7.5px 0;
+    }
+    .spn-page-counter > div {
+        display: flex;
+        width: 100%;
+        background: #ffffff;
+        margin-bottom: 15px;
+        border-radius: 7px;
+    }
+    .p-options-label {
+        padding-left: 15px
+    }
+    .mbtg-common-style.deadline-wrap.deadline-mobile {
+        display: flex
+    }
+    .deadline-web .deadline6,
+    .deadline-web .deadline7,
+    .deadline-web .deadline8,
+    .deadline-web .deadline9,
+    .deadline-web .deadline10,
+    .deadline-web .deadline11 {
+        display: none;
+    }
+    .deadline-mobile .deadline0,
+    .deadline-mobile .deadline1,
+    .deadline-mobile .deadline2,
+    .deadline-mobile .deadline3,
+    .deadline-mobile .deadline4,
+    .deadline-mobile .deadline5 {
+        display: none
+    }
+}
 @media screen and (max-width:992px) {
     .mtb-new-order,
     .sec-order-wrap {

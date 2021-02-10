@@ -34,9 +34,13 @@
 }
 table.tbl-balance.mat-table {
   width: 100%;
+  min-height: 50px !important;
 }
 .tbl-balance tr.mat-header-row {
     height: 67px;
+}
+.tbl-balance tr.mat-row {
+    vertical-align: middle;
 }
 .tbl-balance tr.mat-row, .tbl-balance tr.mat-footer-row {
     height: 44px;

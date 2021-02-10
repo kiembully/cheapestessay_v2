@@ -204,7 +204,7 @@ export class CommonPayOrderComponent implements OnInit {
           localStorage.setItem('invoice', JSON.stringify(res.data));
           localStorage.removeItem('set_order_token');
           localStorage.removeItem('order_token');
-          this.router.navigate(['/invoice'], { queryParams: { token: 'token-value', 'PayerID': 'payer-id-value' } });
+          this.router.navigate(['/invoice']);
         }
       }
     )
@@ -228,7 +228,6 @@ export class CommonPayOrderComponent implements OnInit {
   payUsingPaypal() {
     this._auth.payWithPaypal(this.patchFrmPaypalAndBalance()).subscribe(
       res => {
-        console.log(res);
         this.isProgressLoading = false;
         if (!res.status) {
           this._session.messageSnackbar(res.message, 'OK')

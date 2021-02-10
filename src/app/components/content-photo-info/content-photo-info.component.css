@@ -11,13 +11,15 @@
     margin-bottom: 0;
 }
 .spn-content-img {
-    max-width: 400px;
     width: 100%;
 }
 .spn-content-desc {
     white-space: normal;
     width: 100%;
     max-width: 600px;
+}
+.spn-content-separator {
+    padding: 20px;
 }
 .spn-content-block {
     display: block;
@@ -39,6 +41,20 @@ h6.is-header-faq {
     font-size: 130px !important;
     letter-spacing: 0 !important;
     line-height: 155px !important;
+}
+h6.is-header-disclaimer {
+    color: #12245A !important;
+    font-family: "SF Pro Text Bold" !important;
+    font-size: 30px !important;
+    letter-spacing: 0 !important;
+    line-height: 36px !important;
+}
+p.is-label-disclaimer {
+    color: #000000 !important;
+    font-family: "SF Pro Text Regular" !important;
+    font-size: 25px !important;
+    letter-spacing: 0 !important;
+    line-height: 32px !important;
 }
 p.is-label-faq {
     color: #12245A !important;
@@ -109,66 +125,6 @@ p.is-label-faq {
 }
 
 /* sprites location */
-.about-service-sprite1 {
-    background-position: 21.767% 7.486%;
-    background-size: 8765px 710px;
-    width: 309px;
-    height: 263px;
-}
-.about-service-sprite2 {
-    background-position: 25.963% 10.57%;
-	background-size: 8765px 710px;
-	width: 305px;
-	height: 228px;
-}
-.about-service-sprite3 {
-    background-position: 29.985% 6.084%;
-	background-size: 8765px 710px;
-	width: 234px;
-	height: 258px;
-}
-.about-service-sprite4 {
-    background-position: 33.498% 9.011%;
-	background-size: 8765px 710px;
-	width: 261px;
-	height: 255px;
-}
-.about-service-sprite5 {
-    background-position: 37.083% 11.771%;
-	background-size: 8765px 710px;
-	width: 253px;
-	height: 222px;
-}
-.pay-first-img1 {
-    background-position: 41.031% 14.91%;
-	background-size: 8765px 710px;
-	width: 275px;
-	height: 184px;
-}
-.pay-first-img2 {
-    background-position: 45.154% 8.962%;
-	background-size: 8765px 710px;
-	width: 294px;
-	height: 253px;
-}
-.money-back-img1 {
-    background-position: 49.754% 17.733%;
-	background-size: 8765px 710px;
-	width: 322px;
-	height: 163px;
-}
-.money-back-img2 {
-    background-position: 53.807% 13.699%;
-	background-size: 8765px 710px;
-	width: 254px;
-	height: 199px;
-}
-.how-to-do-img {
-    background-position: 57.841% 12.016%;
-	background-size: 8765px 710px;
-	width: 299px;
-	height: 219px;
-}
 .place-order-img {
     background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/placeorder-img.png') no-repeat;
     background-size: 100%;
@@ -201,37 +157,85 @@ p.is-label-faq {
     box-shadow: 4px 3px 2px 0 rgba(0,0,0,0.5);
     border-radius: 20px;
 }
+.about-service-sprite1 {
+    background-position: -3681px -67px;
+	width: 618px;
+	height: 525px;
+}
+.about-service-sprite2 {
+    background-position: -4393px -102px;
+	width: 609px;
+	height: 455px;
+}
+.about-service-sprite3 {
+    background-position: -5116px -55px;
+	width: 467px;
+	height: 516px;
+}
+.about-service-sprite4 {
+    background-position: -5697px -82px;
+	width: 522px;
+	height: 510px;
+}
+.about-service-sprite5 {
+    background-position: -6313px -115px;
+	width: 505px;
+	height: 443px;
+}
+.pay-first-img1 {
+    background-position: -6967px -157px;
+	width: 549px;
+	height: 367px;
+}
+.pay-first-img2 {
+    background-position: -7650px -82px;
+	width: 587px;
+	height: 505px;
+}
+.money-back-img1 {
+    background-position: -8401px -194px;
+	width: 644px;
+	height: 326px;
+}
+.money-back-img2 {
+    background-position: -9159px -140px;
+	width: 507px;
+	height: 398px;
+}
+.how-to-do-img {
+    background-position: -9793px -118px;
+	width: 598px;
+	height: 438px;
+}
 .about-us-img {
-    background-position: 65.221% 15.578%;
-	background-size: 8765px 710px;
-	width: 280px;
-	height: 174px;
+    background-position: -11068px -167px;
+	width: 559px;
+	height: 348px;
 }
 .revision-policy-img {
-    background-position: 68.608% 13.538%;
-	background-size: 8765px 710px;
-	width: 274px;
-	height: 204px;
-    zoom: 1.4;
+    background-position: -11651px -137px;
+	width: 547px;
+	height: 408px;
 }
 .faqs-content-img {
-    background-position: 12.298% 0;
-	background-size: 8765px 710px;
-	width: 345px;
-	height: 298px;
+    background-position: -2071px 0;
+	width: 689px;
+	height: 596px;
 }
 .ask-question-img {
-    background-position: 71.608% 13.538%;
-    background-size: 8765px 710px;
-    width: 244px;
-    height: 243px;
-    zoom: 1.5;
+    background-position: -12195px -138px;
+    width: 547px;
+    height: 478px;
 }
 .contact-us-img {
-    background-position: -6383px -77px;
-	background-size: 8765px 710px;
-	width: 299px;
-	height: 218px;
+    background-position: -12766px -155px;
+	width: 597px;
+	height: 435px;
+}
+.disclaimer-img {
+    background-position: -13497px -114px;
+	width: 552px;
+	height: 543px;
 }
 
 /* RESPONSIVE SECTION  */
@@ -257,7 +261,106 @@ p.is-label-faq {
  
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
- 
+    .about-service-sprite1 {
+        background-position: 21.767% 7.486%;
+        background-size: 8765px 710px;
+        width: 309px;
+        height: 263px;
+    }
+    .about-service-sprite2 {
+        background-position: 25.963% 10.57%;
+        background-size: 8765px 710px;
+        width: 305px;
+        height: 228px;
+    }
+    .about-service-sprite3 {
+        background-position: 29.985% 6.084%;
+        background-size: 8765px 710px;
+        width: 234px;
+        height: 258px;
+    }
+    .about-service-sprite4 {
+        background-position: 33.498% 9.011%;
+        background-size: 8765px 710px;
+        width: 261px;
+        height: 255px;
+    }
+    .about-service-sprite5 {
+        background-position: 37.083% 11.771%;
+        background-size: 8765px 710px;
+        width: 253px;
+        height: 222px;
+    }
+    .pay-first-img1 {
+        background-position: 41.031% 14.91%;
+        background-size: 8765px 710px;
+        width: 275px;
+        height: 184px;
+    }
+    .pay-first-img2 {
+        background-position: 45.154% 8.962%;
+        background-size: 8765px 710px;
+        width: 294px;
+        height: 253px;
+    }
+    .money-back-img1 {
+        background-position: 49.754% 17.733%;
+        background-size: 8765px 710px;
+        width: 322px;
+        height: 163px;
+    }
+    .money-back-img2 {
+        background-position: 53.807% 13.699%;
+        background-size: 8765px 710px;
+        width: 254px;
+        height: 199px;
+    }
+    .how-to-do-img {
+        background-position: 57.841% 12.016%;
+        background-size: 8765px 710px;
+        width: 299px;
+        height: 219px;
+    }
+    .about-us-img {
+        background-position: 65.221% 15.578%;
+        background-size: 8765px 710px;
+        width: 280px;
+        height: 174px;
+    }
+    .revision-policy-img {
+        background-position: 68.608% 13.538%;
+        background-size: 8765px 710px;
+        width: 274px;
+        height: 204px;
+    }
+    .faqs-content-img {
+        background-position: 12.298% 0;
+        background-size: 8765px 710px;
+        width: 345px;
+        height: 298px;
+    }
+    .ask-question-img {
+        background-position: 71.608% 13.538%;
+        background-size: 8765px 710px;
+        width: 244px;
+        height: 243px;
+    }
+    .contact-us-img {
+        background-position: -6383px -77px;
+        background-size: 8765px 710px;
+        width: 299px;
+        height: 218px;
+    }
+    .disclaimer-img {
+        background-position: -6749px -57px;
+        background-size:  8765px 710px;
+        width: 276px;
+        height: 272px;
+    }
+    .spn-content-img {
+        width: 100%;
+        max-width: 350px;
+    }
 }
  
 /* Extra large devices (large desktops, 1200px and up) */

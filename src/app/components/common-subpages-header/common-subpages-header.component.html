@@ -6,7 +6,7 @@
                 <p class="common-subpage-subheader">{{header_content[data_index].subheader}}</p>
             </mat-toolbar-row>
             <mat-toolbar-row>
-                <button type="button" class="btn-order-now" routerLink="/order" mat-flat-button>Order Now</button>
+                <button type="button" class="btn-order-now" routerLink="/order" mat-flat-button>{{getOrderText(data_index)}}</button>
             </mat-toolbar-row>
         </mat-toolbar>
     </div>

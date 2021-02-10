@@ -47,7 +47,9 @@ export class AppComponent {
     'pricing',
     'contact-us',
     'services',
-    'what-we-do'
+    'what-we-do',
+    'arabic',
+    'disclaimer'
   ]
 
   getFooterStatus() {

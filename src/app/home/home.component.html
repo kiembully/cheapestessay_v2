@@ -1,6 +1,6 @@
 <section class="full-width">
     <div class="main-banner-background">
-        <mat-toolbar class="mt-home-banner default-width">
+        <mat-toolbar class="mt-home-banner width1120px">
             <mat-toolbar-row>
                 <span class="fill-space spn-welcome-banner">
                     <div class="welcome-banner-wrap">
@@ -87,17 +87,17 @@
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row>
-            <button mat-flat-button type="button" class="btn-show-services">Show all</button>
+            <button mat-flat-button type="button" class="btn-show-services" routerLink="/services">Show all</button>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
 <!-- WEB CONTENTS SECTION  -->
-<section class="default-width">
+<section class="default-width margin-bottom70">
     <app-content-photo-info data_content="about_services"></app-content-photo-info>    
 </section>
 <!-- FIRST ORDER DISCOUNT SECTION -->
 <div class="diagonal-box margin-bottom100">
-    <div class="default-width revert-diagonal">
+    <div class="width1120px revert-diagonal">
         <app-common-discount-banner></app-common-discount-banner>
     </div>
 </div>
@@ -136,7 +136,7 @@
 </section>
 <!-- FIRST ORDER DISCOUNT SECTION -->
 <div class="diagonal-box margin-bottom100">
-    <div class="default-width revert-diagonal">
+    <div class="width1120px revert-diagonal">
         <app-common-discount-banner [has_image]="true"></app-common-discount-banner>
     </div>
 </div>

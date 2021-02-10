@@ -127,15 +127,25 @@
                             <p class="p-order-label">Deadline</p>
                         </span>
                         <span class="spn-input-wrap" >
-                            <mat-button-toggle-group class="mbtg-common-style deadline-wrap" required [value]="deadline_value">
+                            <mat-button-toggle-group class="mbtg-common-style deadline-wrap deadline-web" required [value]="deadline_value">
                                 <mat-button-toggle 
                                 *ngFor="let list of allDeadlines; let i = index" 
-                                class="fill-space"
+                                class="fill-space deadline{{i}}"
                                 (click)="patchDeadline(list)"
                                 [value]="i">
                                 <p class="p-dl">{{list.deadline}}</p>
                                 <p class="p-du" [style.color]="list.duration == 'Hours' ? '#D0555A' : null">{{list.duration}}</p>
-                            </mat-button-toggle>
+                                </mat-button-toggle>
+                            </mat-button-toggle-group>
+                            <mat-button-toggle-group class="mbtg-common-style deadline-wrap deadline-mobile" required [value]="deadline_value">
+                                <mat-button-toggle 
+                                *ngFor="let list of allDeadlines; let i = index" 
+                                class="fill-space deadline{{i}}"
+                                (click)="patchDeadline(list)"
+                                [value]="i">
+                                <p class="p-dl">{{list.deadline}}</p>
+                                <p class="p-du" [style.color]="list.duration == 'Hours' ? '#D0555A' : null">{{list.duration}}</p>
+                                </mat-button-toggle>
                             </mat-button-toggle-group>
                             <label class="lbl-common-style" for="deadline">Order will be ready before {{deadlineFormat}}</label>
                         </span>

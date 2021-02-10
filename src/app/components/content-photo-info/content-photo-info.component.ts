@@ -16,6 +16,7 @@ export class ContentPhotoInfoComponent implements OnInit {
   @Input() public has_diagonal_background: boolean = false;
   @Input() public has_background_content: boolean = false;
   @Input() public is_faqs_content: boolean = false;
+  @Input() public is_disclaimer_content: boolean = false;
   
   constructor() { }
 
@@ -50,6 +51,8 @@ export class ContentPhotoInfoComponent implements OnInit {
       value = this.ask_question_content
     } else if (content == 'contact_us_content') {
       value = this.contact_us_content
+    } else if (content == 'disclaimer_content') {
+      value = this.disclaimer_content;
     } return value;
   }
 
@@ -127,7 +130,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       class:'pay-first-img1'
     },
     {
-      title: "Type of Service and the Writer's leve you need",
+      title: "Type of Service and the Writer's level you need",
       contents:[
         "The type of service you order us to deliver will determine the amount you will pay. There are three different types of services that we offer, and all are priced differently. They include; PowerPoint, writing, and editing.  ",
         "Also, the lever of the writer your work demands will affect how you will pay. College, bachelor, and master writers have different qualifications; hence, all have different prices."
@@ -260,6 +263,15 @@ export class ContentPhotoInfoComponent implements OnInit {
         'Do you need someone to help you with your paper, or just want to say hi? Go right ahead!'
       ],
       class:'contact-us-img'
+    }
+  ]
+  disclaimer_content: any = [
+    {
+      title: 'CheapestEssay.com Disclaimer Terms',
+      contents: [
+        'A customer placing an order with CheapestEssay.com automatically agrees to the following conditions:'
+      ],
+      class: 'disclaimer-img'
     }
   ]
 }

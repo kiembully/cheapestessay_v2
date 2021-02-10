@@ -29,7 +29,6 @@
     margin-bottom: 0;
 }
 .client-reviews-img-wrap {
-    max-width: 600px;
     width: 100%;
 }
 .client-reviews-img-wrap p {
@@ -44,12 +43,9 @@
     margin-top: 0;
 }
 .client-reviews-img {
-    background-position: 4.022% 7.191%;
-	background-size: 8765px 710px;
-	width: 360px;
-    height: 265px;
-    margin: 0 auto;
-    zoom: 1.5
+    background-position: -676px -64px;
+	width: 100%;
+	height: 530px;
 }
 .upper-quote {
     font-size: 120px;
@@ -57,7 +53,7 @@
     position: absolute;
     left: 0;
     top: 25px;
-    background: #f2f2f2;
+    background: #fbfbfb;
     transform: rotate(180deg)
 }
 .lower-quote {
@@ -66,7 +62,7 @@
     position: absolute;
     right: 0;
     bottom: 0;
-    background: #f2f2f2;
+    background: #fbfbfb;
 }
 .p-service-reviews {
     color: #12245A;
@@ -103,6 +99,16 @@
     .upper-quote,
     .lower-quote {
         font-size: 60px;
+    }
+    .client-reviews-img-wrap {
+        max-width: 600px;
+        width: 100%;
+    }
+    .client-reviews-img {
+        background-position: -338px -32px;
+        background-size: 8765px 710px;
+        width: 360px;
+        height: 265px;
     }
 }
  

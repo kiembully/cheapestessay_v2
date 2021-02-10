@@ -70,7 +70,7 @@ mat-toolbar-row {
 
 /* determining max-width of a section */
 .default-width {
-    max-width: 1100px;
+    max-width: 1200px;
     width: 100%;
     margin: 0 auto;
 }
@@ -200,6 +200,12 @@ input[type=number] {
       background-repeat: no-repeat;
       display: inline-block;
       zoom: .5;
+}
+
+.app-logo-sprite {
+  background: transparent url("https://www.cheapestessay.com/assets/img/sprite-footer.webp") no-repeat;
+  position: absolute;
+  left: 12px;
 }
 
 /* sub pages styles starts */

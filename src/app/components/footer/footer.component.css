@@ -63,6 +63,54 @@
     width: 100%;
     min-height: 10px;
 }
+.separate-app {
+    padding: 15px;
+}
+.app-button-wrap {
+    display: flex;
+    margin: 30px auto 0 auto;
+    max-width: 330px;
+    width: 100%;
+    min-height: 10px;
+}
+.app-button-wrap button {
+    text-align: center;
+    padding: 15px 10px;
+    position: relative;
+    border-radius: 5px;
+    background-color: #000000;
+    width: 100%;
+    height: 100%;
+    padding-left: 45px;
+}
+.app-button-wrap .btn-app-store {
+    background-position: 28.571% 49.235%;
+	background-size: 43px 234px;
+	width: 33px;
+	height: 38px;
+    top: 16px;
+}
+.app-button-wrap .p-dl-on {
+    color: #fff;
+    font-family: 'SF Pro Text Regular';
+    font-size: 12px;
+    line-height: 14px;
+    margin: 0;
+}
+.app-button-wrap .p-app-name {
+    color: #fff;
+    font-family: 'SF Pro Text Semibold';
+    font-size: 18px;
+    line-height: 22px;
+    margin: 0;
+}
+.app-button-wrap .btn-play-store {
+    background-position: 14.706% 74.51%;
+	background-size: 43px 234px;
+	width: 26px;
+    height: 30px;
+    top: 17px;
+}
 .spn-social-media {
     height: 38px;
     width: 38px;
@@ -70,11 +118,13 @@
     border: 1px solid #255AF3;
     display: flex;
 }
+.mtr-app-wrap,
 .mtr-social-media {
     display: block;
     text-align: center;
     text-align: -webkit-center;
 }
+
 .footer-socials-inner {
     display: flex;
 }

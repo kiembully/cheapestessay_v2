@@ -33,7 +33,7 @@ export class CommonFaqsComponent implements OnInit {
     },
     {
       header: 'How much does an Essay Writer Cost?',
-      content: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      content: "Our service is pre-paid, and our writers will only start working on your order after the payment is received.",
     },
     {
       header: 'Is CheapestEssay plagiarism free?',

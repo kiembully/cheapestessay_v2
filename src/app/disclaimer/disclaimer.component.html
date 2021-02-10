@@ -1,0 +1,20 @@
+<app-common-subpages-header [data_index]="10"></app-common-subpages-header>
+<section class="default-width margin-bottom70">
+    <app-content-photo-info data_content="disclaimer_content" [left_first]="true" [is_disclaimer_content]="true"></app-content-photo-info>
+</section>
+
+<section class="default-width margin-bottom70">
+    <mat-toolbar class="mt-disclaimer-terms">
+        <mat-toolbar-row class="mtr-disclaimer-terms" *ngFor="let term of disclaimer_terms">
+            <h3 [innerHtml]="term.category"></h3>
+            <p [innerHtml]="term.label"></p>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+
+<div class="margin-bottom70">
+    <app-common-additional-service></app-common-additional-service>
+</div>
+
+<!-- HOME COMMON SERVICE/CONTACT US -->
+<app-common-services-slide></app-common-services-slide>

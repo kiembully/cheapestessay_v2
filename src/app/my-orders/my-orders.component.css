@@ -6,7 +6,7 @@
 }
 table.tbl-my-orders.mat-table {
   width: 100%;
-  min-height: 507px !important;
+  min-height: 50px !important;
 }
 .tbl-my-orders tr.mat-row {
     vertical-align: middle;
