@@ -16,6 +16,7 @@ export class CommonPayOrderComponent implements OnInit {
 
   @Input() public isCard: boolean;
   @Input() order_id: any;
+  @Input() order_number: any;
   @Input() card_details: any;
   @Input() agreement: boolean;
   @Input() tabIndex: number;
@@ -70,6 +71,7 @@ export class CommonPayOrderComponent implements OnInit {
   decoded_card_info: any;
   ngOnInit(): void {
     this.displayBalance = this.getBalance();
+    console.log(this.card_details)
     this.decoded_card_info = this.card_details;
     this.displayPaymentDetails();
   }

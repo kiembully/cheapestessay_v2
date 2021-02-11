@@ -158,4 +158,9 @@ export class NewOrderOutputComponent implements OnInit {
       }
     }
   }
+
+  getLifeTimeDiscount() {
+    let decoded_token = jwt_decode(localStorage.getItem('set_order_token'));
+    return decoded_token.life_time_Disc;
+  }
 }

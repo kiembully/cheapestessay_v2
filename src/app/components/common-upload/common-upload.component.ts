@@ -72,7 +72,9 @@ export class CommonUploadComponent implements OnInit {
         localStorage.setItem('uploaded_token', res.data.uploaded_token);
         this.isSuccess = res.status;
         if (res.status) {
-          
+          localStorage.setItem('file_update', 'true')
+        } else {
+          localStorage.setItem('file_update', 'false')
         }
       },
       (err) => console.log(err)

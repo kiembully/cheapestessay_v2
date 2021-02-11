@@ -25,6 +25,7 @@ export class HeaderComponent implements OnInit {
   decoded_user_token:any;
   headerForm = new FormGroup({
     first_name: new FormControl('User Firstname'),
+    last_name: new FormControl('User Firstname'),
     email: new FormControl(''),
     balance: new FormControl(0),
   })
@@ -67,6 +68,7 @@ export class HeaderComponent implements OnInit {
       this.decoded_user_token = jwt_decode(localStorage.getItem('user_token'))
       this.headerForm.patchValue({
         first_name: this.decoded_user_token.user_details.first_name,
+        last_name: this.decoded_user_token.user_details.last_name,
         email: this.decoded_user_token.user_details.user_email,
         balance: !(this.decoded_user_token.account.total_balance) ? 0 : this.decoded_user_token.account.total_balance,
       })

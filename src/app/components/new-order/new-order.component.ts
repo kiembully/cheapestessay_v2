@@ -29,6 +29,7 @@ export class NewOrderComponent implements OnInit {
   isPlagiarismActive:boolean;
   isEmailActive:boolean;
   isUserActive:boolean;
+  panelOptionalState:boolean = false;
 
   // order ouput on floating element
   orderOutput:any = this._data.orderOutput;
@@ -78,9 +79,7 @@ export class NewOrderComponent implements OnInit {
     }
   }
   isMasterSelected:boolean = false;
-  isOtherPaper:boolean = false;
   patchPaper(list) {
-    this.isOtherPaper = (list.paper_id!=33) ? false : true;
     this.newOrderForm.patchValue({other_paper: (list.paper_id!=33)?'':null});
     this.orderOutput.patchValue({paper: list.paper_name,})
     if (this.setAcademicToMaster(list.paper_id)) {
@@ -91,9 +90,7 @@ export class NewOrderComponent implements OnInit {
     let status = (id === 27 || id === 41 || id === 42 || id === 37) ? true : false;
     return status;
   }
-  isOtherSubject:boolean = false;
   patchSubject(list) {
-    this.isOtherSubject = (list.id!=49) ? false : true;
     this.newOrderForm.patchValue({other_subject: (list.id!=49)?'':null});
     this.orderOutput.patchValue({subject: list.subject_name,})
   }
@@ -125,12 +122,9 @@ export class NewOrderComponent implements OnInit {
   patchSpacing(val) {
     this.word_tot = (val > 1) ? 560 : 280;
   }
-  isOtherFormatVisible: boolean = false;
   patchFormat(id) {
-    this.isOtherFormatVisible = (id == 5) ? true : false;
     this.newOrderForm.patchValue({other_format:''})
   }
-  isPreferredWriterVisible: boolean = false;
   patchWriter(val) {
     let writer;
     if (val == 1) {
@@ -143,7 +137,6 @@ export class NewOrderComponent implements OnInit {
     this.newOrderForm.patchValue({
       writer_id:(val==3)?'W85':'',
     });
-    this.isPreferredWriterVisible = (val == 3) ? true : false;
   }
   patchPreferredWriter(val) {
     this.newOrderForm.patchValue({writer_id: val})
@@ -198,6 +191,7 @@ export class NewOrderComponent implements OnInit {
   ngOnInit(): void {
     this.isProgressLoading = true;
     this.isUserActive = (this._session.isTokenExisting('user_token')) ? false : true;
+    this.newOrderForm.patchValue({user_token: (this.isUserActive)?localStorage.getItem('user_token'):''})
     this.displayOldWriters();
     this.displayOrderDetails();
     if (this._session.isTokenExisting('set_order_token')) {

@@ -1,8 +1,8 @@
 import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 import { ApiServices } from 'src/app/api.service';
-import {new_order_form_default} from 'src/app/data/data';
+import {new_order_form_default, service_object} from 'src/app/data/data';
 import {FormControl, FormGroup, FormBuilder} from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { loggedin_session } from '../../data/ui-services';
 import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../../dialogs/common-dialog/common-dialog.component';
@@ -13,7 +13,7 @@ import jwt_decode from 'jwt-decode';
   selector: 'app-common-banner-calculator',
   templateUrl: './common-banner-calculator.component.html',
   styleUrls: ['./common-banner-calculator.component.css'],
-  providers: [ApiServices, new_order_form_default, loggedin_session],
+  providers: [ApiServices, new_order_form_default, loggedin_session, service_object],
   encapsulation: ViewEncapsulation.None,
 })
 export class CommonBannerCalculatorComponent implements OnInit {
@@ -25,7 +25,14 @@ export class CommonBannerCalculatorComponent implements OnInit {
   // removes element if this component is not in home
   @Input() public isHome:boolean;
 
-  constructor(private _auth: ApiServices, private _data: new_order_form_default, private router: Router, public _session: loggedin_session, public dialog: MatDialog) { }
+  constructor(
+    private _auth: ApiServices,
+    private _data: new_order_form_default,
+    private router: Router,
+    public _session: loggedin_session,
+    public _service: service_object,
+    public dialog: MatDialog,
+    private route: ActivatedRoute,) { }
 
   isSubmitDisabled:boolean = false;
   decoded_user_token: any;
@@ -35,6 +42,7 @@ export class CommonBannerCalculatorComponent implements OnInit {
     this.logged_email = ((!this._session.isTokenExisting('user_token'))) ? this.decoded_user_token.user_details.user_email : '';
     localStorage.removeItem('discount_token');
     this.getServices();
+    this.setSelectedService();
     this.setOrder(this.setOrderForm.value);
     this.setOrderForm.valueChanges.subscribe(
       (value:any) => {
@@ -67,9 +75,26 @@ export class CommonBannerCalculatorComponent implements OnInit {
         this.deadline = val[2].data;
         this.pages = val[3].data;
 
+        let param = this.route.snapshot.paramMap.get('id');
+
         this.isProgressLoading = false;
       }
     );
+  }
+
+  service: any = this._service.service;
+  setSelectedService() {
+    let param = this.route.snapshot.paramMap.get('id');
+    let id = 3;
+    for (let i = 0; i < this.service.length; i++) {
+      if (this.service[i].name == param) {
+        id = this.service[i].id;
+        this.setOrderForm.patchValue({
+          paper: id
+        })
+        break;
+      }
+    }
   }
   
   setOrder(order_form) {

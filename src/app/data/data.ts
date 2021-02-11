@@ -118,3 +118,29 @@ export class profile_form_default {
     user_token: new FormControl(),
   })
 }
+
+export class service_object {
+  service: any = [
+    {name:'essay-writing-services', id:1},
+    {name:'research-paper-writing-services', id:3},
+    {name:'coursework-writing-services', id:25},
+    {name:'case-study-writing', id:8},
+    {name:'write-my-essay', id:1},
+    {name:'research-article-summary', id:35},
+    {name:'assignment-writing-service', id:68},
+    {name:'math-homework-help', id:121},
+    {name:'book-movie-review-services', id:6},
+    {name:'lab-report-abstract', id:37},
+    {name:'powerpoint-presentation-service', id:30},
+    {name:'admission-essay', id:31},
+    {name:'professional-cover-letter-writing-services', id:3},
+    {name:'cv-writing-services', id:104},
+    {name:'cv-editing-services', id:104},
+    {name:'article-writing-services', id:17},
+    {name:'report-writing-service', id:29},
+    {name:'thesis-writing-services', id:42},
+    {name:'dissertation-help', id:27},
+    {name:'writing-an-essay-outline', id:104},
+    {name:'blog-writers-for-hire', id:104},
+  ]
+}

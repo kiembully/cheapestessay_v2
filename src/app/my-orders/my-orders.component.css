@@ -7,6 +7,7 @@
 table.tbl-my-orders.mat-table {
   width: 100%;
   min-height: 50px !important;
+  background: transparent;
 }
 .tbl-my-orders tr.mat-row {
     vertical-align: middle;
@@ -274,9 +275,9 @@ table.tbl-my-orders.mat-table {
     .sec-orders {
         display: block;
     }
-    .mfl-common-select {
+    /* .mfl-common-select {
         width: auto;
-    }
+    } */
     .sec-order-nav {
         padding: 20px;
         width: auto;
@@ -292,5 +293,13 @@ table.tbl-my-orders.mat-table {
     }
     .tbl-my-orders tr.mat-header-row {
         display: none;
+    }
+    table.tbl-my-orders.mat-table {
+        max-width: 768px;
+        margin: 0 auto
+    }
+    .sec-orders {
+        background-color: transparent;
+        box-shadow: none;
     }
 }

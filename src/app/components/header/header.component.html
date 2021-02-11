@@ -81,7 +81,7 @@ class="sec-default-header fixed-nav w-header"
                             <span class="fill-space">${{headerForm.value.balance}}</span>
                         </div>
                     </span>
-                    <span class="spn-m-hidden">Name: {{headerForm.value.first_name}}</span>
+                    <span class="spn-m-hidden">Name: {{headerForm.value.first_name}} {{headerForm.value.last_name}}</span>
                     <span class="spn-m-hidden">Email: {{headerForm.value.email}}</span>
                     <span><button mat-flat-button type="button" color="accent" class="btn-logout" (click)="openLogoutDialog()">Logout</button></span>
                 </mat-toolbar-row>

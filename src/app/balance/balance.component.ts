@@ -4,6 +4,7 @@ import {MatTableDataSource} from '@angular/material/table';
 import {balances} from '../data/user-data';
 import {FormControl, FormGroup} from '@angular/forms';
 import {ApiServices} from 'src/app/api.service';
+import { Router } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 
 @Component({
@@ -18,7 +19,8 @@ export class BalanceComponent implements OnInit {
   constructor(
     private _auth: ApiServices,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private router: Router,
   ) { }
   tokenForm = new FormGroup({
     user_token: new FormControl(this._auth.getToken())
@@ -26,6 +28,7 @@ export class BalanceComponent implements OnInit {
   isProgressLoading:boolean = false;
 
   displayedColumns:string[] = ['date','transaction_text','journal_text','transaction_amount','current_wallet_balance'];
+  displayedColumnsMob:string[] = ['journal_text'];
 
   public myBalance:any = 'fetching...';
   dataSource:any;
@@ -41,6 +44,10 @@ export class BalanceComponent implements OnInit {
         this.isEmpty = (res.data == undefined) ? true : false;
       }
     )
+  }
+
+  viewOrder(id) {
+    this.router.navigate(['/my-orders/order-details', id])
   }
 
   gained(val) {

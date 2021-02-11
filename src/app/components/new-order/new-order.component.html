@@ -64,7 +64,7 @@
                         </span>
                     </section>
                     <!-- only appears when other options is selected -->
-                    <section class="sec-other-order-wrap" *ngIf="isOtherPaper">
+                    <section class="sec-other-order-wrap" *ngIf="newOrderForm.value.paper==33">
                         <span class="fill-space">
                             <p class="p-order-label">Other Type of Paper</p>
                         </span>
@@ -98,7 +98,7 @@
                         </span>
                     </section>
                     <!-- only appears when other options is selected -->
-                    <section class="sec-other-order-wrap" *ngIf="isOtherSubject && newOrderForm.value.paper != 127">
+                    <section class="sec-other-order-wrap" *ngIf="newOrderForm.value.subject==49 && newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label">Other Subject</p>
                         </span>
@@ -235,10 +235,10 @@
         
                     <!-- lower portion is hidden when user is not logged in -->
                     <mat-accordion class="ma-order-options" *ngIf="isUserActive && newOrderForm.value.paper != 127">
-                        <mat-expansion-panel hideToggle>
+                        <mat-expansion-panel hideToggle (opened)="panelOptionalState=true" (closed)="panelOptionalState=false">
                             <mat-expansion-panel-header>
                                 <mat-panel-title>
-                                    Hide more options ( optional )
+                                    <span [innerHtml]="panelOptionalState?'Hide':'Show'"></span> more options ( optional )
                                 </mat-panel-title>
                             </mat-expansion-panel-header>
         
@@ -257,7 +257,7 @@
                                 </span>
                             </section>
                             <!-- only appears when other options is selected -->
-                            <section class="sec-other-order-wrap" *ngIf="isOtherFormatVisible">
+                            <section class="sec-other-order-wrap" *ngIf="newOrderForm.value.formated_style==5">
                                 <span class="fill-space">
                                     <p class="p-order-label">Other Format / Style</p>
                                 </span>
@@ -291,13 +291,13 @@
                                 </span>
                             </section>
                             <!-- only appears when other options is selected -->
-                            <section class="sec-other-order-wrap" *ngIf="isPreferredWriterVisible">
+                            <section class="sec-other-order-wrap" *ngIf="newOrderForm.value.preferred_writer == 'my_previous_writer'">
                                 <span class="fill-space">
                                     <p class="p-order-label">Preferred Writer</p>
                                 </span>
                                 <span class="spn-input-wrap">
                                     <mat-form-field appearance="fill" class="mfl-common-select">
-                                        <mat-select panelClass="mt-common-select" formControlName="writer_id" [value]="newOrderForm.value.writer_id">
+                                        <mat-select panelClass="mt-common-select" formControlName="writer_id" value="(newOrderForm.value.preferred_writer == 'my_previous_writer')?'W85':''">
                                             <mat-option disabled><input class="mt-search-input" type="text" placeholder="Serach"></mat-option>
                                             <mat-optgroup label="Old Writers" *ngIf="isUserActive">
                                                 <mat-option (click)="patchPreferredWriter(list.writer)" *ngFor="let list of oldWriters">{{list.writer}}</mat-option>
@@ -390,7 +390,7 @@
                                     </section>
                                     <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(7)">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Send it to my E-Mail <span class="spn-price-color">1.99</span></p>
+                                            <p class="p-options-label">Send it to my E-Mail <span class="spn-price-color">$1.99</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
                                             <button type="button" [ngClass]="{'is-active':isEmailActive}" mat-mini-fab class="btn-toggle-option"></button>

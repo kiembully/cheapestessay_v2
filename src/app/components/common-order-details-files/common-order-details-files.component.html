@@ -15,7 +15,7 @@
                         <td><div class="file-img-wrap"></div></td>
                         <td><h6>{{file.file_name1}}</h6><p>{{file.date_time}}</p></td>
                         <td><span class="spn-uploader">{{file.uploaded_by}}</span></td>
-                        <td><button type="button" class="btn-view-file"></button></td>
+                        <td><button type="button" (click)="openMaterial(file.file_path)" class="btn-view-file"></button></td>
                     </tr>
                 </table>
             </div>

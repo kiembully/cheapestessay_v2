@@ -57,8 +57,11 @@
     margin: 30px auto 0 auto;
 }
 .sec-other-order-wrap {
+    width: 100%;
+    max-width: 700px;
     display: flex;
-    margin-top: 10px;
+    margin-top: 30px;
+    margin: 10px auto 0 auto;
 }
 .spn-text-wrap,
 .spn-input-wrap {
@@ -353,7 +356,9 @@
     flex-direction: row;
 }
 .sec-other-option {
-    margin-top: 40px;
+    width: 100%;
+    max-width: 700px;
+    margin: 40px auto 0;
     display: flex;
 }
 .spn-other-option {
@@ -447,6 +452,7 @@ span.spn-price-color {
 
 /* RESPONSIVE STARTS */
 @media screen and (max-width:768px) {
+    .sec-other-order-wrap,
     .pages-option-wrap,
     .sec-other-option {
         display: block;
@@ -469,6 +475,9 @@ span.spn-price-color {
     .mbtg-common-style.deadline-wrap.deadline-mobile {
         display: flex
     }
+    .deadline-web {
+        margin-bottom: 10px
+    }
     .deadline-web .deadline6,
     .deadline-web .deadline7,
     .deadline-web .deadline8,
@@ -484,6 +493,9 @@ span.spn-price-color {
     .deadline-mobile .deadline4,
     .deadline-mobile .deadline5 {
         display: none
+    }
+    .lbl-common-style {
+        text-align: center;
     }
 }
 @media screen and (max-width:992px) {

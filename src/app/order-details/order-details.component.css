@@ -27,7 +27,7 @@
   line-height: 19px;
 }
 .spn-order-details-wrap {
-  min-height: 200px;
+  height: 100%;
   width: 100%;
   max-width: 735px;
   border-radius: 5px;

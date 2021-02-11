@@ -14,8 +14,9 @@ export class EditOrderComponent implements OnInit {
   @HostListener('window:beforeunload')
   canDeactivate(): Observable<boolean> | boolean {
     let state: boolean;
-    state = (localStorage.getItem('is_submitting') === 'true') ? true : false;
+    state = (localStorage.getItem('is_submitting') === 'true') || (localStorage.getItem('file_update') === 'true') ? true : false;
     localStorage.removeItem('is_submitting');
+    localStorage.removeItem('file_update');
     return state;
   }
   

@@ -100,10 +100,12 @@ export class DialogTriggers {
     });
 
     dialogRef.afterClosed().subscribe(() => {
-      let path = this._common.getCurrentPath();
-      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-        this.router.navigate(['/' + path]);
-      });
+      if (localStorage.getItem('file_update') === 'true') {
+        let path = this._common.getCurrentPath();
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/' + path]);
+        });
+      }
     });
   }
 

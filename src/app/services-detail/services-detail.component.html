@@ -20,7 +20,7 @@
     <mat-toolbar class="mt-services-content">
         <mat-toolbar-row class="mtr-services-contents common-sub-header">
             <h2>{{initial_pitch_header}}</h2>
-            <span [innerHTML]="initial_pitch_content"></span>
+            <span [innerHTML]="sanitized.bypassSecurityTrustHtml(initial_pitch_content)"></span>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
