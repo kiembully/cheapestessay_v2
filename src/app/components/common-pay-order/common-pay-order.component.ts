@@ -71,7 +71,6 @@ export class CommonPayOrderComponent implements OnInit {
   decoded_card_info: any;
   ngOnInit(): void {
     this.displayBalance = this.getBalance();
-    console.log(this.card_details)
     this.decoded_card_info = this.card_details;
     this.displayPaymentDetails();
   }

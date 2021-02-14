@@ -4,6 +4,7 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { new_order_form_default } from 'src/app/data/data';
 import { Title, Meta } from '@angular/platform-browser';
+import { loggedin_session } from '../data/ui-services';
 // @ts-ignore  
 import jwt_decode from 'jwt-decode';
 
@@ -11,7 +12,7 @@ import jwt_decode from 'jwt-decode';
   selector: 'app-pricing',
   templateUrl: './pricing.component.html',
   styleUrls: ['./pricing.component.css'],
-  providers: [ApiServices, new_order_form_default],
+  providers: [ApiServices, new_order_form_default, loggedin_session],
   encapsulation: ViewEncapsulation.None,
 })
 export class PricingComponent implements OnInit {
@@ -21,7 +22,8 @@ export class PricingComponent implements OnInit {
     private http: HttpClient,
     private _data: new_order_form_default,
     private titleService: Title,
-    private metaTagService: Meta
+    private metaTagService: Meta,
+    private _session: loggedin_session
     ) { }
 
   order_token = new FormGroup({
@@ -42,6 +44,7 @@ export class PricingComponent implements OnInit {
   patchDeadline(list) {
     this.pricingForm.patchValue({
       deadline: list.deadline,
+      deadlineid: list.deadline_id,
       duration: list.duration
     })
   }
@@ -108,7 +111,14 @@ export class PricingComponent implements OnInit {
     );
 
     this.displayOrderDetails();
-    this.setOrders(this.pricingForm.value);
+    if (this._session.isTokenExisting('set_order_token')) {
+      this.setOrders(this.pricingForm.value);
+    } else {
+      let decoded_token = jwt_decode(localStorage.getItem('set_order_token'));
+      this.patchPricingForm(decoded_token);
+      this.setOrders(this.pricingForm.value);
+    }
+
     this.pricingForm.valueChanges.subscribe(
       (value:any) => {
         this.setOrders(value);
@@ -130,6 +140,16 @@ export class PricingComponent implements OnInit {
     this.pricingForm.value.page = val;
     this.pricingForm.patchValue({
       page: val
+    })
+  }
+
+  patchPricingForm(val) {
+    this.pricingForm.patchValue({
+      service: val.service,
+      academic: val.academic,
+      deadlineid: val.deadlineid,
+      deadline: val.deadline,
+      page: val.page
     })
   }
 }

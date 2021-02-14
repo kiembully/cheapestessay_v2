@@ -86,7 +86,6 @@ export class InvoiceComponent implements OnInit {
         } else {
           this.isPaymentSuccess = false;
         }
-        console.log(res);
       }
     )
   }

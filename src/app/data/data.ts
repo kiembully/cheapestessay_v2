@@ -18,6 +18,7 @@ export class new_order_form_default {
         add_detail: new FormControl('', [Validators.required]),
         timezone: new FormControl('America/Chicago'),
         deadline: new FormControl(19),
+        deadlineid: new FormControl(83),
         duration: new FormControl('Days'),
         slide: new FormControl(0),
         chart: new FormControl(0),
