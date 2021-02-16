@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Injectable } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
 import {CommonDialogComponent} from '../dialogs/common-dialog/common-dialog.component';
+import {AnnouncementDialogComponent} from '../dialogs/announcement-dialog/announcement-dialog.component';
 import {user_functions} from './user-data'
 
 @Injectable()
@@ -137,6 +138,19 @@ export class DialogTriggers {
         }
     });
     
+  }
+
+  openAnnouncementDialog() {
+    const dialogRef = this.dialog.open(AnnouncementDialogComponent, {
+      maxHeight: '638px',
+      width: '689px',
+      backdropClass: 'announcement-dialog',
+      panelClass: 'panel-dialog',
+    })
+
+    dialogRef.afterClosed().subscribe(() => {
+    });
+
   }
 }
 

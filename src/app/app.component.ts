@@ -2,21 +2,29 @@ import { Component } from '@angular/core';
 import { user_functions } from '../app/data/user-data';
 import { Title, Meta } from '@angular/platform-browser';
 import { Router, NavigationEnd } from '@angular/router';
+import { DialogTriggers } from '../app/data/ui-services'
+import { ActivatedRoute } from '@angular/router';
+import {MatDialog} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
-  providers: [user_functions]
+  providers: [user_functions, DialogTriggers]
 })
 export class AppComponent {
 
   constructor(
     private titleService: Title,
     private metaTagService: Meta,
-    private router: Router
-  ) { }
-  
+    private router: Router,
+    public dialog: MatDialog,
+    public _trigger: DialogTriggers,
+    private route: ActivatedRoute,
+  ) {
+
+  }
+  // popup = this._trigger.openAnnouncementDialog();
   ngOnInit() {
     this.titleService.setTitle("Cheapest Essay Writing Service by Qualified Essay Writers $8/page");
     this.metaTagService.addTags([
@@ -31,33 +39,46 @@ export class AppComponent {
         }
         window.scrollTo(0, 0)
     });
+
+    // display popup announcment
+    const token = localStorage.getItem('user_token');
+    let status = (!token);
+    if (status) {
+      let popup = this._trigger
+      setTimeout(function(){
+        popup.openAnnouncementDialog()
+       },10000);
+    }
   }
   
   new_user_functions = new user_functions;
-  routerWithFooter:any = [
-    '',
-    'how-it-works',
-    'about-us',
-    'revision-policy',
-    'privacy-policy',
-    'terms-of-use',
-    'faqs',
-    'money-back-guarantee',
-    'guarantees',
-    'pricing',
-    'contact-us',
-    'services',
-    'what-we-do',
-    'arabic',
-    'disclaimer'
+
+  routerWithNoFooter: any = [
+    'order',
+    'my-orders',
+    'profile',
+    'balance',
+    'discount',
+    'level',
+    'order-details',
+    'edit-order',
+    'stripe-checkout',
+    'update-card',
+    'invoice',
   ]
 
   getFooterStatus() {
-    let path = this.new_user_functions.getCurrentPath();
-    let routes = this.routerWithFooter;
-    let state = false;
-    state = (routes.indexOf(path) > -1 || path.toString().includes('services')) ? true : false;
-    return state;
+    let path = this.new_user_functions.getCurrentPath().replace(/\//g, ' ');
+    let new_path = path.split(" ");
+    let routes = this.routerWithNoFooter;
+
+    for (let i = 0; i < this.routerWithNoFooter.length - 1; i++) {
+      if (this.routerWithNoFooter.includes(new_path[0], i)) {
+        return false;
+      } else {
+        return true
+      }
+    }
   }
   
 }

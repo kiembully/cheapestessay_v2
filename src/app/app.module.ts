@@ -88,6 +88,7 @@ import { CardComponent } from './card/card.component';
 import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { ArabicComponent } from './arabic/arabic.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/announcement-dialog.component';
 
 @NgModule({
   declarations: [
@@ -168,6 +169,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     PageNotFoundComponent,
     DisclaimerComponent,
     ArabicComponent,
+    AnnouncementDialogComponent,
   ],
   imports: [
     BrowserModule,

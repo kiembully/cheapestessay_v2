@@ -142,6 +142,10 @@ mat-toolbar-row {
   background: #000000 !important;
 }
 
+.announcement-dialog {
+  background: rgba(0,0,0,0.7) !important
+}
+
 .common-dialog-transparent {
   background-color: rgba(0,0,0,0.85);
 }

@@ -1,0 +1,209 @@
+.announcement-pitch-block {
+    display: block;
+    margin: 0 auto;
+    text-align: left;
+}
+.announcement-pitch-block h2 {
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 40px;
+    letter-spacing: 0;
+    line-height: 48px;
+    margin: 0 auto 22px auto;
+    white-space: normal;
+}
+.announcement-pitch-block h1 {
+    color: #F0AD4F;
+    font-family: "SF Pro Text Bold";
+    font-size: 70px;
+    letter-spacing: 0;
+    line-height: 86px;
+    white-space: normal;
+}
+.announcement-pitch-block h1 span {
+    color: #000000;
+}
+.pitch-poster {
+    background-position: -16584px -309px;
+	width: 311px;
+	height: 280px;
+    margin: 0 auto
+}
+.sec-announcement {
+    position: relative
+}
+.mt-announcement-dialog {
+    padding: 20px;
+}
+.btn-close-announcement {
+    background-color: transparent;
+    text-align: right;
+    padding: 0;
+}
+.btn-close-announcement .material-icons {
+    font-size: 40px;
+}
+.submit-discount-wrap{
+    width: 100%;
+    max-width: 182px;
+    align-self: start;
+}
+.btn-submit-discount {
+    padding: 16px !important;
+    border-radius: 5px !important;
+    background-color: #FBD501;
+    width: 100%;
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0;
+    line-height: 24px !important;
+}
+.fs-separator {
+    padding: 10px;
+}
+.spn-mff-discount-wrap {
+    width: 100%;
+}
+.spn-mff-discount-wrap .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: transparent !important
+}
+.mff-discount-popup {
+    width: 100%;
+}
+.mff-discount-popup .mat-form-field-infix {
+    border-top: 0 !important;
+    padding: 16px 0 !important;
+}
+.mff-discount-popup .mat-form-field-flex {
+    border: 1px solid #12245A;
+    border-radius: 4px;
+}
+.mff-discount-popup mat-hint,
+.mff-discount-popup mat-error {
+    text-align: center;
+    font-size: 10px;
+    white-space: normal;
+}
+.mtr-discount-input {
+    margin: 20px auto 0 auto;
+}
+.mrb-announcement-agreement {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 30px;
+    max-width: 550px;
+    margin: 0 auto 11px auto;
+}
+.mrb-announcement-agreement .mat-checkbox-label {
+    white-space: normal;
+}
+.mrb-announcement-agreement .mat-checkbox-inner-container {
+    height: 30px;
+    width: 30px;
+    margin-right: 20px;
+}
+.mtr-third-party {
+    padding: 0 !important;
+}
+.dmca {
+    background-position: -7774px -1344px;
+	width: 117px;
+	height: 39px;
+    background-color: transparent;
+}
+.trustpilot {
+    background-position: -7937px -1348px;
+	width: 121px;
+	height: 49px;
+    background-color: transparent;
+}
+.safecharge {
+    background-position: -8128px -1359px;
+	width: 161px;
+	height: 37px;
+    background-color: transparent;
+}
+.third-party-outer {
+    clip-path: polygon(0 33%, 100% 0, 100% 100%, 0% 100%);
+    background: #C5DBEF;
+    padding: 40px 0 20px 0;
+    width: 100%;
+}
+.third-party-wrap {
+    display: flex;
+    width: 100%;
+    position: relative;
+    max-width: 550px;
+    margin: 0 auto
+}
+.third-party-wrap span {
+    text-align: center;
+}
+.mt-announcement-footer {
+    position: relative;
+}
+.mtr-announcement-header {
+    padding: 0
+}
+
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:576px) {
+    .third-party-wrap {
+        max-width: 350px
+    }
+    .dmca {
+        background-position: 44.647% 97.321%;
+        background-size: 8765px 710px;
+        width: 59px;
+        height: 20px;
+        vertical-align: bottom;
+    }
+    .trustpilot {
+        background-position: 45.594% 98.322%;
+        background-size: 8765px 710px;
+        width: 61px;
+        height: 25px;
+    }
+    .safecharge {
+        background-position: 46.799% 98.265%;
+        background-size: 8765px 710px;
+        width: 81px;
+        height: 19px;
+    }
+    .announcement-pitch-block h2 {
+        font-size: 30px;
+        margin: 0 auto
+    }
+    .announcement-pitch-block h1 {
+        font-size: 50px;
+        line-height: 56px;
+    }
+    .mrb-announcement-agreement {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .mtr-discount-input {
+        display: block !important;
+        white-space: normal !important;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    .pitch-poster {
+        display: none;
+    }
+}
+@media screen and (max-width:768px) {
+}
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:810px) {
+    .announcement-pitch-block,
+    .mtr-announcement-header {
+        display: block !important;
+        text-align: -webkit-center !important;
+        text-align: center !important;
+    }
+}

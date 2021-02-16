@@ -230,11 +230,12 @@ export class NewOrderComponent implements OnInit {
       res=> {
         localStorage.setItem('discount_token', res.data.discount_token);
         let decoded_discount_token = jwt_decode(localStorage.getItem('discount_token'));
-        this.total_price = price - (price * (decoded_discount_token.coupon_discount/100));
+        let deduction = Math.round((price * (decoded_discount_token.coupon_discount/100)) * 100) / 100
+        this.total_price = price - deduction;
         this.price_saved = price - this.total_price;
         this.total_price = Math.round((this.total_price + Number.EPSILON) * 100) / 100;
         this.price_saved = Math.round((this.price_saved + Number.EPSILON) * 100) / 100;
-      }
+      } 
     )
   }
 

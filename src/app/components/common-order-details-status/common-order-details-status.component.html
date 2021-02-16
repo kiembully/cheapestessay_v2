@@ -6,10 +6,10 @@
     <mat-toolbar-row class="mtr-order-status-wrap margin-bottom12">
         <p class="p-order-details-common">Time Left</p>
         <section class="add-common-flex sec-deadline-timer">
-            <span class="fill-space">{{preventTimerDisplay(_timer.days)}}<span>Day</span></span>
-            <span class="fill-space">{{preventTimerDisplay(_timer.hours)}}<span>Hours</span></span>
-            <span class="fill-space">{{preventTimerDisplay(_timer.minutes)}}<span>Mins</span></span>
-            <span class="fill-space">{{preventTimerDisplay(_timer.seconds)}}<span>Sec</span></span>
+            <span class="fill-space" [innerHtml]="order_details.status.order_status_flag === 1 ? order_details.days : preventTimerDisplay(_timer.days)"><span>Day</span></span>
+            <span class="fill-space" [innerHtml]="order_details.status.order_status_flag === 1 ? order_details.hours : preventTimerDisplay(_timer.hours)"><span>Hours</span></span>
+            <span class="fill-space" [innerHtml]="order_details.status.order_status_flag === 1 ? order_details.minutes : preventTimerDisplay(_timer.minutes)"><span>Mins</span></span>
+            <span class="fill-space" [innerHtml]="order_details.status.order_status_flag === 1 ? order_details.seconds : preventTimerDisplay(_timer.seconds)"><span>Sec</span></span>
         </section>
         <section class="add-common-flex" [style.margin-top]="!(isPaid()) ? '0' : '30px'">
             <p class="p-order-deadline" *ngIf="!(isPaid())">Deadline: {{order_details.deadlinedate}} If You Pay Right Now</p>

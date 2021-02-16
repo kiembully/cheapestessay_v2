@@ -1,0 +1,53 @@
+<form class="sec-announcement" (ngSubmit)="submitNewUser()" [formGroup]="frmNewUser" ngNativeValidate>
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar class="mt-announcement-dialog">
+        <mat-toolbar-row>
+            <span class="fill-space"></span>
+            <button mat-flat-button type="button" class="btn-close-announcement" (click)="dialogRef.close()">
+                <span class="material-icons">close</span>
+            </button>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-announcement-header">
+            <span>
+                <div class="announcement-pitch-block">
+                    <h2>Today’s Special</h2>
+                    <h1>GET 15% <span>OFF!</span></h1>
+                </div>
+            </span>
+            <span class="fill-space"></span>
+            <span>
+                <div class="sprite-cheapest pitch-poster"></div>
+            </span>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-discount-input">
+            <span class="spn-mff-discount-wrap">
+                <mat-form-field appearance="outline" class="mff-discount-popup">
+                    <!-- <mat-label>Enter your email</mat-label> -->
+                    <input matInput placeholder="Enter your email" type="email" formControlName="email">
+                    <mat-error>{{getErrorMessage()}}</mat-error>
+                    <mat-hint *ngIf="!this.frmError.value.hasError && !frmNewUser.controls.email.hasError('required')" [style.color]="!this.frmError.value.hasError ? '#f44336' : '#13B675'">
+                        {{frmError.value.text_error}}
+                    </mat-hint>
+                </mat-form-field>
+            </span>
+            <span class="fill-space fs-separator"></span>
+            <span class="submit-discount-wrap">
+                <button [disabled]="!agreement.value" type="submit" mat-flat-button class="btn-submit-discount">GET IT</button>
+            </span>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <mat-checkbox [formControl]="agreement" class="mrb-announcement-agreement">I agree to receive discount codes and exclusive offers to my email.</mat-checkbox>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <mat-toolbar class="mt-announcement-footer">
+        <mat-toolbar-row class="mtr-third-party">
+            <div class="third-party-outer">
+                <div class="third-party-wrap">
+                    <span class="fill-space"><a href="//www.dmca.com/Protection/Status.aspx?ID=c9e0d5bb-c1dc-49c1-9612-a7a8ccf78800&refurl=https://www.cheapestessay.com/" target="_blank" title="DMCA.com Protection Status" class="dmca-badge" mat-flat-button class="sprite-cheapest dmca"></a></span>
+                    <span class="fill-space"><button type="button" mat-flat-button class="sprite-cheapest trustpilot"></button></span>
+                    <span class="fill-space"><button type="button" mat-flat-button class="sprite-cheapest safecharge"></button></span>
+                </div>
+            </div>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</form>
