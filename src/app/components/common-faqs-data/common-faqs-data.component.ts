@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-common-faqs-data',
@@ -7,7 +8,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommonFaqsDataComponent implements OnInit {
 
-  constructor() { }
+  constructor(public sanitized: DomSanitizer) { }
 
   ngOnInit(): void {
   }

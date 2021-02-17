@@ -44,7 +44,7 @@
     font-size: 18px;
     letter-spacing: 0;
     text-align: left;
-    padding: 6.5px 0;
+    padding: 3px 0;
 }
 .tbl-footer tbody tr td a {
     text-decoration: none;
@@ -70,7 +70,7 @@
 .app-button-wrap {
     display: flex;
     margin: 30px auto 0 auto;
-    max-width: 330px;
+    max-width: 380px;
     width: 100%;
     min-height: 10px;
 }
@@ -81,6 +81,7 @@
     border-radius: 5px;
     background-color: #000000;
     width: 100%;
+    min-width: 175px;
     height: 100%;
     padding-left: 45px;
 }

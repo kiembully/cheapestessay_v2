@@ -25,6 +25,11 @@
     line-height: 16px;
     text-align: center;
 }
+.spn-profile-name {
+    max-width: 200px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .btn-brand {
   color: #12245A;
   font-family: "Arial Rounded MT Bold Regular";
@@ -52,7 +57,7 @@
 }
 .btn-client-page {
     border-top: 2px solid transparent;
-    padding: 5px 11px 7px 11px;
+    padding: 5px 8px 7px 8px;
     border-radius: 0;
 }
 .btn-client-page.active {
@@ -182,6 +187,7 @@ p.p-btn-label {
     font-family: "SF Pro Text Regular";
     font-size: 16px;
     line-height: 19px;
+    height: 40px;
 }
 a.btn-more-menu {
     padding: 0 15px;
@@ -190,6 +196,8 @@ a.btn-more-menu {
 }
 .btn-more-menu.active {
     font-family: "SF Pro Text Semibold";
+    color: #ffffff;
+    background-color: #12245A;
 }
 .spn-services-menu-wrap .mat-menu-panel {
     max-width: 800px !important

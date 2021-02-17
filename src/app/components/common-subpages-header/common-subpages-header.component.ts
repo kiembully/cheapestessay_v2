@@ -57,7 +57,7 @@ export class CommonSubpagesHeaderComponent implements OnInit {
     },
     {
       header: 'Cheapest Essay Disclaimer',
-      subheader: 'Our essay writing service employs hundreds of writers who specialize in different subject areas. It allows us to help with a wide range of papers on various topics to achieve a good result. We also guarantee fast delivery, 100% plagiarism free content, protection of your personal information, and low-cost and flawless quality!'
+      subheader: 'Our company provides complete guidelines to determine or delimit the extent of rights and commitments that might be practiced and upheld by our company and our users in a legitimately perceived relationship. We advice our dear users to read these terms & conditions for your convinience.'
     },
     {
       header: 'شرح بالعربي',

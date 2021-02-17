@@ -51,21 +51,6 @@
     margin-bottom: 70px;
     overflow: hidden;
 }
-.sec-services-slide {
-    display: block;
-}
-.btn-hg-nav {
-    height: 60px;
-    width: 55px;
-    overflow: hidden;
-    border-radius: 50%;
-    background-color: #12245A;
-    padding: 0;
-}
-.btn-hg-nav .material-icons {
-    color: #FFD500;
-    font-size: 50px;
-}
 .mtr-contact-me {
     white-space: normal;
 }
@@ -182,8 +167,5 @@
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
-@media screen and (max-width:1200px) {  
-    .spn-slider-nav {
-        display: none;
-    }
+@media screen and (max-width:1200px) { 
 }

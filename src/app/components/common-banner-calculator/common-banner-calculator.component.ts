@@ -139,7 +139,8 @@ export class CommonBannerCalculatorComponent implements OnInit {
     this.deadline_value = this.getDeadlineActive(res.deadline, res.duration);
     this.deadline_format = res.deadlineLable;
     this.total_price = res.price_without_discount;
-    this.discounted_price = this.total_price - (this.total_price * 0.15);
+    let deduction = Math.round((this.total_price * 0.15) * 100) / 100
+    this.discounted_price = this.total_price - deduction;
     this.discounted_price = Math.round((this.discounted_price + Number.EPSILON) * 100) / 100;
   }
 

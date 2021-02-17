@@ -143,5 +143,70 @@ export class service_object {
     {name:'dissertation-help', id:27},
     {name:'writing-an-essay-outline', id:104},
     {name:'blog-writers-for-hire', id:104},
+    {name:'speech-writing-services', id:12},
+    {name:'article-critique-writing-services', id:17},
+    {name:'writing-a-reaction-paper', id:17},
+    {name:'professional-dissertation-proposal', id:27},
+    {name:'business-simulation-report-online', id:27},
+    {name:'write-my-personal-statement', id:27},
+    {name:'document-formatting-services', id:27},
+    {name:'programming-assignment-help', id:68},
+    {name:'professional-resume-editing', id:68},
+    {name:'resume-writing-services', id:104},
+    {name:'rewriting-services', id:104},
+    {name:'best-paraphrasing-website', id:104},
+    {name:'writing-a-marketing-plan', id:104},
+    {name:'financial-statement-analysis', id:104},
+    {name:'swot-analysis-of-business', id:104},
+    {name:'short-story-writers', id:104},
+    {name:'assignment-writing-service', id:68},
+  ]
+
+  services:any = [
+    {
+      set:[
+        {service:'Essay Writing Services',link:'essay-writing-services'},
+        {service:'Article Writing Services',link:'article-writing-services'},
+        {service:'Research Paper Writing Service',link:'research-paper-writing-services'},
+        {service:'Report Writing Services',link:'report-writing-service'},
+        {service:'Coursework Writing Service',link:'coursework-writing-services'},
+      ]
+    },
+    {
+      set:[
+        {service:'Write my lab report',link:'lab-report-abstract'},
+        {service:'Speech Writing Services',link:'speech-writing-services'},
+        {service:'Writing a Critique',link:'article-critique-writing-services'},
+        {service:'Writing A Reaction Paper',link:'writing-a-reaction-paper'},
+        {service:'Professional Dissertation Writers',link:'professional-dissertation-proposal'},
+      ]
+    },
+    {
+      set:[
+        {service:'Mind Map Service',link:'mind-map-service'},
+        {service:'Business Simulation Report online',link:'business-simulation-report-online'},
+        {service:'Write My Personal Statement',link:'write-my-personal-statement'},
+        {service:'Document Formatting Services',link:'document-formatting-services'},
+        {service:'Programming Assignment',link:'programming-assignment-help'},
+      ]
+    },
+    {
+      set:[
+        {service:'Professional Resume Writers',link:'professional-resume-editing'},
+        {service:'Resume Editing Services',link:'resume-writing-services'},
+        {service:'Online Article Rewriter',link:'rewriting-services'},
+        {service:'Best Paraphrasing Website',link:'best-paraphrasing-website'},
+        {service:'Professional Poster Maker',link:'professional-poster-maker'},
+      ]
+    },
+    {
+      set:[
+        {service:'Writing a Marketing Plan',link:'writing-a-marketing-plan'},
+        {service:'Financial Statement Analysis',link:'financial-statement-analysis'},
+        {service:'SWOT Analysis of a Business',link:'swot-analysis-of-business'},
+        {service:'Professional Short Story Writers',link:'short-story-writers'},
+        {service:'Assignment Writing Service',link:'assignment-writing-service'},
+      ]
+    },
   ]
 }

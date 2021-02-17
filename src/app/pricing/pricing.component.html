@@ -40,8 +40,8 @@
                     <span class="fill-space spn-toggle-wrap">
                         <p class="p-pricing-label">When you needed it ready? "Deadline" <span class="fill-space"></span><span>{{deadlineLable}}</span></p>
                         <mat-form-field appearance="fill" class="mff-pricing-deadline">
-                            <mat-select disableOptionCentering panelClass="ms-pricing-deadline" formControlName="deadlineid" [value]="pricingForm.value.deadlineid">
-                                <mat-option *ngFor="let list of allDeadlines; let i = index" (click)="patchDeadline(list)" [value]="list.deadline_id">{{list.deadline}} {{list.duration}}</mat-option>
+                            <mat-select disableOptionCentering panelClass="ms-pricing-deadline" [value]="deadline_value">
+                                <mat-option *ngFor="let list of allDeadlines; let i = index" (click)="patchDeadline(list)" [value]="i">{{list.deadline}} {{list.duration}}</mat-option>
                             </mat-select>
                         </mat-form-field>
                     </span>

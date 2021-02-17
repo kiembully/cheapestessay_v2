@@ -115,8 +115,11 @@
                 <mat-label>Phone Number</mat-label>
                 <input formControlName="telephone" matInput [value]="mobileForm.value.telephone" type="tel" required>
                 <span matSuffix class="spn-country-code">
-                    <mat-select formControlName="prefix" [value]="mobileForm.value.prefix">
-                        <mat-option *ngFor="let list of country_code" value="+{{list.callingCodes[0]}}" (click)="patchPrefix(list.callingCodes[0])">
+                    <mat-select formControlName="prefix" [value]="mobileForm.value.prefix" class="ms-address-code" [style.background-image]="selectedCode">
+                        <mat-option
+                        *ngFor="let list of country_code"
+                        value="+{{list.callingCodes[0]}}"
+                        (click)="patchPrefix(list.callingCodes[0]); selectActiveCode(list.alpha3Code)">
                             <img src="{{list.flag}}" alt="country_flag" style="height: 20px; width: auto"> +{{list.callingCodes[0]}} {{list.alpha3Code}}
                         </mat-option>
                     </mat-select>
@@ -194,10 +197,12 @@
                 <mat-label>Zip Code</mat-label>
                 <input matInput formControlName="zipcode" type="number" [value]="addressForm.value.zipcode" required>
                 <span matSuffix class="spn-country-code">
-                    <mat-select formControlName="countrycode" [value]="addressForm.value.countrycode">
-                        <mat-option value="+1">+1 USA</mat-option>
-                        <mat-option value="+63">+63 PHI</mat-option>
-                        <mat-option value="+374">+374 IND</mat-option>
+                    <mat-select formControlName="countrycode" [value]="addressForm.value.countrycode" class="ms-address-code" [style.background-image]="selectedFlag">
+                        <mat-option
+                            *ngFor="let list of country_code"
+                            (click)="selectActiveFlag(list.alpha3Code)"
+                            value="{{list.callingCodes[0]}}">+{{list.callingCodes[0]}} - {{list.name}}
+                        </mat-option>
                     </mat-select>
                 </span>
             </mat-form-field>

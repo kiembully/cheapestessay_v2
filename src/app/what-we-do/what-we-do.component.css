@@ -1,29 +1,6 @@
 .mt-services {
     position: relative;
 }
-.mtr-services-contents {
-    padding: 130px 20px 0 20px;
-    display: block;
-    text-align: center;
-}
-.mtr-services-contents p {
-    line-height: 31px;
-    font-size: 17px;
-    font-family: "SF Pro Text Regular";
-    color: #111111;
-    white-space: normal;
-    display: block;
-}
-.mtr-services-contents h2 {
-    white-space: normal;
-    font-size: 36px;
-    font-family: "SF Pro Text Medium";
-    font-weight: 600;
-    color: #111;
-    line-height: 45px;
-    margin: 0 auto 25px;
-    display: block;
-}
 .spn-contain-services-banner {
     align-self: flex-start;
 }
@@ -141,7 +118,7 @@
     margin: 60px auto 0 auto;
 }
 .mtr-what-we-do {
-    display: block !important;
+    display: block;
     margin-top: 60px;
 }
 .margin-bottom15 {
@@ -163,7 +140,7 @@
    
   /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
   @media screen and (max-width:768px) {
-    .common-sub-header h2 {
+    .mtr-what-we-do h2 {
         line-height: 52px;
         padding-bottom: 20px;
         text-align: center;

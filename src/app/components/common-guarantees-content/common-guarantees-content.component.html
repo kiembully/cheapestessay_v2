@@ -5,8 +5,8 @@
             <span *ngFor="let list of row.data; let j = index" [class]="list.class">
                 <div *ngIf="list.isContentVisible" class="guarantee-sprite-wrap">
                     <div class="sprite-cheapest {{list.subClass}}"></div>
-                    <h5 [style.padding]="list.title=='Plagiarism Free'?'0 10px':'0'">{{list.title}}</h5>
-                    <a *ngIf="false" mat-list-item [routerLink]="list.link[1]" [innerHTML]="list.link[0]"></a>
+                    <h5 [style.padding]="list.title=='Plagiarism Free'?'0 10px':'0'" [routerLink]="list.link[1]">{{list.title}}</h5>
+                    <!-- <a *ngIf="false" mat-list-item [routerLink]="list.link[1]" [innerHTML]="list.link[0]"></a> -->
                 </div>
             </span>
         </mat-toolbar-row>

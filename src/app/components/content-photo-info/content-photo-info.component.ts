@@ -133,7 +133,7 @@ export class ContentPhotoInfoComponent implements OnInit {
       title: "Type of Service and the Writer's level you need",
       contents:[
         "The type of service you order us to deliver will determine the amount you will pay. There are three different types of services that we offer, and all are priced differently. They include; PowerPoint, writing, and editing.  ",
-        "Also, the lever of the writer your work demands will affect how you will pay. College, bachelor, and master writers have different qualifications; hence, all have different prices."
+        "Also, the level of the writer your work demands will affect how you will pay. College, bachelor, and master writers have different qualifications; hence, all have different prices."
       ],
       class:'pay-first-img2'
     },

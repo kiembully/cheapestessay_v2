@@ -50,7 +50,6 @@ export class AnnouncementDialogComponent implements OnInit {
     this._auth.registerLogin(this.frmNewUser.value).subscribe(
       res => {
         this.isProgressLoading = false;
-        console.log(res);
         if (res.status) {
           localStorage.setItem('user_token', res.data);
           this.getCouponCode(this.frmCouponCode.value)
@@ -68,14 +67,16 @@ export class AnnouncementDialogComponent implements OnInit {
       if (res.status) {
         localStorage.setItem('discount_token', res.data.discount_token);
         this.router.navigate(['order'])
+        this.dialogRef.close();
       } else {
         if (res.message == "Accesstoken has Expired!") {
           // this._session.openSnackBar(res.message, 'OK')
           this.router.navigate(['/']);
         } else {
           localStorage.setItem('discount_token', 'invalid');
-          this.router.navigate(['order'])
+          this.router.navigate(['order']);
         }
+        this.dialogRef.close();
       }
     })
   }

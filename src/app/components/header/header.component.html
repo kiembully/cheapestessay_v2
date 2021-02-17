@@ -19,7 +19,7 @@ class="sec-default-header fixed-nav w-header"
             <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</button></span>
             <span class="spn-more-menu w-nav-hidden">
                 <button class="btn-client-page" mat-button [matMenuTriggerFor]="more">More...</button>
-                <mat-menu #more="matMenu">
+                <mat-menu #more="matMenu" xPosition="before">
                     <button class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</button>
                     <button class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button>
                     <button class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button>
@@ -30,7 +30,7 @@ class="sec-default-header fixed-nav w-header"
                 </mat-menu>
             </span>
             <span class="spn-btn-wrap" *ngIf="!isBtnTotalVisible()">
-                <button class="btn-order-page" mat-flat-button routerLink="order" (click)="closePanel()">Order Now</button>
+                <button class="btn-order-page" mat-flat-button routerLink="order">Order Now</button>
             </span>
             <span *ngIf="!isBtnTotalVisible()">
                 <button class="btn-account-page" mat-flat-button (click)="_session.openLoginDialog()" *ngIf="isUserOnline == 0">Login</button>
@@ -81,8 +81,8 @@ class="sec-default-header fixed-nav w-header"
                             <span class="fill-space">${{headerForm.value.balance}}</span>
                         </div>
                     </span>
-                    <span class="spn-m-hidden">Name: {{headerForm.value.first_name}} {{headerForm.value.last_name}}</span>
-                    <span class="spn-m-hidden">Email: {{headerForm.value.email}}</span>
+                    <span class="spn-m-hidden spn-profile-name">Name: {{headerForm.value.first_name}} {{headerForm.value.last_name}}</span>
+                    <span class="spn-m-hidden spn-profile-name">Email: {{headerForm.value.email}}</span>
                     <span><button mat-flat-button type="button" color="accent" class="btn-logout" (click)="openLogoutDialog()">Logout</button></span>
                 </mat-toolbar-row>
             </mat-toolbar>
@@ -143,10 +143,10 @@ class="sec-default-header fixed-nav w-header"
     </section>
     <section class="sec-routers">
         <mat-list role="list">
-            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
-            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/order" mat-button>Orden Now</button></mat-list-item>
-            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/how-it-works" mat-button>How it works</button></mat-list-item>
-            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/pricing" mat-button>Pricing</button></mat-list-item>
+            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
+            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/order" mat-button>Orden Now</button></mat-list-item>
+            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/how-it-works" mat-button>How it works</button></mat-list-item>
+            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/pricing" mat-button>Pricing</button></mat-list-item>
         </mat-list>
     </section>
     <section class="sec-routers">

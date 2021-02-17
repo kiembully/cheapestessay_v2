@@ -44,7 +44,6 @@ export class PricingComponent implements OnInit {
   patchDeadline(list) {
     this.pricingForm.patchValue({
       deadline: list.deadline,
-      deadlineid: list.deadline_id,
       duration: list.duration
     })
   }
@@ -147,7 +146,6 @@ export class PricingComponent implements OnInit {
     this.pricingForm.patchValue({
       service: val.service,
       academic: val.academic,
-      deadlineid: val.deadlineid,
       deadline: val.deadline,
       page: val.page
     })

@@ -37,7 +37,6 @@ export class ServicesDetailComponent implements OnInit {
 
   initializeService() {
     this.setSelectedService(this.route.snapshot.paramMap.get('id'));
-    this.setSeo(this.route.snapshot.paramMap.get('id'))
   }
 
   initial_content:any;
@@ -55,6 +54,7 @@ export class ServicesDetailComponent implements OnInit {
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
       if (res.status) {
+        this.setSeo(this.route.snapshot.paramMap.get('id'))
         this.service_name = res.data.page_contents.name;
         this.initial_content = res.data.page_contents.initial_content;
         this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
@@ -75,7 +75,9 @@ export class ServicesDetailComponent implements OnInit {
         this.row_filler = Array(this.row_total).fill(1).map((x,i)=>i)
         this.isInitializing = true;
       } else {
-        this.router.navigate(['404'])
+        this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+          this.router.navigate(['/404'])
+        });
       }
     })
   }

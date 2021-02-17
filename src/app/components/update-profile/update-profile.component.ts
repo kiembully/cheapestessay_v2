@@ -214,4 +214,13 @@ export class UpdateProfileComponent implements OnInit {
     localStorage.removeItem('user_token');
     localStorage.setItem('user_token',new_token);
   }
+
+  selectedFlag: string = 'url(https://restcountries.eu/data/usa.svg)'
+  selectedCode: string = 'url(https://restcountries.eu/data/usa.svg)'
+  selectActiveFlag(code) {
+    this.selectedFlag = 'url(https://restcountries.eu/data/' + code.toLowerCase() + '.svg)'
+  }
+  selectActiveCode(code) {
+    this.selectedCode = 'url(https://restcountries.eu/data/' + code.toLowerCase() + '.svg)'
+  }
 }

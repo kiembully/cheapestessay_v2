@@ -23,7 +23,7 @@ export class DisclaimerComponent implements OnInit {
     },
     {
       category: '3) Cancellation of Order:',
-      label: 'If a client cancels an order after it has been paid for and assigned to a writer, the amount of refund will be determined by the company, according to the amount of work the writer has completed at the time of cancellation. If CheapestEssay.com must cancel an order, the customer will be notified immediately and a full refund provided. Read more Money <a href="money-back-guarantee">Money Back Guarantee</a>.'
+      label: 'If a client cancels an order after it has been paid for and assigned to a writer, the amount of refund will be determined by the company, according to the amount of work the writer has completed at the time of cancellation. If CheapestEssay.com must cancel an order, the customer will be notified immediately and a full refund provided. Read more <a href="money-back-guarantee">Money Back Guarantee</a>.'
     },
     {
       category: '4) Resource Materials:',

@@ -4,11 +4,13 @@ import {FormControl, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import {MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import { Router, ActivatedRoute } from '@angular/router';
+import { service_object } from 'src/app/data/data'
 
 @Component({
   selector: 'app-common-services-slide',
   templateUrl: './common-services-slide.component.html',
   styleUrls: ['./common-services-slide.component.css'],
+  providers: [service_object],
   encapsulation: ViewEncapsulation.None,
 })
 export class CommonServicesSlideComponent implements OnInit {
@@ -17,6 +19,7 @@ export class CommonServicesSlideComponent implements OnInit {
     private _auth: ApiServices,
     private _snackBar: MatSnackBar,
     private router: Router,
+    private _data: service_object,
     public route: ActivatedRoute,) { }
 
   @Input() public isWriters: any;
@@ -82,53 +85,7 @@ export class CommonServicesSlideComponent implements OnInit {
     }
   ]
 
-  services:any = [
-    {
-      set:[
-        {service:'Essay Writing Services',link:'essay-writing-services'},
-        {service:'Article Writing Services',link:'article-writing-services'},
-        {service:'Research Paper Writing Service',link:'research-paper-writing-services'},
-        {service:'Report Writing Services',link:'report-writing-service'},
-        {service:'Coursework Writing Service',link:'coursework-writing-services'},
-      ]
-    },
-    {
-      set:[
-        {service:'Write my lab report',link:'lab-report'},
-        {service:'Speech Writing Services',link:'speech-writing-services'},
-        {service:'Writing a Critique',link:'article-critique-writing-services'},
-        {service:'Writing A Reaction Paper',link:'writing-a-reaction-paper'},
-        {service:'Professional Dissertation Writers',link:'professional-dissertation-proposal'},
-      ]
-    },
-    {
-      set:[
-        {service:'Mind Map Service',link:'mind-map-service'},
-        {service:'Business Simulation Report online',link:'business-simulation-report-online'},
-        {service:'Write My Personal Statement',link:'write-my-personal-statement'},
-        {service:'Document Formatting Services',link:'document-formatting-services'},
-        {service:'Programming Assignment',link:'programming-assignment-help'},
-      ]
-    },
-    {
-      set:[
-        {service:'Professional Resume Writers',link:'professional-resume-editing'},
-        {service:'Resume Editing Services',link:'resume-writing-services'},
-        {service:'Online Article Rewriter',link:'rewriting-services'},
-        {service:'Best Paraphrasing Website',link:'best-paraphrasing-website'},
-        {service:'Professional Poster Maker',link:'professional-poster-maker'},
-      ]
-    },
-    {
-      set:[
-        {service:'Writing a Marketing Plan',link:'writing-a-marketing-plan'},
-        {service:'Financial Statement Analysis',link:'financial-statement-analysis'},
-        {service:'SWOT Analysis of a Business',link:'swot-analysis-of-business'},
-        {service:'Professional Short Story Writers',link:'short-story-writers'},
-        {service:'Assignment Writing Service',link:'assignment-writing-service'},
-      ]
-    },
-  ]
+  services:any = this._data.services;
 
   getServicesContentData(param) {
     let data_id = (param) ? 0 : 1;
@@ -162,7 +119,9 @@ export class CommonServicesSlideComponent implements OnInit {
   }
 
   toServices(id) {
-    this.router.navigate(['',id])
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['',id])
+    });
   }
 
 }

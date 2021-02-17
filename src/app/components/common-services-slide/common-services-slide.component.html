@@ -19,46 +19,6 @@
         </ng-template>
     </owl-carousel-o>
 </section>
-<!-- <section class="width1220px sec-services-slide-outer">
-    <span class="spn-slider-nav">
-        <button mat-flat-button class="btn-hg-nav" type="button" (click)="owlServices.prev()">
-            <span class="material-icons">keyboard_arrow_left</span>
-        </button>
-    </span>
-    <span class="fill-space">
-        <owl-carousel-o [options]="servicesOption" #owlServices>
-            <ng-template carouselSlide *ngFor="let list of services">
-                <div class="services-item-wrap">
-                    <mat-list role="list">
-                        <mat-list-item role="listitem" *ngFor="let item of list.set">
-                            <span class="material-icons">keyboard_arrow_right</span>
-                            {{item.service}}
-                        </mat-list-item>
-                    </mat-list>
-                </div>
-            </ng-template>
-        </owl-carousel-o>
-        <section class="width1000 sec-services-slide">
-            <owl-carousel-o class="owl-services" [options]="servicesOption" #owlServices>
-                <ng-template carouselSlide *ngFor="let list of services">
-                    <div class="services-item-wrap">
-                        <mat-list role="list">
-                            <mat-list-item role="listitem" *ngFor="let item of list.set">
-                                <span class="material-icons">keyboard_arrow_right</span>
-                                {{item.service}}
-                            </mat-list-item>
-                        </mat-list>
-                    </div>
-                </ng-template>
-            </owl-carousel-o>
-        </section>
-    </span>
-    <span class="spn-slider-nav">
-        <button mat-flat-button class="btn-hg-nav" type="button" (click)="owlServices.next()">
-            <span class="material-icons">keyboard_arrow_right</span>
-        </button>
-    </span>
-</section> -->
 <section class="default-width sec-contact-me-wrap">
     <mat-toolbar class="mt-contact-me">
         <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>

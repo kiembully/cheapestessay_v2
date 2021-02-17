@@ -33,12 +33,14 @@
     position: relative
 }
 .mt-announcement-dialog {
-    padding: 20px;
+    padding: 60px 20px 20px;
+    position: relative;
 }
 .btn-close-announcement {
-    background-color: transparent;
-    text-align: right;
-    padding: 0;
+    background-color: transparent !important;
+    position: absolute;
+    right: 10px;
+    top: 20px;
 }
 .btn-close-announcement .material-icons {
     font-size: 40px;

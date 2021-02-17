@@ -106,6 +106,9 @@ p.p-order-details-common {
 .btn-processing {
     background-color: #3B7CFF;
 }
+.btn-pay-order{
+    text-align: left !important;
+}
 .btn-paid,
 .btn-pay-order {
     background-color: #71BE7C !important;

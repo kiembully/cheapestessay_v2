@@ -132,6 +132,9 @@
     letter-spacing: 0;
     line-height: 16px;
     margin: 0;
+    max-width: 350px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 .btn-update-profile {
     color: #979797;

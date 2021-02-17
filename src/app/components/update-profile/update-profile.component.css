@@ -99,7 +99,13 @@
 }
 .spn-country-code {
     position: absolute;
-    top: -34px;
-    width: 100px;
+    top: -30px;
+    width: 50px;
     right: 0;
+}
+.ms-address-code {
+    width: 70px;
+    background-size: 50px 20px;
+    background-repeat: no-repeat;
+    color: transparent;
 }

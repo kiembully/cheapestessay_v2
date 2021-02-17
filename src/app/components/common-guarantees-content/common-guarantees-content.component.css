@@ -21,6 +21,8 @@
     white-space: normal;
     width: 100%;
     max-width: 250px;
+    cursor: pointer;
+    outline: none;
 }
 .guarantee-sprite-wrap a {
     color: #000000;
