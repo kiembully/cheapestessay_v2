@@ -10,7 +10,7 @@
     font-size: 42px;
     letter-spacing: 0;
     white-space: normal;
-    line-height: 35px;
+    line-height: 48px;
     margin: 40px 0 16px 0;
 }
 .frm-services-form {
@@ -125,49 +125,99 @@
     margin-bottom: 15px;
 }
 
+.mt-wwd-assistance {
+    margin-bottom: 70px;
+}
+.mtr-wwd-assistance {
+    align-items: flex-start;
+    margin-bottom: 40px;
+}
+.mtr-wwd-assistance h2 {
+    color: #12245A;
+    font-family: "SF Pro Text Bold";
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 0;
+    line-height: 34px;
+    white-space: normal;
+}
+.mtr-wwd-assistance .mat-list-base .mat-list-item,
+.mtr-wwd-assistance p {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 30px;
+    text-align: justify;
+    white-space: normal;
+    margin-bottom: 15px;
+}
+.mtr-wwd-assistance .mat-list-base {
+    padding: 0;
+    margin-bottom: 15px;
+}
+.mtr-wwd-assistance .mat-list-base .mat-list-item {
+    margin-bottom: 0;
+    height: 43px;
+}
+.mtr-wwd-assistance p:last-child {
+    margin-bottom: 0;
+}
+.mtr-wwd-assistance .mat-list-base .mat-list-item .mat-list-item-content,
+.mtr-wwd-assistance .mat-list-base .mat-list-option .mat-list-item-content {
+    padding : 0;
+}
+.spn-fs-separator {
+    padding: 20px;
+}
+.mtr-wwd-assistance span {
+    max-width: 48%;
+}
+
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {  
+  .order-written-item {
+      /* width: 100%; */
+      margin: 15px auto;
+  }
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
     .spn-contain-services-banner h1 {
         font-size: 30px;
         line-height: 35px;
     }
-    .order-written-item {
-        /* width: 100%; */
-        margin: 15px auto;
-    }
-  }
-   
-  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-  @media screen and (max-width:768px) {
     .mtr-what-we-do h2 {
         line-height: 52px;
         padding-bottom: 20px;
         text-align: center;
         text-align: -webkit-center;
     }
-  }
-   
-  /* Large devices (desktops, 992px and up) */
-  @media screen and (max-width:992px) { 
-      .mtr-services {
-          display: block !important;
-          text-align: center;
-          text-align: -webkit-center;
-      }
-      .spn-contain-services-banner h1 {
-          max-width: 450px;
-          margin: 0 auto 40px auto
-      }
-      .mtr-what-we-do {
-          margin-top: 0
-      }
-      .frm-services-form {
-        width: auto
-      }
-  }
-   
-  /* Extra large devices (large desktops, 1200px and up) */
-  @media screen and (max-width:1200px) {  
-      
-  }
+    .mtr-wwd-assistance {
+        display: block;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .mtr-services {
+        display: block !important;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .spn-contain-services-banner h1 {
+        max-width: 450px;
+        margin: 0 auto 40px auto
+    }
+    .mtr-what-we-do {
+        margin-top: 0
+    }
+    .frm-services-form {
+      width: auto;
+      max-width: 500px;
+    }
+}
+@media screen and (max-width:1200px) {
+}

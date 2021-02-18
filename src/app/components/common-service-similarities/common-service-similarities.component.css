@@ -1,0 +1,100 @@
+.similarities-wrap,
+.similarities-inner {
+    display: flex;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+.similarities-wrap span:first-child,
+.similarities-wrap span:last-child {
+    width: 100%;
+}
+
+.similarities-wrap .mat-list-icon {
+    height: 15px !important;
+    width: 15px !important;
+    background-color: #FBD501;
+    padding: 0 !important;
+}
+.similarities-wrap.active {
+    max-height: 100% !important;
+}
+.similarities-inner .a-link-similarities {
+    color: #12245A;
+    font-family: "SF Pro Text Medium";
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: 0;
+    background: transparent;
+    text-transform: capitalize;
+}
+.similarities-inner .mat-list-base .mat-list-item.mat-list-item-with-avatar,
+.similarities-inner .mat-list-base .mat-list-option.mat-list-item-with-avatar {
+    height: 45px;
+}
+.similarities-inner .mat-list-base .mat-list-item.mat-list-item-with-avatar .mat-list-item-content .mat-list-text,
+.similarities-inner .mat-list-base .mat-list-item.mat-list-option .mat-list-item-content .mat-list-text,
+.similarities-inner .mat-list-base .mat-list-option.mat-list-item-with-avatar .mat-list-item-content .mat-list-text,
+.similarities-inner .mat-list-base .mat-list-option.mat-list-option .mat-list-item-content .mat-list-text {
+    padding: 0
+}
+.width1400px {
+  margin: 0 auto;
+  max-width:1400px;
+  width: 100%;
+}
+.mtr-show-more-similarities {
+    display: none;
+}
+.mtr-show-more-similarities button {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    color: #FF7900;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: -0.62px;
+    line-height: 22px;
+    background-color: transparent;
+    margin-top: 50px;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    .similarities-inner {
+        display: block;
+    }
+    .width1400px {
+        max-width: 600px;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .mtr-show-more-similarities {
+        margin-bottom: 70px;
+    }
+}
+@media screen and (max-width:1200px) {
+}
+/* Extra large devices (large desktops, 1400px and up) */
+@media screen and (max-width:1400px) {
+    .width1400px {
+        max-width: 1000px;
+    }
+    .similarities-wrap {
+        display: block;
+    }
+    .similarities-wrap {
+        max-height: 600px;
+        overflow: hidden;
+    }
+    .mtr-show-more-similarities {
+        display: block;
+    }
+}

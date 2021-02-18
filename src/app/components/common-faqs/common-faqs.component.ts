@@ -7,17 +7,25 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CommonFaqsComponent implements OnInit {
 
+  @Input() public faq_entry: any;
+  
   constructor() { }
 
+  faq: any = [];
   ngOnInit(): void {
+    if (this.faq_entry == null) {
+      this.faq = this.faq_home_content;
+    } else {
+      this.faq = this.faq_entry;
+    }
   }
 
   faqIndexExpanded: number = -1;
 
   faq_home_content:any = [
     {
-      header: 'How does CheapestEssay.com work?',
-      content: [
+      question: 'How does CheapestEssay.com work?',
+      answer: [
         'Ordering a paper with CheapestEssay.com is very easy. All you need to do is to fill in the basic order form, proceed with the payment and wait for your assignment to be completed within the deadline you choose.',
         'If you are sure you can provide specific paper instructions or upload any of the required materials, you can start our ordering process by filling in the order form.'
       ],
@@ -28,20 +36,20 @@ export class CommonFaqsComponent implements OnInit {
       ]
     },
     {
-      header: 'Is it legal to use your service?',
-      content: "Of course, it is legal! We are a registered U.S corporation and conform to all of the laws for corporations within the United States. As well, you have the right to purchase any legal product or service, and purchasing original writing paper is completely legal!",
+      question: 'Is it legal to use your service?',
+      answer: "Of course, it is legal! We are a registered U.S corporation and conform to all of the laws for corporations within the United States. As well, you have the right to purchase any legal product or service, and purchasing original writing paper is completely legal!",
     },
     {
-      header: 'How much does an Essay Writer Cost?',
-      content: "Our service is pre-paid, and our writers will only start working on your order after the payment is received.",
+      question: 'How much does an Essay Writer Cost?',
+      answer: "Our service is pre-paid, and our writers will only start working on your order after the payment is received.",
     },
     {
-      header: 'Is CheapestEssay plagiarism free?',
-      content: "We check each order with our advanced anti-plagiarism software to ensure that your paper is 100% original. With our commitment to quality and zero tolerance policy for plagiarism, you can relax knowing we will meet your needs.",
+      question: 'Is CheapestEssay plagiarism free?',
+      answer: "We check each order with our advanced anti-plagiarism software to ensure that your paper is 100% original. With our commitment to quality and zero tolerance policy for plagiarism, you can relax knowing we will meet your needs.",
     },
     {
-      header: 'Who will write my paper?',
-      content: "You can notify us if you want to choose your own writer, or put the writers id number directly on the sign up form. Just remember that all our writers are experts in their respective fields. They have been hand-picked by our Quality Assurance Department and have years of writing experience.",
+      question: 'Who will write my paper?',
+      answer: "You can notify us if you want to choose your own writer, or put the writers id number directly on the sign up form. Just remember that all our writers are experts in their respective fields. They have been hand-picked by our Quality Assurance Department and have years of writing experience.",
     },
   ]
 

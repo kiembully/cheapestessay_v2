@@ -97,11 +97,21 @@
 .spn-separate-content {
     padding: 15px;
 }
+.sub-content-wrap ul li b,
+.sub-content-wrap ol li b,
+.sub-content-wrap p b,
+.sub-content-wrap span > b,
 .sub-content-wrap h3 {
     color: #12245A;
     font-family: "SF Pro Text Bold";
     font-size: 28px;
     letter-spacing: 0;
+}
+.sub-content-wrap ul li b,
+.sub-content-wrap ol li b,
+.sub-content-wrap ul li span,
+.sub-content-wrap ol li span {
+    vertical-align: super !important;
 }
 .sub-content-wrap ul li,
 .sub-content-wrap ol li,
@@ -113,6 +123,18 @@
     font-weight: 500 !important;
     letter-spacing: 0 !important;
     line-height: 30px !important;
+}
+.sub-content-wrap ol li:before {
+    background-color: #FBD501 !important;
+    color: #12245A !important;
+    font-family: "SF Pro Text Medium" !important;
+    font-size: 17px !important;
+    font-weight: bold !important;
+    letter-spacing: 0 !important;
+}
+.sub-content-wrap ul li::marker {
+    color: #FBD501 !important;
+    font-size: 60px !important;
 }
 .margin-top100 {
     margin-top: 100px;

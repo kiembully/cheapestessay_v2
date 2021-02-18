@@ -310,7 +310,7 @@ input[type=number] {
   transform: skewY(-5deg);
   -ms-transform: skewY(-5deg);
   -webkit-transform: skewY(-5deg);
-  padding: 120px 0 86px 0;
+  padding: 100px 0 86px 0;
   margin: 0 auto;
   max-width: 2400px;
   z-index: -1

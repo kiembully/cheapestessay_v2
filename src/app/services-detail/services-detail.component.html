@@ -46,22 +46,55 @@
             <div [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_header)"></div>
             <div [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content)"></div>
         </mat-toolbar-row>
-        <mat-toolbar-row class="mtr-sub-contents" *ngFor="let number of row_filler; let i = index;">
+        <mat-toolbar-row class="mtr-sub-contents">
             <span class="spn-sub-content">
                 <div class="sub-content-wrap">
-                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+1+i].header)"></span>
-                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+1+i].content)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[1].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[1].content)"></span>
                 </div>
             </span>
             <span class="fill-space spn-separate-content"></span>
             <span class="spn-sub-content">
                 <div class="sub-content-wrap">
-                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+2+i].header)"></span>
-                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[number+2+i].content)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[2].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[2].content)"></span>
                 </div>
             </span>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
+<div class="diagonal-box margin-bottom100">
+    <div class="width1120px revert-diagonal">
+        <app-common-discount-banner [has_image]="true"></app-common-discount-banner>
+    </div>
+</div>
+<section class="width1120px" *ngIf="isInitializing">
+    <mat-toolbar>
+        <mat-toolbar-row class="mtr-sub-contents">
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[3].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[3].content)"></span>
+                </div>
+            </span>
+            <span class="fill-space spn-separate-content"></span>
+            <span class="spn-sub-content">
+                <div class="sub-content-wrap">
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[4].header)"></span>
+                    <span [innerHtml]="sanitized.bypassSecurityTrustHtml(sub_content_list[4].content)"></span>
+                </div>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
+<div class="diagonal-box margin-bottom100">
+    <div class="width1120px revert-diagonal">
+        <app-common-discount-banner></app-common-discount-banner>
+    </div>
+</div>
+<div class="margin-bottom100">
+    <app-common-service-similarities [isInServices]="true"></app-common-service-similarities>
+</div>
+<app-common-faqs *ngIf="isInitializing && faq_entry.length > 0" [faq_entry]="faq_entry"></app-common-faqs>
 
 <app-common-services-slide [isWriters]="true"></app-common-services-slide>

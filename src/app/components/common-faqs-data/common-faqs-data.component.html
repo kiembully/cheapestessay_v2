@@ -6,10 +6,10 @@
     (click)="togglePanels(i)">
       <mat-panel-title>
             <span class="material-icons mi-home-faq rem-pannel{{i}}">{{faqIndexExpanded === i ? 'remove' : 'add'}}</span>
-            {{list.header}}
+            {{list.question}}
       </mat-panel-title>
     </mat-expansion-panel-header>
-    <p class="p-faq-content" [innerHtml]="sanitized.bypassSecurityTrustHtml(list.content)"></p>
+    <p class="p-faq-content" [innerHtml]="sanitized.bypassSecurityTrustHtml(list.answer)"></p>
     <mat-list role="list" class="ml-info-body" *ngIf="i == 0">
         <mat-list-item role="listitem" *ngFor="let item of list.list; let i = index">
             <span matPreFix class="spn-matprefix">{{i+1}}.</span>{{item}}

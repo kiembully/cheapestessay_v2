@@ -89,6 +89,7 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { ArabicComponent } from './arabic/arabic.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/announcement-dialog.component';
+import { CommonServiceSimilaritiesComponent } from './components/common-service-similarities/common-service-similarities.component';
 
 @NgModule({
   declarations: [
@@ -170,6 +171,7 @@ import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/annou
     DisclaimerComponent,
     ArabicComponent,
     AnnouncementDialogComponent,
+    CommonServiceSimilaritiesComponent,
   ],
   imports: [
     BrowserModule,

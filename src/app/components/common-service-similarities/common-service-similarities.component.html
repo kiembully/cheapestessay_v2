@@ -1,0 +1,64 @@
+<section class="width1400px">
+    <mat-toolbar class="">
+        <mat-toolbar-row class="common-sub-header mtr-what-we-do">
+            <h2>PEOPLE ALSO LIKE</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <div class="similarities-wrap" [ngClass]="{'active':isMoreSimilaritiesHidden}">
+                <span>
+                    <div class="similarities-inner">
+                        <span>
+                            <mat-list>
+                                <mat-list-item *ngFor="let list of splitArray(similarities)[0]; let i = index;">
+                                    <mat-icon mat-list-icon></mat-icon>
+                                    <div mat-line>
+                                        <a class="a-link-similarities" mat-flat-button (click)="toServices(list.service)">{{getName(list.service)}}</a>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </span>
+                        <span class="fill-space"></span>
+                        <span>
+                            <mat-list>
+                                <mat-list-item *ngFor="let list of splitArray(similarities)[1]">
+                                    <mat-icon mat-list-icon></mat-icon>
+                                    <div mat-line>
+                                        <a class="a-link-similarities" mat-flat-button (click)="toServices(list.service)">{{getName(list.service)}}</a>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </span>
+                    </div>
+                </span>
+                <span>
+                    <div class="similarities-inner">
+                        <span>
+                            <mat-list>
+                                <mat-list-item *ngFor="let list of splitArray(similarities)[2]">
+                                    <mat-icon mat-list-icon></mat-icon>
+                                    <div mat-line>
+                                        <a class="a-link-similarities" mat-flat-button (click)="toServices(list.service)">{{getName(list.service)}}</a>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </span>
+                        <span class="fill-space"></span>
+                        <span>
+                            <mat-list>
+                                <mat-list-item *ngFor="let list of splitArray(similarities)[3]">
+                                    <mat-icon mat-list-icon></mat-icon>
+                                    <div mat-line>
+                                        <a class="a-link-similarities" mat-flat-button (click)="toServices(list.service)">{{getName(list.service)}}</a>
+                                    </div>
+                                </mat-list-item>
+                            </mat-list>
+                        </span>
+                    </div>
+                </span>
+            </div>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-show-more-similarities">
+            <button type="button" mat-flat-button (click)="toggleSimilarities()">Show more...</button>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>

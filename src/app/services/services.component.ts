@@ -41,6 +41,7 @@ export class ServicesComponent implements OnInit {
   service_name: any;
   initial_pitch_header:any;
   initial_pitch_content:any;
+  faq_entry:any;
   main_header:any;
   sub_header:any;
   sub_content:any;
@@ -59,6 +60,7 @@ export class ServicesComponent implements OnInit {
       this.sub_header = res.data.sub_contents[0].header;
       this.sub_content = res.data.sub_contents[0].content;
       this.sub_content_list = res.data.sub_contents;
+      this.faq_entry = res.data.faq;
 
       for (let i = 1; i < res.data.sub_contents.length; i++) {
         if (i%2 != 0) {

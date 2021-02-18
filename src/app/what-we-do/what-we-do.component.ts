@@ -14,7 +14,6 @@ import { loggedin_session } from '../data/ui-services';
   encapsulation: ViewEncapsulation.None,
 })
 export class WhatWeDoComponent implements OnInit {
-
   frmRegister = new FormGroup({
     fx: new FormControl('freeQuote'),
     email: new FormControl('')
