@@ -96,6 +96,10 @@ export class ApiServices {
         )
     }
 
+    getDeadlines() {
+        return this.http.get<any>(this._orderDisplayUrl + 'displaydeadline');
+    }
+
     getPapers() {
         let _paper = this.http.get<any>(this._orderDisplayUrl + 'displaypopularpapers');
         let _paper1 = this.http.get<any>(this._orderDisplayUrl + 'displayotherpapers');
@@ -190,6 +194,10 @@ export class ApiServices {
     _contactUrl = this._baseUrl + 'sendcontactus'
     getContactDetails(contact_form) {
         return this.http.post<any>(this._contactUrl, contact_form);
+    }
+    _resetPasswordUrl = this._baseUrl + 'forgotPassword'
+    getNewPassword(form) {
+        return this.http.post<any>(this._resetPasswordUrl, form);
     }
     
     _servicesUrl = this._baseUrl + 'services?page='

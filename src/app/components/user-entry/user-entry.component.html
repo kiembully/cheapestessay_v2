@@ -1,7 +1,7 @@
 <mat-toolbar class="mt-user-entry">
     <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
     <mat-toolbar-row class="mtr-user-entry">
-        <mat-tab-group mat-align-tabs="center" class="mtg-user-entry">
+        <mat-tab-group mat-align-tabs="center" class="mtg-user-entry" animationDuration="100ms" dynamicHeight #userEntryTabs>
             <mat-tab class="mt-user-option" label="Login">
                 
                 <form [formGroup]="loginForm" (ngSubmit)="loginUser()" class="frm-wrapper" ngNativeValidate>
@@ -15,7 +15,7 @@
                     </div>
                     <mat-error *ngIf="formHasError">{{errorMessage}}</mat-error>
                     <button mat-button class="btn-submit" type="submit">Login</button>
-                    <!-- <a href="https://www.cheapestessay.com/forget" mat-flat-button>Forgot password?</a> -->
+                    <a class="a-forgot-password" (click)="openForgotPassword()" mat-flat-button>Forgot password?</a>
                 </form>
                 
             </mat-tab>
@@ -42,7 +42,20 @@
                     </div>
                     <mat-error *ngIf="signupHasError">{{suErrMessage}}</mat-error>
                     <button mat-button id="btn-submit" class="btn-submit" type="submit">Sign Up</button>
-                    <!-- <a href="https://www.cheapestessay.com/forget" mat-flat-button>Forgot password?</a> -->
+                </form>
+            </mat-tab>
+            <mat-tab class="mt-user-option" label="Forgot">
+                
+                <h3 class="h3-forgot-label">Retrieve your password here</h3>
+                <p class="p-forgot-label">Please enter your email address below to receive authentication code.</p>
+                <form class="frm-wrapper" [formGroup]="forgotForm" (ngSubmit)="forgotPassowrd()" ngNativeValidate>
+                    <div class="frm-wrap-inner" [style.border]="forgotHasError ? '1px solid #d93025' : null">
+                        <mat-form-field appearance="fill">
+                            <input formControlName="email" matInput type="email" placeholder="Email" required  class="panel-input-style">
+                        </mat-form-field>
+                    </div>
+                    <mat-error *ngIf="true" [style.color]="forgotHasError ? null : '#13B675'">{{fpErrMessage}}</mat-error>
+                    <button mat-button class="btn-submit" id="btn-forgot" type="submit">Submit</button>
                 </form>
                 
             </mat-tab>

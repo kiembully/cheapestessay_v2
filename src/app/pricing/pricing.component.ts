@@ -36,11 +36,6 @@ export class PricingComponent implements OnInit {
   setPowerpoint(val) {
     this.isPowerPointEnabled = (val == 2) ? true : false;
   }
-  patchLevel(val) {
-    this.pricingForm.patchValue({
-      level: val
-    })
-  }
   patchDeadline(list) {
     this.pricingForm.patchValue({
       deadline: list.deadline,
@@ -67,7 +62,6 @@ export class PricingComponent implements OnInit {
     return value;
   }
 
-
   word_count:any;
   deadlineLable:any;
   price:any;
@@ -87,15 +81,11 @@ export class PricingComponent implements OnInit {
     )
   }
   isProgressLoading:boolean = false;
-  public serviceTypes:any;
-  public writerLevels:any;
   public allDeadlines:any;
   displayOrderDetails() {
     this.isProgressLoading = true;
-    this._auth.getOrderDetails().subscribe(val => {
-      this.serviceTypes = val[0].data;
-      this.writerLevels = val[3].data;
-      this.allDeadlines = val[6].data;
+    this._auth.getDeadlines().subscribe(val => {
+      this.allDeadlines = val.data;
       this.isProgressLoading = false;
     })
   }
@@ -136,7 +126,6 @@ export class PricingComponent implements OnInit {
     this.patchPageVal(pageVal);
   }
   patchPageVal(val) {
-    this.pricingForm.value.page = val;
     this.pricingForm.patchValue({
       page: val
     })

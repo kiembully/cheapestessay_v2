@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import {FormControl, Validators, FormGroup} from '@angular/forms';
 import { ApiServices } from 'src/app/api.service';
 import { Router } from '@angular/router';
@@ -26,12 +26,16 @@ export class UserEntryComponent implements OnInit {
     mobile: new FormControl(''),
     mobile_prefix: new FormControl("1")
   })
+  forgotForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+  })
   selectedFlag: string = 'url(https://restcountries.eu/data/usa.svg)'
   
   constructor(
     private _auth: ApiServices,
     public router: Router,
     public dialogRef:MatDialogRef<CommonDialogComponent>,
+    private _cdr: ChangeDetectorRef
   ) { }
 
   public country_code:any;
@@ -96,6 +100,25 @@ export class UserEntryComponent implements OnInit {
       }
     )
   }
+  forgotHasError:boolean = false;
+  fpErrMessage:string = '';
+  forgotPassowrd() {
+    this.isProgressLoading = true;
+    this._auth.getNewPassword(this.forgotForm.value).subscribe(
+      res => {
+        this.isProgressLoading = false;
+        this.fpErrMessage = res.message;
+        this.forgotHasError = (res.status == false) ? true : false;
+        if (res.status) {
+          let index = this.userEntryTabs;
+          setTimeout(function(){
+            index.selectedIndex = 0;
+           },3000);
+        }
+      }
+    )
+    
+  }
 
   // progress bar status 
   isProgressLoading:boolean = false;
@@ -104,7 +127,18 @@ export class UserEntryComponent implements OnInit {
     this.getCountryCode(); 
   }
 
+  tabIndex: any;
+  @ViewChild('userEntryTabs') userEntryTabs;
+  ngAfterViewInit() {
+    this.tabIndex = this.userEntryTabs.selectedIndex;
+    this._cdr.detectChanges();
+  }
+
   selectActiveFlag(code) {
     this.selectedFlag = 'url(https://restcountries.eu/data/' + code.toLowerCase() + '.svg)'
+  }
+
+  openForgotPassword() {
+    this.userEntryTabs.selectedIndex = 2;
   }
 }

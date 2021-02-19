@@ -3,7 +3,7 @@
 }
 .mtr-user-entry {
     padding: 82px 15px 45px 15px;
-    max-width: 400px;
+    max-width: 450px;
     margin: 0 auto;
 }
 .mtg-user-entry {
@@ -24,6 +24,9 @@
     line-height: 24px;
     color: #959595;
 }
+.mtr-user-entry .mat-tab-label:last-child {
+    display: none;
+}
 .mtr-user-entry .mat-tab-label-active {
     border-radius: 30px;
     font-family: "SF Pro Text Bold";
@@ -39,6 +42,12 @@
 }
 .mtr-user-entry .mat-tab-nav-bar, .mat-tab-header {
     border-bottom: 0;
+}
+.a-forgot-password {
+    margin: 10px auto 0 auto;
+    display: block;
+    max-width: 200px;
+    background-color: transparent;
 }
 
 /* login styles */
@@ -86,7 +95,12 @@
     margin-top: 100px;
 }
 .btn-submit#btn-submit {
-    margin-top: 45px
+    margin-top: 45px;
+    margin-bottom: 45px
+}
+.btn-submit#btn-forgot {
+    margin-top: 50px;
+    margin-bottom: 45px
 }
 .btn-submit:focus {
     outline: none;
@@ -109,4 +123,20 @@
     font-family: "SF Pro Text Regular";
     white-space: normal;
     line-height: 20px;
+}
+.h3-forgot-label {
+    color: #12245A;
+    font-family: "SF Pro Text Bold" !important;
+    font-size: 25px !important;
+    letter-spacing: 0 !important;
+    white-space: normal;
+}
+.p-forgot-label {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    letter-spacing: 0;
+    line-height: 20px;
+    margin-bottom: 20px;
+    white-space: normal;
 }

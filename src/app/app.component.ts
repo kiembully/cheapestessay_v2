@@ -47,7 +47,7 @@ export class AppComponent {
       let popup = this._trigger
       setTimeout(function(){
         popup.openAnnouncementDialog()
-       },10000);
+       },20000);
     }
   }
   

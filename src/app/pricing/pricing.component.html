@@ -16,9 +16,18 @@
                         <mat-button-toggle-group formControlName="service" class="mbtg-pricing-wrap" [value]="pricingForm.value.service">
                             <mat-button-toggle
                                 class="fill-space tri-button-toggle"
-                                *ngFor="let list of serviceTypes"
-                                (click)="setPowerpoint(list.type_of_service_id)"
-                                [value]="list.type_of_service_id">{{list.type_of_service}}
+                                (click)="setPowerpoint(3)"
+                                [value]="3">Writing
+                            </mat-button-toggle>
+                            <mat-button-toggle
+                                class="fill-space tri-button-toggle"
+                                (click)="setPowerpoint(1)"
+                                [value]="1">Editing
+                            </mat-button-toggle>
+                            <mat-button-toggle
+                                class="fill-space tri-button-toggle"
+                                (click)="setPowerpoint(2)"
+                                [value]="2">PowerPoint
                             </mat-button-toggle>
                         </mat-button-toggle-group>
                     </span>
@@ -28,10 +37,16 @@
                         <p class="p-pricing-label">What writer's level do you need?</p>
                         <mat-button-toggle-group formControlName="academic" class="mbtg-pricing-wrap" [value]="pricingForm.value.academic">
                             <mat-button-toggle
-                                *ngFor="let list of writerLevels" 
                                 class="fill-space tri-button-toggle"
-                                (click)="patchLevel(list.academic_level_id)"
-                                [value]="list.academic_level_id">{{list.academic_level_name}}
+                                [value]="3">College
+                            </mat-button-toggle>
+                            <mat-button-toggle
+                                class="fill-space tri-button-toggle"
+                                [value]="1">Bachelor
+                            </mat-button-toggle>
+                            <mat-button-toggle
+                                class="fill-space tri-button-toggle"
+                                [value]="2">Master
                             </mat-button-toggle>
                         </mat-button-toggle-group>
                     </span>
@@ -40,7 +55,7 @@
                     <span class="fill-space spn-toggle-wrap">
                         <p class="p-pricing-label">When you needed it ready? "Deadline" <span class="fill-space"></span><span>{{deadlineLable}}</span></p>
                         <mat-form-field appearance="fill" class="mff-pricing-deadline">
-                            <mat-select disableOptionCentering panelClass="ms-pricing-deadline" [value]="deadline_value">
+                            <mat-select disableOptionCentering panelClass="ms-pricing-deadline" [value]="deadline_value" aria-label="deadlines">
                                 <mat-option *ngFor="let list of allDeadlines; let i = index" (click)="patchDeadline(list)" [value]="i">{{list.deadline}} {{list.duration}}</mat-option>
                             </mat-select>
                         </mat-form-field>
@@ -55,7 +70,6 @@
                                 <mat-button-toggle-group class="mbtg-pricing-wrap" formControlName="page" [value]="pricingForm.value.page">
                                     <mat-button-toggle
                                     *ngFor="let list of sevenPage"
-                                    (click)="patchPageVal(list)"
                                     class="fill-space btn-sevenpage"
                                     [value]="list">{{list}}</mat-button-toggle>
                                 </mat-button-toggle-group>
