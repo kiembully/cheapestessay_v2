@@ -90,6 +90,7 @@ import { ArabicComponent } from './arabic/arabic.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/announcement-dialog.component';
 import { CommonServiceSimilaritiesComponent } from './components/common-service-similarities/common-service-similarities.component';
+import { TopWritersComponent } from './top-writers/top-writers.component';
 
 @NgModule({
   declarations: [
@@ -172,6 +173,7 @@ import { CommonServiceSimilaritiesComponent } from './components/common-service-
     ArabicComponent,
     AnnouncementDialogComponent,
     CommonServiceSimilaritiesComponent,
+    TopWritersComponent,
   ],
   imports: [
     BrowserModule,

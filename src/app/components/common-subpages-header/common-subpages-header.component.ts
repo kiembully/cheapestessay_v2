@@ -62,6 +62,10 @@ export class CommonSubpagesHeaderComponent implements OnInit {
     {
       header: 'شرح بالعربي',
       subheader: 'شرح مختصر لأهم النقاط باللغة العربية مع ترجمة مفردات الطلبية. ( اقرأ الترجمة باللون الأحمر )',
+    },
+    {
+      header: 'Cheapest Essay Top Writers',
+      subheader: "Review the impressive credentials of the writers in our service such as awards, ratings, customer's feedback and select the one who best suits your assignment"
     }
   ]
 
