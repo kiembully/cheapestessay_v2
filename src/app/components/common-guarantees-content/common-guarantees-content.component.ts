@@ -11,7 +11,6 @@ export class CommonGuaranteesContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    console.log(this.guarantees)
   }
   
   guarantees:any = [
