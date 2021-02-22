@@ -32,6 +32,7 @@ import { DisclaimerComponent } from './disclaimer/disclaimer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ArabicComponent } from './arabic/arabic.component';
 import { TopWritersComponent } from './top-writers/top-writers.component';
+import { WritersProfileComponent } from './writers-profile/writers-profile.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -54,6 +55,7 @@ const routes: Routes = [
   {path:'arabic',component:ArabicComponent},
   {path:'404',component:PageNotFoundComponent},
   {path:'top-writers',component:TopWritersComponent},
+  {path:'writers-profile',component:WritersProfileComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
   {path:'my-orders/order-details/:id',component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},

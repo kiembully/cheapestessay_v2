@@ -65,6 +65,7 @@ export class AppComponent {
     'stripe-checkout',
     'update-card',
     'invoice',
+    '404',
   ]
 
   getFooterStatus() {

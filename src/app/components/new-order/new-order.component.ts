@@ -67,9 +67,9 @@ export class NewOrderComponent implements OnInit {
 
   isPageDisabled:boolean = false;
   patchPageSlide(val) {
-    this.isPageDisabled = (val == 2) ? true : false;
+    this.isPageDisabled = (val.additionalextra == 2) ? true : false;
     this.newOrderForm.patchValue({
-      page: (val == 2) ? 0 : 1,
+      page: (val.additionalextra == 2) ? 0 : 1,
       slide: (val != 2) ? this.newOrderForm.value.slide : 1,
     })
   }
@@ -127,9 +127,9 @@ export class NewOrderComponent implements OnInit {
   }
   patchWriter(val) {
     let writer;
-    if (val == 1) {
+    if (val.additionalextra == 1) {
       writer = 'any_writer'
-    } else if (val == 2) {
+    } else if (val.additionalextra == 2) {
       writer = 'top_10_writer'
     } else {
       writer = 'my_previous_writer'
@@ -198,8 +198,7 @@ export class NewOrderComponent implements OnInit {
       this.setOrder(this.newOrderForm.value);
     } else {
       let decoded_order_token = jwt_decode(localStorage.getItem('set_order_token'));
-      this.iniAdditionalExtras(decoded_order_token.additionalextra);
-      this.setOrder(this.setValueOrders(decoded_order_token));
+      this.iniAdditionalExtras(decoded_order_token);
     }
     this.newOrderForm.valueChanges.subscribe(
       (value:any) => {
@@ -244,10 +243,18 @@ export class NewOrderComponent implements OnInit {
   slide_cost:any;
   chart_cost:any;
   price_saved:any;
+  turnitinPrice:any;
+  sendEmailPrice:any;
+  abstractPageprice:any;
+  in_top10:any;
   assignValues(res) {
     this.page_cost = res.pageCost;
     this.slide_cost = res.slideCost;
     this.chart_cost = res.chartCost;
+    this.in_top10 = res.in_top10;
+    this.turnitinPrice = this.filterExtrasIfFree(res.turnitinPrice);
+    this.sendEmailPrice = this.filterExtrasIfFree(res.sendEmailPrice);
+    this.abstractPageprice = this.filterExtrasIfFree(res.abstractPageprice);
     this.deadline_value = this.getDeadlineActive(res.deadline, res.duration);
     this.deadlineFormat = res.deadlineLable;
     this.isPageDisabled = (res.service == 2) ? true : false;
@@ -257,6 +264,10 @@ export class NewOrderComponent implements OnInit {
     } else {
       this.getCouponValue(res.price_without_discount);
     }
+  }
+
+  filterExtrasIfFree(val) {
+    return (val == 'Free') ? val : '$' + val;
   }
 
   // increase and decrease of total page, charts, sources and powerpoint slides
@@ -331,11 +342,24 @@ export class NewOrderComponent implements OnInit {
       additionalextra: value.slice(0,-1),
     })
   }
+  patchAdditionalExtras(val,val2,val3) {
+    let arr = [val,val2,val3];
+    let extras = ['5','6','7'];
+    let value = '';
+    for (let index = 0; index < extras.length; index++) {
+      if (arr[index]) {
+        value += extras[index].toString() + ',';
+      }
+    }
+    return value.slice(0,-1);
+  }
+  
   iniAdditionalExtras(val) {
-    let val_length = val.lenth > 0;
-    this.isPlagiarismActive = (val == '6,7' || val == '6' || val == '7' || val == '' || val_length) ? false : true;
-    this.isAbstractActive = (val == '5,7' || val == '5' || val == '7' || val == '' || val_length) ? false : true;
-    this.isEmailActive = (val == '5,6' || val == '6' || val == '5' || val == '' || val_length) ? false : true;
+    this.isPlagiarismActive = (val.additionalextra.includes('5') || val.turnitinPrice == "Free") ? true : false;
+    this.isAbstractActive = (val.additionalextra.includes('6') || val.abstractPageprice == "Free") ? true : false;
+    this.isEmailActive = (val.additionalextra.includes('7') || val.sendEmailPrice == "Free") ? true : false;
+    
+    this.setOrder(this.setValueOrders(val));
   }
   setValueOrders(res) {
     this.newOrderForm.patchValue({
@@ -360,10 +384,12 @@ export class NewOrderComponent implements OnInit {
       chart: res.chart,
       preferred_writer: res.preferred_writer,
       writer_id: res.writer_id,
-      additionalextra: (res.additionalextra.constructor === Array) ? ((res.additionalextra.length > 0) ? res.additionalextra : '') : res.additionalextra,
+      additionalextra: this.patchAdditionalExtras(this.isPlagiarismActive, this.isAbstractActive, this.isEmailActive),
     })
     return this.newOrderForm.value
   }
+
+  
   patchCoupon(o_token) {
     let coupon_code = localStorage.getItem('discount_token');
     this.couponForm.patchValue({

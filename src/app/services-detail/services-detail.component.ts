@@ -54,6 +54,7 @@ export class ServicesDetailComponent implements OnInit {
   row_filler:any = [];
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
+      console.log(res);
       if (res.status) {
         this.setSeo(this.route.snapshot.paramMap.get('id'))
         this.service_name = res.data.page_contents.name;

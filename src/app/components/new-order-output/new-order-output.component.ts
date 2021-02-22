@@ -28,6 +28,7 @@ export class NewOrderOutputComponent implements OnInit {
   })
 
   decoded_user_token: any;
+  decoded_order_token: any;
 
   // check if user is active
   @Input() public isUserOnline: boolean;
@@ -42,6 +43,7 @@ export class NewOrderOutputComponent implements OnInit {
   @Input() public page_cost:any;
   @Input() public slide_cost:any;
   @Input() public chart_cost:any;
+  @Input() public in_top10:any;
   @Output('openCouponDialog') openCouponDialog: EventEmitter<any> = new EventEmitter();
 
   constructor(

@@ -90,6 +90,7 @@ export class PricingComponent implements OnInit {
     })
   }
 
+  isUserActive: boolean;
   ngOnInit(): void {
     this.titleService.setTitle("Prices - Cheapest Essay");
     this.metaTagService.updateTag(
@@ -100,6 +101,8 @@ export class PricingComponent implements OnInit {
     );
 
     this.displayOrderDetails();
+    this.isUserActive = (this._session.isTokenExisting('user_token')) ? false : true;
+    this.pricingForm.patchValue({user_token: (this.isUserActive)?localStorage.getItem('user_token'):''})
     if (this._session.isTokenExisting('set_order_token')) {
       this.setOrders(this.pricingForm.value);
     } else {

@@ -37,10 +37,13 @@ export class CommonBannerCalculatorComponent implements OnInit {
   isSubmitDisabled:boolean = false;
   decoded_user_token: any;
   logged_email: any;
+  isUserActive: boolean;
   ngOnInit(): void {
-    this.decoded_user_token = ((!this._session.isTokenExisting('user_token'))) ? jwt_decode(localStorage.getItem('user_token')) : '';
-    this.logged_email = ((!this._session.isTokenExisting('user_token'))) ? this.decoded_user_token.user_details.user_email : '';
+    this.isUserActive = !this._session.isTokenExisting('user_token');
+    this.decoded_user_token = this.isUserActive ? jwt_decode(localStorage.getItem('user_token')) : '';
+    this.logged_email = this.isUserActive ? this.decoded_user_token.user_details.user_email : '';
     localStorage.removeItem('discount_token');
+    this.setOrderForm.patchValue({user_token: (this.isUserActive)?localStorage.getItem('user_token'):''})
     this.getServices();
     this.setSelectedService();
     this.setOrder(this.setOrderForm.value);

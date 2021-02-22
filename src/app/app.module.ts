@@ -91,6 +91,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/announcement-dialog.component';
 import { CommonServiceSimilaritiesComponent } from './components/common-service-similarities/common-service-similarities.component';
 import { TopWritersComponent } from './top-writers/top-writers.component';
+import { WritersProfileComponent } from './writers-profile/writers-profile.component';
 
 @NgModule({
   declarations: [
@@ -174,6 +175,7 @@ import { TopWritersComponent } from './top-writers/top-writers.component';
     AnnouncementDialogComponent,
     CommonServiceSimilaritiesComponent,
     TopWritersComponent,
+    WritersProfileComponent,
   ],
   imports: [
     BrowserModule,
