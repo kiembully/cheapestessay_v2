@@ -63,6 +63,7 @@
     font-weight: 300;
     line-height: 25px;
     margin: 0;
+    white-space: normal;
 }
 .p-coup-response.isInvalid {
     color: #D0021B;

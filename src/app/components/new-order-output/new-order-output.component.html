@@ -48,17 +48,17 @@
                     <mat-list-item *ngIf="isUserOnline && getListVisibility(abstract)">
                         <span>Abstract Page</span>
                         <span class="fill-space"></span>
-                        <span><strong>$2.99</strong></span>
+                        <span><strong>{{filterExtrasIfFree(abstract_cost)}}</strong></span>
                     </mat-list-item>
                     <mat-list-item *ngIf="isUserOnline && getListVisibility(plagiarism)">
                         <span>Turnitin Plagiarism Report</span>
                         <span class="fill-space"></span>
-                        <span><strong>$7.99</strong></span>
+                        <span><strong>{{filterExtrasIfFree(plagiarism_cost)}}</strong></span>
                     </mat-list-item>
                     <mat-list-item *ngIf="isUserOnline && getListVisibility(email)">
                         <span>Send it to my E-mail</span>
                         <span class="fill-space"></span>
-                        <span><strong>$1.99</strong></span>
+                        <span><strong>{{filterExtrasIfFree(email_cost)}}</strong></span>
                     </mat-list-item>
                     <mat-list-item *ngIf="isUserOnline && in_top10">
                         <span>Top 10 Writers</span>

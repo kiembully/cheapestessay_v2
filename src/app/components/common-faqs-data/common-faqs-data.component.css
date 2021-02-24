@@ -31,6 +31,10 @@
 .ma-faq-wrap mat-expansion-panel-header {
     min-height: 60px;
     padding: 5px 0 5px 10px;
+    height: auto
+}
+.ma-faq-wrap .mat-expansion-panel-header.mat-expanded {
+    height: auto
 }
 .ml-info-body,
 .ma-faq-wrap .p-faq-content {

@@ -17,6 +17,16 @@ export interface balances {
     current_wallet_balance:string,
 }
 
+export interface topWriters {
+    completed_order: number,
+    description: string,
+    joined: string,
+    profile_pic: string,
+    review_count: number,
+    review_rate: string,
+    user_name: string,
+}
+
 export class user_functions {
     getUserStatus() {
         let status:number = 0;

@@ -29,7 +29,11 @@ export class NewOrderComponent implements OnInit {
   isPlagiarismActive:boolean;
   isEmailActive:boolean;
   isUserActive:boolean;
+  hasDiscountToken:boolean;
   panelOptionalState:boolean = false;
+  plagiarism_cost:any;
+  abstract_cost:any;
+  email_cost:any;
 
   // order ouput on floating element
   orderOutput:any = this._data.orderOutput;
@@ -191,7 +195,9 @@ export class NewOrderComponent implements OnInit {
   ngOnInit(): void {
     this.isProgressLoading = true;
     this.isUserActive = (this._session.isTokenExisting('user_token')) ? false : true;
+    this.hasDiscountToken = (this._session.isTokenExisting('discount_token')) ? false : true;
     this.newOrderForm.patchValue({user_token: (this.isUserActive)?localStorage.getItem('user_token'):''})
+    this.newOrderForm.patchValue({discount_token: (localStorage.getItem('discount_token') == 'invalid')?'':localStorage.getItem('discount_token')})
     this.displayOldWriters();
     this.displayOrderDetails();
     if (this._session.isTokenExisting('set_order_token')) {
@@ -218,23 +224,8 @@ export class NewOrderComponent implements OnInit {
         localStorage.removeItem('set_order_token');
         localStorage.setItem('set_order_token', val.data.order_token);
         this.order_token.patchValue({token:val.data.order_token})
-        this.patchCoupon(val.data.order_token);
         this.assignValues(this.decoded_order_token);
       }
-    )
-  }
-  
-  getCouponValue(price) {
-    this._auth.getCouponCode(this.couponForm.value).subscribe(
-      res=> {
-        localStorage.setItem('discount_token', res.data.discount_token);
-        let decoded_discount_token = jwt_decode(localStorage.getItem('discount_token'));
-        let deduction = Math.round((price * (decoded_discount_token.coupon_discount/100)) * 100) / 100
-        this.total_price = price - deduction;
-        this.price_saved = price - this.total_price;
-        this.total_price = Math.round((this.total_price + Number.EPSILON) * 100) / 100;
-        this.price_saved = Math.round((this.price_saved + Number.EPSILON) * 100) / 100;
-      } 
     )
   }
 
@@ -258,12 +249,12 @@ export class NewOrderComponent implements OnInit {
     this.deadline_value = this.getDeadlineActive(res.deadline, res.duration);
     this.deadlineFormat = res.deadlineLable;
     this.isPageDisabled = (res.service == 2) ? true : false;
-    if (localStorage.getItem('discount_token') == null || localStorage.getItem('discount_token') == 'invalid') {
-      this.total_price = res.price;
-      this.total_price = this.total_price.replace('$', '');
-    } else {
-      this.getCouponValue(res.price_without_discount);
-    }
+    this.plagiarism_cost = res.turnitinPrice;
+    this.abstract_cost = res.abstractPageprice;
+    this.email_cost = res.sendEmailPrice;
+    this.total_price = res.price_without_discount;
+    this.price_saved = res.price_without_discount - res.totalPrice;
+    this.price_saved = Math.round((this.price_saved + Number.EPSILON) * 100) / 100;
   }
 
   filterExtrasIfFree(val) {

@@ -55,7 +55,7 @@ const routes: Routes = [
   {path:'arabic',component:ArabicComponent},
   {path:'404',component:PageNotFoundComponent},
   {path:'top-writers',component:TopWritersComponent},
-  {path:'writers-profile',component:WritersProfileComponent},
+  {path:'writers-profile/:id',component:WritersProfileComponent},
   {path:'my-orders',component:MyOrdersComponent,canActivate:[AuthGuard]},
   {path:'my-orders/order-details/:id',component:OrderDetailsComponent,canActivate:[AuthGuard]},
   {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},

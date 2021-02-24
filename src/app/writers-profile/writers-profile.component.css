@@ -8,6 +8,9 @@
     border: 1px solid #12245A;
     border-radius: 5px;
 }
+.mtr-wp-header {
+    white-space: normal;
+}
 .spn-wph-info {
 
 }

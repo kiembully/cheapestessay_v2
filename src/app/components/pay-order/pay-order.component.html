@@ -25,5 +25,5 @@
         </mat-tab>
       </mat-tab-group>
       <mat-checkbox [formControl]="agreement" class="mrb-agreement">I agree to the Cheapest Essay <a routerLink="/terms-of-use" mat-button>Terms of Use</a> and <a routerLink="/privacy-policy" mat-button>Privacy Policy.</a></mat-checkbox>
-      <button [disabled]="!agreement.value" mat-flat-button type="submit" class="btn-pay-order">Pay with {{displayPaymentMode(tabIndex)}}</button>
+      <button [disabled]="!agreement.value" mat-flat-button type="submit" class="btn-submit-payment">Pay with {{displayPaymentMode(tabIndex)}}</button>
 </form>

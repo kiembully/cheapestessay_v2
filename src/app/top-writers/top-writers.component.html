@@ -6,42 +6,123 @@
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
-<section class="sec-top-writers default-width margin-bottom100">
-    <table mat-table
-        [dataSource]="dataSource" multiTemplateDataRows
-        class="mat-elevation-z8 tbl-top-writers">
-        <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
-            <th mat-header-cell *matHeaderCellDef> {{column}} </th>
-            <td mat-cell *matCellDef="let element"> {{element[column]}} </td>
-        </ng-container>
-
-        <!-- Expanded Content Column - The detail row is made up of this one column that spans across all columns -->
-        <ng-container matColumnDef="expandedDetail">
-            <td mat-cell *matCellDef="let element" [attr.colspan]="columnsToDisplay.length">
-            <div class="example-element-detail"
-                [@detailExpand]="element == expandedElement ? 'expanded' : 'collapsed'">
-                <div class="example-element-diagram">
-                <div class="example-element-position"> {{element.position}} </div>
-                <div class="example-element-symbol"> {{element.symbol}} </div>
-                <div class="example-element-name"> {{element.name}} </div>
-                <div class="example-element-weight"> {{element.weight}} </div>
-                </div>
-                <div class="example-element-description">
-                {{element.description}}
-                <span class="example-element-description-attribution"> -- Wikipedia </span>
-                </div>
+<section class="default-width margin-bottom100">
+    
+    <mat-toolbar class="mt-top-writers mt-top-writers-w">
+        <mat-toolbar-row class="mtr-top-writers">
+            
+            <div class="top-writer-header">
+                <span><div class="sprite-cheapest top-trophy"></div></span>
+                <span><h1>Our Top Writers</h1></span>
             </div>
-            </td>
-        </ng-container>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-top-writers">
 
-        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-        <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
-            class="example-element-row"
-            [class.example-expanded-row]="expandedElement === element"
-            (click)="expandedElement = expandedElement === element ? null : element">
-        </tr>
-        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
-    </table>
+                <ng-container matColumnDef="user_name">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element"> <span class="spn-order-id">
+                        <button class="btn-view-writer" type="button" mat-flat-button [routerLink]="['/writers-profile',element.user_name]">View Profile</button>
+                    </span> </td>
+                </ng-container>
+                <ng-container matColumnDef="profile_pic">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element;  let i = index"> <span class="spn-order-id">
+                        <div class="display-photo-outer">
+                            <span class="spn-writer-index">{{i+1}}</span>
+                            <div class="display-photo-wrap">
+                                <img *ngIf="element.profile_pic.length > 0" class="img-display-photo" [src]="element.profile_pic" alt="display photo">
+                                <div *ngIf="element.profile_pic.length <= 0" class="sprite-cheapest default-img"></div>
+                            </div>
+                        </div>
+                    </span> </td>
+                </ng-container>
+                <ng-container matColumnDef="description">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element"> <span class="spn-order-id">
+                        <div class="writer-profile-outer">
+                            <div class="writer-stats">
+                                <span class="fill-space spn-writer-username">{{element.user_name}}</span>
+                                <span class="fill-space">
+                                    <p class="p-writer-rate">{{element.review_rate}}</p>
+                                    <img src="" alt="writer rating">
+                                </span>
+                                <span class="fill-space">
+                                    <p class="p-completed-order">{{element.completed_order}}</p>
+                                    <p class="p-completed-order-label">Orders Completed</p>
+                                </span>
+                            </div>
+                            <p class="p-description">{{element.description}}</p>
+                        </div>
+                    </span> </td>
+                </ng-container>
+                <ng-container matColumnDef="hire_button">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element"> <span class="spn-order-id">
+                        <button type="button" mat-flat-button routerLink="/order" class="btn-hire-writer">Hire Writer</button>
+                    </span> </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+        
+            </table>
+        </mat-toolbar-row>
+    </mat-toolbar>
+
+    <!-- mobile design -->
+    <mat-toolbar class="mt-top-writers mt-top-writers-m">
+        <mat-toolbar-row class="mtr-top-writers">
+            
+            <div class="top-writer-header">
+                <span><div class="sprite-cheapest top-trophy"></div></span>
+                <span><h1>Our Top Writers</h1></span>
+            </div>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z0 tbl-top-writers">
+
+                <ng-container matColumnDef="user_name">
+                    <th mat-header-cell *matHeaderCellDef></th>
+                    <td mat-cell *matCellDef="let element; let i = index"> <span class="spn-order-id">
+                        <div class="top-writer-info-outer">
+                            <div class="top-writer-info">
+                                <span>
+                                    <div class="display-photo-outer">
+                                        <span class="spn-writer-index">{{i+1}}</span>
+                                        <div class="display-photo-wrap">
+                                            <img *ngIf="element.profile_pic.length > 0" class="img-display-photo" [src]="element.profile_pic" alt="display photo">
+                                            <div *ngIf="element.profile_pic.length <= 0" class="sprite-cheapest default-img"></div>
+                                        </div>
+                                    </div>
+                                </span>
+                                <span></span>
+                                <span>
+                                    <div class="writer-stats">
+                                        <span class="fill-space spn-writer-username">{{element.user_name}}</span>
+                                        <span class="fill-space">
+                                            <p class="p-writer-rate">{{element.review_rate}}</p>
+                                            <img src="" alt="rating">
+                                        </span>
+                                        <span class="fill-space">
+                                            <p class="p-completed-order">{{element.completed_order}}</p>
+                                            <p class="p-completed-order-label">Orders Completed</p>
+                                        </span>
+                                    </div>
+                                </span>
+                            </div>
+                            <p class="p-description">{{element.description}}</p>
+                            <div class="writer-action-wrap">
+                                <span><button class="btn-view-writer" type="button" mat-flat-button [routerLink]="['/writers-profile',element.user_name]">View Profile</button></span>
+                                <span class="fill-space"></span>
+                                <span><button class="btn-hire-writer" type="button" routerLink="/order" mat-flat-button>Hire Writer</button></span>
+                            </div>
+                        </div>
+                    </span> </td>
+                </ng-container>
+                
+                <tr mat-header-row *matHeaderRowDef="displayedColumnsM"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumnsM"></tr>
+        
+            </table>
+        </mat-toolbar-row>
+    </mat-toolbar>
 </section>
 <div class="margin-bottom70">
     <app-common-additional-service></app-common-additional-service>

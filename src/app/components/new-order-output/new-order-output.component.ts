@@ -38,8 +38,11 @@ export class NewOrderOutputComponent implements OnInit {
   @Input() public price_saved:any;
   @Input() public order_output:any;
   @Input() public plagiarism:any;
+  @Input() public plagiarism_cost:any;
   @Input() public abstract:any;
+  @Input() public abstract_cost:any;
   @Input() public email:any;
+  @Input() public email_cost:any;
   @Input() public page_cost:any;
   @Input() public slide_cost:any;
   @Input() public chart_cost:any;
@@ -165,4 +168,9 @@ export class NewOrderOutputComponent implements OnInit {
     let decoded_token = jwt_decode(localStorage.getItem('set_order_token'));
     return decoded_token.life_time_Disc;
   }
+
+  filterExtrasIfFree(val) {
+    return (val == 'Free') ? val : '$' + val;
+  }
+
 }

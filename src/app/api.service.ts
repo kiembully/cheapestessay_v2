@@ -87,6 +87,16 @@ export class ApiServices {
         );
     }
 
+    getTopWritersProfile() {
+        return this.http.get<any>(this._orderDisplayUrl + 'top10Writers').pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        );
+    }
+
     getHomeCalculator(token) {
         let _paper = this.http.get<any>(this._orderDisplayUrl + 'displaypopularpapers');
         let _paper1 = this.http.get<any>(this._orderDisplayUrl + 'displayotherpapers');
