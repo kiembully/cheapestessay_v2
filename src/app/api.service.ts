@@ -96,6 +96,17 @@ export class ApiServices {
             shareReplay()
         );
     }
+    
+    _writersProfileUrl = this._baseUrl + 'writerDetail';
+    getWritersProfile(id) {
+        return this.http.post<any>(this._writersProfileUrl, id).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        )
+    }
 
     getHomeCalculator(token) {
         let _paper = this.http.get<any>(this._orderDisplayUrl + 'displaypopularpapers');

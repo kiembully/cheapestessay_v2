@@ -10,6 +10,7 @@
     
     <mat-toolbar class="mt-top-writers mt-top-writers-w">
         <mat-toolbar-row class="mtr-top-writers">
+        <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
             
             <div class="top-writer-header">
                 <span><div class="sprite-cheapest top-trophy"></div></span>

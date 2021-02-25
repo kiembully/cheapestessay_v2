@@ -1,5 +1,4 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import { ApiServices } from 'src/app/api.service'
 import {MatTableDataSource} from '@angular/material/table';
 import {topWriters} from '../data/user-data';
@@ -7,13 +6,6 @@ import {topWriters} from '../data/user-data';
 @Component({
   selector: 'app-top-writers',
   templateUrl: './top-writers.component.html',
-  animations: [
-    trigger('detailExpand', [
-      state('collapsed', style({height: '0px', minHeight: '0'})),
-      state('expanded', style({height: '*'})),
-      transition('expanded <=> collapsed', animate('225ms cubic-bezier(0.4, 0.0, 0.2, 1)')),
-    ]),
-  ],
   providers: [ApiServices],
   styleUrls: ['./top-writers.component.css'],
   encapsulation: ViewEncapsulation.None,

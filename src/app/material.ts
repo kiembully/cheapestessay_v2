@@ -23,6 +23,7 @@ import {ScrollingModule} from '@angular/cdk/scrolling';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import {MatSortModule} from '@angular/material/sort';
 
 @NgModule({
     imports: [
@@ -48,7 +49,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
         MatProgressSpinnerModule,
         ScrollingModule,
         MatMenuModule,
-        MatSliderModule
+        MatSliderModule,
+        MatSortModule
     ],
     exports: [
         MatButtonModule,
@@ -74,7 +76,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
         ScrollingModule,
         MatMenuModule,
         MatSliderModule,
-        MatSlideToggleModule
+        MatSlideToggleModule,
+        MatSortModule
     ]
 })
 

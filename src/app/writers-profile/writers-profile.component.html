@@ -6,25 +6,113 @@
     </mat-toolbar>
 </section>
 
-<section class="sec-writers-info default-width">
-    <mat-toolbar>
-        <mat-toolbar-row class="mtr-wp-header">
-            <span class="spn-wph-info wph-box-style">
-                <div class="wph-info-wrap">
-                    <div class="wph-info-inner">
-                        <span><div class="wph-info-default sprites-icons"></div></span>
+<section class="sec-writers-info default-width margin-bottom100">
+    <app-common-progress-bar *ngIf="isProgressLoading"></app-common-progress-bar>
+    <mat-toolbar class="mt-writers-profile">
+        <mat-toolbar-row class="mtr-wp-header" *ngIf="!isProgressLoading">
+            <span class="spn-wph-info">
+                <div class="wph-box-style wph-info-outer">
+                    <div class="wph-info-wrap">
+                        <div class="wph-info-inner">
+                            <span class="spn-photo-outer">
+                                <div class="photo-default-wrap">
+                                    <div *ngIf="writers_data.profile_pic.length <= 0" class="wph-photo-default sprite-cheapest"></div>
+                                    <img *ngIf="writers_data.profile_pic.length > 0" class="wph-display-photo" [src]="writers_data.profile_pic" alt="display photo">
+                                </div>
+                            </span>
+                            <span>
+                                <h5 class="h5-writer-name">{{writers_data.first_name}} {{writers_data.last_name}} <div class="sprite-cheapest logo-verified"></div></h5>
+                                <p class="p-projects-completed"><strong>{{writers_data.completed_order}} Projects</strong> Completed</p>
+                                <p class="p-success-rate"><span>100%</span> <span>Success Rate</span></p>
+                            </span>
+                        </div>
+                    </div>
+                    <h2 class="h2-row-header">About Professor {{writers_data.first_name}} {{writers_data.last_name}}</h2>
+                    <p class="p-row-description">{{writers_data.description}}</p>
+                    <mat-divider class="md-row-header"></mat-divider>
+                    <div class="wph-info-footer">
+                        <span class="fill-space">
+                            <p class="p-writer-stat">{{writers_data.joined}}</p>
+                            <p class="p-writer-label">Joined Us</p>
+                        </span>
+                        <span class="fill-space">
+                            <p class="p-writer-stat">{{writers_data.review_rate}}</p>
+                            <p class="p-writer-label">Review Rate</p>
+                        </span>
+                        <span class="fill-space">
+                            <p class="p-writer-stat">{{writers_data.completed_order}}</p>
+                            <p class="p-writer-label">Completed Projects</p>
+                        </span>
+                    </div>
+                    <mat-divider class="md-row-header"></mat-divider>
+                </div>
+                <div class="wph-table-outer">
+                    <h2 class="h2-row-header">Reviews {{writers_data.reviews.length > 0 ? writers_data.reviews.length - 1 : 0}}</h2>
+                    <div class="review-count-wrap">
+                        <span><button class="btn-review-count" type="button" mat-flat-button>All({{writers_data.reviews.length > 0 ? writers_data.reviews.length - 1 : 0}})</button></span>
                         <span></span>
-                        <span>
+                    </div>
+                </div>
 
+                    <table mat-table [dataSource]="dataSource" matSort class="tbl-reviews">
+                    
+                      <ng-container matColumnDef="rating_number">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header>
+                            <div class="th-review-wrap">
+                                <span class="spn-th-review-rate">Review Rate <span>{{writers_data.review_rate}}</span></span>
+                                <span class="fill-space"></span>
+                                <span class="spn-sort-reviews">Sort</span>
+                            </div>
+                        </th>
+                        <td mat-cell *matCellDef="let element;">
+                            <div class="wph-box-style td-review-wrap">
+                                <div class="td-review-inner">
+                                    <span><h5 class="h5-customer-no">Customer {{element.customer_no}} <span>({{element.total_orders}} Orders)</span></h5></span>
+                                    <span class="fill-space"></span>
+                                    <span>
+                                        <div class="review-star-wrap">
+                                            <span *ngIf="element.rating_number >= 1" class="fill-space material-icons">star_rate</span>
+                                            <span *ngIf="element.rating_number >= 2" class="fill-space material-icons">star_rate</span>
+                                            <span *ngIf="element.rating_number >= 3" class="fill-space material-icons">star_rate</span>
+                                            <span *ngIf="element.rating_number >= 4" class="fill-space material-icons">star_rate</span>
+                                            <span *ngIf="element.rating_number >= 5" class="fill-space material-icons">star_rate</span>
+                                        </div>
+                                    </span>
+                                </div>
+                                <p class="p-review-added">{{element.addedon}}</p>
+                                <p class="p-review-description">{{element.remark}}</p>
+                            </div>
+                        </td>
+                      </ng-container>
+                    
+                      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                    </table>
+                    
+            </span>
+            <span class="fill-space spn-wph-separator"></span>
+            <span class="spn-wph-info1 wph-box-style">
+                <div class="wph-status-wrap">
+                    <div class="wph-status-inner">
+                        <span class="photo-default-mini">
+                            <div *ngIf="writers_data.profile_pic.length <= 0" class="mini-photo-default sprite-cheapest"></div>
+                            <img *ngIf="writers_data.profile_pic.length > 0" class="wph-display-photo" [src]="writers_data.profile_pic" alt="display photo">
+                        </span>
+                        <span>
+                            <h5 class="h5-mini-name">{{writers_data.first_name}} {{writers_data.last_name}} <div class="sprite-cheapest logo-verified"></div></h5>
+                            <p class="p-mini-rate"><span>100%</span> <span>Success rate</span></p>
                         </span>
                     </div>
                 </div>
-                <h2>About Professor John Doe</h2>
-                <p>Hello there! My name is Prof Winny, and I am an experienced tutor and academic researcher. I have been offering research writing services for the last five years and completed over 2,000 academic papers. My goal is to deliver topnotch writing services to my clients, as evident from the positive reviews on my profile. I am a perfectionist and a versatile writer, and this enables me to tackle topics from a wide range of subjects....  Read more</p>
-
+                <h5 class="h5-also-get">You Also Get:</h5>
+                <mat-list role="list" class="ml-mini-stats">
+                  <mat-list-item role="listitem"><div class="sprite-cheapest check-list-logo"></div> Unlimited revision guarantee</mat-list-item>
+                  <mat-list-item role="listitem"><div class="sprite-cheapest check-list-logo"></div> 24/7 phone & chat support</mat-list-item>
+                  <mat-list-item role="listitem"><div class="sprite-cheapest check-list-logo"></div> Any-style formatting</mat-list-item>
+                </mat-list>
+                <button type="button" mat-flat-button routerLink="/order" class="btn-hire-wp">HIRE WRITER</button>
+                <p class="p-response-time">Response time: 4 minutes</p>
             </span>
-            <span class="fill-space spn-wph-separator"></span>
-            <span class="spn-wph-info1 wph-box-style"></span>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>
