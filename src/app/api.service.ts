@@ -49,7 +49,7 @@ export class ApiServices {
         let _allDeadlines = this.http.get<any>(this._orderDisplayUrl + 'displaydeadline');
         let _formatStyles = this.http.get<any>(this._orderDisplayUrl + 'displayformatstyle');
         let _allDiscipline = this.http.get<any>(this._orderDisplayUrl + 'displaydiscipline');
-        let _topWriters = this.http.get<any>(this._orderDisplayUrl + 'displaytop10writers');
+        let _topWriters = this.http.get<any>(this._orderDisplayUrl + 'top10Writers');
         let _otherWriters = this.http.get<any>(this._orderDisplayUrl + 'displayotherwriters');
         let _timezone = this.http.get<any>(this._orderDisplayUrl + 'displaytimezone');
         let _addExtras = this.http.get<any>(this._orderDisplayUrl + 'displayadditionalextras');

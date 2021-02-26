@@ -100,7 +100,7 @@
                         </span>
                         <span>
                             <h5 class="h5-mini-name">{{writers_data.first_name}} {{writers_data.last_name}} <div class="sprite-cheapest logo-verified"></div></h5>
-                            <p class="p-mini-rate"><span>100%</span> <span>Success rate</span></p>
+                            <p class="p-mini-rate"><span>{{writers_data.successRate}}</span> <span>Success rate</span></p>
                         </span>
                     </div>
                 </div>
@@ -110,7 +110,8 @@
                   <mat-list-item role="listitem"><div class="sprite-cheapest check-list-logo"></div> 24/7 phone & chat support</mat-list-item>
                   <mat-list-item role="listitem"><div class="sprite-cheapest check-list-logo"></div> Any-style formatting</mat-list-item>
                 </mat-list>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-hire-wp">HIRE WRITER</button>
+                <button *ngIf="!_session.isTokenExisting('user_token')" type="button" mat-flat-button (click)="hireWriter()" class="btn-hire-wp">HIRE WRITER</button>
+                <button *ngIf="_session.isTokenExisting('user_token')" type="button" mat-flat-button (click)="_session.openLoginDialog()" class="btn-hire-wp">HIRE WRITER</button>
                 <p class="p-response-time">Response time: 4 minutes</p>
             </span>
         </mat-toolbar-row>

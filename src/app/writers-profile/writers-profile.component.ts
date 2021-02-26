@@ -4,19 +4,28 @@ import { ApiServices } from 'src/app/api.service';
 import {FormControl, FormGroup} from '@angular/forms';
 import {MatTableDataSource} from '@angular/material/table';
 import {MatSort} from '@angular/material/sort';
+import { new_order_form_default } from '../data/data';
+import { loggedin_session } from '../data/ui-services';
+// @ts-ignore  
+import jwt_decode from 'jwt-decode';
 
 @Component({
   selector: 'app-writers-profile',
   templateUrl: './writers-profile.component.html',
-  providers: [ApiServices],
+  providers: [ApiServices, new_order_form_default, loggedin_session],
   styleUrls: ['./writers-profile.component.css'],
   encapsulation: ViewEncapsulation.None,
 })
 export class WritersProfileComponent implements OnInit {
 
+  hireWriterForm:any = this._data.setOrders;
+  
   constructor(
     private route: ActivatedRoute,
-    private _auth: ApiServices
+    private _auth: ApiServices,
+    private _data: new_order_form_default,
+    private router: Router,
+    public _session: loggedin_session
     ) { }
 
   
@@ -39,6 +48,11 @@ export class WritersProfileComponent implements OnInit {
       writer_id: this.route.snapshot.paramMap.get('id')
     })
     this.getWritersProfile();
+
+    this.hireWriterForm.patchValue({
+      preferred_writer: "my_previous_writer",
+      writer_id: this.route.snapshot.paramMap.get('id'),
+    })
   }
     
   @ViewChild(MatSort) sort: MatSort;
@@ -55,6 +69,18 @@ export class WritersProfileComponent implements OnInit {
         setTimeout(() => {
           this.dataSource.sort = this.sort;
         });
+      }
+    )
+  }
+
+  hireWriter() {
+    this.isProgressLoading = true;
+    this._auth.getOrderOptions(this.hireWriterForm.value).subscribe(
+      res => {
+        console.log(jwt_decode(res.data.order_token).writer_id);
+        this.isProgressLoading = false;
+        localStorage.setItem('set_order_token', res.data.order_token);
+        this.router.navigate(['/order']);
       }
     )
   }

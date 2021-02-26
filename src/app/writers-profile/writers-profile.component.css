@@ -336,3 +336,37 @@
     letter-spacing: 0;
     text-align: center;
 }
+
+/* responsive starts */
+@media screen and (max-width:768px) {
+    .wph-box-style,
+    .mtr-wp-header {
+        display: block;
+    }
+    .spn-wph-info1 {
+        margin: 0 auto;
+    }
+    .wph-status-wrap {
+        display: none
+    }
+    .h5-also-get {
+        padding: 20px
+    }
+}
+@media screen and (max-width:576px) {
+    .wph-info-inner {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+    .p-mini-rate, .p-success-rate {
+        display: inline-flex;
+        margin: 0 auto
+    }
+    .wph-info-inner span {
+        display: block;
+    }
+    .p-projects-completed {
+        margin: 0 auto
+    }
+}

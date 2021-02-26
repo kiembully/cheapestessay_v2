@@ -130,20 +130,9 @@ export class NewOrderComponent implements OnInit {
     this.newOrderForm.patchValue({other_format:''})
   }
   patchWriter(val) {
-    let writer;
-    if (val.additionalextra == 1) {
-      writer = 'any_writer'
-    } else if (val.additionalextra == 2) {
-      writer = 'top_10_writer'
-    } else {
-      writer = 'my_previous_writer'
-    }
     this.newOrderForm.patchValue({
       writer_id:(val==3)?'W85':'',
     });
-  }
-  patchPreferredWriter(val) {
-    this.newOrderForm.patchValue({writer_id: val})
   }
 
   isProgressLoading:boolean = false;

@@ -57,9 +57,12 @@
                 </ng-container>
                 <ng-container matColumnDef="hire_button">
                     <th mat-header-cell *matHeaderCellDef></th>
-                    <td mat-cell *matCellDef="let element"> <span class="spn-order-id">
-                        <button type="button" mat-flat-button routerLink="/order" class="btn-hire-writer">Hire Writer</button>
-                    </span> </td>
+                    <td mat-cell *matCellDef="let element;">
+                        <span class="spn-order-id">
+                            <button *ngIf="!_session.isTokenExisting('user_token')" type="button" mat-flat-button (click)="setWriter(element.user_name)" class="btn-hire-writer">Hire Writer</button>
+                            <button *ngIf="_session.isTokenExisting('user_token')" type="button" mat-flat-button (click)="_session.openLoginDialog()" class="btn-hire-writer">Hire Writer</button>
+                        </span>
+                    </td>
                 </ng-container>
                 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -112,7 +115,10 @@
                             <div class="writer-action-wrap">
                                 <span><button class="btn-view-writer" type="button" mat-flat-button [routerLink]="['/writers-profile',element.user_name]">View Profile</button></span>
                                 <span class="fill-space"></span>
-                                <span><button class="btn-hire-writer" type="button" routerLink="/order" mat-flat-button>Hire Writer</button></span>
+                                <span>
+                                    <button *ngIf="!_session.isTokenExisting('user_token')" class="btn-hire-writer" type="button" (click)="setWriter(element.user_name)" mat-flat-button>Hire Writer</button>
+                                    <button *ngIf="_session.isTokenExisting('user_token')" class="btn-hire-writer" type="button" (click)="_session.openLoginDialog()" mat-flat-button>Hire Writer</button>
+                                </span>
                             </div>
                         </div>
                     </span> </td>

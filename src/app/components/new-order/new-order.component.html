@@ -297,21 +297,20 @@
                                 </span>
                                 <span class="spn-input-wrap">
                                     <mat-form-field appearance="fill" class="mfl-common-select">
-                                        <mat-select panelClass="mt-common-select" formControlName="writer_id" value="(newOrderForm.value.preferred_writer == 'my_previous_writer')?'W85':''">
-                                            <mat-option disabled><input class="mt-search-input" type="text" placeholder="Serach"></mat-option>
+                                        <!-- <mat-select panelClass="mt-common-select" formControlName="writer_id" value="(newOrderForm.value.preferred_writer == 'my_previous_writer')?'W85':''"> -->
+                                        <mat-select panelClass="mt-common-select" formControlName="writer_id" value="newOrderForm.value.writer_id">
+                                            <mat-option disabled><input class="mt-search-input" type="text" placeholder="Search"></mat-option>
                                             <mat-optgroup label="Old Writers" *ngIf="isUserActive">
-                                                <mat-option (click)="patchPreferredWriter(list.writer)" *ngFor="let list of oldWriters">{{list.writer}}</mat-option>
+                                                <mat-option *ngFor="let list of oldWriters" [value]="list.writer">{{list.writer}}</mat-option>
                                             </mat-optgroup>
                                             <mat-optgroup label="Top 10 Writers">
                                                 <mat-option
                                                 *ngFor="let list of topWriters"
-                                                (click)="patchPreferredWriter(list.writer)"
-                                                [value]="list.writer">{{list.writer}}</mat-option>
+                                                [value]="list.user_name">{{list.user_name}}</mat-option>
                                             </mat-optgroup>
                                             <mat-optgroup label="Other Writers">
                                                 <mat-option
                                                 *ngFor="let list of otherWriters"
-                                                (click)="patchPreferredWriter(list.writer)"
                                                 [value]="list.writer">{{list.writer}}</mat-option>
                                             </mat-optgroup>
                                         </mat-select>

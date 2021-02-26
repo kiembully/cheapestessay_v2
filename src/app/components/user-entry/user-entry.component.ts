@@ -4,12 +4,13 @@ import { ApiServices } from 'src/app/api.service';
 import { Router } from '@angular/router';
 import {CommonDialogComponent} from '../../dialogs/common-dialog/common-dialog.component';
 import { MatDialogRef } from '@angular/material/dialog';
+import { user_functions } from '../../data/user-data'
 
 @Component({
   selector: 'app-user-entry',
   templateUrl: './user-entry.component.html',
   styleUrls: ['./user-entry.component.css'],
-  providers: [ApiServices],
+  providers: [ApiServices, user_functions],
   encapsulation: ViewEncapsulation.None,
 })
 export class UserEntryComponent implements OnInit {
@@ -35,7 +36,8 @@ export class UserEntryComponent implements OnInit {
     private _auth: ApiServices,
     public router: Router,
     public dialogRef:MatDialogRef<CommonDialogComponent>,
-    private _cdr: ChangeDetectorRef
+    private _cdr: ChangeDetectorRef,
+    private _userFx: user_functions
   ) { }
 
   public country_code:any;
@@ -62,9 +64,7 @@ export class UserEntryComponent implements OnInit {
           localStorage.removeItem('discount_token');
           localStorage.setItem('user_token', res.data.user_token);
           this.dialogRef.close();
-          this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-            this.router.navigate(['order']);
-          });
+          this.setUrlDestination();
         }
       },
       err => {
@@ -86,9 +86,7 @@ export class UserEntryComponent implements OnInit {
             resp => {
               localStorage.setItem('user_token', resp.data.user_token);
               this.dialogRef.close();
-              this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
-                this.router.navigate(['order']);
-              });
+              this.setUrlDestination();
             }
           )
         }
@@ -125,6 +123,7 @@ export class UserEntryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountryCode(); 
+    this.setUrlDestination()
   }
 
   tabIndex: any;
@@ -140,5 +139,19 @@ export class UserEntryComponent implements OnInit {
 
   openForgotPassword() {
     this.userEntryTabs.selectedIndex = 2;
+  }
+
+  setUrlDestination() {
+    let path = this._userFx.getCurrentPath();
+    let isInWritersProfile = path.includes('writers-profile');
+    if (path == 'top-writers' || isInWritersProfile) {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate([path]);
+      });
+    } else {
+      this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+        this.router.navigate(['order']);
+      });
+    }
   }
 }
