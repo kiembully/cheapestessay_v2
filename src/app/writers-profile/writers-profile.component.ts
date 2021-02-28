@@ -21,7 +21,7 @@ export class WritersProfileComponent implements OnInit {
   hireWriterForm:any = this._data.setOrders;
   
   constructor(
-    private route: ActivatedRoute,
+    public route: ActivatedRoute,
     private _auth: ApiServices,
     private _data: new_order_form_default,
     private router: Router,

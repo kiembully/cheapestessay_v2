@@ -21,13 +21,13 @@
                                 </div>
                             </span>
                             <span>
-                                <h5 class="h5-writer-name">{{writers_data.first_name}} {{writers_data.last_name}} <div class="sprite-cheapest logo-verified"></div></h5>
+                                <h5 class="h5-writer-name">{{route.snapshot.paramMap.get('id')}} <div class="sprite-cheapest logo-verified"></div></h5>
                                 <p class="p-projects-completed"><strong>{{writers_data.completed_order}} Projects</strong> Completed</p>
                                 <p class="p-success-rate"><span>100%</span> <span>Success Rate</span></p>
                             </span>
                         </div>
                     </div>
-                    <h2 class="h2-row-header">About Professor {{writers_data.first_name}} {{writers_data.last_name}}</h2>
+                    <h2 class="h2-row-header">About Writer {{route.snapshot.paramMap.get('id')}}</h2>
                     <p class="p-row-description">{{writers_data.description}}</p>
                     <mat-divider class="md-row-header"></mat-divider>
                     <div class="wph-info-footer">
@@ -99,7 +99,7 @@
                             <img *ngIf="writers_data.profile_pic.length > 0" class="wph-display-photo" [src]="writers_data.profile_pic" alt="display photo">
                         </span>
                         <span>
-                            <h5 class="h5-mini-name">{{writers_data.first_name}} {{writers_data.last_name}} <div class="sprite-cheapest logo-verified"></div></h5>
+                            <h5 class="h5-mini-name">{{route.snapshot.paramMap.get('id')}} <div class="sprite-cheapest logo-verified"></div></h5>
                             <p class="p-mini-rate"><span>{{writers_data.successRate}}</span> <span>Success rate</span></p>
                         </span>
                     </div>

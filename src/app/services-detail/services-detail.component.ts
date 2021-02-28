@@ -2,12 +2,13 @@ import { Component, OnInit, ViewEncapsulation, Pipe, PipeTransform } from '@angu
 import { ActivatedRoute, NavigationEnd, Router, Event } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
 import { Title, Meta, DomSanitizer } from '@angular/platform-browser';
+import { service_object } from 'src/app/data/data'
 
 @Component({
   selector: 'app-services-detail',
   templateUrl: './services-detail.component.html',
   styleUrls: ['./services-detail.component.css'],
-  providers: [ApiServices],
+  providers: [ApiServices, service_object],
   encapsulation: ViewEncapsulation.None,
 })
 
@@ -19,7 +20,8 @@ export class ServicesDetailComponent implements OnInit {
     private _auth: ApiServices,
     private titleService: Title,
     private metaTagService: Meta,
-    public sanitized: DomSanitizer
+    public sanitized: DomSanitizer,
+    private _service: service_object,
   ) {
 
     this.router.events.subscribe((event: Event) => {
@@ -31,6 +33,7 @@ export class ServicesDetailComponent implements OnInit {
   }
 
   isInitializing: boolean = false;
+  services: any = this._service.service;
   ngOnInit(): void {
   }
 
@@ -92,6 +95,14 @@ export class ServicesDetailComponent implements OnInit {
         { name: 'keywords', content: res.data.keywords },
       );
     })
+  }
+
+  getCTA() {
+    let url = this.route.snapshot.paramMap.get('id');
+    let filtered = this.services.filter(function(el){
+      return el.name == url
+    })
+    return filtered[0]
   }
 
 }

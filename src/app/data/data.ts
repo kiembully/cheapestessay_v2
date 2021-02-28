@@ -122,90 +122,342 @@ export class profile_form_default {
 
 export class service_object {
   service: any = [
-    {name:'essay-writing-services', id:1, sub_service: 0},
-    {name:'research-paper-writing-services', id:3, sub_service: 0},
-    {name:'coursework-writing-services', id:25, sub_service: 0},
-    {name:'case-study-writing', id:8, sub_service: 0},
-    {name:'write-my-essay', id:1, sub_service: 0},
-    {name:'research-article-summary', id:35, sub_service: 0},
-    {name:'assignment-writing-service', id:68, sub_service: 0},
-    {name:'math-homework-help', id:121, sub_service: 0},
-    {name:'book-movie-review-services', id:6, sub_service: 0},
-    {name:'lab-report-abstract', id:37, sub_service: 0},
-    {name:'powerpoint-presentation-service', id:30, sub_service: 0},
-    {name:'admission-essay', id:31, sub_service: 0},
-    {name:'professional-cover-letter-writing-services', id:3, sub_service: 0},
-    {name:'cv-writing-services', id:104, sub_service: 0},
-    {name:'cv-editing-services', id:104, sub_service: 0},
-    {name:'article-writing-services', id:17, sub_service: 0},
-    {name:'report-writing-service', id:29, sub_service: 0},
-    {name:'thesis-writing-services', id:42, sub_service: 0},
-    {name:'dissertation-help', id:27, sub_service: 0},
-    {name:'writing-an-essay-outline', id:104, sub_service: 0},
-    {name:'blog-writers-for-hire', id:104, sub_service: 0},
-    {name:'speech-writing-services', id:12, sub_service: 0},
-    {name:'article-critique-writing-services', id:17, sub_service: 0},
-    {name:'writing-a-reaction-paper', id:17, sub_service: 0},
-    {name:'professional-dissertation-proposal', id:27, sub_service: 0},
-    {name:'business-simulation-report-online', id:27, sub_service: 0},
-    {name:'write-my-personal-statement', id:27, sub_service: 0},
-    {name:'document-formatting-services', id:27, sub_service: 0},
-    {name:'programming-assignment-help', id:68, sub_service: 0},
-    {name:'professional-resume-editing', id:68, sub_service: 0},
-    {name:'resume-writing-services', id:104, sub_service: 0},
-    {name:'rewriting-services', id:104, sub_service: 0},
-    {name:'best-paraphrasing-website', id:104, sub_service: 0},
-    {name:'writing-a-marketing-plan', id:104, sub_service: 0},
-    {name:'financial-statement-analysis', id:104, sub_service: 0},
-    {name:'swot-analysis-of-business', id:104, sub_service: 0},
-    {name:'short-story-writers', id:104, sub_service: 0},
-    {name:'assignment-writing-service', id:68, sub_service: 0},
-    {name:'write-my-essay-for-me', id: 1, sub_service: 1},
-    {name:'essay-writing-companies', id: 1, sub_service: 1},
-    {name:'cheap-essay-writing', id: 1, sub_service: 1},
-    {name:'admission-essay', id: 1, sub_service: 1},
-    {name:'custom-essay', id: 1, sub_service: 1},
-    {name:'scholarship-essay-writing-service', id: 1, sub_service: 1},
-    {name:'essay-proofreading', id: 1, sub_service: 1},
-    {name:'essay-writing', id: 1, sub_service: 1},
-    {name:'same-day-essay-writing-service', id: 1, sub_service: 1},
-    {name:'college-essay-writing-service', id: 1, sub_service: 1},
-    {name:'best-essay-writing-service', id: 1, sub_service: 1},
-    {name:'pay-for-essay', id: 1, sub_service: 1},
-    {name:'essay-editing-service', id: 1, sub_service: 1},
-    {name:'college-essay', id: 1, sub_service: 1},
-    {name:'buy-essay', id: 1, sub_service: 1},
-    {name:'write-my-essay', id: 1, sub_service: 1},
-    {name:'do-my-essay', id: 1, sub_service: 1},
-    {name:'essay-format', id: 1, sub_service: 1},
-    {name:'custom-research-paper-writing', id:3, sub_service: 1},
-    {name:'how-to-write-a-research-paper', id:3, sub_service: 1},
-    {name:'write-research-paper', id:3, sub_service: 1},
-    {name:'buy-research-paper-online', id:3, sub_service: 1},
-    {name:'cheap-research-paper', id:3, sub_service: 1},
-    {name:'professional-research-paper-writers', id:3, sub_service: 1},
-    {name:'college-research-paper', id:3, sub_service: 1},
-    {name:'buy-research-paper', id:3, sub_service: 1},
-    {name:'buy-coursework',id:25, sub_service: 1},
-    {name:'custom-coursework',id:25, sub_service: 1},
-    {name:'coursework-website',id:25, sub_service: 1},
-    {name:'coursework-help-online',id:25, sub_service: 1},
-    {name:'writing-a-case-study',id:8, sub_service: 1},
-    {name:'how-to-write-a-case-study',id:8, sub_service: 1},
-    {name:'professional-case-study-writers',id:8, sub_service: 1},
-    {name:'custom-case-study-writing-service',id:8, sub_service: 1},
-    {name:'case-study-writing-help-online',id:8, sub_service: 1},
-    {name:'writing-the-case-study',id:8, sub_service: 1},
-    {name:'case-study-writing-service',id:8, sub_service: 1},
-    {name:'assignment-help',id:68, sub_service: 1},
-    {name:'buy-assignment',id:68, sub_service: 1},
-    {name:'do-my-assignment',id:68, sub_service: 1},
-    {name:'online-assignment',id:68, sub_service: 1},
-    {name:'write-my-assignment',id:68, sub_service: 1},
-    {name:'university-assignment-help',id:68, sub_service: 1},
-    {name:'writing-multiple-choice-questions',id:68, sub_service: 1},
-    {name:'assignment-writing',id:68, sub_service: 1},
-    {name:'assignment-editing',id:68, sub_service: 1},
+    {name:'essay-writing-services', id:1, sub_service: 0, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'research-paper-writing-services', id:3, sub_service: 0, cta:[
+      {text: 'Hire a Research Paper Writer!', url: '../order'},
+      {text: 'Get Your Research Paper Now!', url: '../order'},
+    ]},
+    {name:'coursework-writing-services', id:25, sub_service: 0, cta:[
+      {text: 'Hire a Coursework Writer!', url: '../order'},
+      {text: 'Get your coursework paper!', url: '../order'},
+    ]},
+    {name:'case-study-writing', id:8, sub_service: 0, cta:[
+      {text: 'Hire a Case Study Writer!', url: '../order'},
+      {text: 'Get Your Casestudy Now!', url: '../order'},
+    ]},
+    {name:'write-my-essay', id:1, sub_service: 0, cta:[
+      {text: 'Write My Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'research-article-summary', id:35, sub_service: 0, cta:[
+      {text: 'Hire a Research Writer Now!', url: '../order'},
+      {text: 'Get Your Article Now!', url: '../order'},
+    ]},
+    {name:'assignment-writing-service', id:68, sub_service: 0, cta:[
+      {text: 'Hire an Assignment Writer!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'math-homework-help', id:121, sub_service: 0, cta:[
+      {text: 'Hire an Assignment Writer!', url: '../order'},
+      {text: 'Get your Paper Done!', url: '../order'},
+    ]},
+    {name:'book-movie-review-services', id:6, sub_service: 0, cta:[
+      {text: 'Hire a review writer!', url: '../order'},
+      {text: 'Get Your Review Now!', url: '../order'},
+    ]},
+    {name:'lab-report-abstract', id:37, sub_service: 0, cta:[
+      {text: 'Hire a Lab Report writer!', url: '../order'},
+      {text: 'Get your Lab report!', url: '../order'},
+    ]},
+    {name:'powerpoint-presentation-service', id:30, sub_service: 0, cta:[
+      {text: 'Hire PPT Writer!', url: '../order'},
+      {text: 'Get Your Presentaion Now!', url: '../order'},
+    ]},
+    {name:'admission-essay', id:31, sub_service: 0, cta:[
+      {text: 'Order Admission Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'professional-cover-letter-writing-services', id:3, sub_service: 0, cta:[
+      {text: 'Hire a Cover Writer Now!', url: '../order'},
+      {text: 'Avail Professional Assistance!', url: '../order'},
+    ]},
+    {name:'cv-writing-services', id:104, sub_service: 0, cta:[
+      {text: 'Hire an Expert CV Writer!', url: '../order'},
+      {text: 'Avail Experts Assistance!', url: '../order'},
+    ]},
+    {name:'cv-editing-services', id:104, sub_service: 0, cta:[
+      {text: 'Hire an Expert CV Editor!', url: '../order'},
+      {text: 'Avail Experts assistance!', url: '../order'},
+    ]},
+    {name:'article-writing-services', id:17, sub_service: 0, cta:[
+      {text: 'Hire an Article Writer!', url: '../order'},
+      {text: 'Get Your Article Now!', url: '../order'},
+    ]},
+    {name:'report-writing-service', id:29, sub_service: 0, cta:[
+      {text: 'Hire a Report Writer!', url: '../order'},
+      {text: 'Get Your Report Now!', url: '../order'},
+    ]},
+    {name:'thesis-writing-services', id:42, sub_service: 0, cta:[
+      {text: 'Hire a Thesis Writer!', url: '../order'},
+      {text: 'Get Your Thesis Report!', url: '../order'},
+    ]},
+    {name:'dissertation-help', id:27, sub_service: 0, cta:[
+      {text: 'Hire a Dissertation Writer!', url: '../order'},
+      {text: 'Get Your Dissertation Paper!', url: '../order'},
+    ]},
+    {name:'writing-an-essay-outline', id:104, sub_service: 0, cta:[
+      {text: 'Hire a Writer Now!', url: '../order'},
+      {text: 'Get Experts Assistance!', url: '../order'},
+    ]},
+    {name:'blog-writers-for-hire', id:104, sub_service: 0, cta:[
+      {text: 'Hire a Blog Writer Now!', url: '../order'},
+      {text: 'Get Experts Assistance!', url: '../order'},
+    ]},
+    {name:'speech-writing-services', id:12, sub_service: 0, cta:[
+      {text: 'Hire a Speech Writer!', url: '../order'},
+      {text: 'Get your Speech Now!', url: '../order'},
+    ]},
+    {name:'article-critique-writing-services', id:17, sub_service: 0, cta:[
+      {text: 'Hire a Cririque Writer Now!', url: '../order'},
+      {text: 'Get Experts Assistance!', url: '../order'},
+    ]},
+    {name:'writing-a-reaction-paper', id:17, sub_service: 0, cta:[
+      {text: 'Hire a Reaction Writer', url: '../order'},
+      {text: 'Get Your Reaction Paper', url: '../order'},
+    ]},
+    {name:'professional-dissertation-proposal', id:27, sub_service: 0, cta:[
+      {text: 'Hire a Dissertation Writer!', url: '../order'},
+      {text: 'Get Your Dissertation Proposal!', url: '../order'},
+    ]},
+    {name:'business-simulation-report-online', id:27, sub_service: 0, cta:[
+      {text: 'Hire an Expert!', url: '../order'},
+      {text: 'Get Your Report Done!', url: '../order'},
+    ]},
+    {name:'write-my-personal-statement', id:27, sub_service: 0, cta:[
+      {text: 'Hire an Expert!', url: '../order'},
+      {text: 'Get your Statement Done!', url: '../order'},
+    ]},
+    {name:'document-formatting-services', id:27, sub_service: 0, cta:[
+      {text: 'Hire an Expert!', url: '../order'},
+      {text: 'Get your Formatting Done!', url: '../order'},
+    ]},
+    {name:'programming-assignment-help', id:68, sub_service: 0, cta:[
+      {text: 'Hire a Programming Expert!', url: '../order'},
+      {text: 'Get your Assignment Done!', url: '../order'},
+    ]},
+    {name:'professional-resume-editing', id:68, sub_service: 0, cta:[
+      {text: 'Hire a Resume Editor!', url: '../order'},
+      {text: 'Get Experts Assistance!', url: '../order'},
+    ]},
+    {name:'resume-writing-services', id:104, sub_service: 0, cta:[
+      {text: 'Hire a Resume Writer!', url: '../order'},
+      {text: 'Get Experts Assistance!', url: '../order'},
+    ]},
+    {name:'rewriting-services', id:104, sub_service: 0, cta:[
+      {text: "Hire a Rewriter", url: '../order'},
+      {text: "Get Experts Assistance!", url: '../order'},
+    ]},
+    {name:'best-paraphrasing-website', id:104, sub_service: 0, cta:[
+      {text: "Hire a Paraphrasing Writer!", url: '../order'},
+      {text: "Get Experts Assistance!", url: '../order'},
+    ]},
+    {name:'writing-a-marketing-plan', id:104, sub_service: 0, cta:[
+      {text: "Hire a Professional writer now!", url: '../order'},
+      {text: "Avail Professional Assistance!", url: '../order'},
+    ]},
+    {name:'financial-statement-analysis', id:104, sub_service: 0, cta:[
+      {text: "Hire an Expert writer!", url: '../order'},
+      {text: "Avail Professional Assistance!", url: '../order'},
+    ]},
+    {name:'swot-analysis-of-business', id:104, sub_service: 0, cta:[
+      {text: "Hire an expert writer!", url: '../order'},
+      {text: "Avail Professional Assistance!", url: '../order'},
+    ]},
+    {name:'short-story-writers', id:104, sub_service: 0, cta:[
+      {text: "Hire a short story writer!", url: '../order'},
+      {text: "Avail Professional Assistance!", url: '../order'},
+    ]},
+    {name:'assignment-writing-service', id:68, sub_service: 0, cta:[
+      {text: "Hire an Assignment Writer!", url: '../order'},
+      {text: "Get Your Assignment Now!", url: '../order'},
+    ]},
+    {name:'write-my-essay-for-me', id:1, sub_service: 1, cta:[
+      {text: "Write My Essay For Me Now!", url: '../order'},
+      {text: "Get Your Essay Now!", url: '../order'},
+    ]},
+    {name:'essay-writing-companies', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'cheap-essay-writing', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'admission-essay', id:1, sub_service: 1, cta:[
+      {text: "Hire an Essay Writer Now!", url: '../order'},
+      {text: "Get Your Essay Now!", url: '../order'},
+    ]},
+    {name:'custom-essay', id:1, sub_service: 1, cta:[
+      {text: "Order Custom Essay Now!", url: '../order'},
+      {text: "Get Your Essay Now!", url: '../order'},
+    ]},
+    {name:'scholarship-essay-writing-service', id:1, sub_service: 1, cta:[
+      {text: "Order Scholarship Essay Now!", url: '../order'},
+      {text: "Get Your Essay Now!", url: '../order'},
+    ]},
+    {name:'essay-proofreading', id:1, sub_service: 1, cta:[
+      {text: "Hire Essay Proofreader Now!", url: '../order'},
+      {text: "Get Your Essay Now!", url: '../order'},
+    ]},
+    {name:'essay-writing', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'same-day-essay-writing-service', id:1, sub_service: 1, cta:[
+      {text: 'Get Same Day Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'college-essay-writing-service', id:1, sub_service: 1, cta:[
+      {text: 'Order College Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'best-essay-writing-service', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'pay-for-essay', id:1, sub_service: 1, cta:[
+      {text: 'Pay For Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'essay-editing-service', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Editor Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'college-essay', id:1, sub_service: 1, cta:[
+      {text: 'Order College Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'buy-essay', id:1, sub_service: 1, cta:[
+      {text: 'Buy an Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'write-my-essay', id:1, sub_service: 1, cta:[
+      {text: 'Write My Essay For Me Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'do-my-essay', id:1, sub_service: 1, cta:[
+      {text: 'Do My Essay Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'essay-format', id:1, sub_service: 1, cta:[
+      {text: 'Hire an Essay Writer Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'custom-research-paper-writing', id:3, sub_service: 1, cta:[
+      {text: 'Order a custom research paper!', url: '../order'},
+      {text: 'Get Your Custom Paper!', url: '../order'},
+    ]},
+    {name:'how-to-write-a-research-paper', id:3, sub_service: 1, cta:[
+      {text: 'Hire a Research Paper Writer!', url: '../order'},
+      {text: 'Get Your Research Paper!', url: '../order'},
+    ]},
+    {name:'write-research-paper', id:3, sub_service: 1, cta:[
+      {text: 'Hire a Research Paper Writer!', url: '../order'},
+      {text: 'Get Your Research Paper!', url: '../order'},
+    ]},
+    {name:'buy-research-paper-online', id:3, sub_service: 1, cta:[
+      {text: 'Buy a Research Paper Onilne!', url: '../order'},
+      {text: 'Get Your Research Paper!', url: '../order'},
+    ]},
+    {name:'cheap-research-paper', id:3, sub_service: 1, cta:[
+      {text: 'Buy cheap research paper!', url: '../order'},
+      {text: 'Get Your Cheap Research Paper!', url: '../order'},
+    ]},
+    {name:'professional-research-paper-writers', id:3, sub_service: 1, cta:[
+      {text: 'Hire a Professional Writer!', url: '../order'},
+      {text: 'Get Your Paper Now!', url: '../order'},
+    ]},
+    {name:'college-research-paper', id:3, sub_service: 1, cta:[
+      {text: 'Order a College Research Paper!', url: '../order'},
+      {text: 'Get Your College Paper!', url: '../order'},
+    ]},
+    {name:'buy-research-paper', id:3, sub_service: 1, cta:[
+      {text: 'Buy a Research Paper Onilne!', url: '../order'},
+      {text: 'Get Your Research Paper', url: '../order'},
+    ]},
+    {name:'buy-coursework',id:25, sub_service: 1, cta:[
+      {text: 'Buy Coursework Now!', url: '../order'},
+      {text: 'Get Your Coursework!', url: '../order'},
+    ]},
+    {name:'custom-coursework',id:25, sub_service: 1, cta:[
+      {text: 'Order Custom Coursework Now!', url: '../order'},
+      {text: 'Get Your Essay Now!', url: '../order'},
+    ]},
+    {name:'coursework-website',id:25, sub_service: 1, cta:[
+      {text: 'Order a Coursework Website!', url: '../order'},
+      {text: 'Get Your Coursework Now!', url: '../order'},
+    ]},
+    {name:'coursework-help-online',id:25, sub_service: 1, cta:[
+      {text: 'Get a Coursework Now!', url: '../order'},
+      {text: 'Get Your Coursework Help!', url: '../order'},
+    ]},
+    {name:'writing-a-case-study',id:8, sub_service: 1, cta:[
+      {text: 'Hire a Casestudy Writer!', url: '../order'},
+      {text: 'Get Your Casestudy', url: '../order'},
+    ]},
+    {name:'how-to-write-a-case-study',id:8, sub_service: 1, cta:[
+      {text: 'Hire a Case Study Writer!', url: '../order'},
+      {text: 'Get Your Casestudy Now!', url: '../order'},
+    ]},
+    {name:'professional-case-study-writers',id:8, sub_service: 1, cta:[
+      {text: 'Hire a Professional Writer', url: '../order'},
+      {text: 'Get Your Casestudy!', url: '../order'},
+    ]},
+    {name:'custom-case-study-writing-service',id:8, sub_service: 1, cta:[
+      {text: 'Order Custom Casestudy Now!', url: '../order'},
+      {text: 'Get Your Custom Casestudy!', url: '../order'},
+    ]},
+    {name:'case-study-writing-help-online',id:8, sub_service: 1, cta:[
+      {text: 'Hire a Casestudy Writer!', url: '../order'},
+      {text: 'Get Your Casestudy!', url: '../order'},
+    ]},
+    {name:'writing-the-case-study',id:8, sub_service: 1, cta:[
+      {text: 'Hire case study writer!', url: '../order'},
+      {text: 'Get Your Casestudy!', url: '../order'},
+    ]},
+    {name:'case-study-writing-service',id:8, sub_service: 1, cta:[
+      {text: 'Hire case study writer', url: '../order'},
+      {text: 'Get Your Casestudy Now!', url: '../order'},
+    ]},
+    {name:'assignment-help',id:68, sub_service: 1, cta:[
+      {text: 'Hire an Assignment Writer!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'buy-assignment',id:68, sub_service: 1, cta:[
+      {text: 'Buy an Assignment Now!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'do-my-assignment',id:68, sub_service: 1, cta:[
+      {text: 'Do My Assignment Now!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'online-assignment',id:68, sub_service: 1, cta:[
+      {text: 'Order Online Assignment Now!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'write-my-assignment',id:68, sub_service: 1, cta:[
+      {text: 'Write My Assignment Now!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'university-assignment-help',id:68, sub_service: 1, cta:[
+      {text: 'Hire an Assignment Writer!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'writing-multiple-choice-questions',id:68, sub_service: 1, cta:[
+      {text: 'Get Your MCQ Online!', url: '../order'},
+      {text: 'Hire a MCQ Writer', url: '../order'},
+    ]},
+    {name:'assignment-writing',id:68, sub_service: 1, cta:[
+      {text: 'Hire an Assignment Writer!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
+    {name:'assignment-editing',id:68, sub_service: 1, cta:[
+      {text: 'Hire an Assignment Editor!', url: '../order'},
+      {text: 'Get Your Assignment Now!', url: '../order'},
+    ]},
   ]
 
   services:any = [
@@ -257,24 +509,24 @@ export class service_object {
   ]
 
   similarities: any = [
-    {service:'write-my-essay-for-me', id: 1},
-    {service:'essay-writing-companies', id: 1},
-    {service:'cheap-essay-writing', id: 1},
-    {service:'admission-essay', id: 1},
-    {service:'custom-essay', id: 1},
-    {service:'scholarship-essay-writing-service', id: 1},
-    {service:'essay-proofreading', id: 1},
-    {service:'essay-writing', id: 1},
-    {service:'same-day-essay-writing-service', id: 1},
-    {service:'college-essay-writing-service', id: 1},
-    {service:'best-essay-writing-service', id: 1},
-    {service:'pay-for-essay', id: 1},
-    {service:'essay-editing-service', id: 1},
-    {service:'college-essay', id: 1},
-    {service:'buy-essay', id: 1},
-    {service:'write-my-essay', id: 1},
-    {service:'do-my-essay', id: 1},
-    {service:'essay-format', id: 1},
+    {service:'write-my-essay-for-me', id:1},
+    {service:'essay-writing-companies', id:1},
+    {service:'cheap-essay-writing', id:1},
+    {service:'admission-essay', id:1},
+    {service:'custom-essay', id:1},
+    {service:'scholarship-essay-writing-service', id:1},
+    {service:'essay-proofreading', id:1},
+    {service:'essay-writing', id:1},
+    {service:'same-day-essay-writing-service', id:1},
+    {service:'college-essay-writing-service', id:1},
+    {service:'best-essay-writing-service', id:1},
+    {service:'pay-for-essay', id:1},
+    {service:'essay-editing-service', id:1},
+    {service:'college-essay', id:1},
+    {service:'buy-essay', id:1},
+    {service:'write-my-essay', id:1},
+    {service:'do-my-essay', id:1},
+    {service:'essay-format', id:1},
     {service:'custom-research-paper-writing', id:3},
     {service:'how-to-write-a-research-paper', id:3},
     {service:'write-research-paper', id:3},
