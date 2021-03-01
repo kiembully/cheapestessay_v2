@@ -151,8 +151,8 @@ export class service_object {
       {text: 'Get Your Assignment Now!', url: '../order'},
     ]},
     {name:'math-homework-help', id:121, sub_service: 0, cta:[
-      {text: 'Hire an Assignment Writer!', url: '../order'},
-      {text: 'Get your Paper Done!', url: '../order'},
+      {text: 'Get your Home Work Done', url: '../order'},
+      {text: 'Get experts Assistance', url: '../order'},
     ]},
     {name:'book-movie-review-services', id:6, sub_service: 0, cta:[
       {text: 'Hire a review writer!', url: '../order'},
@@ -211,16 +211,16 @@ export class service_object {
       {text: 'Get your Speech Now!', url: '../order'},
     ]},
     {name:'article-critique-writing-services', id:17, sub_service: 0, cta:[
-      {text: 'Hire a Cririque Writer Now!', url: '../order'},
-      {text: 'Get Experts Assistance!', url: '../order'},
+      {text: "Hire an Article Critique Writer", url: '../order'},
+      {text: "Get experts Assistance", url: '../order'},
     ]},
     {name:'writing-a-reaction-paper', id:17, sub_service: 0, cta:[
       {text: 'Hire a Reaction Writer', url: '../order'},
       {text: 'Get Your Reaction Paper', url: '../order'},
     ]},
     {name:'professional-dissertation-proposal', id:27, sub_service: 0, cta:[
-      {text: 'Hire a Dissertation Writer!', url: '../order'},
-      {text: 'Get Your Dissertation Proposal!', url: '../order'},
+      {text: "Hire professional writer", url: '../order'},
+      {text: "Get experts Assistance", url: '../order'},
     ]},
     {name:'business-simulation-report-online', id:27, sub_service: 0, cta:[
       {text: 'Hire an Expert!', url: '../order'},

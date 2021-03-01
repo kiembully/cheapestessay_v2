@@ -103,7 +103,7 @@ table {
 .top-writer-info {
   display: flex;
 }
-.top-writer-info span:last-child {
+.top-writer-info > span:last-child {
   width: 100%;
   padding: 0 20px;
 }
@@ -210,6 +210,25 @@ table {
   max-width: 250px;
   margin: 20px auto 0 auto
 }
+.star-rate-outer {
+  position: relative;
+  max-width: 75px;
+  margin: 0 auto
+}
+.star-rate-progress {
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.star-rate-progress .material-icons {
+  color: #FBD30D;
+  font-size: 15px
+}
+.star-above {
+  overflow:hidden;
+}
 
 /* Large devices (desktops, 992px and up) */
 @media screen and (max-width:992px) { 
@@ -265,7 +284,7 @@ table {
     display: inline-flex;
     margin-bottom: 15px;
   }
-  .top-writer-info span:last-child {
+  .top-writer-info > span:last-child {
     padding: 0
   }
 }

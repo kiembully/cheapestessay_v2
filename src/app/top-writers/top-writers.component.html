@@ -44,7 +44,22 @@
                                 <span class="fill-space spn-writer-username">{{element.user_name}}</span>
                                 <span class="fill-space">
                                     <p class="p-writer-rate">{{element.review_rate}}</p>
-                                    <img src="" alt="writer rating">
+                                    <div class="star-rate-outer">
+                                        <div class="star-rate-progress star-above" [style.width]="getRate(element.review_rate)">
+                                            <span class="material-icons">star</span>
+                                            <span class="material-icons">star</span>
+                                            <span class="material-icons">star</span>
+                                            <span class="material-icons">star</span>
+                                            <span class="material-icons">star</span>
+                                        </div>
+                                        <div class="star-rate-progress">
+                                            <span class="material-icons">star_border</span>
+                                            <span class="material-icons">star_border</span>
+                                            <span class="material-icons">star_border</span>
+                                            <span class="material-icons">star_border</span>
+                                            <span class="material-icons">star_border</span>
+                                        </div>
+                                    </div>
                                 </span>
                                 <span class="fill-space">
                                     <p class="p-completed-order">{{element.completed_order}}</p>
@@ -102,7 +117,22 @@
                                         <span class="fill-space spn-writer-username">{{element.user_name}}</span>
                                         <span class="fill-space">
                                             <p class="p-writer-rate">{{element.review_rate}}</p>
-                                            <img src="" alt="rating">
+                                            <div class="star-rate-outer">
+                                                <div class="star-rate-progress star-above" [style.width]="getRate(element.review_rate)">
+                                                    <span class="material-icons">star</span>
+                                                    <span class="material-icons">star</span>
+                                                    <span class="material-icons">star</span>
+                                                    <span class="material-icons">star</span>
+                                                    <span class="material-icons">star</span>
+                                                </div>
+                                                <div class="star-rate-progress">
+                                                    <span class="material-icons">star_border</span>
+                                                    <span class="material-icons">star_border</span>
+                                                    <span class="material-icons">star_border</span>
+                                                    <span class="material-icons">star_border</span>
+                                                    <span class="material-icons">star_border</span>
+                                                </div>
+                                            </div>
                                         </span>
                                         <span class="fill-space">
                                             <p class="p-completed-order">{{element.completed_order}}</p>

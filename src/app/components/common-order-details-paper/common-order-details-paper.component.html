@@ -1,13 +1,12 @@
 <mat-toolbar color="primary" class="mt-common-paper">
     <mat-toolbar-row class="mtr-common-paper-header">
         <!-- <h1>Writer <span>W32</span> is working in your paper now.</h1> -->
-        <h1>You're order is confirmed!</h1>
-        <h2>We're looking for the best writer that can handle your paper.</h2>
+        <h2>{{paper_details[0]}}</h2>
     </mat-toolbar-row>
     <mat-toolbar-row>
         <section class="sec-order-paper">
-            <h3>Once the order is completed, you may download it here or send a copy to your email.</h3>
-            <p>Remember, you can always choose the same writer for your upcoming orders, just click on Writer ID or when placing new order choose ( My Old Writer ) and then type Writer ID.</p>
+            <h3>{{paper_details[1]}}</h3>
+            <p>{{paper_details[2]}}</p>
         </section>
     </mat-toolbar-row>
 </mat-toolbar>

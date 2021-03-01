@@ -38,7 +38,9 @@
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row>
-            <button class="btn-hire-writer" type="button" routerLink="/order" mat-flat-button>Hire an Essay Writer Now!</button>
+            <button class="btn-hire-writer" type="button" routerLink="/order" mat-flat-button>
+                {{getCTA() != null ? getCTA().cta[0].text : 'Hire an Essay Writer Now!'}}
+            </button>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>

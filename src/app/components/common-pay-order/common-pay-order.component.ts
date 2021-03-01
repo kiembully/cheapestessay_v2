@@ -39,7 +39,7 @@ export class CommonPayOrderComponent implements OnInit {
   frmRedeem = new FormGroup({
     user_token: new FormControl(''),
     order_id: new FormControl(),
-    redeem: new FormControl(0)
+    redeem: new FormControl()
   })
   frmPayment = new FormGroup({
     order_id: new FormControl,
@@ -114,7 +114,7 @@ export class CommonPayOrderComponent implements OnInit {
   }
   returnRedeem() {
     this.frmRedeem.patchValue({
-      redeem: 0
+      redeem: ''
     })
     this.redeemAmount();
   }

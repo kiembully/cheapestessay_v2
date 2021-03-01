@@ -73,6 +73,7 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   order_status: any;
+  paper_details: any;
   order_id: any;
   displayOrderDetails() {
     this.isProgressLoading = true;
@@ -82,7 +83,7 @@ export class OrderDetailsComponent implements OnInit {
         this.order_details = res.data;
         this.order_id = res.data.order_id;
         this.order_status = res.data.status.order_status_flag;
-        
+        this.paper_details = res.data.status.paper_stats.description;
         
         this.couponForm.patchValue({
           coupon_code: res.data.payment.coupon_code,

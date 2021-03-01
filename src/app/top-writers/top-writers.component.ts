@@ -34,6 +34,7 @@ export class TopWritersComponent implements OnInit {
   displayWriters() {
     this._auth.getTopWritersProfile().subscribe(
       res => {
+        console.log(res);
         this.dataSource = new MatTableDataSource<topWriters>(res.data);
       }
     )
@@ -68,6 +69,10 @@ export class TopWritersComponent implements OnInit {
         this.router.navigate(['/order']);
       }
     )
+  }
+
+  getRate(val) {
+    return (val / 5) * 100 + '%'
   }
 
 }

@@ -8,6 +8,7 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 })
 export class CommonOrderDetailsPaperComponent implements OnInit {
 
+  @Input() public paper_details: any;
   constructor() { }
 
   ngOnInit(): void {

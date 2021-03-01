@@ -115,6 +115,7 @@ p.p-order-details-common {
 }
 .btn-pay-order.paid {
     pointer-events: none;
+    text-align: center !important
 }
 .btn-pay-order.unpaid {
     pointer-events: default;
