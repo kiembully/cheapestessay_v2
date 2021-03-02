@@ -5,6 +5,28 @@ html {
   scroll-behavior: smooth;
 }
 
+/* angular material */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNcIhQ8tQ.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+}
+
 @font-face {
   font-family: "Arial Rounded MT Bold Regular";
   font-weight: 800;
@@ -272,6 +294,7 @@ input[type=number] {
 }
 /* Backgrounds and icons  */
 .sprite-cheapest {
+  /* background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/cheapest-sprite.svg'); */
   background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/essay_v2_sprites.svg');
   background-repeat: no-repeat;
 }

@@ -4,9 +4,9 @@
     <section class="sec-form margin-bottom15" [style.margin-top]="!isHome ? '23px' : '0'">
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose service" disableOptionCentering formControlName="service" [value]="3" panelClass="panel-drop-style">
-                <mat-option *ngIf="!isProgressLoading" [value]="3">Writing</mat-option>
-                <mat-option *ngIf="!isProgressLoading" [value]="1">Editing</mat-option>
-                <mat-option *ngIf="!isProgressLoading" [value]="2">PowerPoint</mat-option>
+                <mat-option role="option" *ngIf="!isProgressLoading" [value]="3">Writing</mat-option>
+                <mat-option role="option" *ngIf="!isProgressLoading" [value]="1">Editing</mat-option>
+                <mat-option role="option" *ngIf="!isProgressLoading" [value]="2">PowerPoint</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
@@ -15,10 +15,10 @@
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose paper" disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
                 <!-- <mat-optgroup label="Most Popular"> -->
-                    <mat-option *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                    <mat-option role="option" *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
                 <!-- </mat-optgroup> -->
                 <!-- <mat-optgroup label="Others"> -->
-                    <mat-option *ngFor="let list of o_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                    <mat-option role="option" *ngFor="let list of o_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
                 <!-- </mat-optgroup> -->
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
@@ -27,7 +27,7 @@
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose deadline" disableOptionCentering [value]="deadline_value" panelClass="panel-drop-style">
-                <mat-option
+                <mat-option role="option"
                 *ngFor="let list of deadline; let i = index"
                 (click)="patchDeadline(list)"
                 [value]="i">{{list.deadline}} {{list.duration}} / {{list.deadline_label}}</mat-option>
@@ -39,7 +39,7 @@
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose pages" disableOptionCentering formControlName="page" [value]="setOrderForm.value.page" panelClass="panel-drop-style">
-                <mat-option *ngFor="let list of pages" [value]="list.id" >{{list.Pages}}</mat-option>
+                <mat-option role="option" *ngFor="let list of pages" [value]="list.id" >{{list.Pages}}</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
