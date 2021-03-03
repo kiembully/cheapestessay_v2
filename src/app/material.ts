@@ -24,6 +24,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSortModule} from '@angular/material/sort';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
     imports: [
@@ -50,7 +51,8 @@ import {MatSortModule} from '@angular/material/sort';
         ScrollingModule,
         MatMenuModule,
         MatSliderModule,
-        MatSortModule
+        MatSortModule,
+        MatTooltipModule
     ],
     exports: [
         MatButtonModule,
@@ -77,7 +79,8 @@ import {MatSortModule} from '@angular/material/sort';
         MatMenuModule,
         MatSliderModule,
         MatSlideToggleModule,
-        MatSortModule
+        MatSortModule,
+        MatTooltipModule
     ]
 })
 

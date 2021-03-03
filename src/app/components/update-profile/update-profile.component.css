@@ -109,3 +109,16 @@
     background-repeat: no-repeat;
     color: transparent;
 }
+.mtr-succes-promp {
+    text-align: center;
+}
+.mtr-succes-promp p {
+    color: #13B675;
+    font-family: "SF Pro Text Regular";
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 25px;
+    margin: 0;
+    white-space: normal;
+    margin: 0 auto;
+}

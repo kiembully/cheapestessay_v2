@@ -13,7 +13,10 @@ export class CommonOrderDetailsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    
+  }
+
+  checkValue(arr:any, val:any) {
+    return arr.includes(val)
   }
 
 }

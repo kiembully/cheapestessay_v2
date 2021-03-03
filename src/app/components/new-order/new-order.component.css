@@ -80,6 +80,43 @@
     letter-spacing: 0;
     line-height: 45px;
     margin: 0;
+    display: flex;
+}
+.p-options-label .btn-tooltip,
+.p-order-label .btn-tooltip {
+    vertical-align: middle;
+    background-color: transparent;
+    transform: rotate(180deg);
+    color: #D6D6D6;
+}
+.btn-tooltip:hover {
+    color: #000000
+}
+.p-options-label ::ng-deep .mat-tooltip.largerTooltip,
+.p-order-label ::ng-deep .mat-tooltip.largerTooltip {
+    color: #000000 !important;
+    font-family: "SF Pro Text Regular" !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+}
+.tooltip-wrap::before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    background-color: red;
+    clip-path: polygon(50% 0, 0 50%, 50% 100%);
+    left: -12px;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tooltip-wrap {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 19%);
+    color: #000000 !important;
+    border-radius: 8px;
+    width: 100%
 }
 .mbtg-common-style {
     width: 100%;
@@ -406,7 +443,7 @@
     height: 45px;
 }
 .p-options-label {
-    padding-left: 48px;
+    position: relative;
     color: #000000;
     font-family: "SF Pro Text Regular";
     font-size: 14px;

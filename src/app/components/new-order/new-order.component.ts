@@ -335,12 +335,13 @@ export class NewOrderComponent implements OnInit {
   }
   
   iniAdditionalExtras(val) {
-    this.isPlagiarismActive = (val.additionalextra.includes('5') || val.turnitinPrice == "Free") ? true : false;
-    this.isAbstractActive = (val.additionalextra.includes('6') || val.abstractPageprice == "Free") ? true : false;
-    this.isEmailActive = (val.additionalextra.includes('7') || val.sendEmailPrice == "Free") ? true : false;
-    
+    this.isPlagiarismActive = (val.additionalextra.includes(5) || val.additionalextra.includes('5') || val.turnitinPrice == "Free") ? true : false;
+    this.isAbstractActive = (val.additionalextra.includes(6) || val.additionalextra.includes('6') || val.abstractPageprice == "Free") ? true : false;
+    this.isEmailActive = (val.additionalextra.includes(7) || val.additionalextra.includes('7') || val.sendEmailPrice == "Free") ? true : false;
+
     this.setOrder(this.setValueOrders(val));
   }
+
   setValueOrders(res) {
     this.newOrderForm.patchValue({
       service: res.service,
@@ -451,4 +452,27 @@ export class NewOrderComponent implements OnInit {
     let order_id = (this.isEditing) ? jwt_decode(localStorage.getItem('order_token')).order_id : 0;
     return order_id;
   }
+
+  tooltip:any = [
+    "Type of Service - Please select the type of service you need help with. We offer writing from Scratch, Editing and Powerpoint Presentation. If you're not sure of the service, please contact our Customer Support.",
+    "Writer Level - Please choose the Writer's level. The level you should choose should match the Academic level you're currently in.",
+    "Type of Paper - Please select the most suitable type of paper needed. We offer any academic help from essays to dissertations. If it's not listed here, you may select ''other paper'' then specify the type on the field provided.",
+    "Subject - Please choose the subject of your paper. If none of the subjects applies, choose ''Other Subject'' and provide additional information on the field provided.",
+    "Timezone - Please choose the Timezone.",
+    "Deadline - Please select how soon you need your paper done. It's better to give the writer at least a few additional days before your deadline so that you have the time to read it over and ask for revision if needed.",
+    "Number of Pages - One page is approximately 280 words. Bibliography and title page are free of charge, so you do not need to include them in the total number of pages. If your assignment cannot be measured in words/pages (computer programs, etc.) please contact our Customer Support for assistance.",
+    "Topic - This is the topic of your paper. It is very important to state your topic clearly now as you cannot change it once the writer starts working on your paper. If you don't have any topic, leave it as Writer's Choice.",
+    "Details - Use this area to submit instructions for our team and the writer. Please try to be as detailed as possible. The more info we have about your work, the quicker we can find the best writer for your project and the sooner the writer will catch on. If you have lots of info to submit, just type in the main points.",
+    "Upload - You can upload additional instructions, readings, list of sources to be used or any other information. Make sure not to attach any files containing your personal information.",
+    "Format - Choose the style for your paper to be formatted in. General format : 280 words per page, legible font (e.g. Arial) 12pt, double-spaced, please select Other if you don't have specific format to be used.&#13;&#13;OR&#13;&#13;Please choose the style for your paper to be formatted in:&#13;&#13;APA (American Psychological Association) is most commonly used to cite sources within the social sciences.&#13;MLA (Modern Language Association) style is most commonly used to write papers and cite sources within the liberal arts and humanities.&#13;Chicago/Turabian style places bibliographic citations at the bottom of a page or at the end of a paper. The Chicago and Turabian styles are most commonly thought of as note systems. Harvard referencing is the preferred style of the British Standards Institution. It is used mostly in the sciences and social sciences.",
+    "Discipline - Select English (U.S.) if you are Native English speaker, English (UK) if you speak Bristish English and select Not a Native Speaker if you speak English as your second language.",
+    "Preferred Writer - Choose any writer if you  don't have specific writer in mind.  Select Top 10 writers, if you would like one of our best experts to work on your order and Previous writer if you want a particular writer you've worked with before.",
+    "Sources - Please specify the exact number of books, journals, articles or any other sources you want the writer to use as references in your paper.",
+    "Charts - it is often used to ease understanding of large quantities of data and the relationships between parts of the data. It will help you to convey your ideas in your paper better. $10 for 1 chart.",
+    "PowerPoint Slide - Select number of slides of need to present a report. This is a way of attracting audience towards your views and arguments. 1 slide = 50% of the cost per word document.",
+    "",
+    "",
+    "",
+  ]
 }
+

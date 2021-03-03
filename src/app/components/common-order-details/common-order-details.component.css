@@ -90,16 +90,12 @@
     display: inline-block;
     width: 40px;
     border-radius: 6px;
-    background-color: #D0555A;
     color: #FFFFFF;
     font-family: "SF Pro Text Bold";
     font-size: 13px;
     letter-spacing: 0;
     line-height: 16px;
     text-align: center;
-}
-.spn-price-value-style.yes {
-    background-color: #3B7CFF;
 }
 .add-color-black {
     color: #000000;

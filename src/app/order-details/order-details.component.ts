@@ -103,7 +103,7 @@ export class OrderDetailsComponent implements OnInit {
       res=> {
         let decoded_order_token = jwt_decode(res.data.order_token);
         this.setValueOrders(decoded_order_token);
-        this.iniAdditionalExtras(decoded_order_token.additionalextra);
+        // this.iniAdditionalExtras(decoded_order_token.additionalextra);
         this.uploaded_token = res.data.uploaded_token
 
         this.couponForm.patchValue({
@@ -116,18 +116,13 @@ export class OrderDetailsComponent implements OnInit {
   }
 
   editOrder() {
-    localStorage.removeItem('order_token');
     localStorage.setItem('order_token', this.couponForm.value.order_token);
-    localStorage.removeItem('uploaded_token');
     localStorage.setItem('uploaded_token', this.uploaded_token);
     let decoded_order_token = jwt_decode(this.couponForm.value.order_token);
     this.setValueOrders(decoded_order_token);
-    this.iniAdditionalExtras(decoded_order_token.additionalextra);
     if (this.pre_discount_token !== '') {
-      localStorage.removeItem('discount_token');
       localStorage.setItem('discount_token', this.pre_discount_token);
     }
-    localStorage.removeItem('set_order_token');
     localStorage.setItem('set_order_token', this.couponForm.value.order_token);
     localStorage.setItem('is_editing','true');
     this.router.navigate(['/edit-order', decoded_order_token.order_id])

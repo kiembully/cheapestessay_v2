@@ -10,7 +10,17 @@
                     </section>
                     <section class="sec-order-wrap sec-service-type" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
-                            <p class="p-order-label">Type of Service</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Type of Service</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[0]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Type of Service Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <mat-button-toggle-group formControlName="service" class="mbtg-common-style" [value]="newOrderForm.value.service">
@@ -24,7 +34,17 @@
                     </section>
                     <section class="sec-order-wrap sec-writer-level" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
-                            <p class="p-order-label">Writer Level</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Writer Level</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[1]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Writer Level Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <mat-button-toggle-group formControlname="academic" class="mbtg-common-style" [value]="newOrderForm.value.academic">
@@ -40,7 +60,17 @@
                     </section>
                     <section class="sec-order-wrap sec-paper-type">
                         <span class="fill-space">
-                            <p class="p-order-label">Type of Paper</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Type of Paper</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[2]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Type of Paper Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <mat-form-field appearance="fill" class="mfl-common-select">
@@ -74,7 +104,17 @@
                     </section>
                     <section class="sec-order-wrap sec-subject" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
-                            <p class="p-order-label">Subject</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Subject</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[3]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Subject Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <mat-form-field appearance="fill" class="mfl-common-select">
@@ -108,7 +148,17 @@
                     </section>
                     <section class="sec-order-wrap sec-timezone">
                         <span class="fill-space">
-                            <p class="p-order-label">Timezone</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Timezone</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[4]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Timezone Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <mat-form-field appearance="fill" class="mfl-common-select">
@@ -124,7 +174,17 @@
                     </section>
                     <section class="sec-order-wrap sec-deadline">
                         <span class="fill-space">
-                            <p class="p-order-label">Deadline</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Deadline</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[5]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Deadline Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap" >
                             <mat-button-toggle-group class="mbtg-common-style deadline-wrap deadline-web" required [value]="deadline_value">
@@ -153,7 +213,17 @@
                     <section class="sec-order-wrap sec-pages" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
                             <p class="p-order-label" *ngIf="isPageDisabled && _session.isTokenExisting('user_token')">Slides</p>
-                            <p class="p-order-label" *ngIf="!(isPageDisabled && _session.isTokenExisting('user_token'))">Pages</p>
+                            <p class="p-order-label" *ngIf="!(isPageDisabled && _session.isTokenExisting('user_token'))">
+                                <span class="fill-space">Pages</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[6]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Page Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <div class="pages-option-wrap">
@@ -189,7 +259,17 @@
                     </section>
                     <section class="sec-order-wrap sec-topic">
                         <span class="fill-space">
-                            <p class="p-order-label">Topic</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Topic</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[7]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Topic Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <input matInput class="inp-writers-choice" type="text" formControlName="topic" required [value]="newOrderForm.value.topic" required>
@@ -197,7 +277,17 @@
                     </section>
                     <section class="sec-order-wrap sec-details" *ngIf="newOrderForm.value.paper != 127">
                         <span class="fill-space">
-                            <p class="p-order-label">Details</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Details</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[8]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Topic Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-text-wrap">
                             <textarea matInput formControlName="add_detail" required value="newOrderForm.value.add_detail" placeholder="You can include paper structure and/or outline, types and number of references to be used, grading scale or any other requirements…"></textarea>
@@ -205,7 +295,17 @@
                     </section>
                     <section class="sec-order-wrap sec-upload">
                         <span class="fill-space">
-                            <p class="p-order-label">Upload</p>
+                            <p class="p-order-label">
+                                <span class="fill-space">Upload</span>
+                                <button class="material-icons btn-tooltip"
+                                type="button"
+                                mat-flat-button
+                                [disableRipple]="true"
+                                [matTooltip]="tooltip[9]"
+                                matTooltipPosition="right"
+                                matTooltipClass="tooltip-wrap"
+                                aria-label="Upload Tooltip">error_outline</button>
+                            </p>
                         </span>
                         <span class="spn-input-wrap">
                             <button class="btn-upload" mat-flat-button type="button" (click)="_dialog_trigger.openUploadDialog(getOrderId())">Upload files/ photo</button>
@@ -244,7 +344,17 @@
         
                             <section class="sec-order-wrap sec-format-style">
                                 <span class="fill-space">
-                                    <p class="p-order-label">Format / Style</p>
+                                    <p class="p-order-label">
+                                        <span class="fill-space">Format / Style</span>
+                                        <button class="material-icons btn-tooltip"
+                                        type="button"
+                                        mat-flat-button
+                                        [disableRipple]="true"
+                                        [matTooltip]="tooltip[10]"
+                                        matTooltipPosition="right"
+                                        matTooltipClass="tooltip-wrap"
+                                        aria-label="Format Tooltip">error_outline</button>
+                                    </p>
                                 </span>
                                 <span class="spn-input-wrap">
                                     <mat-button-toggle-group formControlName="formated_style" class="mbtg-common-style mbtg-format-style" [value]="newOrderForm.value.formated_style">
@@ -267,7 +377,17 @@
                             </section>
                             <section class="sec-order-wrap sec-discipline">
                                 <span class="fill-space">
-                                    <p class="p-order-label">Discipline</p>
+                                    <p class="p-order-label">
+                                        <span class="fill-space">Discipline</span>
+                                        <button class="material-icons btn-tooltip"
+                                        type="button"
+                                        mat-flat-button
+                                        [disableRipple]="true"
+                                        [matTooltip]="tooltip[11]"
+                                        matTooltipPosition="right"
+                                        matTooltipClass="tooltip-wrap"
+                                        aria-label="Discipline Tooltip">error_outline</button>
+                                    </p>
                                 </span>
                                 <span class="spn-input-wrap">
                                     <mat-button-toggle-group formControlName="discipline" class="mbtg-common-style" [value]="newOrderForm.value.discipline">
@@ -280,7 +400,17 @@
                             </section>
                             <section class="sec-order-wrap sec-pref-writer">
                                 <span class="fill-space">
-                                    <p class="p-order-label">Preferred Writer</p>
+                                    <p class="p-order-label">
+                                        <span class="fill-space">Preferred Writer</span>
+                                        <button class="material-icons btn-tooltip"
+                                        type="button"
+                                        mat-flat-button
+                                        [disableRipple]="true"
+                                        [matTooltip]="tooltip[12]"
+                                        matTooltipPosition="right"
+                                        matTooltipClass="tooltip-wrap"
+                                        aria-label="Preferred Writer Tooltip">error_outline</button>
+                                    </p>
                                 </span>
                                 <span class="spn-input-wrap">
                                     <mat-button-toggle-group class="mbtg-common-style" formControlName="preferred_writer" [value]="newOrderForm.value.preferred_writer">
@@ -322,7 +452,17 @@
                                 <span class="spn-other-option">
                                     <section class="sec-other-option-inner">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Sources <span>(Free)</span></p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[13]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                aria-label="Sources Tooltip">error_outline</button>
+                                                Sources <span>(Free)</span>
+                                            </p>
                                         </span>
                                         <span class="spn-select-total">
                                             <div>
@@ -338,7 +478,16 @@
                                     </section>
                                     <section class="sec-other-option-inner">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Charts</p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[14]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                aria-label="Charts Tooltip">error_outline</button>
+                                                Charts</p>
                                         </span>
                                         <span class="spn-select-total">
                                             <div>
@@ -354,7 +503,16 @@
                                     </section>
                                     <section class="sec-other-option-inner">
                                         <span class="fill-space">
-                                            <p class="p-options-label">PowerPoint Slides</p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[15]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                aria-label="PowerPoint Slides Tooltip">error_outline</button>
+                                                PowerPoint Slides</p>
                                         </span>
                                         <span class="spn-select-total">
                                             <div>
@@ -373,7 +531,12 @@
                                 <span class="spn-other-option" formControlGroup="additionalextra">
                                     <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(5)">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Turnitin Plagiarism Report <span class="spn-price-color">({{turnitinPrice}})</span></p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true">error_outline</button>
+                                                Turnitin Plagiarism Report <span class="spn-price-color">({{turnitinPrice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
                                             <button type="button" [ngClass]="{'is-active':isPlagiarismActive}" mat-mini-fab class="btn-toggle-option"></button>
@@ -381,7 +544,12 @@
                                     </section>
                                     <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(6)">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Abstract Page <span class="spn-price-color">({{abstractPageprice}})</span></p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true">error_outline</button>
+                                                Abstract Page <span class="spn-price-color">({{abstractPageprice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
                                             <button type="button" [ngClass]="{'is-active':isAbstractActive}" mat-mini-fab class="btn-toggle-option"></button>
@@ -389,7 +557,12 @@
                                     </section>
                                     <section class="sec-other-option-inner sec-toggle" (click)="toggleExtras(7)">
                                         <span class="fill-space">
-                                            <p class="p-options-label">Send it to my E-Mail <span class="spn-price-color">({{sendEmailPrice}})</span></p>
+                                            <p class="p-options-label">
+                                                <button class="material-icons btn-tooltip"
+                                                type="button"
+                                                mat-icon-button
+                                                [disableRipple]="true">error_outline</button>
+                                                Send it to my E-Mail <span class="spn-price-color">({{sendEmailPrice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
                                             <button type="button" [ngClass]="{'is-active':isEmailActive}" mat-mini-fab class="btn-toggle-option"></button>

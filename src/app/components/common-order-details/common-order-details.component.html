@@ -80,17 +80,17 @@
                 <section class="sec-infos">
                     <span class="spn-info-label add-color-black">Abstract Page <span class="spn-hold-price-style">( $2.99 )</span></span>
                     <span class="fill-space"></span>
-                    <span class="spn-info-data"><span class="spn-price-value-style">No</span></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style" [style.background-color]="checkValue(order_details.order_details.additionalextra, 5)?'#3B7CFF':'#D0555A'">{{checkValue(order_details.order_details.additionalextra, 5)?'Yes':'No'}}</span></span>
                 </section>
                 <section class="sec-infos">
                     <span class="spn-info-label add-color-black">Plagiarism Report <span class="spn-hold-price-style">( $7.99 )</span></span>
                     <span class="fill-space"></span>
-                    <span class="spn-info-data"><span class="spn-price-value-style">No</span></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style" [style.background-color]="checkValue(order_details.order_details.additionalextra, 6)?'#3B7CFF':'#D0555A'">{{checkValue(order_details.order_details.additionalextra, 6)?'Yes':'No'}}</span></span>
                 </section>
                 <section class="sec-infos">
                     <span class="spn-info-label add-color-black">Send it to my E-Mail <span class="spn-hold-price-style">( $2.99 )</span></span>
                     <span class="fill-space"></span>
-                    <span class="spn-info-data"><span class="spn-price-value-style yes">Yes</span></span>
+                    <span class="spn-info-data"><span class="spn-price-value-style" [style.background-color]="checkValue(order_details.order_details.additionalextra, 7)?'#3B7CFF':'#D0555A'">{{checkValue(order_details.order_details.additionalextra, 7)?'Yes':'No'}}</span></span>
                 </section>
             </div>
         </span>

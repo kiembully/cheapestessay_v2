@@ -17,6 +17,9 @@
                 <input matInput formControlName="last_name" [value]="nameForm.value.last_name" required>
             </mat-form-field>
         </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!nameHasError">
+            <p>{{errorMessageName}}</p>
+        </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="nameHasError">{{errorMessageName}}</mat-error>
         </mat-toolbar-row>
@@ -56,6 +59,9 @@
                 <input formControlName="retype_password" matInput  type="password" value="" required>
             </mat-form-field>
         </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!pswdHasError">
+            <p>{{errorMessagePswd}}</p>
+        </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="pswdHasError">{{errorMessagePswd}}</mat-error>
         </mat-toolbar-row>
@@ -89,6 +95,9 @@
                 <input formControlName="password" type="password" matInput value="" required>
             </mat-form-field>
         </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!emailHasError">
+            <p>{{errorMessageEmail}}</p>
+        </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="emailHasError">{{errorMessageEmail}}</mat-error>
         </mat-toolbar-row>
@@ -113,7 +122,7 @@
         <mat-toolbar-row>
             <mat-form-field class="common-profile-input padding-right10">
                 <mat-label>Phone Number</mat-label>
-                <input formControlName="telephone" matInput [value]="mobileForm.value.telephone" type="tel" required>
+                <input formControlName="telephone" matInput [value]="mobileForm.value.telephone" type="number" required>
                 <span matSuffix class="spn-country-code">
                     <mat-select formControlName="prefix" [value]="mobileForm.value.prefix" class="ms-address-code" [style.background-image]="selectedCode">
                         <mat-option
@@ -125,6 +134,9 @@
                     </mat-select>
                 </span>
             </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!mobHasError">
+            <p>{{errorMessageMob}}</p>
         </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="mobHasError">{{errorMessageMob}}</mat-error>
@@ -152,6 +164,9 @@
                 <mat-label>WhatsApp Number</mat-label>
                 <input formControlName="whatsapp_num" type="number" matInput [value]="whatsAppForm.value.whatsapp_num" required>
             </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!waHasError">
+            <p>{{errorMessageWa}}</p>
         </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="waHasError">{{errorMessageWa}}</mat-error>
@@ -206,6 +221,9 @@
                     </mat-select>
                 </span>
             </mat-form-field>
+        </mat-toolbar-row>
+        <mat-toolbar-row class="mtr-succes-promp" *ngIf="!addressHasError">
+            <p>{{errorMessageAddress}}</p>
         </mat-toolbar-row>
         <mat-toolbar-row class="add-block">
             <mat-error *ngIf="addressHasError">{{errorMessageAddress}}</mat-error>
