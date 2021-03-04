@@ -294,8 +294,11 @@ input[type=number] {
 }
 /* Backgrounds and icons  */
 .sprite-cheapest {
-  /* background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/cheapest-spriteV2.svg'); */
   background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/essay_v2_sprites.svg');
+  background-repeat: no-repeat;
+}
+.sprite-cheapest-2 {
+  background-image: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/cheapest-spriteV2.svg');
   background-repeat: no-repeat;
 }
 .main-banner-background {

@@ -92,6 +92,7 @@ import { AnnouncementDialogComponent } from './dialogs/announcement-dialog/annou
 import { CommonServiceSimilaritiesComponent } from './components/common-service-similarities/common-service-similarities.component';
 import { TopWritersComponent } from './top-writers/top-writers.component';
 import { WritersProfileComponent } from './writers-profile/writers-profile.component';
+import { ReviewsComponent } from './reviews/reviews.component';
 
 @NgModule({
   declarations: [
@@ -176,6 +177,7 @@ import { WritersProfileComponent } from './writers-profile/writers-profile.compo
     CommonServiceSimilaritiesComponent,
     TopWritersComponent,
     WritersProfileComponent,
+    ReviewsComponent,
   ],
   imports: [
     BrowserModule,

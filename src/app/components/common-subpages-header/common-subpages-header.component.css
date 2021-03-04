@@ -2,8 +2,10 @@
     margin-top: 150px;
 }
 .mtr-subpages {
-    display: block;
     white-space: normal;
+}
+.mtr-has-img {
+    display: flex;
 }
 h1.common-subpage-header {
     color: #000000;
@@ -29,7 +31,7 @@ p.common-subpage-subheader {
     max-width: 1000px;
     margin: 0 auto 43px auto
 }
-.btn-order-now {
+.btn-order-now-header {
     padding: 20px 35px;
     border-radius: 5px;
     background-color: #12245A;
@@ -38,7 +40,13 @@ p.common-subpage-subheader {
     font-size: 20px;
     letter-spacing: 0;
     line-height: 24px;
-    margin: 0 auto 57px auto
+    margin: 0 auto 57px auto;
+    display: block;
+}
+.img-wrap-reviews {
+    background-position: -17668px -337px;
+	width: 498px;
+	height: 289px;
 }
 
 /* RESPONSIVE SECTION  */
@@ -53,7 +61,7 @@ p.common-subpage-subheader {
         font-size: 16px !important;
         margin: 0 auto 25px auto
     }
-    .btn-order-now {
+    .btn-order-now-header {
         padding: 12px 15px
     }
 }
@@ -69,6 +77,12 @@ p.common-subpage-subheader {
         font-size: 20px;
         margin: 0 auto 35px auto
     }
+    .m-hidden-content {
+        display: none
+    }
+    .mtr-has-img {
+        display: block;
+    }
 }
  
 /* Large devices (desktops, 992px and up) */
@@ -80,6 +94,14 @@ p.common-subpage-subheader {
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
-@media screen and (max-width:1200px) {  
-    
+@media screen and (max-width:1025px) {
+    .mtr-has-img {
+        max-width: 768px
+    }
+    .img-wrap-reviews {
+        background-position: -8834px -172px;
+        background-size: 9083px 720px;
+        width: 249px;
+        height: 145px;
+    }
 }

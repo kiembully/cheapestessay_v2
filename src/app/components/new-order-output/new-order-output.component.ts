@@ -47,6 +47,7 @@ export class NewOrderOutputComponent implements OnInit {
   @Input() public slide_cost:any;
   @Input() public chart_cost:any;
   @Input() public in_top10:any;
+  @Input() public disableSaving: boolean;
   @Output('openCouponDialog') openCouponDialog: EventEmitter<any> = new EventEmitter();
 
   constructor(

@@ -1,12 +1,16 @@
 <section class="full-width margin-bottom50">
     <div class="rounded-box">
         <mat-toolbar class="subpages-banner common-transparent">
-            <mat-toolbar-row class="mtr-subpages">
-                <h1 class="common-subpage-header">{{header_content[data_index].header}}</h1>
-                <p class="common-subpage-subheader">{{header_content[data_index].subheader}}</p>
-            </mat-toolbar-row>
-            <mat-toolbar-row>
-                <button type="button" class="btn-order-now" routerLink="/order" mat-flat-button>{{getOrderText(data_index)}}</button>
+            <mat-toolbar-row class="mtr-subpages default-width" [ngClass]="(has_img)?'mtr-has-img':''">
+                <span>
+                    <h1 class="common-subpage-header">{{header_content[data_index].header}}</h1>
+                    <p class="common-subpage-subheader">{{header_content[data_index].subheader}}</p>
+                    <button type="button" class="btn-order-now-header" routerLink="/order" mat-flat-button>{{getOrderText(data_index)}}</button>
+                </span>
+                <span class="m-hidden-content" *ngIf="has_img" class="fill-space"></span>
+                <span class="m-hidden-content" *ngIf="has_img">
+                    <div class="sprite-cheapest-2 img-wrap-reviews"></div>
+                </span>
             </mat-toolbar-row>
         </mat-toolbar>
     </div>

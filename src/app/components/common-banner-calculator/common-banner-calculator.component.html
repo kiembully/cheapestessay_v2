@@ -14,12 +14,8 @@
     <section class="sec-form margin-bottom15">
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose paper" disableOptionCentering formControlName="paper" [value]="setOrderForm.value.paper" panelClass="panel-drop-style">
-                <!-- <mat-optgroup label="Most Popular"> -->
-                    <mat-option role="option" *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
-                <!-- </mat-optgroup> -->
-                <!-- <mat-optgroup label="Others"> -->
-                    <mat-option role="option" *ngFor="let list of o_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
-                <!-- </mat-optgroup> -->
+                <mat-option role="option" *ngFor="let list of p_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
+                <mat-option role="option" *ngFor="let list of o_paper" [value]="list.paper_id">{{list.paper_name}}</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>

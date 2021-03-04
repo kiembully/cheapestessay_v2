@@ -9,10 +9,11 @@ export class CommonSubpagesHeaderComponent implements OnInit {
 
   constructor() { }
 
+  @Input() public data_index:string;
+  @Input() public has_img: boolean;
+
   ngOnInit(): void {
   }
-
-  @Input() public data_index:string;
 
   header_content:any = [
     {
@@ -66,6 +67,10 @@ export class CommonSubpagesHeaderComponent implements OnInit {
     {
       header: 'Cheapest Essay Top Writers',
       subheader: "Review the impressive credentials of the writers in our service such as awards, ratings, customer's feedback and select the one who best suits your assignment"
+    },
+    {
+      header: 'CheapestEssay.com Reviews',
+      subheader: "Where each client's voice"
     }
   ]
 

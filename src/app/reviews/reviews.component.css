@@ -1,0 +1,130 @@
+.reviews-curved-wrap {
+    width: 362px;
+    padding: 60px 5px;
+    display: flex;
+    text-align: center;
+    background: #DCE9F5;
+    box-shadow: 4px 6px 2px 0 rgb(0 0 0 / 50%);
+    border-radius: 67% 33% 69% 31%/71% 57% 43% 29%;
+    display: block;
+}
+.review-stat-wrap {
+    display: flex;
+    max-width: 235px;
+    border-bottom: 1px solid #12245A;
+    margin: 0 auto 23px auto;
+    height: 160px;
+}
+.review-stat-wrap span {
+    align-self: center;
+}
+.p-review {
+    color: #12245A;
+    font-family: "SF Pro Text Regular";
+    font-size: 42px;
+    letter-spacing: 0;
+    line-height: 50px;
+    text-align: left
+}
+.p-review span {
+    font-family: "SF Pro Text Semibold";
+}
+.p-review-label {
+    color: #12245A;
+    font-family: "SF Pro Text Regular";
+    font-size: 22px;
+    letter-spacing: 0;
+    line-height: 26px;
+}
+.rsw-img-content {
+    background-position: -8547px -1349px;
+    width: 95px;
+    height: 75px;
+}
+.rsw-img-content1 {
+    background-position: -8672px -1345px;
+    width: 78px;
+    height: 75px;
+}
+.rsw-img-content2 {
+    background-position: -8792px -1349px;
+    width: 95px;
+    height: 75px;
+}
+.spn-rsw-wrap {
+    align-self: center;
+}
+.mt-feedbacks {
+    padding: 0 15px;
+}
+.mtr-feedbacks {
+    border-radius: 4.5px;
+    background-color: #F0FAFD;
+    box-shadow: 0 2px 4px 0 #C5DBEF, 5px 6px 35px 0 #C5DBEF;
+}
+.mtr-feedbacks h3 {
+    color: #525252;
+    font-family: "SF Pro Text Bold";
+    font-size: 42px;
+    letter-spacing: 0;
+    line-height: 50px;
+    text-align: center;
+}
+
+@media screen and (max-width:576px) { 
+    
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    .br-m-hidden {
+        display: none;
+    }
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    .mtr-curved-wrap {
+        display: block;
+        text-align: center;
+        text-align: -webkit-center;
+    }
+        
+}
+ 
+/* Extra large devices (large desktops, 1200px and up) */
+@media screen and (max-width:1200px) {
+    .rsw-img-content {
+        background-position: -4275px -675px;
+        background-size: 9081px 710px;
+        width: 45px;
+        height: 34px;
+    }
+    .rsw-img-content1 {
+        background-position: -4339px -673px;
+        background-size: 9081px 710px;
+        width: 34px;
+        height: 35px;
+    }
+    .rsw-img-content2 {
+        background-position: -4396px -675px;
+        background-size: 9081px 710px;
+        width: 47px;
+        height: 35px;
+    }
+    .p-review {
+        font-size: 38px;
+        line-height: 42px;
+    }
+    .review-stat-wrap {
+        max-width: 180px;
+        height: 110px;
+    }
+    .reviews-curved-wrap {
+        width: 285px;
+        margin-bottom: 23px
+    }
+    .p-review-label {
+        font-size: 18px
+    }
+}

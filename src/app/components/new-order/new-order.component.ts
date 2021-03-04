@@ -204,11 +204,14 @@ export class NewOrderComponent implements OnInit {
     this.displayFileUploads()
   }
   
+  disableSaving:boolean = false;
   setOrder(order_form) {
     this.total_price = '...';
     this.discounted_price = '...';
+    this.disableSaving = true;
     this._auth.getOrderOptions(order_form).subscribe(
       val => {
+        this.disableSaving = false;
         this.decoded_order_token = jwt_decode(val.data.order_token);
         localStorage.removeItem('set_order_token');
         localStorage.setItem('set_order_token', val.data.order_token);

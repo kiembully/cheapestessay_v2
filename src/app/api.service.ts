@@ -251,6 +251,16 @@ export class ApiServices {
             shareReplay()
         );
     }
+    _reviewsUrl = this._baseUrl + 'allWriterReviews'
+    getReviews() {
+        return this.http.get<any>(this._reviewsUrl).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        );
+    }
     _couponCodeUrl = this._baseUrl + 'applyDiscount'
     getCouponCode(form) {
         return this.http.post<any>(this._couponCodeUrl, form);

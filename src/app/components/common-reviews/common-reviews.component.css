@@ -93,11 +93,16 @@
 .oco-review-item .owl-theme .owl-dots .owl-dot.active span {
     background: #1A62F5;
 }
+.br-m-review-hidden {
+    display: none;
+}
 
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {  
- 
+    .br-m-review-hidden {
+        display: block;
+    }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */

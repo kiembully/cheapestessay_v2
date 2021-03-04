@@ -88,7 +88,7 @@
                         <span class="spn-tot-price">${{total_price}}</span>
                     </mat-list-item>
                     <mat-list-item>
-                        <button *ngIf="!_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="saveOrder()">Save & Order</button>
+                        <button *ngIf="!_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="saveOrder()" [disabled]="disableSaving">Save & Order</button>
                         <button *ngIf="_session.isTokenExisting('user_token')" class="btn-submit-order" type="submit" mat-flat-button (click)="_session.openLoginDialog()">Save & Order</button>
                     </mat-list-item>
                 </mat-list>
