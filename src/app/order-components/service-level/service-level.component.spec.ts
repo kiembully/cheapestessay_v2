@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ServiceLevelComponent } from './service-level.component';
 
@@ -6,7 +6,7 @@ describe('ServiceLevelComponent', () => {
   let component: ServiceLevelComponent;
   let fixture: ComponentFixture<ServiceLevelComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ServiceLevelComponent ]
     })

@@ -1,5 +1,7 @@
 import {FormControl, FormGroup, Validators} from '@angular/forms'
+import { Injectable } from "@angular/core";
 
+@Injectable()
 export class new_order_form_default {
     setOrders = new FormGroup({
         service: new FormControl(3),
@@ -78,6 +80,7 @@ export class new_order_form_default {
     })
 }
 
+@Injectable()
 export class profile_form_default {
   levelForm = new FormGroup({
     lifetime_discount_id: new FormControl(),
@@ -120,6 +123,7 @@ export class profile_form_default {
   })
 }
 
+@Injectable()
 export class service_object {
   service: any = [
     {name:'essay-writing-services', id:1, sub_service: 0, cta:[

@@ -33,3 +33,23 @@
     line-height: 14px;
     padding: 10px 15px;
 }
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+
+}
+ 
+/* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+@media screen and (max-width:768px) {
+    .sec-cookie-wrap mat-toolbar-row  {
+        display: block;
+        padding: 10px;
+    }
+    .btn-cookie {
+        margin-top: 8px
+    }
+    .sec-cookie-wrap p {
+        font-size:10px
+    }
+}

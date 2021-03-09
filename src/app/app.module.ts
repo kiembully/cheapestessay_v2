@@ -7,6 +7,7 @@ import { ApiServices } from 'src/app/api.service';
 import { TokenInterceptorService } from 'src/app/token-interceptor.service';
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { FileUploadModule } from 'ng2-file-upload';
+import { NgxJsonLdModule } from '@ngx-lite/json-ld';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -94,6 +95,8 @@ import { TopWritersComponent } from './top-writers/top-writers.component';
 import { WritersProfileComponent } from './writers-profile/writers-profile.component';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { CookieComponent } from './cookie/cookie.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -190,7 +193,9 @@ import { CookieComponent } from './cookie/cookie.component';
     ReactiveFormsModule,
     HttpClientModule,
     CarouselModule,
-    FileUploadModule
+    FileUploadModule,
+    NgxJsonLdModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthGuard, ApiServices, Title, Meta, PendingChangesGuard, {
     provide: HTTP_INTERCEPTORS,

@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonDiscountBannerComponent } from './common-discount-banner.component';
 
@@ -6,7 +6,7 @@ describe('CommonDiscountBannerComponent', () => {
   let component: CommonDiscountBannerComponent;
   let fixture: ComponentFixture<CommonDiscountBannerComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonDiscountBannerComponent ]
     })

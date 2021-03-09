@@ -20,6 +20,7 @@ export class AuthGuard implements CanActivate {
   }
 }
 
+@Injectable()
 export class PendingChangesGuard implements CanDeactivate<ComponentCanDeactivate> {
   canDeactivate(component: ComponentCanDeactivate): boolean | Observable<boolean> {
     // if there are no pending changes, just allow deactivation; else confirm first

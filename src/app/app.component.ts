@@ -24,6 +24,32 @@ export class AppComponent {
   ) {
 
   }
+
+  schema = {
+    '@context': 'http://schema.org',
+    '@type': 'WebSite',
+    name: 'Cheapest Essay',
+    url: 'https://angular.io',
+    description: "Looking for the cheapest essay writing service Hire qualified essay writers, who will do your 'write my paper' requests. Save up to 15% on your first order.",
+    logo: "https://d3se3mk07n7blr.cloudfront.net/assets/img/cheapestessay-icon.svg",
+    image: "https://d3se3mk07n7blr.cloudfront.net/assets/img/cheapestessay-icon.svg",
+    sameAs: [
+      "https://www.facebook.com/CheapestEssay/",
+      "https://twitter.com/CheapestEssay",
+      "https://www.instagram.com/cheapestessay/"
+    ],
+    address: {
+      "@type": "PostalAddress",
+      "streetAddress": "Columbus Ohio",
+      "postOfficeBoxNumber": "43229",
+      "addressLocality": "Columbus",
+      "addressRegion": "Ohio",
+      "postalCode": "43229",
+      "addressCountry": "USA"
+    },
+    openingHours: [ "Mon-Sun 00:00-23:59" ],
+  };
+  
   // popup = this._trigger.openAnnouncementDialog();
   ngOnInit() {
     this.titleService.setTitle("Cheapest Essay Writing Service by Qualified Essay Writers $8/page");

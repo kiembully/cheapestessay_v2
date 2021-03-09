@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonNewOrderButtonComponent } from './common-new-order-button.component';
 
@@ -6,7 +6,7 @@ describe('CommonNewOrderButtonComponent', () => {
   let component: CommonNewOrderButtonComponent;
   let fixture: ComponentFixture<CommonNewOrderButtonComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonNewOrderButtonComponent ]
     })

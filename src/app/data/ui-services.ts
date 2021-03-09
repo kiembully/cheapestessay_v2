@@ -154,6 +154,7 @@ export class DialogTriggers {
   }
 }
 
+@Injectable()
 export class countdownTimer {
   days:any;
   hours:any;

@@ -1,3 +1,4 @@
+import { Injectable } from "@angular/core";
 export interface all_orders {
     order_id: number;
     order_no_custom: number;
@@ -27,6 +28,7 @@ export interface topWriters {
     user_name: string,
 }
 
+@Injectable()
 export class user_functions {
     getUserStatus() {
         let status:number = 0;

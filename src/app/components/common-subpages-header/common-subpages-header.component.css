@@ -3,6 +3,7 @@
 }
 .mtr-subpages {
     white-space: normal;
+    display: block;
 }
 .mtr-has-img {
     display: flex;

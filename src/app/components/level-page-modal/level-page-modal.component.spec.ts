@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { LevelPageModalComponent } from './level-page-modal.component';
 
@@ -6,7 +6,7 @@ describe('LevelPageModalComponent', () => {
   let component: LevelPageModalComponent;
   let fixture: ComponentFixture<LevelPageModalComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ LevelPageModalComponent ]
     })

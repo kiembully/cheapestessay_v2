@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonSubpagesHeaderComponent } from './common-subpages-header.component';
 
@@ -6,7 +6,7 @@ describe('CommonSubpagesHeaderComponent', () => {
   let component: CommonSubpagesHeaderComponent;
   let fixture: ComponentFixture<CommonSubpagesHeaderComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonSubpagesHeaderComponent ]
     })

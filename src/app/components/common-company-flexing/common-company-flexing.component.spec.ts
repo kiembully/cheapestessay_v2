@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonCompanyFlexingComponent } from './common-company-flexing.component';
 
@@ -6,7 +6,7 @@ describe('CommonCompanyFlexingComponent', () => {
   let component: CommonCompanyFlexingComponent;
   let fixture: ComponentFixture<CommonCompanyFlexingComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonCompanyFlexingComponent ]
     })

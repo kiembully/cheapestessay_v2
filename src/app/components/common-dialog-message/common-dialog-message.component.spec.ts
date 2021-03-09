@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonDialogMessageComponent } from './common-dialog-message.component';
 
@@ -6,7 +6,7 @@ describe('CommonDialogMessageComponent', () => {
   let component: CommonDialogMessageComponent;
   let fixture: ComponentFixture<CommonDialogMessageComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonDialogMessageComponent ]
     })

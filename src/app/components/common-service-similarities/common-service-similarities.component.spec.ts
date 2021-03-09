@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonServiceSimilaritiesComponent } from './common-service-similarities.component';
 
@@ -6,7 +6,7 @@ describe('CommonServiceSimilaritiesComponent', () => {
   let component: CommonServiceSimilaritiesComponent;
   let fixture: ComponentFixture<CommonServiceSimilaritiesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonServiceSimilaritiesComponent ]
     })

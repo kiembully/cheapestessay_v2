@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonGuaranteesContentComponent } from './common-guarantees-content.component';
 
@@ -6,7 +6,7 @@ describe('CommonGuaranteesContentComponent', () => {
   let component: CommonGuaranteesContentComponent;
   let fixture: ComponentFixture<CommonGuaranteesContentComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonGuaranteesContentComponent ]
     })

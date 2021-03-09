@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DiscountPageModalComponent } from './discount-page-modal.component';
 
@@ -6,7 +6,7 @@ describe('DiscountPageModalComponent', () => {
   let component: DiscountPageModalComponent;
   let fixture: ComponentFixture<DiscountPageModalComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ DiscountPageModalComponent ]
     })

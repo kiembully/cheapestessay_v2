@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { CommonAdditionalServiceComponent } from './common-additional-service.component';
 
@@ -6,7 +6,7 @@ describe('CommonAdditionalServiceComponent', () => {
   let component: CommonAdditionalServiceComponent;
   let fixture: ComponentFixture<CommonAdditionalServiceComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ CommonAdditionalServiceComponent ]
     })
