@@ -1,0 +1,35 @@
+
+.sec-cookie-wrap {
+    position: fixed;
+    display: block;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.7);
+}
+.sec-cookie-wrap mat-toolbar {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+}
+.sec-cookie-wrap mat-toolbar-row {
+    text-align: center;
+    padding: 20px 0;
+}
+.sec-cookie-wrap p {
+    white-space: normal;
+    color: #ffffff;
+    font-family: "SF Pro Text Regular";
+    font-size: 11px;
+    letter-spacing: 0;
+    line-height: 15px;
+    margin: 0 auto
+}
+.btn-cookie {
+    border-radius: 30px;
+    background-color: #12245A;
+    color: #ffffff;
+    font-family: "SF Pro Text Semibold";
+    font-size: 14px;
+    letter-spacing: 0;
+    line-height: 14px;
+    padding: 10px 15px;
+}

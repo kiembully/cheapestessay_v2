@@ -93,6 +93,7 @@ import { CommonServiceSimilaritiesComponent } from './components/common-service-
 import { TopWritersComponent } from './top-writers/top-writers.component';
 import { WritersProfileComponent } from './writers-profile/writers-profile.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { CookieComponent } from './cookie/cookie.component';
 
 @NgModule({
   declarations: [
@@ -178,6 +179,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
     TopWritersComponent,
     WritersProfileComponent,
     ReviewsComponent,
+    CookieComponent,
   ],
   imports: [
     BrowserModule,

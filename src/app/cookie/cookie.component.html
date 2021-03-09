@@ -1,0 +1,14 @@
+<section class="sec-cookie-wrap full-width" *ngIf="isCookeBannerDisplayed()">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span>
+                <p>Our website is using secured cookies for providing the most relevant service and best customer experience for you.</p>
+                <p>That's safe, totally confidential and you can change your cookie preferences in the settings of your browser anytime if needed.</p>
+            </span>
+            <span class="fill-space"></span>
+            <span>
+                <button mat-flat-button class="btn-cookie" type="button" (click)="hideCookieBar()">Okay</button>
+            </span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+</section>
