@@ -25,13 +25,13 @@
         <mat-toolbar-row class="mtr-contact-me">
             <form (ngSubmit)="submitEmail()" [formGroup]="frmContact" class="frm-contact-me">
                 <span>
-                    <h5>Contact Us!</h5>
-                    <p>Tell us your Email address and we will reply you within 1 hour</p>
+                    <h3>Contact Us!</h3>
+                    <label for="inp-contact-us">Tell us your Email address and we will reply you within 1 hour</label>
                 </span>
                 <span class="fill-space"></span>
                 <span>
                     <div class="contact-input-wrap">
-                        <input name="contact-info" type="text" class="fill-space" placeholder="you@example.com" formControlName="email">
+                        <input id="inp-contact-us" name="contact-info" type="text" class="fill-space" placeholder="you@example.com" formControlName="email">
                         <button type="submit" class="fill-space" mat-flat-button>Contact Me</button>
                     </div>
                 </span>

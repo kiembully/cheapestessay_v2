@@ -27,7 +27,7 @@
 .row-reverse {
     flex-direction: row-reverse;
 }
-h6.photo-info-default {
+h3.photo-info-default {
     color: #000000;
     font-family: "SF Pro Text Medium";
     font-size: 28px;
@@ -42,7 +42,7 @@ h6.photo-info-default {
     letter-spacing: 0 !important;
     line-height: 155px !important;
 }
-h6.is-header-disclaimer {
+h3.is-header-disclaimer {
     color: #12245A !important;
     font-family: "SF Pro Text Bold" !important;
     font-size: 30px !important;
@@ -76,7 +76,7 @@ p.is-label-faq {
 .mtr-web-contents {
     margin-bottom: 0 !important
 }
-.mtr-web-contents h5:last-child {
+.mtr-web-contents h3:last-child {
     margin-bottom: 0;
 }
 .spn-bullet-item {
@@ -87,7 +87,7 @@ p.is-label-faq {
     height: 15px;
     margin-top: 7px;
 }
-.mtr-web-contents h5 {
+.mtr-web-contents h3 {
     white-space: normal;
     color: #000000;
     font-family: "SF Pro Text Medium";
@@ -250,7 +250,7 @@ p.is-label-faq {
         display: block !important;
         text-align: -webkit-center;
     }
-    h6.is-header-faq {
+    h3.is-header-faq {
         display: none;
     }
     p.is-label-faq {

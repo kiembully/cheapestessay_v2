@@ -4,9 +4,9 @@
     <section class="sec-form margin-bottom15" [style.margin-top]="!isHome ? '23px' : '0'">
         <mat-form-field class="mff-calculator">
             <mat-select aria-label="choose service" disableOptionCentering formControlName="service" [value]="3" panelClass="panel-drop-style">
-                <mat-option role="option" *ngIf="!isProgressLoading" [value]="3">Writing</mat-option>
-                <mat-option role="option" *ngIf="!isProgressLoading" [value]="1">Editing</mat-option>
-                <mat-option role="option" *ngIf="!isProgressLoading" [value]="2">PowerPoint</mat-option>
+                <mat-option role="option" aria-label="service1" *ngIf="!isProgressLoading" [value]="3">Writing</mat-option>
+                <mat-option role="option" aria-label="service2" *ngIf="!isProgressLoading" [value]="1">Editing</mat-option>
+                <mat-option role="option" aria-label="service3" *ngIf="!isProgressLoading" [value]="2">PowerPoint</mat-option>
             </mat-select>
             <span matSufix><div class="sprites-icons dd-icon"></div></span>
         </mat-form-field>
@@ -49,8 +49,9 @@
             <span>
                 <div class="discount-option-inner">
                     <p class="p-special-price">Special Price (LOCKED)</p>
-                    <p class="p-save-order">Save On Your First Order</p>
-                    <input type="email" #unlockEmail class="inp-email-discount" placeholder="Enter email to unlock" value="{{logged_email}}" [disabled]="!_session.isTokenExisting('user_token')">
+                    <!-- <p class="p-save-order">Save On Your First Order</p> -->
+                    <label class="lbl-save-order" for="unlock_email">Save On Your First Order</label>
+                    <input type="email" id="unlock_email" #unlockEmail class="inp-email-discount" placeholder="Enter email to unlock" value="{{logged_email}}" [disabled]="!_session.isTokenExisting('user_token')">
                 </div>
             </span>
             <span class="fill-space"></span>

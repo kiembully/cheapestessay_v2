@@ -43,7 +43,7 @@ export class CommonGuaranteesComponent implements OnInit {
     {class: 'refund-icon', title: 'Guarantee 100% Refund', link:['Read more','/money-back-guarantee']},
     {class: 'plagiarism-icon', title: 'Plagiarism Free', link:['Read more','/privacy-policy']},
     {class: 'cheapest-icon', title: 'Cheapest in the Market', link:['Read more','/pricing']},
-    {class: 'suport-icon', title: 'Support Availble 24/7', link:['Chat Now','']},
+    {class: 'suport-icon', title: 'Support Available 24/7', link:['Chat Now','']},
     {class: 'revision-icon', title: 'Always Free Revision', link:['Read more','/revision-policy']},
     {class: 'availability-icon', title: 'Always on Time', link:['decoy','decoy']},
   ]

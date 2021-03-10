@@ -48,7 +48,7 @@
     letter-spacing: 0;
     line-height: 74.04px;
 }
-.spn-step-wrap h5 {
+.spn-step-wrap h3 {
     color: #12245A;
     font-family: "SF Pro Text Bold";
     font-size: 35px;
@@ -58,7 +58,7 @@
     margin-bottom: 10px;
     white-space: normal;
 }
-.spn-step-wrap h6 {
+.spn-step-wrap p {
     color: #000000;
     font-family: "SF Pro Text Bold";
     font-size: 30px;
@@ -178,7 +178,7 @@
         display: block;
         text-align: -webkit-center;
     }
-    .spn-step-wrap h5 {
+    .spn-step-wrap h3 {
         margin-top: 20px
     }
     .spn-step-wrap {

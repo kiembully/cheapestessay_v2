@@ -5,45 +5,45 @@ class="sec-default-header fixed-nav w-header"
 [style.box-shadow]="isHeaderScrolled ? '0 5px 10px 0 rgba(99,111,175,.14)' : 'none'">
     <mat-toolbar color="primary" class="default-width">
         <mat-toolbar-row>
-            <span class="w-nav-hidden"><button class="btn-brand" routerLinkActive="active" routerLink="/" mat-button>Cheapest <span>Essay</span></button></span>
+            <span class="w-nav-hidden"><a class="btn-brand" routerLink="/" mat-button>Cheapest <span>Essay</span></a></span>
             <span class="m-nav-hidden">
-                <button mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons">menu</span></button>
+                <button aria-label="menu button" mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons">menu</span></button>
             </span>
             <span class="fill-space"></span>
-            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</button></span>
-            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</button></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</a></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</a></span>
             <span class="spn-services-menu-wrap w-nav-hidden">
-                <button class="btn-client-page" mat-button (click)="togglePanel()" [ngClass]="{'active':isServicesActive}">Services</button>
+                <button aria-label="services button" class="btn-client-page" mat-button (click)="togglePanel()" [ngClass]="{'active':isServicesActive}">Services</button>
             </span>
-            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></span>
-            <span class="w-nav-hidden"><button class="btn-client-page" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</button></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</a></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="money-back-guarantee" mat-button>100% Refund</a></span>
             <span class="spn-more-menu w-nav-hidden">
-                <button class="btn-client-page" mat-button [matMenuTriggerFor]="more">More...</button>
-                <mat-menu #more="matMenu" xPosition="before">
-                    <button class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</button>
-                    <button class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button>
-                    <button class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button>
-                    <button class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button>
-                    <button class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button>
-                    <button class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button>
-                    <a class="btn-more-menu" (click)="openBlog()" target="_blank" mat-menu-item>Blog</a>
+                <button aria-label="more button" class="btn-client-page" mat-button [matMenuTriggerFor]="more">More...</button>
+                <mat-menu #more="matMenu" xPosition="before" aria-label="more page">
+                    <a class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</a>
+                    <a class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</a>
+                    <a class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</a>
+                    <a class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</a>
+                    <a class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</a>
+                    <a class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</a>
+                    <a rel="noopener" class="btn-more-menu" (click)="openBlog()" mat-menu-item>Blog</a>
                 </mat-menu>
             </span>
             <span class="spn-btn-wrap" *ngIf="!isBtnTotalVisible()">
-                <button class="btn-order-page" mat-flat-button routerLink="order">Order Now</button>
+                <button aria-label="order now button" class="btn-order-page" mat-flat-button routerLink="order">Order Now</button>
             </span>
             <span *ngIf="!isBtnTotalVisible()">
-                <button class="btn-account-page" mat-flat-button (click)="_session.openLoginDialog()" *ngIf="isUserOnline == 0">Login</button>
-                <button class="btn-account-page" mat-flat-button routerLink="active" routerLink="my-orders" *ngIf="isUserOnline == 1">My Account</button>
+                <button aria-label="login button" class="btn-account-page" mat-flat-button (click)="_session.openLoginDialog()" *ngIf="isUserOnline == 0">Login</button>
+                <a class="btn-account-page" mat-flat-button routerLink="active" routerLink="my-orders" *ngIf="isUserOnline == 1">My Account</a>
             </span>
             <span *ngIf="isBtnTotalVisible()">
-                <button class="btn-total-price" mat-flat-button>Total price: ${{getOrderTotal()}}</button>
+                <button aria-label="button total price" class="btn-total-price" mat-flat-button>Total price: ${{getOrderTotal()}}</button>
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-contain-services" [style.border-top]="panelOpenState?'1px solid #cccccc':'none'">
-            <mat-accordion class="ma-services-menu default-width">
+            <mat-accordion class="ma-services-menu default-width" aria-describedby="allServices">
                 <mat-expansion-panel hideToggle [expanded]="panelOpenState">
-                    <mat-toolbar color="primary">
+                    <mat-toolbar color="primary" id="allServices">
                         <mat-toolbar-row *ngFor="let row of menuServices; let i = index;" yPosition="below">
                             <span class="spn-services-inner" *ngFor="let list of row.row; let j = index">
                                 <button 
@@ -163,7 +163,7 @@ class="sec-default-header fixed-nav w-header"
     </section>
     <section class="sec-routers">
         <mat-list role="list">
-            <mat-list-item role="listitem"><button (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/contact-us" mat-menu-item>Contact Us</button></mat-list-item>
+            <mat-list-item role="listitem"><button aria-label="contact us" role="button" (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/contact-us" mat-menu-item>Contact Us</button></mat-list-item>
         </mat-list>
     </section>
     <section class="sec-routers">

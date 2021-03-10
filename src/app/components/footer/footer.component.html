@@ -18,11 +18,11 @@
                     <td><a mat-list-item [routerLink]="list.generals[1]">{{list.generals[0]}}</a></td>
                     <td><a mat-list-item [routerLink]="list.clients[1]">{{list.clients[0]}}</a></td>
                     <td><a mat-list-item [routerLink]="list.policies[1]">{{list.policies[0]}}</a></td>
-                    <td class="w-foot-hidden"><a mat-list-item target="_blank" rel="noopener" [href]="list.contacts[1]">{{list.contacts[0]}}</a></td>
+                    <td class="w-foot-hidden"><a mat-list-item rel="noopener" href="{{list.contacts[1]}}" *ngIf="list.contacts[0]==null?false:true">{{list.contacts[0]}}</a></td>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><a mat-list-item (click)="openBlog()">Blog</a></td>
+                    <td><a rel="noopener" mat-list-item (click)="openBlog()">Blog</a></td>
                     <td></td>
                     <td></td>
                 </tr>
@@ -35,13 +35,13 @@
             <span class="fill-space"></span>
             <a aria-label="twitter" rel="noopener" href="https://twitter.com/CheapestEssay" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon2"></div></a>
             <span class="fill-space"></span>
-            <!-- <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon3"></div></a>
+            <!-- <a href="" target="_blank" class="spn-social-media"><div class="sprite-cheapest-2 social-icon3"></div></a>
             <span class="fill-space"></span> -->
             <a aria-label="pinterest" rel="noopener" href="https://www.pinterest.ph/cheapestessaywriting/" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon4"></div></a>
             <!-- <span class="fill-space"></span>
-            <a href="https://www.instagram.com/cheapestessay/" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon5"></div></a>
+            <a href="https://www.instagram.com/cheapestessay/" target="_blank" class="spn-social-media"><div class="sprite-cheapest-2 social-icon5"></div></a>
             <span class="fill-space"></span>
-            <a href="https://www.youtube.com/watch?v=DerCRVja8O4" target="_blank" class="spn-social-media"><div class="sprite-cheapest social-icon6"></div></a> -->
+            <a href="https://www.youtube.com/watch?v=DerCRVja8O4" target="_blank" class="spn-social-media"><div class="sprite-cheapest-2 social-icon6"></div></a> -->
         </div>
     </mat-toolbar-row>
     <mat-toolbar-row class="mtr-app-wrap">

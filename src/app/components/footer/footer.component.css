@@ -8,7 +8,7 @@
     text-align: center;
 }
 .mtr-footer-header h2 {
-    color: #FFD500;
+    color: #25448A;
     font-family: "SF Pro Text Bold";
     font-size: 42px;
     letter-spacing: 0;
@@ -48,7 +48,7 @@
 }
 .tbl-footer tbody tr td a {
     text-decoration: none;
-    color: #9B9B9B;
+    color: #424242;
     cursor: pointer
 }
 .mtr-footer-socials {

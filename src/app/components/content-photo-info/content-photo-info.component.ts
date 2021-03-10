@@ -166,7 +166,6 @@ export class ContentPhotoInfoComponent implements OnInit {
 
   how_to_do:any = [
     {
-      title: "",
       contents:[
         "Fill out the order form. At this stage, input your details. These include name, subject topic, contact, and deadline of your work. Ensure you provide detailed information to increase the chances of getting good quality work. Place your orders early enough. Emergency orders will cost you more, making it expensive.",
         "Make a payment. Provide payment details at this stage. Our online payment page is secure. Proceed to make the payment. We offer different payment options, which include PayPal and Credit Card.",

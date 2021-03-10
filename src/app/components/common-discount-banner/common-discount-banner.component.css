@@ -34,7 +34,7 @@
 .new-user-inner-wrap {
     display: flex;
 }
-.frm-new-user-discount p {
+.frm-new-user-discount label {
     color: #12245A;
     font-family: "SF Pro Text Bold";
     font-size: 38px;

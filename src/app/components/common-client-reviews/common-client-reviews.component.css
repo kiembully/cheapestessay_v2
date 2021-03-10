@@ -4,26 +4,39 @@
 }
 .client-reviews-wrap {
     display: block;
-    padding: 0 40px 40px 40px;
     position: relative;
+    margin-bottom: 40px;
+}
+.client-reviews-wrap:last-child {
+    margin-bottom: 0;
 }
 .client-reviews-stars {
     display: flex;
     max-width: 250px;
     margin: 0 auto 20px auto;
 }
-.client-reviews-stars > span {
-    font-size: 40px;
-    color: #FBD30D;
-    text-align: center;
+.spn-five-star {
+    background-position: -636px -1319px;
+	width: 229px;
+	height: 38px;
+    margin: 0 auto;
     z-index: 1
 }
+.quote-wrapper {
+    background-position: -2069px -895px;
+	width: 435px;
+	height: 189px;
+    position: absolute;
+    top: 0;
+    left: 0
+}
 .client-reviews-inner {
-    display: block;
-    min-height: 150px;
-    border: 10px solid #12245A;
+    display: flex;
+    min-height: 190px;
+    width: 435px;
     margin-bottom: 40px;
-    padding-left: 68px;
+    position: relative;
+    align-items: center;
 }
 .client-reviews-inner:last-child {
     margin-bottom: 0;
@@ -71,17 +84,40 @@
     font-weight: 500;
     letter-spacing: 0;
     line-height: 30px;
+    display: block;
+    margin: 0 auto
 }
 
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
-@media screen and (max-width:576px) {  
- 
+@media screen and (max-width:576px) {
+    .spn-five-star {
+        background-position: -276px -659px;
+        background-size: 9051px 709px;
+        width: 91px;
+        height: 19px;
+    }
+    .quote-wrapper {
+        background-position: -1035px -447px;
+        background-size: 8765px 710px;
+        width: 218px;
+        height: 95px;
+    }
+    .client-reviews-wrap {
+        margin-bottom: 25px
+    }
+    .client-reviews-inner {
+        width: 218px;
+        min-height: 99px;
+    }
+    .p-service-reviews {
+        font-size: 14px;
+        line-height: 20px;
+    }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
-@media screen and (max-width:768px) {  
-  
+@media screen and (max-width:768px) {    
 }
  
 /* Large devices (desktops, 992px and up) */

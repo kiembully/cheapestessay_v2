@@ -26,55 +26,17 @@ html {
   word-wrap: normal;
   direction: ltr;
 }
+@font-face {font-family: "Arial Rounded MT Bold Regular"; src: url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.eot"); src: url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.woff") format("woff"), url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/ef6bdf5ef216552c7e9869841e891ca0.svg#Arial Rounded MT Bold") format("svg"); font-display: swap}
 
-@font-face {
-  font-family: "Arial Rounded MT Bold Regular";
-  font-weight: 800;
-  src: url("./assets/fonts/Arial-Rounded-MT-Bold.ttf");
-  font-display: swap;
-}
+@font-face {font-family: "SF Pro Text Bold"; src: url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.eot"); src: url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.woff") format("woff"), url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/28adc6c6fd652123c3e173389a8be17f.svg#SF Pro Text") format("svg"); font-display: swap}
 
-@font-face {
-  font-family: "SF Pro Text Heavy";
-  font-weight: 800;
-  src: url("./assets/fonts/SF-Pro-Text-Heavy.otf");
-  font-display: swap;
-}
+@font-face {font-family: "SF Pro Text Semibold"; src: url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.eot"); src: url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.woff") format("woff"), url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/d6243b42d786410a86f0bafee83d503a.svg#SF Pro Text") format("svg"); font-display: swap}
 
-@font-face {
-  font-family: "SF Pro Text Bold";
-  font-weight: 700;
-  src: url("./assets/fonts/SF-Pro-Text-Bold.otf");
-  font-display: swap;
-}
+@font-face {font-family: "SF Pro Text Medium"; src: url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.eot"); src: url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.woff") format("woff"), url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1bd3de6fcdd9ba7750e5a353dc6ef6e3.svg#SF Pro Text") format("svg"); font-display: swap}
 
-@font-face {
-  font-family: "SF Pro Text Semibold";
-  font-weight: 600;
-  src: url("./assets/fonts/SF-Pro-Text-Semibold.otf");
-  font-display: swap;
-}
+@font-face {font-family: "SF Pro Text Regular"; src: url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.eot"); src: url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.woff") format("woff"), url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/1c45e28f8e86cc89876f003b953cc3e9.svg#SF Pro Text") format("svg"); font-display: swap}
 
-@font-face {
-  font-family: "SF Pro Text Medium";
-  font-weight: 500;
-  src: url("./assets/fonts/SF-Pro-Text-Medium.otf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SF Pro Text Regular";
-  font-weight: 400;
-  src: url("./assets/fonts/SF-Pro-Text-Regular.otf");
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "SF Pro Text Light";
-  font-weight: 300;
-  src: url("./assets/fonts/SF-Pro-Text-Light.otf");
-  font-display: swap;
-}
+@font-face {font-family: "SF Pro Text Light"; src: url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.eot"); src: url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.woff") format("woff"), url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/236987803794b916d95e7fd41ed4fee0.svg#SF Pro Text") format("svg"); font-display: swap}
 
 body {
     margin: 0;

@@ -117,7 +117,7 @@
     max-width: 492px;
     margin: 0 auto 32px auto;
     border-radius: 10px;
-    background-color: #6C89E0;
+    background-color: #4267D7;
     color: #F2F2F2;
     font-family: "SF Pro Text Bold";
     font-size: 27px;
@@ -217,7 +217,8 @@
     margin: 0;
     margin-bottom: 6px;
 }
-.p-save-order {
+.lbl-save-order {
+    display: block;
     color: #000000;
     font-family: "SF Pro Text Regular";
     font-size: 18px;
