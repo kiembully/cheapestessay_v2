@@ -34,6 +34,7 @@ import { ArabicComponent } from './arabic/arabic.component';
 import { TopWritersComponent } from './top-writers/top-writers.component';
 import { WritersProfileComponent } from './writers-profile/writers-profile.component';
 import { ReviewsComponent } from './reviews/reviews.component';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/',pathMatch:'full'},
@@ -70,7 +71,7 @@ const routes: Routes = [
   {path:'update-card/:id',component:CardComponent,canActivate:[AuthGuard]},
   {path:':id' ,component:ServicesDetailComponent},
   {path: '**', redirectTo: '404'},
-  // {path:'order-details',component:OrderDetailsComponent,canActivate:[AuthGuard]},
+  // {path:'maintenance',component:MaintenanceComponent},
 ];
 
 @NgModule({

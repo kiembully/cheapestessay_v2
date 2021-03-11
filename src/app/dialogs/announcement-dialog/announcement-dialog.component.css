@@ -3,21 +3,21 @@
     margin: 0 auto;
     text-align: left;
 }
-.announcement-pitch-block h2 {
+.announcement-pitch-block p {
     color: #12245A;
     font-family: "SF Pro Text Medium";
-    font-size: 40px;
+    font-size: 35px;
     letter-spacing: 0;
-    line-height: 48px;
-    margin: 0 auto 22px auto;
+    line-height: 42px;
+    margin: 0 auto 10px auto;
     white-space: normal;
 }
 .announcement-pitch-block h1 {
     color: #25448A;
     font-family: "SF Pro Text Bold";
-    font-size: 70px;
+    font-size: 65px;
     letter-spacing: 0;
-    line-height: 86px;
+    line-height: 70px;
     white-space: normal;
 }
 .announcement-pitch-block h1 span {
@@ -27,7 +27,16 @@
     background-position: -16584px -309px;
 	width: 311px;
 	height: 280px;
-    margin: 0 auto
+    margin: 0 auto;
+    zoom: 0.8; /* IE */
+    -moz-transform: scale(0.8); /* Firefox */
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.8); /* Opera */
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.8); /* Safari And Chrome */
+    -webkit-transform-origin: 0 0;
+    transform: scale(0.8); /* Standard Property */
+    transform-origin: 0 0;  /* Standard Property */
 }
 .sec-announcement {
     position: relative
@@ -149,7 +158,8 @@
     position: relative;
 }
 .mtr-announcement-header {
-    padding: 0
+    padding: 0;
+    align-items: start;
 }
 
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
@@ -176,7 +186,7 @@
         width: 81px;
         height: 19px;
     }
-    .announcement-pitch-block h2 {
+    .announcement-pitch-block p {
         font-size: 30px;
         margin: 0 auto
     }

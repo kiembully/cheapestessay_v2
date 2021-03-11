@@ -143,7 +143,7 @@ export class DialogTriggers {
   openAnnouncementDialog() {
     const dialogRef = this.dialog.open(AnnouncementDialogComponent, {
       maxHeight: '638px',
-      width: '689px',
+      width: '575px',
       backdropClass: 'announcement-dialog',
       panelClass: 'panel-dialog',
     })

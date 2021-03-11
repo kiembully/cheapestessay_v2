@@ -1,4 +1,4 @@
-<app-header></app-header>
+<app-header *ngIf="isMaintenance()"></app-header>
 <div class="router-outlet-wrap">
   <router-outlet></router-outlet>
 </div>

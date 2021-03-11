@@ -70,10 +70,13 @@ export class AppComponent {
     const token = localStorage.getItem('user_token');
     let status = (!token);
     if (status) {
-      let popup = this._trigger
-      setTimeout(function(){
-        popup.openAnnouncementDialog()
-       },20000);
+      let popup = this._trigger;
+      let path = this.new_user_functions.getCurrentPath();
+      if (path != 'maintenance') {
+        setTimeout(function(){
+          popup.openAnnouncementDialog()
+        },20000);
+      }
     }
   }
   
@@ -91,6 +94,7 @@ export class AppComponent {
     'stripe-checkout',
     'update-card',
     'invoice',
+    'maintenance',
     '404',
   ]
 
@@ -106,6 +110,11 @@ export class AppComponent {
         return true
       }
     }
+  }
+
+  isMaintenance() {
+    let path = this.new_user_functions.getCurrentPath();
+    return (path=='maintenance') ? false : true;
   }
   
 }

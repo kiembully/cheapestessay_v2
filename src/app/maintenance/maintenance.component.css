@@ -1,0 +1,85 @@
+.mt-maintenance-page {
+    margin: 70px auto 150px auto;
+}
+.mt-maintenance-page mat-toolbar-row {
+    display: block;
+    text-align: center;
+    white-space: normal;
+}
+.mt-maintenance-page h1 {
+    color: #0061A8;
+    font-family: "SF Pro Text Bold";
+    font-size: 42px;
+    letter-spacing: 0;
+    line-height: 50px;
+    margin: 0 auto 18px auto;
+}
+.mt-maintenance-page p {
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 38px;
+    text-align: center;
+    max-width: 515px;
+    margin: 0 auto;
+}
+.mt-maintenance-page button {
+    margin: 21px auto;
+    border-radius: 5px;
+    background-color: #12245A;
+    color: #FFFFFF;
+    font-family: "SF Pro Text Medium";
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 24px;
+    padding: 14px 35px;
+}
+.img-maintenance {
+    background-position: -18222px -286px;
+	width: 793px;
+	height: 424px;
+    margin: 0 auto;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {  
+    .mtr-img-maintenance {
+        margin: 0 auto;
+        max-width: 288px;
+    }
+    .img-maintenance {
+        zoom: 0.8; /* IE */
+        -moz-transform: scale(0.8); /* Firefox */
+        -moz-transform-origin: 0 0;
+        -o-transform: scale(0.8); /* Opera */
+        -o-transform-origin: 0 0;
+        -webkit-transform: scale(0.8); /* Safari And Chrome */
+        -webkit-transform-origin: 0 0;
+        transform: scale(0.8); /* Standard Property */
+        transform-origin: 0 0;  /* Standard Property */
+    }
+    .mt-maintenance-page h1 {
+        font-size: 25px;
+        line-height: 30px;
+    }
+    .mt-maintenance-page p {
+        font-size: 20px;
+        line-height: 22px;
+    }
+    .mt-maintenance-page button {
+        font-size: 18px;
+        line-height: 22px;
+        padding: 9px 15px;
+    }
+}
+@media screen and (max-width:992px) {
+    .img-maintenance {
+        background-position: -9111px -143px;
+        background-size: 9508px 710px;
+        width: 397px;
+        height: 212px;
+        margin: 0 auto;
+    }
+}

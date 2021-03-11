@@ -97,6 +97,7 @@ import { ReviewsComponent } from './reviews/reviews.component';
 import { CookieComponent } from './cookie/cookie.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
+import { MaintenanceComponent } from './maintenance/maintenance.component';
 
 @NgModule({
   declarations: [
@@ -183,6 +184,7 @@ import { environment } from '../environments/environment';
     WritersProfileComponent,
     ReviewsComponent,
     CookieComponent,
+    MaintenanceComponent,
   ],
   imports: [
     BrowserModule,
