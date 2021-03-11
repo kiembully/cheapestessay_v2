@@ -494,8 +494,8 @@ export class service_object {
     },
     {
       set:[
-        {service:'Professional Resume Writers',link:'professional-resume-editing'},
-        {service:'Resume Editing Services',link:'resume-writing-services'},
+        {service:'Professional Resume Writers',link:'resume-writing-services'},
+        {service:'Resume Editing Services',link:'professional-resume-editing'},
         {service:'Online Article Rewriter',link:'rewriting-services'},
         {service:'Best Paraphrasing Website',link:'best-paraphrasing-website'},
         {service:'Professional Poster Maker',link:'professional-poster-maker'},

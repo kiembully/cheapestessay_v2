@@ -22,12 +22,10 @@
 }
 .spn-contain-services-banner p a {
     line-height: 31px;
-    font-size: 17px;
+    font-size: 14px;
     font-family: "SF Pro Text Regular";
     color: #111111;
-}
-.spn-contain-services-banner p a:first-child {
-    padding-left: 0;
+    padding: 0 5px
 }
 .spn-contain-services-banner p > span {
     color: #cccccc

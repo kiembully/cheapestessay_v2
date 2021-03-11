@@ -34,6 +34,7 @@ export class ServicesDetailComponent implements OnInit {
 
   isInitializing: boolean = false;
   services: any = this._service.service;
+  child_services: any = this._service.similarities;
   ngOnInit(): void {
   }
 
@@ -103,6 +104,34 @@ export class ServicesDetailComponent implements OnInit {
       return el.name == url
     })
     return filtered[0]
+  }
+
+  isServiceChild() {
+    let url = this.route.snapshot.paramMap.get('id');
+    let filtered = this.child_services.filter(function(el){
+        return el.service == url;
+    })
+    return filtered[0]
+  }
+
+  getParentService() {
+    if (this.isServiceChild() != null) {
+      let id = this.isServiceChild().id;
+      switch (id) {
+        case 1: {return 'Essay Writing Services'}
+        case 3: {return 'Research Paper Writing Services'}
+        case 25: {return 'Coursework Writing Services'}
+        case 8: {return 'Case Study Writing'}
+        case 9: {return 'Assignment Writing Service'}
+      }
+    }
+  }
+
+  getParentServiceLink() {
+    if (this.isServiceChild() != null) {
+      let link = this.getParentService().toLowerCase();
+      return '/' + link.replace(/\s/g, "-")
+    }
   }
 
 }
