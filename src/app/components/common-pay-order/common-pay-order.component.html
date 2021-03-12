@@ -54,7 +54,7 @@
             <span><button class="sec-redeem-button" mat-flat-button type="button" (click)="returnRedeem()">Return</button>${{this.frmRedeem.value.redeem}}</span>
         </section>
         <section class="sec-discount">
-            <span>Lifetime Discount (icon)</span>
+            <span>Lifetime Discount <button class="material-icons btn-lt-tooltip" #tooltip="matTooltip" (click)="tooltip.toggle()" [matTooltip]="ltTooltipMsg" matTooltipPosition="right" aria-label="lifetime discount tooltip" type="button" mat-icon-button [disableRipple]="true">error_outline</button></span>
             <span class="fill-space"></span>
             <span>{{ltDiscount}}</span>
         </section>

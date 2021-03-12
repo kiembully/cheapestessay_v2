@@ -41,9 +41,9 @@ class="sec-default-header fixed-nav w-header"
             </span>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-contain-services" [style.border-top]="panelOpenState?'1px solid #cccccc':'none'">
-            <mat-accordion class="ma-services-menu default-width" aria-describedby="allServices">
+            <mat-accordion class="ma-services-menu default-width">
                 <mat-expansion-panel hideToggle [expanded]="panelOpenState">
-                    <mat-toolbar color="primary" id="allServices">
+                    <mat-toolbar color="primary">
                         <mat-toolbar-row *ngFor="let row of menuServices; let i = index;" yPosition="below">
                             <span class="spn-services-inner" *ngFor="let list of row.row; let j = index">
                                 <button 

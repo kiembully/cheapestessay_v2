@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
 import { loggedin_session } from 'src/app/data/ui-services'
@@ -37,14 +37,15 @@ export class CardComponent implements OnInit {
 
   monitorCvv() {
     let input = this.frmCard.value.cvv;
-    this.isBillingAddressVisible = (input.length > 0) ? true : false;
+    this.isBillingAddressVisible = (input.length > 0);
   }
 
   frmCard = new FormGroup({
     card_firstname: new FormControl(),
     card_lastname: new FormControl(),
     cardnumber: new FormControl(),
-    expiry: new FormControl(),
+    expiry: new FormControl('',  [Validators.required, Validators.max(2)]),
+    expMonth: new FormControl(),
     country: new FormControl(),
     streetaddress: new FormControl(),
     state: new FormControl(),
@@ -63,6 +64,7 @@ export class CardComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.getCardDetails(this.frmUser.value).subscribe(
       res => {
+        console.log(res);
         this.isProgressLoading = false;
         if (res.status) {
           let decoded_token = jwt_decode(res.data.card_token)
@@ -71,6 +73,7 @@ export class CardComponent implements OnInit {
             card_lastname: decoded_token[0].cLName,
             cardnumber: decoded_token[0].cNo,
             expiry: decoded_token[0].expYear,
+            expMonth: decoded_token[0].expMonth,
             country: decoded_token[0].country,
             streetaddress: decoded_token[0].address,
             state: decoded_token[0].state,
@@ -127,5 +130,16 @@ export class CardComponent implements OnInit {
       this.deleteCardDetails();
     }
   }
+
+  // monthExpMsgError:any;
+  // getErrorMessageOption() {
+  //   let val = this.frmCard.value.expMonth;
+  //   let lengthError = this.frmCard.controls.expMonth.hasError('max');
+  //   console.log(this.frmCard.controls.expMonth.hasError('max'))
+  //   if (val > 12 || val < 1)  {
+  //     this.monthExpMsgError = 'Invalid Month';
+  //     return true;
+  //   }
+  // }
 
 }

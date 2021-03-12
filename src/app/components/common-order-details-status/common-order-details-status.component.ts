@@ -31,7 +31,7 @@ export class CommonOrderDetailsStatusComponent implements OnInit {
 
   isPaid(): boolean {
     let status = this.order_details.status.payment_flag;
-    let value = (status > 0) ? true : false;
+    let value = (status > 0);
     return value;
   }
 

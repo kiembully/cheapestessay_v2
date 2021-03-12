@@ -44,6 +44,14 @@
                         </span>
                         <span class="fill-space padding10"></span>
                         <span class="spn-inner-card">
+                            <label for="cvv">Month Expire</label>
+                            <mat-form-field appearance="fill" class="mff-card-inputs">
+                            <input matInput type="number" placeholder="MM" required formControlName="expMonth">
+                            <!-- <mat-error *ngIf="frmCard.controls.expMonth.hasError('max')">sasd</mat-error> -->
+                            </mat-form-field>
+                        </span>
+                        <span class="fill-space padding10"></span>
+                        <span class="spn-inner-card">
                             <label for="cvv">CVV</label>
                             <mat-form-field appearance="fill" class="mff-card-inputs">
                             <input matInput type="password" placeholder="CVV" required formControlName="cvv" (keyup)="monitorCvv()">

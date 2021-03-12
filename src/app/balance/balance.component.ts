@@ -41,7 +41,7 @@ export class BalanceComponent implements OnInit {
         this.dataSource = new MatTableDataSource<balances>(res.data);
         this.dataSource.paginator = this.paginator;
         this.isProgressLoading = false;
-        this.isEmpty = (res.data == undefined) ? true : false;
+        this.isEmpty = (res.data == undefined);
       }
     )
   }
@@ -51,7 +51,7 @@ export class BalanceComponent implements OnInit {
   }
 
   gained(val) {
-    let state = (val.indexOf('+') > -1) ? true : false
+    let state = (val.indexOf('+') > -1);
     return state;
   }
 

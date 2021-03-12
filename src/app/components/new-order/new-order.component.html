@@ -14,6 +14,7 @@
                                 <span class="fill-space">Type of Service</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip1="matTooltip" (click)="tooltip1.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[0]"
@@ -38,6 +39,7 @@
                                 <span class="fill-space">Writer Level</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip2="matTooltip" (click)="tooltip2.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[1]"
@@ -64,6 +66,7 @@
                                 <span class="fill-space">Type of Paper</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip3="matTooltip" (click)="tooltip3.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[2]"
@@ -108,6 +111,7 @@
                                 <span class="fill-space">Subject</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip4="matTooltip" (click)="tooltip4.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[3]"
@@ -152,6 +156,7 @@
                                 <span class="fill-space">Timezone</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip5="matTooltip" (click)="tooltip5.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[4]"
@@ -178,6 +183,7 @@
                                 <span class="fill-space">Deadline</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip6="matTooltip" (click)="tooltip6.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[5]"
@@ -217,6 +223,7 @@
                                 <span class="fill-space">Pages</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip7="matTooltip" (click)="tooltip7.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[6]"
@@ -263,6 +270,7 @@
                                 <span class="fill-space">Topic</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip8="matTooltip" (click)="tooltip8.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[7]"
@@ -281,6 +289,7 @@
                                 <span class="fill-space">Details</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip9="matTooltip" (click)="tooltip9.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[8]"
@@ -299,6 +308,7 @@
                                 <span class="fill-space">Upload</span>
                                 <button class="material-icons btn-tooltip"
                                 type="button"
+                                #tooltip10="matTooltip" (click)="tooltip10.toggle()"
                                 mat-flat-button
                                 [disableRipple]="true"
                                 [matTooltip]="tooltip[9]"
@@ -348,6 +358,7 @@
                                         <span class="fill-space">Format / Style</span>
                                         <button class="material-icons btn-tooltip"
                                         type="button"
+                                        #tooltip11="matTooltip" (click)="tooltip11.toggle()"
                                         mat-flat-button
                                         [disableRipple]="true"
                                         [matTooltip]="tooltip[10]"
@@ -381,6 +392,7 @@
                                         <span class="fill-space">Discipline</span>
                                         <button class="material-icons btn-tooltip"
                                         type="button"
+                                        #tooltip12="matTooltip" (click)="tooltip12.toggle()"
                                         mat-flat-button
                                         [disableRipple]="true"
                                         [matTooltip]="tooltip[11]"
@@ -404,6 +416,7 @@
                                         <span class="fill-space">Preferred Writer</span>
                                         <button class="material-icons btn-tooltip"
                                         type="button"
+                                        #tooltip13="matTooltip" (click)="tooltip13.toggle()"
                                         mat-flat-button
                                         [disableRipple]="true"
                                         [matTooltip]="tooltip[12]"
@@ -455,6 +468,7 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip14="matTooltip" (click)="tooltip14.toggle()"
                                                 mat-icon-button
                                                 [disableRipple]="true"
                                                 [matTooltip]="tooltip[13]"
@@ -481,6 +495,7 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip15="matTooltip" (click)="tooltip15.toggle()"
                                                 mat-icon-button
                                                 [disableRipple]="true"
                                                 [matTooltip]="tooltip[14]"
@@ -506,6 +521,7 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip16="matTooltip" (click)="tooltip16.toggle()"
                                                 mat-icon-button
                                                 [disableRipple]="true"
                                                 [matTooltip]="tooltip[15]"
@@ -534,8 +550,14 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip17="matTooltip" (click)="tooltip17.toggle()"
                                                 mat-icon-button
-                                                [disableRipple]="true">error_outline</button>
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[16]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                [disableRipple]="true"
+                                                aria-label="Turnitin Plagiarism Tooltip">error_outline</button>
                                                 Turnitin Plagiarism Report <span class="spn-price-color">({{turnitinPrice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
@@ -547,8 +569,14 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip18="matTooltip" (click)="tooltip18.toggle()"
                                                 mat-icon-button
-                                                [disableRipple]="true">error_outline</button>
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[17]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                [disableRipple]="true"
+                                                aria-label="abstract page tooltip">error_outline</button>
                                                 Abstract Page <span class="spn-price-color">({{abstractPageprice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">
@@ -560,8 +588,14 @@
                                             <p class="p-options-label">
                                                 <button class="material-icons btn-tooltip"
                                                 type="button"
+                                                #tooltip19="matTooltip" (click)="tooltip19.toggle()"
                                                 mat-icon-button
-                                                [disableRipple]="true">error_outline</button>
+                                                [disableRipple]="true"
+                                                [matTooltip]="tooltip[18]"
+                                                matTooltipPosition="right"
+                                                matTooltipClass="tooltip-wrap"
+                                                [disableRipple]="true"
+                                                aria-label="send to mail tooltip">error_outline</button>
                                                 Send it to my E-Mail <span class="spn-price-color">({{sendEmailPrice}})</span></p>
                                         </span>
                                         <span class="spn-toggle-option">

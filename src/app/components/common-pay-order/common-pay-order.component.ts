@@ -239,4 +239,6 @@ export class CommonPayOrderComponent implements OnInit {
     )
   }
 
+  ltTooltipMsg = 'Note: This amount will be credited to your Cheapest Essay account.'
+
 }

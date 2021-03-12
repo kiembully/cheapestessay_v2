@@ -56,7 +56,7 @@ export class ApplyFreeQuoteComponent implements OnInit {
       res => {
         this.isProgressLoading = false;
         this.errorMessage = res.message;
-        this.formHasError = (!res.status) ? true : false;
+        this.formHasError = (!res.status);
         if (res.status == true) {
           localStorage.setItem('user_token', res.data);
           this.applyCoupon();

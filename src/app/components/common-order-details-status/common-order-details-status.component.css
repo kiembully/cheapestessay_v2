@@ -67,6 +67,9 @@ p.p-order-details-common {
     margin-top: 36px;
     padding: 0 14px;
 }
+.margin-zero {
+    margin: 0 !important;
+}
 .sec-deadline-timer > span {
     color: #000000;
     font-family: "SF Pro Text Bold";

@@ -90,4 +90,15 @@ export class InvoiceComponent implements OnInit {
     )
   }
 
+  convertTimestampToDate(timestamp) {
+    var s = new Date(parseInt(timestamp)).toLocaleDateString("en-US")
+    return s;
+  }
+
+  getCurrentDate() {
+    let today = new Date()
+    let date = today.getHours() + ":" + today.getMinutes() + ", " + today.toDateString();
+    return date;
+  }
+
 }

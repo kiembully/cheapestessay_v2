@@ -473,9 +473,9 @@ export class NewOrderComponent implements OnInit {
     "Sources - Please specify the exact number of books, journals, articles or any other sources you want the writer to use as references in your paper.",
     "Charts - it is often used to ease understanding of large quantities of data and the relationships between parts of the data. It will help you to convey your ideas in your paper better. $10 for 1 chart.",
     "PowerPoint Slide - Select number of slides of need to present a report. This is a way of attracting audience towards your views and arguments. 1 slide = 50% of the cost per word document.",
-    "",
-    "",
-    "",
+    "Turnitin Plagiarism Report - is an Internet-based plagiarism detection service run by the US company Turnitin, LLC",
+    "Abstract Page - is a brief summary of the service you avail or any in-depth analysis of a particular subject and is often used to help the reader quickly ascertain the paper's purpose.",
+    "Send it to my E-Mail - is an option where you choose to send the output on your email",
   ]
 }
 

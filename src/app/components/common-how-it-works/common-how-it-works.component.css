@@ -4,31 +4,44 @@
     align-self: flex-start;
 }
 .hiw-steps-img {
-    height: 279px;
-    width: 279px;
+    /* height: 279px;
+    width: 279px; */
+    /* padding: 60px 72px; */
     margin: auto;
-    zoom: 0.8;
 }
 .hiw-steps-img1 {
-    background-position: -504px -832px;
+    background-position: -252px -421px;
+	background-size: 8765px 710px;
+	width: 139px;
+	height: 129px;
 }
 .hiw-steps-img2 {
-    background-position: -1283px -843px;
+    background-position: -641px -421px;
+	background-size: 8765px 710px;
+	width: 141px;
+	height: 140px;
 }
 .hiw-steps-img3 {
-    background-position: -105px -832px;
+    background-position: -53px -417px;
+	background-size: 8765px 710px;
+	width: 138px;
+	height: 138px;
 }
 .hiw-steps-img4 {
-    background-position: -883px -832px;
+    background-position: -452px -426px;
+	background-size: 8765px 710px;
+	width: 129px;
+	height: 129px;
 }
 .step-wrap-inner {
     position: relative;
-    height: 395px;
-    width: 445px;
+    min-height: 230px;
+    width: 259px;
+    margin: 0 auto;
     display: flex;
     text-align: center;
     background: #DCE9F5;
-    box-shadow: 4px 6px 2px 0 rgba(0,0,0,0.5);
+    box-shadow: 4px 6px 2px 0 rgba(0,0,0,0.2);
     border-radius: 67% 33% 69% 31% / 71% 57% 43% 29% 
 }
 .sec-w-hiw { display: block; }
@@ -36,40 +49,38 @@
 
 .spn-steps-wrap {
     position: absolute;
-    top: 23px;
+    top: 0;
     left: 0;
-    height: 74.04px;
-    width: 73.2px;
+    height: 40px;
+    width: 40px;
     background-color: #FBD501;
     border-radius: 50%;
-    color: #12245A;
+    color: #000000;
     font-family: "SF Pro Text Bold";
-    font-size: 38px;
-    letter-spacing: 0;
-    line-height: 74.04px;
+    font-size: 20px;
+    font-weight: bold;
 }
 .spn-step-wrap h3 {
     color: #12245A;
     font-family: "SF Pro Text Bold";
-    font-size: 35px;
-    font-weight: bold;
-    letter-spacing: 0;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 24px;
     white-space: normal;
+    margin: 30px auto 8px auto
 }
 .spn-step-wrap p {
     color: #000000;
-    font-family: "SF Pro Text Bold";
-    font-size: 30px;
-    font-weight: 500;
+    font-family: "SF Pro Text Medium";
+    font-size: 22px;
     letter-spacing: 0;
-    margin: 0;
-    max-width: 445px;
     white-space: normal;
+    max-width: 268px;
+    margin: 0
 }
 .sec-w-hiw mat-toolbar-row:first-child {
     margin-bottom: 45px;
+}
+.mtr-lower-step-wrap {
+    display: none;
 }
 
 /* .owl-theme .owl-dots .owl-dot {
@@ -156,24 +167,9 @@
 } */
 
 /* RESPONSIVE SECTION  */
-/* Small devices (landscape phones, 576px and up) */
-@media screen and (max-width:576px) {  
-    .step-wrap-inner {
-        max-height: 295px;
-        max-width: 345px;
-        width: auto
-    }
-}
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media screen and (max-width:768px) {  
-  
-}
- 
-/* Large devices (desktops, 992px and up) */
-@media screen and (max-width:992px) { 
-    /* .sec-w-hiw { display: none; }
-    .sec-m-hiw { display: block; } */
     .sec-w-hiw mat-toolbar-row {
         display: block;
         text-align: -webkit-center;
@@ -184,12 +180,38 @@
     .spn-step-wrap {
         display: block;
     }
-    .spn-step-wrap:first-child {
-        margin-bottom: 45px;
+    .spn-step-wrap {
+        margin-bottom: 25px;
     }
+    .spn-step-wrap:last-child {
+        margin-bottom: 0;
+    }
+    .mtr-lower-step-wrap {
+        display: none !important;
+    }
+    .upper-step-wrap {
+        display: block !important
+    }
+  
+}
+ 
+/* Large devices (desktops, 992px and up) */
+@media screen and (max-width:992px) { 
+    /* .sec-w-hiw { display: none; }
+    .sec-m-hiw { display: block; } */
 }
  
 /* Extra large devices (large desktops, 1200px and up) */
-@media screen and (max-width:1200px) {  
-    
+@media screen and (max-width:1200px) {
+    .mtr-lower-step-wrap {
+        display: flex;
+    }
+    .upper-step-wrap {
+        display: none;
+    }
+    .mtr-lower-step-wrap,
+    .mtr-step-wrap {
+        max-width: 650px;
+        margin: 0 auto
+    }
 }

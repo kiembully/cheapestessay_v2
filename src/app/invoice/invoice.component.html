@@ -17,7 +17,7 @@
             <section class="sec-order-invoice">
                 <span><p class="p-order-label">Order ID</p></span>
                 <span class="fill-space"></span>
-                <span><p class="p-order-value">{{invoice.order_data.order_no_custom}}</p></span>
+                <span><p class="p-order-value">{{invoice.order_data.order_id}}</p></span>
             </section>
             <section class="sec-order-invoice">
                 <span><p class="p-order-label">Type Of Service</p></span>
@@ -52,14 +52,14 @@
             <section class="sec-order-invoice">
                 <span><p class="p-order-label">Fully Paid On</p></span>
                 <span class="fill-space"></span>
-                <span><p class="p-order-value">{{invoice.order_data.date_paid}}</p></span>
+                <span><p class="p-order-value">{{getCurrentDate()}}</p></span>
             </section>
             <section class="sec-order-invoice">
                 <span><p class="p-order-label">Payment Mode</p></span>
                 <span class="fill-space"></span>
                 <span><p class="p-order-value">{{invoice.payment_data.payment_mode}}</p></span>
             </section>
-            <section class="sec-order-invoice">
+            <section class="sec-order-invoice" *ngIf="invoice.payment_data.transaction_id!=''">
                 <span><p class="p-order-label">Transaction ID</p></span>
                 <span class="fill-space"></span>
                 <span><p class="p-order-value">{{invoice.payment_data.transaction_id}}</p></span>
