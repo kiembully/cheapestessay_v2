@@ -22,6 +22,7 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
   ) { }
 
   similarities:any = [];
+  url:any = this.route.snapshot.paramMap.get('id');
 
   isMoreSimilaritiesHidden: boolean = false;
   splitArray(arr) {
@@ -31,9 +32,11 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
 
     for (let line = 0; line < n; line++) {
       for (let i = 0; i < objectsPerLine; i++) {
-        const value = arr[i + line * objectsPerLine]
-        if (!value) continue //avoid adding "undefined" values
-        result[line].push(value)
+        if (this.url != arr[i].service) {
+          const value = arr[i + line * objectsPerLine]
+          if (!value) continue //avoid adding "undefined" values
+          result[line].push(value)
+        }
       }
     }
     return result;
@@ -41,13 +44,16 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
 
   ngOnInit(): void {
     const simService = this._service.similarities;
-    if (simService.find(item => item.service === this.route.snapshot.paramMap.get('id')) == null) {
-      this.similarities = this.isSimilaritieSpecial(this.route.snapshot.paramMap.get('id'),simService);
+    if (simService.find(item => item.service === this.url) == null) {
+      this.similarities = this.isSimilaritieSpecial(this.url,simService);
     } else {
-      const targetId = simService.find(item => item.service === this.route.snapshot.paramMap.get('id'));
+      const targetId = simService.find(item => item.service === this.url);
       const filteredObjects = simService.filter(item => item.id === targetId.id);
       this.similarities = filteredObjects;
     }
+    
+    // let parent_arr = {service: 'essay-writing-services', id: 1}
+    // console.log(this.similarities.unshift(parent_arr))
   }
 
   toServices(id) {

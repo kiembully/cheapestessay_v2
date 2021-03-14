@@ -2,13 +2,14 @@ import { Component, OnInit, ViewEncapsulation, Pipe, PipeTransform } from '@angu
 import { ActivatedRoute, NavigationEnd, Router, Event } from '@angular/router';
 import { ApiServices } from 'src/app/api.service';
 import { Title, Meta, DomSanitizer } from '@angular/platform-browser';
-import { service_object } from 'src/app/data/data'
+import { service_object } from 'src/app/data/data';
+import { services_functions } from 'src/app/data/ui-services';
 
 @Component({
   selector: 'app-services-detail',
   templateUrl: './services-detail.component.html',
   styleUrls: ['./services-detail.component.css'],
-  providers: [ApiServices, service_object],
+  providers: [ApiServices, service_object, services_functions],
   encapsulation: ViewEncapsulation.None,
 })
 
@@ -22,6 +23,7 @@ export class ServicesDetailComponent implements OnInit {
     private metaTagService: Meta,
     public sanitized: DomSanitizer,
     private _service: service_object,
+    public _fxServices: services_functions
   ) {
 
     this.router.events.subscribe((event: Event) => {
@@ -35,11 +37,12 @@ export class ServicesDetailComponent implements OnInit {
   isInitializing: boolean = false;
   services: any = this._service.service;
   child_services: any = this._service.similarities;
+  url:any = this.route.snapshot.paramMap.get('id')
   ngOnInit(): void {
   }
 
   initializeService() {
-    this.setSelectedService(this.route.snapshot.paramMap.get('id'));
+    this.setSelectedService(this.url);
   }
 
   initial_content:any;
@@ -58,7 +61,7 @@ export class ServicesDetailComponent implements OnInit {
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
       if (res.status) {
-        this.setSeo(this.route.snapshot.paramMap.get('id'))
+        this.setSeo(this.url)
         this.service_name = res.data.page_contents.name;
         this.initial_content = res.data.page_contents.initial_content;
         this.initial_pitch_header = res.data.page_contents.initial_pitch_header;
@@ -98,16 +101,8 @@ export class ServicesDetailComponent implements OnInit {
     })
   }
 
-  getCTA() {
-    let url = this.route.snapshot.paramMap.get('id');
-    let filtered = this.services.filter(function(el){
-      return el.name == url
-    })
-    return filtered[0]
-  }
-
   isServiceChild() {
-    let url = this.route.snapshot.paramMap.get('id');
+    let url = this.url;
     let filtered = this.child_services.filter(function(el){
         return el.service == url;
     })

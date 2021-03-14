@@ -1,4 +1,4 @@
-<section class="width1100 margin-bottom70">
+<section class="width1100 margin-bottom70" *ngIf="!is_writers">
     <owl-carousel-o [options]="orderWritten" class="oco-overlapping">
         <ng-template carouselSlide>
             <div class="order-written-item">
@@ -41,43 +41,20 @@
         </ng-template>  
     </owl-carousel-o>
 </section>
-<!-- <section class="width1100 margin-bottom70 sec-order-written">
-    <owl-carousel-o [options]="orderWritten">
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
+<section class="width1100 margin-bottom70" *ngIf="is_writers">
+    <owl-carousel-o [options]="orderWritten" class="oco-overlapping oco-writers">
+        <ng-template carouselSlide *ngFor="let list of topWriters">
+            <div class="order-written-item">
+                <div class="order-written-content">
+                    <div class="written-item-img-wrap">
+                        <div class="sprite-cheapest written-item-img"></div>
+                    </div>
+                    <p class="p-service-category">{{list.writer}}</p>
+                    <p class="p-complete-order">Total Completed Order</p>
+                    <p class="p-total-order">{{list.order_count}}</p>
+                    <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">HIRE NOW</button>
                 </div>
-                <p class="p-service-category">Essay Any Type</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1650</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
             </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
-                </div>
-                <p class="p-service-category">Report</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1500</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
-            </div>
-        </ng-template>  
-        <ng-template carouselSlide>
-            <div class="order-written-item"></div>
-            <div class="order-written-content">
-                <div class="written-item-img-wrap">
-                    <div class="sprite-cheapest written-item-img"></div>
-                </div>
-                <p class="p-service-category">Case Study</p>
-                <p class="p-complete-order">Total Complete Order</p>
-                <p class="p-total-order">1500</p>
-                <button type="button" mat-flat-button routerLink="/order" class="btn-order-now">ORDER NOW</button>
-            </div>
-        </ng-template>  
+        </ng-template>
     </owl-carousel-o>
-</section> -->
+</section>

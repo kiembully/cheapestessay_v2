@@ -11,6 +11,10 @@
                         <span>/</span>
                         <a class="a-service-path" mat-button>{{service_name}}</a></p>
                     <h1>{{initial_content}}</h1>
+                    <button type="button" mat-flat-button class="cta-btn-header" routerLink="/order" aria-label="cta button header">
+                        {{_fxServices.getCTA(url,services).cta[0].text}}
+                        <span class="material-icons">keyboard_arrow_right</span>
+                    </button>
                 </span>
                 <span class="fill-space padding10"></span>
                 <span class="spn-contain-services-form">
@@ -30,7 +34,15 @@
     </mat-toolbar>
 </section>
 
-<app-common-overlapping-carousel></app-common-overlapping-carousel>
+<app-common-overlapping-carousel [is_writers]="true"></app-common-overlapping-carousel>
+
+<section class="default-width">
+    <button type="button" class="btn-get-freequote" mat-flat-button routerLink="../free-quote" aria-label="cta get freequote">
+        Get a Free Quote
+        <span class="material-icons">keyboard_arrow_right</span>
+    </button>
+</section>
+
 <app-common-company-flexing></app-common-company-flexing>
 <!-- HOW IT WORKS SECTION -->
 <section class="default-width sec-home-hiw margin-top100">
@@ -69,7 +81,10 @@
     </mat-toolbar>
 </section>
 <section class="default-width">
-    <button type="button" class="btn-get-essay" mat-flat-button routerLink="../order">{{getCTA().cta[1].text}}</button>
+    <button type="button" class="btn-get-essay" mat-flat-button routerLink="../order" aria-label="cta get essay">
+        {{_fxServices.getCTA(url,services).cta[1].text}}
+        <span class="material-icons">keyboard_arrow_right</span>
+    </button>
 </section>
 <div class="diagonal-box margin-bottom100">
     <div class="width1120px revert-diagonal">
@@ -96,7 +111,10 @@
     </mat-toolbar>
 </section>
 <section class="default-width">
-    <button type="button" class="btn-get-freequote" mat-flat-button routerLink="../free-quote">Get a Free Quote</button>
+    <button type="button" class="btn-find-pro" mat-flat-button routerLink="../order" aria-label="cta find pro">
+        Finde Me Pro
+        <span class="material-icons">keyboard_arrow_right</span>
+    </button>
 </section>
 <div class="diagonal-box margin-bottom100">
     <div class="width1120px revert-diagonal">
@@ -105,6 +123,12 @@
 </div>
 <div class="margin-bottom100">
     <app-common-service-similarities [isInServices]="true"></app-common-service-similarities>
+    <section class="default-width">
+        <button type="button" class="btn-hire-writer" mat-flat-button routerLink="../order" aria-label="cta hire writer">
+            Hire a Pro Writer
+            <span class="material-icons">keyboard_arrow_right</span>
+        </button>
+    </section>
 </div>
 <app-common-faqs *ngIf="isInitializing && faq_entry.length > 0" [faq_entry]="faq_entry"></app-common-faqs>
 

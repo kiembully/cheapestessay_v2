@@ -7,7 +7,7 @@
 .mt-home-banner {
     position: relative;
 }
-.mt-home-banner h1 {
+.mt-home-banner p.p-header-pitch {
     color: #000000;
     font-family: "SF Pro Text Bold";
     font-size: 42px;
@@ -16,11 +16,13 @@
     max-width: 559px;
     width: 100%;
     white-space: normal;
+    margin-top: 0;
     margin-bottom: 16px;
 }
-.mt-home-banner h2 {
+.mt-home-banner label.lbl-sub-header-pitch {
     margin-bottom: 66px;
-    max-width: 540px;
+    display: block;
+    max-width: 575px;
     color: #000000;
     font-family: "SF Pro Text Semibold";
     font-size: 19px;
@@ -168,11 +170,11 @@
     .banner-options-wrap span:first-child button {
         margin-bottom: 15px;
     }
-    .mt-home-banner h1 {
+    .mt-home-banner p.p-header-pitch {
         font-size: 30px;
         line-height: 35px;
     }
-    .mt-home-banner h2 {
+    .mt-home-banner label.lbl-sub-header-pitch {
         font-size: 15px
     }
 }
@@ -205,7 +207,7 @@
         text-align: center;
         text-align: -webkit-center;
     }
-    .mt-home-banner h2 {
+    .mt-home-banner label.lbl-sub-header-pitch {
         text-align: center;
     }
     .welcome-banner-wrap {

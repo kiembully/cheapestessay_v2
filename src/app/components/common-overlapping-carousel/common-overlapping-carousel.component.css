@@ -35,6 +35,9 @@
     height: 45px;
     margin: auto
 }
+.oco-writers .p-service-category {
+    text-transform: uppercase
+}
 .p-service-category {
     color: #FFFFFF;
     font-family: "SF Pro Text Medium";

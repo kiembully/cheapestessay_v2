@@ -216,3 +216,14 @@ export class countdownTimer {
     return str_deadline;
   }
 }
+
+@Injectable()
+export class services_functions {
+  getCTA(id:any, services:any) {
+    let url = id;
+    let filtered = services.filter(function(el){
+      return el.name == url
+    })
+    return filtered[0]
+  }
+}

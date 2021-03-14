@@ -468,9 +468,9 @@ export class service_object {
     {
       set:[
         {service:'Essay Writing Services',link:'essay-writing-services'},
-        {service:'Article Writing Services',link:'article-writing-services'},
+        {service:'Assignment Writing Service',link:'assignment-writing-service'},
         {service:'Research Paper Writing Service',link:'research-paper-writing-services'},
-        {service:'Report Writing Services',link:'report-writing-service'},
+        {service:'Case Study Writing',link:'case-study-writing'},
         {service:'Coursework Writing Service',link:'coursework-writing-services'},
       ]
     },
@@ -507,7 +507,7 @@ export class service_object {
         {service:'Financial Statement Analysis',link:'financial-statement-analysis'},
         {service:'SWOT Analysis of a Business',link:'swot-analysis-of-business'},
         {service:'Professional Short Story Writers',link:'short-story-writers'},
-        {service:'Assignment Writing Service',link:'assignment-writing-service'},
+        {service:'Article Writing Services',link:'article-writing-services'},
       ]
     },
   ]

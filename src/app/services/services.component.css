@@ -149,6 +149,7 @@
     letter-spacing: 0;
     white-space: normal;
     padding: 20px;
+    border-radius: 15px;
 }
 .btn-get-freequote {
     margin: 0 auto 100px auto;
@@ -160,6 +161,53 @@
     letter-spacing: 0;
     white-space: normal;
     padding: 20px;
+    border-radius: 15px;
+}
+.btn-hire-writer {
+    margin: 30px auto 100px auto;
+    background: #172860;
+    display: block;
+    color: #ffffff;
+    font-family: "SF Pro Text Bold";
+    font-size: 28px;
+    letter-spacing: 0;
+    white-space: normal;
+    padding: 20px;
+    border-radius: 15px;
+}
+.btn-find-pro {
+    margin: 30px auto 100px auto;
+    background: #FAE976;
+    display: block;
+    color: #000000;
+    font-family: "SF Pro Text Bold";
+    font-size: 28px;
+    letter-spacing: 0;
+    white-space: normal;
+    padding: 20px;
+    border-radius: 15px;
+}
+.btn-find-pro .material-icons,
+.btn-hire-writer .material-icons,
+.btn-get-freequote .material-icons,
+.btn-get-essay .material-icons {
+    font-size: 45px;
+}
+.cta-btn-header {
+    background-color: #F7BA00;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "SF Pro Text Bold";
+    padding: 10px 15px;
+    border-radius: 15px;
+}
+.cta-btn-header .material-icons {
+    font-size: 45px
+}
+
+.sec-align-center {
+    text-align: center;
+    margin-bottom: 70px;
 }
 
 @media screen and (max-width:992px) {
@@ -167,6 +215,13 @@
         display: block;
         text-align: center;
         text-align: -webkit-center
+    }
+    .cta-btn-header {
+        font-size: 16px;
+        margin-bottom: 30px;
+    }
+    .cta-btn-header .material-icons {
+        font-size: 25px;
     }
 
 }
@@ -177,9 +232,17 @@
     }
 }
 @media screen and (max-width:576px) {
+    .btn-find-pro,
+    .btn-hire-writer,
     .btn-get-freequote,
     .btn-get-essay {
         font-size: 16px;
         padding: 10px 20px;
+    }
+    .btn-find-pro .material-icons,
+    .btn-hire-writer .material-icons,
+    .btn-get-freequote .material-icons,
+    .btn-get-essay .material-icons {
+        font-size: 25px;
     }
 }
