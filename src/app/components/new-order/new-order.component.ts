@@ -122,10 +122,6 @@ export class NewOrderComponent implements OnInit {
       duration: list.duration
     })
   }
-  word_tot:any = 560;
-  patchSpacing(val) {
-    this.word_tot = (val > 1) ? 560 : 280;
-  }
   patchFormat(id) {
     this.newOrderForm.patchValue({other_format:''})
   }
@@ -211,6 +207,7 @@ export class NewOrderComponent implements OnInit {
     this.disableSaving = true;
     this._auth.getOrderOptions(order_form).subscribe(
       val => {
+        console.log(val);
         this.disableSaving = false;
         this.decoded_order_token = jwt_decode(val.data.order_token);
         localStorage.removeItem('set_order_token');
@@ -230,11 +227,13 @@ export class NewOrderComponent implements OnInit {
   sendEmailPrice:any;
   abstractPageprice:any;
   in_top10:any;
+  word_count:any;
   assignValues(res) {
     this.page_cost = res.pageCost;
     this.slide_cost = res.slideCost;
     this.chart_cost = res.chartCost;
     this.in_top10 = res.in_top10;
+    this.word_count = res.word_count;
     this.turnitinPrice = this.filterExtrasIfFree(res.turnitinPrice);
     this.sendEmailPrice = this.filterExtrasIfFree(res.sendEmailPrice);
     this.abstractPageprice = this.filterExtrasIfFree(res.abstractPageprice);

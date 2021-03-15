@@ -24,6 +24,19 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
   similarities:any = [];
   url:any = this.route.snapshot.paramMap.get('id');
 
+  ngOnInit(): void {
+    const simService = this._service.similarities;
+    if (simService.find(item => item.service === this.url) == null) {
+      this.similarities = this.isSimilaritieSpecial(this.url,simService);
+    } else {
+      const targetId = simService.find(item => item.service === this.url);
+      const filteredObjects = simService.filter(item => item.id === targetId.id && item.service != this.url);
+      const parent_arr = {service: this.getParentUrl(targetId.id), id: targetId.id}
+      filteredObjects.unshift(parent_arr);
+      this.similarities = filteredObjects
+    }
+  }
+
   isMoreSimilaritiesHidden: boolean = false;
   splitArray(arr) {
     const result = [[], [], [], []] //we create it, then we'll fill it
@@ -40,20 +53,6 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
       }
     }
     return result;
-  }
-
-  ngOnInit(): void {
-    const simService = this._service.similarities;
-    if (simService.find(item => item.service === this.url) == null) {
-      this.similarities = this.isSimilaritieSpecial(this.url,simService);
-    } else {
-      const targetId = simService.find(item => item.service === this.url);
-      const filteredObjects = simService.filter(item => item.id === targetId.id);
-      this.similarities = filteredObjects;
-    }
-    
-    // let parent_arr = {service: 'essay-writing-services', id: 1}
-    // console.log(this.similarities.unshift(parent_arr))
   }
 
   toServices(id) {
@@ -94,6 +93,16 @@ export class CommonServiceSimilaritiesComponent implements OnInit {
       }
     }
     
+  }
+
+  getParentUrl(id) {
+    switch (id) {
+      case 1: {return 'essay-writing-services'}
+      case 3: {return 'research-paper-writing-services'}
+      case 25: {return 'coursework-writing-wervices'}
+      case 8: {return 'case-study-writing'}
+      case 9: {return 'assignment-writing-service'}
+    }
   }
 
 }

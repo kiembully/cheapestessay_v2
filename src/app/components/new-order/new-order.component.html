@@ -254,14 +254,14 @@
                                 <span class="spn-space-counter">
                                     <mat-form-field appearance="fill" class="mfl-common-select">
                                         <mat-select panelClass="mt-common-select" formControlName="set_spacing" [value]="newOrderForm.value.set_spacing">
-                                            <mat-option (click)="patchSpacing(2)" [value]="2">Single Spaced</mat-option>
-                                            <mat-option (click)="patchSpacing(1)" [value]="1">Double Spaced</mat-option>
+                                            <mat-option [value]="2">Single Spaced</mat-option>
+                                            <mat-option [value]="1">Double Spaced</mat-option>
                                         </mat-select>
                                         <span matSufix><div class="sprites-icons dd-icon"></div></span>
                                     </mat-form-field>
                                 </span>
                             </div>
-                            <label class="lbl-common-style" for="pages">{{word_tot * newOrderForm.value.page}} Word(s)</label>
+                            <label class="lbl-common-style" for="pages">{{word_count}} Word(s)</label>
                         </span>
                     </section>
                     <section class="sec-order-wrap sec-topic">
