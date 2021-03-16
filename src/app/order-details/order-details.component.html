@@ -11,7 +11,7 @@
     <span class="spn-order-details-wrap">
         <section class="sec-order-details-wrap" *ngIf="!isProgressLoading">
             <mat-tab-group class="mtb-order-details" animationDuration="100ms">
-                <mat-tab *ngIf="!(order_status == 1)" label="Paper"><app-common-order-details-paper [paper_details]="paper_details"></app-common-order-details-paper></mat-tab>
+                <mat-tab *ngIf="!(order_status == 1)" label="Paper"><app-common-order-details-paper [order_details]="order_details" [paper_details]="paper_details"></app-common-order-details-paper></mat-tab>
                 <mat-tab label="Details"><app-common-order-details [order_details]="order_details"></app-common-order-details></mat-tab>
                 <mat-tab label="Files"><app-common-order-details-files [order_details]="order_details"></app-common-order-details-files></mat-tab>
                 <mat-tab *ngIf="!(order_status == 1)" label="Payment"><app-common-order-details-payment [order_details]="order_details"></app-common-order-details-payment></mat-tab>

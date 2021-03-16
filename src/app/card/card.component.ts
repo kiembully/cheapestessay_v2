@@ -44,8 +44,7 @@ export class CardComponent implements OnInit {
     card_firstname: new FormControl(),
     card_lastname: new FormControl(),
     cardnumber: new FormControl(),
-    expiry: new FormControl('',  [Validators.required, Validators.max(2)]),
-    expMonth: new FormControl(),
+    expiry: new FormControl(),
     country: new FormControl(),
     streetaddress: new FormControl(),
     state: new FormControl(),
@@ -60,6 +59,8 @@ export class CardComponent implements OnInit {
   })
 
   country_codes: any;
+  expMonth:any = 12;
+  expYear:any = 2021;
   getCardDetails() {
     this.isProgressLoading = true;
     this._auth.getCardDetails(this.frmUser.value).subscribe(
@@ -68,12 +69,13 @@ export class CardComponent implements OnInit {
         this.isProgressLoading = false;
         if (res.status) {
           let decoded_token = jwt_decode(res.data.card_token)
+          this.expMonth = decoded_token[0].expMonth,
+          this.expYear = decoded_token[0].expYear,
           this.frmCard.patchValue({
             card_firstname: decoded_token[0].cFName,
             card_lastname: decoded_token[0].cLName,
             cardnumber: decoded_token[0].cNo,
-            expiry: decoded_token[0].expYear,
-            expMonth: decoded_token[0].expMonth,
+            expiry: decoded_token[0].expMonth + '/' + decoded_token[0].expYear,
             country: decoded_token[0].country,
             streetaddress: decoded_token[0].address,
             state: decoded_token[0].state,
@@ -131,15 +133,20 @@ export class CardComponent implements OnInit {
     }
   }
 
-  // monthExpMsgError:any;
-  // getErrorMessageOption() {
-  //   let val = this.frmCard.value.expMonth;
-  //   let lengthError = this.frmCard.controls.expMonth.hasError('max');
-  //   console.log(this.frmCard.controls.expMonth.hasError('max'))
-  //   if (val > 12 || val < 1)  {
-  //     this.monthExpMsgError = 'Invalid Month';
-  //     return true;
-  //   }
-  // }
+  isMonthText:boolean;
+  patchMonth(e) {
+  this.isMonthText = (e.length >= 4) ? true : false;
+    this.frmCard.patchValue({
+      expiry: e + '/' + this.expYear
+    })
+  }
+
+  isYearText:boolean;
+  patchYear(e) {
+    this.isYearText = (e.length >= 4) ? true : false;
+    this.frmCard.patchValue({
+      expiry: this.expMonth + '/' + e
+    })
+  }
 
 }

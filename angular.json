@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/am-starter-pack",
+            "outputPath": "dist/am-starter-pack/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -22,13 +22,15 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/robots.txt",
+              "src/sitemap.xml"
             ],
             "styles": [
               "src/app/theme.scss",
               "src/styles.css",
               "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.carousel.min.css",
-              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css",
+              "node_modules/ngx-owl-carousel-o/lib/styles/prebuilt-themes/owl.theme.default.min.css"
             ],
             "scripts": []
           },
@@ -107,7 +109,8 @@
             "tsConfig": [
               "tsconfig.app.json",
               "tsconfig.spec.json",
-              "e2e/tsconfig.json"
+              "e2e/tsconfig.json",
+              "tsconfig.server.json"
             ],
             "exclude": [
               "**/node_modules/**"
@@ -124,6 +127,73 @@
             "production": {
               "devServerTarget": "am-starter-pack:serve:production"
             }
+          }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/am-starter-pack/server",
+            "main": "server.ts",
+            "tsConfig": "tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": true
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "am-starter-pack:build",
+            "serverTarget": "am-starter-pack:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "am-starter-pack:build:production",
+              "serverTarget": "am-starter-pack:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "am-starter-pack:build:production",
+            "serverTarget": "am-starter-pack:server:production",
+            "guessRoutes": false,
+            "routes": [
+              "/",
+              "/about-us",
+              "/how-it-works",
+              "/order",
+              "/contact-us",
+              "/revision-policy",
+              "/privacy-policy",
+              "/terms-of-use",
+              "/faqs",
+              "/money-back-guarantee",
+              "/pricing",
+              "/guarantees",
+              "/free-quote",
+              "/what-we-do",
+              "/services",
+              "/disclaimer",
+              "/arabic",
+              "/404",
+              "/top-writers",
+              "/reviews"
+            ]
+          },
+          "configurations": {
+            "production": {}
           }
         }
       }

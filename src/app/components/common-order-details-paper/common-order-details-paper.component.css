@@ -16,6 +16,18 @@
     margin: 0 auto;
     display: block;
 }
+.mtr-common-paper-header p {
+    margin: 0 auto !important;
+    color: #000000;
+    font-size: 24px;
+    font-family: "SF Pro Text Bold";
+    letter-spacing: 1px;
+    line-height: 31px;
+    margin: 27px 0;
+}
+.mtr-common-paper-header p span {
+    color: #1a62f5;
+}
 .mt-common-paper h1 > span {
     color: #578EFD;
 }
@@ -51,4 +63,78 @@
     letter-spacing: 0;
     line-height: 31px;
     margin: 0;
+}
+.tbl-file-ready {
+    width: 100%;
+}
+.tbl-file-ready tr {
+    height: 60px;
+}
+.tbl-file-ready tr td:nth-child(3) {
+    text-align: center;
+}
+.tbl-file-ready .file-img-wrap {
+    height: 22px;
+    width: 24px;
+    background: url('https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png') no-repeat center center;
+    background-size: 100%;
+    margin: auto;
+    padding: 15px;
+}
+.tbl-file-ready h6 {
+    color: #000000;
+    font-family: "SF Pro Text Semibold";
+    font-size: 15px;
+    letter-spacing: 0;
+    line-height: 18px;
+    margin: 0;
+    margin-bottom: 2px;
+    max-width: 162px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.tbl-file-ready p {
+    color: #959595;
+    font-family: "SF Pro Text Light";
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 9px;
+    margin: 0;
+    padding: 0 5px;
+}
+.tbl-file-ready .spn-uploader {
+    color: #000000;
+    font-family: "SF Pro Text Light";
+    font-size: 15px;
+    font-weight: 300;
+    letter-spacing: 0;
+    line-height: 16px;
+    margin-left: 15px;
+}
+.tbl-file-ready .spn-uploader span {
+    color: #3B7CFF;
+}
+.tbl-file-ready .btn-view-file {
+    display: flex;
+    padding: 10px;
+    max-width: 140px;
+    margin: 0 auto !important;
+    border-radius: 17.5px;
+    background-color: #ffffff;
+    font-family: "SF Pro Text Regular";
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 10%);
+    margin: 0 2%;
+    color: #000000;
+    font-size: 16px;
+    line-height: 18px;
+}
+.tbl-file-ready .btn-view-file .dl-icon {
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    padding-right: 10px;
+    border-radius: 40px;
+    background: transparent url('https://d3se3mk07n7blr.cloudfront.net/assets/img/w-view-icon.png') no-repeat center center;
+    background-size: 100%;
 }

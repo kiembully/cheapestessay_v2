@@ -6,7 +6,7 @@
         <form (ngSubmit)="submitNewUser()" [formGroup]="frmNewUser" class="frm-new-user-discount" [ngClass]="(has_image)?'reverse-row':''">
             <app-common-progress-bar *ngIf="isUnlocking"></app-common-progress-bar>
             <span>
-                <label for="dscEmail" *ngIf="!has_image">USE 15% DISCOUNT NOW</label>
+                <label *ngIf="!has_image">USE 15% DISCOUNT NOW</label>
                 <div *ngIf="has_image" class="sprite-cheapest discount-img-wrap"></div>
             </span> 
             <span class="fill-space"></span>
@@ -14,7 +14,6 @@
                 <div class="new-user-inner-wrap">
                     <span class="padding-right20">
                         <input
-                        id="dscEmail"
                         name="discount-email" 
                         type="email" 
                         formControlName="email" 

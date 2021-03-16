@@ -35,19 +35,18 @@
                 </span>
                 <span class="fill-space padding10"></span>
                 <span class="spn-mff-wrap">
-                    <div class="inner-card-form">
+                    <div class="inner-card-form column3">
                         <span class="spn-inner-card">
                             <label for="expiry">Expiry</label>
                             <mat-form-field appearance="fill" class="mff-card-inputs">
-                            <input matInput placeholder="MM/YYYY" required formControlName="expiry">
+                            <input matInput [type]="isYearText ? 'text' : 'number'" #yearVal placeholder="YYYY" required [value]="expYear" (input)="patchYear(yearVal.value)" minlength="1" maxLength="4">
                             </mat-form-field>
                         </span>
                         <span class="fill-space padding10"></span>
                         <span class="spn-inner-card">
                             <label for="cvv">Month Expire</label>
                             <mat-form-field appearance="fill" class="mff-card-inputs">
-                            <input matInput type="number" placeholder="MM" required formControlName="expMonth">
-                            <!-- <mat-error *ngIf="frmCard.controls.expMonth.hasError('max')">sasd</mat-error> -->
+                            <input matInput #monthVal [type]="isMonthText ? 'text' : 'number'" placeholder="MM" required [value]="expMonth" (input)="patchMonth(monthVal.value)" minlength="4" maxlength="2">
                             </mat-form-field>
                         </span>
                         <span class="fill-space padding10"></span>
@@ -69,7 +68,7 @@
                         <mat-select disableOptionCentering formControlName="country">
                             <mat-option 
                             *ngFor="let list of country_codes"
-                            [value]="list.alpha2Code">{{list.name}}</mat-option>
+                            [value]="list.name">{{list.name}}</mat-option>
                         </mat-select>
                         </mat-form-field>
                     </span>

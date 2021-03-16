@@ -124,7 +124,7 @@
     border-left: 1px solid #ffffff;
 }
 .btn-logout {
-    height: 30px;
+    padding: 10px;
     width: 115px;
     border-radius: 60px;
     background-color: #12245A;
@@ -348,7 +348,7 @@ a.btn-more-menu {
     background-size: 1940px;
     background-position: -10px 0;
 }
-.h1-cheapestessay {
+.p-cheapestessay {
     color: #12245A;
     font-family: "SF Pro Text Bold";
     font-size: 22px;
@@ -356,7 +356,7 @@ a.btn-more-menu {
     white-space: nowrap;
     text-align: center;
 }
-.h1-cheapestessay span { color: #FFD500; }
+.p-cheapestessay span { color: #FFD500; }
 
 /* OVERLAY */
 #overlay-w,

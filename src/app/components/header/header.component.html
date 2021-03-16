@@ -5,13 +5,13 @@ class="sec-default-header fixed-nav w-header"
 [style.box-shadow]="isHeaderScrolled ? '0 5px 10px 0 rgba(99,111,175,.14)' : 'none'">
     <mat-toolbar color="primary" class="default-width">
         <mat-toolbar-row>
-            <span class="w-nav-hidden"><a class="btn-brand" routerLink="/" mat-button>Cheapest <span>Essay</span></a></span>
+            <span class="w-nav-hidden"><a class="btn-brand" aria-label="link home" rel="noopener" routerLink="/" mat-button>Cheapest <span>Essay</span></a></span>
             <span class="m-nav-hidden">
                 <button aria-label="menu button" mat-button class="btn-m-nav" (click)="toggleMobileMenu()"><span class="material-icons">menu</span></button>
             </span>
             <span class="fill-space"></span>
-            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</a></span>
-            <span class="w-nav-hidden"><a class="btn-client-page" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</a></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" aria-label="link how it works" rel="noopener" routerLinkActive="active" routerLink="how-it-works" mat-button>How it works</a></span>
+            <span class="w-nav-hidden"><a class="btn-client-page" aria-label="link pricing" rel="noopener" routerLinkActive="active" routerLink="pricing" mat-button>Pricing</a></span>
             <span class="spn-services-menu-wrap w-nav-hidden">
                 <button aria-label="services button" class="btn-client-page" mat-button (click)="togglePanel()" [ngClass]="{'active':isServicesActive}">Services</button>
             </span>
@@ -20,13 +20,13 @@ class="sec-default-header fixed-nav w-header"
             <span class="spn-more-menu w-nav-hidden">
                 <button aria-label="more button" class="btn-client-page" mat-button [matMenuTriggerFor]="more">More...</button>
                 <mat-menu #more="matMenu" xPosition="before" aria-label="more page">
-                    <a class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</a>
-                    <a class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</a>
-                    <a class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</a>
-                    <a class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</a>
-                    <a class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</a>
-                    <a class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</a>
-                    <a rel="noopener" class="btn-more-menu" (click)="openBlog()" mat-menu-item>Blog</a>
+                    <a aria-label="link contact us" rel="noopener" class="btn-more-menu" routerLink="contact-us" routerLinkActive="active" mat-menu-item>Contact Us</a>
+                    <a aria-label="link about us" rel="noopener" class="btn-more-menu" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</a>
+                    <a aria-label="link revision policy" rel="noopener" class="btn-more-menu" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</a>
+                    <a aria-label="link privacy policy" rel="noopener" class="btn-more-menu" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</a>
+                    <a aria-label="link terms of use" rel="noopener" class="btn-more-menu" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</a>
+                    <a aria-label="link faqs" rel="noopener" class="btn-more-menu" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</a>
+                    <a aria-label="link blog" rel="noopener" class="btn-more-menu" (click)="openBlog()" mat-menu-item>Blog</a>
                 </mat-menu>
             </span>
             <span class="spn-btn-wrap" *ngIf="!isBtnTotalVisible()">
@@ -46,15 +46,15 @@ class="sec-default-header fixed-nav w-header"
                     <mat-toolbar color="primary">
                         <mat-toolbar-row *ngFor="let row of menuServices; let i = index;" yPosition="below">
                             <span class="spn-services-inner" *ngFor="let list of row.row; let j = index">
-                                <button 
+                                <button
                                 *ngIf="!(i==5 && j==3)"
-                                mat-menu-item type="button"
+                                mat-menu-item
                                 class="btn-more-menu"
                                 (click)="selectService(list.id)"
                                 [value]="list.id">{{list.name}}</button>
                                 <button 
                                 *ngIf="(i==5 && j==3)"
-                                mat-menu-item type="button"
+                                mat-menu-item
                                 class="btn-more-menu"
                                 (click)="togglePanel()"
                                 style="text-decoration: underline;"
@@ -71,9 +71,9 @@ class="sec-default-header fixed-nav w-header"
 <div class="profile-header-outer" *ngIf="isProfileHeaderVisible(current_path, isUserOnline)">
     <section class="full-width common-bluish">
         <div class="default-width">
-            <mat-toolbar color="accent">
+            <mat-toolbar>
                 <mat-toolbar-row class="mtr-profile-header">
-                    <span><button class="btn-brand-2" color="accent" type="button" mat-flat-button routerLink="/">Cheapest <span>Essay</span></button></span>
+                    <span><a aria-label="link user home" class="btn-brand-2" color="accent" mat-flat-button routerLink="/">Cheapest <span>Essay</span></a></span>
                     <span class="fill-space"></span>
                     <span>
                         <div class="balance-wrap">
@@ -83,7 +83,7 @@ class="sec-default-header fixed-nav w-header"
                     </span>
                     <span class="spn-m-hidden spn-profile-name">Name: {{headerForm.value.first_name}} {{headerForm.value.last_name}}</span>
                     <span class="spn-m-hidden spn-profile-name">Email: {{headerForm.value.email}}</span>
-                    <span><button mat-flat-button type="button" color="accent" class="btn-logout" (click)="openLogoutDialog()">Logout</button></span>
+                    <span><a mat-flat-button aria-label="link logout" class="btn-logout" (click)="openLogoutDialog()">Logout</a></span>
                 </mat-toolbar-row>
             </mat-toolbar>
         </div>
@@ -91,41 +91,41 @@ class="sec-default-header fixed-nav w-header"
     <section class="full-width common-bluish w-profile-header">
         <mat-divider class="profile-header-div"></mat-divider>
         <div class="default-width">
-            <mat-toolbar color="accent">
+            <mat-toolbar>
                 <mat-toolbar-row class="mtr-subheader">
                     <span routerLink="order" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn new order active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/newOrder.png" alt="New Order" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/newOrder.png">
                         </button>
                         <p class="p-btn-label">New Order</p>
                     </span>
                     <span class="fill-space spn-menu-separator"></span>
                     <span routerLink="my-orders" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn orders active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png" alt="Orders" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Orders.png">
                         </button>
                         <p class="p-btn-label">Orders</p>
                     </span>
                     <span routerLink="profile" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn profile active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Profile.png" alt="Profile" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Profile.png">
                         </button>
                         <p class="p-btn-label">Profile</p>
                     </span>
                     <span routerLink="balance" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn balance active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png" alt="Balance" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Balance.png">
                         </button>
                         <p class="p-btn-label">Balance</p>
                     </span>
                     <span routerLink="discount" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn discount active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/Discount.png" alt="Discount" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/Discount.png">
                         </button>
                         <p class="p-btn-label">Discount</p>
                     </span>
                     <span routerLink="level" routerLinkActive="active">
-                        <button class="btn-subheader" type="button" mat-fab>
+                        <button aria-label="btn level active" class="btn-subheader" mat-fab>
                             <img data-cfsrc="https://d3se3mk07n7blr.cloudfront.net/assets/img/lvl-gold-active.png" alt="Level" src="https://d3se3mk07n7blr.cloudfront.net/assets/img/lvl-gold-active.png">
                         </button>
                         <p class="p-btn-label">Level</p>
@@ -139,60 +139,60 @@ class="sec-default-header fixed-nav w-header"
 <div class="mob-nav-wrap" [ngClass]="{'active':mobileNavState}">
     <section>
         <div class="sprites-icons cheapestessay-icon"></div>
-        <h1 class="h1-cheapestessay">Cheapest <span>Essay</span></h1>
+        <p class="p-cheapestessay">Cheapest <span>Essay</span></p>
     </section>
     <section class="sec-routers">
         <mat-list role="list">
-            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/" mat-button>Home</button></mat-list-item>
-            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/order" mat-button>Orden Now</button></mat-list-item>
-            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/how-it-works" mat-button>How it works</button></mat-list-item>
-            <mat-list-item role="listitem"><button type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/pricing" mat-button>Pricing</button></mat-list-item>
+            <mat-list-item role="listitem"><a aria-label="m link jome" rel="noopener" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/" mat-button>Home</a></mat-list-item>
+            <mat-list-item role="listitem"><a aria-label="m link order no" rel="noopener" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/order" mat-button>Order Now</a></mat-list-item>
+            <mat-list-item role="listitem"><a aria-label="m link how it works" rel="noopener" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/how-it-works" mat-button>How it works</a></mat-list-item>
+            <mat-list-item role="listitem"><a aria-label="m link pricing" rel="noopener" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/pricing" mat-button>Pricing</a></mat-list-item>
         </mat-list>
     </section>
     <section class="sec-routers">
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-                <button type="button" mat-flat-button>Services <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
+                <button aria-label="m btn services" mat-flat-button>Services <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
             </mat-expansion-panel-header>
             <mat-list role="list">
-                <mat-list-item role="listitem" *ngFor="let service of menuServicesM">
-                    <button (click)="selectService(service.id)" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['', service.id]" routerLinkActive="active" mat-button>{{service.name}}</button>
+                <mat-list-item role="listitem" *ngFor="let service of menuServicesM; let i = index">
+                    <a rel="noopener" (click)="selectService(service.id)" [routerLinkActiveOptions]="{ exact: true }" [routerLink]="['', service.id]" routerLinkActive="active" mat-button>{{service.name}}</a>
                 </mat-list-item>
             </mat-list>
         </mat-expansion-panel>
     </section>
     <section class="sec-routers">
         <mat-list role="list">
-            <mat-list-item role="listitem"><button aria-label="contact us" role="button" (click)="closePanel()" type="button" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/contact-us" mat-menu-item>Contact Us</button></mat-list-item>
+            <mat-list-item role="listitem"><a aria-label="contact us" rel="noopener" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="/contact-us" mat-menu-item>Contact Us</a></mat-list-item>
         </mat-list>
     </section>
     <section class="sec-routers">
         <mat-expansion-panel hideToggle>
             <mat-expansion-panel-header>
-                <button type="button" mat-flat-button>More... <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
+                <button mat-flat-button>More... <span class="fill-space"></span> <span class="material-icons">expand_more</span></button>
             </mat-expansion-panel-header>
             <mat-list role="list">
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="money-back-guarantee" routerLinkActive="active" mat-button>100% Refund</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</button></mat-list-item>
-                <mat-list-item role="listitem"><button (click)="closePanel()" [routerLinkActiveOptions]="{ exact: true }" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</button></mat-list-item>
-                <mat-list-item role="listitem"><a rel="noopener" href="https://blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more money back guarantee" [routerLinkActiveOptions]="{ exact: true }" routerLink="money-back-guarantee" routerLinkActive="active" mat-button>100% Refund</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more revision policy" [routerLinkActiveOptions]="{ exact: true }" routerLink="revision-policy" routerLinkActive="active" mat-menu-item>Revision Policy</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more terms of use" [routerLinkActiveOptions]="{ exact: true }" routerLink="terms-of-use" routerLinkActive="active" mat-menu-item>Terms of Use</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more privacy policy" [routerLinkActiveOptions]="{ exact: true }" routerLink="privacy-policy" routerLinkActive="active" mat-menu-item>Privacy Policy</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more faqs" [routerLinkActiveOptions]="{ exact: true }" routerLink="faqs" routerLinkActive="active" mat-menu-item>FAQs</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more guarantees" [routerLinkActiveOptions]="{ exact: true }" routerLinkActive="active" routerLink="guarantees" mat-button>Guarantees</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more about us" [routerLinkActiveOptions]="{ exact: true }" routerLink="about-us" routerLinkActive="active" mat-menu-item>About Us</a></mat-list-item>
+                <mat-list-item role="listitem"><a rel="noopener" aria-label="link more blog" href="https://blog.cheapestessay.com" target="_blank" mat-menu-item>Blog</a></mat-list-item>
             </mat-list>
         </mat-expansion-panel>
     </section>
     <span class="fill-space"></span>
     <section class="sec-app-btn-wrap">
         <div class="app-download-wrap">
-            <span><button (click)="toAppStore()" class="btn-app-link" type="button" mat-flat-button>
+            <span><button aria-label="btn app store" (click)="toAppStore()" class="btn-app-link" mat-flat-button>
                 <div class="app-logo-sprite btn-app-store"></div>
                 <p class="p-dl-on">Get it on</p>
                 <p class="p-app-name">App Store</p>
             </button></span>
             <span class="fill-space spn-separate-app"></span>
-            <span><button (click)="toGooglePlay()" class="btn-app-link" type="button" mat-flat-button>
+            <span><button aria-label="btn play store" (click)="toGooglePlay()" class="btn-app-link" mat-flat-button>
                 <div class="app-logo-sprite btn-play-store"></div>
                 <p class="p-dl-on">Get it on</p>
                 <p class="p-app-name">Google Play</p>

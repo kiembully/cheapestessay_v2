@@ -9,9 +9,12 @@ import { Component, OnInit, ViewEncapsulation, Input } from '@angular/core';
 export class CommonOrderDetailsPaperComponent implements OnInit {
 
   @Input() public paper_details: any;
+  @Input() public order_details:any;
+  orderIsCompleted:boolean;
   constructor() { }
 
   ngOnInit(): void {
+    this.orderIsCompleted = (this.order_details.status.order_status == 'Completed') ? true : false;
   }
 
 }

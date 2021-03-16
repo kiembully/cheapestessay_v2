@@ -14,7 +14,7 @@ export class CommonOrderDetailsFilesComponent implements OnInit {
   constructor(public _dialog_trigger: DialogTriggers) { }
 
   ngOnInit(): void {
-    localStorage.removeItem('file_update')
+    localStorage.removeItem('file_update');
   }
 
   openMaterial(url) {

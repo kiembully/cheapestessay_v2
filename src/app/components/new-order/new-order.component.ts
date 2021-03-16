@@ -207,7 +207,6 @@ export class NewOrderComponent implements OnInit {
     this.disableSaving = true;
     this._auth.getOrderOptions(order_form).subscribe(
       val => {
-        console.log(val);
         this.disableSaving = false;
         this.decoded_order_token = jwt_decode(val.data.order_token);
         localStorage.removeItem('set_order_token');

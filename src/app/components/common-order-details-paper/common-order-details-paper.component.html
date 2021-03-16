@@ -1,12 +1,24 @@
 <mat-toolbar color="primary" class="mt-common-paper">
     <mat-toolbar-row class="mtr-common-paper-header">
         <!-- <h1>Writer <span>W32</span> is working in your paper now.</h1> -->
-        <h2>{{paper_details[0]}}</h2>
+        <h2 *ngIf="!orderIsCompleted">{{paper_details[0]}}</h2>
+        <h2 *ngIf="orderIsCompleted">Your order is complete!</h2>
+        <p *ngIf="orderIsCompleted">Writer ID: <span class="spn-writer-id-wrap">{{order_details.files.writer_files.data[0].id}}</span></p>
     </mat-toolbar-row>
     <mat-toolbar-row>
-        <section class="sec-order-paper">
+        <section class="sec-order-paper" *ngIf="!orderIsCompleted">
             <h3>{{paper_details[1]}}</h3>
             <p>{{paper_details[2]}}</p>
+        </section>
+        <section class="sec-order-paper" *ngIf="orderIsCompleted">
+            <table class="tbl-file-ready">
+                <tr *ngFor="let file of order_details.files.writer_files.data">
+                    <td><div class="file-img-wrap"></div></td>
+                    <td><h6>{{file.file_name}}</h6><p>{{file.date_added}} <span class="spn-uploader">Writer ID: <span>{{file.user_name}}</span></span></p></td>
+                    <td></td>
+                    <td><a mat-flat-button class="btn-view-file" [href]="file.file_path" target="_blank" aria-label="link download file" [download]="file.file_name"><div class="dl-icon"></div> Download</a></td>
+                </tr>
+            </table>
         </section>
     </mat-toolbar-row>
 </mat-toolbar>

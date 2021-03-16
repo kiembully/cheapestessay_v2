@@ -187,7 +187,7 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
     MaintenanceComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,

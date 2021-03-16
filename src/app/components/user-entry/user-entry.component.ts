@@ -123,7 +123,6 @@ export class UserEntryComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountryCode(); 
-    this.setUrlDestination()
   }
 
   tabIndex: any;

@@ -61,6 +61,7 @@ export class ServicesDetailComponent implements OnInit {
   setSelectedService(id) {
     this._auth.getService(id).subscribe(res=>{
       if (res.status) {
+        console.log(res);
         this.setSeo(this.url)
         this.service_name = res.data.page_contents.name;
         this.initial_content = res.data.page_contents.initial_content;

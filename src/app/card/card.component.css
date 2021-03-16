@@ -82,8 +82,11 @@
     display: flex;
     width: 100%;
 }
-.spn-inner-card {
+.column3 .spn-inner-card {
     max-width: 31% !important;
+}
+.spn-inner-card {
+    max-width: 50% !important;
 }
 .btn-update-card {
     font-family: "SF Pro Text Bold";
