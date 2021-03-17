@@ -242,7 +242,7 @@ export class NewOrderComponent implements OnInit {
     this.plagiarism_cost = res.turnitinPrice;
     this.abstract_cost = res.abstractPageprice;
     this.email_cost = res.sendEmailPrice;
-    this.total_price = res.price_without_discount;
+    this.total_price = res.totalPrice;
     this.price_saved = res.price_without_discount - res.totalPrice;
     this.price_saved = Math.round((this.price_saved + Number.EPSILON) * 100) / 100;
   }
