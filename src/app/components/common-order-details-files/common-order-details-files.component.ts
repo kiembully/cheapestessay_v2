@@ -13,8 +13,10 @@ export class CommonOrderDetailsFilesComponent implements OnInit {
 
   constructor(public _dialog_trigger: DialogTriggers) { }
 
+  hasWriterFiles:boolean = true;
   ngOnInit(): void {
     localStorage.removeItem('file_update');
+    this.hasWriterFiles = ((this.order_details.files.writer_files.data != null))
   }
 
   openMaterial(url) {

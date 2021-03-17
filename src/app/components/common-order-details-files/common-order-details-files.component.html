@@ -24,14 +24,14 @@
         <span>
             <h4>Writer Files</h4>
             <div class="file-container-wrap">
-                <table class="tbl-file-container" *ngIf="order_details.files.writer_files.data.length <= 0">
+                <table class="tbl-file-container" *ngIf="!hasWriterFiles">
                     <tr>
                         <td>
                             <h5 class="h5-no-files">No file(s) uploaded.</h5>
                         </td>
                     </tr>
                 </table>
-                <table class="tbl-file-container" *ngIf="order_details.files.writer_files.data.length > 0">
+                <table class="tbl-file-container" *ngIf="hasWriterFiles">
                     <tr *ngFor="let file of order_details.files.writer_files.data">
                         <td><div class="file-img-wrap"></div></td>
                         <td>

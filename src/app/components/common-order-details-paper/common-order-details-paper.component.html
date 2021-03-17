@@ -1,9 +1,8 @@
 <mat-toolbar color="primary" class="mt-common-paper">
     <mat-toolbar-row class="mtr-common-paper-header">
-        <!-- <h1>Writer <span>W32</span> is working in your paper now.</h1> -->
         <h2 *ngIf="!orderIsCompleted">{{paper_details[0]}}</h2>
         <h2 *ngIf="orderIsCompleted">Your order is complete!</h2>
-        <p *ngIf="orderIsCompleted">Writer ID: <span class="spn-writer-id-wrap">{{order_details.files.writer_files.data[0].id}}</span></p>
+        <p *ngIf="orderIsCompleted">Writer ID: <span class="spn-writer-id-wrap">{{order_details.completed_by}}</span></p>
     </mat-toolbar-row>
     <mat-toolbar-row>
         <section class="sec-order-paper" *ngIf="!orderIsCompleted">

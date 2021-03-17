@@ -14,7 +14,7 @@ export class CommonOrderDetailsPaperComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.orderIsCompleted = (this.order_details.status.order_status == 'Completed') ? true : false;
+    this.orderIsCompleted = (this.order_details.files.writer_files.data != null);
   }
 
 }

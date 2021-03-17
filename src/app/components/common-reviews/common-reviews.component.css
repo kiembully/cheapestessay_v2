@@ -62,6 +62,15 @@
     margin: auto;
     border-radius: 50%;
     display: flex;
+    zoom: 0.8; /* IE */
+    -moz-transform: scale(0.8); /* Firefox */
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.8); /* Opera */
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.8); /* Safari And Chrome */
+    -webkit-transform-origin: 0 0;
+    transform: scale(0.8); /* Standard Property */
+    transform-origin: 0 0;  /* Standard Property */
 }
 .review-img {
     height: 45px;
