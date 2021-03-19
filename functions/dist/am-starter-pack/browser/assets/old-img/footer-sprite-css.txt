@@ -1,0 +1,65 @@
+.sprite {
+    background-image: url(spritesheet.png);
+    background-repeat: no-repeat;
+    display: block;
+}
+
+.sprite-amex {
+    width: 75px;
+    height: 27px;
+    background-position: -5px -5px;
+}
+
+.sprite-cheapestessay-icon {
+    width: 90px;
+    height: 93px;
+    background-position: -90px -5px;
+}
+
+.sprite-discover {
+    width: 75px;
+    height: 27px;
+    background-position: -5px -108px;
+}
+
+.sprite-fb-foot-icon {
+    width: 72px;
+    height: 72px;
+    background-position: -90px -108px;
+}
+
+.sprite-ig-foot-icon {
+    width: 87px;
+    height: 84px;
+    background-position: -190px -5px;
+}
+
+.sprite-master-card {
+    width: 27px;
+    height: 15px;
+    background-position: -287px -5px;
+}
+
+.sprite-messenger-icon {
+    width: 90px;
+    height: 90px;
+    background-position: -190px -99px;
+}
+
+.sprite-paypal {
+    width: 64px;
+    height: 27px;
+    background-position: -5px -199px;
+}
+
+.sprite-tweet-foot-icon {
+    width: 72px;
+    height: 72px;
+    background-position: -79px -199px;
+}
+
+.sprite-visa {
+    width: 64px;
+    height: 27px;
+    background-position: -161px -199px;
+}

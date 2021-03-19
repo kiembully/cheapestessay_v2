@@ -174,7 +174,7 @@ export class countdownTimer {
 
   readDeadline(timestamp) {
     let deadline = new Date(timestamp).getTime();    
-    let today = Date.now();
+    let today = this.convertTZ(new Date(Date.now()),'America/Chicago').getTime();
 
     let seconds = Math.floor((deadline - (today))/1000);
     let minutes = Math.floor(seconds/60);
@@ -201,7 +201,7 @@ export class countdownTimer {
   }
   displayDeadline(timestamp) {
     let deadline = new Date(timestamp).getTime();    
-    let today = Date.now();
+    let today = this.convertTZ(new Date(Date.now()),'America/Chicago').getTime();
 
     let seconds = Math.floor((deadline - (today))/1000);
     let minutes = Math.floor(seconds/60);
@@ -214,6 +214,10 @@ export class countdownTimer {
 
     let str_deadline: string = days.toString() + ' days : ' + hours.toString() + ' h : ' + minutes.toString() + ' m : ' + seconds.toString() + ' s';
     return str_deadline;
+  }
+
+  convertTZ(date, tzString) {
+    return new Date((typeof date === "string" ? new Date(date) : date).toLocaleString("en-US", {timeZone: tzString}));   
   }
 }
 

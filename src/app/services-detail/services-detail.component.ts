@@ -42,6 +42,8 @@ export class ServicesDetailComponent implements OnInit {
   }
 
   initializeService() {
+
+    
     this.setSelectedService(this.url);
   }
 

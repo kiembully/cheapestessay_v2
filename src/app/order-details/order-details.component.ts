@@ -79,19 +79,28 @@ export class OrderDetailsComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.displayOrder(this.frmOrder.value).subscribe(
       res => {
-        this.isProgressLoading = false;
-        this.order_details = res.data;
-        this.order_id = res.data.order_id;
-        this.order_status = res.data.status.order_status_flag;
-        this.paper_details = res.data.status.paper_stats.description;
-        
-        this.couponForm.patchValue({
-          coupon_code: res.data.payment.coupon_code,
-          user_token: localStorage.getItem('user_token')
-        })
+        console.log(res);
+        if (res.status == true) {
+          this.isProgressLoading = false;
+          this.order_details = res.data;
+          this.order_id = res.data.order_id;
+          this.order_status = res.data.status.order_status_flag;
+          this.paper_details = res.data.status.paper_stats.description;
+          
+          this.couponForm.patchValue({
+            coupon_code: res.data.payment.coupon_code,
+            user_token: localStorage.getItem('user_token')
+          })
 
-        
-        this.preEditOrder();
+          
+          this.preEditOrder();
+        } else {
+          if (res.message = 'Accesstoken has Expired!') {
+            this.router.navigateByUrl('pricing', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/']);
+            });
+          }
+        }
       }
     )
   }

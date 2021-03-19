@@ -98,6 +98,7 @@ import { CookieComponent } from './cookie/cookie.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { MaintenanceComponent } from './maintenance/maintenance.component';
+import { CtaButtonComponent } from './components/cta-button/cta-button.component';
 
 @NgModule({
   declarations: [
@@ -185,6 +186,7 @@ import { MaintenanceComponent } from './maintenance/maintenance.component';
     ReviewsComponent,
     CookieComponent,
     MaintenanceComponent,
+    CtaButtonComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

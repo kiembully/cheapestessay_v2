@@ -5,7 +5,7 @@
     margin-bottom: 0
 }
 .mt-web-contents mat-toolbar-row {
-    margin-bottom: 45px;
+    margin-bottom: 70px;
 }
 .mt-web-contents mat-toolbar-row:last-child {
     margin-bottom: 0;
@@ -241,14 +241,18 @@ p.is-label-faq {
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {  
- 
+    .mtr-web-contents h3 {
+        font-size: 18px !important;
+    }
+    .spn-content-desc p {
+        font-size: 16px !important
+    }
 }
  
 /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
 @media screen and (max-width:768px) {  
     .mt-web-contents mat-toolbar-row {
         display: block !important;
-        text-align: -webkit-center;
     }
     h3.is-header-faq {
         display: none;
@@ -256,6 +260,12 @@ p.is-label-faq {
     p.is-label-faq {
         text-align: center !important;
         margin-bottom: 70px !important;
+    }
+    .mtr-web-contents h3 {
+        font-size: 20px;
+    }
+    .spn-content-desc p {
+        font-size: 18px
     }
 }
  
@@ -360,6 +370,9 @@ p.is-label-faq {
     .spn-content-img {
         width: 100%;
         max-width: 350px;
+    }
+    .mtr-web-contents h3 {
+        font-size: 22px;
     }
 }
  

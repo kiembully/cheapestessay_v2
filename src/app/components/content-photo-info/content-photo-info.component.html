@@ -15,8 +15,9 @@
         <span class="spn-content-desc" [ngClass]="has_background_content && i > 0 ? 'has-background' : ''">
             <div class="spn-content-block">
                 <h3 class="photo-info-default" [ngClass]="{'is-header-faq':is_faqs_content, 'is-header-disclaimer':is_disclaimer_content}" *ngIf="list.title==null?false:true">{{list.title}}</h3>
-                <p *ngFor="let content of list.contents" [ngClass]="{'is-label-faq':is_faqs_content, 'is-label-disclaimer':is_disclaimer_content}">{{content}}</p>
+                <p *ngFor="let content of list.contents" [ngClass]="{'is-label-faq':is_faqs_content, 'is-label-disclaimer':is_disclaimer_content}" [innerHtml]="content"></p>
             </div>
+            <app-cta-button *ngIf="getArrayValue(data_content)[i].cta != null" [customCTA]="getArrayValue(data_content)[i].cta"></app-cta-button>
             <button *ngIf="has_order_button" routerLink="/order" type="button" class="btn-get-started" mat-flat-button>Get Started</button>
             <button *ngIf="has_contact_button" routerLink="/contact-us" type="button" class="btn-get-started" mat-flat-button>Contact Us</button>
         </span>

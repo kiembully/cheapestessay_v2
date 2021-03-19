@@ -20,7 +20,7 @@
     margin-bottom: 16px;
 }
 .mt-home-banner label.lbl-sub-header-pitch {
-    margin-bottom: 66px;
+    margin-bottom: 30px;
     display: block;
     max-width: 575px;
     color: #000000;
@@ -29,11 +29,42 @@
     white-space: normal;
     line-height: 30px;
 }
+.banner-cta-wrap,
 .banner-options-wrap {
     max-width: 382px;
     width: 100%;
     display: flex;
 }
+.banner-cta-wrap button {
+    transition: all 0.3s;
+    width: 275px;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    display: inline-block;
+    font-family: "SF Pro Text Medium";
+    background-color: #12245A;
+    color: #ffffff;
+}
+.banner-cta-wrap button .material-icons {
+    font-size: 45px;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    transition: 0.3s;
+    width: 0px;
+    overflow: hidden;
+    transform: rotate(-90deg);
+    opacity: 0;
+}
+.banner-cta-wrap button:hover .material-icons {
+    width: 45px;
+    transition: all 0.1s;
+    transform: rotate(0);
+    opacity: 1;
+}
+
 .banner-options-wrap button {
     padding: 15px 0;
     border-radius: 5px;
@@ -160,6 +191,16 @@
 }
 /* freequote body ends */
 
+.p-subhead-label {
+    white-space: normal;
+    color: #000000;
+    font-family: "SF Pro Text Regular";
+    font-size: 24px;
+    letter-spacing: 0;
+    line-height: 30px;
+    margin: 0 auto 70px auto
+}
+
 /* RESPONSIVE SECTION  */
 /* Small devices (landscape phones, 576px and up) */
 @media screen and (max-width:576px) {
@@ -176,6 +217,9 @@
     }
     .mt-home-banner label.lbl-sub-header-pitch {
         font-size: 15px
+    }
+    .p-subhead-label {
+        font-size: 16px;
     }
 }
  
@@ -198,6 +242,9 @@
     .mt-writing-services mat-toolbar-row span:last-child .service-home-style {
         margin-bottom: 0;
     }
+    .p-subhead-label {
+        font-size: 18px;
+    }
 }
  
 /* Large devices (desktops, 992px and up) */
@@ -219,6 +266,12 @@
     }
     .sec-web-rating {
         padding-top: 0
+    }
+    .banner-cta-wrap button{
+        margin: 0 auto
+    }
+    .p-subhead-label {
+        font-size: 20px;
     }
 }
  

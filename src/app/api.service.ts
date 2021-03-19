@@ -280,7 +280,13 @@ export class ApiServices {
     }
     _displayOrder = this._baseUrl + 'displayorder'
     displayOrder(form) {
-        return this.http.post<any>(this._displayOrder, form)
+        return this.http.post<any>(this._displayOrder, form).pipe(
+            retry(3),
+            catchError(()=>{
+                return EMPTY;
+            }),
+            shareReplay()
+        );
     }
     _uploadFiles = this._baseUrl + 'uploadmaterial'
     uploadFiles(form) {

@@ -68,98 +68,94 @@ export class ContentPhotoInfoComponent implements OnInit {
 
   about_services:any[] = [
     {
-      title: 'Professional Writing Services',
+      title: 'Professional Service for any Occasion',
       contents: [
-        "Cheapest essay writing service is the only place you're guaranteed to get writing, editing, and PowerPoint services that are unique and of high quality. We aim to ensure all our clients get customer-tailored services that have pocket-friendly services. We have appropriately trained writers to ensure the write-ups meet your expectations.",
-        "We operate 24/7 to ensure we fully attend to our clients' needs whenever they are and at any time. Customer satisfaction is our priority. We take time to research and understand what your work needs to give you top-notch quality. Our writers work diligently to meet our customer deadlines without compromising work quality.",
-        "We serve students who seek assignments, essays, research, and other student-related services. We are also the number one content creators for business owners who seek to update their websites with fresh and unique content. Reach us today to get a high standard on any of the following services."
+        "No more worries about your academic needs as Cheapest Essay has got you covered. Whether you are busy preparing for exams, part-time work, or trapped with other commitments, we are always available to help you with your assignment. Having more than 500 writers registered with us, we ensure to offer the best-in-class essay writing services to students across the globe. Students from high school to college and from students pursuing their master's degree to doctorate levels, we offer superior writing services across various subjects to all levels of candidates.",
+        "So, no matter what level of paper you need, we can assist. Research work, essays, book reviews, case studies, article writing, etc., are some of the significant services we offer. All the writers registered with us have the expertise to work on various subjects. Once you place your order, a writer who owes experience in that subject will be assigned to start working on it. We ensure to employ such authors who have proficiency in various topics.",
       ],
+      cta: 'Write My Paper',
       class: 'about-service-sprite1',
     },
     {
-      title: 'Can you write Essay?',
+      title: 'What Differentiates our Essay Writing Services from Others',
       contents: [
-        "We deliver on any essay, whether narrative, descriptive, expository essays, and persuasive essays. Our essay writers provide online writing services that will help you improve and support your theme or proposition.",
-        "Our professional essay writers are holders of degree and master's degrees in science, literature, and many others. So, they have the relevant knowledge to handle the requirements of your assignment."
+        "We ensure to offer superior quality yet economical essay services that are sure to exceed your expectations. Whether you are looking for descriptive, narrative, expository, or persuasive essays, we have got you covered.",
+        "Our team comprises top professional writers across the globe who have years of experience in this arena and hold advanced degrees in science, literature, and many others. Thus, they can meet all essay requirements and help you improve and support your theme or proposition."
       ],
+      cta: 'Hire an Essay Writer Today',
       class: 'about-service-sprite2'
     },
     {
-      title:'Research Paper, Coursework, Research Summary, Thesis/Dissertation Proposal and Assignments',
+      title:'What Type of Academic Paper We Cover',
       contents:[
-        "Research papers: Cheapest Essay has retained the best research writing professionals with varied skills and knowledge. Many writers are Ph.D. holders from renowned colleges and universities, and hence the ability to write high quality research.",
-        "Coursework. We can put together the report from different experiments and research, do thorough research, and write suitable coursework for you. Coursework is a very demanding assignment for many students, making them perform poorly. With us, you don't need to worry about low grades.",
-        "Thesis/dissertation proposal. Whichever level you are needed to develop a thesis/dissertation proposal, we got you covered. ",
-        "Assignment. Cheapest Essay writing service has experienced professionals in varied academic fields in any assignment writing. They will bring out the concept area and show the point of emphasis to give you an assignment that shows your course understanding to your professor.",
+        "<strong>Research papers</strong>: Coming up with an impressive research paper is a nerve-wracking process as it requires you to do thorough research. You no longer need to take stress as we have got your back. Cheapest Essay has retained the best research writing professionals, and some of them are Ph.D. holders, so rest assured to get high-quality research.",
+        "<strong>Coursework</strong>: We know how hard it gets to transform your reading into a well-curated piece of writing. That’s why we are here. We help you create a well-structured part of coursework no matter what you require. Now there is no need to worry about your low grades as we help you get the grades you desire.",
+        "<strong>Thesis/dissertation proposal</strong>: Are you finding it challenging to work on a thesis or have an idea but lack the expertise to put them into your words? No worries: No matter what level you need to develop a thesis/dissertation proposal, we got you covered.",
+        "<strong>Assignment</strong>: Having the expertise of writing any assignment in any discipline, we can meet all the requirements. You can take a sigh of relief when you know that you can hand over your assignment burden on us.",
       ],
+      cta: 'Buy Paper Now',
       class:'about-service-sprite3'
     },
     {
-      title:'Any Report: Simulation Report, Lab Report and Book or Movie Report and Review',
+      title:'What Type of Report Writing Services We Can Help With',
       contents:[
-        "Lab report. We have professional writing services for putting down a lab report. We know the right format in which a lab report should follow from discussion through conclusion to referencing. With this information, we can put together a professional lab report for you.",
-        "We are the number one writing helper when drafting a book/movie report and review. Our writers have advanced in different fields. They can go through a book or watch a movie as many times as possible to get the needed information to develop a well-written report or review.",
-        "Any report. Our paper helper in the report writing sector has all that it takes to give you the best report. They are knowledgeable, investigative, and able to document both the statistical/experimental data. So, they can assist any student in a Master's degree level, undergraduate or graduate.",
-        "If you experience difficulties in writing your report, we are here to help. Our writers are skilled in formatting and structuring any essay. Be it a business report, lab report, or financial ration analysis to help it attain the professionalism it requires. ",
+        "No matter if you are looking for a business report, lab report, or financial ratio analysis, we help it attain the professionalism it requires.",
+        "<strong>Lab report</strong>: It is one-of-a-kind technical writing that requires you to describe your experiment in detail. So, if you are holding back that report due to a lack of knowledge of the correct writing format, Cheapest Essay is at your rescue. Our qualified researchers work on your lab report and ensure no errors in creating the perfect piece.",
+        "<strong>Book/Movie Report And Review</strong>: Now, there is no need to spend sleepless nights reading books from start to end and watching movies to write captivating reviews. All you need to do is fill in your requirements and leave the rest on us. Our professional writers are here to help you with the most tedious task.",
+        "<strong>Any report</strong>: Our professional writers in the report writing sector have all that it takes to give you the best report. They are knowledgeable, investigative, and able to document both the statistical/experimental data. So, they can assist any student at a master’s degree level, undergraduate or graduate.",
       ],
+      cta: 'Place your Report Request Today!',
       class:'about-service-sprite4'
     },
     {
-      title: 'Article and Article Critique',
+      title: 'What Article Needs We Cater',
       contents:[
-        "We have retained the best article writers from different corners of the world with varied writing skills. You have the opportunity to decide on any topic you want us to write and how complex or simple you want it to appear. We will deliver. Are you a website or blog owner? Our write my paper service is ready.",
-        "Article critique. Our writers can go through the essay critically and analytically. The aim is to come up with the writer's argument while limiting their own opinions. We have the needed skills and knowledge to present a good article critique worth of good grades. We assign appropriate writing steps to your specific assignment."
+        "Cheapest Essay is the go-to option for all your article requirements. Always get the best content you desire. Our platform has verified and trustworthy article writers worldwide who have the expertise to write articles that help you get good grades in your academics. Whether you want a complex or a simple write-up, we have flexible solutions for all your needs.",
+        "<strong>Article Critique</strong>: When you are busy with other prior work or confused about working on an article critique, hire professional services. We will be more than happy to assist you. We have the needed skills and knowledge to write out of the box good article critique to help you get good grades and excel in your academics."
       ],
+      cta: 'Order a Paper',
       class:'about-service-sprite5'
     }
   ]
 
   pay_first_services:any[] = [
     {
-      headers: [
-        "Our prices are the best you can find in the market worldwide. We offer cheap essay writing services to all our clients. We guarantee to refund all the extra money if you find a more affordable writer in the first month of ordering.",
-        "We consider a lot of factors before pricing your order. The moment you order with us, the following things will determine how much money you will pay."
-      ]
-    },
-    {
-      title: 'Deadline and the number of Pages you need',
+      title: 'Deadline and the Number of Pages',
       contents:[
-        "Essays are priced differently according to different factors—the time you give us to get your work done. Expect to pay more if your deadline is short than when it is long.",
-        "Also, the number of pages is a factor too. The number of pages is equally proportional to the number of words. So, the more the pages, the higher the price."
+        "We are very strict on deadlines as every customer is important to us. However, your pricing depends on the deadline you set. If your requirement is urgent and you have selected a very short deadline such as 3 hours, you may need to pay more.",
+        "Similar is the case with the number of pages. It is equally proportional to the number of words. So, the more is the number of pages; the more is the price. "
       ],
+      cta: 'Get Free Quote',
       class:'pay-first-img1'
     },
     {
-      title: "Type of Service and the Writer's level you need",
+      title: "Type of Service and the writer's level",
       contents:[
-        "The type of service you order us to deliver will determine the amount you will pay. There are three different types of services that we offer, and all are priced differently. They include; PowerPoint, writing, and editing.  ",
-        "Also, the level of the writer your work demands will affect how you will pay. College, bachelor, and master writers have different qualifications; hence, all have different prices."
+        "The type of service you request plays a crucial role in determining the total price you need to pay. We deal with three kinds of services: PowerPoint, Writing, and Editing, and all are priced differently.",
+        "Also, the level of the writer your work demands will affect your pricing—writers with a different set of qualifications charges differently. For instance, doctorate-level writers will charge more in comparison to graduate-level writers. "
       ],
+      cta: 'Hire a Writer',
       class:'pay-first-img2'
     },
   ]
 
   money_back_guarantee:any = [
     {
-      headers:[
-        "We value our customers. Their satisfaction is what keeps us moving. We allow our clients to request a refund if they feel that the work did not meet the requirements.",
-        "We allow for an unlimited number of revisions within a specified period of submission. It means that we do not charge for revisions within that period. Below are our refund policies.",
-      ]
-    },
-    {
       title: "100% Refund",
       contents:[
-        "Meeting the stipulated deadline is a highly valued guarantee needed by every client. So, we allow for a 100% refund request for those we miss to beat their deadline. You can extend the time and give you a compensation of 20%. ",
-        "One can apply for a 100% refund for errors in payment, such as double payment. You need to report the issue immediately before the assigned writer begins writing the task. "
+        "We take pride in our writers that we can deliver all the client's requirements on time. However, if we miss any deadline, we allow the customers to request a 100% refund. And if you are ready to extend the deadline, we offer you a compensation of 20%.",
+        "Also, if you come across any technical issues during payment, you can ask for a refund. In this case, you are required to report the problem instantly before the assigned writer begins writing the task."
       ],
+      cta: 'Avail Expert Assistance',
       class:'money-back-img1'
     },
     {
       title: "50% Refund",
       contents:[
-        "One can request a 50% refund for confirmed orders but later canceled by the client. Remember, all refund requests must go through a confirmation check to check its viability. Refunds do not apply when the error was from the client's side, such as delayed uploading of needed documents and delayed payment.",
+        "We allow you to raise a request for a refund of confirmed orders if the client has canceled the order. However, in such cases, we only give a 50% refund of the total amount. All the refund requests undergo a confirmation check before accepting the request. Rebates do not apply when the error was from the client's side, such as delayed uploading of needed documents and delayed payment.",
         "For refunds requested due to plagiarism, a Turnitin report should be available. Reports from other plagiarism checkers are not acceptable. Without the Turnitin report, no refund will apply."
       ],
+      cta: 'Hire a Writer',
       class:'money-back-img2'
     },
   ]
@@ -167,11 +163,12 @@ export class ContentPhotoInfoComponent implements OnInit {
   how_to_do:any = [
     {
       contents:[
-        "Fill out the order form. At this stage, input your details. These include name, subject topic, contact, and deadline of your work. Ensure you provide detailed information to increase the chances of getting good quality work. Place your orders early enough. Emergency orders will cost you more, making it expensive.",
-        "Make a payment. Provide payment details at this stage. Our online payment page is secure. Proceed to make the payment. We offer different payment options, which include PayPal and Credit Card.",
-        "Order in progress. At this stage, an essay writer begins working on your order after confirmation of details. The most qualified paper helper gets assigned to your work.",
-        "Order Submission. Once the essay writers finish with the orders, a team of specialists performs a quality assurance test. Here, they check the uniqueness of the work using plagiarism software. We send the assignment to your registered email address."
+        "<strong>Fill in the Details:</strong><br>Input all your details such as name, subject topic, type of service, and deadline in the form. Ensure to enter all the details correctly so that we can meet your expectations and deliver top-quality work. However, try to place your order early as a sooner deadline will cost you more!",
+        "<strong>Pay for your order:</strong><br>We ask our customers to pay for the required service in advance—no need to worry as your money is entirely safe with us. If you are not delighted with the output, feel free to benefit from our unlimited revision policy for free or request a refund stating your reason.",
+        "<strong>Order in progress:</strong><br>Once you make your payment and we get a confirmation, our team assigns your work to the most suitable expert who works on it. In case you have any issues, you can connect with us, and we will try to resolve them.",
+        "<strong>Get your paper via email:</strong><br>You can now relax and wait for your paper to be completed by a professional expert. You can invest your time in some other priority work you have in your hands or prepare for your exams. Meanwhile, our writer will work on your requirement, and once it is completed, we will send it to your email."
       ],
+      cta: 'Hire A Pro Writer',
       class:'how-to-do-img'
     },
   ]

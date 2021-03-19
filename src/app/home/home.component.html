@@ -5,17 +5,17 @@
                 <span class="fill-space spn-welcome-banner">
                     <div class="welcome-banner-wrap">
                         <section>
-                            <p class="p-header-pitch">The #1 Cheapest Essay Writing Service in 2021</p>
-                            <label class="lbl-sub-header-pitch">We Write your Essay Today!<br>
-                                300+ Professional Writers, and over 7000 clients worldwide.
-                                <h1>Hire Essay writer for any job online now!</h1>
+                            <p class="p-header-pitch">#1 Professional Essay Writing Services at your Rescue</p>
+                            <label class="lbl-sub-header-pitch">Affordable. Accessible. Authentic<br>
+                                <h1>Hire our writing experts to meet your academic requirements now!</h1>
                             </label>
                         </section>
                         <section>
-                            <div class="banner-options-wrap">
-                                <span><button aria-label="what we do" mat-raised-button class="btn-wwd" routerLink="what-we-do">What we do?</button></span>
-                                <span class="fill-space"></span>
-                                <span *ngIf="isTokenExisting('user_token')"><button aria-label="free quote" mat-raised-button class="btn-fq" routerLink="free-quote">Free Quote</button></span>
+                            <div class="banner-cta-wrap">
+                                <button aria-label="cta order now" class="cta-order-now" mat-flat-button routerLink="/order">
+                                    Get your paper Now
+                                    <span class="material-icons">keyboard_arrow_right</span>
+                                </button>
                             </div>
                         </section>
                     </div>
@@ -35,7 +35,7 @@
 <!-- HOW IT WORKS SECTION -->
 <section class="default-width sec-home-hiw">
     <mat-toolbar class="mt-home-hiw">
-        <mat-toolbar-row class="common-sub-header"><h2>How it works</h2></mat-toolbar-row>
+        <mat-toolbar-row class="common-sub-header"><h2>How we roll</h2></mat-toolbar-row>
     </mat-toolbar>
 </section>
 <app-common-how-it-works></app-common-how-it-works>
@@ -47,7 +47,7 @@
 <section class="full-width sec-writing-services" id="sec-writing-services">
     <mat-toolbar class="mt-writing-services width1220px">
         <mat-toolbar-row class="common-sub-header">
-            <h2>WHAT CAN WE WRITE FOR YOU</h2>
+            <h2>What CAN WE WRITE FOR YOU</h2>
         </mat-toolbar-row>
         <mat-toolbar-row class="mtr-ws-inner-upper">
             <span class="spn-service-home-contain">
@@ -94,7 +94,7 @@
 </section>
 <!-- WEB CONTENTS SECTION  -->
 <section class="default-width margin-bottom70">
-    <app-content-photo-info data_content="about_services"></app-content-photo-info>    
+    <app-content-photo-info data_content="about_services"></app-content-photo-info>
 </section>
 <!-- FIRST ORDER DISCOUNT SECTION -->
 <div class="diagonal-box margin-bottom100">
@@ -108,19 +108,25 @@
 <section class="default-width sec-pro-writing margin-bottom70">
     <mat-toolbar>
         <mat-toolbar-row class="common-sub-header">
-            <h2>PAY WRITING SERVICES SAFELY</h2>
+            <h2>Pay Less and Enjoy Top-Quality Essays</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p class="p-subhead-label">It gets tough sometimes to pay a considerable amount and raise a request to work on your assignment as a student. Therefore, we ensure to offer the best value for money that is not hard on your pocket. Our pricing for essay writing services is the best that you will see in the market. We guarantee you that you won't get such services at this price anywhere. And if you find a more affordable writer in the first month of ordering, we ensure to refund all the extra money. Various factors are considered while determining the prices of your order. Just have a look:</p>
         </mat-toolbar-row>
     </mat-toolbar>
-    <app-content-photo-info data_content="pay_first_services" [has_header]="true"></app-content-photo-info>    
+    <app-content-photo-info data_content="pay_first_services"></app-content-photo-info>    
 </section>
 <!-- MONEY BACK GUARANTEE SECTION -->
 <section class="default-width sec-pro-writing margin-bottom70">
     <mat-toolbar>
         <mat-toolbar-row class="common-sub-header">
-            <h2>MONEY BACK GUARANTEE</h2>
+            <h2>Money-Back Guarantee</h2>
+        </mat-toolbar-row>
+        <mat-toolbar-row>
+            <p class="p-subhead-label">Though we ensure to deliver the top quality service and meet all your requirements, still, if you are not happy with the paper you receive, you can request a refund.<br><br>We allow for an unlimited number of revisions within a specified period of submission. It means that we do not charge for revisions within that period. Below are our refund policies.</p>
         </mat-toolbar-row>
     </mat-toolbar>
-    <app-content-photo-info data_content="money_back_guarantee" [has_header]="true"></app-content-photo-info> 
+    <app-content-photo-info data_content="money_back_guarantee"></app-content-photo-info> 
 </section>
 <!-- HOME CONTACT US SECTION -->
 <div class="margin-bottom70">
@@ -130,7 +136,7 @@
 <section class="default-width sec-pro-writing margin-bottom70">
     <mat-toolbar>
         <mat-toolbar-row class="common-sub-header">
-            <h2>HOW DO WE DO IT?</h2>
+            <h2>Receive your assignment in 4 simple steps</h2>
         </mat-toolbar-row>
     </mat-toolbar>
     <app-content-photo-info data_content="how_to_do" [left_first]="true"></app-content-photo-info>    
@@ -145,7 +151,7 @@
 <section class="default-width sec-home-guarantees">
     <mat-toolbar>
         <mat-toolbar-row class="mtr-home-guarantees common-sub-header">
-            <h2>Guarantees</h2>
+            <h2>Why you'll love us</h2>
         </mat-toolbar-row>
     </mat-toolbar>
 </section>

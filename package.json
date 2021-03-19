@@ -11,7 +11,9 @@
     "dev:ssr": "ng run am-starter-pack:serve-ssr",
     "serve:ssr": "node dist/am-starter-pack/server/main.js",
     "build:ssr": "ng build --prod && ng run am-starter-pack:server:production",
-    "prerender": "ng run am-starter-pack:prerender"
+    "prerender": "ng run am-starter-pack:prerender",
+    "build:functions": "npm run --prefix functions build",
+    "build:all": "npm run build:ssr && npm run build:functions"
   },
   "private": true,
   "dependencies": {

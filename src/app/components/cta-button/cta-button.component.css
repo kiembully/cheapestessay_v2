@@ -1,0 +1,47 @@
+.cta-button-wrap {
+    display: flex;
+    width: 100%;
+}
+.common-cta-buttons {
+    margin: 30px auto;
+    transition: all 0.3s;
+    /* width: 275px; */
+    display: inline-block;
+    height: 60px;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 24px;
+    font-family: "SF Pro Text Medium";
+    background: #FBD501;
+    color: #12245A;
+}
+.common-cta-buttons .mat-button-wrapper {
+    align-items: center;
+    display: inline-flex;
+}
+.common-cta-buttons .material-icons {
+    font-size: 45px;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s;
+    width: 0px;
+    overflow: hidden;
+    transform: rotate(-90deg);
+    opacity: 0;
+}
+.common-cta-buttons:hover .material-icons {
+    width: 45px;
+    transition: all 0.1s;
+    transform: rotate(0);
+    opacity: 1;
+}
+
+/* RESPONSIVE SECTION  */
+/* Small devices (landscape phones, 576px and up) */
+@media screen and (max-width:576px) {
+    .common-cta-button {
+        margin: 0 auto;
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+}

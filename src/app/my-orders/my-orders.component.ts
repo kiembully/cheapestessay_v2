@@ -27,10 +27,19 @@ export class MyOrdersComponent implements OnInit {
     this.isProgressLoading = true;
     this._auth.getMyOrders(this.tokenForm.value).subscribe(
       res => {
-        this.dataSource = new MatTableDataSource<all_orders>(res.data);
-        this.dataSource.paginator = this.paginator;
-        this.isProgressLoading = false;
-        this.isEmpty = (res.data == undefined) ? true : false;
+        console.log(res);
+        if (res.status = true) {
+          this.dataSource = new MatTableDataSource<all_orders>(res.data);
+          this.dataSource.paginator = this.paginator;
+          this.isProgressLoading = false;
+          this.isEmpty = (res.data == undefined) ? true : false;
+        } else {
+          if (res.message = 'Accesstoken has Expired!') {
+            this.router.navigateByUrl('pricing', { skipLocationChange: true }).then(() => {
+              this.router.navigate(['/']);
+            });
+          }
+        }
       }
     )
   }
@@ -64,7 +73,7 @@ export class MyOrdersComponent implements OnInit {
     this.metaTagService.updateTag(
       { name: 'keywords', content: "Buy essay online, hire writers" },
     );
-    
+
     this.displayMyOrders();
     setInterval( ()=>{},1000);
   }

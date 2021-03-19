@@ -52,8 +52,8 @@
     line-height: 38px;
     white-space: normal;
     text-align: center;
-    margin-bottom: 120px;
-    margin-top: 0;
+    max-width: 500px;
+    margin: 0 auto 70px auto
 }
 .client-reviews-img {
     background-position: -676px -64px;

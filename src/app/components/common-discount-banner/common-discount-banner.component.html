@@ -6,7 +6,7 @@
         <form (ngSubmit)="submitNewUser()" [formGroup]="frmNewUser" class="frm-new-user-discount" [ngClass]="(has_image)?'reverse-row':''">
             <app-common-progress-bar *ngIf="isUnlocking"></app-common-progress-bar>
             <span>
-                <label *ngIf="!has_image">USE 15% DISCOUNT NOW</label>
+                <label *ngIf="!has_image">GRAB 15% DISCOUNT NOW</label>
                 <div *ngIf="has_image" class="sprite-cheapest discount-img-wrap"></div>
             </span> 
             <span class="fill-space"></span>
@@ -23,7 +23,7 @@
                     <span><button type="submit" mat-flat-button>SEND</button></span>
                 </div>
                 <div class="new-user-inner-wrap" *ngIf="has_image">
-                    <p class="p-new-user-form padding-top20">You’ll get a high-quality service, that’s for sure. To welcome you, we give you a 15% discount on your first Order!</p>
+                    <p class="p-new-user-form padding-top20">Gain access to the top essay services out there and see your grades grow up like never. Avail 15% discount on your first order today!</p>
                 </div>
             </span>
         </form>

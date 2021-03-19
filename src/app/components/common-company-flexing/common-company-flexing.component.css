@@ -65,16 +65,8 @@
     width: 100%;
     margin: 0 auto;
 }
-.btn-hire-writer {
-    margin: 70px auto;
-    background: #FBD501;
+.mtr-cf-block {
     display: block;
-    color: #12245A;
-    font-family: "SF Pro Text Bold";
-    font-size: 28px;
-    letter-spacing: 0;
-    white-space: normal;
-    padding: 20px;
 }
 
 /* RESPONSIVE SECTION  */
@@ -86,11 +78,6 @@
     }
     .company-flex-inner {
         padding: 50px 10px
-    }
-    .btn-hire-writer {
-        margin: 0 auto;
-        font-size: 16px;
-        padding: 10px 20px;
     }
 }
  
